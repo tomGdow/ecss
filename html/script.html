@@ -6,7 +6,7 @@
     <title>script</title>
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <meta name="keywords" content="css, html">
-    <meta name="description" content="Notes on HTML CSS course">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
     <meta name="google" content="notranslate">
     <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
     <link rel="stylesheet" href="../css/ecss.css">
@@ -18,8 +18,10 @@
             <div class="grid-item-1">
                 <div class="banner-container">
                     <div class="banner-item-1">
-                        <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
-                            alt="gravatar image of tomgdow">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
                     </div>
                 </div>
                 <div class="banner-item-2">
@@ -30,16 +32,77 @@
             <div class="grid-item-2"></div>
             <div class="grid-item-3">
                 <div class="site-container">
-                    <div id="home"><a href="../index.html">home</a></div>
+                    <div id="navbar"><a href="../index.html">prev</a>&nbsp;&nbsp;<a href="../index.html">home</a>&nbsp;&nbsp;<a href="./noscript.html">next</a></div>
+
                     <h2 id="pageTitle">HTML Fundamentals</h2>
+                    <div class="content">
+                        The
+                        <strong><code>&lt;script&gt;</code></strong>
+                        HTML element is used to embed executable code
+                        <p>Typically JavaScript</p>
+                    </div>
+
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>&lt;script src="javascript.js"&gt;&lt;/script&gt;</code>
+                    </div>
+
+                    <div class="content">
+                        <code>&lt;script type="text/javascript" src="javascript.js">&lt;/script&gt;</code>
+                    </div>
+                    <div class="content">
+                        <code>&lt;script src="javascript.js"&gt;&lt;/script&gt;</code>
+                    </div>
+                    <div class="content">
+                        <code>&lt;script&gt; <br>&nbsp;&nbsp;alert("Hello World!"); <br>&lt;/script&gt;</code>
+                    </div>
+
+                    <h2>Notes</h2>
+                    <div class="content">
+                        <p><code>defer</code>:
+                            This Boolean attribute indicates to browser
+                            that the script is meant to be executed after the document
+                            has been parsed, but before firing
+                            <code>
+                                DOMContentLoaded.
+                            </code>
+                        </p>
+                    </div>
+                    <div class="content">
+                        The script tag should either be included
+                        <ol>
+                            <li>
+                                Between the <code>&lt;head&gt; tags</code>
+                            </li>
+                            <li>
+                                Just before the closing <code>&lt;body&gt; tag</code>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="content">
+                        <p>
+                         JavaScript is often placed before the closing body tag to help reduce the page loading time. 
+                         Doing this allows the rest of the page to load before loading the JavaScript files, which can be large
+                        </p>
+                    </div>
+                    <h2>Mnemonic</h2>
+
+                    <div class="content">
+                        <p><code>(scr)ipt</code> is <code>src</code></p>
+                    </div>
+                    <h2>References</h2>
+                    <div class="content">
+                        <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">MDN Script Tag</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        var title=document.getElementsByTagName("title")[0].innerHTML
-        document.getElementById("banner_part_second").innerHTML= "&nbsp;"+title
-        document.getElementById("pageTitle").innerHTML=title
+        var title = document.getElementsByTagName("title")[0].innerHTML
+        document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
+        document.getElementById("pageTitle").innerHTML = title
     </script>
 </body>
 
