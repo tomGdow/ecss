@@ -83,9 +83,10 @@ div.site-container div {
 
 noscript {
     background-color: red;
+    color: blueviolet;
     font-size: 2rem;
     text-align: center;
-    padding-top: 200px;
+    margin-top: 1rem;
 }
 
 .content {
