@@ -1,7 +1,7 @@
 :root {
     --primary-green: #18836f;
     --primary-orange: orange;
-    background-color:lightblue;
+    background-color: lightblue;
     font-size: 1rem;
 }
 
@@ -13,16 +13,16 @@ div.container {
 
 div.grid-container {
     display: grid;
-    grid-template-columns: repeat(10,1fr);
+    grid-template-columns: repeat(10, 1fr);
 }
 
 div.grid-item-1 {
     grid-column: 1/11;
     grid-row: 1;
     background-color: #000;
-    display:grid;
-    grid-template-columns: repeat(10,1fr);
-    justify-content:center;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    justify-content: center;
 }
 
 .banner-item-1 {
@@ -35,7 +35,7 @@ div.banner-item-2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.4rem; 
+    font-size: 1.4rem;
 }
 
 .grid-item-2 {
@@ -58,16 +58,27 @@ div.banner-item-2 {
     color: var(--primary-orange);
 }
 
-h1, h2 {
+h1,
+h2 {
     color: var(--primary-green);
 }
 
+h1 {
+    text-align: center;
+}
+
 #banner_part_first {
-    display:none;
+    display: none;
 }
 
 div.site-container div {
     margin-bottom: 2vh;
+}
+
+#home {
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 10px;
 }
 
 @media screen and (min-width: 500px) {
@@ -75,8 +86,8 @@ div.site-container div {
     div.banner-item-2 {
         grid-column: 2/9;
     }
-    
-    #banner_part_first{
+
+    #banner_part_first {
         display: inline;
     }
 }

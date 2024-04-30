@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>HTML and CSS</title>
+    <title>script</title>
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <meta name="keywords" content="css, html">
     <meta name="description" content="Notes on HTML CSS course">
     <meta name="google" content="notranslate">
     <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
-    <link rel="stylesheet" href="./css/ecss.css">
+    <link rel="stylesheet" href="../css/ecss.css">
 </head>
 
 <body>
@@ -23,35 +23,15 @@
                     </div>
                 </div>
                 <div class="banner-item-2">
-                    <span id="banner_part_first">Fundamentals of </span>
+                    <span id="banner_part_first">html </span>
                     <span class="primary-orange" id="banner_part_second"></span>
                 </div>
             </div>
             <div class="grid-item-2"></div>
             <div class="grid-item-3">
                 <div class="site-container">
-                    <h1>Course Structure</h1>
-                    <h2>HTML Fundamentals</h2>
-                    <div><a href="./html/script.html">script tag</a></div>
-                    <div><a href="">noscript tag</a></div>
-                    <div><a href="">four main tags of HTML page</a></div>
-                    <div><a href="">link tag</a></div>
-                    <div><a href="">meta tag</a></div>
-                    <div><a href="">doctype</a></div>
-                    <div><a href="">html</a></div>
-                    <div><a href="">head</a></div>
-                    <div><a href="">title</a></div>
-                    <div><a href="">body</a></div>
-                    <div><a href="">void elements</a></div>
-                    <div><a href="">HTML Entities</a></div>
-                    <h2>CSS Fundamentals</h2>
-                    <h2>Document Structure using HTML</h2>
-                    <h2>Multimedia Presentation using HTML</h2>
-                    <h2>Accessibility, Readability and Testing</h2>
-                    <h2>Temp notes</h2>
-                    <p>doctype, html, head body</p>
-                    <div id="expt"></div>
-
+                    <div id="home"><a href="../index.html">home</a></div>
+                    <h2 id="pageTitle">HTML Fundamentals</h2>
                 </div>
             </div>
         </div>
@@ -59,6 +39,7 @@
     <script>
         var title=document.getElementsByTagName("title")[0].innerHTML
         document.getElementById("banner_part_second").innerHTML= "&nbsp;"+title
+        document.getElementById("pageTitle").innerHTML=title
     </script>
 </body>
 
