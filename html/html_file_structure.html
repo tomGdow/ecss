@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML document</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywordsh" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css">
+    <noscript>
+        <link rel="stylesheet" href="./css/ecss_nojs.css">
+    </noscript>
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar"><a href="noscript.html">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html">next</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        <pre>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        
+    &lt;/body&gt;
+    &lt;/html&gt;
+</pre>
+
+                    </div>
+
+                    <h2>Notes</h2>
+                    <div class="content">
+                        The four parts of a HTML document are
+                        <ol>
+                            <li>DOCTYPE</li>
+                            <li>html tag</li>
+                            <li>head tag</li>
+                            <li>body tag</li>
+                        </ol>
+                    </div>
+
+
+                    <h2>References</h2>
+                    <div class="content">
+
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/">W3C HTML-5</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var title = document.getElementsByTagName("title")[0].innerHTML
+        document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
+        document.getElementById("pageTitle").innerHTML = title
+    </script>
+</body>
+
+</html>
