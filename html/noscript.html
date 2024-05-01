@@ -32,8 +32,93 @@
             <div class="grid-item-2"></div>
             <div class="grid-item-3">
                 <div class="site-container">
-                    <div id="navbar"><a href="./script.html">prev</a>&nbsp;&nbsp;<a href="../index.html">home</a>&nbsp;&nbsp;<a href="">next</a></div>
-                    <h2 id="pageTitle">HTML Fundamentals</h2>
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar"><a href="index.html">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html">home</a>&nbsp;&nbsp;
+                        <a href="htmlStructure.html">next</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        The HTML
+                        <strong><code>&lt;noscript&gt;</code></strong>
+                        element defines a section of HTML to be inserted if a script type
+                        is unsupported or if scripting is currently turned off.
+                    </div>
+
+                    <div class="content">
+                        The 
+                        <code>noscript</code> element represents nothing if scripting is enabled,
+                        and represents its children if scripting is disabled.
+                    </div>
+
+                    <div class="content">
+                        It is used to present different markup to user agents that support scripting and those
+                        that don't support scripting, by affecting how the document is parsed.
+                    </div>
+
+                    <h2>Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                In a 
+                                <code>head</code> element, the
+                                <code>noscript</code> element must contain only
+                                <code>link</code>,
+                                <code>style</code>, and
+                                <code>meta</code> elements
+                            </li>
+                            <li>A <code>noscript</code> tag appearing in the <code>head</code>
+                                cannot contain an <code> &lt;a href=""&gt;&lt;/a&gt; </code> element, for example.
+                                <p>(Doing so will cause validation to break)</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>
+                        &lt;noscript&gt; &lt;a href="https/www.mozilla.com">Ext Link&lt;/a&gt; &lt;/noscript&gt;
+                        </code>
+                    </div>
+
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>
+                        &lt;noscript&gt;Warning! This browser does not use JavaScript&lt;/noscript&gt;
+                        </code>
+                    </div>
+
+                    <h2>Example</h2>
+                    <div class="content">
+                        <ol>
+                            <li>The following works</li>
+                            <li>Note that <code>nojs.css</code> is placed BELOW
+                                <code>js.css</code>
+                            </li>
+                        </ol>
+                        <pre>
+    &lt;head&gt;
+        &lt;link rel="stylesheet" href="js.css"&gt;
+        &lt;noscript&gt;&lt;link rel="stylesheet" href="nojs.css"&gt;&lt;/noscript&gt;
+    &lt;/head&gt;
+                        </pre>
+
+                    </div>
+
+                    <h2>References</h2>
+                    <div class="content">
+                        <p>
+                            <a
+                                href="https://www.w3.org/TR/2011/WD-html5-20110405/scripting-1.html#the-noscript-element">W3C
+                                noscript</a>
+                        </p>
+                    </div>
+                    <div class="content">
+                        <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript">
+                                MDN noscript element
+                            </a></p>
+                    </div>
                 </div>
             </div>
         </div>
