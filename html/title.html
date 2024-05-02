@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>search</title>
+    <title>title</title>
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <meta name="keywords" content="css, html">
     <meta name="description" content="Notes on Fundamentals of HTML and CSS">
@@ -37,68 +37,51 @@
                 <div class="site-container">
                     <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
                     <div id="navbar">
+                        <a href="./head.html">prev</a>&nbsp;&nbsp;
                         <a href="../index.html">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html">next</a>&nbsp;&nbsp;
+                        <a href="./search.html">search</a>
+                    </div>
 
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        <code>
+                            &lt;title>Doc title&lt;/title>
+                        </code>
+                        <ol>
+                            <li>
+                                The <code>title</code> element represents the document's title or name.
+                            </li>
+                            <li>
+                                There must be no more than one <code>title</code> element per document.
+                            </li>
+                            <li>
+                                The <code>title</code> element is a required child in most situations,
+                                but when a higher-level protocol provides title information (eg e-mail), it can be
+                                omitted.
+                            </li>
+                            <li>
+                                The <code>title</code> tag is an escapable raw text (type 4) HTML element
+                                (<code>textarea</code> is another)
+                            </li>
+
+                        </ol>
 
                     </div>
-                </div>
 
-                <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                <div class="content">
-                    <label for="mainSearchBox"></label>
-                    <input type="text" id="mainSearchBox" list="pageList" name="mainSearchBox" autofocus>
-                    <datalist id="pageList">
-                        <option value="doctype"></option>
-                        <option value="head"></option>
-                        <option value="home"></option>
-                        <option value="html"></option>
-                        <option value="html_file_structure"></option>
-                        <option value="index"></option>
-                        <option value="noscript"></option>
-                        <option value="script"></option>
-                        <option value="title"></option>
-                    </datalist>
-
+                    <h2>References</h2>
+                    <div class="content">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#the-title-element-0">W3C
+                            title</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
     <script>
-        var title = document.title
+        var title = document.title;
         document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
-        document.getElementById("pageTitle").innerHTML = title;
-
-        var sitePageArr = [
-            "doctype",
-            "head",
-            "home",
-            "html",
-            "html_file_structure",
-            "index",
-            "noscript",
-            "script",
-            "title"
-        ]
-
-        document.getElementById('mainSearchBox').addEventListener('input', function () {
-
-            if (sitePageArr.includes(this.value) && (this.value == 'index' || this.value == 'home')) {
-                if (this.value == 'home') {
-
-                    location.href = "../index.html"
-                } else {
-
-                location.href = "../" + this.value + ".html"
-                }
-            }
-            else if (sitePageArr.includes(this.value)) {
-                location.href = "./" + this.value + ".html"
-
-            }
-        })
-
-
+        document.getElementById("pageTitle").innerHTML = title
     </script>
 </body>
 
