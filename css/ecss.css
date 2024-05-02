@@ -112,4 +112,8 @@ pre {
     #banner_part_first {
         display: inline;
     }
+    input {
+        width: 80%;
+        height: 2rem;
+    }
 }

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>[PAGE TITLE]</title>
+    <title>search</title>
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <meta name="keywords" content="css, html">
     <meta name="description" content="Notes on Fundamentals of HTML and CSS">
@@ -36,34 +36,66 @@
             <div class="grid-item-3">
                 <div class="site-container">
                     <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
-                    <div id="navbar"><a href="PREV.html">prev</a>&nbsp;&nbsp;
+                    <div id="navbar">
                         <a href="../index.html">home</a>&nbsp;&nbsp;
-                        <a href="NEXT.html">next</a>&nbsp;&nbsp;
-                        <a href="./html/search.html">search</a>
+
+
                     </div>
+                </div>
 
-                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                <div class="content">
+                    <label for="mainSearchBox"></label>
+                    <input type="text" id="mainSearchBox" list="pageList" name="mainSearchBox">
+                    <datalist id="pageList">
+                        <option value="doctype"></option>
+                        <option value="home"></option>
+                        <option value="html"></option>
+                        <option value="html_file_structure"></option>
+                        <option value="index"></option>
+                        <option value="noscript"></option>
+                        <option value="script"></option>
+                    </datalist>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
-
-                    <h2>Notes</h2>
-                    <div class="content"></div>
-
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
-
-                    <h2>References</h2>
-                    <div class="content"></div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
     <script>
-        var title = document.getElementsByTagName("title")[0].innerHTML
+        // var title = document.getElementsByTagName("title")[0].innerHTML
+        var title = document.title
         document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
-        document.getElementById("pageTitle").innerHTML = title
+        document.getElementById("pageTitle").innerHTML = title;
+
+        var sitePageArr = [
+            "doctype",
+            "home",
+            "html",
+            "html_file_structure",
+            "index",
+            "noscript",
+            "script"
+        ]
+
+        document.getElementById('mainSearchBox').addEventListener('input', function () {
+
+            if (sitePageArr.includes(this.value) && (this.value == 'index' || this.value == 'home')) {
+                if (this.value == 'home') {
+
+                    location.href = "../index.html"
+                } else {
+
+                location.href = "../" + this.value + ".html"
+                }
+            }
+            else if (sitePageArr.includes(this.value)) {
+                location.href = "./" + this.value + ".html"
+
+            }
+        })
+
+
     </script>
 </body>
 
