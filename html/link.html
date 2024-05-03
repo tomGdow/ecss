@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>link</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="./css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="./css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="./css/ecss_nojs.css">
+    </noscript>
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="./body.html">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html">next</a>&nbsp;&nbsp;
+                        <a href="./search.html">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        <code>&lt;link href="main.css" rel="stylesheet"&gt;</code>
+                        <ol>
+                            <li>
+                                The HTML External Resource Link Element or &lt;link&gt; specifies the relationship
+                                between the current document and an external resource
+                            </li>
+                            <li>Usually, links to stylesheet but may also link to icons, such as favicon</li>
+                            <li>Key attributes:
+                                <ol type="a">
+                                    <li><code>href</code></li>
+                                    <li><code>rel</code></li>
+                                    <li><code>type</code></li>
+                                    <li><code>media</code></li>
+                                    <li><code>hreflang</code></li>
+                                    <li><code>sizes</code></li>
+                                    <li><code>title (!special)</code></li>
+                                </ol>
+                            </li>
+                            <li>Both <code>href</code> and <code>rel</code> <strong>are compulsory</strong></li>
+                            <li>May occur in <code>body</code> or <code>head</code> (stylesheet is 'body-OK') but not
+                                good practice to use in <code>body</code></li>
+                        </ol>
+
+                    </div>
+
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>
+                        &lt;link href="print.css" rel="stylesheet" media="print"&gt;
+                        </code>
+                    </div>
+
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>
+                        </code>
+                    </div>
+
+                    <h2>Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <div><code>href</code></div>
+                                <div>
+                                    The destination of the link(s) is given by the <code>href</code> attribute, which
+                                    must be present and must contain a valid non-empty URL
+                                </div>
+                                <div>The address of the resource is given by the <code>href</code> attribute</div>
+
+                            </li>
+                            <li>
+                                <div><code>rel</code></div>
+                                <div>A <code>link</code> element must have <code>rel</code> attribute</div>
+                                <div>The relationship between the document and the resource is given by the
+                                    <code>rel</code> attribute
+                                </div>
+                                <div>Other values for <code>rel</code> are <code>author</code>, <code>icon</code>,
+                                    <code>stylesheet</code>, <code>alternate</code>
+                                </div>
+                                <div><code>rel</code>is short for "relationship"</div>
+                            </li>
+                            <li>
+                                <div><code>type</code></div>
+                                <div>The <code>type</code> attribute gives the <code>MIME</code> type of the linked
+                                    resource </div>
+                                <div>It is purely advisory </div>
+                                <div>The value must be a valid <code>MIME</code> type</div>
+                            </li>
+                            <li>
+                                <div><code>media</code></div>
+                                <div>The optimum media for the resource is given by the <code>media</code> attribute
+                                </div>
+                                <div>The default is "all"</div>
+                                <div>If the link is a hyperlink then the <code>media</code> attribute is purely advisory
+                                </div>
+                                <div>If the link is an external resource link, then the <code>media</code> attribute is
+                                    prescriptive.
+                                </div>
+                                <div>Value must be a valid <code>media</code> query</div>
+                            </li>
+                            <li>
+                                <div><code>hreflang</code></div>
+                                The language of the resource is given by the <code>hreflang</code> attribute.
+                            </li>
+                            <li>
+                                <div><code>sizes</code></div>
+                                <div>Specifies icon size (<code>sizes="114x114"</code>)</div>
+                            </li>
+                            <li>
+                                <div><code>title</code></div>
+
+                                <div>Special semantic meaning in <code>link</code> tag </div>
+                                <div>Specifies a preferred or alternative stylesheet</div>
+                            </li>
+
+                        </ol>
+
+                    </div>
+
+                    <h2>Mnemonic</h2>
+                    <div class="content">
+
+                        <ol>
+                            <li>
+                                <code>anchor-area-base-link</code> all <code>href</code>
+                            </li>
+                            <li>
+                                Tim Benners-Lee: <code>a</code> is for anchor, <code>href</code> is for
+                                <strong>hypertext reference</strong>
+                            </li>
+                        </ol>
+
+                    </div>
+
+                    <h2>References</h2>
+                    <div class="content">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#the-link-element">W3C
+                            link</a>
+                    </div>
+                    <div class="content">
+
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link">MDN link</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets">MDN
+                            Alternate Stylesheets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var title = document.title;
+        document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
+        document.getElementById("pageTitle").innerHTML = title
+    </script>
+</body>
+
+</html>
