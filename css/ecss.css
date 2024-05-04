@@ -103,6 +103,14 @@ pre {
     font-size: 1rem;
 }
 
+li.nostyle {
+    list-style-type: none;
+  }
+
+  .space_above {
+    padding-top: 10px;
+  }
+
 @media screen and (min-width: 500px) {
 
     div.banner-item-2 {
