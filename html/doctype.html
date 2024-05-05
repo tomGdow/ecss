@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>DOCTYPE</title>
+    <title>[PAGE TITLE]</title>
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <meta name="keywords" content="css, html">
     <meta name="description" content="Notes on Fundamentals of HTML and CSS">
@@ -12,68 +12,96 @@
     <link rel="stylesheet" href="../css/ecss.css" title="Default">
     <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
     <noscript>
-        <link rel="stylesheet" href="../css/ecss_nojs.css">
+      <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="grid-container">
-            <div class="grid-item-1">
-                <div class="banner-container">
-                    <div class="banner-item-1">
-                        <a href="../index.html">
-                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
-                                alt="gravatar image of tomgdow">
-                        </a>
-                    </div>
-                </div>
-                <div class="banner-item-2">
-                    <span id="banner_part_first">html </span>
-                    <span class="primary-orange" id="banner_part_second"></span>
-                </div>
+      <div class="grid-container">
+        <div class="grid-item-1">
+          <div class="banner-container">
+            <div class="banner-item-1">
+              <a href="../index.html">
+                <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                     alt="gravatar image of tomgdow">
+              </a>
             </div>
-            <div class="grid-item-2"></div>
-            <div class="grid-item-3">
-                <div class="site-container">
-                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
-                    <div id="navbar"><a href="./html_file_structure.html">prev</a>&nbsp;&nbsp;
-                        <a href="../index.html">home</a>&nbsp;&nbsp;
-                        <a href="html.html">next</a>&nbsp;&nbsp;
-                        <a href="./search.html">search</a>
-                    </div>
-
-                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content">
-                        <code>&lt;!DOCTYPE html&gt;</code>
-                        <ol>
-                            <li>Case-insensitive</li>
-                            <li>Must come first in HTML document</li>
-                            <li>A DOCTYPE is a required preamble</li>
-                            <li>Stops browser from switching to "quirks mode"</li>
-                            <li>Not a HTML tag but an instruction to the browser about what version of HTML to use 
-                            <li>Including the DOCTYPE ensures that the browser
-                                makes a best-effort attempt at following specifications</li>
-                        </ol>
-
-                    </div>
-
-                    <h2>References</h2>
-                    <div class="content">
-                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/syntax.html#the-doctype">W3C doctype</a>
-                    </div>
-                    <div class="content">
-                        <a href="https://developer.mozilla.org/en-US/docs/Glossary/Doctype">MDN doctype</a>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="banner-item-2">
+            <span id="banner_part_first">html </span>
+            <span class="primary-orange" id="banner_part_second"></span>
+          </div>
         </div>
+        <div class="grid-item-2"></div>
+        <div class="grid-item-3">
+          <div class="site-container">
+            <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+
+
+            <div id="navbar">
+              <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
+              <a href="../index.html">home</a>&nbsp;&nbsp;
+              <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
+              <a href="./search.html">search</a>
+            </div>
+            <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+            <div class="content">
+              <code>&lt;!DOCTYPE html&gt;</code>
+              <ol>
+                <li>Case-insensitive</li>
+                <li>Must come first in HTML document</li>
+                <li>A DOCTYPE is a required preamble</li>
+                <li>Stops browser from switching to "quirks mode"</li>
+                <li>Not a HTML tag but an instruction to the browser about what version of HTML to use 
+                  <li>Including the DOCTYPE ensures that the browser
+                    makes a best-effort attempt at following specifications</li>
+              </ol>
+
+            </div>
+
+            <h2>References</h2>
+            <div class="content">
+              <a href="https://www.w3.org/TR/2011/WD-html5-20110405/syntax.html#the-doctype">W3C doctype</a>
+            </div>
+            <div class="content">
+              <a href="https://developer.mozilla.org/en-US/docs/Glossary/Doctype">MDN doctype</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  Templates -->
+
+      <template id="pageTitleTemplate">html#the-doctype</template> <!--PAGE TITLE-->
+
+      <template id="prevPageTemplate">html_file_structure</template> <!--PREVIOUS PAGE-->
+
+      <template id="nextPageTemplate">html</template><!--NEXT PAGE-->
     </div>
+
+
     <script>
-        var title = document.title
-        document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
-        document.getElementById("pageTitle").innerHTML = title
+
+      //page title
+      var pageTitleText = pageTitleTemplate.innerHTML;
+      document.title = pageTitleText;
+      banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+      pageTitle.innerHTML = pageTitleText;
+
+
+      // previous page
+      var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+      prevPage.setAttribute("href", prevPageURL)
+      // console.log(prevPageTemplate.innerHTML)
+
+      // next page
+      var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+      nextPage.setAttribute("href", nextPageURL)
+
     </script>
-</body>
+
+
+  </body>
 
 </html>

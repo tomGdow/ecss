@@ -76,30 +76,28 @@
     <template id="pageTitleTemplate">body</template> <!--PAGE TITLE-->
 
     <template id="prevPageTemplate">title</template> <!--PREVIOUS PAGE-->
-    
+
     <template id="nextPageTemplate">link</template><!--NEXT PAGE-->
 
+   <script>
 
-    </div>
-    <script>
-        
         //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-    
+
 
         // previous page
-        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
         // console.log(prevPageTemplate.innerHTML)
 
         // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
     </script>
 </body>
-</html>
 
+</html>
