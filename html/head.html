@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <title>head</title>
     <meta name="viewport" content="width=device-width initial-scale=1.0">
@@ -12,82 +12,106 @@
     <link rel="stylesheet" href="../css/ecss.css" title="Default">
     <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
     <noscript>
-        <link rel="stylesheet" href="../css/ecss_nojs.css">
+      <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="grid-container">
-            <div class="grid-item-1">
-                <div class="banner-container">
-                    <div class="banner-item-1">
-                        <a href="../index.html">
-                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
-                                alt="gravatar image of tomgdow">
-                        </a>
-                    </div>
-                </div>
-                <div class="banner-item-2">
-                    <span id="banner_part_first">html </span>
-                    <span class="primary-orange" id="banner_part_second"></span>
-                </div>
+      <div class="grid-container">
+        <div class="grid-item-1">
+          <div class="banner-container">
+            <div class="banner-item-1">
+              <a href="../index.html">
+                <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                     alt="gravatar image of tomgdow">
+              </a>
             </div>
-            <div class="grid-item-2"></div>
-            <div class="grid-item-3">
-                <div class="site-container">
-                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
-                    <div id="navbar">
-                        <a href="./html.html">prev</a>&nbsp;&nbsp;
-                        <a href="../index.html">home</a>&nbsp;&nbsp;
-                        <a href="title.html">next</a>&nbsp;&nbsp;
-                        <a href="./search.html">search</a>
-                    </div>
+          </div>
+          <div class="banner-item-2">
+            <span id="banner_part_first">html </span>
+            <span class="primary-orange" id="banner_part_second"></span>
+          </div>
+        </div>
+        <div class="grid-item-2"></div>
+        <div class="grid-item-3">
+          <div class="site-container">
+            <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
 
-                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content">
-                       <pre>
+            <div id="navbar">
+              <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
+              <a href="../index.html">home</a>&nbsp;&nbsp;
+              <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
+              <a href="./search.html">search</a>
+            </div>
+            <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+            <div class="content">
+              <pre>
     &lt;head&gt;
         &lt;title&gt;Document&lt;/title&gt;
     &lt;/head&gt;
-                       </pre>
-                        <ol>
-                            <li>The <code>head</code> element represents a collection of metadata for the document </li>
-                            <li>
-                                One or more elements of metadata content, of which exactly one is a <code>title</code>
-                                element is required in almost all cases.
-                            </li>
-                            <li>
-                                HTML5-compliant browsers automatically create a <code>head</code> element if its tags are omitted in the markup
-                            </li>
-                            <li>
-                                If the document is an <code>iframe</code> <code>srcdoc</code> document or if <code>title</code> information is available from a
-                                higher-level protocol (such as email), <code>head</code>may contain zero or more elements of metadata content (W3C)
-                            </li>
-                            <li>
-                                The <code>title</code> element is a required child in most situations, 
-                                but when a higher-level protocol provides title information, 
-                                e.g. in the Subject line of an e-mail when HTML is used as an e-mail authoring format, 
-                                the <code>title</code> element can be omitted.
+              </pre>
+              <ol>
+                <li>The <code>head</code> element represents a collection of metadata for the document </li>
+                <li>
+                  One or more elements of metadata content, of which exactly one is a <code>title</code>
+                  element is required in almost all cases.
+                </li>
+                <li>
+                  HTML5-compliant browsers automatically create a <code>head</code> element if its tags are omitted in the markup
+                </li>
+                <li>
+                  If the document is an <code>iframe</code> <code>srcdoc</code> document or if <code>title</code> information is available from a
+                  higher-level protocol (such as email), <code>head</code>may contain zero or more elements of metadata content (W3C)
+                </li>
+                <li>
+                  The <code>title</code> element is a required child in most situations, 
+                  but when a higher-level protocol provides title information, 
+                  e.g. in the Subject line of an e-mail when HTML is used as an e-mail authoring format, 
+                  the <code>title</code> element can be omitted.
 
-                            </li>
-                        </ol>
+                </li>
+              </ol>
 
-                    </div>
-
-                    <h2>References</h2>
-                    <div class="content">
-                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#the-head-element-0">W3C head</a>
-                    </div>
-                </div>
             </div>
+
+            <h2>References</h2>
+            <div class="content">
+              <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#the-head-element-0">W3C head</a>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!--  Templates -->
+
+
+      <template id="prevPageTemplate">html</template> <!--PREVIOUS PAGE-->
+
+      <template id="pageTitleTemplate">head</template> <!--PAGE TITLE-->
+
+      <template id="nextPageTemplate">title</template><!--NEXT PAGE-->
     </div>
+
     <script>
-        var title = document.title;
-        document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
-        document.getElementById("pageTitle").innerHTML = title;
+
+      //page title
+      var pageTitleText = pageTitleTemplate.innerHTML;
+      document.title = pageTitleText;
+      banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+      pageTitle.innerHTML = pageTitleText;
+
+
+      // previous page
+      var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+      prevPage.setAttribute("href", prevPageURL)
+      // console.log(prevPageTemplate.innerHTML)
+
+      // next page
+      var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+      nextPage.setAttribute("href", nextPageURL)
+
     </script>
-</body>
+  </body>
 
 </html>
