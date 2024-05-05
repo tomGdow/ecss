@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MIME</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="./link.html">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html">next</a>&nbsp;&nbsp;
+                        <a href="./search.html">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                Multipurpose Internet Mail Extension
+                            </li>
+                            <li>
+                                Indicates the nature and format of a document
+                            </li>
+                        </ol>
+                    </div>
+
+                    <h2>Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>type/subtype</code>
+                            </li>
+                            <li>
+                                <code>type/subtype;parameter=value</code>;
+                            </li>
+                            <li>
+                                <code>type</code> is general category
+                            </li>
+                            <li>
+                                <code>subtype</code> is exact type of data
+                            </li>
+                        </ol>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>text/html</code>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>text/plain;charset=UTF-8</code>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>video/mp4</code>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>audio/mpeg     // mp3</code>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>image/png</code>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>image/gif</code>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>image/svg+xml</code>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>video/quicktime   //mov 
+                        </code>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content"><code>application/pdf
+                        </code>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>application/msword    // Word</code>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>audio/x-wav    // wav</code>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>application/octet-stream     // generic binary data</code>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>&lt;form action="http://localhost:8000/" method="post" enctype="multipart/form-data"&gt;</code>
+                    </div>
+
+                    <h2>References</h2>
+                    <div class="content"><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types">MDN
+                            Common MIME types</a></div>
+                    <div class="content"><a
+                            href="https://stackoverflow.com/questions/9929940/correct-mime-type-for-mp4/10453505#10453505">
+                            Good Stack Overflow reference</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var title = document.title;
+        document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
+        document.getElementById("pageTitle").innerHTML = title
+    </script>
+</body>
+
+</html>
