@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>title</title>
+    <title>[PAGE TITLE]</title>
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <meta name="keywords" content="css, html">
     <meta name="description" content="Notes on Fundamentals of HTML and CSS">
@@ -12,83 +12,104 @@
     <link rel="stylesheet" href="../css/ecss.css" title="Default">
     <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
     <noscript>
-        <link rel="stylesheet" href="../css/ecss_nojs.css">
+      <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="grid-container">
-            <div class="grid-item-1">
-                <div class="banner-container">
-                    <div class="banner-item-1">
-                        <a href="../index.html">
-                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
-                                alt="gravatar image of tomgdow">
-                        </a>
-                    </div>
-                </div>
-                <div class="banner-item-2">
-                    <span id="banner_part_first">html </span>
-                    <span class="primary-orange" id="banner_part_second"></span>
-                </div>
+      <div class="grid-container">
+        <div class="grid-item-1">
+          <div class="banner-container">
+            <div class="banner-item-1">
+              <a href="../index.html">
+                <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                     alt="gravatar image of tomgdow">
+              </a>
             </div>
-            <div class="grid-item-2"></div>
-            <div class="grid-item-3">
-                <div class="site-container">
-                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
-                    <div id="navbar">
-                        <a href="./head.html">prev</a>&nbsp;&nbsp;
-                        <a href="../index.html">home</a>&nbsp;&nbsp;
-                        <a href="./body.html">next</a>&nbsp;&nbsp;
-                        <a href="./search.html">search</a>
-                    </div>
-
-                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content">
-                        <code>
-                            &lt;title>Doc title&lt;/title>
-                        </code>
-                        <ol>
-                            <li>
-                                The <code>title</code> element represents the document's title or name.
-                            </li>
-                            <li>
-                                There must be no more than one <code>title</code> element per document.
-                            </li>
-                            <li>
-                                The <code>title</code> element is a required child in most situations,
-                                but when a higher-level protocol provides title information (eg e-mail), it can be
-                                omitted.
-                            </li>
-                            <li>
-                                The <code>title</code> tag is an <strong>escapable raw text</strong> (type 4) HTML element
-                                (<code>textarea</code> is another)
-                            </li>
-                            <li>
-                                
-                                <code>document.title</code> provides scripts with access to a document's
-                                <code>body</code> element.
-                            </li>
-
-                        </ol>
-
-                    </div>
-
-                    <h2>References</h2>
-                    <div class="content">
-                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#the-title-element-0">W3C
-                            title</a>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="banner-item-2">
+            <span id="banner_part_first">html </span>
+            <span class="primary-orange" id="banner_part_second"></span>
+          </div>
         </div>
+        <div class="grid-item-2"></div>
+        <div class="grid-item-3">
+          <div class="site-container">
+            <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+
+            <div id="navbar">
+              <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
+              <a href="../index.html">home</a>&nbsp;&nbsp;
+              <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
+              <a href="./search.html">search</a>
+            </div>
+            <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+            <div class="content">
+              <code>
+                &lt;title>Doc title&lt;/title>
+              </code>
+              <ol>
+                <li>
+                  The <code>title</code> element represents the document's title or name.
+                </li>
+                <li>
+                  There must be no more than one <code>title</code> element per document.
+                </li>
+                <li>
+                  The <code>title</code> element is a required child in most situations,
+                  but when a higher-level protocol provides title information (eg e-mail), it can be
+                  omitted.
+                </li>
+                <li>
+                  The <code>title</code> tag is an <strong>escapable raw text</strong> (type 4) HTML element
+                  (<code>textarea</code> is another)
+                </li>
+                <li>
+
+                  <code>document.title</code> provides scripts with access to a document's
+                  <code>body</code> element.
+                </li>
+
+              </ol>
+
+            </div>
+
+            <h2>References</h2>
+            <div class="content">
+              <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#the-title-element-0">W3C
+                title</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  Templates -->
+      <template id="prevPageTemplate">head</template> <!--PREVIOUS PAGE-->
+
+      <template id="pageTitleTemplate">title</template> <!--PAGE TITLE-->
+
+      <template id="nextPageTemplate">body</template><!--NEXT PAGE-->
     </div>
+
     <script>
-        var title = document.title;
-        document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
-        document.getElementById("pageTitle").innerHTML = title
+
+      //page title
+      var pageTitleText = pageTitleTemplate.innerHTML;
+      document.title = pageTitleText;
+      banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+      pageTitle.innerHTML = pageTitleText;
+
+
+      // previous page
+      var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+      prevPage.setAttribute("href", prevPageURL)
+
+      // next page
+      var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+      nextPage.setAttribute("href", nextPageURL)
+
     </script>
-</body>
+  </body>
 
 </html>
