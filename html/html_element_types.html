@@ -38,9 +38,9 @@
                 <div class="site-container">
                     <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
                     <div id="navbar">
-                        <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
+                        <a href="./mime.html">prev</a>&nbsp;&nbsp;
                         <a href="../index.html">home</a>&nbsp;&nbsp;
-                        <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
+                        <a href="NEXT.html">next</a>&nbsp;&nbsp;
                         <a href="./search.html">search</a>
                     </div>
 
@@ -61,35 +61,11 @@
                 </div>
             </div>
         </div>
-
-    <!--  Templates -->
-
-    <template id="pageTitleTemplate">myTitle</template> <!--PAGE TITLE-->
-
-    <template id="prevPageTemplate">index</template> <!--PREVIOUS PAGE-->
-    
-    <template id="nextPageTemplate">index</template><!--NEXT PAGE-->
-
-
     </div>
     <script>
-        
-        //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
-        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
-        pageTitle.innerHTML = pageTitleText;
-    
-
-        // previous page
-        var prevPageURL= "../" + prevPageTemplate.innerHTML + ".html"
-        prevPage.setAttribute("href", prevPageURL)
-        // console.log(prevPageTemplate.innerHTML)
-
-        // next page
-        var nextPageURL= "../" + nextPageTemplate.innerHTML + ".html"
-        nextPage.setAttribute("href", nextPageURL)
-
+        var title = document.title;
+        document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
+        document.getElementById("pageTitle").innerHTML = title
     </script>
 </body>
 
