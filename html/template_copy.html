@@ -38,68 +38,35 @@
                 <div class="site-container">
                     <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
                     <div id="navbar">
-                        <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
+                        <a href="PREV.html">prev</a>&nbsp;&nbsp;
                         <a href="../index.html">home</a>&nbsp;&nbsp;
-                        <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
+                        <a href="NEXT.html">next</a>&nbsp;&nbsp;
                         <a href="./search.html">search</a>
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content">
-                        &lt;body&gt;&lt;/body&gt;
-                        <ol>
-                            <li>
-                                The <code>body</code> element represents the main content of the document.
-                            </li>
-                            <li>
-                                In conforming documents, there is only one <code>body</code> element.
-                            </li>
-                            <li>
-                                <code>document.body</code> provides scripts with access to a document's
-                                <code>body</code> element.
-                            </li>
-                        </ol>
-                    </div>
+                    <div class="content"></div>
+
+                    <h2>Example</h2>
+                    <div class="content"></div>
+
+                    <h2>Notes</h2>
+                    <div class="content"></div>
+
+                    <h2>Mnemonic</h2>
+                    <div class="content"></div>
 
                     <h2>References</h2>
-                    <div class="content">
-                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/sections.html#the-body-element-0">W3C
-                            body</a>
-                    </div>
+                    <div class="content"></div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!--  Templates -->
-
-    <template id="pageTitleTemplate">body</template> <!--PAGE TITLE-->
-
-    <template id="prevPageTemplate">title</template> <!--PREVIOUS PAGE-->
-    
-    <template id="nextPageTemplate">link</template><!--NEXT PAGE-->
-
-
-    </div>
     <script>
-        
-        //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
-        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
-        pageTitle.innerHTML = pageTitleText;
-    
-
-        // previous page
-        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
-        prevPage.setAttribute("href", prevPageURL)
-        // console.log(prevPageTemplate.innerHTML)
-
-        // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
-        nextPage.setAttribute("href", nextPageURL)
-
+        var title = document.title;
+        document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
+        document.getElementById("pageTitle").innerHTML = title
     </script>
 </body>
-</html>
 
+</html>
