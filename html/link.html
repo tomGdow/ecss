@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>link</title>
+    <title>[PAGE TITLE]</title>
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <meta name="keywords" content="css, html">
     <meta name="description" content="Notes on Fundamentals of HTML and CSS">
@@ -12,292 +12,313 @@
     <link rel="stylesheet" href="../css/ecss.css" title="Default">
     <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
     <noscript>
-        <link rel="stylesheet" href="../css/ecss_nojs.css">
+      <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="grid-container">
-            <div class="grid-item-1">
-                <div class="banner-container">
-                    <div class="banner-item-1">
-                        <a href="../index.html">
-                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
-                                alt="gravatar image of tomgdow">
-                        </a>
-                    </div>
-                </div>
-                <div class="banner-item-2">
-                    <span id="banner_part_first">html </span>
-                    <span class="primary-orange" id="banner_part_second"></span>
-                </div>
+      <div class="grid-container">
+        <div class="grid-item-1">
+          <div class="banner-container">
+            <div class="banner-item-1">
+              <a href="../index.html">
+                <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                     alt="gravatar image of tomgdow">
+              </a>
             </div>
-            <div class="grid-item-2"></div>
-            <div class="grid-item-3">
-                <div class="site-container">
-                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
-                    <div id="navbar">
-                        <a href="./body.html">prev</a>&nbsp;&nbsp;
-                        <a href="../index.html">home</a>&nbsp;&nbsp;
-                        <a href="./mime.html">next</a>&nbsp;&nbsp;
-                        <a href="./search.html">search</a>
-                    </div>
+          </div>
+          <div class="banner-item-2">
+            <span id="banner_part_first">html </span>
+            <span class="primary-orange" id="banner_part_second"></span>
+          </div>
+        </div>
+        <div class="grid-item-2"></div>
+        <div class="grid-item-3">
+          <div class="site-container">
+            <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
 
-                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content">
-                        <code>&lt;link href="main.css" rel="stylesheet"&gt;</code>
-                        <ol>
-                            <li>
-                                The HTML external resource <code>link</code> specifies the relationship
-                                between the current document and an external resource
-                            </li>
-                            <li>Usually, links to stylesheet but may also link to icons, such as favicon</li>
-                            <li>Both <code>href</code> and <code>rel</code> attributes <strong>are compulsory</strong>
-                            </li>
-                            <li>May occur in <code>body</code> or <code>head</code> (stylesheet is 'body-OK') but not
-                                good practice to use in <code>body</code></li>
-                        </ol>
+            <div id="navbar">
+              <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
+              <a href="../index.html">home</a>&nbsp;&nbsp;
+              <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
+              <a href="./search.html">search</a>
+            </div>
+            <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+            <div class="content">
+              <code>&lt;link href="main.css" rel="stylesheet"&gt;</code>
+              <ol>
+                <li>
+                  The HTML external resource <code>link</code> specifies the relationship
+                  between the current document and an external resource
+                </li>
+                <li>Usually, links to stylesheet but may also link to icons, such as favicon</li>
+                <li>Both <code>href</code> and <code>rel</code> attributes <strong>are compulsory</strong>
+                </li>
+                <li>May occur in <code>body</code> or <code>head</code> (stylesheet is 'body-OK') but not
+                  good practice to use in <code>body</code></li>
+              </ol>
 
-                    </div>
+            </div>
 
-                    <h2>Notes</h2>
-                    <div class="content">
-                        <ol>
-                            <li>
-                                <div><code>href</code></div>
-                                <ol>
-                                    <li>
-                                        The destination of the link(s) is given by the <code>href</code> attribute,
-                                        which
-                                        must be present and must contain a valid non-empty URL
-                                    </li>
-                                    <li>The address of the resource is given by the <code>href</code> attribute</li>
-                                </ol>
-                            </li>
-                            <li>
-                                <div class="space_above"><code>rel</code></div>
-                                <ol>
-                                    <li>
-                                        A <code>link</code> element must have <code>rel</code> attribute
-                                    </li>
-                                    <li>
-                                        The relationship between the document and the resource is given by the
-                                        <code>rel</code> attribute
-                                    </li>
-                                    <li>
-                                        Other values for <code>rel</code> are <code>author</code>, <code>icon</code>,
-                                        <code>stylesheet</code>, <code>alternate</code>
-                                    </li>
-                                    <li>
+            <h2>Notes</h2>
+            <div class="content">
+              <ol>
+                <li>
+                  <div><code>href</code></div>
+                  <ol>
+                    <li>
+                      The destination of the link(s) is given by the <code>href</code> attribute,
+                      which
+                      must be present and must contain a valid non-empty URL
+                    </li>
+                    <li>The address of the resource is given by the <code>href</code> attribute</li>
+                  </ol>
+                </li>
+                <li>
+                  <div class="space_above"><code>rel</code></div>
+                  <ol>
+                    <li>
+                      A <code>link</code> element must have <code>rel</code> attribute
+                    </li>
+                    <li>
+                      The relationship between the document and the resource is given by the
+                      <code>rel</code> attribute
+                    </li>
+                    <li>
+                      Other values for <code>rel</code> are <code>author</code>, <code>icon</code>,
+                      <code>stylesheet</code>, <code>alternate</code>
+                    </li>
+                    <li>
 
-                                        Use <code>rel="stylesheet"</code> to link to the default style, and
-                                        <code>rel="alternate stylesheet"</code> to link to alternative style sheets
-                                    </li>
-                                    <li>
-                                        <code>rel</code> is short for "relationship"
-                                    </li>
-                                </ol>
-                            </li>
-                            <li>
-                                <div class="space_above"><code>type</code></div>
-                                <ol>
-                                    <li>
-                                        The <code>type</code> attribute gives the <code>MIME</code> type of the linked
-                                        resource
-                                    </li>
-                                    <li>It is purely advisory</li>
-                                    <li>The value must be a valid <code>MIME</code> type (<code>type="image/png"</code>)
-                                    </li>
-                                </ol>
-                            </li>
-                            <li>
-                                <div class="space_above"><code>media</code></div>
-                                <ol>
-                                    <li>
-                                        The optimum media for the resource is given by the <code>media</code> attribute
-                                    </li>
-                                    <li>
-                                        The default is "all"
-                                    </li>
-                                    <li>
-                                        If the link is a hyperlink then the <code>media</code> attribute is purely
-                                        advisory
-                                    </li>
-                                    <li>
-                                        If the link is an external resource link, then the <code>media</code> attribute
-                                        is
-                                        prescriptive.
-                                    </li>
-                                    <li>
-                                        Value must be a valid <code>media</code> query
-                                    </li>
-                                </ol>
-                            </li>
-                            <li>
-                                <div class="space_above"><code>hreflang</code></div>
-                                <ol>
-                                    <li class="nostyle">
-                                        The language of the resource is given by the <code>hreflang</code> attribute.
-                                    </li>
-                                </ol>
-                            </li>
-                            <li>
-                                <div><code>sizes</code></div>
-                                <ol>
-                                    <li class="nostyle">
-                                        Specifies icon size (<code>sizes="114x114"</code>)
-                                    </li>
-                                </ol>
-                            </li>
-                            <li>
-                                <div><code>title</code></div>
-                                <ol>
-                                    <li>
-                                        Special semantic meaning in <code>link</code> tag
-                                    </li>
-                                    <li>
-                                        Specifies a preferred or alternative stylesheet
-                                    </li>
-                                    <li>
-                                        Style sheets linked with the same <code>title</code> are part of the same
-                                        choice.
-                                    </li>
-                                    <li>
-                                        Style sheets linked without a <code>title</code> attribute are always applied.
-                                    </li>
-                                </ol>
-                            </li>
-                            <li>
-                                <div class="space_above"><code>disabled</code></div>
-                                <ol>
-                                    <li class="nostyle">For <code>rel="stylesheet"</code> only</li>
-                                </ol>
-                            </li>
-                            <li>
-                                <div class="space_above"><code>preload</code></div>
-                                <ol>
-                                    <li class="nostyle">If <code>rel="preload"</code> then may use <code>as</code>
-                                        attribute</li>
-                                </ol>
-                            </li>
-                            <li>
-                                <div class="space_above"><code>as</code></div>
-                                <ol>
-                                    <li>Specifies the type of content being loaded by the
-                                        <code>link</code> </li>
-                                    <li>For example, <code>as="audio"</code></li>
-                            </li>
-                        </ol>
-                        </li>
-                        </ol>
-                        <div>Types of Stylesheet</div>
-                        <ol>
-                            <li>
-                                <div><strong>Persistent</strong></div>
-                                <ol>
-                                    <li>Has <code>rel="stylesheet"</code></li>
-                                    <li>NO <code>title=""</code></li>
-                                    <li>Always applies to the document</li>
-                                </ol>
+                      Use <code>rel="stylesheet"</code> to link to the default style, and
+                      <code>rel="alternate stylesheet"</code> to link to alternative style sheets
+                    </li>
+                    <li>
+                      <code>rel</code> is short for "relationship"
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  <div class="space_above"><code>type</code></div>
+                  <ol>
+                    <li>
+                      The <code>type</code> attribute gives the <code>MIME</code> type of the linked
+                      resource
+                    </li>
+                    <li>It is purely advisory</li>
+                    <li>The value must be a valid <code>MIME</code> type (<code>type="image/png"</code>)
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  <div class="space_above"><code>media</code></div>
+                  <ol>
+                    <li>
+                      The optimum media for the resource is given by the <code>media</code> attribute
+                    </li>
+                    <li>
+                      The default is "all"
+                    </li>
+                    <li>
+                      If the link is a hyperlink then the <code>media</code> attribute is purely
+                      advisory
+                    </li>
+                    <li>
+                      If the link is an external resource link, then the <code>media</code> attribute
+                      is
+                      prescriptive.
+                    </li>
+                    <li>
+                      Value must be a valid <code>media</code> query
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  <div class="space_above"><code>hreflang</code></div>
+                  <ol>
+                    <li class="nostyle">
+                      The language of the resource is given by the <code>hreflang</code> attribute.
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  <div><code>sizes</code></div>
+                  <ol>
+                    <li class="nostyle">
+                      Specifies icon size (<code>sizes="114x114"</code>)
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  <div><code>title</code></div>
+                  <ol>
+                    <li>
+                      Special semantic meaning in <code>link</code> tag
+                    </li>
+                    <li>
+                      Specifies a preferred or alternative stylesheet
+                    </li>
+                    <li>
+                      Style sheets linked with the same <code>title</code> are part of the same
+                      choice.
+                    </li>
+                    <li>
+                      Style sheets linked without a <code>title</code> attribute are always applied.
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  <div class="space_above"><code>disabled</code></div>
+                  <ol>
+                    <li class="nostyle">For <code>rel="stylesheet"</code> only</li>
+                  </ol>
+                </li>
+                <li>
+                  <div class="space_above"><code>preload</code></div>
+                  <ol>
+                    <li class="nostyle">If <code>rel="preload"</code> then may use <code>as</code>
+                      attribute</li>
+                  </ol>
+                </li>
+                <li>
+                  <div class="space_above"><code>as</code></div>
+                  <ol>
+                    <li>Specifies the type of content being loaded by the
+                      <code>link</code> </li>
+                    <li>For example, <code>as="audio"</code></li>
+                </li>
+                  </ol>
+                  </li>
+              </ol>
+              <div>Types of Stylesheet</div>
+              <ol>
+                <li>
+                  <div><strong>Persistent</strong></div>
+                  <ol>
+                    <li>Has <code>rel="stylesheet"</code></li>
+                    <li>NO <code>title=""</code></li>
+                    <li>Always applies to the document</li>
+                  </ol>
 
-                            </li>
-                            <li>
-                                <div class="space_above"><strong>Preferred</strong></div>
-                                <ol>
-                                    <li>Has <code>rel="stylesheet"</code></li>
-                                    <li>Specified <code>title=" "</code></li>
-                                    <li>Applied by default</li>
-                                    <li>Disabled if an alternate stylesheet is selected</li>
-                                    <li>There can only be one preferred stylesheet</li>
-                                </ol>
-                            </li>
-                            <li>
-                                <div class="space_above"><strong>Alternate</strong></div>
-                                <ol>
-                                    <li>Has <code>rel="alternate stylesheet"</code></li>
-                                    <li>Disabled by default</li>
-                                    <li>Can be selected from <code>View->Page View</code> but only works
-                                        on Firefox, it would seem!</li>
-                                </ol>
+                </li>
+                <li>
+                  <div class="space_above"><strong>Preferred</strong></div>
+                  <ol>
+                    <li>Has <code>rel="stylesheet"</code></li>
+                    <li>Specified <code>title=" "</code></li>
+                    <li>Applied by default</li>
+                    <li>Disabled if an alternate stylesheet is selected</li>
+                    <li>There can only be one preferred stylesheet</li>
+                  </ol>
+                </li>
+                <li>
+                  <div class="space_above"><strong>Alternate</strong></div>
+                  <ol>
+                    <li>Has <code>rel="alternate stylesheet"</code></li>
+                    <li>Disabled by default</li>
+                    <li>Can be selected from <code>View->Page View</code> but only works
+                      on Firefox, it would seem!</li>
+                  </ol>
 
-                            </li>
-                        </ol>
-                    </div>
-                    <h2>Example</h2>
-                    <div class="content">
-                        <code>
-                        &lt;link href="print.css" rel="stylesheet" media="print"&gt;
-                        </code>
-                    </div>
+                </li>
+              </ol>
+            </div>
+            <h2>Example</h2>
+            <div class="content">
+              <code>
+                &lt;link href="print.css" rel="stylesheet" media="print"&gt;
+              </code>
+            </div>
 
-                    <h2>Example</h2>
-                    <div class="content">
-                        <pre>
+            <h2>Example</h2>
+            <div class="content">
+              <pre>
  &lt;link href="default.css" rel="stylesheet" title="Default Style" /&gt;
  &lt;link href="fancy.css" rel="alternate stylesheet" title="Fancy" /&gt;</pre>
-                    </div>
-
-                    <h2>Example</h2>
-                    <div class="content">
-                        <code>
-                            &lt;link href="mobile.css" rel="stylesheet" media="screen and (max-width: 600px)"&gt;
-                        </code>
-                    </div>
-
-                    <h2>Example</h2>
-                    <div class="content">
-                        <code>
-                            &lt;link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-icon-114.png" type="image/png"&gt;
-                        </code>
-                    </div>
-                    <h2>Example</h2>
-                    <div class="content">
-                        <code>
-                        &lt;link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico"&gt;
-                        </code>
-                    </div>
-                    <h2>example</h2>
-                    <div class="content">
-                        <code>
-                            &lt;link rel="preload" as="font" type="font/woff2" href="your-font.woff2"&gt;
-                        </code>
-                    </div>
-
-                    <h2>Mnemonic</h2>
-                    <div class="content">
-                        <ol>
-                            <li>
-                                <code>anchor-area-base-link</code> all <code>href</code>
-                            </li>
-                            <li>
-                                Tim Benners-Lee: <code>a</code> is for anchor, <code>href</code> is for
-                                <strong>hypertext reference</strong>
-                            </li>
-                        </ol>
-                    </div>
-
-                    <h2>References</h2>
-                    <div class="content">
-                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#the-link-element">W3C
-                            link</a>
-                    </div>
-                    <div class="content">
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link">MDN link</a>
-                    </div>
-                    <div class="content">
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets">MDN
-                            Alternate Stylesheets</a>
-                    </div>
-                </div>
             </div>
+
+            <h2>Example</h2>
+            <div class="content">
+              <code>
+                &lt;link href="mobile.css" rel="stylesheet" media="screen and (max-width: 600px)"&gt;
+              </code>
+            </div>
+
+            <h2>Example</h2>
+            <div class="content">
+              <code>
+                &lt;link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-icon-114.png" type="image/png"&gt;
+              </code>
+            </div>
+            <h2>Example</h2>
+            <div class="content">
+              <code>
+                &lt;link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico"&gt;
+              </code>
+            </div>
+            <h2>example</h2>
+            <div class="content">
+              <code>
+                &lt;link rel="preload" as="font" type="font/woff2" href="your-font.woff2"&gt;
+              </code>
+            </div>
+
+            <h2>Mnemonic</h2>
+            <div class="content">
+              <ol>
+                <li>
+                  <code>anchor-area-base-link</code> all <code>href</code>
+                </li>
+                <li>
+                  Tim Benners-Lee: <code>a</code> is for anchor, <code>href</code> is for
+                  <strong>hypertext reference</strong>
+                </li>
+              </ol>
+            </div>
+
+            <h2>References</h2>
+            <div class="content">
+              <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#the-link-element">W3C
+                link</a>
+            </div>
+            <div class="content">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link">MDN link</a>
+            </div>
+            <div class="content">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets">MDN
+                Alternate Stylesheets</a>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!--  Templates -->
+      <template id="prevPageTemplate">body</template> <!--PREVIOUS PAGE-->
+
+      <template id="pageTitleTemplate">link</template> <!--PAGE TITLE-->
+
+      <template id="nextPageTemplate">mime</template><!--NEXT PAGE-->
     </div>
+
     <script>
-        var title = document.title;
-        document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
-        document.getElementById("pageTitle").innerHTML = title
+
+      //page title
+      var pageTitleText = pageTitleTemplate.innerHTML;
+      document.title = pageTitleText;
+      banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+      pageTitle.innerHTML = pageTitleText;
+
+
+      // previous page
+      var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+      prevPage.setAttribute("href", prevPageURL)
+
+      // next page
+      var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+      nextPage.setAttribute("href", nextPageURL)
+
     </script>
-</body>
+  </body>
 
 </html>
