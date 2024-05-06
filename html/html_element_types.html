@@ -37,35 +37,151 @@
             <div class="grid-item-3">
                 <div class="site-container">
                     <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+
                     <div id="navbar">
-                        <a href="./mime.html">prev</a>&nbsp;&nbsp;
+                        <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
                         <a href="../index.html">home</a>&nbsp;&nbsp;
-                        <a href="NEXT.html">next</a>&nbsp;&nbsp;
+                        <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
                         <a href="./search.html">search</a>
                     </div>
-
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        There are six types of HTML elements
+                        <ol>
+                            <li><code>void</code></li>
+                            <li><code>template</code></li>
+                            <li><code>raw text</code></li>
+                            <li><code>escapable raw text</code></li>
+                            <li><code>foreign</code></li>
+                            <li><code>normal</code></li>
+                        </ol>
+                    </div>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                    <h2>Syntax</h2>
+                    <div class="content">
+                        <ol>
+                            <li><code>&lt;el attr="attr" &gt;</code></li>
+                            <li><code>&lt;el attr="attr" /&gt;</code></li>
+                        </ol>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div>
+                        </div>
+                        <h2>Notes</h2>
+                        <div class="content">
+                        <ol>
+                            <li>
+                                <strong>void</strong>
+                                <ol>
+                                    <li><code>area</code></li>
+                                    <li><code>base</code></li>
+                                    <li><code>br</code></li>
+                                    <li><code>col</code></li>
+                                    <li><code>embed</code></li>
+                                    <li><code>hr</code></li>
+                                    <li><code><strong>img</strong></code></li>
+                                    <li><code><strong>input</strong></code></li>
+                                    <li><code><strong>link</strong></code></li>
+                                    <li><code><strong>meta</strong></code></li>
+                                    <li><code>source</code></li>
+                                    <li><code>tracks</code></li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <strong>template</strong>
+                                <ol>
+                                    <li class="nostyle"><code>template</code></li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <strong>raw text</strong>
+
+                                <ol>
+                                    <li><code>script</code></li>
+                                    <li><code>style</code></li>
+                                    <li class="nostyle"> Raw text elements can have text, though it has restrictions
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <strong>escapable raw text</strong>
+                                <ol>
+                                    <li><code>title</code></li>
+                                    <li><code>textarea</code></li>
+                                    <li class="nostyle">Escapable raw text elements can have text and character references (HTML entities) </li>
+                                    <li class="nostyle">The text must not contain an ambiguous ampersand</li>
+                                    <li class="nostyle">(There are also further restrictions)</li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><strong>foreign</strong>
+                                <ol>
+                                    <li class="nostyle">
+                                        Elements from <code>MathMl</code> namespace and <code>SVG</code> namespace
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <strong>normal</strong>
+                                <ol>
+                                    <li>
+                                        Normal elements can have text, character references, other elements, and
+                                        comments
+                                    </li>
+                                    <li>
+                                        The text must not contain the character <code>U+003C</code> less-than sign
+                                        (&lt;) or an ambiguous ampersand.
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
 
                     <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        Four to remember <code>img</code> <code>input</code> <code>link</code> <code>meta</code>
+                    </div>
+                    <div class="content"><code>void iilm</code></div>
 
                     <h2>References</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <a href="https://stackoverflow.com/q/7366344/499167">
+                            Do we still need forward slashes when closing void elements in HTML5? (SO)
+                        </a>
+                    </div>
+                    <div class="content">
+                        <a href="https://html.spec.whatwg.org/multipage/syntax.html#elements-2">
+                            WHATWG html elements</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://html.spec.whatwg.org/multipage/syntax.html#syntax-charref">Whatwg character reference</a>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!--  Templates -->
+        <template id="prevPageTemplate">mime</template> <!--PREVIOUS PAGE-->
+
+        <template id="pageTitleTemplate">Element Types</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">index</template><!--NEXT PAGE-->
     </div>
+
     <script>
-        var title = document.title;
-        document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
-        document.getElementById("pageTitle").innerHTML = title
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
     </script>
 </body>
 
