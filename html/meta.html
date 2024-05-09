@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
+                        <a href="./search.html">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        The <code>meta</code> element represents various kinds of metadata that cannot be expressed
+                        using the <code>title</code>, <code>base</code>, <code>link</code>, <code>style</code>, and
+                        <code>script</code> elements.
+                        <ol>
+                            <li>
+                                Exactly one of the following attributes must be specified.
+                                <ol>
+                                    <li><code>name</code></li>
+                                    <li><code>http-equiv</code></li>
+                                    <li><code>charset</code></li>
+                                </ol>
+                            </li>
+                            <li>
+                                If either <code>name</code> or <code>http-equiv</code> is specified, then the
+                                <code>content</code> attribute must also be
+                                specified
+                            </li>
+                            <li>Otherwise, it must be omitted</li>
+                        </ol>
+                        <h2>Syntax</h2>
+                        <div class="content">
+                            <figure>
+                                <canvas id="myCanvas" width="600" height="400">
+                                </canvas>
+                                <figcaption>The structure of a meta element</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h2>Example</h2>
+                    <div class="content">
+                        <div>
+                            <code>
+                                &lt;meta charset="utf-8"&gt;
+                            </code>
+                        </div>
+                        <div>It is important that the character encoding declaration appears early in the document as
+                            most browsers will try to determine the character encoding from the first 1,024 bytes of a
+                            file (Coulson)</div>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <pre>
+&lt;meta charset="big5"&gt;
+
+&lt;meta charset="US-ASCII"&gt;
+                    </pre>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <pre>
+&lt;meta name="google" content="notranslate" &gt;
+
+&lt;meta name="robots" content="nofollow"&gt;
+
+&lt;meta name="robots" content="index, follow"&gt;
+
+                        </pre>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>&lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;</code>
+                        <ol>
+                            <li><code>width</code>
+                                <ol>
+                                    <li>Controls the size of the <code>viewport</code></li>
+                                    <li>It can be set to a specific number of pixels like <code>width=600</code></li>
+                                    <li>Or to the special value <code>device-width</code>, which is <code>100vw</code>,
+                                        or 100% viewport </li>
+                                    <li> Minimum: 1, Maximum: 10000</li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>initial-scale</code>
+                                <ol>
+                                    <li>Controls the zoom level when the page is first loaded</li>
+                                    <li>Minimum: 0.1, Maximum: 10</li>
+                                    <li>Default: 1</li>
+                                    <li>Negative values: ignored</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <code>&lt;meta name="description" content="my description"&gt;</code>
+                        <ol>
+                            <li> Short and accurate summary of the content of the page.
+                                Several browsers, like Firefox and Opera, use this as the default description
+                                of bookmarked pages.
+                            </li>
+                            <li>
+                                Google does NOT use the <code>meta</code> keyword tag but DOES use the <code>meta</code>
+                                description tag
+                            </li>
+                        </ol>
+                    </div>
+                    <h2>Example</h2>
+
+                    <div class="content">
+                        <code>&lt;meta name="keywords" content="my,keywords"&gt;</code>
+                        <div class="space_above"> Words relevant to the page's content separated by commas</div>
+                    </div>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <pre>
+&lt;meta http-equiv="refresh" content="5"&gt;
+
+&lt;meta http-equiv="refresh" content= "5; url='my_new_page.html' "&gt;
+
+&lt;meta http-equiv="default-style" content="Default"&gt;
+
+&lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+                        </pre>
+                        <div><code>http-equiv</code></div>
+                        <ol>
+                            <li>
+                                Defines a pragma directive.
+                            </li>
+                            <li>
+                                The attribute is named http-equiv(alent) because all the allowed values are names of
+                                particular HTTP headers
+                            </li>
+                            <li>The following keywords may be used
+                                <ol>
+                                    <li>
+                                        <code>content-language</code>
+                                    </li>
+                                    <li>
+                                        <code>content-type</code>
+                                    </li>
+                                    <li>
+                                        <code>default-style</code>
+                                    </li>
+                                    <li>
+                                        <code>refresh</code>
+                                    </li>
+                                    <li>
+                                        <code>set-cookie</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>If <code>http-equiv</code> represents one of the above states,
+                                then the user agent must run the algorithm appropriate for that state</li>
+                            <li>
+                                The <code>meta</code> element with a <code>http-equiv</code> attribute whose value is
+                                "default-style" represents a
+                                pragma directive that specifies the document's preferred stylesheet.
+                            </li>
+                            <li>
+
+                                The content value of
+                                <code>http-equiv="default-style" content="Value"</code><em>must</em> refer to the
+                                <code>title</code> attribute of a stylesheet (either external <em>or</em> internal),
+                                otherwise css styling will break
+                            </li>
+                            <li><code>refresh</code>
+                                <ol>
+                                    <li>Positive integer. The number of seconds until page reloads/redirects</li>
+                                    <li>May be followed by <code>';url="myurl'</code></li>
+                                </ol>
+                            </li>
+                        </ol>
+
+                    </div>
+                    <h2>Example</h2>
+                    <code>&lt;meta name=generator content="Frontweaver 8.2"&gt;</code>
+
+                    <h2>References</h2>
+                    <div class="content">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag">MDN viewport meta
+                            tag</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">MDN The metadata
+                            element</a>
+                    </div>
+                    <div class="content">
+                        <a
+                            href="https://developers.google.com/search/docs/crawling-indexing/special-tags?hl=en&visit_id=638508041102125945-1552809224&rd=1">meta
+                            tags and attributes that Google supports</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://www.youtube.com/watch?v=RBTBEfd7z_Y">How much time should I spend on meta tags,
+                            and which ones matter?</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#meta">
+                            W3C The meta element
+                        </a>
+                    </div>
+                    <div class="content">
+                        <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element">
+                            WhatWG The meta element
+                        </a>
+                    </div>
+                    <div class="content">
+                        <a href="https://stackoverflow.com/q/6771258/499167">
+                            What does &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt; do?
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  Templates -->
+
+
+        <template id="prevPageTemplate">html_element_types</template> <!--PREVIOUS PAGE-->
+
+        <template id="pageTitleTemplate">meta</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">entities</template><!--NEXT PAGE-->
+
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
+
+        const canvas = document.getElementById("myCanvas");
+
+        // Row 1 
+        drawRectangle(20, 10, 75, 60, "black")
+        draw("<", 50, 50)
+
+        drawRectangle(110, 10, 210, 60, "black")
+        draw("charset = \" \"", 160, 50)
+
+        drawRectangle(340, 10, 75, 60, "black")
+        draw(">", 370, 50)
+
+        //Row 2
+        drawRectangle(20, 140, 75, 60, "black")
+        draw("<", 50, 180)
+
+        drawRectangle(110, 140, 210, 60, "black")
+        draw("name = \" \"", 160, 180)
+
+        //Row 3
+        drawRectangle(250, 220, 210, 60, "black")
+        draw("content = \" \"", 290, 260)
+
+        drawRectangle(480, 220, 75, 60, "black")
+        draw(">", 510, 260)
+
+        //Row  4
+        drawRectangle(20, 300, 75, 60, "black")
+        draw("<", 50, 340)
+
+        drawRectangle(110, 300, 210, 60, "black")
+        draw("http-equiv= \" \"", 140, 340)
+
+        // Lines
+        drawLine(320, 170, 390, 220)//top
+        drawLine(320, 330, 390, 280)
+
+        function drawLine(fromX, fromY, toX, toY) {
+            const ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            // ctx.moveTo(360, 170);
+            ctx.moveTo(fromX, fromY);
+            // ctx.lineTo(470, 220);
+            ctx.lineTo(toX, toY);
+            ctx.lineWidth = 3
+            ctx.stroke()
+            ctx.closePath()
+        }
+
+
+        function drawRectangle(a, b, x, y, fill) {
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            ctx.fillStyle = fill;
+            ctx.fillRect(a, b, x, y);
+
+        }
+
+        function draw(txt, x, y) {
+            const ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.font = "24px Helvetica";
+            ctx.fillStyle = "white"
+            ctx.fillText(txt, x, y);
+        }
+
+    </script>
+</body>
+
+</html>

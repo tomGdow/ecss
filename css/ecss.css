@@ -111,6 +111,19 @@ li.nostyle {
     padding-top: 10px;
   }
 
+  figcaption {
+    font-size: 18px;
+    font-family: Helvetica;
+    color: white;
+    background-color: var(--primary-green);
+    width: 80%;
+    text-align:center;
+    height: 60px;
+    line-height: 60px;
+    padding:auto;
+  }
+  
+
 @media screen and (min-width: 500px) {
 
     div.banner-item-2 {
