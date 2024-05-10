@@ -45,49 +45,239 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li> Character references must start with a ampersand character (&amp;)</li>
+                            <li>Following this, there are three possible kinds of character references
+                                <ol>
+                                    <li>
+                                        Named character references
+                                        <ol>
+                                            <li>&amp;</li>
+                                            <li>named character reference</li>
+                                            <li>;</li>
+                                            <li class="nostyle">
+                                                <code>&amp;copy;</code>&nbsp;&nbsp;
+                                                &copy;
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        Decimal numeric character reference
+                                        <ol>
+                                            <li>&amp;</li>
+                                            <li>&#x0023;</li>
+                                            <li>one or more ascii digits,
+                                                representing a base-ten integer corresponding to a code point
+                                            </li>
+                                            <li>;</li>
+                                            <li class="nostyle">
+                                                &amp;#169; &nbsp; &nbsp;
+                                                &#169;
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>Hexadecimal numeric character reference
+                                        <ol>
+                                            <li>&amp;</li>
+                                            <li>&#x0023;</li>
+                                            <li>x or X</li>
+                                            <li>one or more ascii hex digits, representing a hexadecimal integer
+                                                corresponding to a code point</li>
+                                            <li>;</li>
+                                            <li class="nostyle">
+                                                <code>&amp;#x000A9;</code>&nbsp;&nbsp;
+                                                &#x000A9;
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    <h2>Note</h2>
+                    <div class="content">
+                        <table id="entities_table" class="table_type_one">
+                            <caption>Character Reference Examples</caption>
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Char</th>
+                                    <th>Entity</th>
+                                    <th>Decimal</th>
+                                    <th>Hex</th>
+                                    <th>Code Point</th>
+                                    <th>CSS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>&#48;</code></td>
+                                    <td><code>---</code></td>
+                                    <td><code>&amp;#48;</code></td>
+                                    <td><code>&amp;#x30;</code></td>
+                                    <td><code>U+0030</code></td>
+                                    <td><code>\0030</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&#65;</code></td>
+                                    <td><code>---</code></td>
+                                    <td><code>&amp;#65;</code></td>
+                                    <td><code>&amp;#x41;</code></td>
+                                    <td><code>U+0041</code></td>
+                                    <td><code>\0041</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&#97;</code></td>
+                                    <td><code>---</code></td>
+                                    <td><code>&amp;#97;</code></td>
+                                    <td><code>&amp;#x61;</code></td>
+                                    <td><code>U+0061</code></td>
+                                    <td><code>\0061</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&amp;</code></td>
+                                    <td><code>&amp;amp;</code></td>
+                                    <td><code>&amp;#38;</code></td>
+                                    <td><code>&amp;#x26;</code></td>
+                                    <td><code>U+0026</code></td>
+                                    <td><code>\0026</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;</code></td>
+                                    <td><code>&amp;lt;</code></td>
+                                    <td><code>&amp;#60;</code></td>
+                                    <td><code>&amp;#x3C;</code></td>
+                                    <td><code>U+003C</code></td>
+                                    <td><code>\003C</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&gt;</code></td>
+                                    <td><code>&amp;gt;</code></td>
+                                    <td><code>&amp;#62;</code></td>
+                                    <td><code>&amp;#x3E;</code></td>
+                                    <td><code>U+003E</code></td>
+                                    <td><code>\003E</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&quot;</code></td>
+                                    <td><code>&amp;quot;</code></td>
+                                    <td><code>&amp;#34;</code></td>
+                                    <td><code>&amp;#x22;</code></td>
+                                    <td><code>U+0022</code></td>
+                                    <td><code>\0022</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&pound;</code></td>
+                                    <td><code>&amp;pound;</code></td>
+                                    <td><code>&amp;#163;</code></td>
+                                    <td><code>&amp;#x00A3;</code></td>
+                                    <td><code>U+00A3</code></td>
+                                    <td><code>\00A3</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&euro;</code></td>
+                                    <td><code>&amp;euro;</code></td>
+                                    <td><code>&amp;#8364;</code></td>
+                                    <td><code>&amp;#x20AC;</code></td>
+                                    <td><code>U+20AC</code></td>
+                                    <td><code>\20AC</code></td>
+                                <tr>
+                                    <td><code>&commat;</code></td>
+                                    <td><code>&amp;commat;</code></td>
+                                    <td><code>&amp;#64;</code></td>
+                                    <td><code>&amp;#x40;</code></td>
+                                    <td><code>U+0040</code></td>
+                                    <td><code>\0040</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&dollar;</code></td>
+                                    <td><code>&amp;dollar;</code></td>
+                                    <td><code>&amp;#36;</code></td>
+                                    <td><code>&amp;#x24;</code></td>
+                                    <td><code>U+0024</code></td>
+                                    <td><code>\0024</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&hellip;</code></td>
+                                    <td><code>&amp;hellip;</code></td>
+                                    <td><code>&amp;#8230;</code></td>
+                                    <td><code>&amp;#x2026;</code></td>
+                                    <td><code>U+2026</code></td>
+                                    <td><code>\2026</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&copy;</code></td>
+                                    <td><code>&amp;copy;</code></td>
+                                    <td><code>&amp;#169;</code></td>
+                                    <td><code>&amp;#xA9;</code></td>
+                                    <td><code>U+00A9</code></td>
+                                    <td><code>\00A9</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h2>Note</h2>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <code>commat</code> (&commat;)
+                        <ol>
+                            <li><code>commat</code> (&commat;) is <em>commercial at</em></li>
+                            <li><code>commat</code> has long been used in Spanish and Portuguese as an abbreviation of
+                                <code>arroba</code>,
+                                a unit of weight equivalent to 25 pounds, and derived from the Arabic expression
+                                of "the quarter" </li>
+                        </ol>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div>
-
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                    </div>
 
                     <h2>References</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <a
+                            href="https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references">WhatWG
+                            Character References</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://symbl.cc/en/0061/">Unicode character table</a>
+                    </div>
                 </div>
+
             </div>
         </div>
 
-    <!--  Templates -->
+        <!--  Templates -->
 
 
-    <template id="prevPageTemplate">index</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">meta</template> <!--PREVIOUS PAGE-->
 
-    <template id="pageTitleTemplate">myTitle</template> <!--PAGE TITLE-->
-    
-    <template id="nextPageTemplate">index</template><!--NEXT PAGE-->
+        <template id="pageTitleTemplate">Entities</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">index</template><!--NEXT PAGE-->
 
 
     </div>
     <script>
-        
+
         //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-    
+
 
         // previous page
-        var prevPageURL= "../" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL= "../" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
     </script>

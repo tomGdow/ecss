@@ -111,7 +111,7 @@ li.nostyle {
     padding-top: 10px;
   }
 
-  figcaption {
+  .table_type_one>caption,figcaption {
     font-size: 18px;
     font-family: Helvetica;
     color: white;
@@ -123,6 +123,33 @@ li.nostyle {
     padding:auto;
   }
   
+  .table_type_one {
+    text-align: center;
+    font-family: Helvetica;
+    width: 100%;
+  }
+
+  .table_type_one > caption {
+    width:100%;
+    margin-top: 2%;
+  }
+
+  .table_type_one thead>tr {
+    background-color: black;
+    color: #fff;
+  }
+  .table_type_one th {
+    font-weight: normal;
+  }
+
+  .table_type_one col:first-of-type {
+    width: 15%;
+  }
+  
+  .table_type_one {
+    caption-side: bottom;
+    text-align: center;
+  }
 
 @media screen and (min-width: 500px) {
 
