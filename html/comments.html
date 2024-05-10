@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
+                        <a href="./search.html">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        HTML comments must start with the four character sequence
+                        <ol>
+                            <li><code>&lt;</code></li>
+                            <li>&excl;</li>
+                            <li>hyphen-minus</li>
+                            <li>hyphen-minus</li>
+                            <li class="nostyle"><code><&excl;--</code></li>
+                        </ol>
+                        Following this sequence, the comment may have text, with the additional restriction that
+                        <ol>
+                            <li>
+
+                                the text must not start with a single <code>&gt;</code>,
+                            </li>
+                            <li>
+
+                                nor start with a hyphen-minus followed by a <code>&gt;</code> character,
+                            </li>
+                            <li>
+
+                                nor contain two consecutive hyphen-minus characters
+                            </li>
+                            <li>
+
+                                nor end with a hyphen-minus character
+                            </li>
+                        </ol>
+                        Finally, the comment must be ended by the three character sequence
+                        <ol>
+                            <li>hyphen-minus</li>
+                            <li>hyphen-minus</li>
+                            <li>&gt;</li>
+                            <li class="nostyle">--&gt;</li>
+                        </ol>
+                    </div>
+                    <h2>HTML Comment</h2>
+                    <div class="content">
+                        <code>&lt;!-- HTML comment --&gt;</code>
+                    </div>
+                    <h2>CSS Comment</h2>
+                    <div class="content">
+                        <code>/* This is a CSS comment */</code>
+                    </div>
+                    <h2>JS Comment</h2>
+                    <div class="content">
+                        <pre>
+<code>// This is a JS comment</code>
+
+<code>/* This is a JS comment */</code>
+
+                       </pre>
+
+                    </div>
+
+
+                    <h2>References</h2>
+                    <div class="content">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/syntax.html#comments">
+                            W3C Comments
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  Templates -->
+
+
+        <template id="prevPageTemplate">entities</template> <!--PREVIOUS PAGE-->
+
+        <template id="pageTitleTemplate">Comments</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">index</template><!--NEXT PAGE-->
+
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
+    </script>
+</body>
+
+</html>
