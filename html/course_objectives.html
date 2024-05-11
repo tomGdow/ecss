@@ -14,6 +14,28 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.content {
+            counter-reset: section 0;
+        }
+
+        div.content>h3 {
+            counter-increment: section;
+            counter-reset: subsection 0;
+        }
+
+        div.content>h4 {
+            counter-increment: subsection;
+        }
+
+        div.content>h3:before {
+            content: counter(section) ".  "
+        }
+
+        div.content>h4:before {
+            content: counter(section) "." counter(subsection) ".  ";
+        }
+    </style>
 </head>
 
 <body>
@@ -43,54 +65,262 @@
                         <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
                         <a href="./search.html">search</a>
                     </div>
-
+                    <h1>IT Specialist</h1>
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <h3>HTML Fundamentals</h3>
+                        <h4>Construct markup that uses metadata elements</h4>
+                        <ol class="move-right">
+                            <li><code>script</code></li>
+                            <li><code>noscript</code></li>
+                            <li><code>style</code></li>
+                            <li><code>link</code></li>
+                            <li><code>meta tags</code>
+                                <ol>
+                                    <code><li>encoding</li></code>
+                                    <code><li>keywords</li></code>
+                                    <code><li>viewport</li></code>
+                                    <code><li>description</li></code>
+                                </ol>
+                            </li>
+                        </ol>
+                        <h4>Construct well-formed page markup</h4>
+                        <ol class="move-right">
+                            <li>DOCTYPE declaration</li>
+                            <li><code>html</code></li>
+                            <li><code>head</code></li>
+                            <li><code>body</code></li>
+                            <li>proper syntax</li>
+                            <li>closing tags</li>
+                            <li>commonly used symbols</li>
+                        </ol>
+                        </ol>
+                        <h3>CSS Fundamentals</h3>
+                        <h4>Analyze and implement inline styles, internal (embedded) style sheet, and external style
+                            sheets</h4>
+                        <ol class="move-right">
+                            <li>when to use
+                                <ol>
+                                    <li>inline styles</li>
+                                    <li>internal (embedded) style sheets</li>
+                                    <li>external style sheets</li>
+                                </ol>
+                            </li>
+                            <li>precedence when using a combination of inline styles and style sheets</li>
+                            <li>browser default styles</li>
+                        </ol>
+                        <h4>Construct and analyze rule sets</h4>
+                        <ol class="move-right">
+                            <li>valid syntax for CSS rule set</li>
+                            <li>selectors
+                                <ol>
+                                    <li><code>class</code></li>
+                                    <li><code>id</code></li>
+                                    <li><code>elements</code></li>
+                                    <li><code>pseudo-class</code></li>
+                                    <li><code>descendent</code></li>
+                                </ol>
+                            </li>
+                        </ol>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                        <h3>Document Structure using HTML</h3>
+                        <h4>Construct and analyze markup to structure content and organize data</h4>
+                        <ol class="move-right">
+                            <li>table tags
+                                <ol>
+                                    <li><code>table</code></li>
+                                    <li><code>tr</code></li>
+                                    <li>th</li>
+                                    <li>td</li>
+                                </ol>
+                            </li>
+                            <li><code>h1-h6</code></li>
+                            <li><code>p</code></li>
+                            <li><code>br</code></li>
+                            <li><code>hr</code></li>
+                            <li><code>div</code></li>
+                            <li><code>span</code></li>
+                            <li><code>ul</code></li>
+                            <li><code>ol</code></li>
+                            <li><code>li</code></li>
+                        </ol>
+                        <h4>Construct and analyze markup that uses HTML5 sementic elements</h4>
+                        Semantic tags
+                        <ol class="move-right">
+                            <li><code>header</code></li>
+                            <li><code>nav</code></li>
+                            <li><code>section</code></li>
+                            <li><code>article</code></li>
+                            <li><code>aside</code></li>
+                            <li><code>footer</code></li>
+                            <li><code>details</code></li>
+                            <li><code>summary</code></li>
+                        </ol>
+                        <h4>Construct and analyze markup that implements navigation</h4>
+                        <ol class="move-right">
+                            <li><code>target</code></li>
+                            <li><code>anchor (a href)</code></li>
+                            <li>bookmark</li>
+                            <li>relative vs absolute links</li>
+                            <li>navigation simple folder hierarchies</li>
+                            <li><code>map</code></li>
+                            <li><code>area</code></li>
+                        </ol>
+                        <h4>Construct and and analyze markup that uses form elements</h4>
+                        <ol class="move-right">
+                            <li>form attributes</li>
+                            <li>action</li>
+                            <li>method</li>
+                            <li>submission methods</li>
+                            <li>input types and restrictions</li>
+                            <li>select</li>
+                            <li>textarea</li>
+                            <li>button</li>
+                            <li>options</li>
+                            <li>label</li>
+                        </ol>
+                        <h3>Multimedia Presentation using HTML</h3>
+                        <h4>Construct and analyze markup that displays images</h4>
+                        <ol class="move-right">
+                            <li><code>img</code></li>
+                            <li><code>picture</code></li>
+                            <li>and attributes</li>
+                        </ol>
+                        <h4>Construct and analyze markup that plays video and audio </h4>
+                        <ol class="move-right">
+                            <li><code>video</code></li>
+                            <li><code>audio</code></li>
+                            <li><code>track</code></li>
+                            <li><code>source</code></li>
+                            <li><code>iframe</code></li>
+                        </ol>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div>
+                        <h3>Webpage Styling using CSS</h3>
+                        <h4>Construct and analyze styles that position content</h4>
+                        <ol class="move-right">
+                            <li>Positioning
+                                <ol>
+                                    <li>float</li>
+                                    <li>relative</li>
+                                    <li>absolute</li>
+                                    <li>static</li>
+                                    <li>fixed</li>
+                                </ol>
+                            </li>
+                            <li>max-width</li>
+                            <li>overflow</li>
+                            <li>height</li>
+                            <li>width</li>
+                            <li>align</li>
+                            <li>display</li>
+                            <li>inline vs block</li>
+                            <li>visibility</li>
+                            <li>box model</li>
+                            <li>margins</li>
+                            <li>padding</li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                        </ol>
+                        <h4>Construct and analyze styles that format text</h4>
+                        <ol class="move-right">
+                            <li><code>font-family</code></li>
+                            <li><code>color</code></li>
+                            <li><code>font-style</code></li>
+                            <li><code>font-weight</code></li>
+                            <li><code>font-variant</code></li>
+                            <li><code>link colors</code></li>
+                            <li>text formattting</li>
+                            <li>text alignment</li>
+                            <li>text decoration</li>
+                            <li>indentation</li>
+                            <li><code>line-height</code></li>
+                            <li>word-wrap</li>
+                            <li>letter spacing</li>
+                        </ol>
+                        <h4>Construct and analyze styles that format backgrounds and borders</h4>
+                        <ol class="move-right">
+                            <li><code>border-color</code></li>
+                            <li><code>border-style</code></li>
+                            <li><code>border-width</code></li>
+                            <li>background properties</li>
+                            <li>colors</li>
+                        </ol>
+                        <h4>Construct and analyze styles that create a simple responsive layout</h4>
+                        <ol class="move-right">
+                            <li>Units of measurements
+                                <ol>
+                                    <li>percentages</li>
+                                    <li>pixels</li>
+                                    <li>em</li>
+                                    <li>vw</li>
+                                    <li>vh</li>
+                                </ol>
+                            </li>
+                            <li>viewport</li>
+                            <li>media query</li>
+                            <li>frameworks</li>
+                            <li>templates</li>
+                            <li>working with breakpoints</li>
+                            <li>grids</li>
+                        </ol>
+                        <h3>Accessibility, Readability, and Testing</h3>
+                        <h4>Construct well-formed HTML and CSS markup that conforms to industry best practices</h4>
+                        <ol class="move-right">
+                            <li>reusing rules and rule sets</li>
+                            <li>commenting</li>
+                            <li>web-based fonts</li>
+                            <li>cross-platform usability</li>
+                            <li>separation of structure (HTML) and style (CSS)</li>
+                        </ol>
+                        <h4>Apply accessibility principles and evaluate content accessibility</h4>
+                        <ol class="move-right">
+                            <li>text alternatives</li>
+                            <li>color contrast and usage</li>
+                            <li>legibility of typography</li>
+                            <li>tab order</li>
+                            <li>text resizing</li>
+                            <li>text hierarchy</li>
+                            <li>translate</li>
+                        </ol>
+                        <h4>Evaluate the structural integrity of HTML and CSS markup</h4>
+                        <ol class="move-right">
+                            <li>syntax errors</li>
+                            <li>tag mismatch</li>
+                            <li>cascading issues</li>
+                        </ol>
+                    </div>
 
-                    <h2>References</h2>
-                    <div class="content"></div>
                 </div>
             </div>
+
+            <!--  Templates -->
+
+
+            <template id="prevPageTemplate">index</template> <!--PREVIOUS PAGE-->
+
+            <template id="pageTitleTemplate">Course Objectives</template> <!--PAGE TITLE-->
+
+            <template id="nextPageTemplate">script</template><!--NEXT PAGE-->
+
+
         </div>
+        <script>
 
-    <!--  Templates -->
-
-
-    <template id="prevPageTemplate">index</template> <!--PREVIOUS PAGE-->
-
-    <template id="pageTitleTemplate">Course Objectives</template> <!--PAGE TITLE-->
-    
-    <template id="nextPageTemplate">script</template><!--NEXT PAGE-->
+            //page title
+            var pageTitleText = pageTitleTemplate.innerHTML;
+            document.title = pageTitleText;
+            banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+            pageTitle.innerHTML = pageTitleText;
 
 
-    </div>
-    <script>
-        
-        //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
-        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
-        pageTitle.innerHTML = pageTitleText;
-    
+            // previous page
+            var prevPageURL = "../" + prevPageTemplate.innerHTML + ".html"
+            prevPage.setAttribute("href", prevPageURL)
 
-        // previous page
-        var prevPageURL= "../" + prevPageTemplate.innerHTML + ".html"
-        prevPage.setAttribute("href", prevPageURL)
+            // next page
+            var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+            nextPage.setAttribute("href", nextPageURL)
 
-        // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
-        nextPage.setAttribute("href", nextPageURL)
-
-    </script>
+        </script>
 </body>
 
 </html>

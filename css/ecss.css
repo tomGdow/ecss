@@ -67,6 +67,14 @@ h1 {
     text-align: center;
 }
 
+h3,h4 {
+    color: var(--primary-green);
+}
+
+h4 {
+    padding-left: 2%
+}
+
 #banner_part_first {
     display: none;
 }
@@ -149,6 +157,10 @@ li.nostyle {
   .table_type_one {
     caption-side: bottom;
     text-align: center;
+  }
+
+  .move-right {
+    padding-left: 15%;
   }
 
 @media screen and (min-width: 500px) {
