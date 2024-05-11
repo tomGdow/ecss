@@ -50,6 +50,7 @@
                     <input type="text" id="mainSearchBox" list="pageList" name="mainSearchBox" autofocus>
                     <datalist id="pageList">
                         <option value="body"></option>
+                        <option value="comments"></option>
                         <option value="doctype"></option>
                         <option value="head"></option>
                         <option value="home"></option>
@@ -58,10 +59,13 @@
                         <option value="html_file_structure"></option>
                         <option value="index"></option>
                         <option value="link"></option>
+                        <option value="meta"></option>
                         <option value="mime"></option>
                         <option value="noscript"></option>
+                        <option value="references"></option>
                         <option value="script"></option>
                         <option value="title"></option>
+                        <option value="validation"></option>
                     </datalist>
 
                 </div>
@@ -75,6 +79,7 @@
 
         var sitePageArr = [
             "body",
+            "comments",
             "doctype",
             "head",
             "home",
@@ -83,10 +88,13 @@
             "html_file_structure",
             "index",
             "link",
+            "meta",
             "mime",
             "noscript",
+            "references",
             "script",
-            "title"
+            "title",
+            "validation"
         ]
 
         document.getElementById('mainSearchBox').addEventListener('input', function () {
