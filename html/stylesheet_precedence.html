@@ -45,51 +45,49 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content">
-                        <ol>
-                            <li class="space_above">
-                                <a href="https://www.w3.org/TR/2011/WD-html5-20110405/">W3C HTML-5</a>
-                            </li>
-                            <li class="space_above">
-                                <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">
-                                    HTML-5 Living Standard</a>
-                            </li>
-                            <li class="space_above"><a href="https://validator.w3.org">W3C Validator</a></li>
-                            <li class="space_above">
-                                <a href="https://validator.w3.org">W3C Cascading Style Sheets home page</a>
-                            </li>
-                        </ol>
-                    </div>
+                    <div class="content"></div>
+
+                    <h2>Example</h2>
+                    <div class="content"></div>
+
+                    <h2>Notes</h2>
+                    <div class="content"></div>
+
+                    <h2>Mnemonic</h2>
+                    <div class="content"></div>
+
+                    <h2>References</h2>
+                    <div class="content"></div>
                 </div>
             </div>
         </div>
 
-        <!--  Templates -->
+    <!--  Templates -->
 
 
-        <template id="prevPageTemplate">stylesheet_precedence</template> <!--PREVIOUS PAGE-->
+    <template id="prevPageTemplate">stylesheet_types</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">References</template> <!--PAGE TITLE-->
-
-        <template id="nextPageTemplate">index</template><!--NEXT PAGE-->
+    <template id="pageTitleTemplate">Stylesheet Precedence</template> <!--PAGE TITLE-->
+    
+    <template id="nextPageTemplate">references</template><!--NEXT PAGE-->
 
 
     </div>
     <script>
-
+        
         //page title
-        var pageTitleText = pageTitleTemplate.innerHTML;
-        document.title = pageTitleText;
+        var pageTitleText= pageTitleTemplate.innerHTML;
+        document.title=pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-
+    
 
         // previous page
-        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL = "../" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
     </script>
