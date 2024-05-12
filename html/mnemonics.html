@@ -47,47 +47,50 @@
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content"></div>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                    <h2>TRBL</h2>
+                    <div class="content">
+                        <code>top-right-bottom-left</code>
+                    </div>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div>
+                    <h2>LVHA</h2>
+                    <div class="content">
+                        <code>link-visited-hover-active</code>
+                    </div>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
-
-                    <h2>References</h2>
-                    <div class="content"></div>
+                    <h2>AABL</h2>
+                    <div class="content">
+                        <code>href</code> <code>&rarr;</code> <code>anchor-area-base-link</code>
+                    </div>
                 </div>
             </div>
         </div>
 
-    <!--  Templates -->
+        <!--  Templates -->
 
 
-    <template id="prevPageTemplate">stylesheet_precedence</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">stylesheet_precedence</template> <!--PREVIOUS PAGE-->
 
-    <template id="pageTitleTemplate">Mnemonics</template> <!--PAGE TITLE-->
-    
-    <template id="nextPageTemplate">references</template><!--NEXT PAGE-->
+        <template id="pageTitleTemplate">Mnemonics</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">references</template><!--NEXT PAGE-->
 
 
     </div>
     <script>
-        
+
         //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-    
+
 
         // previous page
-        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
     </script>
