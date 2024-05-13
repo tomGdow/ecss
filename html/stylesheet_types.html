@@ -14,6 +14,40 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: types 0;
+        }
+
+        div.container .styletype {
+            counter-increment: types;
+        }
+
+        div.container .styletype:before {
+            content: counter(types) ". "
+        }
+
+        div.content {
+            counter-reset: section 0;
+        }
+
+        div.content>div {
+            counter-increment: section;
+            color: var(--primary-green);
+            /* color:gray; */
+            font-family: Helvetica, sans-serif;
+
+        }
+
+        div.content>div:before {
+            content: counter(section) ".  "
+        }
+
+        #internalStyle,
+        #inlineStyle {
+            padding-left: 5%;
+        }
+    </style>
 </head>
 
 <body>
@@ -47,49 +81,102 @@
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content"></div>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                    <h2 class="styletype">External Stylesheet</h2>
+                    <div class="content">
+                        <pre>
+&lt;link href="style.css" rel="stylesheet"&gt;
 
-                    <h2>Notes</h2>
-                    <div class="content"></div>
+&lt;link href="default.css" rel="stylesheet" title="Default Style"&gt;
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+&lt;link href="fancy.css" rel="alternate stylesheet" title="Fancy"&gt;</pre>
+                    </div><!--content-->
 
-                    <h2>References</h2>
-                    <div class="content"></div>
+                    <h2 class="styletype">Internal Stylesheet</h2>
+                    <div class="content">
+                        <div>Head Section</div>
+                        <pre>
+    &lt;meta http-equiv="default-style" content="preferred"&gt;
+
+    &lt;style title="preferred"&gt;
+        p {
+            background-color:black;
+            color:white;
+            }
+    &lt;/style&gt;
+
+    &lt;link rel="stylesheet" href="./expt.css" title="default"&gt;
+</pre>
+                        <div>External Stylesheet</div>
+                        <pre>
+    p {color: green;}</pre>
+
+                        <div>Body</div>
+                        <pre>
+    &lt;p&gt;Earth&lt;/p&gt;</pre>
+                        <div>Output</div>
+                        <canvas id="internalStyle" width="100" height="60"></canvas>
+                    </div>
+
+
+                    <h2 class="styletype">Inline style</h2>
+                    <div class="content">
+                        <div>Head</div>
+                        <pre>   &lt;style&gt;
+        #myid {
+            background-color:black;
+            color:white;
+        }
+    &lt;/style&gt;</pre>
+                        <div>Body</div>
+                        <pre>   &lt;p id="myid" style="color:red;background-color:blue"&gt;Earth&lt;/p&gt;</pre>
+
+
+                        <div>Output</div>
+                        <canvas id="inlineStyle" width="100" height="60"></canvas>
+                        <div>Notes</div>
+                        <ol>
+                            <li class="nostyle">Note that inline style overrides <code>id</code></li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
 
-    <!--  Templates -->
+        <!--  Templates -->
 
 
-    <template id="prevPageTemplate">validation</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">validation</template> <!--PREVIOUS PAGE-->
 
-    <template id="pageTitleTemplate">Stylesheet types</template> <!--PAGE TITLE-->
-    
-    <template id="nextPageTemplate">stylesheet_precedence</template><!--NEXT PAGE-->
+        <template id="pageTitleTemplate">Stylesheet types</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">stylesheet_precedence</template><!--NEXT PAGE-->
 
 
     </div>
+    <script src="../js/functions.js"></script>
     <script>
-        
+
         //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-    
+
 
         // previous page
-        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
+        //Output boxes
+        drawRectangleAlt(0, 0, 75, 60, "black", "internalStyle")
+        drawAlt("Earth", 10, 40, "internalStyle", "white")
+
+        drawRectangleAlt(0, 0, 75, 60, "blue", "inlineStyle")
+        drawAlt("Earth", 10, 40, "inlineStyle", "red")
     </script>
 </body>
 
