@@ -15,13 +15,9 @@
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
     <style>
-        div.container {
-            counter-reset: types 0;
-        }
+        div.container { counter-reset: types 0;}
 
-        div.container .styletype {
-            counter-increment: types;
-        }
+        div.container .styletype { counter-increment: types; }
 
         div.container .styletype:before {
             content: counter(types) ". "
@@ -34,14 +30,27 @@
         div.content>div {
             counter-increment: section;
             color: var(--primary-green);
-            /* color:gray; */
             font-family: Helvetica, sans-serif;
 
         }
 
         div.content>div:before {
-            content: counter(section) ".  "
+            content:  counter(types) "."counter(section) ".  "
         }
+        
+        div.content ol {
+            list-style-type:none;
+            counter-reset: notes 0;
+        }
+        div.content ol>li {
+            counter-increment: notes;
+        }
+    
+        div.content ol>li:before {
+            content:  counter(types) "."counter(section) "." counter(notes) ".  ";
+            color: var(--primary-green);
+        }
+
 
         #internalStyle,
         #inlineStyle {
@@ -115,7 +124,18 @@
     &lt;p&gt;Earth&lt;/p&gt;</pre>
                         <div>Output</div>
                         <canvas id="internalStyle" width="100" height="60"></canvas>
-                    </div>
+                        <div>Notes</div>
+                        <ol>
+                            <li>The internal stylesheet, although appearing before the external stylesheet, 
+                                takes precedence as it is the <code>default-style</code> ("preferred")
+                            </li>
+                            <li class="space_above">The external stylsheet is completly disabled</li>
+                            <li class="space_above">For this tecnique to work, <em>both</em> stylesheets must have a <code>title</code> attribute,
+                                otherwise the stylesheet is <em>persistent</em> (see entry for
+                                <a href="./link.html">link</a>)
+                            </li>
+                        </ol>
+                    </div><!--div.content-->
 
 
                     <h2 class="styletype">Inline style</h2>
@@ -135,7 +155,7 @@
                         <canvas id="inlineStyle" width="100" height="60"></canvas>
                         <div>Notes</div>
                         <ol>
-                            <li class="nostyle">Note that inline style overrides <code>id</code></li>
+                            <li class="nostyle">Note that inline <code>style=</code> overrides <code>id</code></li>
                         </ol>
                     </div>
                 </div>
