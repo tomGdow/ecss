@@ -14,6 +14,37 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.content table {
+            counter-reset: declarations 7;
+        }
+
+        div.content table tr {
+            counter-increment: declarations -1;
+        }
+
+        div.content table tr:before {
+            content: counter(declarations) ".  ";
+            color: var(--primary-green);
+        }
+
+        .table_type_one col:first-of-type {
+            width: 5%;
+
+        }
+
+        .table_type_one col:nth-of-type(2) {
+            width: 40%;
+        }
+
+        #inlineResult {
+            padding-left: 5%;
+        }
+        
+  .table_type_one>caption{
+    height: 4px;
+  }
+    </style>
 </head>
 
 <body>
@@ -45,51 +76,171 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+
+                    <div class="content">
+                        Leaving out CSS-transitions and CSS-animations,
+                        the cascade sorts <em>declarations</em> according to the following table,
+                        <code>!important</code> user agent declarations have the highest priority,
+                        and normal user agent declarations have the lowest priority
+                        (see <a href="https://www.w3.org/TR/css-cascade-4/#cascade-sort">here</a>):
+                    </div>
+<h2>Style Sheet Levels and Specificity</h2>
+                    <div class="content">
+                        <table class='table_type_one'>
+                            <caption></caption>
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tr>
+                                <td>! important User Agent</td>
+                                <td></td>
+                                <td></td>
+                                <td><code></code></td>
+                                <td><code></code></td>
+                                <td><code>.class</code></td>
+                                <td><code>&gt;</code></td>
+                                <td><code>h2</code></td>
+                                <td><code>&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td>! important User</td>
+                                <td></td>
+                                <td></td>
+                                <td><code>#id</code></td>
+                                <td><code>&gt;</code></td>
+                                <td><code>.class</code></td>
+                                <td><code>&gt;</code></td>
+                                <td><code>h2</code></td>
+                                <td><code>&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td>! important Author</td>
+                                <td><code>inline-style</code></td>
+                                <td><code>&gt;</code></td>
+                                <td><code>#id</code></td>
+                                <td><code>&gt;</code></td>
+                                <td><code>.class</code></td>
+                                <td><code>&gt;</code></td>
+                                <td><code>h2</code></td>
+                                <td><code>&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td>Author</td>
+                                <td><code>inline-style</code></td>
+                                <td><code>&gt;</code></td>
+                                <td><code>#id</code></td>
+                                <td><code>&gt;</code></td>
+                                <td><code>.class</code></td>
+                                <td><code>&gt;</code></td>
+                                <td><code>h2</code></td>
+                                <td><code>&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td>User</td>
+                                <td><code></code></td>
+                                <td><code></code></td>
+                                <td><code>#id</code></td>
+                                <td><code>&gt;</code></td>
+                                <td><code>.class</code></td>
+                                <td><code>&gt;</code></td>
+                                <td><code>h2</code></td>
+                                <td><code>&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td>User Agent</td>
+                                <td><code></code></td>
+                                <td><code></code></td>
+                                <td><code></code></td>
+                                <td><code></code></td>
+                                <td><code>.class</code></td>
+                                <td><code>&gt;</code></td>
+                                <td><code>h2</code></td>
+                                <td><code></code></td>
+                            </tr>
+                        </table>
+                    </div>
 
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <code>style</code>: a declaration in the <code>style</code> attribute of an element
+                        has the same weight as a declaration with an <code>id</code>-based selector that is specified
+                        <em>at the end of the style sheet</em>.
+                        <pre>
+    &lt;style type="text/css"&gt;
+
+        #x97z { color: blue;
+                background-color:red; }
+                
+    &lt;/style
+
+    &lt;p id=x97z style="color: white;background-color:black"&gt;hello&lt;/p&gt;
+                        </pre>
+                        <canvas id="inlineResult" width="100" height="60"></canvas>
+                    </div>
 
                     <h2>Mnemonic</h2>
                     <div class="content"></div>
 
                     <h2>References</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <a href="https://www.w3.org/TR/css-cascade-4/#cascade-sort">W3C Cascade (Definitive)</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://www.w3.org/TR/WD-CSS2-971104/cascade.html">W3C Cascade</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://www.w3.org/TR/CSS1/#cascading-order">W3C Cascade (Original)</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://stackoverflow.com/a/13638067/499167">Style sheets priority order (Stack
+                            Overflow)</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-    <!--  Templates -->
+        <!--  Templates -->
 
 
-    <template id="prevPageTemplate">stylesheet_types</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">stylesheet_types</template> <!--PREVIOUS PAGE-->
 
-    <template id="pageTitleTemplate">Stylesheet Precedence</template> <!--PAGE TITLE-->
-    
-    <template id="nextPageTemplate">css_cascade</template><!--NEXT PAGE-->
+        <template id="pageTitleTemplate">Stylesheet Precedence</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">css_cascade</template><!--NEXT PAGE-->
 
 
     </div>
+    <script src="../js/functions.js"></script>
     <script>
-        
+
         //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-    
+
 
         // previous page
-        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
+        // canvas
+        drawRectangleAlt(0, 0, 75, 60, "black", "inlineResult")
+        drawAlt("hello", 10, 40, "inlineResult", "white")
     </script>
 </body>
 
