@@ -14,6 +14,65 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: heading-count 0;
+        }
+
+        div.container h2 {
+            counter-increment: heading-count;
+        }
+
+        div.container h2:before {
+            content: counter(heading-count) ".  ";
+        }
+
+        .table_type_one {
+            text-align: left;
+            font-family: unset;
+        }
+
+        .table_type_one code {
+            font-size: smaller;
+        }
+        
+        .table_type_one tr>th {
+            text-align: center;
+            font-size: larger;
+        }
+
+        .table_type_one tr td {
+            padding-left: 20px;
+        }
+        div.content {
+            counter-reset: section 0;
+            counter-reset: list-counter 0;
+        }
+
+        div.content>ol>li {
+            list-style-type: none;
+            counter-increment: section;
+        }
+
+        div.content>ol>li ol {
+            list-style-type: none;
+            counter-reset: list-counter;
+        }
+
+        div.content>ol>li ol>li {
+            counter-increment: list-counter;
+        }
+
+        div.content>ol>li ol>li::before {
+            content: counter(list-counter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content>ol>li::before {
+            content: counter(heading-count) "."counter(section) ".  ";
+            color: var(--primary-green);
+        }
+    </style>
 </head>
 
 <body>
@@ -45,49 +104,291 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li><code>selector</code>
+                                <ol>
+                                    <li class="space_above">A <code>selector</code> is a chain of one or more sequences of
+                                        <code>simple selectors</code> separated by <code>combinators</code>.
+                                    </li>
+                                    <li class="space_above">One <code>pseudo-element</code> may be appended to the
+                                        last sequence of simple selectors in a <code>selector</code>.
+                                    </li>
+                                </ol>
+                            </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                            <li class="space_above"><code>sequence of simple selectors</code>
+                                <ol>
+                                    <li class="space_above">A<code> sequence of simple selectors</code> is a
+                                        chain of <code>simple selectors</code> that are not
+                                        separated by a <code>combinator</code>
+                                    </li>
+                                    <li class="space_above">
+                                        It always begins with a <code>type selector</code> or a
+                                        <code>universal selector</code>
+                                    </li>
+                                    <li class="space_above">
+                                        No other <code>type selector</code> or <code>universal selector</code> is
+                                        allowed in the sequence.
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>simple selector</code>
+                                <div class="content"> A simple selector is one of</div>
+                                <ol>
+                                    <li><code>type</code> (<code>h2</code>)</li>
+                                    <li><code>universal</code> (<code>*</code>)</li>
+                                    <li><code>attribute</code> (<code>[class~="myclass"]</code>)</li>
+                                    <li><code>class</code> (<code>.myClass</code>)</li>
+                                    <li><code>id</code> (<code>#myId</code>)</li>
+                                    <li><code>pseudo-class</code> (<code>:first-of-type</code>)</li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>combinators</code>
+                                <ol>
+                                    <li><code>E > F</code> (child combinator)</li>
+                                    <li><code>E + F</code> (next-sibling combinator)</li>
+                                    <li><code>E ~ F</code> (general-sibling combinator)</li>
+                                    <li><code>E F</code>   (descendant combinator)</li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>comma</code>
+                                <ol>
+                                    <li class="space_above">A comma-separated list of selectors represents the union of all elements
+                                        selected by each of the individual selectors in the list
+                                    </li>
+                                    <li>
+                                        If just one of comma-separated selectors are invalid,
+                                        the entire group of selectors is invalid!
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>subject</code>
+                                <ol>
+                                    <li class="nostyle">The elements of a document tree that are represented
+                                        by a selector are the <code>subjects</code> of the selector
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div>
+                    <h2>Selector examples</h2>
+                    <div class="content">
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                        <table class="table_type_one" id="selector_examples">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Pattern</th>
+                                    <th>Represents</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>*</code></td>
+                                    <td>any element</td>
+                                    <td>universal selector</td>
+                                </tr>
+                                <tr>
+                                    <td><code>E</code></td>
+                                    <td>an element of type <code>E</code></td>
+                                    <td>type selector</td>
+                                </tr>
+                                <tr>
+                                    <td> <code>E[foo]</code></td>
+                                    <td>an E element with a "foo" attribute</td>
+                                    <td>attribute selector</td>
+                                </tr>
+                                <tr>
+                                    <td><code>E:root</code></td>
+                                    <td>an E element, root of the document</td>
+                                    <td>(structural) pseudo-class</td>
+                                </tr>
+                                <tr>
+                                    <td><code>E::first-line</code></td>
+                                    <td>the first formatted line of an E element</td>
+                                    <td>pseudo-element</td>
+                                </tr>
+                                <tr>
+                                    <td><code>E.warning</code></td>
+                                    <td>an E element whose class is "warning"</td>
+                                    <td>class selector</td>
+                                </tr>
+                                <tr>
+                                    <td><code>E#myid</code></td>
+                                    <td>an E element with <code>id</code> equal to "myid".</td>
+                                    <td><code>id</code> selector</td>
+                                </tr>
+                                <tr>
+                                    <td><code>E:not(s)</code></td>
+                                    <td>an E element that does not match simple selector</td>
+                                    <td>negation pseudo-class</td>
+                                </tr>
+                                <tr>
+                                    <td><code>E F</code></td>
+                                    <td>an F element descendant of an E element</td>
+                                    <td>descendant combinator</td>
+                                </tr>
+                                <tr>
+                                    <td><code>E > F</code></td>
+                                    <td>an F element child of an E element</td>
+                                    <td>child combinator</td>
+                                </tr>
+                                <tr>
+                                    <td><code>E + F</code></td>
+                                    <td>an F element immediately preceded by an E element</td>
+                                    <td> next-sibling combinator</td>
+                                </tr>
+                                <tr>
+                                    <td><code>E ~ F</code></td>
+                                    <td>an F element preceded by an E element</td>
+                                    <td>subsequent-sibling combinator</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
+                    <h2>Attribute Selectors</h2>
+                    <div class="content">
+                        <table class="table_type_one">
+                            <colgroup>
+                            <col>
+                            <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <code>[att]</code>
+                                    </td>
+                                    <td>represents an element with the
+                                        <code>att</code>
+                                        attribute, whatever the value of the attribute.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code>[att=val]</code>
+                                    </td>
+                                    <td>
+                                        represents an element with the
+                                        <code>att</code>
+                                        attribute whose value is exactly "val".
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">
+                                        <code>[att~=val]</code>
+                                    </td>
+                                    <td>
+                                        represents an element with the att attribute whose value is a
+                                        whitespace-separated list of words, one of which is exactly "val".
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        if "val" contains whitespace, it will
+                                        never represent anything (since the words are separated by spaces).
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        also if "val" is the empty string, it will never represent anything.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>[att|=val]</code></td>
+                                    <td>
+                                        represents an element with the
+                                        <code>att</code>
+                                        attribute, its value either being exactly "val" or
+                                        beginning with "val" immediately followed by "-"
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">
+                                        <code>[att^=val]</code>
+                                    </td>
+                                    <td>
+                                        represents an element with the <code>att</code> attribute whose value
+                                        <em>begins</em>
+                                        with the prefix "val".
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>if "val" is the empty string then the selector does not represent anything.</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">
+                                        <code>[att$=val]</code>
+                                    </td>
+                                    <td>
+                                        represents an element with the <code>att</code> attribute whose value
+                                        <em>ends</em> with the prefix "val".
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>if "val" is the empty string then the selector does not represent anything.</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"><code>[att*=val]</code></td>
+                                    <td>represents an element with the att attribute whose value contains at least one
+                                        instance of the substring "val".
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        if "val" is the empty string then the selector does not represent anything.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <h2>References</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <a href="https://www.w3.org/TR/selectors-3/#selector-syntax">W3C selector syntax</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://www.w3.org/TR/selectors-3/#attribute-selectors">W3C Attribute Selectors</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-    <!--  Templates -->
+        <!--  Templates -->
 
+        <template id="prevPageTemplate">stylesheet_precedence</template> <!--PREVIOUS PAGE-->
 
-    <template id="prevPageTemplate">stylesheet_precedence</template> <!--PREVIOUS PAGE-->
+        <template id="pageTitleTemplate">CSS Selectors</template> <!--PAGE TITLE-->
 
-    <template id="pageTitleTemplate">CSS Selectors</template> <!--PAGE TITLE-->
-    
-    <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
-
+        <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
 
     </div>
     <script>
-        
+
         //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-    
 
         // previous page
-        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
     </script>
