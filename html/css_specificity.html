@@ -81,18 +81,26 @@
                             <li><code>
                                 li.class:nth-of-type(3n)
                             </code>
-                            <ol>
-                                <li><code> 0 2 1</code></li>
-                                <li>Selector specificity is <code>21</code></li>
-                            </ol>
-                        </li>
-                        <li class="space_above"><code>#myDiv li.class a[href]</code>
+                                <ol>
+                                    <li><code> 0 2 1</code></li>
+                                    <li>Selector specificity is <code>21</code></li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>#myDiv li.class a[href]</code>
+                                <ol>
+                                    <li><code>1 2 2</code></li>
+                                    <li>Selector specificity is <code>122</code></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    <h2>Notes</h2>
+                    <div class="content">
                         <ol>
-                            <li><code>1 2 2</code></li>
-                            <li>Selector specificity is <code>122</code></li>
+                            <li>Specificity is the algorithm that the browser uses to decide
+                                which property value is applied to an element (MDN)</li>
                         </ol>
-                        </li>
-                        </ol>
+
                     </div>
 
                     <h2>References</h2>
@@ -105,6 +113,9 @@
                     </div>
                     <div class="content">
                         <a href="https://www.youtube.com/watch?v=8ddxfbnaIv0&t=453s">CSS selectors with Estelle Weyl</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance">Cascade, specificity, and inheritance</a>
                     </div>
                 </div>
             </div>
