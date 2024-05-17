@@ -45,49 +45,96 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
 
+                    <div class="content">
+                        <ol>
+                            <li>
+                                Count the number of <code>id</code> selectors in the selector (<code>=a</code>)
+                            </li>
+                            <li>
+                                Count the number of
+                                <ol>
+                                    <li><code>class</code> selectors</li>
+                                    <li><code>attribute</code> selectors</li>
+                                    <li><code>pseudo-classes</code></li>
+                                </ol>
+                                in the selector (<code>=b</code>)
+                            </li>
+                            <li>
+                                Count the number of
+                                <code>type</code> selectors and <code>pseudo-elements</code>
+                                in the selector (<code>=c</code>)
+
+                            </li>
+                            <li>
+                                Concatenate the three numbers <code>a b c</code> to get the specificity.
+                            </li>
+                            <li>Ignore the universal selector</li>
+                            <li> Selectors inside the negation pseudo-class are counted like any other
+                            </li>
+                            <li>Negation itself does not count as a pseudo-class.</li>
+                        </ol>
+                    </div>
                     <h2>Example</h2>
-                    <div class="content"></div>
-
-                    <h2>Notes</h2>
-                    <div class="content"></div>
-
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li><code>
+                                li.class:nth-of-type(3n)
+                            </code>
+                            <ol>
+                                <li><code> 0 2 1</code></li>
+                                <li>Selector specificity is <code>21</code></li>
+                            </ol>
+                        </li>
+                        <li class="space_above"><code>#myDiv li.class a[href]</code>
+                        <ol>
+                            <li><code>1 2 2</code></li>
+                            <li>Selector specificity is <code>122</code></li>
+                        </ol>
+                        </li>
+                        </ol>
+                    </div>
 
                     <h2>References</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <a href="https://www.w3.org/TR/selectors-3/#specificity">
+                            Calculating a selector's specificity (W3C)</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://specifishity.com/">CSS speciFISHity (Estelle Weyl)</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://www.youtube.com/watch?v=8ddxfbnaIv0&t=453s">CSS selectors with Estelle Weyl</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-    <!--  Templates -->
+        <!--  Templates -->
 
+        <template id="prevPageTemplate">css_selectors</template> <!--PREVIOUS PAGE-->
 
-    <template id="prevPageTemplate">css_selectors</template> <!--PREVIOUS PAGE-->
+        <template id="pageTitleTemplate">CSS Specificity</template> <!--PAGE TITLE-->
 
-    <template id="pageTitleTemplate">CSS Specificity</template> <!--PAGE TITLE-->
-    
-    <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
 
 
     </div>
     <script>
-        
+
         //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-    
+
 
         // previous page
-        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
     </script>
