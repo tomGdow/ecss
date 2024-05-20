@@ -14,6 +14,63 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: example 0;
+        }
+
+        div.container h2.example {
+            counter-increment: example;
+        }
+
+        div.container h2.example::before {
+            content: counter(example) ".  "
+        }
+        div.content {
+            counter-reset: revertTypes 0;
+        }
+
+        div.content h3 {
+            counter-increment: revertTypes;
+        }
+        
+        div.content h3::before {
+            content: counter(example) "." counter(revertTypes) ".  ";
+        }
+        @layer flayer, mylayer;
+
+        @layer mylayer {
+            .myrevertLayer {
+                color: revert-layer;
+            }
+        }
+
+        @layer mylayer {
+            .myrevertLayer {
+                color: magenta;
+            }
+        }
+
+        .divcontent {
+            color: lime;
+        }
+
+        #myinitial {
+            color: initial;
+        }
+
+        #myinherit {
+            color: inherit;
+        }
+
+        #myrevert {
+            color: revert;
+        }
+
+        #myunset {
+            color: unset;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,50 +102,376 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
-
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        CSS provides five special universal property values for controlling inheritance.
+                        Every CSS property accepts these values
+                        <ol>
+                            <li><code>inherit</code>
+                                <ol>
+                                    <li>Sets the property value applied to a selected element to be the same
+                                        as that of its parent element</li>
+                                    <li>Effectively, this "turns on inheritance"</li>
+                                    <li>The inherited value of a property on an element is the computed value of the
+                                        property on the element's <em>parent</em> element</li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>initial</code>
+                                <ol>
+                                    <li>Sets the property value to the <code>initial</code> value of that property</li>
+                                    <li>The <code>initial value</code> of a CSS property is its <code>default</code>
+                                        value, as listed in its definition table in the specification
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>revert</code>
+                                <div class="content">The behavior depends on the <code>cascade origin</code> to which
+                                    the declaration
+                                    belongs
+                                </div>
+                                <ol>
+                                    <li><code>user-agent origin</code>
+                                        <div class="content">equivalent to <code>unset</code></div>
+                                    </li>
+                                    <li class="space_above"><code>user origin</code>
+                                        <ol>
+                                            <li>Rolls back the cascaded value to the <code>user-agent</code> level</li>
+                                            <li>
+                                                The specified value is calculated as if no <code>author-origin</code>
+                                                or <code>user-origin</code> rules were specified for this property
+                                                on this element
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li class="space_above"><code>author origin</code>
+                                        <ol>
+                                            <li>Rolls back the cascaded value to the <code>user</code> level</li>
+                                            <li>The specified value is calculated as if
+                                                no <code>author-origin</code> rules were
+                                                specified for this property
+                                                on this element</li>
+                                        </ol>
+                                    </li>
+                                    <li class="space_above">see 
+                                        <a href="https://www.w3.org/TR/css-cascade-5/#default">W3C</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>revert-layer</code>
+                                <ol>
+                                    <li>
+                                        Resets the property value applied to a selected element
+                                        to the value established in a previous cascade layer.
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>unset</code>
+                                <div>Resets the property to its <code>natural</code> value, which means that</div>
+                                <ol>
+                                    <li>If the property is naturally inherited it acts like <code>inherit</code></li>
+                                    <li>Otherwise, it acts like <code>initial</code></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
 
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                Inherited property examples
+                                <ol>
+                                    <li><code>color</code></li>
+                                    <li><code>background-color</code></li>
+                                    <li><code>font-family</code></li>
+                                </ol>
+                            </li>
+                            <li>Not inherited property examples
+                                <ol>
+                                    <li><code>width</code></li>
+                                    <li><code>margin</code></li>
+                                    <li><code>padding</code></li>
+                                    <li><code>border</code></li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>cascade-layer (&commat;layer)</code>
+                                <ol>
+                                    <li>Rules within a cascade layer cascade together</li>
+                                    <li>
+                                        Any styles not in a layer are gathered together and placed into a single
+                                        anonymous layer that comes after all the declared layers, named and anonymous.
+                                    </li>
+                                    <li>
+                                        Any styles declared outside of a layer will override styles declared in a layer,
+                                        regardless of specificity
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>cascade-origin</code>
+                                <ol>
+                                    <li>
+                                        Each style rule has a cascade origin, which determines where it enters the
+                                        cascade
+                                    </li>
+                                    <li> CSS defines three core origins
+                                        <ol>
+                                            <li><code>Author Origin</code></li>
+                                            <li><code>User Origin</code></li>
+                                            <li><code>User-Agent Origin</code></li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>all</code>
+                            <ol>
+                                <li class="nostyle">The CSS shorthand property <code>all</code> can be used to apply one of the inheritance values
+                                     to (almost) all properties at once
+                                </li>
+                            </ol></li>
+                        </ol>
+                    </div>
+                    <h2 class="example">Example (default)</h2>
+                    <div class="content">
+                        <a href="https://tomgdoww.com" id="mydefault">tomgdow</a>
+                        <div>
+                            <pre>
+&lt;a href="https://tomgdoww.com" id="mydefault"&gt;tomgdow&lt;/a&gt;</pre>
+                        </div>
+                        <div>
+                            <canvas id="defaultLink" width="100" height="60"></canvas>
+                        </div>
+                        <div>The default link <code>color</code> (NOT
+                            <code>background-color</code>) is <code>blue</code>,
+                            which comes from the <strong>browser</strong>
+                        </div>
+                    </div>
+                    <h2 class="example">Example (inherit)</h2>
+                    <div class="content">
+                        <div class="divcontent">
+                            <a href="https://tomgdoww.com" id="myinherit">tomgdow</a>
+                        </div>
+                        <pre>
+//CSS
+.divcontent {color: lime;}
+    
+#myinherit {color: inherit;}
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+// HTML 
 
+&lt;div class="divcontent"&gt;
+    &lt;a href="https://tomgdoww.com" id="myinherit"&gt;tomgdow&lt;/a&gt;
+&lt;/div&gt;</pre>
+                        <div><canvas id="inheritLink" width="100" height="60"></canvas></div>
+                        <div>The link <code>color</code> (NOT
+                            <code>background-color</code>) is inherited from the <strong>parent class</strong>
+                        </div>
+                    </div>
+                    <h2 class="example">Example (initial)</h2>
+                    <div class="content">
+                        <div class="divcontent">
+                            <a href="https://tomgdoww.com" id="myinitial">tomgdow</a>
+                        </div>
+                        <pre>
+//CSS
+.divcontent {color: lime;}
+    
+#myinitial{color: initial;}
+
+// HTML 
+
+&lt;div class="divcontent"&gt;
+    &lt;a href="https://tomgdoww.com" id="myinitial"&gt;tomgdow&lt;/a&gt;
+&lt;/div&gt;</pre>
+                        <div><canvas id="initialLink" width="100" height="60"></canvas></div>
+                        <ol>
+                            <li>
+                                The link <code>color</code> (NOT
+                                <code>background-color</code>) is <code>initial value</code>
+                                of the CSS <code>color</code> property
+
+                            </li>
+                            <li>
+                                In the case of <code>color</code>, the initial value is <code>canvasText</code>
+                            </li>
+                            <li>
+                                <code>canvasText</code> is a system color keyword, and maps to the existing
+                                <code>WindowText</code> system color keyword
+                            </li>
+                        </ol>
+                    </div>
+                    <h2 class="example">Example (revert)</h2>
+                    <div class="content">
+                        <h3>Author Origin</h3>
+
+                        <div class="divcontent">
+                            <a href="https://tomgdoww.com" id="myrevert">tomgdow</a>
+                        </div>
+                        <pre>
+//CSS
+.divcontent {color: lime;}
+    
+#myrevert {color: inherit;}
+
+// HTML 
+
+&lt;div class="divcontent"&gt;
+    &lt;a href="https://tomgdoww.com" id="myrevert"&gt;tomgdow&lt;/a&gt;
+&lt;/div&gt;</pre>
+                        <div><canvas id="revertLink" width="100" height="60"></canvas></div>
+
+                     <div>
+                     As <code>color</code> is calculated as if no 
+                     <code>author-origin</code> rules were specified, the link <code>color</code>appears <code>blue</code>
+                    </div>
+
+                    <h3>User Origin</h3>
+                        <pre>
+//CSS (USER stylesheet)
+#myrevert {color: red;}</pre>
+
+                        <div><canvas id="revertLinkAlt" width="100" height="60"></canvas></div>
+
+                            <div>
+                            Inclusion of the above CSS rule in the <code>user stylesheet</code>, but 
+                            othewise with identical code to <code>author origin</code> above,
+                            results in a red link color
+                            </div>
+                    </div>
+
+                    <h2 class="example">Example (revert-layer)</h2>
+                    <div class="content">
+                        <div class="divcontent">
+                         <a href="https://tomgdoww.com" id="myrevertLayer" class="myrevertLayer">tomgdow</a>
+                        </div>
+                        <pre>
+//CSS
+    
+@layer flayer, mylayer;
+@layer mylayer {
+    .myrevertLayer {color: revert-layer;}
+}
+@layer mylayer {
+    .myrevertLayer {color: magenta;}
+}
+
+.divcontent {color: lime;}
+
+// HTML 
+
+&lt;div class="divcontent"&gt;
+&lt;a href="https://tomgdoww.com" id="myrevertLayer" 
+    class="myrevertLayer"&gt;tomgdow&lt;/a&gt;
+&lt;/div&gt;</pre>
+
+ <div>
+    <canvas id="revertLayerLink" width="200" height="60"></canvas>
+ </div>
+ <div>
+    The <code>revert-layer</code> value causes the CSS rule from the previous layer (<code>flayer</code>) to be applied
+ </div>
+                    </div>
+                    <h2 class="example">Example (unset)</h2>
+                    <div class="content">
+  <div class="divcontent">
+    <a href="https://tomgdoww.com" id="myunset">tomgdow</a>
+  </div>
+  <pre>
+//CSS
+.divcontent {color: lime;}
+    
+#myunset {color: unset;}
+
+// HTML 
+ &lt;div class="divcontent"&gt;
+    &lt;a href="https://tomgdoww.com" id="myunset"&gt;tomgdow&lt;/a&gt;
+ &lt;/div&gt;</pre>
+                        <div><canvas id="unsetLink" width="100" height="60"></canvas></div>
+                        <div>
+                            As <code>color</code> is naturally inherited, <code>unset</code> acts like <code>inherit</code>
+                        </div>
+                        
+                    </div><!--content-->
+                        
                     <h2>References</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <a href="https://www.w3.org/TR/css-cascade-5/#default">
+                            CSS Cascading and Inheritance Level 5
+                        </a>
+                    </div>
+                    <div class="content">
+                        <a
+                            href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance">MDN
+                            Cascade, specificity, and inheritance</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/revert-layer">MDN revert-layer</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer">MDN &commat;layer</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://stackoverflow.com/q/55760956/499167">
+                            SO: Why does color:initial for an anchor element set its color to black instead of blue?</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-    <!--  Templates -->
+        <!--  Templates -->
 
 
-    <template id="prevPageTemplate">css_specificity</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">css_specificity</template> <!--PREVIOUS PAGE-->
 
-    <template id="pageTitleTemplate">CSS Inheritance</template> <!--PAGE TITLE-->
-    
-    <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
+        <template id="pageTitleTemplate">CSS Inheritance</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
 
 
     </div>
+    <script src="../js/functions.js"></script>
     <script>
-        
+
         //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-    
+
 
         // previous page
-        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        defaultColor = window.getComputedStyle(mydefault, null).getPropertyValue('color');
+        drawRectangleAlt(0, 0, 100, 40, defaultColor, "defaultLink");
+        drawAlt("default", 10, 30, "defaultLink", "white")
+
+        inheritColor = window.getComputedStyle(myinherit, null).getPropertyValue('color');
+        drawRectangleAlt(0, 0, 100, 40, inheritColor, "inheritLink");
+        drawAlt("inherit", 10, 30, "inheritLink", "white")
+
+        initialColor = window.getComputedStyle(myinitial, null).getPropertyValue('color');
+        drawRectangleAlt(0, 0, 100, 40, initialColor, "initialLink");
+        drawAlt("initial", 10, 30, "initialLink", "white")
+
+        revertColor = window.getComputedStyle(myrevert, null).getPropertyValue('color');
+        drawRectangleAlt(0, 0, 100, 40, revertColor, "revertLink")
+        drawAlt("revert", 10, 30, "revertLink", "white")
+        
+        revertColorAlt = "red";
+        drawRectangleAlt(0, 0, 100, 40, revertColorAlt, "revertLinkAlt")
+        drawAlt("revert", 10, 30, "revertLinkAlt", "white")
+
+        revertLayerColor = window.getComputedStyle(myrevertLayer, null).getPropertyValue('color');
+        drawRectangleAlt(0, 0, 150, 40, revertLayerColor, "revertLayerLink");
+        drawAlt("revert-layer", 10, 30, "revertLayerLink", "white");
+        
+        unsetColor = window.getComputedStyle(myunset, null).getPropertyValue('color');
+        drawRectangleAlt(0, 0, 100, 40, unsetColor, "unsetLink");
+        drawAlt("unset", 10, 30, "unsetLink", "white")
 
     </script>
 </body>
