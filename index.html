@@ -13,6 +13,22 @@
     <link rel="stylesheet" href="./css/ecss.css" title="Default">
     <link rel="alternate stylesheet" href="./css/ecssAlt.css" title="Dark Mode">
     <noscript><link rel="stylesheet" href="./css/ecss_nojs.css"></noscript>
+    <style>
+        div.container {
+            counter-reset: moduleNumber 0;
+        }
+
+        div.container h2 {
+            counter-increment: moduleNumber;
+        }
+
+        div.container h2::before {
+            content: counter(moduleNumber) ".  ";
+        }
+        div.site-container h2~div,h1+div{
+             padding-left: 2em;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -46,8 +62,8 @@
                         <a href="./html/search.html">search</a>
                     </div>
                     <h1>Course Structure</h1>
-                    <h2>HTML Fundamentals</h2>
                     <div><a href="./html/course_objectives.html">Course Objectives</a></div>
+                    <h2>HTML Fundamentals</h2>
                     <div><a href="./html/script.html">script tag</a></div>
                     <div><a href="./html/noscript.html">noscript tag</a></div>
                     <div><a href="./html/html_file_structure.html">html file structure</a></div>
@@ -64,20 +80,20 @@
                     <div><a href="./html/comments.html">comments</a></div>
                     <div><a href="./html/well_formed_element.html">well-formed element</a></div>
                     <div><a href="./html/validation.html">validation</a></div>
+                    <h2>CSS Fundamentals</h2>
                     <div><a href="./html/stylesheet_types.html">stylesheet types</a></div>
                     <div><a href="./html/stylesheet_precedence.html">stylesheet precedence</a></div>
                     <div><a href="./html/css_selectors.html">CSS selectors</a></div>
                     <div><a href="./html/css_specificity.html">CSS specificity</a></div>
                     <div><a href="./html/css_inheritance.html">CSS inheritance</a></div>
                     <div><a href="./html/web_safe_fonts.html">web safe fonts</a></div>
-                    <div><a href="/html/mnemonics.html">mnemonics</a></div>
-                    <div><a href="./html/references.html">references</a></div>
-                    <h2>CSS Fundamentals</h2>
                     <h2>Document Structure using HTML</h2>
                     <h2>Multimedia Presentation using HTML</h2>
+                    <h2>Webpage Styling using CSS</h2>
                     <h2>Accessibility, Readability and Testing</h2>
-                    <h2>Temp notes</h2>
-                    <p>doctype, html, head body</p>
+                    <h2>References and Mnemonics</h2>
+                    <div><a href="/html/mnemonics.html">mnemonics</a></div>
+                    <div><a href="./html/references.html">references</a></div>
                 </div>
             </div>
         </div>
