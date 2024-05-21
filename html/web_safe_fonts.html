@@ -13,7 +13,84 @@
     <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
+
     </noscript>
+    <style>
+        div.content {
+            counter-reset: itemCounter 0;
+    }
+
+    div.content div {
+        counter-increment: itemCounter;
+        text-indent: 1em hanging;
+    } 
+    
+    div.content div::before {
+        content: counter(itemCounter) ".  ";
+        color: var(--primary-green);
+    }
+
+    .times {
+        font-family: Times, serif
+    }
+        .times_new_roman {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.2rem;
+        }
+
+        .georgia {
+            font-family: Georgia, serif;
+            font-size: 1.2rem;
+        }
+
+        .courier {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2rem;
+        }
+
+    .monospace {
+            font-family: monospace, Menlo,'Courier New';
+            font-size: 1.2rem;
+        }
+    .menlo {
+        font-family: Menlo;
+        font-size: 1.2rem;
+    }
+
+        .arial {
+            font-family: Arial, sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .helvetica {
+            font-family: Helvetica,Arial, sans-serif;
+            font-size: 1.2rem;
+        }
+        .monaco {
+            font-family: Monaco, monospace;
+            font-size: 1.2rem;
+        }
+        .geneva {
+            font-family: Geneva, sans-serif;
+            font-size: 1.2rem;
+        }
+        .verdana {
+            font-family:Verdana, sans-serif;
+            font-size: 1.2rem;
+        }
+        .tahoma {
+            font-family:Tahoma, sans-serif;
+        }
+        .trebuchet {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .lucidaConsole {
+            font-family: 'Lucida Console', monospace;
+        }
+        .lucidaSans {
+            font-family: 'Lucida Sans', sans-serif;
+        }
+    </style>
 </head>
 
 <body>
@@ -47,17 +124,70 @@
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content"></div>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                    <h2>Example (serif)</h2>
+                    <div class="content">
+                        <div class="times_new_roman">Times New Roman</div>
+                        <div class="times">Times</div>
+                        <div class="georgia">Georgia</div>
+                    </div>
+                    
+                    <h2>Example (sans-serif)</h2>
+                    <div class="content">
+                        <div class="arial">Arial</div>
+                        <div class="helvetica">Helvetica</div>
+                        <div class="verdana">Verdana</div>
+                        <div class="geneva">Geneva</div>
+                        <div class="tahoma">Tahoma</div>
+                        <div class="trebuchet">Trebucket MS</div>
+                        <div class="lucidaSans">Lucida Sans</div>
+                    </div>
+                    <h2>Example (monospaced)</h2>
+                    <div class="content">
+                        <div class="courier">Courier</div>
+                        <div class="monaco">Monaco 
+                            ( <span class="white_on_black">Mon</span>ac<span class="white_on_black">o</span> )</div>
+                        <div class="monospace">Monospace (code default on MacOS)</div>
+                        <div class="menlo">Menlo (code default on Firefox)</div>
+                        <div class="lucidaConsole">Lucida Console</div>
+                    </div>
 
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <div><span class="arial">Arial</span> and <span class="helvetica">Helvetica</span> are almost identical</div>
+                        <div><span class="courier">Courier</span> was initially created for IBM's typewriters</div>
+                        <div>
+                            <span class="menlo">Menlo</span> is a <code>monospaced sans-serif</code> typeface first shipped with Mac OS X, 
+                            superseding the <span class="monaco">Monaco</span> typeface, 
+                            which had long been the default <code>monospaced</code> typeface on macOS. 
+                        </div>
+                        <div><span class="trebuchet">Trebuchet MS</span>
+                            is a sans-serif typeface designed for Microsoft,
+                            named after the trebuchet, a medieval siege engine.
+                        </div>
+                        <div>
+                            <span class="lucidaSans">Lucida</span> is an extended family of related typefaces to be extremely legible when printed at small size or displayed 
+                            on a low-resolution display,hence the name, from 'lucid' (clear or easy to understand)
+                        </div>
+                    </div>
 
                     <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <span class="white_on_black">Mon</span>ac<span class="white_on_black">o</span> is 
+                        <span class="white_on_black">mono</span>spaced
+                    </div>
 
                     <h2>References</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <a href="https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css">webkit user agent stylesheet</a>
+                    </div>
+                    <div class="content">
+                        <a href="https://stackoverflow.com/q/884177/499167">
+                            (SO) Determine what font a browser is  using to render some text?
+                        </a>
+                    </div>
+                    <div class="content">
+                        <a href="https://www.w3schools.com/cssref/css_websafe_fonts.php">W3Schools: Best Web Safe Fonts for HTML and CSS</a>
+                    </div>
                 </div>
             </div>
         </div>

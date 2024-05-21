@@ -162,6 +162,10 @@ li.nostyle {
   .move-right {
     padding-left: 15%;
   }
+  .white_on_black {
+    background-color:black;
+    color:white;
+  }
 
 @media screen and (min-width: 500px) {
 
