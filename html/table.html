@@ -74,7 +74,13 @@
         #tableEight tr>td,
         #tableNine,
         #tableNine tr>th,
-        #tableNine tr>td {
+        #tableNine tr>td,
+        #tableTen,
+        #tableTen tr>th,
+        #tableTen tr>td,
+        #tableEleven,
+        #tableEleven tr>th,
+        #tableEleven tr>td {
             border: 1px solid var(--primary-green);
         }
 
@@ -86,7 +92,9 @@
         #tableSix,
         #tableSeven,
         #tableEight,
-        #tableNine {
+        #tableNine,
+        #tableTen,
+        #tableEleven{
             margin: 0 auto;
         }
 
@@ -117,6 +125,31 @@
     }
     #tableNine {
         empty-cells:hide;
+    }
+    #tableTen tbody td {
+      height: 3em;
+    }
+    #tableTen tbody td:first-of-type {
+      vertical-align:top;
+    }
+    #tableTen tbody td:nth-of-type(3) {
+      vertical-align: bottom;
+    }
+    #tableTen tbody td:nth-of-type(2) {
+      vertical-align:middle;
+    }
+    #tableEleven tbody td {
+      width: 3em;
+    }
+    #tableEleven tbody td:first-of-type {
+      text-align:left
+    }
+    #tableEleven tbody td:nth-of-type(2) {
+      text-align:center;
+    }
+    #tableEleven tbody td:nth-of-type(3) {
+
+      text-align:right;
     }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -970,6 +1003,161 @@ table, th, td {
       </tr>
   </tfoot>
 </table> 
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (vertical-align)</h2>
+                    <div class="content">
+                        <div class="indent">
+                            <h3>HTML</h3>
+                            <pre>
+&lt;table&gt;
+    &lt;caption&gt;caption&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;h&lt;/th&gt;
+            &lt;th&gt;h&lt;/th&gt;
+            &lt;th&gt;h&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;f&lt;/td&gt;
+            &lt;td&gt;f&lt;/td&gt;
+            &lt;td&gt;f&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+table, th, td {
+    border: 1px solid green;
+  }
+tbody td {
+    height: 3em;
+  }
+tbody td:first-of-type {
+    vertical-align:top;
+  }
+tbody td:nth-of-type(2) {
+    vertical-align:middle;
+  }
+tbody td:nth-of-type(3) {
+    vertical-align: bottom;
+  }</pre>
+                        </div>
+                        <h3>Browser</h3>
+
+<table id="tableTen">
+  <caption>caption</caption>
+  <thead>
+      <tr>
+          <th>h</th>
+          <th>h</th>
+          <th>h</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>d</td>
+          <td>d</td>
+          <td>d</td>
+      </tr>
+  </tbody>
+  <tfoot>
+      <tr>
+          <td>f</td>
+          <td>f</td>
+          <td>f</td>
+      </tr>
+  </tfoot>
+</table> 
+                    </div>
+                    <hr>
+                    <h2 class="example">Example (text-align)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;table&gt;
+    &lt;caption&gt;caption&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;h&lt;/th&gt;
+            &lt;th&gt;h&lt;/th&gt;
+            &lt;th&gt;h&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;f&lt;/td&gt;
+            &lt;td&gt;f&lt;/td&gt;
+            &lt;td&gt;f&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+table, th, td {
+    border: 1px solid green;
+  }
+tbody td {
+    width: 3em;
+  }
+tbody td:first-of-type {
+    text-align:left
+  }
+tbody td:nth-of-type(2) {
+    text-align:center;
+  }
+tbody td:nth-of-type(3) {
+    text-align:right;
+  }</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+<table id="tableEleven">
+  <caption>caption</caption>
+  <thead>
+      <tr>
+          <th>h</th>
+          <th>h</th>
+          <th>h</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>d</td>
+          <td>d</td>
+          <td>d</td>
+      </tr>
+  </tbody>
+  <tfoot>
+      <tr>
+          <td>f</td>
+          <td>f</td>
+          <td>f</td>
+      </tr>
+  </tfoot>
+</table> 
+
                     </div><!--content-->
 
 <hr>
