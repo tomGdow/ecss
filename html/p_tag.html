@@ -16,7 +16,9 @@
     </noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -48,49 +50,72 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        The p element represents a paragraph.
+                        <pre>
+&lt;p&gt;The little kitten gently seated himself on a piece of
+carpet. Later in his life, this would be referred to as the time the
+cat sat on the mat.&lt;/p&gt;</pre>
+                    </div>
 
                     <h2>Example</h2>
                     <div class="content"></div>
 
                     <h2>Notes</h2>
-                    <div class="content"></div>
-
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>p</code> element should not be used when a more
+                                specific element is more appropriate
+                            </li>
+                            <li>
+                                Paragraphs are block-level elements, and notably will automatically close
+                                if another block-level element is parsed
+                                before the closing <code>p</code> tag
+                            </li>
+                            <li>By default, browsers separate paragraphs with a single blank line</li>
+                        </ol>
+                    </div>
 
                     <h2>References</h2>
-                    <div class="content"></div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-p-element">W3C:
+                            p element</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p">
+                            MDN: the paragraph element</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-    <!--  Templates -->
+        <!--  Templates -->
 
 
-    <template id="prevPageTemplate">h1_to_h6</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">h1_to_h6</template> <!--PREVIOUS PAGE-->
 
-    <template id="pageTitleTemplate">p tag</template> <!--PAGE TITLE-->
-    
-    <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
+        <template id="pageTitleTemplate">p tag</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
 
 
     </div>
     <script>
-        
+
         //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-    
+
 
         // previous page
-        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
     </script>
