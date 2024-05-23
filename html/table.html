@@ -14,9 +14,116 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: exampleCounter 0;
+            counter-reset: refCounter 0;
+        }
+
+        div.container  .example {
+            counter-increment: exampleCounter;
+        }
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content.ref {
+            counter-increment: refCounter;
+        }
+
+        div.content.ref::before {
+            content: counter(refCounter) ".  ";
+            color:var(--primary-green)
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        #tableOne,
+        #tableOne tr>th,
+        #tableOne tr>td,
+        #tableTwo,
+        #tableTwo tr>th,
+        #tableTwo tr>td,
+        #tableThree,
+        #tableThree tr>th,
+        #tableThree tr>td,
+        #tableFour,
+        #tableFour tr>th,
+        #tableFour tr>td,
+        #tableFive,
+        #tableFive tr>th,
+        #tableFive tr>td,
+        #tableSix,
+        #tableSix tr>th,
+        #tableSix tr>td,
+        #tableSeven,
+        #tableSeven tr>th,
+        #tableSeven tr>td,
+        #tableEight,
+        #tableEight tr>th,
+        #tableEight tr>td,
+        #tableNine,
+        #tableNine tr>th,
+        #tableNine tr>td {
+            border: 1px solid var(--primary-green);
+        }
+
+        #tableOne,
+        #tableTwo,
+        #tableThree,
+        #tableFour,
+        #tableFive,
+        #tableSix,
+        #tableSeven,
+        #tableEight,
+        #tableNine {
+            margin: 0 auto;
+        }
+
+        #tableFive {
+            caption-side: bottom;
+        }
+
+        #tableSix {
+            border-collapse: collapse;
+        }
+
+        .indent {
+            padding-left: 2em;
+        }
+        hr {
+            color: var(--primary-green);
+        
+        }
+
+    #tableSeven colgroup {
+      background-color:orange;
+    }
+    #tableEight col:first-of-type{
+      background-color:orange;
+    }
+    #tableEight col:nth-of-type(2){
+      background-color:yellow;
+    }
+    #tableNine {
+        empty-cells:hide;
+    }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -48,49 +155,908 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
-
-                    <h2>Example</h2>
-                    <div class="content"></div>
-
+                    <div class="content">
+                        The <code>table</code> element represents data with more than one dimension, in the form of a
+                        table.
+                    </div>
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li><code>tbody</code>
+                                <ol>
+                                    <li>
+                                        May have multiple <code>tbody</code> elements
+                                    </li>
+                                    <li>
+                                        But cells with <code>colspan</code> must "not extend past the end of its row
+                                        group established by a <code>tbody</code> element"
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>tfoot</code>
+                                <ol>
+                                    <li>In HTML-5, must go after <code>tbody</code></li>
+                                    <li>Otherwise, will not validate</li>
+                                </ol>
+                            </li>
+                            <li><code>thead</code>
+                                <div class="content">
+                                    The <code>thead</code> element represents the block of rows that consist of the column labels 
+                                    (headers) for the parent <code>table</code> element
+                                </div>
+                            </li>
+                            <li><code>tr</code>
+                                <div class="content">
+                                    The <code>tr</code> element represents a row of cells in a table.
+                                </div>
+                            </li>
+                            <li><code>td</code>
+                                <div class="content">
+                                    The <code>td</code> element represents a data cell in a table.
+                                </div>
+                            </li>
+                            <li><code>th</code>
+                                <ol>
+                                    <li>The <code>th</code> element represents a header cell in a table.</li>
+                                    <li>The <code>th</code> element may have a <code>scope</code> content attribute
+                                        specified</li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>colgroup</code>
+                                <ol>
+                                    <li>May use <code>span</code> attribute or <code>col</code></li>
+                                    <li>The <code>colgroup</code> element must not appear inside the <code>thead</code>
+                                        element</li>
+                                    <li><code>colgroup</code> element must appear before <code>thead</code> and after
+                                        the <code>caption</code> element,
+                                        if there is one
+                                    </li>
+                                    <li>May have multiple <code>colgroup</code> elements</li>
+                                    <li>
+                                        Only <code>border</code>, <code>background</code>, <code>width</code> and
+                                        <code>visibility</code> may be applied to
+                                        <code>col</code> and <code>colgroup</code> elements
+                                    </li>
+                                    <li><code>color</code>, for example, cannot be changed</li>
+                                    <li>
+                                        If the <code>colgroup</code> element contains no <code>col</code> elements,
+                                        then the element may have a <code>span</code> content attribute specified,
+                                        whose value must be a valid non-negative integer greater than zero.
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>col</code>
+                                <ol>
+                                    <li>
+                                        The <code>col</code> element is a void element and enclosing colgroup
+                                        <strong>must not have</strong> a span attribute
+                                    </li>
+                                    <li>But <code>col</code> may take span attribute </li>
+                                    <li>
+                                        <code>col</code>has no end tag and must be a child of <code>colgroup</code>
+                                        which has
+                                        no <code>span</code> attribute
+                                    </li>
+                                    <li>
+                                        The <code>col</code> element may have a <code>span</code> content attribute
+                                        specified,
+                                        whose value must be a valid non-negative integer greater than zero.
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>rowspan colspan</code>
+                                <ol>
+                                    <li>Makes it possible for table data elements to span across columns and row</li>
+                                    <li>
+                                        The <code>td</code> and <code>th</code> elements may have a <code>colspan</code>
+                                        content attribute specified
+                                    </li>
+                                    <li>
+                                        The <code>td</code> and <code>th</code> elements may have a <code>rowspan</code>
+                                        content attribute specified
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>vertical-align</code>
+                                <div class="content">May take values of
+                                    <ol>
+                                        <li><code>top</code></li>
+                                        <li><code>middle</code></li>
+                                        <li><code>bottom</code></li>
+                                    </ol>
+                                </div>
+                            </li>
+                            <li><code>text-align</code>
+                                <div class="content">May take values of
+                                    <ol>
+                                        <li><code>left</code></li>
+                                        <li><code>center</code></li>
+                                        <li><code>right</code></li>
+                                    </ol>
+                                </div>
+                            </li>
+                            <li><code>table-layout</code>
+                                <ol>
+                                    <li>
+                                        The table-layout property defines the algorithm used to lay out
+                                        table <code>cells</code>, <code>rows</code>, and <code>columns</code>
+                                    </li>
+                                    <li>Use <code>table-layout:fixed</code> for faster rendering of tables</li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>border-collapse</code>
+                                <div class="content">Possible values are
+                                    <ol>
+                                        <li><code>collapse</code></li>
+                                        <li><code>separate</code></li>
+                                    </ol>
+                                </div>
+                            </li>
+                            <li><code>table border</code>
+                                <ol>
+                                    <li>Acceptable ways of not showing a border
+                                        <ol>
+                                            <li><code>border:none</code></li>
+                                            <li><code>border:0</code></li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        But they do subtly different things: <code>border:0</code> sets the value
+                                        of <code>border-width</code> to zero.
+                                    </li>
+                                    <li>
+                                        From within HTML, use <code>border=1</code> as attribute to table tag
+                                        (deprecated)
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>border-spacing</code>
+                                <div class="content">May take two values (space-separated) representing horizontal and
+                                    vertical spacing.</div>
+                            </li>
+                            <li class="space_above"><code>caption</code>
+                                <ol>
+                                    <li>
+                                        The <code>caption</code> element represents the title of the <code>table</code>
+                                        that is its parent,
+                                        if it has a parent and that is a <code>table</code> element
+                                    </li>
+                                    <li><code>caption</code>, if present, <strong>must be</strong> be a
+                                        <code>first-child</code> of the <code>table</code> element</li>
+                                </ol>
+                            </li>
+                            <li><code>caption-side</code>
+                                <div class="content">
+                                    May take values of
+                                    <ol>
+                                        <li><code>top</code></li>
+                                        <li><code>bottom</code></li>
+                                    </ol>
+                                </div>
+                            </li>
+                            <li>center a table
+                                <div class="content">
+                                    use <code>margin: 0 auto</code>
+                                </div>
+                            </li>
+                            <li>empty cells
+                                <div class="content">Possible values are
+                                <ol>
+                                    <li><code>hide</code></li>
+                                    <li><code>show</code></li>
+                                </ol>
+                                </div>
+                            </li>
+                            <li>permitted content (table)
+                                <div class="content">
+                                    In this order:
+                                    <ol>
+                                        <li>an optional <code>caption</code> element</li>
+                                        <li>zero or more <code>colgroup</code> elements</li>
+                                        <li>an optional <code>thead</code> element</li>
+                                        <li>either one of the following
+                                            <ol>
+                                                <li>zero or more <code>tbody</code> elements</li>
+                                                <li>one or more <code>tr</code> elements</li>
+                                            </ol>
+                                        </li>
+                                        <li>an optional <code>tfoot</code> element</li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                                    </ol>
+                                </div>
+                            </li>
 
+                        </ol>
+                    </div>
+<hr>
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;table&gt;
+    &lt;caption&gt;&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+         &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+table, th, td {
+    border: 1px solid green;
+  }</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <table id="tableOne">
+                            <caption>caption</caption>
+                            <tr>
+                                <th>head</th>
+                            </tr>
+                            <tr>
+                                <td>data</td>
+                            </tr>
+                        </table>
+
+                    </div><!--content-->
+<hr>
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;table&gt;
+    &lt;caption&gt;&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+table, th, td {
+    border: 1px solid green;
+  }</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <table id="tableTwo">
+                            <caption>caption</caption>
+                            <thead>
+                                <tr>
+                                    <th>h</th>
+                                    <th>h</th>
+                                    <th>h</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>d</td>
+                                    <td>d</td>
+                                    <td>d</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>f</td>
+                                    <td>f</td>
+                                    <td>f</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <hr>
+
+                    <h2 class="example">Example  (colspan)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;table&gt;
+    &lt;caption&gt;&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th colspan="3"&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2"&gt;&lt;/td&gt;
+           &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3"&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+table, th, td {
+    border: 1px solid green;
+  }</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <table id="tableThree">
+                            <caption>caption</caption>
+                            <thead>
+                                <tr>
+                                    <th colspan="3">h</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">d</td>
+                                    <td>d</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3">f</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <hr>
+
+                    <h2 class="example">Example (rowspan)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;table&gt;
+    &lt;caption&gt;caption&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;h&lt;/th&gt;
+            &lt;th&gt;h&lt;/th&gt;
+            &lt;th&gt;h&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td rowspan="2"&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+             &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;f&lt;/td&gt;
+            &lt;td&gt;f&lt;/td&gt;
+            &lt;td&gt;f&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+table, th, td {
+    border: 1px solid green;
+  }</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <table id="tableFour">
+                            <caption>caption</caption>
+                            <thead>
+                                <tr>
+                                    <th>h</th>
+                                    <th>h</th>
+                                    <th>h</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">d</td>
+                                    <td>d</td>
+                                    <td>d</td>
+                                </tr>
+                                <tr>
+                                    <td>d</td>
+                                    <td>d</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>f</td>
+                                    <td>f</td>
+                                    <td>f</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div><!--content-->
+                    <hr>
+
+                    <h2 class="example">Example (caption-side)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;table&gt;&lt;/table&gt;
+    &lt;caption&gt;&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+    table, th, td {
+      border: 1px solid green;
+    
+    }
+    table {
+      caption-side:bottom;
+    }</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <table id="tableFive">
+                            <caption>caption</caption>
+                            <thead>
+                                <tr>
+                                    <th>h</th>
+                                    <th>h</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>d</td>
+                                    <td>d</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>f</td>
+                                    <td>f</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (border-collapse)</h2>
+                    <div class="content">
+
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;table&gt;&lt;/table&gt;
+    &lt;caption&gt;&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+    table, th, td {
+      border: 1px solid green;
+    
+    }
+    table {
+      border-collapse:collapse;
+    }</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <table id="tableSix">
+                            <caption>caption</caption>
+                            <thead>
+                                <tr>
+                                    <th>h</th>
+                                    <th>h</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>d</td>
+                                    <td>d</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>f</td>
+                                    <td>f</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (colgroup)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;table&gt;
+    &lt;caption&gt;caption&lt;/caption&gt;
+    &lt;colgroup class="colf" span="2"&gt;
+    
+    &lt;/colgroup&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;h&lt;/th&gt;
+          &lt;th&gt;h&lt;/th&gt;
+          &lt;th&gt;h&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;d&lt;/td&gt;
+          &lt;td&gt;d&lt;/td&gt;
+          &lt;td&gt;d&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+           &lt;td&gt;d&lt;/td&gt;
+           &lt;td&gt;d&lt;/td&gt;
+          &lt;td&gt;d&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+      &lt;tr&gt;
+          &lt;td&gt;f&lt;/td&gt;
+          &lt;td&gt;f&lt;/td&gt;
+          &lt;td&gt;f&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+table, th, td {
+    border: 1px solid green;
+  }
+colgroup {
+    background-color:orange;
+  }</pre>
+                        </div>
+                        <h3>Browser</h3>
+
+<table id="tableSeven">
+  <caption>caption</caption>
+  <colgroup span="2"></colgroup>
+  <thead>
+      <tr>
+          <th>h</th>
+          <th>h</th>
+          <th>h</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>d</td>
+          <td>d</td>
+          <td>d</td>
+      </tr>
+      <tr>
+           <td>d</td>
+           <td>d</td>
+          <td>d</td>
+      </tr>
+  </tbody>
+  <tfoot>
+      <tr>
+          <td>f</td>
+          <td>f</td>
+          <td>f</td>
+      </tr>
+  </tfoot>
+</table> 
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (colgroup col)</h2>
+                    <div class="content">
+                        <div class="indent">
+                            <h3>HTML</h3>
+                            <pre>
+&lt;table&gt;
+    &lt;caption&gt;caption&lt;/caption&gt;
+    &lt;colgroup&gt;
+        &lt;col&gt;
+        &lt;col span="2"&gt;
+    &lt;/colgroup&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;h&lt;/th&gt;
+            &lt;th&gt;h&lt;/th&gt;
+            &lt;th&gt;h&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+     &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;f&lt;/td&gt;
+            &lt;td&gt;f&lt;/td&gt;
+            &lt;td&gt;f&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt; 
+
+                            </pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+table, th, td {
+    border: 1px solid green;
+  }
+col:first-of-type{
+    background-color:orange;
+  }
+col:nth-of-type(2){
+    background-color:yellow;
+  }</pre>
+                        </div>
+                        <h3>Browser</h3>
+<table id="tableEight">
+  <caption>caption</caption>
+  <colgroup>
+    <col>
+    <col span="2">
+  </colgroup>
+  <thead>
+      <tr>
+          <th>h</th>
+          <th>h</th>
+          <th>h</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>d</td>
+          <td>d</td>
+          <td>d</td>
+      </tr>
+      <tr>
+           <td>d</td>
+           <td>d</td>
+          <td>d</td>
+      </tr>
+  </tbody>
+  <tfoot>
+      <tr>
+          <td>f</td>
+          <td>f</td>
+          <td>f</td>
+      </tr>
+  </tfoot>
+</table> 
+                    </div>
+                    <hr>
+                    <h2 class="example">Example (Empty Cells)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;table&gt;
+    &lt;caption&gt;caption&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;h&lt;/th&gt;
+            &lt;th&gt;h&lt;/th&gt;
+            &lt;th&gt;h&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;f&lt;/td&gt;
+            &lt;td&gt;f&lt;/td&gt;
+            &lt;td&gt;f&lt;/td&gt;
+        &lt;/tr&gt;
+&lt;/table&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+table, th, td {
+    border: 1px solid green;
+    empty-cells: hide;
+  }</pre>
+                        </div>
+<h3>Browser</h3>
+
+<table id="tableNine">
+  <caption>caption</caption>
+  <thead>
+      <tr>
+          <th>h</th>
+          <th>h</th>
+          <th>h</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>d</td>
+          <td>d</td>
+          <td>d</td>
+      </tr>
+      <tr>
+           <td>d</td>
+           <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+  <tfoot>
+      <tr>
+          <td>f</td>
+          <td>f</td>
+          <td>f</td>
+      </tr>
+  </tfoot>
+</table> 
+                    </div><!--content-->
+
+<hr>
                     <h2>References</h2>
-                    <div class="content"></div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">MDN: Table Element</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/tabular-data.html#the-table-element">
+                            W3C: The table element
+                        </a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/tabular-data.html#the-caption-element">
+                            W3C: Caption element
+                        </a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/tabular-data.html#the-colgroup-element">W3C:
+                            colgroup</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/tabular-data.html#the-colgroup-element">W3C:
+                            col</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/tabular-data.html#the-tbody-element">W3C:
+                            tbody</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/tabular-data.html#the-thead-element">W3C:
+                            thead</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/tabular-data.html#the-tfoot-element">W3C:
+                            tfoot</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/tabular-data.html#the-tr-element">W3C:
+                            tr</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/tabular-data.html#the-td-element">W3C:
+                            td</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/tabular-data.html#the-th-element">W3C:
+                            th</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://stackoverflow.com/a/53513334/499167">
+                            (SO) HTML Element COL, color & width CSS properties not working</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3schools.com/cssref/pr_tab_table-layout.php">W3Schools: CSS table-layout
+                            Property</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-    <!--  Templates -->
+        <!--  Templates -->
 
 
-    <template id="prevPageTemplate">web_safe_fonts</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">web_safe_fonts</template> <!--PREVIOUS PAGE-->
 
-    <template id="pageTitleTemplate">Table</template> <!--PAGE TITLE-->
-    
-    <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
+        <template id="pageTitleTemplate">Table</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
 
 
     </div>
     <script>
-        
+
         //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-    
+
 
         // previous page
-        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
     </script>
