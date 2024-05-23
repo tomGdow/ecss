@@ -14,9 +14,30 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+        }
+
+        div.content.ref {
+            counter-increment: refCounter;
+        }
+
+        div.content.ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        #h1h6>* {
+            text-align: center;
+            color: var(--primary-green);
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -48,49 +69,73 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
-
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                    <div class="content" id="h1h6">
+                        <h1>I am a h1</h1>
+                        <h2>I am a h2</h2>
+                        <h3>I am a h3</h3>
+                        <h4>I am a h4</h4>
+                        <h5>I am a h5</h5>
+                        <h6>I am a h6</h6>
+                    </div>
 
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>The <code>h1</code> to <code>h6</code> HTML elements represent six levels of section
+                                headings</li>
+                            <li>
+                                All heading elements create a block-level box in the layout,
+                                starting on a new line and taking up the full width available in their containing block
+                            </li>
+                            <li>While using multiple <code>h1</code> elements on one page is allowed by the HTML
+                                standard
+                                (as long as they are not nested), this is not considered best practice. </li>
+                        </ol>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                    </div>
 
                     <h2>References</h2>
-                    <div class="content"></div>
+                    <div class="content ref">
+                        <a
+                            href="https://www.w3.org/TR/2011/WD-html5-20110405/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements">W3C:
+                            The h1, h2, h3, h4, h5, and h6 elements
+                        </a>
+                    </div>
+
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">
+                            MDN: h1-h6. The HTML Section Heading elements</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-    <!--  Templates -->
+        <!--  Templates -->
 
 
-    <template id="prevPageTemplate">table</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">table</template> <!--PREVIOUS PAGE-->
 
-    <template id="pageTitleTemplate">h1 to h6</template> <!--PAGE TITLE-->
-    
-    <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
+        <template id="pageTitleTemplate">h1 to h6</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
 
 
     </div>
     <script>
-        
+
         //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-    
+
 
         // previous page
-        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
     </script>
