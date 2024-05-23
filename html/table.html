@@ -20,9 +20,10 @@
             counter-reset: refCounter 0;
         }
 
-        div.container  .example {
+        div.container .example {
             counter-increment: exampleCounter;
         }
+
         div.container .example::before {
             content: counter(exampleCounter) ".  "
         }
@@ -37,7 +38,7 @@
 
         div.content.ref::before {
             content: counter(refCounter) ".  ";
-            color:var(--primary-green)
+            color: var(--primary-green)
         }
 
         div.content h3 {
@@ -80,7 +81,10 @@
         #tableTen tr>td,
         #tableEleven,
         #tableEleven tr>th,
-        #tableEleven tr>td {
+        #tableEleven tr>td,
+        #tableTwelve,
+        #tableTwelve tr>th,
+        #tableTwelve tr>td {
             border: 1px solid var(--primary-green);
         }
 
@@ -94,7 +98,8 @@
         #tableEight,
         #tableNine,
         #tableTen,
-        #tableEleven{
+        #tableEleven,
+        #tableTwelve{
             margin: 0 auto;
         }
 
@@ -109,48 +114,65 @@
         .indent {
             padding-left: 2em;
         }
+
         hr {
             color: var(--primary-green);
-        
+
         }
 
-    #tableSeven colgroup {
-      background-color:orange;
-    }
-    #tableEight col:first-of-type{
-      background-color:orange;
-    }
-    #tableEight col:nth-of-type(2){
-      background-color:yellow;
-    }
-    #tableNine {
-        empty-cells:hide;
-    }
-    #tableTen tbody td {
-      height: 3em;
-    }
-    #tableTen tbody td:first-of-type {
-      vertical-align:top;
-    }
-    #tableTen tbody td:nth-of-type(3) {
-      vertical-align: bottom;
-    }
-    #tableTen tbody td:nth-of-type(2) {
-      vertical-align:middle;
-    }
-    #tableEleven tbody td {
-      width: 3em;
-    }
-    #tableEleven tbody td:first-of-type {
-      text-align:left
-    }
-    #tableEleven tbody td:nth-of-type(2) {
-      text-align:center;
-    }
-    #tableEleven tbody td:nth-of-type(3) {
+        #tableSeven colgroup {
+            background-color: orange;
+        }
 
-      text-align:right;
-    }
+        #tableEight col:first-of-type {
+            background-color: orange;
+        }
+
+        #tableEight col:nth-of-type(2) {
+            background-color: yellow;
+        }
+
+        #tableNine {
+            empty-cells: hide;
+        }
+
+        #tableTen tbody td {
+            height: 3em;
+        }
+
+        #tableTen tbody td:first-of-type {
+            vertical-align: top;
+        }
+
+        #tableTen tbody td:nth-of-type(3) {
+            vertical-align: bottom;
+        }
+
+        #tableTen tbody td:nth-of-type(2) {
+            vertical-align: middle;
+        }
+
+        #tableEleven tbody td {
+            width: 3em;
+        }
+
+        #tableEleven tbody td:first-of-type {
+            text-align: left
+        }
+
+        #tableEleven tbody td:nth-of-type(2) {
+            text-align: center;
+        }
+
+        #tableEleven tbody td:nth-of-type(3) {
+
+            text-align: right;
+        }
+        
+   #tableTwelve {
+    border-spacing: 5px 2rem;
+  }
+
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -214,7 +236,8 @@
                             </li>
                             <li><code>thead</code>
                                 <div class="content">
-                                    The <code>thead</code> element represents the block of rows that consist of the column labels 
+                                    The <code>thead</code> element represents the block of rows that consist of the
+                                    column labels
                                     (headers) for the parent <code>table</code> element
                                 </div>
                             </li>
@@ -344,8 +367,22 @@
                                 </ol>
                             </li>
                             <li class="space_above"><code>border-spacing</code>
-                                <div class="content">May take two values (space-separated) representing horizontal and
-                                    vertical spacing.</div>
+                                <ol>
+                                    <li>May take one or two (space-separated) <code>length</code> values</li>
+                                    <li>
+                                        When one <code>length</code> value is specified,
+                                        it defines both the horizontal and vertical spacings between cells.
+                                    </li>
+                                    <li>
+                                        When two <code>length</code> values are specified, the first value defines the
+                                        horizontal spacing between cells
+                                        (i.e., the space between cells in adjacent columns),
+                                        and the second value defines the vertical spacing between cells
+                                        (i.e., the space between cells in adjacent rows).
+                                    </li>
+                                    <li>Only works if the value of <code>border-collapse</code>
+                                    is <code>separate</code></li>
+                                </ol>
                             </li>
                             <li class="space_above"><code>caption</code>
                                 <ol>
@@ -355,7 +392,8 @@
                                         if it has a parent and that is a <code>table</code> element
                                     </li>
                                     <li><code>caption</code>, if present, <strong>must be</strong> be a
-                                        <code>first-child</code> of the <code>table</code> element</li>
+                                        <code>first-child</code> of the <code>table</code> element
+                                    </li>
                                 </ol>
                             </li>
                             <li><code>caption-side</code>
@@ -374,10 +412,10 @@
                             </li>
                             <li>empty cells
                                 <div class="content">Possible values are
-                                <ol>
-                                    <li><code>hide</code></li>
-                                    <li><code>show</code></li>
-                                </ol>
+                                    <ol>
+                                        <li><code>hide</code></li>
+                                        <li><code>show</code></li>
+                                    </ol>
                                 </div>
                             </li>
                             <li>permitted content (table)
@@ -401,7 +439,7 @@
 
                         </ol>
                     </div>
-<hr>
+                    <hr>
                     <h2 class="example">Example</h2>
                     <div class="content">
                         <h3>HTML</h3>
@@ -436,7 +474,7 @@ table, th, td {
                         </table>
 
                     </div><!--content-->
-<hr>
+                    <hr>
                     <h2 class="example">Example</h2>
                     <div class="content">
                         <h3>HTML</h3>
@@ -502,7 +540,7 @@ table, th, td {
                     </div>
                     <hr>
 
-                    <h2 class="example">Example  (colspan)</h2>
+                    <h2 class="example">Example (colspan)</h2>
                     <div class="content">
                         <h3>HTML</h3>
                         <div class="indent">
@@ -806,36 +844,36 @@ colgroup {
                         </div>
                         <h3>Browser</h3>
 
-<table id="tableSeven">
-  <caption>caption</caption>
-  <colgroup span="2"></colgroup>
-  <thead>
-      <tr>
-          <th>h</th>
-          <th>h</th>
-          <th>h</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>d</td>
-          <td>d</td>
-          <td>d</td>
-      </tr>
-      <tr>
-           <td>d</td>
-           <td>d</td>
-          <td>d</td>
-      </tr>
-  </tbody>
-  <tfoot>
-      <tr>
-          <td>f</td>
-          <td>f</td>
-          <td>f</td>
-      </tr>
-  </tfoot>
-</table> 
+                        <table id="tableSeven">
+                            <caption>caption</caption>
+                            <colgroup span="2"></colgroup>
+                            <thead>
+                                <tr>
+                                    <th>h</th>
+                                    <th>h</th>
+                                    <th>h</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>d</td>
+                                    <td>d</td>
+                                    <td>d</td>
+                                </tr>
+                                <tr>
+                                    <td>d</td>
+                                    <td>d</td>
+                                    <td>d</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>f</td>
+                                    <td>f</td>
+                                    <td>f</td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div><!--content-->
                     <hr>
                     <h2 class="example">Example (colgroup col)</h2>
@@ -891,39 +929,39 @@ col:nth-of-type(2){
   }</pre>
                         </div>
                         <h3>Browser</h3>
-<table id="tableEight">
-  <caption>caption</caption>
-  <colgroup>
-    <col>
-    <col span="2">
-  </colgroup>
-  <thead>
-      <tr>
-          <th>h</th>
-          <th>h</th>
-          <th>h</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>d</td>
-          <td>d</td>
-          <td>d</td>
-      </tr>
-      <tr>
-           <td>d</td>
-           <td>d</td>
-          <td>d</td>
-      </tr>
-  </tbody>
-  <tfoot>
-      <tr>
-          <td>f</td>
-          <td>f</td>
-          <td>f</td>
-      </tr>
-  </tfoot>
-</table> 
+                        <table id="tableEight">
+                            <caption>caption</caption>
+                            <colgroup>
+                                <col>
+                                <col span="2">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>h</th>
+                                    <th>h</th>
+                                    <th>h</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>d</td>
+                                    <td>d</td>
+                                    <td>d</td>
+                                </tr>
+                                <tr>
+                                    <td>d</td>
+                                    <td>d</td>
+                                    <td>d</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>f</td>
+                                    <td>f</td>
+                                    <td>f</td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                     <hr>
                     <h2 class="example">Example (Empty Cells)</h2>
@@ -968,37 +1006,37 @@ table, th, td {
     empty-cells: hide;
   }</pre>
                         </div>
-<h3>Browser</h3>
+                        <h3>Browser</h3>
 
-<table id="tableNine">
-  <caption>caption</caption>
-  <thead>
-      <tr>
-          <th>h</th>
-          <th>h</th>
-          <th>h</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>d</td>
-          <td>d</td>
-          <td>d</td>
-      </tr>
-      <tr>
-           <td>d</td>
-           <td></td>
-          <td></td>
-      </tr>
-  </tbody>
-  <tfoot>
-      <tr>
-          <td>f</td>
-          <td>f</td>
-          <td>f</td>
-      </tr>
-  </tfoot>
-</table> 
+                        <table id="tableNine">
+                            <caption>caption</caption>
+                            <thead>
+                                <tr>
+                                    <th>h</th>
+                                    <th>h</th>
+                                    <th>h</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>d</td>
+                                    <td>d</td>
+                                    <td>d</td>
+                                </tr>
+                                <tr>
+                                    <td>d</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>f</td>
+                                    <td>f</td>
+                                    <td>f</td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div><!--content-->
                     <hr>
                     <h2 class="example">Example (vertical-align)</h2>
@@ -1052,30 +1090,30 @@ tbody td:nth-of-type(3) {
                         </div>
                         <h3>Browser</h3>
 
-<table id="tableTen">
-  <caption>caption</caption>
-  <thead>
-      <tr>
-          <th>h</th>
-          <th>h</th>
-          <th>h</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>d</td>
-          <td>d</td>
-          <td>d</td>
-      </tr>
-  </tbody>
-  <tfoot>
-      <tr>
-          <td>f</td>
-          <td>f</td>
-          <td>f</td>
-      </tr>
-  </tfoot>
-</table> 
+                        <table id="tableTen">
+                            <caption>caption</caption>
+                            <thead>
+                                <tr>
+                                    <th>h</th>
+                                    <th>h</th>
+                                    <th>h</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>d</td>
+                                    <td>d</td>
+                                    <td>d</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>f</td>
+                                    <td>f</td>
+                                    <td>f</td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                     <hr>
                     <h2 class="example">Example (text-align)</h2>
@@ -1129,7 +1167,77 @@ tbody td:nth-of-type(3) {
                         </div>
 
                         <h3>Browser</h3>
-<table id="tableEleven">
+                        <table id="tableEleven">
+                            <caption>caption</caption>
+                            <thead>
+                                <tr>
+                                    <th>h</th>
+                                    <th>h</th>
+                                    <th>h</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>d</td>
+                                    <td>d</td>
+                                    <td>d</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>f</td>
+                                    <td>f</td>
+                                    <td>f</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (border-spacing)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="content">
+                            <pre>
+&lt;table&gt;
+    &lt;caption&gt;caption&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;h&lt;/th&gt;
+            &lt;th&gt;h&lt;/th&gt;
+            &lt;th&gt;h&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+            &lt;td&gt;d&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;f&lt;/td&gt;
+            &lt;td&gt;f&lt;/td&gt;
+            &lt;td&gt;f&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+                            </pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+table, th, td {
+    border: 1px solid green;
+  }
+
+table {
+    border-spacing: 5px 2rem;
+  }</pre>
+                        </div>
+                        <h3>Browser</h3>
+<table id="tableTwelve">
   <caption>caption</caption>
   <thead>
       <tr>
@@ -1152,11 +1260,11 @@ tbody td:nth-of-type(3) {
           <td>f</td>
       </tr>
   </tfoot>
-</table> 
+</table>
 
                     </div><!--content-->
 
-<hr>
+                    <hr>
                     <h2>References</h2>
                     <div class="content ref">
                         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">MDN: Table Element</a>
