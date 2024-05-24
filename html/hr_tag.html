@@ -14,6 +14,25 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        .example~.example hr {
+            border: 0.5rem solid green;
+            border-radius: 5px;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,30 +69,30 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
-
-                    <h2>TRBL</h2>
                     <div class="content">
-                        <code>top-right-bottom-left</code>
+                        The <code>hr</code> element represents a paragraph-level <strong>thematic break</strong>, e.g. a
+                        scene change in a story, or a transition to another
+                        topic within a section of a reference book.
                     </div>
 
-                    <h2>LVHA</h2>
-                    <div class="content">
-                        <code>link-visited-hover-active</code>
+                    <h2>Example</h2>
+                    <div class="content example">
+                        <hr>
                     </div>
 
-                    <h2>AABL</h2>
-                    <div class="content">
-                        <code>href</code> <code>&rarr;</code> <code>anchor-area-base-link</code>
+                    <h2>Example</h2>
+                    <div class="content example">
+                        <hr>
                     </div>
-                    <h2>Al O' Dubh</h2>
-                    <div class="content">
-                        All zeros is <span class="white_on_black">black</span> (rgb color)
+
+                    <h2>References</h2>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-hr-element">W3C:
+                            the hr element</a>
                     </div>
-                    <h2>Monaco</h2>
-                    <div class="content">
-                        <span class="white_on_black">Mon</span>ac<span class="white_on_black">o</span> is
-                        <span class="white_on_black">mono</span>spaced
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr">MDN: The Thematic Break
+                            (Horizontal Rule) element</a>
                     </div>
                 </div>
             </div>
@@ -82,11 +101,11 @@
         <!--  Templates -->
 
 
-        <template id="prevPageTemplate">hr_tag</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">br_tag</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">Mnemonics</template> <!--PAGE TITLE-->
+        <template id="pageTitleTemplate">hr tag</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">references</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
 
 
     </div>
