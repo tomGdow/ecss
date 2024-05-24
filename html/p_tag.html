@@ -14,6 +14,20 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
