@@ -14,6 +14,20 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,19 +64,53 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        The <code>br</code> element represents a line break.
+                    </div>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
 
                     <h2>Notes</h2>
-                    <div class="content"></div>
-
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>br</code> elements must be used only for line breaks that are actually part of the
+                                content, as in
+                                <ol>
+                                    <li><strong>poems</strong></li>
+                                    <li><strong>addresses</strong> </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>br</code> elements must not be used for separating thematic groups in a paragraph
+                            </li>
+                            <li>While line breaks are usually represented in visual media by physically moving
+                                subsequent text to a new line,
+                                a style sheet or user agent would be equally justified in causing line breaks to
+                                be rendered in a different manner,
+                                for instance as green dots,
+                                or as extra spacing
+                            </li>
+                        </ol>
+                    </div>
+                    <h2>Example (Acceptable Usage)</h2>
+                    <div class="content">
+                        <pre>
+&lt;p&gt;
+    P. Sherman&lt;br&gt;
+    42 Wallaby Way&lt;br&gt;
+    Sydney
+&lt;/p&gt;
+                        </pre>
+                    </div>
 
                     <h2>References</h2>
-                    <div class="content"></div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/text-level-semantics.html#the-br-element">
+                            W3C: br tag</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br">MDN: br tag</a>
+                    </div>
                 </div>
             </div>
         </div>
