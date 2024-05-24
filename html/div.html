@@ -27,11 +27,6 @@
             content: counter(refCounter) ".  ";
             color: var(--primary-green);
         }
-
-        .example~.example hr {
-            border: 0.5rem solid green;
-            border-radius: 5px;
-        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,29 +65,39 @@
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
-                        The <code>hr</code> element represents a paragraph-level <strong>thematic break</strong>, e.g. a
-                        scene change in a story, or a transition to another
-                        topic within a section of a reference book.
+                        <ol>
+                            <li>
+                                The <code>div</code> element has no special meaning at all
+                            </li>
+                            <li>
+                                It has no effect on the content or layout until styled in some way using CSS
+                            </li>
+                        </ol>
                     </div>
 
-                    <h2>Example</h2>
-                    <div class="content example">
-                        <hr>
-                    </div>
-
-                    <h2>Example</h2>
-                    <div class="content example">
-                        <hr>
+                    <h2>Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                Authors are strongly encouraged to view the
+                                <code>div</code> element as an element of last resort,
+                                for when no other element is
+                                suitable
+                            </li>
+                            <li>
+                                Use of the <code>div</code> element instead of more appropriate elements
+                                leads to poor accessibility and maintainability
+                            </li>
+                        </ol>
                     </div>
 
                     <h2>References</h2>
                     <div class="content ref">
-                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-hr-element">W3C:
-                            the hr element</a>
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-div-element">W3C:
+                            div</a>
                     </div>
                     <div class="content ref">
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr">MDN: The Thematic Break
-                            (Horizontal Rule) element</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">MDN: div</a>
                     </div>
                 </div>
             </div>
@@ -101,11 +106,11 @@
         <!--  Templates -->
 
 
-        <template id="prevPageTemplate">br_tag</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">hr_tag</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">hr tag</template> <!--PAGE TITLE-->
+        <template id="pageTitleTemplate">div</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">div</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
 
 
     </div>
