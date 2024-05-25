@@ -14,6 +14,124 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        table {
+            table-layout: fixed;
+            width: 100%;
+            line-height: 1.5rem;
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        table {
+            text-align: center;
+            margin-top: 1rem;
+            font-family: "Roboto", sans-serif;
+            line-height: 2rem;
+            color: white;
+        }
+
+        table tr>td:first-of-type {
+            font-weight: bold;
+        }
+
+        table tr>td:nth-of-type(2) {
+            font-weight: bold;
+        }
+
+        col:nth-of-type(odd) {
+            font-weight: bold;
+            background-color: var(--primary-green);
+            /* background-color: lightgoldenrodyellow; */
+        }
+
+        col:nth-of-type(even) {
+            font-weight: bold;
+            background-color: var(--primary-green);
+            /* background-color: lightgoldenrodyellow; */
+        }
+
+        th {
+            color: white;
+            background-color: black;
+        }
+
+        th {
+            height: 2em;
+            font-size: 1.3rem;
+        }
+
+        .browser {
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #ol1 {
+            list-style-type: decimal-leading-zero;
+        }
+
+        #ol1>li:first-of-type {
+            list-style-type: decimal;
+        }
+
+        #ol1>li:nth-of-type(2) {
+            list-style-type: lower-greek;
+        }
+
+        #ol2 {
+            list-style-type: upper-roman;
+        }
+
+        #ol2>li:first-of-type {
+            list-style-type: lower-roman;
+        }
+
+        #ol2>li:nth-of-type(2) {
+            list-style-type: upper-alpha;
+        }
+
+        #ol2>li:nth-of-type(3) {
+            list-style-type: lower-alpha;
+        }
+
+        li::marker {
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,19 +168,365 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
-
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>ol</code> element represents a list of items,
+                                where the items have been intentionally ordered
+                            </li>
+                            <li>Typically rendered as a numbered list</li>
+                            <li>
+                                The items of the list are the <code>li</code> element child nodes of
+                                the <code>ol</code> element
+                            </li>
+                        </ol>
+                    </div>
 
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li><code>reversed</code>
+                                <ol>
+                                    <li>The <code>reversed</code> attribute is a boolean attribute</li>
+                                    <li>If present, it indicates a <strong>descending list</strong></li>
+                                </ol>
+                            </li>
+                            <li class="space_before"><code>start</code>
+                                <ol>
+                                    <li>The <code>start</code> attribute, if present, must be a valid integer</li>
+                                    <li>
+                                        Gives the <strong>ordinal value</strong> of the first list item
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <div>The <code>type</code> attribute can be used to specify the kind of marker to
+                                    use in the list
+                                    <table>
+                                        <colgroup>
+                                            <col>
+                                            <col>
+                                            <col>
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>Keyword</th>
+                                                <th>State</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>decimal</td>
+                                            <td>decimal number</td>
+                                            <td><code>1. 2. 3.</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td>a</td>
+                                            <td>lower-alpha</td>
+                                            <td>lowercase latin alphabet</td>
+                                            <td><code>a. b. c.</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td>A</td>
+                                            <td>upper-alpha</td>
+                                            <td>uppercase latin alphabet</td>
+                                            <td>A. B. C.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>i</td>
+                                            <td>lower-roman</td>
+                                            <td>lowercase roman numerals</td>
+                                            <td>i. ii. iii.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>I</td>
+                                            <td>upper-roman</td>
+                                            <td>uppercase roman numerals</td>
+                                            <td>I. II. III. </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </li>
+                            <li class="space_above"><code>start</code> <em>vs</em> <code>value</code>
+                                <ol>
+                                    <li><code>value</code>,
+                                        <em>as an attribute of the </em>
+                                        <code>li</code> <em>tag</em>,
+                                        may be used instead of <code>start</code>
+                                    <li>
+                                        overrides <code>start</code> attribute of <code>ul</code>
+                                    </li>
+                                    <li>increments in subsequent <code>li</code> tags</li>
+                                    <li><code>value</code> must be an integer,
+                                        <em>even if</em> the list is displayed with Roman numerals or letters
+                                    </li>
+                                    <li>The <code>value</code> attribute has no meaning for unordered lists</li>
+                                    <li>The <code>li</code> <code>value</code> attribute indicates the current ordinal
+                                        value of the list item as defined by the <code>ol</code> element
+                                    </li>
+                                    <li>(first encountered in measureUp)</li>
+                            </li>
+                        </ol>
+                        </li>
+                        <li class="space_above">list-style-type
+                            <ol>
+                                <li><code>upper-alpha</code> and <code>upper-latin</code> are identical</li>
+                                <li><code>lower-latin</code> and <code>lower-alpha</code> are identical</li>
+                            </ol>
+                        </li>
+                        </ol>
+                    </div>
+                    <hr>
+                    <h2 class="example">Example (<code>start</code> <em>vs</em> <code>value</code>)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ol start="2"&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li value="100"&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                        </div>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                        <h3>Browser</h3>
+                        <div class="browser">
 
+                            <ol start="2">
+                                <li>d</li>
+                                <li>d</li>
+                                <li value="100">d</li>
+                                <li>d</li>
+                                <li>d</li>
+                            </ol>
+                        </div>
+                        <h3>Note</h3>
+                        <div class="indent">
+                            Note that <code>value</code> overrides <code>start</code>
+                            <em>and</em> increments
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (start reverse)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ol start="10" reversed&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li value="100"&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <ol start="10" reversed>
+                                <li>d</li>
+                                <li>d</li>
+                                <li value="100">d</li>
+                                <li>d</li>
+                            </ol>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (start type="I")</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ol start="2" type="I"&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li value="10"&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+
+                            <ol start="2" type="I">
+                                <li>d</li>
+                                <li>d</li>
+                                <li value="10">d</li>
+                                <li>d</li>
+                            </ol>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (start type="i")</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ol start="2" type="i"&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <ol start="2" type="i" )>
+                                <li>d</li>
+                                <li>d</li>
+                                <li>d</li>
+                                <li>d</li>
+                            </ol>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (type="a")</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ol type="a"&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+
+                            <ol type="a">
+                                <li>d</li>
+                                <li>d</li>
+                                <li>d</li>
+                                <li>d</li>
+                            </ol>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (type="A")</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ol type="A"&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <ol type="A">
+                                <li>d</li>
+                                <li>d</li>
+                                <li>d</li>
+                                <li>d</li>
+                            </ol>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (<code>list-style-type</code>)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ol&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+ol {
+    list-style-type: decimal-leading-zero;
+  }
+
+ol>li:first-of-type {
+    list-style-type: decimal;
+  }
+
+ol>li:nth-of-type(2) {
+    list-style-type: lower-greek;
+  }</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <ol id="ol1">
+                                <li>d</li>
+                                <li>d</li>
+                                <li>d</li>
+                                <li>d</li>
+                                <li>d</li>
+                            </ol>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (<code>list-style-type</code>)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ol&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+    &lt;li&gt;d&lt;/li&gt;
+&lt;/ol&gt;
+                            </pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+ol {
+    list-style-type: upper-roman;
+  }
+
+ol>li:first-of-type {
+    list-style-type: lower-roman;
+  }
+
+ol>li:nth-of-type(2) {
+    list-style-type: upper-alpha;
+  }
+
+ol>li:nth-of-type(3) {
+    list-style-type: lower-alpha;
+  }</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <ol id="ol2">
+                                <li>d</li>
+                                <li>d</li>
+                                <li>d</li>
+                                <li>d</li>
+                            </ol>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
                     <h2>References</h2>
-                    <div class="content ref"></div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-ol-element">W3C:
+                            ol</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol">MDN: ol</a>
+                    </div>
                 </div>
             </div>
         </div>
