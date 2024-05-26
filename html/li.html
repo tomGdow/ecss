@@ -14,6 +14,49 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        .highlight {
+            color: white;
+            background-color: var(--primary-green);
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-right: 20px;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,19 +93,137 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>li</code> element represents a list item
+                            </li>
+                            <li>It must be contained in a parent element: an ordered list
+                                (<code>ol</code>) an unordered list (<code>ul</code>),
+                                or a menu (<code>menu</code>)
+                            </li>
+                            <li>In menus and unordered lists, list items are usually displayed using bullet points</li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                            <li>In ordered lists, they are usually displayed with an ascending counter on the left,
+                                such as a number or letter</li>
+                            <li>
+                                If the parent element is an <code>ol</code> element, then the <code>li</code> element
+                                has an ordinal value
+                            </li>
+                            <li>
+                                The <code>value</code>attribute, if present, must be a valid integer giving
+                                the ordinal value of the list item
+                            </li>
+                            <li>
+                                If the <code>value</code> attribute is present,
+                                user agents must parse it as an integer
+                            </li>
+                        </ol>
+                    </div>
 
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>end tag
+                                <div class="content">
+                                    An <code>li</code> element's end tag may be omitted if the <code>li</code> element
+                                    is
+                                    immediately followed by another <code>li</code> element or if there is no
+                                    more content in the parent element</div>
+                            </li>
+                            <li><code>value</code>
+                                <ol>
+                                    <li>This integer attribute indicates the current ordinal value of the list item as
+                                        defined by the <code>ol</code> element</li>
+                                    <li>The only allowed value for this attribute is a number,
+                                        even if the list is displayed with Roman numerals or letters</li>
+                                    <li>List items that follow this one continue numbering from the value set</li>
+                                    <li>The <code>value</code> attribute has no meaning for unordered lists</li>
+                                </ol>
+                            </li>
+                            <li><code>type</code>
+                                <ol>
+                                    <li>This character attribute indicates the numbering type</li>
+                                    <li><span class="white_on_black">Deprecated</span> Use the
+                                        CSS <code>list-style-type</code> property instead</li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                                    <li>
+                                        This <code>type </code> overrides the one used by its parent <code>ol</code>
+                                        element,
+                                        if any
+                                    </li>
+                                    <li><code>type</code> is not inherited by subsequent
+                                        <code>li</code>
+                                    </li>
+                                    <li><code class="highlight">a</code> lowercase letters</li>
+                                    <li><code class="highlight">A</code> uppercase letters</li>
+
+                                    <li><code class="highlight">i</code> lowercase Roman numerals</li>
+                                    <li><code class="highlight">I</code> uppercase Roman numerals</li>
+                                    <li><code class="highlight">1</code> numbers</li>
+                                </ol>
+
+                            </li>
+                        </ol>
+                    </div>
+
+                    <h2 class="example">Example (no end tag)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ol start="2"&gt;
+    &lt;li&gt;a
+    &lt;li&gt;b
+    &lt;li&gt;c
+&lt;/ol&gt;</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <ol start="2">
+                                <li>a
+                                <li>b
+                                <li>c
+                            </ol>
+                        </div>
+                    </div>
+                    <h2 class="example">Example (type)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ol start="2"&gt;
+    &lt;li&gt;a
+    &lt;li&gt;b
+    &lt;li type="I"&gt;c
+    &lt;li&gt;d
+&lt;/ol&gt;
+                            </pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <ol start="2">
+                                <li>a
+                                <li>b
+                                <li type="I">c
+                                <li>d
+                            </ol>
+                        </div>
+                        <h3>Note</h3>
+                        <div class="indent">
+                            Note that <code>type</code> as attribute of <code>li</code>
+                            is not inherited by subsequent <code>li</code>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-li-element">
+                            W3C: li</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">MDN: li</a>
+                    </div>
                 </div>
             </div>
         </div>
