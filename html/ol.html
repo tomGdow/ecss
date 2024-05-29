@@ -519,6 +519,69 @@ ol>li:nth-of-type(3) {
 
                     </div><!--content-->
                     <hr>
+                    <h2 class="example">Example (Nesting)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="content">
+                            <pre>
+&lt;ol&gt;
+    &lt;li&gt;a
+    &lt;li&gt;
+        &lt;ol&gt;
+            &lt;li&gt;b
+            &lt;li&gt;b
+                &lt;ol&gt;
+                    &lt;li&gt;c
+                    &lt;li&gt;c
+                        &lt;ol&gt;
+                            &lt;li&gt;d
+                            &lt;li&gt;d
+                            &lt;li&gt;d
+                        &lt;/ol&gt;
+                    &lt;li&gt;c
+                &lt;/ol&gt;
+            &lt;li&gt;b
+        &lt;/ol&gt;
+    &lt;li&gt;a
+    &lt;li&gt;a
+&lt;/ol&gt;</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <ol>
+                                <li>a
+                                <li>
+                                    <ol>
+                                        <li>b
+                                        <li>b
+                                            <ol>
+                                                <li>c
+                                                <li>c
+                                                    <ol>
+                                                        <li>d
+                                                        <li>d
+                                                        <li>d
+                                                    </ol>
+                                                <li>c
+                                            </ol>
+                                        <li>b
+                                    </ol>
+                                <li>a
+                                <li>a
+                            </ol>
+                        </div>
+                        <h3>Notes</h3>
+                        <div class="content">
+                            <ol>
+                                <li>This validates</li>
+                                <li>Note no change in numbering system with nesting
+                                    (contrast with <code>ul</code>)
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
                     <h2>References</h2>
                     <div class="content ref">
                         <a href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-ol-element">W3C:
