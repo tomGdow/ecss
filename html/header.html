@@ -14,6 +14,22 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        .logo {
+            height: 120px;
+            align-items: center;
+            justify-content: center;
+            font:
+                bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script',
+                fantasy;
+            color: #ff0083;
+            text-shadow: #000 2px 2px 0.2rem;
+        }
+
+        .revert {
+            all: revert;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,19 +66,97 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
-
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>The <code>header</code> element represents a group of introductory or navigational aids
+                            <li>A <code>header</code> element is intended to
+                                usually contain the section's heading
+                                (an <code>h1</code>-<code>h6</code> element or an
+                                <code>hgroup</code> element), but this is not required
+                            <li>The <code>header</code> element can also be used to wrap a section's
+                                <ol>
+                                    <li><code>table of contents</code>
+                                    <li><code>search form</code>
+                                    <li>any relevant <code>logos</code>
+                                </ol>
+                        </ol>
+                    </div>
 
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>header</code> element has an identical meaning to the site-wide
+                                <code>banner</code>
+                            </li>
+                        </ol>
+                    </div>
+                    <hr>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;header&gt;
+    &lt;a class="logo" href=""&gt;Cute Puppies Express!&lt;/a&gt;
+&lt;/header&gt;
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+&lt;article&gt;
+    &lt;header&gt;
+        &lt;h1 class="revert"&gt;Beagles&lt;/h1&gt;
+        &lt;time&gt;08.12.2014&lt;/time&gt;
+    &lt;/header&gt;
+    &lt;p&gt;
+        I love beagles &lt;em&gt;so&lt;/em&gt; much! Like, really, a lot. 
+        They’re adorable and their ears are so, so snugly soft!
+    &lt;/p&gt;
+&lt;/article&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+.logo {
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    font:
+        bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script',
+        fantasy;
+    color: #ff0083;
+    text-shadow: #000 2px 2px 0.2rem;
+    }
+
+.revert {
+    all: revert;
+    }</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <header>
+                                <a class="logo" href="">
+                                    Cute Puppies Express!</a>
+                            </header>
+
+                            <article>
+                                <header>
+                                    <h1 class="revert">Beagles</h1>
+                                    <time>08.12.2014</time>
+                                </header>
+                                <p>I love beagles <em>so</em> much! Like, really, a lot. They’re adorable and their ears
+                                    are
+                                    so, so snugly soft!</p>
+                            </article>
+                        </div>
+                    </div>
+                    <hr>
 
                     <h2>References</h2>
-                    <div class="content ref"></div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/sections.html#the-header-element">W3C:
+                            header</a>
+                    </div>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header" class="content ref">MDN:
+                        header</a>
                 </div>
             </div>
         </div>
