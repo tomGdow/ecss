@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        .mycircle::after {
+            content: " \25cb";
+            vertical-align: middle;
+        }
+
+        .mydisc::after {
+            content: " \2B24 ";
+            vertical-align: middle;
+            font-size: 0.6rem;
+        }
+
+        .mysquare::after {
+            content: " \25A0";
+            vertical-align: text-top;
+            font-size: 1rem;
+        }
+
+        details summary::-webkit-details-marker,
+        details summary::marker {
+            display: none;
+        }
+
+        details summary {
+            text-decoration: underline;
+            color: var(--primary-green);
+            display: inline;
+
+        }
+
+        details summary>code:hover {
+            color: white;
+            background-color: var(--primary-green);
+        }
+
+        .link {
+            text-decoration: dotted;
+        }
+
+        ul#lst1>li:nth-of-type(even) {
+            list-style: url('../images/redSquare2.png');
+        }
+
+        ul#lst1>li:nth-of-type(odd) {
+            list-style: url('../images/blueSquare2.png');
+
+        }
+
+        ul#lst2>li:nth-of-type(even) {
+            list-style: inside url('../images/redSquare2.png');
+        }
+
+        ul#lst2>li:nth-of-type(odd) {
+            list-style: url('../images/blueSquare2.png');
+
+        }
+
+        ul#lst3>li:nth-of-type(even) {
+            list-style: inside circle;
+        }
+
+        ul#lst3>li:nth-of-type(odd) {
+            list-style: square;
+
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
+                        <a href="./search.html">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>ul</code> element represents a list of items,
+                                where the order of the items is not important
+                            </li>
+                            <li>Typically rendered as a bulleted list</li>
+                            <li>
+                                The bullet style is not defined in the HTML description of the page,
+                                but in its associated CSS, using the <code>list-style-type</code> property
+                            </li>
+                            <li>The <code>ul</code> and <code>ol</code> elements may be nested as deeply as desired</li>
+                            <li>The nested lists may alternate between <code>ol</code> and <code>ul</code> without
+                                restriction</li>
+                        </ol>
+                    </div>
+
+
+                    <h2>Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li><code>type</code>
+                                <ol>
+                                    <li><span class="white_on_black">Deprecated</span></li>
+                                    <li>Do not use this attribute, as it has been deprecated;
+                                        use the CSS <code>list-style-type</code> property instead
+                                    </li>
+                                    <li>If not present and if no CSS <code>list-style-type</code> property applies to
+                                        the element,
+                                        the user agent selects a bullet type
+                                        depending on the nesting level of the list
+                                    </li>
+                                    <li><code class="mycircle">circle</code></li>
+                                    <li><code class="mydisc">disc</code></li>
+                                    <li><code class="mysquare">square</code></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary title="reference"><code>list-style-type</code></summary>
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">MDN:
+                                        list-style-type</a>
+                                </details>
+                                <ol>
+                                    <li><code class="mycircle">circle</code><br>
+                                        A hollow circle
+                                    </li>
+                                    <li><code class="mydisc">disc</code><br>
+                                        A filled circle (default value)
+                                    </li>
+                                    <li><code class="mysquare">square</code><br>
+                                        A filled square
+                                    </li>
+                                    <li>A string value <br>
+                                        <code>&quot;\20AC&quot; for example</code>
+
+                                    </li>
+                                    <li>The keyword <code>none</code></li>
+                                    <li><code>custom-ident</code>
+                                        <ol>
+                                            <li>One of the predefined styles (examples above)</li>
+                                            <li>An identifier matching the value of <code>@counter-style</code></li>
+                                        </ol>
+                                    </li>
+                                    <li><code>symbols()</code><br>
+                                        Defines an anonymous style of the list</li>
+                                </ol>
+                            </li>
+
+                            <li>
+                                <details>
+                                    <summary title="reference"><code>list-style-position</code></summary>
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position">MDN:
+                                        list-style-position</a>
+                                </details>
+                                <ol>
+                                    <li><code>inside</code></li>
+                                    <li><code>outside</code></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary title="reference"><code>list-style-image</code></summary>
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-image">MDN:
+                                        list-style-image</a>
+                                </details>
+                                <ol>
+                                    <li>sets an image to be used as the list item marker</li>
+                                    <li>initial value is <code>none</code></li>
+                                    <li>inherited</li>
+                                </ol>
+
+                            </li>
+                            <li>
+                                <details>
+                                    <summary title="reference"><code>list-style</code></summary>
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style">MDN:
+                                        list-style</a>
+                                </details>
+                                <ol>
+                                    <li>This CSS shorthand property allows setting allowed the list style properties at
+                                        once</li>
+                                    <li>The values of this property are applied to list items, including <code>li</code>
+                                        elements
+                                        and elements with <code>display: list-item;</code></li>
+                                    <li>Because this property is inherited, it can be set on a parent element
+                                        (normally <code>ol</code> or <code>ul</code>) to make the same list
+                                        styling apply to all the nested items
+                                    </li>
+                                    <li>May be used as shorthand for the following:
+                                        <ol>
+                                            <li><code>list-style-type</code> <br>
+                                                If omitted
+                                                the default <code>disc</code> value is used
+                                            </li>
+                                            <li>
+                                                <code>list-style-position</code> <br>
+                                                If omitted, the default <code>outside</code>
+                                                value is used
+                                            </li>
+                                            <li><code>list-style-image</code> <br>
+                                                If omitted, the default <code>none</code> value is used
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    <hr>
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ul&gt;
+    &lt;li&gt;a
+    &lt;li&gt;b
+    &lt;li&gt;c
+    &lt;li&gt;d
+&lt;/ul&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+ul>li:nth-of-type(even) {
+    list-style: url('../images/redSquare.png');
+  }
+
+ul>li:nth-of-type(odd) {
+    list-style: url('../images/blueSquare.png');
+  }</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <ul id="lst1">
+                                <li>a
+                                <li>b
+                                <li>c
+                                <li>d
+                            </ul>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (inside)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ul&gt;
+    &lt;li&gt;a
+    &lt;li&gt;b
+    &lt;li&gt;c
+    &lt;li&gt;d
+&lt;/ul&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+ul>li:nth-of-type(even) {
+    list-style: inside url('../images/redSquare.png');
+  }
+
+ul>li:nth-of-type(odd) {
+    list-style: url('../images/blueSquare.png');
+  }</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+
+                            <ul id="lst2">
+                                <li>a
+                                <li>b
+                                <li>c
+                                <li>d
+                            </ul>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (Inside)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ul&gt;
+    &lt;li&gt;a
+    &lt;li&gt;b
+    &lt;li&gt;c
+    &lt;li&gt;d
+&lt;/ul&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div class="indent">
+                            <pre>
+ul>li:nth-of-type(even) {
+    list-style: inside circle;
+  }
+
+ul>li:nth-of-type(odd) {
+    list-style: square;
+   }</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+
+                            <ul id="lst3">
+                                <li>a
+                                <li>b
+                                <li>c
+                                <li>d
+                            </ul>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (Nesting)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;ul&gt;
+    &lt;li&gt;a&lt;/li&gt;
+    &lt;li&gt;
+        &lt;ul&gt;
+            &lt;li&gt;b&lt;/li&gt;
+            &lt;li&gt;b
+                &lt;ul&gt;
+                    &lt;li&gt;c&lt;/li&gt;
+                    &lt;li&gt;c
+                        &lt;ul&gt;
+                            &lt;li&gt;d&lt;/li&gt;
+                            &lt;li&gt;d&lt;/li&gt;
+                            &lt;li&gt;d&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;c&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;b&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;a&lt;/li&gt;
+    &lt;li&gt;a&lt;/li&gt;
+&lt;/ul&gt;</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <ul>
+                                <li>a</li>
+                                <li>
+                                    <ul>
+                                        <li>b</li>
+                                        <li>b
+                                            <ul>
+                                                <li>c</li>
+                                                <li>c
+                                                    <ul>
+                                                        <li>d</li>
+                                                        <li>d</li>
+                                                        <li>d</li>
+                                                    </ul>
+                                                </li>
+                                                <li>c</li>
+                                            </ul>
+                                        </li>
+                                        <li>b</li>
+                                    </ul>
+                                </li>
+                                <li>a</li>
+                                <li>a</li>
+                            </ul>
+
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (Minimal li)</h2>
+                    <div class="content">
+                        <div class="indent">
+                            <pre>
+&lt;ul&gt;
+    &lt;li&gt;a
+    &lt;li&gt;
+        &lt;ul&gt;
+            &lt;li&gt;b
+            &lt;li&gt;b
+                &lt;ul&gt;
+                    &lt;li&gt;c
+                    &lt;li&gt;c
+                        &lt;ul&gt;
+                            &lt;li&gt;d
+                            &lt;li&gt;d
+                            &lt;li&gt;d
+                        &lt;/ul&gt;
+                    &lt;li&gt;c
+                &lt;/ul&gt;
+            &lt;li&gt;b
+        &lt;/ul&gt;
+    &lt;li&gt;a
+    &lt;li&gt;a
+&lt;/ul&gt;</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <ul>
+                                <li>a
+                                <li>
+                                    <ul>
+                                        <li>b
+                                        <li>b
+                                            <ul>
+                                                <li>c
+                                                <li>c
+                                                    <ul>
+                                                        <li>d
+                                                        <li>d
+                                                        <li>d
+                                                    </ul>
+                                                <li>c
+                                            </ul>
+                                        <li>b
+                                    </ul>
+                                <li>a
+                                <li>a
+                            </ul>
+                        </div>
+                        <h3>Note</h3>
+                        <div class="content">The above validates</div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2>Mnemonic</h2>
+                    <div class="content"></div>
+
+                    <h2>References</h2>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">MDN: ul</a>
+                    </div>
+
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-ul-element">
+                            W3C: ul</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  Templates -->
+
+
+        <template id="prevPageTemplate">li</template> <!--PREVIOUS PAGE-->
+
+        <template id="pageTitleTemplate">ul</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
+
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
+    </script>
+</body>
+
+</html>

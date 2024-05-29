@@ -264,6 +264,14 @@ figcaption {
   margin-right: auto;
 }
 
+.highlight {
+  color: white;
+  background-color: var(--primary-green);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 20px;
+}
+
 @media screen and (min-width: 500px) {
 
   div.banner-item-2 {
