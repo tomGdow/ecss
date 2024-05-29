@@ -50,40 +50,47 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
-
-                    <h2>TRBL</h2>
                     <div class="content">
-                        <code>top-right-bottom-left</code>
+                        The <code>nav</code> element represents a section of a page that
+                        links to other pages or to parts within the page: a <code>section</code> with
+                        navigation links.
                     </div>
-
-                    <h2>LVHA</h2>
+                    <h2>Notes</h2>
                     <div class="content">
-                        <code>link-visited-hover-active</code>
-                    </div>
-
-                    <h2>AABL</h2>
-                    <div class="content">
-                        <code>href</code> <code>&rarr;</code> <code>anchor-area-base-link</code>
-                    </div>
-                    <h2>Al O' Dubh</h2>
-                    <div class="content">
-                        All zeros is <span class="white_on_black">black</span> (rgb color)
-                    </div>
-                    <h2>Monaco</h2>
-                    <div class="content">
-                        <span class="white_on_black">Mon</span>ac<span class="white_on_black">o</span> is
-                        <span class="white_on_black">mono</span>spaced
-                    </div>
-                    <h2>Tip</h2>
-                    <div class="content">
-                        For <code>list-style</code>, <span class="white_on_black">tip</span> is a
-                        shorthand for
                         <ol>
-                            <li><code>list-style-type</code></li>
-                            <li><code>list-style-image</code></li>
-                            <li><code>list-style-position</code></li>
+                            <li>Not all groups of links on a page need to be in a <code>nav</code>
+                                element - only sections that
+                                consist of major navigation blocks
+                                are appropriate for the <code>nav</code> element.
+
+                            <li>In particular, it is common for footers to have a short list of links
+                                to various
+                                pages of a site, such as the terms of service, the home page,
+                                and a copyright page. The <code>footer</code> element alone is
+                                sufficient for such cases, without a <code>nav</code> element.
                         </ol>
+                    </div>
+
+                    <hr>
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+  &lt;nav&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Bikes&lt;/a&gt;
+      &lt;li&gt;&lt;a href="#"&gt;BMX&lt;/a&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Raleigh&lt;/a&gt;
+    &lt;/ol&gt;
+  &lt;/nav&gt;</pre>
+                        </div>
+                    </div>
+                    <hr>
+                    <h2>References</h2>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/sections.html#the-nav-element">W3C:
+                            nav</a>
                     </div>
                 </div>
             </div>
@@ -92,11 +99,11 @@
         <!--  Templates -->
 
 
-        <template id="prevPageTemplate">nav</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">header</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">Mnemonics</template> <!--PAGE TITLE-->
+        <template id="pageTitleTemplate">nav</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">references</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
 
 
     </div>
