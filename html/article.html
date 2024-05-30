@@ -14,6 +14,11 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        .revert {
+            all: revert;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,19 +55,126 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                                The <code>article</code>element represents a self-contained composition in a document,
+                                page,
+                                application, or site and that is, in
+                                principle, independently distributable or reusable, e.g. in syndication
+                            </li>
 
+                            <li>This could be a
+                                <ol>
+                                    <li>forum post</li>
+                                    <li>a magazine or newspaper article</li>
+                                    <li>a blog entry</li>
+                                    <li>a user-submitted comment</li>
+                                    <li>an interactive widget or gadget,
+                                        or any other independent
+                                        item of content
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                Each <code>article</code> should be identified, typically by including a heading
+                                (<code>h1</code>-<code>h6</code> element) as a child of the <code>article</code>
+                                element
+                            </li>
+
+                        </ol>
+                    </div>
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
 
+                            <li>
+                                When <code>article</code> elements are nested, the inner article elements represent
+                                articles that are in principle related to the
+                                contents of the outer article</li>
+                            <li>For instance, a blog entry on a site that accepts
+                                user-submitted comments could represent
+                                the comments as <code>article</code> elements nested within the article element for the
+                                blog entry.
+                            </li>
+                        </ol>
+                    </div>
+                    <hr>
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;article&gt;
+    &lt;header&gt;
+        &lt;h1 class="revert"&gt;The Very First Rule of Life&lt;/h1&gt;
+        &lt;p&gt;&lt;time pubdate datetime="2009-10-09T14:28-08:00"&gt;&lt;/time&gt;&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;p&gt;If there's a microphone anywhere near you, assume it's hot and
+       sending whatever you're saying to the world. Seriously&lt;/p&gt;
+    &lt;p&gt;...&lt;/p&gt;
+    &lt;section&gt;
+        &lt;h1 class="revert"&gt;Comments&lt;/h1&gt;
+        &lt;article&gt;
+            &lt;footer&gt;
+                &lt;p&gt;Posted by: George Washington&lt;/p&gt;
+                &lt;p&gt;&lt;time pubdate datetime="2009-10-10T19:10-08:00"&gt;&lt;/time&gt;&lt;/p&gt;
+            &lt;/footer&gt;
+            &lt;p&gt;Yeah! Especially when talking about your lobbyist friends!&lt;/p&gt;
+        &lt;/article&gt;
+        &lt;article&gt;
+            &lt;footer&gt;
+                &lt;p&gt;Posted by: George Hammond&lt;/p&gt;
+                &lt;p&gt;&lt;time pubdate datetime="2009-10-10T19:15-08:00"&gt;&lt;/time&gt;&lt;/p&gt;
+            &lt;/footer&gt;
+            &lt;p&gt;Hey, you have the same first name as me&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/section&gt;
+&lt;/article&gt;</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <article>
+                                <header>
+                                    <h1 class="revert">The Very First Rule of Life</h1>
+                                    <p><time pubdate datetime="2009-10-09T14:28-08:00"></time></p>
+                                </header>
+                                <p>If there's a microphone anywhere near you, assume it's hot and
+                                    sending whatever you're saying to the world. Seriously.</p>
+                                <p>...</p>
+                                <section>
+                                    <h1 class="revert">Comments</h1>
+                                    <article>
+                                        <footer>
+                                            <p>Posted by: George Washington</p>
+                                            <p><time pubdate datetime="2009-10-10T19:10-08:00"></time></p>
+                                        </footer>
+                                        <p>Yeah! Especially when talking about your lobbyist friends!</p>
+                                    </article>
+                                    <article>
+                                        <footer>
+                                            <p>Posted by: George Hammond</p>
+                                            <p><time pubdate datetime="2009-10-10T19:15-08:00"></time></p>
+                                        </footer>
+                                        <p>Hey, you have the same first name as me.</p>
+                                    </article>
+                                </section>
+                            </article>
+                        </div>
+                    </div>
+                    <hr>
                     <h2>Mnemonic</h2>
                     <div class="content"></div>
 
                     <h2>References</h2>
-                    <div class="content ref"></div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/sections.html#the-article-element">W3C:
+                            article</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">MDN: article</a>
+                    </div>
                 </div>
             </div>
         </div>

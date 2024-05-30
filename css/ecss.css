@@ -272,6 +272,10 @@ figcaption {
   margin-right: 20px;
 }
 
+hr {
+  color: var(--primary-green);
+}
+
 @media screen and (min-width: 500px) {
 
   div.banner-item-2 {
