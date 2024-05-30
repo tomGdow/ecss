@@ -14,6 +14,11 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        .revert {
+            all: revert;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,19 +55,103 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The section element represents a <strong>generic section</strong> of a document or
+                                application
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                            <li>A <code>section</code>, in this context, is a <em>thematic
+                                    grouping</em> of content, typically with a <code>heading</code>
+                            <li>Sections should always have a heading, with very few exceptions
+                        </ol>
+                    </div>
 
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                            <li>
+                                Examples of <code>sections</code> would be
+                                <ol>
+                                    <li>chapters</li>
+                                    <li>the various tabbed pages in a tabbed dialog box</li>
+                                    <li>the numbered sections of a thesis</li>
+                                </ol>
+                            </li>
+                            <li chapter="space_above">
+                                A Web site's home page could be split into sections
+                                for
+                                <ol>
+                                    <li><code>introduction</code></li>
+                                    <li><code>news item</code></li>
+                                    <li><code>contact information</code></li>
+                            </li>
+                        </ol>
+                        <li>The section element is not a generic <em>container</em> element</li>
+
+                        <li>When an element is needed for styling purposes or as a
+                            convenience for scripting, authors are encouraged to use the <code>div</code> element
+                            instead</li>
+                        <li>A general
+                            rule is that the <code>section</code>
+                            element is appropriate only if the element's contents would be listed explicitly in the
+                            document's outline</li>
+                        </ol>
+                    </div>
+                    <hr>
+                    <h2>Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;h1&gt;Choosing an Apple&lt;/h1&gt;
+&lt;section&gt;
+    &lt;h2 class="revert"&gt;Introduction&lt;/h2&gt;
+    &lt;p&gt;This document provides a guide to help with the important task of 
+        choosing the correct Apple&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h2 class="revert"&gt;Criteria&lt;/h2&gt;
+    &lt;p&gt;
+    There are many different criteria to be considered when choosing an Apple — size,
+    color, firmness, sweetness,
+    tartness...
+    &lt;/p&gt;
+&lt;/section&gt;</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <h1 class="revert">Choosing an Apple</h1>
+                            <section>
+                                <h2 class="revert">Introduction</h2>
+                                <p>This document provides a guide to help with the important task of choosing the
+                                    correct Apple.</p>
+                            </section>
+
+                            <section>
+                                <h2 class="revert">Criteria</h2>
+                                <p>
+                                    There are many different criteria to be considered when choosing an Apple — size,
+                                    color, firmness, sweetness,
+                                    tartness...
+                                </p>
+                            </section>
+                        </div>
+                    </div><!--content-->
+                    <hr>
 
                     <h2>References</h2>
-                    <div class="content ref"></div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/sections.html#the-section-element">W3C:
+                            main</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section">MDN: generic section
+                            element</a>
+                    </div>
                 </div>
             </div>
         </div>
