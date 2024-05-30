@@ -14,6 +14,11 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        .revert {
+            all: revert;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,11 +55,85 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
-
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>main</code> element represents the dominant contents of the document.
+                            </li>
+                            <li>
+                                A document must not have more than one <code>main</code> element that does not have the
+                                hidden attribute specified
+                            </li>
+                            <li>
+                                A hierarchically correct <code>main</code>
+                                element is one whose ancestor elements are limited to
+                                <ol>
+                                    <li><code>html</code></li>
+                                    <li><code>body</code></li>
+                                    <li><code>div</code></li>
+                                    <li><code>form</code></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    <hr>
                     <h2>Example</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;main&gt;
+    
+    &lt;h1&gt;Apples&lt;/h1&gt;
+    &lt;p&gt;The apple is the pomaceous fruit of the apple tree&lt;/p&gt;
 
+    &lt;article&gt;
+        &lt;h2&gt;Red Delicious&lt;/h2&gt;
+        &lt;p&gt;These bright red apples are the most common found in many
+            supermarkets&lt;/p&gt;
+        &lt;p&gt;... &lt;/p&gt;
+        &lt;p&gt;... &lt;/p&gt;
+    &lt;/article&gt;
+
+    &lt;article&gt;
+        &lt;h2&gt;Granny Smith&lt;/h2&gt;
+        &lt;p&gt;These juicy, green apples make a great filling for
+            apple pies.&lt;/p&gt;
+        &lt;p&gt;... &lt;/p&gt;
+        &lt;p&gt;... &lt;/p&gt;
+    &lt;/article&gt;
+
+&lt;/main&gt;</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+
+                            <main>
+
+                                <h1 class="revert">Apples</h1>
+                                <p>The apple is the pomaceous fruit of the apple tree.</p>
+
+                                <article>
+                                    <h2 class="revert">Red Delicious</h2>
+                                    <p>These bright red apples are the most common found in many
+                                        supermarkets.</p>
+                                    <p>... </p>
+                                    <p>... </p>
+                                </article>
+
+                                <article>
+                                    <h2 class="revert">Granny Smith</h2>
+                                    <p>These juicy, green apples make a great filling for
+                                        apple pies</p>
+                                    <p>... </p>
+                                    <p>... </p>
+                                </article>
+
+                            </main>
+                        </div>
+                    </div><!--content-->
+                    <hr>
                     <h2>Notes</h2>
                     <div class="content"></div>
 
@@ -62,7 +141,13 @@
                     <div class="content"></div>
 
                     <h2>References</h2>
-                    <div class="content ref"></div>
+                    <div class="content ref">
+
+                        <a href="https://html.spec.whatwg.org/#the-main-element">HTML Living Standard: main</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main">MDN: main</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,7 +159,6 @@
 
         <template id="pageTitleTemplate">main</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">section</template><!--NEXT PAGE-->
 
 
     </div>
