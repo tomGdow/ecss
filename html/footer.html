@@ -11,6 +11,89 @@
     <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
     <link rel="stylesheet" href="../css/ecss.css" title="Default">
     <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <style>
+
+
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 5px;
+            background-color: #000;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .revert {
+            all: revert;
+        }
+
+        .inline {
+            display: inline;
+        }
+
+        details summary::-webkit-details-marker,
+        details summary::marker {
+            display: none;
+        }
+
+        details summary {
+            text-decoration: underline;
+            color: var(--primary-green);
+            display: inline;
+
+        }
+
+        details summary>code:hover {
+            color: white;
+            background-color: var(--primary-green);
+        }
+
+        .link {
+            text-decoration: dotted;
+        }
+
+        .example+div.content {
+            padding-bottom: 1em;
+        }
+
+        .example {
+            padding-top: 1em;
+        }
+    </style>
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
@@ -34,7 +117,7 @@
                     </div>
                 </div>
                 <div class="banner-item-2">
-                    <span id="banner_part_first">html </span>
+                    <span id="banner_part_first">html</span>
                     <span class="primary-orange" id="banner_part_second"></span>
                 </div>
             </div>
@@ -50,19 +133,143 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>The <code>footer</code> element represents a footer for
+                                its nearest ancestor
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                                <details class="inline detailsRef">
+                                    <summary title="reference"><code>sectioning content</code></summary>
+                                    <a
+                                        href="https://www.w3.org/TR/2011/WD-html5-20110405/content-models.html#sectioning-content">
+                                        W3C: sectioning content</a>
+                                </details>
 
+                                <span title="sectioning content" class="insertRef"></span> or
+                                <span class="insertRef" title="sectioning root"></span>
+                            </li>
+                            <li>A <code>footer</code> typically contains information about its section such as
+                                <ol>
+                                    <li>who wrote it</li>
+                                    <li>links to related documents</li>
+                                    <li>copyright data, and the like</li>
+                                </ol>
+
+                            <li>Contact information for the author or editor of a section belongs in an
+                                <code>address</code> element,
+                                possibly itself inside a <code>footer</code>
+                            </li>
+
+                            <li>When the <code>footer</code> element contains entire sections, they represent
+                                <ol>
+                                    <li>appendices</code>
+                                    <li>indexes</code>
+                                    <li>long colophons</code>
+                                    <li>verbose license agreements</code>
+                                    <li>other such content</code>
+                                </ol>
+                            </li>
+                            <li>
+                                The <code>footer</code> element is not sectioning content; <em>it doesn't
+                                    introduce a new section</em>
+                            </li>
+                        </ol>
+                    </div>
+                    <hr>
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;h3&gt;FIFA World Cup top goalscorers&lt;/h3&gt;
+&lt;ol&gt;
+    &lt;li&gt;Miroslav Klose, 16&lt;/li&gt;
+    &lt;li&gt;Ronaldo Nazário, 15&lt;/li&gt;
+    &lt;li&gt;Gerd Müller, 14&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;footer&gt;
+    &lt;small&gt;
+        Copyright &copy; 2023 Football History Archives. All Rights Reserved.
+    &lt;/small&gt;
+&lt;/footer&gt;</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+
+                            <h3 class="revert">FIFA World Cup top goalscorers</h3>
+                            <ol>
+                                <li>Miroslav Klose, 16</li>
+                                <li>Ronaldo Nazário, 15</li>
+                                <li>Gerd Müller, 14</li>
+                            </ol>
+
+                            <footer>
+                                <small>
+                                    Copyright © 2023 Football History Archives. All Rights Reserved.
+                                </small>
+                            </footer>
+                        </div>
+                    </div><!--content-->
+                    <hr>
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <span title="sectioning content" class="insertRef"></span>
+                                <ol>
+                                    <li>
+                                        <code>Sectioning content</code>is content that defines the scope of headings and
+                                        footers.
+                                    </li>
+                                    <li><code>tags</code>
+                                        <ol>
+                                            <li><code>article</code></li>
+                                            <li><code>aside</code></li>
+                                            <li><code>nav</code></li>
+                                            <li><code>section</code></li>
+                                        </ol>
+                                    </li>
+                                </ol>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                            </li>
+                            <li>
+
+                                <span title="sectioning root" class="insertRef"></span>
+                                <ol>
+                                    <li>Certain elements are said to be <code>sectioning roots</code> including
+                                        <code>blockquote</code> and <code>td</code>
+                                        elements
+                                    </li>
+                                    <li>
+                                        These elements can have their
+                                        own outlines, but the sections and headings inside these elements do not
+                                        contribute to the outlines of their ancestors
+                                    </li>
+                                    <li>tags
+                                        <ol>
+                                            <li><code>blockquote</code></li>
+                                            <li><code>body</code></li>
+                                            <li><code>details</code></li>
+                                            <li><code>fieldset</code></li>
+                                            <li><code>figure</code></li>
+                                            <li><code>td</code></li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
 
                     <h2>References</h2>
-                    <div class="content ref"></div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/sections.html#the-footer-element">
+                            W3C: footer
+                        </a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer">MDN: Footer</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,7 +302,34 @@
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
+
+        // references
+        var elem = document.querySelector('.detailsRef');
+
+        cloneSectioningContent = elem.cloneNode(true);
+        var elemAfterNote = document.querySelectorAll('.insertRef')[2];
+        elemAfterNote.after(cloneSectioningContent);
+
+        var sectioningRootUrl = "https://www.w3.org/TR/2011/WD-html5-20110405/sections.html#sectioning-root"
+        const newCodeTag = document.createElement("code");
+        var elemAfterRoot = document.querySelectorAll('.insertRef')[1];
+        cloneSectioningRoot = elem.cloneNode(true);
+        cloneSectioningRoot.childNodes[3].innerHTML = "MDN: sectioning root";
+        cloneSectioningRoot.childNodes[1].innerHTML = "";
+        cloneSectioningRoot.childNodes[3].href = sectioningRootUrl;
+        newCodeTag.innerHTML = "sectioning root";
+        cloneSectioningRoot.childNodes[1].appendChild(newCodeTag);
+        elemAfterRoot.after(cloneSectioningRoot);
+
+
+        cloneSectioningRoot2 = cloneSectioningRoot.cloneNode(true);
+        var elemAfterRoot2 = document.querySelectorAll('.insertRef')[3];
+        console.log(cloneSectioningRoot2);
+        elemAfterRoot2.after(cloneSectioningRoot2);
+
+
+
     </script>
 </body>
 
-/html>
+</html>
