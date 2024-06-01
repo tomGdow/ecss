@@ -15,6 +15,40 @@
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
     <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
         .revert {
             all: revert;
         }
@@ -110,7 +144,7 @@
                         </ol>
                     </div>
 
-                    <h2>Example</h2>
+                    <h2 class="example">Example</h2>
                     <div class="content">
                         <h3>HTML</h3>
                         <div class="indent">
@@ -164,12 +198,6 @@
                             </section>
                         </div>
                     </div>
-
-                    <h2>Notes</h2>
-                    <div class="content"></div>
-
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
 
                     <h2>References</h2>
                     <div class="content ref">
