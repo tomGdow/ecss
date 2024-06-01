@@ -14,6 +14,18 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        .revert {
+            all: revert;
+        }
+
+        .progress.window {
+            background-color: var(--primary-green);
+            padding: 1em;
+            padding-top: 0.2em;
+            color: white;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,10 +62,108 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li><code>details</code>
+                                <ol>
+                                    <li>
+                                        The <code>details</code> element represents a disclosure widget from which the
+                                        user
+                                        can obtain additional information or controls
+                                    </li>
+                                    <li>The <code>details</code> element is not appropriate for footnotes</li>
+                                    <li>The first <code>summary</code> element child of the element, if any,
+                                        represents the summary or legend of the details
+                                    </li>
+                                    <li>
+                                        If there is no child <code>summary</code> element, the user agent should provide
+                                        its own legend (e.g. "Details")
+                                    </li>
+                                    <li>
+                                        A disclosure widget is typically presented onscreen using a small triangle that
+                                        rotates (or twists) to indicate
+                                        open/closed status, with a label next to the triangle
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>open</code>
+                                <ol>
+                                    <li>The <code>open</code> content attribute is a boolean attribute</li>
+                                    <li>If present, it indicates that the details are to be shown to the user</li>
+                                    <li>If the attribute is absent, the details are not to be shown</li>
+                                </ol>
+                            </li>
+                            <li><code>summary</code>
+                                <ol>
+                                    <li>
+                                        The <code>summary</code> element represents a
+                                        <ol>
+                                            <li><code>summary</code></li>
+                                            <li><code>caption</code></li>
+                                            <li><code>legend</code></li>
+                                        </ol>
+                                        for the rest of the contents of the summary element's
+                                        parent details element, if any.
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
 
                     <h2>Example</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;section class="progress window"&gt;
+    &lt;h1&gt;Copying "Really Achieving Your Childhood Dreams"&lt;/h1&gt;
+    &lt;details&gt;
+        &lt;summary&gt;
+            Copying... &lt;progress max="375505392" value="97543282"&gt;&lt;/progress&gt; 25%
+&lt;/summary&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;Transfer rate:&lt;/dt&gt;
+            &lt;dd&gt;452KB/s&lt;/dd&gt;
+            &lt;dt&gt;Local filename:&lt;/dt&gt;
+            &lt;dd&gt;/home/rpausch/raycd.m4v&lt;/dd&gt;
+            &lt;dt&gt;Remote filename:&lt;/dt&gt;
+            &lt;dd&gt;/var/www/lectures/raycd.m4v&lt;/dd&gt;
+            &lt;dt&gt;Duration:&lt;/dt&gt;
+            &lt;dd&gt;01:16:27&lt;/dd&gt;
+            &lt;dt&gt;Color profile:&lt;/dt&gt;
+            &lt;dd&gt;SD (6-1-6)&lt;/dd&gt;
+            &lt;dt&gt;Dimensions:&lt;/dt&gt;
+            &lt;dd&gt;320×240&lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/details&gt;
+&lt;/section&gt;</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <section class="progress window">
+                                <h1 class="revert">Copying "Really Achieving Your Childhood Dreams"</h1>
+                                <details>
+                                    <summary>Copying... <progress max="375505392" value="97543282"></progress> 25%
+                                    </summary>
+                                    <dl>
+                                        <dt>Transfer rate:</dt>
+                                        <dd>452KB/s</dd>
+                                        <dt>Local filename:</dt>
+                                        <dd>/home/rpausch/raycd.m4v</dd>
+                                        <dt>Remote filename:</dt>
+                                        <dd>/var/www/lectures/raycd.m4v</dd>
+                                        <dt>Duration:</dt>
+                                        <dd>01:16:27</dd>
+                                        <dt>Color profile:</dt>
+                                        <dd>SD (6-1-6)</dd>
+                                        <dt>Dimensions:</dt>
+                                        <dd>320×240</dd>
+                                    </dl>
+                                </details>
+                            </section>
+                        </div>
+                    </div>
 
                     <h2>Notes</h2>
                     <div class="content"></div>
@@ -62,7 +172,15 @@
                     <div class="content"></div>
 
                     <h2>References</h2>
-                    <div class="content ref"></div>
+                    <div class="content ref">
+                        <a
+                            href="https://www.w3.org/TR/2011/WD-html5-20110405/interactive-elements.html#the-details-element">W3C
+                            details summary</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">MDN: The Details
+                            disclosure element</a>
+                    </div>
                 </div>
             </div>
         </div>
