@@ -14,6 +14,15 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        .highlight2 {
+            color: white;
+            background-color: var(--primary-green);
+            padding-left: 10px;
+            padding-right: 10px;
+            /* max-width: fit-content; */
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,19 +59,164 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>The <code>iframe</code> element represents a nested browsing context</li>
+                        </ol>
+                    </div>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
 
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li><code>src</code>
+                                <ol>
+                                    <li>
+                                        The <code>src</code> attribute gives the address of a page that the nested
+                                        browsing context
+                                        is to contain
+                                    </li>
+                                    <li>
+                                        The attribute, if present, must be a valid non-empty URL potentially surrounded
+                                        by spaces
+                                    </li>
+                                </ol>
+                            </li><!--code-->
+                            <li><code>srcdoc</code>
+                                <ol>
+                                    <li>
+                                        Inline HTML to embed, overriding the <code>src</code> attribute
+                                    </li>
+                                    <li>If a browser does not support the <code>srcdoc</code> attribute, it will fall
+                                        back to the URL in the <code>src</code> attribute
+                                    </li>
+                                </ol>
+
+                            </li><!--code-->
+                            <li><code>name</code>
+                                <ol>
+                                    <li>
+                                        A <span class="highlight2">targetable</span> name for the embedded browsing
+                                        context
+                                    </li>
+                                    <li>This can be used in the <code>target</code> attribute of
+                                        <ol>
+                                            <li><code>a</code></li>
+                                            <li><code>form</code></li>
+                                            <li><code>base</code></li>
+                                        </ol>
+                                        or the <code>formtarget</code> attribute of elements
+                                        <ol>
+                                            <li>input</li>
+                                            <li>button</li>
+                                        </ol>
+                                        or
+                                        the <code>windowName</code> param in <code>window.open()</code>
+                                    </li>
+                                    <li>
+                                        The <code>name</code> attribute, if present, must be a valid browsing context
+                                        name
+                                    </li>
+                                    <li>
+                                        The given <code>value</code> is used to name the nested browsing context.
+                                    </li>
+                                    <li>
+                                        When the browsing context is created, if the attribute is present, the browsing
+                                        context name must be set to the <code>value</code> of this attribute;<br>
+                                        otherwise, the browsing context name must be set to the empty string.
+                                    </li>
+                                    <li>
+                                        To link to a browsing context from an anchor tag use <code
+                                            class="highlight">target=name</code><br>
+                                        (not <code>target=id</code>)
+                                    </li>
+
+                                </ol><!--name-->
+                            </li><!--name-->
+
+                            <li><code>sandbox</code>
+                                <ol>
+                                    <li>
+                                        The <code>sandbox</code> attribute, when specified, enables a set of extra
+                                        restrictions on any content hosted by the <code>iframe</code>
+                                    </li>
+                                    <li>
+                                        The <code>value</code> of the attribute can either be empty to apply all
+                                        restrictions,
+                                        or
+                                        space-separated tokens to lift particular
+                                        restrictions
+                                    </li>
+                                    <li>
+                                        Its value must be an unordered set of unique space-separated tokens that are
+                                        ASCII
+                                        case-insensitive.</li>
+                                    <li>Some allowed values are
+                                        <ol>
+                                            <li><code>allow-same-origin</code> </li>
+                                            <li><code>allow-top-navigation</code> </li>
+                                            <li><code>allow-forms</code></li>
+                                            <li><code>allow-scripts</code></li>
+                                        </ol>
+                                    </li>
+                                </ol>
+
+                            </li>
+                            <li><code>seamless</code><br>
+                                Deprecated
+                            </li>
+                            <li><code>width</code>
+                                <ol>
+                                    <li>The width of the frame in CSS pixels</li>
+                                    <li>Default is 300</li>
+                                </ol>
+                            </li>
+                            <li><code>height</code>
+                                <ol>
+                                    <li>The height of the frame in CSS pixels</li>
+                                    <li>Default is 150</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2>Example</h2>
+                    <div class="content">
+
+
+                        <h3>Browser</h3>
+
+                        <div class="browser">
+
+                            <iframe width="425" height="350" name="tom" src="./origin_species_sample.html"
+                                style="border: 2px solid green"
+                                sandbox="allow-scripts"></iframe>
+
+                            <br>
+                            <br>
+                            <a href="https://tomgdow.com" target="tom">tomgdow</a>
+                            <a href="https://ecss.tomgdow.com/" target="tom">ecss</a>
+                            <a href="./alice_in_wonderland_sample.html" target="tom">Alice</a>
+                            <a href="./origin_species_sample.html" target="tom">Origin Species</a>
+
+
+                        </div><!--browser-->
+
+
+                    </div><!--content-->
 
                     <h2>Mnemonic</h2>
                     <div class="content"></div>
 
                     <h2>References</h2>
-                    <div class="content ref"></div>
+                    <div class="content ref">
+                        <a
+                            href="https://www.w3.org/TR/2011/WD-html5-20110405/the-iframe-element.html#the-iframe-element">W3C
+                            Iframe</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe">MDN: iframe</a>
+                    </div>
                 </div>
             </div>
         </div>
