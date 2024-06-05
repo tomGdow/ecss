@@ -15,6 +15,40 @@
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
     <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
         .highlight2 {
             color: white;
             background-color: var(--primary-green);
@@ -181,7 +215,7 @@
                             </li>
                         </ol>
                     </div><!--content-->
-
+                    <hr>
                     <h2 class="example">Example (Allow scripts)</h2>
                     <div class="content">
                         <h3>HTML</h3>
@@ -203,7 +237,6 @@
                         <div class="browser">
                             <iframe width="425" height="350" name="myIframe" src="./origin_species_sample.html"
                                 sandbox="allow-scripts"></iframe>
-
                             <br>
                             <br>
                             <a href="https://tomgdow.com" target="myIframe">tomgdow</a>&nbsp;&nbsp;
@@ -220,6 +253,7 @@
                             attribute (<code class="highlight2">name="myIframe"</code>)
                         </div>
                     </div><!--content-->
+                    <hr>
                     <h2 class="example">Example (sandbox)</h2>
                     <div class="content">
                         <h3>HTML</h3>
@@ -258,6 +292,7 @@
                         </div>
 
                     </div><!--content-->
+                    <hr>
                     <h2 class="example">Example (srcdoc)</h2>
                     <div class="content">
                         <h3>HTML</h3>
@@ -294,7 +329,7 @@
                         </div>
 
                     </div><!--content-->
-
+                    <hr>
                     <h2>References</h2>
                     <div class="content ref">
                         <a
