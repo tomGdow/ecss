@@ -270,7 +270,7 @@ figcaption {
   padding-left: 10px;
   padding-right: 10px;
   margin-right: 20px;
-  max-width: fit-content;
+  /* max-width: fit-content; */
 }
 
 hr {
