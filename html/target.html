@@ -50,19 +50,182 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                A <code>valid browsing context</code> name or keyword is any string that is either
+                                <strong>a
+                                    valid browsing
+                                    context name</strong> or is an ASCII
+                                case-insensitive match for one of:
+                                <ol>
+                                    <li><code>_blank</code>
+                                        <ol>
+                                            <li>The parent browsing context of the current one</li>
+                                            <li>If no parent, behaves as <code>_self</code></li>
+                                        </ol>
+                                    </li>
+                                    <li><code>_self</code><br>
+                                        The current browsing context (Default)
+                                    </li>
+                                    <li><code>_parent</code>
+                                        <ol>
+                                            <li>The parent browsing context of the current one</li>
+                                            <li>If no parent, behaves as <code>_self</code></li>
+                                        </ol>
+                                    </li>
+                                    <li><code>_top</code>
+                                        <ol>
+                                            <li>The topmost browsing context</li>
+                                            <li>
+                                                To be specific, this means the "highest" context that's an ancestor of
+                                                the current one
+                                            </li>
+                                            <li>If no ancestors, behaves as <code>_self</code></li>
+                                        </ol>
+                                    </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                                </ol>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div>
+                            </li>
+                            <li>
+                                Browsing contexts can have a browsing context name
+                            </li>
+                            <li>
+                                By default, a browsing context has no name (its name is not set)
+                            </li>
+                        </ol>
+                    </div>
+                    <hr>
+                    <h2 class="Example">Example (target=_parent)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+    &lt;iframe width="325" height="450" 
+        style="background-color:#18836f"
+        src="./embedded_iframe_target_parent.html"&gt;
+    &lt;/iframe&gt;
+    
+    // External file (embedded_iframe_target_parent.html)
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+    &lt;iframe width="425" height="350" 
+        srcdoc="
+        &lt;a href=./origin_species_sample.html target=_parent&gt;Origin Species&lt;/a&gt;"
+        style="background-color:lightblue; width:80%; height: 50%"&gt;
+        Origin Species
+    &lt;/iframe&gt;</pre>
+
+                        </div>
+                        <h3>Browser</h3>
+
+                        <div class="browser">
+                            <iframe width="325" height="450" style="background-color:#18836f"
+                                src="./embedded_iframe_target_parent.html">
+                            </iframe>
+                        </div>
+                        <h3>Notes</h3>
+                        <div class="content">
+                            <code class="highlight2">target=_parent</code> in anchor tag
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2>Example (target=_self)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+    &lt;iframe width="325" height="450" 
+        style="background-color:#18836f"
+        src="./embedded_iframe_target_self.html"&gt;
+    &lt;/iframe&gt;
+
+    // External file (embedded_iframe_target_self.html)
+
+    &lt;iframe width="425" height="350" srcdoc="
+        &lt;a href=./origin_species_sample.html target=_self&gt;
+            Origin Species&lt;/a&gt;"
+        style="background-color:lightblue; width:80%; height: 50%"&gt;Origin Species
+    &lt;/iframe&gt;</pre>
+                        </div>
+
+                        <h3 class="example">Browser</h3>
+                        <div class="browser">
+                            <iframe width="325" height="450" style="background-color:#18836f"
+                                src="./embedded_iframe_target_self.html">
+                            </iframe>
+                        </div>
+                        <h3>Notes</h3>
+                        <div class="content">
+                            <code class="highlight2">target=_self</code> in anchor tag
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (target=named iframe)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+    &lt;iframe width="325" height="450" 
+        style="background-color:#18836f; height:50%"
+        src="./embedded_iframe_target_neighbour.html"&gt;
+    &lt;/iframe&gt; &lt;br&gt;
+
+    &lt;iframe width="325" height="450" 
+        name="neighbourIframe"
+        srcdoc="&lt;div style=color:white;font-size:1.5em&gt;I am the neighbour&lt;/div&gt;"
+        style="background-color:#18836f;"&gt;
+    &lt;/iframe&gt;
+
+    // External file (embedded_iframe_target_neighbour.html)
+
+    &lt;iframe width="425" height="120"
+        srcdoc="
+        &lt;a href=./origin_species_sample.html target=neighbourIframe&gt;Origin Species&lt;/a&gt;&lt;br&gt;
+        &lt;a href=./alice_in_wonderland_sample.html target=neighbourIframe&gt;
+        Alice in Wonderland&lt;/a&gt;"
+        style="background-color:lightblue; width:80%;"&gt;Origin
+        Species
+    &lt;/iframe&gt;</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <iframe width="325" height="450" style="background-color:#18836f; height:50%"
+                                src="./embedded_iframe_target_neighbour.html">
+                            </iframe> <br>
+                            <iframe width="325" height="450" name="neighbourIframe"
+                                srcdoc="<div style=color:white;font-size:1.5em>I am the neighbour</div>"
+                                style="background-color:#18836f;">
+                            </iframe>
+                        </div>
+                        <h3>Notes</h3>
+                        <div class="content">
+                            <ol>
+                                <li>
+                                    <code class="highlight2">target=neighbourIframe</code> in anchor tag
+                                </li>
+                                <li>
+                                    <code class="highlight2">name="neighbourIframe"</code> in targetted
+                                    <code>iframe</code>
+                                </li>
+
+                            </ol>
+
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div>
+                    <div class="content ref">
+                        <a
+                            href="https://www.w3.org/TR/2011/WD-html5-20110405/browsers.html#valid-browsing-context-name-or-keyword">
+                            W3C: browsing context
+                        </a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target">MDN: target</a>
+                    </div>
                 </div>
             </div>
         </div>
