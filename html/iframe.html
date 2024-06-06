@@ -99,10 +99,11 @@
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
                         <ol>
-                            <li>The <code>iframe</code> element represents a nested browsing context</li>
+                            <li>
+                                The <code>iframe</code> element represents a nested browsing context
+                            </li>
                         </ol>
                     </div>
-
 
                     <h2>Notes</h2>
                     <div class="content">
@@ -130,7 +131,7 @@
                                     </li>
                                 </ol>
 
-                            </li><!--code-->
+                            </li>
                             <li><code>name</code>
                                 <ol>
                                     <li>
@@ -212,6 +213,9 @@
                                     <li>The height of the frame in CSS pixels</li>
                                     <li>Default is 150</li>
                                 </ol>
+                            </li>
+                            <li><code></code> stands for inline frame! (If you want to center, may need to use
+                                <code>display:block!</code>)
                             </li>
                         </ol>
                     </div><!--content-->
@@ -355,6 +359,38 @@
                                 width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
                                 aria-hidden="false" tabindex="0">FALLBACK
                             </iframe>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (You Tube)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;iframe width="560" height="315"
+    src="https://www.youtube.com/embed/NMWzgy8FsKs?si=EaAfp0YpylewQ2DZ"
+    title="YouTube video player" 
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+    picture-in-picture; web-share"
+    style="border:0;" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen&gt;
+&lt;/iframe&gt;</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/NMWzgy8FsKs?si=EaAfp0YpylewQ2DZ"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                style="border:0;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+
+
+
                         </div>
 
                     </div><!--content-->
