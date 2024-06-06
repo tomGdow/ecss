@@ -273,6 +273,13 @@ figcaption {
   /* max-width: fit-content; */
 }
 
+.highlight2 {
+  color: white;
+  background-color: var(--primary-green);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 hr {
   color: var(--primary-green);
 }
