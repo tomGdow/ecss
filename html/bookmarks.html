@@ -14,8 +14,7 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
-<style>
-
+    <style>
         div.container {
             counter-reset: refCounter 0;
             counter-reset: exampleCounter 0;
@@ -49,7 +48,18 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
-</style>
+
+        p {
+            all: initial;
+            display: block;
+            padding-left: 3rem;
+        }
+
+        h2#section1,
+        h2#section2 {
+            all: revert;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -86,16 +96,100 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>id</code> attribute may be used to create an anchor at the start tag of any
+                                element (including the <code>a</code> element)
+                            </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                            <li>
+                                The anchor is linked to the destination tag via the <code>a</code> element by prepending
+                                the &#x23; symbol
+                                to the <code>id</code> of the anchor (<code>&#x23;myid</code>)
+                            </li>
+                        </ol>
+                    </div>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div>
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+    &lt;h2 id="section1"&gt;Section One&lt;/h2&gt;
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+    You may read more about this in 
+        &lt;a href="#section2"&gt;Section Two&lt;/a&gt;.
+    ...later in the document
+
+    // (lorem)
+
+    &lt;h2 id="section2"&gt;Section Two&lt;/h2&gt;
+
+    Please refer to 
+        &lt;a href="#section1"&gt;Section One&lt;/a&gt; 
+    above for more details.</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+
+                            <h2 id="section1">Section One</h2>
+                            You may read more about this in <a href="#section2">Section Two</a>.
+                            ...later in the document
+
+                            <p>Lorem</p>
+                            <p>ipsum</p>
+                            <p>dolor</p>
+                            <p>sit</p>
+                            <p>amet</p>
+                            <p>consectetur</p>
+                            <p>adipisicing</p>
+                            <p>elit</p>
+                            <p>Aperiam</p>
+                            <p>autem</p>
+                            <p>repellendus</p>
+                            <p>quia</p>
+                            <p>consectetur</p>
+                            <p>aliquid</p>
+                            <p>earum</p>
+                            <p>quisquam</p>
+                            <p>eaque</p>
+                            <p>deserunt</p>
+                            <p>accusamus</p>
+                            <p>est</p>
+                            <p>Itaque</p>
+                            <p>velit</p>
+                            <p>eos</p>
+                            <p>illum</p>
+                            <p>error</p>
+                            <p>placeat</p>
+                            <p>mollitia</p>
+                            <p>id</p>
+                            <p>deleniti</p>
+                            <p>Dolorem</p>
+                            <p>ex</p>
+                            <p>sapiente</p>
+                            <p>voluptatum</p>
+                            <p>accusantium</p>
+                            <p>corrupti</p>
+                            <p>incidunt</p>
+                            <p>laudantium</p>
+                            <p>ratione</p>
+                            <p>porro</p>
+                            <p>maxime</p>
+                            <p>dolore</p>
+                            <p>mollitia</p>
+                            <h2 id="section2">Section Two</h2>
+                            Please refer to <a href="#section1">Section One</a> above
+                            for more details.
+                        </div>
+                        <h3>Note</h3>
+                        <div class="content">
+                            <em>Not</em> <code class="highlight2">href="./#section1"</code>
+                        </div>
+
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref">
@@ -103,6 +197,9 @@
                             href="https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier">W3C:
                             Scroll to framgment identifier
                         </a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/html4/struct/links.html">W3C Links</a>
                     </div>
                 </div>
             </div>
