@@ -14,7 +14,36 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
-<style>
+    <style>
+        details summary::-webkit-details-marker,
+        details summary::marker {
+            display: none;
+        }
+
+        details>span {
+            background-color: lightgray;
+            padding-top: 0.3em;
+            padding-bottom: 0.3em;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
+        details summary {
+            text-decoration: underline;
+            color: var(--primary-green);
+            display: inline;
+            font-size: 1.1rem;
+
+        }
+
+        details summary>code:hover {
+            color: white;
+            background-color: var(--primary-green);
+        }
+
+        .link {
+            text-decoration: dotted;
+        }
 
         div.container {
             counter-reset: refCounter 0;
@@ -49,7 +78,11 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
-</style>
+
+        #bottom {
+            padding-bottom: 2rem;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -70,7 +103,7 @@
                     </div>
                 </div>
                 <div class="banner-item-2">
-                    <span id="banner_part_first">html </span>
+                    <span id="banner_part_first">html</span>
                     <span class="primary-orange" id="banner_part_second"></span>
                 </div>
             </div>
@@ -84,7 +117,22 @@
                         <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
                         <a href="./search.html">search</a>
                     </div>
-
+                    <nav>
+                        <details>
+                            <summary>navigate</summary>
+                            <span>
+                                <a href="">Top</a>&nbsp;&nbsp;
+                                <a href="#notes">Notes</a>&nbsp;&nbsp;
+                                <a href="#example1">Ex 1</a>&nbsp;&nbsp;
+                                <a href="#example2">Ex 2</a>&nbsp;&nbsp;
+                                <a href="#example3">Ex 3</a>&nbsp;&nbsp;
+                                <a href="#example4">Ex 4</a>&nbsp;&nbsp;
+                                <a href="#references">Refs</a>&nbsp;&nbsp;
+                                <a href="#bottom">Bottom</a> &nbsp;&nbsp;| &nbsp;&nbsp;
+                                <a href="./target.html">target page</a>
+                            </span>
+                        </details>
+                    </nav>
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
                         <ol>
@@ -119,19 +167,80 @@
                             </li>
                         </ol>
                     </div>
-                    <h2>Notes</h2>
+                    <span class="insertNav"></span>
+                    <h2 id="notes">Notes</h2>
                     <div class="content">
                         <ol>
-                            <li><code>href</code></li>
-                            <li><code>target</code></li>
-                            <li><code>rel</code></li>
-                            <li><code>media</code></li>
-                            <li><code>hreflang</code></li>
-                            <li><code>type</code></li>
-                        </ol>
-                    </div>
+                            <li><code>href</code>
+                                <ol>
+                                    <li>The URL that the hyperlink points to</li>
+                                    <li>Links are not restricted to HTTP-based URLs</li>
+                                </ol>
+                            </li>
+                            <li><code>target</code>
+                                <ol>
+                                    <li>
+                                        Where to display the linked URL, as the name for a browsing context
+                                    </li>
+                                    <li>
+                                        A <code>tab</code>, <code>window</code>, or <code>iframe</code> (see <a
+                                            href="./target.html">target
+                                            page</a>)
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>rel</code>
+                                <ol>
+                                    <li>
+                                        The <code>rel</code> attribute defines the relationship between a linked
+                                        resource
+                                        and the current document
+                                    </li>
+                                    <li>Valid on
+                                        <ol>
+                                            <li><code>link</code></li>
+                                            <li><code>a</code></li>
+                                            <li><code>area</code></li>
+                                            <li><code>form</code></li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        The supported values depend on the element on which the attribute is found
+                                    </li>
+                                    <li><code>noopener</code><br>
+                                        The <code>noopener</code> keyword for the <code>rel</code> attribute of the
+                                        <code>a</code>, <code>area</code>, and <code>form</code> elements instructs the
+                                        browser to navigate to
+                                        the target resource without granting the new browsing context access to the
+                                        document that opened it — by not
+                                        setting the <code>Window.opener</code> property on the opened window
 
-                    <h2 class="example">Example</h2>
+                                    </li>
+                                </ol>
+
+                            </li>
+                            <li><code>hreflang</code>
+                                <ol>
+                                    <li>
+                                        Specifies the language of the document in
+                                        the link
+                                    <li>
+                                        The attribute is purely advisory
+                                    </li>
+                                    <li>The value must be a valid BCP 47 language tag</li>
+                                </ol>
+                            </li>
+                            <li><code>type</code>
+                                <ol>
+                                    <li>Hints at the linked URL's format with a MIME type</li>
+                                    <li>No built-in functionality</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <hr>
+                    <div class="insertNav"></div>
+                    <h2 class="example" id="example1">Example (mailto)</h2>
                     <div class="content">
                         <h3>HTML</h3>
                         <div class="indent">
@@ -150,12 +259,72 @@
                                 rel="noopener">Mail John Doe</a>
                         </div>
                     </div>
+                    <hr>
+                    <div class="insertNav"></div>
+                    <h2 class="example" id="example2">Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;a href="https://www.google.ie/maps/@53.3652136,-6.3351105,10z?entry=ttu" 
+    target="_blank" 
+    rel="noopener"&gt;Google Maps
+&lt;/a&gt;</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
 
+                            <a href="https://www.google.ie/maps/@53.3652136,-6.3351105,10z?entry=ttu" target="_blank"
+                                rel="noopener">Google
+                                Maps</a>
+                        </div>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                    </div><!--content-->
+                    <hr>
+                    <div class="insertNav"></div>
+                    <h2 class="example" id="example3">Example (telephone)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+    &lt;a href="tel:+49.157.0156"&gt;telephone +49 157 0156&lt;/a&gt;</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <a href="tel:+49.157.0156">telephone +49 157 0156</a>
+                        </div>
 
-                    <h2>References</h2>
+                    </div><!--content-->
+                    <hr>
+                    <div class="insertNav"></div>
+                    <h2 class="example" id="example4">Example (jump to top/bottom)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+    &lt;a href="#top"&gt; Jump to top &lt;/a&gt;
+
+    &lt;div id="bottom"&gt;&lt;a href=""&gt;Jump to Top&lt;/a&gt;&lt;/div&gt;
+    &lt;a href="#bottom"&gt;Jump to bottom&lt;/a&gt;</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <a href="#top"> Jump to top </a><br>
+                            <a href="#bottom"> Jump to bottom </a>
+
+                        </div>
+                        <h3>Note</h3>
+                        <div class="content">You can use
+                            <ol>
+                                <li><code>href="#top"</code></li>
+                                <li><code>href="#"</code></li>
+                            </ol>
+                            to link to the top of the current page
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <div class="insertNav"></div>
+                    <h2 id="references">References</h2>
                     <div class="content ref">
                         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">MDN: anchor
                             element</a>
@@ -174,6 +343,7 @@
                 </div>
             </div>
         </div>
+        <div id="bottom"></div>
 
         <!--  Templates -->
 
@@ -183,7 +353,6 @@
         <template id="pageTitleTemplate">anchor</template> <!--PAGE TITLE-->
 
         <template id="nextPageTemplate">bookmarks</template><!--NEXT PAGE-->
-
 
     </div>
     <script>
@@ -202,6 +371,25 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        //nav 
+
+        navTag = document.querySelector('nav')
+        navClone1 = navTag.cloneNode(true)
+        navClone2 = navTag.cloneNode(true)
+        navClone3 = navTag.cloneNode(true)
+        navClone4 = navTag.cloneNode(true)
+        navClone5 = navTag.cloneNode(true)
+        navClone6 = navTag.cloneNode(true)
+
+        parents = document.querySelectorAll('.insertNav')
+
+        parents[0].appendChild(navClone1);
+        parents[1].appendChild(navClone2);
+        parents[2].appendChild(navClone3);
+        parents[3].appendChild(navClone4);
+        parents[4].appendChild(navClone5);
+        parents[5].appendChild(navClone6);
 
     </script>
 </body>
