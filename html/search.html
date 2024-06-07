@@ -53,8 +53,10 @@
                     <label for="mainSearchBox"></label>
                     <input type="text" id="mainSearchBox" list="pageList" name="mainSearchBox" autofocus>
                     <datalist id="pageList">
+                        <option value="anchor"></option>
                         <option value="article"></option>
                         <option value="aside"></option>
+                        <option value="bookmarks"></option>
                         <option value="body"></option>
                         <option value="br_tag"></option>
                         <option value="css_selectors"></option>
@@ -74,6 +76,7 @@
                         <option value="hr_tag"></option>
                         <option value="html_element_types"></option>
                         <option value="html_file_structure"></option>
+                        <option value="iframe"></option>
                         <option value="li"></option>
                         <option value="index"></option>
                         <option value="link"></option>
@@ -92,6 +95,7 @@
                         <option value="stylesheet_precedence"></option>
                         <option value="stylesheet_types"></option>
                         <option value="table_type_one"></option>
+                        <option value="target"></option>
                         <option value="title"></option>
                         <option value="ul"></option>
                         <option value="validation"></option>
@@ -109,8 +113,10 @@
         document.getElementById("pageTitle").innerHTML = title;
 
         var sitePageArr = [
+            "anchor",
             "article",
             "aside",
+            "bookmarks",
             "body",
             "br_tag",
             "css_selectors",
@@ -130,6 +136,7 @@
             "html",
             "html_element_types",
             "html_file_structure",
+            "iframe",
             "index",
             "li",
             "link",
@@ -147,6 +154,7 @@
             "span",
             "stylesheet_precedence",
             "stylesheet_types",
+            "target",
             "table",
             "title",
             "ul",
@@ -171,7 +179,6 @@
 
             }
         })
-
 
     </script>
 </body>
