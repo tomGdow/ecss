@@ -14,6 +14,41 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,31 +85,65 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
+                        <ol>
+                            <li><code>absolute URL</code><br>
+                                Points to a location defined by its absolute location on the web, including
+                                protocol and domain name
 
-                    <h2>Notes</h2>
-                    <div class="content"></div>
+                            </li>
+                            <li><code>relative URL</code><br>
+                                Points to a location that is relative to the file you are linking from
+                            </li>
+                        </ol>
+                    </div>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                    <h2 class="example">Example (Absolute Links)</h2>
+                    <div class="content">
+                        <ol>
+                            <li><code>http://www.mysite.com</code></li>
+                            <li><code>http://www.mysite.com/graphics/image.png</code></li>
+                            <li><code>http://www.mysite.com/help/articles/how-do-i-set-up-a-webpage.html</code></li>
+                        </ol>
+                    </div>
+                    <h2 class="example">Example (Relative Links)</h2>
+                    <div class="content">
+                        <ol>
+                            <li><code>index.html</code></li>
+                            <li><code>/graphics/image.png</code></li>
+                            <li>
+                                <code>/help/articles/how-do-i-set-up-a-webpage.html</code>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
 
-                    <h2>References</h2>
-                    <div class="content ref"></div>
+                <!-- <h2>Notes</h2>
+                <div class="content"></div> -->
+
+                <h2>References</h2>
+                <div class="content ref">
+                    <a
+                        href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#absolute_versus_relative_urls">MDN:
+                        absolute vs relative</a>
+                </div>
+                <div class="content ref">
+                    <a href="https://www.coffeecup.com/help/articles/absolute-vs-relative-pathslinks/">CoffeeCup:
+                        absolute vs relative pathlinks</a>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!--  Templates -->
+    <!--  Templates -->
 
 
-        <template id="prevPageTemplate">bookmarks</template> <!--PREVIOUS PAGE-->
+    <template id="prevPageTemplate">bookmarks</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">absolute relative links</template> <!--PAGE TITLE-->
+    <template id="pageTitleTemplate">absolute relative links</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">iframe</template><!--NEXT PAGE-->
+    <template id="nextPageTemplate">iframe</template><!--NEXT PAGE-->
 
 
     </div>
