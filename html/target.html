@@ -14,6 +14,41 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -97,7 +132,7 @@
                         </ol>
                     </div>
                     <hr>
-                    <h2 class="Example">Example (target=_parent)</h2>
+                    <h2 class="example">Example (target=_parent)</h2>
                     <div class="content">
                         <h3>HTML</h3>
                         <div class="indent">
@@ -130,7 +165,7 @@
                         </div>
                     </div><!--content-->
                     <hr>
-                    <h2>Example (target=_self)</h2>
+                    <h2 class="example">Example (target=_self)</h2>
                     <div class="content">
                         <h3>HTML</h3>
                         <div class="indent">
@@ -149,7 +184,7 @@
     &lt;/iframe&gt;</pre>
                         </div>
 
-                        <h3 class="example">Browser</h3>
+                        <h3>Browser</h3>
                         <div class="browser">
                             <iframe width="325" height="450" style="background-color:#18836f"
                                 src="./embedded_iframe_target_self.html">
@@ -215,7 +250,7 @@
 
                         </div>
                     </div><!--content-->
-
+                    <hr>
                     <h2>References</h2>
                     <div class="content ref">
                         <a
