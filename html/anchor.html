@@ -14,6 +14,42 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+<style>
+
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+</style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,21 +86,90 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li>The <code>a</code> element (or anchor element), with its
+                                <code>href</code> attribute,
+                                creates a hyperlink to
+                                <ol>
+                                    <li>webpages</li>
+                                    <li>files</li>
+                                    <li>email addresses</li>
+                                    <li>locations in the same page</li>
+                                    <li>anything else a URL can address</li>
+                                </ol>
+                            </li>
+                            <li>
+                                If the a element has an <code>href</code> attribute, then it represents a hyperlink (a
+                                hypertext anchor).
+                            </li>
+                            <li>
+                                If the a element has no <code>href</code> attribute, then the element represents a
+                                placeholder for where a link might otherwise have
+                                been placed, if it had been relevant
+                            </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
-
+                            <li>
+                                The <code>target</code>,
+                                <code>rel</code>,
+                                <code>media</code>,
+                                <code>hreflang</code>,
+                                and <code>type</code> attributes must be omitted if the <code>href</code> attribute is
+                                not present
+                            </li>
+                        </ol>
+                    </div>
                     <h2>Notes</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <ol>
+                            <li><code>href</code></li>
+                            <li><code>target</code></li>
+                            <li><code>rel</code></li>
+                            <li><code>media</code></li>
+                            <li><code>hreflang</code></li>
+                            <li><code>type</code></li>
+                        </ol>
+                    </div>
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;a href="mailto: johndoe@email.com?subject=Hello&body='hi' " 
+    target="_blank" 
+    rel="noopener"&gt;
+    Mail John Doe
+&lt;/a&gt;</pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div class="browser">
+
+                            <a href="mailto: johndoe@email.com?subject=Hello&body='hi'" target="_blank"
+                                rel="noopener">Mail John Doe</a>
+                        </div>
+                    </div>
+
 
                     <h2>Mnemonic</h2>
                     <div class="content"></div>
 
                     <h2>References</h2>
                     <div class="content ref">
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement">MDN: anchor
-                            elment</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">MDN: anchor
+                            element</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/text-level-semantics.html#the-a-element">W3C:
+                            a element</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://css-tricks.com/all-about-mailto-links/">CSS Tricks: All about mailto links</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/noopener">MDN:
+                            rel=noopener</a>
                     </div>
                 </div>
             </div>
