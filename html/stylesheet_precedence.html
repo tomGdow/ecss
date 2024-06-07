@@ -17,6 +17,11 @@
     <style>
         div.content table {
             counter-reset: declarations 7;
+            color: white;
+            background-color: var(--primary-green);
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            padding-right: 0.5em;
         }
 
         div.content table tr {
@@ -40,14 +45,18 @@
         #inlineResult {
             padding-left: 5%;
         }
-        
-  .table_type_one>caption{
-    height: 4px;
-  }
+
+        .table_type_one>caption {
+            all: revert;
+            color: var(--primary-green);
+            padding-top: 0.5em;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -88,10 +97,10 @@
                         and normal user agent declarations have the lowest priority
                         (see <a href="https://www.w3.org/TR/css-cascade-4/#cascade-sort">here</a>):
                     </div>
-<h2>Style Sheet Levels and Specificity</h2>
+                    <h2>Notes</h2>
                     <div class="content">
                         <table class='table_type_one'>
-                            <caption></caption>
+                            <caption>Style Sheet Levels and Specificity</caption>
                             <colgroup>
                                 <col>
                                 <col>
@@ -173,7 +182,7 @@
                         </table>
                     </div>
 
-                    <h2>Notes</h2>
+                    <h2>Example</h2>
                     <div class="content">
                         <code>style</code>: a declaration in the <code>style</code> attribute of an element
                         has the same weight as a declaration with an <code>id</code>-based selector that is specified
