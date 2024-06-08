@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+    <style>
+        figure {
+            /* margin-left: auto;
+            margin-right: auto; */
+            text-align: center;
+        }
+
+        figcaption {
+            all: revert;
+        }
+
+        figcaption>span {
+            background-color: var(--primary-green);
+            color: white;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="../index.html">home</a>&nbsp;&nbsp;
+                        <a href="./search.html">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        <figure>
+                            <a href="../expt.html">
+
+                                <img src="../images/myOrangeSquare2.png" alt="orange square">
+                            </a>
+                            <figcaption>
+                                <span>Click on the Orange Square to return</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  Templates -->
+
+
+        <!-- <template id="prevPageTemplate">index</template> PREVIOUS PAGE -->
+
+        <template id="pageTitleTemplate">Orange Square</template> <!--PAGE TITLE-->
+
+        <!-- <template id="nextPageTemplate">index</template>NEXT PAGE -->
+
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+
+        // previous page
+
+        // next page
+
+    </script>
+</body>
+
+</html>
