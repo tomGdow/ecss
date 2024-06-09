@@ -14,6 +14,18 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        .tgd {
+            background: url("../images/myThreeDots.png") no-repeat left;
+            color: lightblue;
+            min-width: 100%;
+            min-height: 20px;
+        }
+
+        .tgd:hover {
+            background-color: black;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -47,6 +59,7 @@
                         <a href="../index.html">home</a>&nbsp;&nbsp;
                         <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
                         <a href="./search.html">search</a>
+                        &nbsp;&nbsp;<a href="javascript:history.back()">go back</a>
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
@@ -62,41 +75,43 @@
                         <code>link-visited-hover-active</code>
                     </div>
 
-                    <h2>AABL</h2>
+                    <h2>AABL
+                    </h2>
                     <div class="content">
-                        <code>href</code> <code>&rarr;</code> <code>anchor-area-base-link</code>
+                        <code>href</code> <code>&rarr;</code> <code>anchor-area-base-link</code> <br>
                     </div>
-                    <h2>Al O' Dubh</h2>
-                    <div class="content">
-                        All zeros is <span class="white_on_black">black</span> (rgb color)
-                    </div>
-                    <h2>Monaco</h2>
-                    <div class="content">
-                        <span class="white_on_black">Mon</span>ac<span class="white_on_black">o</span> is
-                        <span class="white_on_black">mono</span>spaced
-                    </div>
-                    <h2>Tip</h2>
-                    <div class="content">
-                        For <code>list-style</code>, <span class="white_on_black">tip</span> is a
-                        shorthand for
-                        <ol>
-                            <li><code>list-style-type</code></li>
-                            <li><code>list-style-image</code></li>
-                            <li><code>list-style-position</code></li>
-                        </ol>
-                    </div>
+                </div>
+                <h2>Al O' Dubh</h2>
+                <div class="content">
+                    All zeros is <span class="white_on_black">black</span> (rgb color)
+                </div>
+                <h2>Monaco</h2>
+                <div class="content">
+                    <span class="white_on_black">Mon</span>ac<span class="white_on_black">o</span> is
+                    <span class="white_on_black">mono</span>spaced
+                </div>
+                <h2>Tip</h2>
+                <div class="content">
+                    For <code>list-style</code>, <span class="white_on_black">tip</span> is a
+                    shorthand for
+                    <ol>
+                        <li><code>list-style-type</code></li>
+                        <li><code>list-style-image</code></li>
+                        <li><code>list-style-position</code></li>
+                    </ol>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!--  Templates -->
+    <!--  Templates -->
 
 
-        <template id="prevPageTemplate">iframe</template> <!--PREVIOUS PAGE-->
+    <template id="prevPageTemplate">iframe</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">Mnemonics</template> <!--PAGE TITLE-->
+    <template id="pageTitleTemplate">Mnemonics</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">references</template><!--NEXT PAGE-->
+    <template id="nextPageTemplate">references</template><!--NEXT PAGE-->
 
 
     </div>
