@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container h2 {
+            counter-increment: exampleCounter;
+        }
+
+        div.container h2::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        /* div.container h2::before {
+            /* content: counter(exampleCounter) ".  " */
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        .link {
+            color: gray;
+        }
+
+        .link:hover {
+            color: var(--primary-green);
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
+                        <a href="./search.html">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        <h3>Map</h3>
+                        <ol>
+                            <li>
+                                The <code>map</code> element, in conjunction with any <code>area</code> element
+                                descendants, defines
+                                an <code>image map</code>
+                            </li>
+                            <li><code>name</code>
+                                <ol>
+                                    <li>
+                                        The <code>name</code> attribute gives the map a name so that it can be
+                                        referenced
+                                    </li>
+                                    <li>
+                                        The attribute must be present and must have a non-empty value with no space
+                                        characters
+                                    </li>
+                                    <li>
+                                        The value of the
+                                        name attribute <em>must not be</em> a match for the value
+                                        of the <code>name</code> attribute of another <code>map</code> element in the
+                                        same document
+                                    </li>
+                                </ol>
+
+                            <li><code>id</code><br>
+                                If the <code>id</code> attribute is
+                                specified, <strong>it must have the same value</strong> as the <code>named</code>
+                                attribute
+                            </li>
+                            </li>
+                            <!-- </li> -->
+                        </ol>
+                        <h3 id="area">Area</h3>
+                        <ol>
+                            <li>The area element represents
+                                <ol>
+                                    <li>
+                                        either a hyperlink with some text and a corresponding area on an image map
+                                    </li>
+                                    <li>a dead area on an image map</li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>area</code> is a <code>href</code><br>
+                                <code>href</code> <code>&rarr;</code> <code>anchor-area-base-link</code>
+                                <a class="link" href="./mnemonics.html">[mnemonics]</a>
+                            </li>
+                            <li><code>alt</code>
+                                <ol>
+                                    <li>
+                                        A text string alternative to display on browsers that do not display images
+                                    </li>
+                                    <li>
+                                        This attribute is required only if the <code>href</code> attribute is used.
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>coords</code>
+                                <ol>
+                                    <li><code>rect</code>
+                                        <ol>
+                                            <li>
+                                                the value is <code>x1, y1 ,x2, y2</code>
+                                            </li>
+                                            <li>The value specifies the coordinates of the corners of the rectangle
+                                                <ol>
+                                                    <li>
+                                                        <code>top-left</code>
+                                                    </li>
+                                                    <li>
+                                                        <code>bottom-right</code>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li>
+                                                <code>coords="0,0,253,27"</code><br>
+                                                The coordinates are <code>{0,0}</code> and <code>{253,27}</code>,
+                                                indicating
+                                                the <code>top-left</code> and
+                                                <code>bottom-right</code> corners of the rectangle, respectively
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li><code>circle</code>
+                                        <ol>
+                                            <li>the value is <code>{x,y}</code> radius</li>
+                                            <li>the value specifies the coordinates of the <strong>circle
+                                                    center</strong> and the <code> radius</code>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li><code>poly</code>
+                                        <ol>
+                                            <li>
+                                                the value is <code>x1,y1,x2,y2,..,xn,yn </code>
+                                            </li>
+                                            <li> Value specifies the coordinates of the edges of the polygon
+                                            </li>
+                                            <li>If the first and last coordinate pairs are not the same, the browser
+                                                will add
+                                                the last coordinate pair to close the polygon</li>
+                                        </ol>
+
+                                    </li>
+                                    <li>The <code>coords</code> attribute must, if specified, contain a valid
+                                        list of integers</li>
+                                </ol>
+                            </li>
+                            <li><code>shape</code>
+                                <ol>
+                                    <li> The shape of the associated hot spot</li>
+                                    <li>The specifications for HTML defines the values
+                                        <ol>
+                                            <li><code>rect</code> which defines a rectangular
+                                                region
+                                            </li>
+                                            <li><code>circle</code> which defines a circular region</li>
+                                            <li><code>poly</code> which defines a polygon
+                                            <li><code>default</code> which indicates the entire
+                                                region beyond any defined shapes</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>href</code>
+                                <ol>
+                                    <li>The hyperlink target for the area </li>
+                                    <li>Its value is a valid URL</li>
+                                    <li>
+                                        This attribute may be omitted; if so, the <code>area</code> element does not
+                                        represent a hyperlink
+                                    </li>
+                                </ol>
+                                </code>
+                            </li>
+                            <li><code>target</code>
+                                <ol>
+                                    <li>
+                                        A keyword or author-defined name of the browsing context to display the linked
+                                        resource
+                                    </li>
+                                    <li>See <a href="./target.html">target</a></li>
+                                </ol>
+                            </li>
+                            <li><code>rel</code>
+                                <ol>
+                                    <li>
+                                        For anchors containing the href attribute, this attribute specifies the
+                                        relationship of the target object to the link
+                                        object
+                                    </li>
+                                    <li>The value is a space-separated list of link types</li>
+                                    <li>The values and their semantics will be registered by some authority that might
+                                        have meaning to the document author</li>
+                                    <li>The default relationship, if no other is given, is void</li>
+                                    <li>Use this attribute only if the <code>href</code> attribute is present</li>
+                                </ol>
+                            </li>
+                            <!-- </li> -->
+                        </ol>
+                        <h3>usemap</h3>
+                        <ol>
+                            <li>
+                                A string providing the page-local URL
+                            </li>
+                            <li>That is, a URL that <strong>begins with the hash or pound symbol</strong> ("#") of the
+                                <code>map</code>
+                                element which defines the image map to apply to the image
+                            </li>
+                            <li><code>#mymap</code></li>
+                        </ol>
+                    </div>
+                    <hr>
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+    &lt;img src="../images/myFourSquares2.png" alt="" usemap="#mymap"&gt;
+
+    &lt;map name="mymap" id="mymap"&gt;
+        &lt;area shape="rect" 
+            coords="0,0, 100,100" 
+            href="./GreenSquare.html" 
+            id="greenSquare"
+            alt="green square region"&gt;
+
+        &lt;area shape="rect" 
+            coords="100,100,200,200" 
+            href="./orangeSquare.html" 
+            id="orangeSquare"
+            alt="orange square region"&gt;
+
+        &lt;area shape="rect" 
+            coords="0, 100, 100, 200" 
+            href="./redSquare.html" 
+            id="redSquare"
+            alt=" red square region"&gt;
+
+        &lt;area shape="rect" 
+            coords="100, 0,200,100" 
+            href="./blueSquare.html" 
+            id="blueSquare"
+            alt="blue square region"&gt;
+    &lt;/map&gt;
+
+    &lt;div id="output"&gt;&lt;/div&gt;</pre>
+                        </div>
+
+                        <h3 id="browser">Browser</h3>
+                        <div class="browser"">
+
+                            <img src=" ../images/myFourSquares2.png" alt="" usemap="#mymap">
+
+                            <map name="mymap" id="mymap">
+                                <area shape="rect" coords="0,0, 100,100" href="./GreenSquare.html" id="greenSquare"
+                                    alt="green square region">
+                                <area shape="rect" coords="100,100,200,200" href="./orangeSquare.html" id="orangeSquare"
+                                    alt="orange square region">
+
+                                <area shape="rect" coords="0, 100, 100, 200" href="./redSquare.html" id="redSquare"
+                                    alt=" red square region">
+
+                                <area shape="rect" coords="100, 0,200,100" href="./blueSquare.html" id="blueSquare"
+                                    alt="blue square region">
+                            </map>
+                        </div>
+                        <div id="output"></div>
+                        <h3>JavaScript</h3>
+                        <div class="indent">
+                            <pre>
+    var output = document.getElementById('output');
+
+    document.getElementById('greenSquare').addEventListener('click',
+        function () {
+            localStorage.setItem("clicked", "You last clicked on Green");
+        }
+    )
+
+    output.innerHTML = localStorage.getItem("clicked"); </pre>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+    &lt;figure&gt;
+        &lt;img src="../images/myFourCircles.png" 
+        alt="" 
+        usemap="#mymap2"&gt;
+    &lt;/figure&gt;
+
+    &lt;map name="mymap2" id="mymap2"&gt;
+        &lt;area shape="circ" 
+            coords="27,27,20" 
+            href="./red_color_specification.html"
+            target="myIframe" alt="Red color specs"&gt;
+                                
+        &lt;area shape="circ" 
+            coords="110,27,20" 
+            href="./green_color_specification.html"
+            target="myIframe" 
+            alt="green color specs"&gt;
+                                
+        &lt;area shape="circ" 
+            coords="191,27,20" 
+            href="./blue_color_specification.html"
+            target="myIframe" alt="blue color specs"&gt;
+
+        &lt;area shape="circ" 
+            coords="272,27,20" 
+            href="./black_color_specification.html"
+            target="myIframe" 
+            alt="black color specs"&gt;
+    &lt;/map&gt;
+
+    &lt;iframe width="425" height="250" 
+            name="myIframe" frameborder="0"
+            srcdoc="&lt;div style='color:green; 
+                font-size:2em; 
+                margin-left:auto; 
+                margin-right:auto; 
+                max-width:fit-content'&gt;
+                Click a Circle&lt;/div&gt;"
+            sandbox&gt;
+    &lt;/iframe&gt;</pre>
+                        </div>
+                        <h3>Browser</h3>
+                        <div class="browser">
+                            <figure>
+                                <img src="../images/myFourCircles.png" alt="" usemap="#mymap2">
+                            </figure>
+
+                            <map name="mymap2" id="mymap2">
+                                <area shape="circ" coords="27,27,20" href="./red_color_specification.html"
+                                    target="myIframe" alt="Red color specs">
+                                <area shape="circ" coords="110,27,20" href="./green_color_specification.html"
+                                    target="myIframe" alt="green color specs">
+                                <area shape="circ" coords="191,27,20" href="./blue_color_specification.html"
+                                    target="myIframe" alt="blue color specs">
+                                <area shape="circ" coords="272,27,20" href="./black_color_specification.html"
+                                    target="myIframe" alt="black color specs">
+                            </map>
+
+                            <iframe width="425" height="250" name="myIframe" frameborder="0"
+                                srcdoc="<div style='color:green; font-size:2em; margin-left:auto; margin-right:auto; max-width:fit-content'>Click a Circle</div>"
+                                sandbox>
+                            </iframe>
+
+
+                        </div>
+                    </div><!--content-->
+
+                    <h2>References</h2>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/the-map-element.html#the-map-element">W3C:
+                            Map</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/the-map-element.html#the-area-element">W3C:
+                            area</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map">MDN: The Image Map
+                            element</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">MDN: The Image Map Area
+                            element</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.image-map.net/">Image Map Generator</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/useMap">MDN:
+                            usemap</a>
+                    </div>
+                    <div class="content ref">
+                        <a
+                            href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Add_a_hit_map_on_top_of_an_image">Add
+                            a hitmap on top of an image
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  Templates -->
+
+
+        <template id="prevPageTemplate">absolute_relative_links</template> <!--PREVIOUS PAGE-->
+
+        <template id="pageTitleTemplate"> Map Area</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">iframe</template><!--NEXT PAGE-->
+
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
+        // click square
+
+        var output = document.getElementById('output');
+
+        document.getElementById('greenSquare').addEventListener('click',
+            function () {
+                localStorage.setItem("clicked", "You last clicked on Green");
+            }
+        )
+
+        document.getElementById('redSquare').addEventListener('click',
+            function () {
+                localStorage.setItem("clicked", "You last clicked on Red");
+            }
+        )
+
+        document.getElementById('blueSquare').addEventListener('click',
+            function () {
+                localStorage.setItem("clicked", "You last clicked on Blue");
+            }
+        )
+
+        document.getElementById('orangeSquare').addEventListener('click',
+            function () {
+                localStorage.setItem("clicked", "You last clicked on Orange");
+            }
+        )
+
+        output.innerHTML = localStorage.getItem("clicked");
+
+    </script>
+</body>
+
+</html>
