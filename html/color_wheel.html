@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
     <style>
-
         div.container {
             counter-reset: refCounter 0;
             counter-reset: exampleCounter 0;
@@ -48,6 +47,28 @@
 
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        #colorwheel_1 {
+            background: white;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: fit-content;
+        }
+
+        iframe {
+            height: 100%;
+            width: 100%;
+            /* display: block; */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .colorwheel {
+            background: white;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: fit-content;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,7 +107,14 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        <div class="colorwheel">
+                            <img src="../images/myColorWheel2.png" alt="color wheel" usemap="#mywheelmap">
+                        </div>
+                        <map name="mywheelmap">
+                            
+                        </map>
+                    </div><!--content-->
 
                     <h2>Example</h2>
                     <div class="content"></div>
