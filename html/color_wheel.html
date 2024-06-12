@@ -15,47 +15,6 @@
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
     <style>
-        div.container {
-            counter-reset: refCounter 0;
-            counter-reset: exampleCounter 0;
-        }
-
-        div.container .example {
-            counter-increment: exampleCounter;
-        }
-
-        div.container .example::before {
-            content: counter(exampleCounter) ".  "
-        }
-
-        .ref {
-            counter-increment: refCounter;
-        }
-
-        .ref::before {
-            content: counter(refCounter) ".  ";
-            color: var(--primary-green);
-        }
-
-        div.content {
-            counter-reset: itemCounter 0;
-        }
-
-        div.content h3 {
-            counter-increment: itemCounter;
-        }
-
-        div.content h3::before {
-            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
-        }
-
-        /* #colorwheel_1 {
-            background: white;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: fit-content;
-        } */
-
         iframe {
             height: 100%;
             width: 100%;
@@ -195,50 +154,37 @@
                             sandbox></iframe>
                     </div>
 
-                    <h2>Example</h2>
-                    <div class="content"></div>
-
-                    <h2>Notes</h2>
-                    <div class="content"></div>
-
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div>
-
-                    <h2>References</h2>
-                    <div class="content ref"></div>
                 </div>
             </div>
+
+            <!--  Templates -->
+
+
+            <template id="prevPageTemplate">iframe</template> <!--PREVIOUS PAGE-->
+
+            <template id="pageTitleTemplate">Color Wheel</template> <!--PAGE TITLE-->
+
+            <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
+
+
         </div>
+        <script>
 
-        <!--  Templates -->
+            //page title
+            var pageTitleText = pageTitleTemplate.innerHTML;
+            document.title = pageTitleText;
+            banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+            pageTitle.innerHTML = pageTitleText;
 
+            // previous page
+            var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+            prevPage.setAttribute("href", prevPageURL)
 
-        <template id="prevPageTemplate">iframe</template> <!--PREVIOUS PAGE-->
+            // next page
+            var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+            nextPage.setAttribute("href", nextPageURL)
 
-        <template id="pageTitleTemplate">Color Wheel</template> <!--PAGE TITLE-->
-
-        <template id="nextPageTemplate">mnemonics</template><!--NEXT PAGE-->
-
-
-    </div>
-    <script>
-
-        //page title
-        var pageTitleText = pageTitleTemplate.innerHTML;
-        document.title = pageTitleText;
-        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
-        pageTitle.innerHTML = pageTitleText;
-
-
-        // previous page
-        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
-        prevPage.setAttribute("href", prevPageURL)
-
-        // next page
-        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
-        nextPage.setAttribute("href", nextPageURL)
-
-    </script>
+        </script>
 </body>
 
 </html>
