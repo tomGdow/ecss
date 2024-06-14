@@ -86,6 +86,10 @@
             margin-left: 10%;
             width: 40%;
         }
+
+        summary {
+            color: var(--primary-green);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,10 +149,11 @@
                         </form>
                     </div>
 
-                    <h2 class="example">Example</h2>
+                    <h2 class="example">Code</h2>
                     <div class="content">
-                        <h3>HTML</h3>
-                        <div class="indent">
+                        <!-- <h3>HTML</h3> -->
+                        <details>
+                            <summary>html</summary>
                             <pre>
 &lt;form action="https://php.tomgdow.com" method="POST" id="form_one"&gt;
     &lt;fieldset&gt;
@@ -168,9 +173,11 @@
         &lt;/div&gt;
     &lt;/fieldset&gt;
 &lt;/form&gt;</pre>
-                            <h3>PHP</h3>
-                            <div class="indent">
-                                <pre>
+                        </details>
+                        <!-- <h3>PHP</h3> -->
+                        <details>
+                            <summary>php (server)</summary>
+                            <pre>
 // index.php (server)
 
 &lt;?php
@@ -179,8 +186,7 @@
      .htmlspecialchars($_POST["param2"])."&"
      .htmlspecialchars($_SERVER['HTTP_HOST']);
 ?&gt;</pre>
-                            </div>
-                        </div>
+                        </details>
 
                         <h2>Notes</h2>
                         <div class="content">
