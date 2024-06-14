@@ -127,7 +127,7 @@
                                 specified, <strong>it must have the same value</strong> as the <code>named</code>
                                 attribute
                             </li>
-                            </li>
+                            <!-- </li> -->
                             <!-- </li> -->
                         </ol>
                         <h3 id="area">Area</h3>
@@ -231,7 +231,6 @@
                                         represent a hyperlink
                                     </li>
                                 </ol>
-                                </code>
                             </li>
                             <li><code>target</code>
                                 <ol>
@@ -280,7 +279,7 @@
 
     &lt;map name="mymap" id="mymap"&gt;
         &lt;area shape="rect" 
-            coords="0,0, 100,100" 
+            coords="0,0,100,100" 
             href="./GreenSquare.html" 
             id="greenSquare"
             alt="green square region"&gt;
@@ -292,13 +291,13 @@
             alt="orange square region"&gt;
 
         &lt;area shape="rect" 
-            coords="0, 100, 100, 200" 
+            coords="0,100,100,200" 
             href="./redSquare.html" 
             id="redSquare"
             alt=" red square region"&gt;
 
         &lt;area shape="rect" 
-            coords="100, 0,200,100" 
+            coords="100,0,200,100" 
             href="./blueSquare.html" 
             id="blueSquare"
             alt="blue square region"&gt;
@@ -308,20 +307,20 @@
                         </div>
 
                         <h3 id="browser">Browser</h3>
-                        <div class="browser"">
+                        <div class="browser">
 
                             <img src=" ../images/myFourSquares2.png" alt="" usemap="#mymap">
 
                             <map name="mymap" id="mymap">
-                                <area shape="rect" coords="0,0, 100,100" href="./GreenSquare.html" id="greenSquare"
+                                <area shape="rect" coords="0,0,100,100" href="./GreenSquare.html" id="greenSquare"
                                     alt="green square region">
                                 <area shape="rect" coords="100,100,200,200" href="./orangeSquare.html" id="orangeSquare"
                                     alt="orange square region">
 
-                                <area shape="rect" coords="0, 100, 100, 200" href="./redSquare.html" id="redSquare"
+                                <area shape="rect" coords="0,100,100,200" href="./redSquare.html" id="redSquare"
                                     alt=" red square region">
 
-                                <area shape="rect" coords="100, 0,200,100" href="./blueSquare.html" id="blueSquare"
+                                <area shape="rect" coords="100,0,200,100" href="./blueSquare.html" id="blueSquare"
                                     alt="blue square region">
                             </map>
                         </div>
@@ -353,23 +352,23 @@
     &lt;/figure&gt;
 
     &lt;map name="mymap2" id="mymap2"&gt;
-        &lt;area shape="circ" 
+        &lt;area shape="circle" 
             coords="27,27,20" 
             href="./red_color_specification.html"
             target="myIframe" alt="Red color specs"&gt;
                                 
-        &lt;area shape="circ" 
+        &lt;area shape="circle" 
             coords="110,27,20" 
             href="./green_color_specification.html"
             target="myIframe" 
             alt="green color specs"&gt;
                                 
-        &lt;area shape="circ" 
+        &lt;area shape="circle" 
             coords="191,27,20" 
             href="./blue_color_specification.html"
             target="myIframe" alt="blue color specs"&gt;
 
-        &lt;area shape="circ" 
+        &lt;area shape="circle" 
             coords="272,27,20" 
             href="./black_color_specification.html"
             target="myIframe" 
@@ -377,7 +376,7 @@
     &lt;/map&gt;
 
     &lt;iframe width="425" height="250" 
-            name="myIframe" frameborder="0"
+            name="myIframe"
             srcdoc="&lt;div style='color:green; 
                 font-size:2em; 
                 margin-left:auto; 
@@ -394,17 +393,17 @@
                             </figure>
 
                             <map name="mymap2" id="mymap2">
-                                <area shape="circ" coords="27,27,20" href="./red_color_specification.html"
+                                <area shape="circle" coords="27,27,20" href="./red_color_specification.html"
                                     target="myIframe" alt="Red color specs">
-                                <area shape="circ" coords="110,27,20" href="./green_color_specification.html"
+                                <area shape="circle" coords="110,27,20" href="./green_color_specification.html"
                                     target="myIframe" alt="green color specs">
-                                <area shape="circ" coords="191,27,20" href="./blue_color_specification.html"
+                                <area shape="circle" coords="191,27,20" href="./blue_color_specification.html"
                                     target="myIframe" alt="blue color specs">
-                                <area shape="circ" coords="272,27,20" href="./black_color_specification.html"
+                                <area shape="circle" coords="272,27,20" href="./black_color_specification.html"
                                     target="myIframe" alt="black color specs">
                             </map>
 
-                            <iframe width="425" height="250" name="myIframe" frameborder="0"
+                            <iframe width="425" height="250" name="myIframe"
                                 srcdoc="<div style='color:green; font-size:2em; margin-left:auto; margin-right:auto; max-width:fit-content'>Click a Circle</div>"
                                 sandbox>
                             </iframe>
