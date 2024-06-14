@@ -252,6 +252,19 @@ function generateParams(...args) {
     return tmp;
 } </pre>
                         </div>
+                        <h3>PHP</h3>
+                        <div class="indent">
+                            <pre>
+// index.php (server)
+
+&lt;?php
+  echo  
+     htmlspecialchars($_POST["param1"])."&"
+     .htmlspecialchars($_POST["param2"])."&"
+     .htmlspecialchars($_SERVER['HTTP_HOST']);
+?&gt;</pre>
+                        </div>
+
                     </div>
                 </div>
 
