@@ -194,35 +194,36 @@
                     </div>
                 </div>
             </div>
-
-            <!--  Templates -->
-
-
-            <template id="prevPageTemplate">map_area</template> <!--PREVIOUS PAGE-->
-
-            <template id="pageTitleTemplate">forms (basic)</template> <!--PAGE TITLE-->
-
-            <template id="nextPageTemplate">forms_post</template><!--NEXT PAGE-->
-
         </div>
-        <script>
-
-            //page title
-            var pageTitleText = pageTitleTemplate.innerHTML;
-            document.title = pageTitleText;
-            banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
-            pageTitle.innerHTML = pageTitleText;
+        <!--  Templates -->
 
 
-            // previous page
-            var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
-            prevPage.setAttribute("href", prevPageURL)
+        <template id="prevPageTemplate">map_area</template> <!--PREVIOUS PAGE-->
 
-            // next page
-            var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
-            nextPage.setAttribute("href", nextPageURL)
+        <template id="pageTitleTemplate">forms (basic)</template> <!--PAGE TITLE-->
 
-        </script>
+        <template id="nextPageTemplate">forms_post</template><!--NEXT PAGE-->
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
+    </script>
+
 </body>
 
 </html>
