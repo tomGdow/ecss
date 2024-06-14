@@ -77,6 +77,10 @@
             margin-left: 10%;
             width: 40%;
         }
+
+        summary {
+            color: var(--primary-green);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -153,11 +157,12 @@
 
                     </div><!--content-->
 
-                    <h2 class="example">Example (Code)</h2>
+                    <h2 class="example">Code</h2>
                     <div class="content">
 
-                        <h3>HTML</h3>
-                        <div class="indent">
+                        <!-- <h3>HTML</h3> -->
+                        <details>
+                            <summary>html</summary>
                             <pre>
 &lt;form action="https://somesite.com" method="POST" id="form_one"&gt;
 
@@ -200,9 +205,10 @@
         &lt;/div&gt;
     &lt;/fieldset&gt;
 &lt;/form&gt;</pre>
-                        </div>
-                        <h3>Javascript</h3>
-                        <div class="indent">
+                        </details>
+                        <!-- <h3>Javascript</h3> -->
+                        <details>
+                            <summary>javascript</summary>
                             <pre>
 document.getElementById('form_one').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -251,9 +257,10 @@ function generateParams(...args) {
     }
     return tmp;
 } </pre>
-                        </div>
-                        <h3>PHP</h3>
-                        <div class="indent">
+                        </details>
+                        <!-- <h3>PHP</h3> -->
+                        <details>
+                            <summary>php (server)</summary>
                             <pre>
 // index.php (server)
 
@@ -263,7 +270,7 @@ function generateParams(...args) {
      .htmlspecialchars($_POST["param2"])."&"
      .htmlspecialchars($_SERVER['HTTP_HOST']);
 ?&gt;</pre>
-                        </div>
+                        </details>
 
                     </div>
                 </div>
