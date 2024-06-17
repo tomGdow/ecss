@@ -48,6 +48,50 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        #message {
+            text-align: center;
+            color: var(--primary-green);
+        }
+
+        label {
+            color: var(--primary-green);
+            /* border: 2px solid red; */
+        }
+
+        fieldset label:after {
+            content: ":";
+        }
+
+        .submit {
+            /* margin-left: 10%; */
+            width: 40%;
+        }
+
+        .box {
+            padding: 1vw 0 0 1vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+
+        fieldset label:after {
+            content: ":";
+        }
+
+        input[type="text"] {
+            width: 60%;
+        }
+
+        summary {
+            padding-left: 3%;
+            color: var(--primary-green);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +129,268 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <form action="https://php.tomgdow.com" method="POST" id="form_three">
+                            <fieldset>
+                                <legend>Information</legend>
+                                <div>
+                                    <label for="name">Name</label>
+                                    <input type="text" name="param1" id="name" placeholder="name">
+                                    <span class="msg_name"></span>
+                                </div>
+                                <p class="radio-message">What is your fav color?</p>
+                                <div class="box">
+                                    <div>
+                                        <label for="blue">Blue</label>
+                                        <input type="radio" name="userchoice" id="blue" value="blue">
+                                    </div>
+                                    <div>
+                                        <label for="green">Green</label>
+                                        <input type="radio" name="userchoice" id="green" value="green">
+                                    </div>
+                                    <div>
+                                        <label for="red">Red</label>
+                                        <input type="radio" name="userchoice" id="red" value="red" checked>
+                                    </div>
+                                </div>
+                                <input type="submit" class="submit" value="Submit Me!">
 
+                            </fieldset>
+
+                            <fieldset class="output">
+                                <legend>Response</legend>
+                                <div id="message"></div>
+
+                                <div>
+                                    <label for="out-name" class="hidden" id="label-out-name">
+                                        Your name
+                                    </label>
+                                    <output for="name" id="out-name"></output>
+                                </div>
+
+                                <div>
+                                    <label for="out-choice" class="hidden" id="label-out-choice">
+                                        Your Favourite color
+                                    </label>
+                                    <output for="blue green red" id="out-choice"></output>
+                                </div>
+
+                                <div>
+                                    <label for="submitted-params" class="hidden" id="label-submitted-params">
+                                        Submitted params (POST)
+                                    </label><br>
+                                    <output for="name email" id="submitted-params"></output>
+                                </div>
+
+                                <div>
+                                    <label for="server-response" class="hidden" id="label-server-response">
+                                        Full Server Response
+                                    </label><br>
+                                    <output for="name,email" id="server-response"></output><br>
+                                </div>
+                            </fieldset>
+                        </form>
+
+                    </div><!--content-->
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                Note that the <code>name</code> attribute of each
+                                radio button input is retrieved with
+                                <pre class="highlight">
+var colors = document.getElementsByName("userchoice");</pre>
+                            </li>
+                            <li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                                It is the <code>checked</code> name value that
+                                is sent to the server, which may be obtained as follows:
+                                <pre>
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+        var color_val;
+
+        for (var i = 0; i < colors.length; i++) {
+            if (colors[i].checked) {
+                color_val = colors[i].value;
+            }
+        } </pre>
+                            </li>
+                            <li>
+                                The <code>checkField</code> function allows client-side checking that the
+                                <code>name</code> input field is not blank
+                            </li>
+                            <li>Data are sent to the server with the <code>POST</code> method</li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <details>
+                            <summary>HTML</summary>
+                            <pre>
+&lt;form action="https://php.tomgdow.com" method="POST" id="form_three"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Information&lt;/legend&gt;
+        &lt;div&gt;
+            &lt;label for="name"&gt;Name&lt;/label&gt;
+            &lt;input type="text" name="param1" id="name" placeholder="name"&gt;
+            &lt;span class="msg_name"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;p class="radio-message"&gt;What is your fav color?&lt;/p&gt;
+        &lt;div class="box"&gt;
+            &lt;div&gt;
+                &lt;label for="blue"&gt;Blue&lt;/label&gt;
+                &lt;input type="radio" name="userchoice" id="blue" value="blue"&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;label for="green"&gt;Green&lt;/label&gt;
+                &lt;input type="radio" name="userchoice" id="green" value="green"&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;label for="red"&gt;Red&lt;/label&gt;
+                &lt;input type="radio" name="userchoice" id="red" value="red" checked&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;input type="submit" class="submit" value="Submit Me!"&gt;
+
+    &lt;/fieldset&gt;
+
+    &lt;fieldset class="output"&gt;
+        &lt;legend&gt;Response&lt;/legend&gt;
+        &lt;div id="message"&gt;&lt;/div&gt;
+
+        &lt;div&gt;
+            &lt;label for="out-name" class="hidden" id="label-out-name"&gt;
+                Your name
+            &lt;/label&gt;
+            &lt;output for="name" id="out-name"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+            &lt;label for="out-choice" class="hidden" id="label-out-choice"&gt;
+                Your Favourite color
+            &lt;/label&gt;
+            &lt;output for="blue green red" id="out-choice"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+            &lt;label for="submitted-params" class="hidden" id="label-submitted-params"&gt;
+                Submitted params (POST)
+            &lt;/label&gt;&lt;br&gt;
+            &lt;output for="name email" id="submitted-params"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+            &lt;label for="server-response" class="hidden" id="label-server-response"&gt;
+                Full Server Response
+            &lt;/label&gt;&lt;br&gt;
+            &lt;output for="name,email" id="server-response"&gt;&lt;/output&gt;&lt;br&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</pre>
+                        </details>
+                        <details>
+                            <summary>JavaScript</summary>
+                            <pre>
+document.getElementById('form_three').addEventListener('submit', function (event) {
+    if (checkField(event, "name")) {
+        event.preventDefault();
+        var param1 = document.getElementById('form_three')[1].value;
+        var colors = document.getElementsByName("userchoice");
+
+        var color_val;
+
+        for (var i = 0; i < colors.length; i++) {
+            if (colors[i].checked) {
+                color_val = colors[i].value;
+            }
+        }
+        var params = generateParams('param1', param1, 'param2', color_val);
+        console.log("%c %s", "color:green", params)
+        document.getElementById("submitted-params").value = params;
+        document.getElementById("label-submitted-params").style.visibility = 'visible';
+        makePostRequest("https://php.tomgdow.com", params, ajaxCallMe());
+    }
+});
+
+function ajaxCallMe() {
+    return function ajax() {
+        let response = this.responseText;
+        let message = "Greetings from the PHP Server (POST Method)";
+        let responseArray = response.split('&');
+        document.getElementById('out-name').value = responseArray[0];
+        document.getElementById('out-choice').value = responseArray[1];
+        document.getElementById('message').innerHTML = message;
+        document.getElementById('server-response').value = responseArray[0] + "&" + 
+           responseArray[1] + "&" + responseArray[2]
+
+        console.log("%c %s", "color:red", response);
+        console.log("%c %s", "color:blue", responseArray[0]);
+        console.log("%c %s", "color:blue", responseArray[1]);
+        console.log("%c %s", "color:blue", responseArray[2]);
+
+        document.getElementById("label-out-name").style.visibility = "visible";
+        document.getElementById("label-out-choice").style.visibility = "visible";
+        document.getElementById("label-server-response").style.visibility = "visible";
+    };
+}
+
+document.getElementById('name').addEventListener('focus', function () {
+    document.getElementsByClassName('msg_name')[0].style.backgroundColor = "white";
+    document.getElementsByClassName('msg_name')[0].innerText = "";
+});</pre>
+                        </details>
+                        <details>
+                            <summary>javascript (helper functions)</summary>
+                            <pre>
+function generateParams(...args) {
+    var tmp = "";
+    if (args.length < 3) { tmp += `${args[0]}=${args[1]}`; } else {
+        tmp += `${args[0]}=${args[1]}`;
+        for (let i = 2; i <
+            args.length; i += 2) { tmp += `&${args[i]}=${args[i + 1]}`; }
+    }
+    return tmp;
+}
+
+function makePostRequest(url, params, fn) {
+    let oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", fn);
+    oReq.open('POST', url);
+    oReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // oReq.setRequestHeader("Content-length", params.length);
+    // oReq.setRequestHeader("Connection", "close");
+    oReq.send(params);
+}
+
+  function checkField(event, in_id) {
+    event.preventDefault();
+    let tmp = document.getElementById(in_id);
+    if (tmp.value === '') {
+      var msgName = document.getElementsByClassName('msg_name')[0];
+      msgName.innerHTML = "!Required field";
+      msgName.style.backgroundColor = "red";
+      return false;
+    }
+    return true;
+  }</pre>
+                        </details>
+                        <details>
+                            <summary>php (server)</summary>
+                            <pre>
+// index.php (server)
+
+&lt;?php
+  echo  
+     htmlspecialchars($_POST["param1"])."&"
+     .htmlspecialchars($_POST["param2"])."&"
+     .htmlspecialchars($_SERVER['HTTP_HOST']);
+?&gt;</pre>
+                        </details>
+                    </div><!--content-->
+
+
                 </div>
             </div>
         </div>
@@ -113,6 +406,8 @@
 
 
     </div>
+
+    <script src="../js/functions.js"></script>
     <script>
 
         //page title
@@ -128,6 +423,54 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        //forms
+        document.getElementById('form_three').addEventListener('submit', function (event) {
+            if (checkField(event, "name")) {
+                event.preventDefault();
+                var param1 = document.getElementById('form_three')[1].value;
+                var colors = document.getElementsByName("userchoice");
+
+                var color_val;
+
+                for (var i = 0; i < colors.length; i++) {
+                    if (colors[i].checked) {
+                        color_val = colors[i].value;
+                    }
+                }
+                var params = generateParams('param1', param1, 'param2', color_val);
+                console.log("%c %s", "color:green", params)
+                document.getElementById("submitted-params").value = params;
+                document.getElementById("label-submitted-params").style.visibility = 'visible';
+                makePostRequest("https://php.tomgdow.com", params, ajaxCallMe());
+            }
+        });
+
+        function ajaxCallMe() {
+            return function ajax() {
+                let response = this.responseText;
+                let message = "Greetings from the PHP Server (POST Method)";
+                let responseArray = response.split('&');
+                document.getElementById('out-name').value = responseArray[0];
+                document.getElementById('out-choice').value = responseArray[1];
+                document.getElementById('message').innerHTML = message;
+                document.getElementById('server-response').value = responseArray[0] + "&" + responseArray[1] + "&" + responseArray[2]
+
+                console.log("%c %s", "color:red", response);
+                console.log("%c %s", "color:blue", responseArray[0]);
+                console.log("%c %s", "color:blue", responseArray[1]);
+                console.log("%c %s", "color:blue", responseArray[2]);
+
+                document.getElementById("label-out-name").style.visibility = "visible";
+                document.getElementById("label-out-choice").style.visibility = "visible";
+                document.getElementById("label-server-response").style.visibility = "visible";
+            };
+        }
+
+        document.getElementById('name').addEventListener('focus', function () {
+            document.getElementsByClassName('msg_name')[0].style.backgroundColor = "white";
+            document.getElementsByClassName('msg_name')[0].innerText = "";
+        });
 
     </script>
 </body>
