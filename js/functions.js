@@ -82,14 +82,23 @@ function makeRequest(url, fn) {
     oReq.send();
 }
 
-  function checkField(event, in_id) {
+function checkField(event, in_id) {
     event.preventDefault();
+    
     let tmp = document.getElementById(in_id);
     if (tmp.value === '') {
-      var msgName = document.getElementsByClassName('msg_name')[0];
-      msgName.innerHTML = "!Required field";
-      msgName.style.backgroundColor = "red";
-      return false;
+        var msgName = document.getElementsByClassName('msg_name')[0];
+        msgName.innerHTML = "!Required field";
+        msgName.style.backgroundColor = "red";
+        return false;
     }
     return true;
-  }
+}
+
+function conditionalCatenate(str1, str2, sep = "") {
+    if (str2) {
+        str1 = str1 + sep + str2;
+        str1 = str1.replace(/^,/, '');
+    }
+    return str1;
+}

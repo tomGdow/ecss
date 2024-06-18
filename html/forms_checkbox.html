@@ -48,6 +48,51 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .box {
+            padding: 1vw 0 0 1vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        #message {
+            text-align: center;
+            color: var(--primary-green);
+        }
+
+        label {
+
+            color: var(--primary-green);
+        }
+
+        .info label {
+            text-align: right;
+            display: inline-block;
+            /* width: 10%; */
+            /* border: 1px solid green; */
+        }
+
+        input[type="text"] {
+            width: 60%;
+        }
+
+        fieldset label:after {
+            content: ":";
+        }
+
+        .submit {
+            margin-left: 10%;
+            width: 40%;
+        }
+
+        summary {
+            color: var(--primary-green);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +130,258 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <form action="http://php.tomgdow.com" method="POST" id="form_one">
+                            <fieldset class="info">
+                                <legend>Personal Info</legend>
+                                <label for="name" id="label-name">name</label>
+                                <input type="text" id="name" name="param1">
+                                <span class="msg_name"></span>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                <div class="checkbox-group">
+                                    <p class="checkbox-message">What are your favourite languages?</p>
+                                    <div class="box">
 
+                                        <div>
+                                            <label for="choice-html">HTML</label>
+                                            <input type="checkbox" name="choice-html" id="choice-html" value="HTML"
+                                                checked>
+                                        </div>
+                                        <div>
+                                            <label for="choice-css">CSS</label>
+                                            <input type="checkbox" name="choice-css" id="choice-css" value="CSS">
+                                        </div>
+                                        <div>
+                                            <label for="choice-js">JavaScript</label>
+                                            <input type="checkbox" id="choice-js" name="choice-js" value="JavaScript">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input class="submit" type="submit" value="submit me!">
+
+                            </fieldset>
+                            <fieldset class="output">
+                                <legend>Response</legend>
+                                <div id="message"></div>
+
+                                <div>
+                                    <label for="out-name" class="hidden" id="label-out-name">
+                                        Your name</label>
+                                    <output for="name" id="out-name"></output>
+                                </div>
+                                <div>
+                                    <label for="out-choice" class="hidden" id="label-out-choice">
+                                        Your choice</label>
+                                    <output for="choice" id="out-choice"></output>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Server</legend>
+                                <label for="server-response" class="hidden" id="label-server-response">Full Server
+                                    Response</label><br>
+                                <output id="server-response"></output>
+                            </fieldset>
+
+                        </form>
+
+
+                    </div><!--content-->
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                Data sent to server with <code>Fetch</code>
+                            </li>
+                            <li><code>name</code> is required field (JavaScript) </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <details>
+                            <summary>HTML</summary>
+                            <pre>
+
+&lt;form action="http://php.tomgdow.com" method="POST" id="form_one"&gt;
+    &lt;fieldset class="info"&gt;
+        &lt;legend&gt;Personal Info&lt;/legend&gt;
+        &lt;label for="name" id="label-name"&gt;name&lt;/label&gt;
+        &lt;input type="text" id="name" name="param1"&gt;
+        &lt;span class="msg_name"&gt;&lt;/span&gt;
+
+        &lt;div class="checkbox-group"&gt;
+            &lt;p class="checkbox-message"&gt;What are your favourite languages?&lt;/p&gt;
+            &lt;div class="box"&gt;
+
+                &lt;div&gt;
+                    &lt;label for="choice-html"&gt;HTML&lt;/label&gt;
+                    &lt;input type="checkbox" name="choice-html" id="choice-html" value="HTML"
+                        checked&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="choice-css"&gt;CSS&lt;/label&gt;
+                    &lt;input type="checkbox" name="choice-css" id="choice-css" value="CSS"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="choice-js"&gt;JavaScript&lt;/label&gt;
+                    &lt;input type="checkbox" id="choice-js" name="choice-js" value="JavaScript"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;input class="submit" type="submit" value="submit me!"&gt;
+
+    &lt;/fieldset&gt;
+    &lt;fieldset class="output"&gt;
+        &lt;legend&gt;Response&lt;/legend&gt;
+        &lt;div id="message"&gt;&lt;/div&gt;
+
+        &lt;div&gt;
+            &lt;label for="out-name" class="hidden" id="label-out-name"&gt;
+                Your name&lt;/label&gt;
+            &lt;output for="name" id="out-name"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for="out-choice" class="hidden" id="label-out-choice"&gt;
+                Your choice&lt;/label&gt;
+            &lt;output for="choice" id="out-choice"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+
+    &lt;fieldset&gt;
+        &lt;legend&gt;Server&lt;/legend&gt;
+        &lt;label for="server-response" class="hidden" id="label-server-response"&gt;Full Server
+            Response&lt;/label&gt;&lt;br&gt;
+        &lt;output id="server-response"&gt;&lt;/output&gt;
+    &lt;/fieldset&gt;
+
+&lt;/form&gt;</pre>
+                        </details>
+                        <details>
+                            <summary>JavaScript</summary>
+                            <pre>
+async function sendData() {
+
+    const formData = new FormData(form_one);
+
+    param2 = "";
+
+    const choiceElements = document.querySelectorAll("input[name]")
+    const choiceNames = Array.prototype.map.call(choiceElements, el => el.id);
+    choiceNames.shift();
+
+    for (const elem of choiceNames) {
+        param2 = conditionalCatenate(param2, formData.get(elem), ",");
+        formData.delete(elem);
+    }
+
+    formData.append('param2', param2)
+
+    try {
+        const response = await fetch("https://php.tomgdow.com", {
+            method: "POST",
+            body: formData
+        });
+
+        let result = await response.text();
+        let responseArray = result.split('&');
+        document.getElementById('out-name').value = responseArray[0];
+        document.getElementById('out-choice').value = responseArray[1].replace(/,/g, ' and ')
+        document.getElementById('server-response').value = result;
+
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+const idArray = ["label-out-name", "label-out-choice", "label-server-response",
+    "out-name", "out-choice", "server-response"];
+
+document.getElementById('form_one').addEventListener('submit', function (event) {
+
+    event.preventDefault();
+    if (checkField(event, "name")) {
+
+        sendData();
+
+        let msg = "Greetings from the PHP Server (POST Method)";
+        document.getElementById('message').innerHTML = msg;
+
+        for (const elem of idArray) {
+            document.getElementById(elem).style.visibility = "visible";
+        }
+    }
+});
+
+document.getElementById('name').addEventListener('focus', function () {
+    document.getElementsByClassName('msg_name')[0].style.backgroundColor = "white";
+    document.getElementsByClassName('msg_name')[0].innerText = "";
+
+    for (const elem of idArray) {
+        document.getElementById(elem).style.visibility = "hidden";
+    }
+
+    document.getElementById('name').value = "";
+    document.getElementById('message').innerText = "";
+
+    document.getElementById("choice-html").checked = true;
+
+    for (const element of ["choice-css", "choice-js"]) {
+        document.getElementById(element).checked = false;
+    }
+}); </pre>
+                        </details>
+                        <details>
+                            <summary>Javascript (helper functions)</summary>
+                            <pre>
+
+function checkField(event, in_id) {
+    event.preventDefault();
+    
+    let tmp = document.getElementById(in_id);
+    if (tmp.value === '') {
+        var msgName = document.getElementsByClassName('msg_name')[0];
+        msgName.innerHTML = "!Required field";
+        msgName.style.backgroundColor = "red";
+        return false;
+    }
+    return true;
+}
+
+function conditionalCatenate(str1, str2, sep = "") {
+    if (str2) {
+        str1 = str1 + sep + str2;
+        str1 = str1.replace(/^,/, '');
+    }
+    return str1;
+} </pre>
+                        </details>
+
+                        <details>
+                            <summary>php (server)</summary>
+                            <pre>
+// index.php (server)
+
+&lt;?php
+  echo  
+     htmlspecialchars($_POST["param1"])."&"
+     .htmlspecialchars($_POST["param2"])."&"
+     .htmlspecialchars($_SERVER['HTTP_HOST']);
+?&gt;</pre>
+                        </details>
+
+                    </div><!--content-->
+
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://javascript.info/formdata">javascript info: formdata</a>
+
+
+
+                    </div><!--content-->
                 </div>
             </div>
         </div>
@@ -113,6 +397,7 @@
 
 
     </div>
+    <script src="../js/functions.js"></script>
     <script>
 
         //page title
@@ -128,6 +413,80 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        // forms
+
+        async function sendData() {
+
+            const formData = new FormData(form_one);
+
+            param2 = "";
+
+            const choiceElements = document.querySelectorAll("input[name]")
+            const choiceNames = Array.prototype.map.call(choiceElements, el => el.id);
+            choiceNames.shift();
+
+            for (const elem of choiceNames) {
+                // for (i = 0; i < choiceNames.length; i++) {
+                param2 = conditionalCatenate(param2, formData.get(elem), ",");
+                formData.delete(elem);
+            }
+
+            formData.append('param2', param2)
+
+            try {
+                const response = await fetch("https://php.tomgdow.com", {
+                    method: "POST",
+                    body: formData
+                });
+
+                let result = await response.text();
+                let responseArray = result.split('&');
+                document.getElementById('out-name').value = responseArray[0];
+                document.getElementById('out-choice').value = responseArray[1].replace(/,/g, ' and ')
+                document.getElementById('server-response').value = result;
+
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        const idArray = ["label-out-name", "label-out-choice", "label-server-response",
+            "out-name", "out-choice", "server-response"];
+
+        document.getElementById('form_one').addEventListener('submit', function (event) {
+
+            event.preventDefault();
+            if (checkField(event, "name")) {
+
+                sendData();
+
+                let msg = "Greetings from the PHP Server (POST Method)";
+                document.getElementById('message').innerHTML = msg;
+
+                for (const elem of idArray) {
+                    document.getElementById(elem).style.visibility = "visible";
+                }
+            }
+        });
+
+        document.getElementById('name').addEventListener('focus', function () {
+            document.getElementsByClassName('msg_name')[0].style.backgroundColor = "white";
+            document.getElementsByClassName('msg_name')[0].innerText = "";
+
+            for (const elem of idArray) {
+                document.getElementById(elem).style.visibility = "hidden";
+            }
+
+            document.getElementById('name').value = "";
+            document.getElementById('message').innerText = "";
+
+            document.getElementById("choice-html").checked = true;
+
+            for (const element of ["choice-css", "choice-js"]) {
+                document.getElementById(element).checked = false;
+            }
+        });
 
     </script>
 </body>
