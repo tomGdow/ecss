@@ -374,12 +374,9 @@ function conditionalCatenate(str1, str2, sep = "") {
 
                     </div><!--content-->
 
-
                     <h2>References</h2>
                     <div class="content ref">
                         <a href="https://javascript.info/formdata">javascript info: formdata</a>
-
-
 
                     </div><!--content-->
                 </div>
@@ -427,7 +424,6 @@ function conditionalCatenate(str1, str2, sep = "") {
             choiceNames.shift();
 
             for (const elem of choiceNames) {
-                // for (i = 0; i < choiceNames.length; i++) {
                 param2 = conditionalCatenate(param2, formData.get(elem), ",");
                 formData.delete(elem);
             }
