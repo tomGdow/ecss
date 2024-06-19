@@ -79,6 +79,7 @@
 
         input[type="text"] {
             width: 60%;
+            margin-left: 6%;
         }
 
         fieldset label:after {
@@ -86,8 +87,13 @@
         }
 
         .submit {
-            margin-left: 10%;
+            margin-left: 15%;
             width: 40%;
+        }
+
+        textarea {
+            margin-left: 15%;
+            margin-bottom: 2em;
         }
 
         summary {
@@ -131,60 +137,19 @@
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
-
-                        <form action="https://php.tomgdow.com" method="post" id="form_one" name="form_oney">
+                        <form action="https://php.tomgdow.com" method="POST" id="form_one">
                             <fieldset class="info">
-                                <legend>Information</legend>
                                 <label for="name">Name</label>
                                 <input type="text" id="name" name="param1">
-                                <span class="msg_name"></span>
+                                <span class="msg_name"></span><br>
 
-                                <p>What is your favourite county</p>
+                                <label for="textarea" class="space_above">Comment</label><br>
+                                <textarea name="param2" id="textarea" cols="54" rows="10" maxlength="250"
+                                    placeholder="Type heref"></textarea>
 
-                                <select name="param2" id="select-county">
-                                    <optgroup label="Connaught">
-                                        <option value="galway">Galway</option>
-                                        <option value="leitrim">Leitrim</option>
-                                        <option value="mayo">Mayo</option>
-                                        <option value="roscommon">Roscommon</option>
-                                        <option value="sligo">Sligo</option>
-                                    </optgroup>
-                                    <optgroup label="Munster">
-                                        <option value="clare">Clare</option>
-                                        <option value="cork">Cork</option>
-                                        <option value="kerry">Kerry</option>
-                                        <option value="limerick">Limerick</option>
-                                        <option value="tipperary">Tipperary</option>
-                                        <option value="waterford">Waterford</option>
-                                    </optgroup>
-                                    <optgroup label="Leinster">
-                                        <option value="carlow">Carlow</option>
-                                        <option value="dublin">Dublin</option>
-                                        <option value="kildare">Kildare</option>
-                                        <option value="kilkenny">Kilkenny</option>
-                                        <option value="laois">Laois</option>
-                                        <option value="longford">Longford</option>
-                                        <option value="louth">Louth</option>
-                                        <option value="meath">Meath</option>
-                                        <option value="offaly">Offaly</option>
-                                        <option value="westmeath">Kildare</option>
-                                        <option value="wexford">Wexford</option>
-                                        <option value="wicklow">Wicklow</option>
-                                    </optgroup>
-                                    <optgroup label="Ulster">
-                                        <option value="antrim">Antrim</option>
-                                        <option value="armagh">Armagh</option>
-                                        <option value="cavan">Cavan</option>
-                                        <option value="derry">Derry</option>
-                                        <option value="donegal">Donegal</option>
-                                        <option value="fermanagh">Fermanagh</option>
-                                        <option value="monaghan">Monaghan</option>
-                                        <option value="tyrone">Tyrone</option>
-
-                                    </optgroup>
-                                </select>
-                                <input type="submit" value="Submit Me!" class="submit">
+                                <input type="submit" class="submit" value="Submit Me!">
                             </fieldset>
+
                             <fieldset class="output">
                                 <legend>Response</legend>
                                 <div id="message"></div>
@@ -196,7 +161,7 @@
                                 </div>
                                 <div>
                                     <label for="out-choice" class="hidden" id="label-out-choice">
-                                        Your favourite county is </label>
+                                        Your comment is </label>
                                     <output for="choice" id="out-choice"></output>
                                 </div>
                             </fieldset>
@@ -207,71 +172,27 @@
                                     Response</label><br>
                                 <output id="server-response"></output>
                             </fieldset>
-
                         </form>
                     </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>Code</h2>
+                    <h2 class="example">Code</h2>
                     <div class="content">
                         <details>
                             <summary>HTML</summary>
                             <pre>
-&lt;form action="https://php.tomgdow.com" method="post" id="form_one" name="form_oney"&gt;
+&lt;form action="https://php.tomgdow.com" method="POST" id="form_one"&gt;
     &lt;fieldset class="info"&gt;
-        &lt;legend&gt;Information&lt;/legend&gt;
         &lt;label for="name"&gt;Name&lt;/label&gt;
         &lt;input type="text" id="name" name="param1"&gt;
-        &lt;span class="msg_name"&gt;&lt;/span&gt;
+        &lt;span class="msg_name"&gt;&lt;/span&gt;&lt;br&gt;
 
-        &lt;p&gt;What is your favourite county&lt;/p&gt;
+        &lt;label for="textarea" class="space_above"&gt;Comment&lt;/label&gt;&lt;br&gt;
+        &lt;textarea name="param2" id="textarea" cols="54" rows="10" maxlength="250"
+            placeholder="Type heref"&gt;&lt;/textarea&gt;
 
-        &lt;select name="param2" id="select-county"&gt;
-            &lt;optgroup label="Connaught"&gt;
-                &lt;option value="galway"&gt;Galway&lt;/option&gt;
-                &lt;option value="leitrim"&gt;Leitrim&lt;/option&gt;
-                &lt;option value="mayo"&gt;Mayo&lt;/option&gt;
-                &lt;option value="roscommon"&gt;Roscommon&lt;/option&gt;
-                &lt;option value="sligo"&gt;Sligo&lt;/option&gt;
-            &lt;/optgroup&gt;
-            &lt;optgroup label="Munster"&gt;
-                &lt;option value="clare"&gt;Clare&lt;/option&gt;
-                &lt;option value="cork"&gt;Cork&lt;/option&gt;
-                &lt;option value="kerry"&gt;Kerry&lt;/option&gt;
-                &lt;option value="limerick"&gt;Limerick&lt;/option&gt;
-                &lt;option value="tipperary"&gt;Tipperary&lt;/option&gt;
-                &lt;option value="waterford"&gt;Waterford&lt;/option&gt;
-            &lt;/optgroup&gt;
-            &lt;optgroup label="Leinster"&gt;
-                &lt;option value="carlow"&gt;Carlow&lt;/option&gt;
-                &lt;option value="dublin"&gt;Dublin&lt;/option&gt;
-                &lt;option value="kildare"&gt;Kildare&lt;/option&gt;
-                &lt;option value="kilkenny"&gt;Kilkenny&lt;/option&gt;
-                &lt;option value="laois"&gt;Laois&lt;/option&gt;
-                &lt;option value="longford"&gt;Longford&lt;/option&gt;
-                &lt;option value="louth"&gt;Louth&lt;/option&gt;
-                &lt;option value="meath"&gt;Meath&lt;/option&gt;
-                &lt;option value="offaly"&gt;Offaly&lt;/option&gt;
-                &lt;option value="westmeath"&gt;Kildare&lt;/option&gt;
-                &lt;option value="wexford"&gt;Wexford&lt;/option&gt;
-                &lt;option value="wicklow"&gt;Wicklow&lt;/option&gt;
-            &lt;/optgroup&gt;
-            &lt;optgroup label="Ulster"&gt;
-                &lt;option value="antrim"&gt;Antrim&lt;/option&gt;
-                &lt;option value="armagh"&gt;Armagh&lt;/option&gt;
-                &lt;option value="cavan"&gt;Cavan&lt;/option&gt;
-                &lt;option value="derry"&gt;Derry&lt;/option&gt;
-                &lt;option value="donegal"&gt;Donegal&lt;/option&gt;
-                &lt;option value="fermanagh"&gt;Fermanagh&lt;/option&gt;
-                &lt;option value="monaghan"&gt;Monaghan&lt;/option&gt;
-                &lt;option value="tyrone"&gt;Tyrone&lt;/option&gt;
-
-            &lt;/optgroup&gt;
-        &lt;/select&gt;
-        &lt;input type="submit" value="Submit Me!" class="submit"&gt;
+        &lt;input type="submit" class="submit" value="Submit Me!"&gt;
     &lt;/fieldset&gt;
+
     &lt;fieldset class="output"&gt;
         &lt;legend&gt;Response&lt;/legend&gt;
         &lt;div id="message"&gt;&lt;/div&gt;
@@ -283,7 +204,7 @@
         &lt;/div&gt;
         &lt;div&gt;
             &lt;label for="out-choice" class="hidden" id="label-out-choice"&gt;
-                Your favourite county is &lt;/label&gt;
+                Your comment is &lt;/label&gt;
             &lt;output for="choice" id="out-choice"&gt;&lt;/output&gt;
         &lt;/div&gt;
     &lt;/fieldset&gt;
@@ -295,7 +216,7 @@
         &lt;output id="server-response"&gt;&lt;/output&gt;
     &lt;/fieldset&gt;
 
-&lt;/form&gt; </pre>
+&lt;/form&gt;</pre>
                         </details>
                         <details>
                             <summary>JavaScript</summary>
@@ -313,9 +234,8 @@ async function sendData() {
         let result = await response.text();
         let responseArray = result.split('&');
 
-        let choice = responseArray[1].charAt(0).toUpperCase() + responseArray[1].slice(1);
         document.getElementById('out-name').value = responseArray[0];
-        document.getElementById('out-choice').value = choice;
+        document.getElementById('out-choice').value = responseArray[1];
         document.getElementById('server-response').value = result;
 
     } catch (e) {
@@ -328,15 +248,14 @@ const idArray = ["label-out-name", "label-out-choice", "label-server-response",
 
 document.getElementById('form_one').addEventListener('submit', function (event) {
 
-    const formData = new FormData(form_one);
-
     event.preventDefault();
-
+    const formData = new FormData(form_one);
     if (checkField(event, "name")) {
+
         sendData();
 
         let msg = "Greetings from the PHP Server (POST Method)";
-        document.getElementById('message').innerHTML = msg;
+        document.getElementById('message').innerText = msg;
 
         for (const key of formData.keys()) {
             console.log("%c %s", "color:red", key)
@@ -345,6 +264,7 @@ document.getElementById('form_one').addEventListener('submit', function (event) 
         for (const elem of idArray) {
             document.getElementById(elem).style.visibility = "visible";
         }
+
     }
 
 });
@@ -359,6 +279,7 @@ document.getElementById('name').addEventListener('focus', function () {
 
     document.getElementById('name').value = "";
     document.getElementById('message').innerText = "";
+    document.getElementsByTagName('textarea')[0].value = "";
 
 });</pre>
                         </details>
@@ -376,22 +297,23 @@ document.getElementById('name').addEventListener('focus', function () {
                         </details>
                     </div><!--content-->
 
-                    <h2>References</h2>
-                    <div class="content ref">
+                    <h2>Notes</h2>
+                    <div class="content"></div><!--content-->
 
-                        <a href="https://stackoverflow.com/a/1026087/499167">CapitalizeFirstLetter</a>
-                    </div><!--content-->
+                    <h2>References</h2>
+                    <div class="content ref"></div><!--content-->
                 </div>
             </div>
         </div>
 
         <!--  Templates -->
 
-        <template id="prevPageTemplate">forms_checkbox</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">forms select</template> <!--PAGE TITLE-->
+        <template id="prevPageTemplate">forms_select</template> <!--PREVIOUS PAGE-->
 
-        <template id="nextPageTemplate">forms_textarea</template><!--NEXT PAGE-->
+        <template id="pageTitleTemplate">forms textarea</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">iframe</template><!--NEXT PAGE-->
 
 
     </div>
@@ -427,9 +349,8 @@ document.getElementById('name').addEventListener('focus', function () {
                 let result = await response.text();
                 let responseArray = result.split('&');
 
-                let choice = responseArray[1].charAt(0).toUpperCase() + responseArray[1].slice(1);
                 document.getElementById('out-name').value = responseArray[0];
-                document.getElementById('out-choice').value = choice;
+                document.getElementById('out-choice').value = responseArray[1];
                 document.getElementById('server-response').value = result;
 
             } catch (e) {
@@ -442,15 +363,14 @@ document.getElementById('name').addEventListener('focus', function () {
 
         document.getElementById('form_one').addEventListener('submit', function (event) {
 
-            const formData = new FormData(form_one);
-
             event.preventDefault();
-
+            const formData = new FormData(form_one);
             if (checkField(event, "name")) {
+
                 sendData();
 
                 let msg = "Greetings from the PHP Server (POST Method)";
-                document.getElementById('message').innerHTML = msg;
+                document.getElementById('message').innerText = msg;
 
                 for (const key of formData.keys()) {
                     console.log("%c %s", "color:red", key)
@@ -459,6 +379,7 @@ document.getElementById('name').addEventListener('focus', function () {
                 for (const elem of idArray) {
                     document.getElementById(elem).style.visibility = "visible";
                 }
+
             }
 
         });
@@ -473,6 +394,7 @@ document.getElementById('name').addEventListener('focus', function () {
 
             document.getElementById('name').value = "";
             document.getElementById('message').innerText = "";
+            document.getElementsByTagName('textarea')[0].value = "";
 
         });
 
