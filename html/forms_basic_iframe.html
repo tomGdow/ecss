@@ -67,6 +67,11 @@
             margin-right: auto;
         }
 
+        input[type=image] {
+            /* border: 5px solid green; */
+            all: revert;
+        }
+
         .box {
             display: flex;
             flex-direction: column;
@@ -82,13 +87,27 @@
             content: ":";
         }
 
-        .submit {
-            margin-left: 10%;
-            width: 40%;
+        iframe {
+            margin-top: 3em;
+            border: 5px solid var(--primary-green);
         }
 
         summary {
             color: var(--primary-green);
+        }
+
+        .highlight2 {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        iframe {
+            word-wrap: break-word;
+            color: red;
+        }
+
+        iframe #hello {
+            color: red;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -129,7 +148,7 @@
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
 
-                        <form action="https://php.tomgdow.com" method="POST" id="form_one">
+                        <form action="https://www.google.com" method="POST" id="form_one" target="myIframe">
                             <fieldset>
                                 <legend>Personal Information</legend>
                                 <div class="box">
@@ -142,20 +161,77 @@
                                         <input type="email" name="param2" id="email" required><br>
                                     </div>
                                     <div class="submit">
-                                        <input type="submit">
+                                        <input type="image" src="../images/myButton2.png" alt="click me"
+                                            formaction="https://phptwo.tomgdow.com" formmethod="GET">
                                     </div>
                                 </div>
                             </fieldset>
                         </form>
+                        <iframe width="400" height="100" name="myIframe" id="myIframe" srcdoc="
+                            &lt;div &gt;Response will appear here&lt;/div&gt;
+                            " sandbox title="Server Response"></iframe>
                     </div>
 
+                    <h2>Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The method is <code>GET</code>
+                                <ol>
+                                    <li>
+                                        The <code>formmethod</code> attribute of
+                                        <code>&lt;input type="image"&gt;</code>
+                                        overrides the <code>method</code> attribute of <code>form</code>
+                                    </li>
+                                    <li>Similarly, the <code>formaction </code> attribute of
+                                        <code>&lt;input type="image"&gt;</code>
+                                        overrides the <code>action</code> attribute of <code>form</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>&lt;input type="image" src="myButton2.png" alt="click me"&gt;
+                                    </code>
+                            </li>
+                            <li class="space_above">
+                                <code>
+                                        &lt;form target="myIframe"&gt;&lt;/form&gt;
+                                    </code>
+                            </li>
+                            <li class="space_above">click <code>coordinates</code> sent to server
+                                <ol>
+                                    <li class="space_above">
+                                        <code>
+                                                john doe&amp;johndoe@icloud.com&amp;phptwo.tomgdow.com¶m1=john<br>+doe&amp;param2=johndoe%40icloud.com&amp;<span class="highlight2">x=103&y=53</span>
+                                            </code>
+                                    </li>
+                                    <li>Note <code>x=103&y=53</code> at end of query string</li>
+                                    <li class="space-above">
+                                        (MDN) When you submit a form using a button created with
+                                        <code>&lt;input type="image"&gt;</code>
+                                        extra data points are submitted to the
+                                        server automatically by the browser — <code>x</code> and
+                                        <code>y</code>
+                                    </li>
+                                    <li>Note that <code>"&amp;para"</code> of
+                                        <code>"&amp;param1"</code>
+                                        is interpreted as the html entity <code>&amp;para; </code> (&para;)
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                To URL encode with JavaScript:
+                                <code>encodeURIComponent()</code>
+                            </li>
+                        </ol>
+                    </div>
                     <h2 class="example">Code</h2>
                     <div class="content">
                         <!-- <h3>HTML</h3> -->
                         <details>
                             <summary>html</summary>
                             <pre>
-&lt;form action="https://php.tomgdow.com" method="POST" id="form_one"&gt;
+&lt;form action="https://www.google.com" method="POST" id="form_one" target="myIframe"&gt;
     &lt;fieldset&gt;
         &lt;legend&gt;Personal Information&lt;/legend&gt;
         &lt;div class="box"&gt;
@@ -168,34 +244,41 @@
                 &lt;input type="email" name="param2" id="email" required&gt;&lt;br&gt;
             &lt;/div&gt;
             &lt;div class="submit"&gt;
-                &lt;input type="submit"&gt;
+                &lt;input type="image" src="../images/myButton2.png" alt="click me"
+                    formaction="https://phptwo.tomgdow.com" formmethod="GET"&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/fieldset&gt;
-&lt;/form&gt;</pre>
+&lt;/form&gt;
+&lt;iframe width=" 400" height="100" name="myIframe" srcdoc="&lt;div&gt;Response will appear here&lt;/div&gt;"
+    sandbox title="iframe"&gt;
+&lt;/iframe&gt;
+</pre>
                         </details>
-                        <!-- <h3>PHP</h3> -->
                         <details>
                             <summary>php (server)</summary>
                             <pre>
-// index.php (server)
-
-&lt;?php
-  echo  
-     htmlspecialchars($_POST["param1"])."&"
-     .htmlspecialchars($_POST["param2"])."&"
-     .htmlspecialchars($_SERVER['HTTP_HOST']);
-?&gt;</pre>
+    &lt;?php
+        echo(htmlspecialchars($_GET["param1"])."&"
+            .htmlspecialchars($_GET["param2"])."&"
+            .htmlspecialchars($_SERVER['HTTP_HOST'])."&"
+            .htmlspecialchars($_SERVER['QUERY_STRING'])
+            ); 
+    ?&gt;</pre>
                         </details>
-
-                        <h2>Notes</h2>
-                        <div class="content">
-                            Using <code>POST</code> method
-                        </div>
 
                         <h2>References</h2>
                         <div class="content ref">
-                            <a href="https://www.w3schools.com/php/php_forms.asp">W3Schools: PHP Form Handling</a>
+                            <a href="https://www.w3schools.com/php/php_forms.asp">W3Schools: PHP Form
+                                Handling</a>
+                        </div>
+                        <div class="content ref">
+                            <a href="https://www.urlencoder.org">URL encoder</a>
+                        </div>
+                        <div class="content ref">
+                            <a href="https://www.w3schools.com/tags/ref_urlencode.asp">W3Schools: URL
+                                Encoding
+                                Functions</a>
                         </div>
                     </div>
                 </div>
@@ -203,11 +286,11 @@
         </div>
         <!--  Templates -->
 
-        <template id="prevPageTemplate">map_area</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">forms_basic</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">forms (basic)</template> <!--PAGE TITLE-->
+        <template id="pageTitleTemplate">forms (basic iframe)</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">forms_basic_iframe</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">forms_post</template><!--NEXT PAGE-->
 
     </div>
     <script>
@@ -226,6 +309,8 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+
 
     </script>
 
