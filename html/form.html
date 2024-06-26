@@ -85,32 +85,305 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        The <code>form</code> element represents a document section containing interactive controls for
+                        submitting information
+                    </div><!--content-->
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li><code>action</code>
+                                <ol>
+                                    <li class="space_above">The URL that processes the form submission</li>
+                                    <li class="space_above">This value can be overridden by a
+                                        <code>formaction</code> attribute on elements
+                                        <ol>
+                                            <li><code>button</code></li>
+                                            <li><code>&lt;input type="submit"&gt;</code></li>
+                                            <li><code>&lt;input type="image"&gt;</code></li>
+                                        </ol>
+                                    </li>
+                                    <li class="space_above">
+                                        This attribute is ignored when
+                                        <code>method="dialog"</code> is set
+                                    </li>
+                                    <li class="space_above">
+                                        May be overridden using JavaScript
+                                        with <code>event.preventDefault()</code>
+                                    </li>
+                                </ol>
+                            </li><!--action-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            <li class="space_above">
+                                <code>method</code>
+                                <ol>
+                                    <li class="space_above">
+                                        The HTTP method to submit the form with
+                                    </li>
+                                    <li class="space_above">
+                                        The only allowed methods/values are (case insensitive):
+                                        <ol>
+                                            <li><code>post</code><br>
+                                                form data sent as the request body
+                                            </li>
+
+                                            <li><code>get</code> (default) <br>
+                                                form data is <strong>appended to the action URL</strong> with a
+                                                <code>?</code>
+                                                separator
+                                            </li>
+                                            <li><code>dialog</code><br>
+
+                                                When the form is inside a <code>dialog</code>, closes the
+                                                <code>dialog</code> and causes a <code>submit</code> event to
+                                                be fired on submission,
+                                                without submitting data or clearing the form
+                                            </li>
+                                        </ol>
+                                    <li class="space_above">Note that <span class="highlight2"><code>put</code> is
+                                            <code>not</code>
+                                            allowed</span> in a html form (see <a
+                                            href="https://stackoverflow.com/a/8054241/499167" target="_blank"
+                                            rel="noopener">here</a>)
+                                    </li>
+                                    <li class="space_above">
+                                        This value is overridden by <code>formmethod</code> attributes on elements
+                                        <ol>
+                                            <li><code>button</code></li>
+                                            <li><code>&lt;input type="submit"&gt;</code></li>
+                                            <li><code>&lt;input type="image"&gt;</code></li>
+                                        </ol>
+                                    </li>
+                                </ol><!--method-->
+                            </li>
+                            <li class="space_above"><code>autocomplete</code><br>
+                                Indicates whether input elements can by default have their values automatically
+                                completed by the browser
+                                <ol>
+                                    <li><code>on</code></li>
+                                    <li><code>off</code></li>
+                                    <li><code>autocomplete="on"</code></li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>target</code>
+                                <ol>
+                                    <li class="space_above">Indicates where to display the response after submitting the
+                                        form</li>
+
+                                    <li class="space_above">It is a <code>name/keyword</code> for a browsing context
+                                        (for example,
+                                        tab, window, or
+                                        iframe)</li>
+                                    <li class="space_above">The following keywords have special meanings
+                                        <ol>
+                                            <li class="space_above">
+                                                <code>_self</code> (default): Load into the same browsing context as the
+                                                current one.
+                                            </li>
+                                            <li class="space_above">
+                                                <code>_blank</code>: Load into a new unnamed browsing context. This
+                                                provides the same behavior as
+                                                setting <code>rel="noopener"</code> which does
+                                                not set <code>window.opener</code>
+                                            </li>
+                                            <li class="space_above">
+                                                <code>_parent</code>: Load into the parent browsing context of the
+                                                current one. If no parent, behaves the same as <code>_self</code>.
+                                            </li>
+                                            <li class="space_above">
+                                                <code>_top</code>: Load into the top-level browsing context (i.e., the
+                                                browsing
+                                                context that is an
+                                                ancestor of the current one and
+                                                has no parent). If no parent, behaves the same as <code>_self</code>.
+                                            </li>
+                                        </ol>
+                                    </li><!--special meaning-->
+                                </ol><!--target-->
+                            </li><!--target-->
+                            <li><code>rel</code>
+                                <ol>
+                                    <li class="space_above">
+                                        Controls the annotations and what kinds of links the form creates
+                                    </li>
+                                    <li class="space_above">
+                                        Annotations include
+                                        <ol>
+                                            <li><code>external</code><br>
+                                                indicates the referenced document is not part of the current site</li>
+                                            <li><code>nofollow</code><br>
+                                                tells search engine spiders to ignore the link relationship</li>
+                                            <li><code>opener</code></li>
+                                            <li><code>noopener</code>
+                                                <ol>
+                                                    <li>
+
+                                                        Creates a top-level browsing context that is not an auxiliary
+                                                        browsing context if the hyperlink would create either of
+                                                        those to begin with (i.e., has an appropriate target attribute
+                                                        value)
+                                                    </li>
+                                                    <li>
+                                                        In other words, it makes the link behave as if
+                                                        <ol>
+                                                            <li>
+                                                                <code>window.opener</code> were <code>null</code>
+                                                            </li>
+                                                            <li><code>target="_parent"</code> were set</li>
+                                                        </ol>
+
+                                                    </li>
+                                                    <li>This is the opposite of <code>opener</code></li>
+                                                    <li>new tabs or windows opened using the
+                                                        <code>target=”_blank”</code> attribute have a potential security
+                                                        vulnerability
+                                                    </li>
+                                                    <li>The <code>noopener</code> attribute breaks the connection
+                                                        between the new tab and the referrer page</li>
+                                                </ol><!--noopener-->
+                                            </li>
+                                            <li><code>noreferrer</code>
+                                                <ol>
+                                                    <li>Makes the <code>referrer</code> unknown</li>
+                                                    <li>"no Referer" header will be included</li>
+                                                    <li>
+                                                        Creates a top-level browsing context as if <code>noopener</code>
+                                                        also set
+                                                    </li>
+                                                </ol>
+
+
+                                            </li>
+                                        </ol>
+                                    </li><!--anotations-->
+                                    <li class="space_above">Links include
+
+                                        <ol>
+                                            <li><code>help</code></li>
+                                            <li><code>prev</code></li>
+                                            <li><code>next</code></li>
+                                            <li><code>search</code></li>
+                                            <li><code>license</code></li>
+                                        </ol>
+                                    </li>
+                                    <li class="space_above">The <code>rel</code> value is a space-separated list of
+                                        these enumerated values
+                                    </li>
+                                </ol>
+
+                            </li><!--rel-->
+                            <li class="space_above"><code>enctype</code>
+                                <ol>
+                                    <li class="space_above">
+                                        If the value of the method attribute is <code>post</code>, <code>enctype</code>
+                                        is the MIME type of the
+                                        form submission
+                                    </li>
+                                    <li class="space_above">Possible values are:
+                                        <ol>
+                                            <li>
+                                                <code>application/x-www-form-urlencoded</code> (default)
+
+
+                                                <ol>
+                                                    <li>
+                                                        (SO) For <code>application/x-www-form-urlencoded</code>, the
+                                                        body of the HTTP
+                                                        message sent to the server is essentially one giant query string
+                                                        -- name/value pairs are separated by the ampersand (&), and
+                                                        names are separated from values by the equals symbol (=)
+
+                                                    </li>
+                                                    <li>
+                                                        <code>MyVariabeOne=ValueOne&MyVariableTwo=ValueTwo</code>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li class="space_above">
+                                                <code>multipart/form-data</code><br>
+
+                                                Use this if the form contains &lt;input&gt; elements with
+                                                <code>type=file</code>
+                                            </li>
+                                            <li class="space_above">
+                                                <code>text/plain</code><br>
+                                                Useful for debugging purposes
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li class="space_above">
+                                        This value can be overridden by <code>formenctype</code> attributes on
+                                        <ol>
+                                            <li>&lt;button&gt;</li>
+                                            <li>&lt;input type="submit"&gt;</li>
+                                            <li>&lt;input type="image"&gt;</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li><!--enctype-->
+                        </ol><!-- content -->
+                    </div><!-- content -->
+
+                    <h2 class="example">Example (window.open)</h2>
+                    <div class="content">
+                        <div class="indent">
+                            <h3>HTML</h3>
+                            <pre>
+    &lt;a href="./expt.html" target="_blank" rel="opener">click here&lt;/a> </pre>
+                        </div>
+                        <div class="indent">
+                            <h3>JavaScript</h3>
+                            <pre>
+    // from console of target page
+
+    window.opener.origin 
+
+    "http://127.0.0.1:5500" </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/forms.html#the-form-element">
+                            W3C: form element
+                        </a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">MDN: form element
+                        </a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a
+                            href="https://www.w3schools.com/tags/att_form_enctype.asp#:~:text=Definition%20and%20Usage,if%20method%3D%22post%22%20.">
+                            W3Schools: form enctype
+                        </a>
+                    </div><!--comment-->
+                    <div class="content ref">
+                        <a href="https://stackoverflow.com/q/8054165">SO: Using PUT method in HTML form</a>
+
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a
+                            href="https://elementor.com/blog/noopener-noreferrer/?utm_source=google&utm_medium=cpc&utm_campaign=13060922353&utm_term=&gad_source=1&gclid=CjwKCAjw1emzBhB8EiwAHwZZxQHmnb2gyXc3NWvWkAHYePn_fQP2-COfssXl-9yYgiWJfdVTQP4hQBoCoQgQAvD_BwE">What
+                            Does The rel=”noopener noreferrer” Tag Mean?</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://stackoverflow.com/a/4073451/499167">application/x-www-form-urlencoded or
+                            multipart/form-data?</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
 
         <!--  Templates -->
 
-
         <template id="prevPageTemplate">forms_textarea</template> <!--PREVIOUS PAGE-->
 
         <template id="pageTitleTemplate">form</template> <!--PAGE TITLE-->
 
         <template id="nextPageTemplate">input</template><!--NEXT PAGE-->
-
 
     </div>
     <script>
