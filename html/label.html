@@ -85,19 +85,55 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        The <code>label</code> represents a <code>caption</code> in a user interface
+                    </div><!--content-->
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>caption</code> can be associated with a specific form control, known as
+                                the label element's <code>labeled control</code>, either
+                                <ol>
+                                    <li>
+                                        by using the <code>for</code> attribute
+                                    </li>
+                                    <li>
+                                        by putting the form control <strong>inside</strong> the <code>label</code>
+                                        element
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2>Example</h2>
+                    <div class="content">
+                        <pre>
+&lt;label&gt;
+    &lt;input type=checkbox name=lost&gt;
+    Lost
+&lt;/label&gt;
+                        </pre>
+
+                        <pre>
+&lt;label for="myid"&gt;name&lt;/label&gt;
+&lt;input id="myid" type="text"&gt;
+                        </pre>
+
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/forms.html#the-label-element">W3C:
+                            label</a>
+                    </div><!--content-->
+
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">MDN: label</a>
+                    </div>
                 </div>
             </div>
         </div>
