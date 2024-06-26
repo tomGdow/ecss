@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        input {
+            all: revert;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,35 +90,82 @@
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
+                        The <code>fieldset</code> element represents a set of form controls optionally grouped
+                        under a common
+                        name
+                    </div><!--content-->
+
+                    <h2>legend</h2>
+                    <div class="content">
+                        The <code>legend</code> element represents a caption for the contents of its parent
+                        <code>fieldset</code>
+                    </div>
+
+                    <h2>Notes</h2>
+                    <div class="content">
+
                         <ol>
                             <li>
-                                The fieldset element represents a set of form controls optionally grouped under a common
-                                name
-                                The name of the group is given by the first legend element that is a child of the
-                                fieldset element, if any. The
-                                remainder of the descendants form the group.
+                                The name of the group is given by the first <code>legend</code> element that is a child
+                                of the
+                                <code>fieldset</code> element, if any
+                            </li>
+                            <li>
+                                The
+                                remainder of the descendants form the group
+                            </li>
+                            <li>
+                                The <code>disabled</code> attribute, when specified, causes all the form control
+                                descendants of the
+                                <code>fieldset</code> element, excluding those
+                                that are descendants of the <code>fieldset</code> element's first <code>legend</code>
+                                element child, if any, to be
+                                disabled
+                            </li>
 
-                                The disabled attribute, when specified, causes all the form control descendants of the
-                                fieldset element, excluding those
-                                that are descendants of the fieldset element's first legend element child, if any, to be
-                                disabled.
-
-                                The form attribute is used to explicitly associate the fieldset element with its form
-                                owner.
-
-                                The name attribute represents the element's name.
+                            <li>
+                                The <code>form</code> attribute is used to explicitly associate the
+                                <code>fieldset</code>
+                                element with its form
+                                owner
+                            </li>
+                            <li>
+                                The <code>name</code> attribute represents the element's name
                             </li>
                         </ol>
                     </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                        <h3>HTML</h3>
+                        <div class="indent">
+                            <pre>
+&lt;form action="#"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Do you agree?&lt;/legend&gt;
+        &lt;input type="checkbox" id="chbx" name="agree" value="Yes!" /&gt;
+        &lt;label for="chbx"&gt;I agree&lt;/label&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+                            </pre>
+                        </div>
+                        <div class="Browser">
+                            <h3>Browser</h3>
+                            <form action="#">
+                                <fieldset>
+                                    <legend>Do you agree?</legend>
+                                    <input type="checkbox" id="chbx" name="agree" value="Yes!">
+                                    <label for="chbx">I agree</label>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div><!--content-->
 
                     <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <span class="highlight2">A <code>legend</code> in its own <code>fieldset</code></span>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref">
