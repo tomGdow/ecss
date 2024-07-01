@@ -1,159 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <title>HTML and CSS</title>
-    <meta name="viewport" content="width=device-width initial-scale=1.0">
-    <meta name="keywords" content="css, html">
-    <meta name="description" content="Notes on HTML CSS course">
-    <meta name="google" content="notranslate">
-    <meta http-equiv="default-style" content="Default">
-    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
-    <link rel="stylesheet" href="./css/ecss.css" title="Default">
-    <link rel="alternate stylesheet" href="./css/ecssAlt.css" title="Dark Mode">
-    <noscript>
-      <link rel="stylesheet" href="./css/ecss_nojs.css">
-    </noscript>
-    <style>
-div.container {
-  counter-reset: moduleNumber 0;
-}
+<head>
+  <meta charset="utf-8">
+  <title>HTML and CSS</title>
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta name="keywords" content="css, html">
+  <meta name="description" content="Notes on HTML CSS course">
+  <meta name="google" content="notranslate">
+  <meta http-equiv="default-style" content="Default">
+  <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+  <link rel="stylesheet" href="./css/ecss.css" title="Default">
+  <link rel="alternate stylesheet" href="./css/ecssAlt.css" title="Dark Mode">
+  <noscript>
+    <link rel="stylesheet" href="./css/ecss_nojs.css">
+  </noscript>
+  <style>
+    div.container {
+      counter-reset: moduleNumber 0;
+    }
 
-        div.container h2 {
-          counter-increment: moduleNumber;
-        }
+    div.container h2 {
+      counter-increment: moduleNumber;
+    }
 
-        div.container h2::before {
-          content: counter(moduleNumber) ".  ";
-        }
+    div.container h2::before {
+      content: counter(moduleNumber) ".  ";
+    }
 
-        div.site-container h2~div,
-        h1+div {
-          padding-left: 2em;
-        }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-  </head>
+    div.site-container h2~div,
+    h1+div {
+      padding-left: 2em;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+</head>
 
-  <body>
-    <div class="container" id="indexContainer">
-      <div class="grid-container">
-        <div class="grid-item-1">
-          <div class="banner-container">
-            <div class="banner-item-1">
-              <a href="https://tomgdow.com">
-                <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
-                     alt="gravatar image of tomgdow">
-              </a>
-            </div>
-          </div>
-          <div class="banner-item-2">
-            <span id="banner_part_first">Fundamentals of </span>
-            <span class="primary-orange" id="banner_part_second"></span>
+<body>
+  <div class="container" id="indexContainer">
+    <div class="grid-container">
+      <div class="grid-item-1">
+        <div class="banner-container">
+          <div class="banner-item-1">
+            <a href="https://tomgdow.com">
+              <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                alt="gravatar image of tomgdow">
+            </a>
           </div>
         </div>
-        <div class="grid-item-2"></div>
-        <div class="grid-item-3">
-          <div class="site-container">
-            <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
-            <div id="navbar">
-              <a href="https://tomgdow.com">prev</a>&nbsp;&nbsp;
-              <a href="./index.html">home</a>&nbsp;&nbsp;
-              <a href="./html/course_objectives.html">next</a>&nbsp;&nbsp;
-              <a href="./html/search.html">search</a>
-            </div>
-            <h1>Course Structure</h1>
-            <div><a href="./html/course_objectives.html">Course Objectives</a></div>
-            <h2>HTML Fundamentals</h2>
-            <div><a href="./html/script.html">script tag</a></div>
-            <div><a href="./html/noscript.html">noscript tag</a></div>
-            <div><a href="./html/html_file_structure.html">html file structure</a></div>
-            <div><a href="./html/doctype.html">doctype</a></div>
-            <div><a href="./html/html.html">html</a></div>
-            <div><a href="./html/head.html">head</a></div>
-            <div><a href="./html/title.html">title</a></div>
-            <div><a href="./html/body.html">body</a></div>
-            <div><a href="./html/link.html">link</a></div>
-            <div><a href="./html/mime.html">mime type</a></div>
-            <div><a href="./html/html_element_types.html">element types</a></div>
-            <div><a href="./html/meta.html">meta tag</a></div>
-            <div><a href="./html/entities.html">entities</a></div>
-            <div><a href="./html/comments.html">comments</a></div>
-            <div><a href="./html/well_formed_element.html">well-formed element</a></div>
-            <div><a href="./html/validation.html">validation</a></div>
-            <h2>CSS Fundamentals</h2>
-            <div><a href="./html/stylesheet_types.html">stylesheet types</a></div>
-            <div><a href="./html/stylesheet_precedence.html">stylesheet precedence</a></div>
-            <div><a href="./html/css_selectors.html">CSS selectors</a></div>
-            <div><a href="./html/css_specificity.html">CSS specificity</a></div>
-            <div><a href="./html/css_inheritance.html">CSS inheritance</a></div>
-            <div><a href="./html/web_safe_fonts.html">web safe fonts</a></div>
-            <h2>Document Structure using HTML</h2>
-            <div><a href="./html/table.html">table</a></div>
-            <div><a href="./html/h1_to_h6.html">h1 to h6</a></div>
-            <div><a href="./html/p_tag.html">p tag</a></div>
-            <div><a href="./html/br_tag.html">br tag</a></div>
-            <div><a href="./html/hr_tag.html">hr tag</a></div>
-            <div><a href="./html/div.html">div</a></div>
-            <div><a href="./html/span.html">span</a></div>
-            <div><a href="./html/ol.html">ol</a></div>
-            <div><a href="./html/li.html">li</a></div>
-            <div><a href="./html/ul.html">ul</a></div>
-            <div><a href="./html/header.html">header</a></div>
-            <div><a href="./html/nav.html">nav</a></div>
-            <div><a href="./html/main.html">main</a></div>
-            <div><a href="./html/section.html">section</a></div>
-            <div><a href="./html/article.html">article</a></div>
-            <div><a href="./html/aside.html">aside</a></div>
-            <div><a href="./html/footer.html">footer</a></div>
-            <div><a href="./html/details_summary.html">details/summary</a></div>
-            <div><a href="./html/target.html">target</a></div>
-            <div><a href="./html/anchor.html">anchor</a></div>
-            <div><a href="./html/bookmarks.html">bookmarks</a></div>
-            <div><a href="./html/absolute_relative_links.html">absolute relative links</a></div>
-            <div><a href="./html/map_area.html">map area</a></div>
-            <div><a href="./html/forms_basic.html">forms (basic)</a></div>
-            <div><a href="./html/forms_basic_iframe.html">forms (basic iframe)</a></div>
-            <div><a href="./html/forms_post.html">forms post</a></div>
-            <div><a href="./html/forms_post_fetch.html">forms post fetch method</a></div>
-            <div><a href="./html/forms_get.html">forms get</a></div>
-            <div><a href="./html/forms_radio.html">forms radio</a></div>
-            <div><a href="./html/forms_checkbox.html">forms checkbox</a></div>
-            <div><a href="./html/forms_select.html">forms select</a></div>
-            <div><a href="./html/forms_textarea.html">forms textarea</a></div>
-            <div><a href="./html/form.html">form</a></div>
-            <div><a href="./html/fieldset.html">fieldset</a></div>
-            <div><a href="./html/label.html">label</a></div>
-            <div><a href="./html/input.html">input</a></div>
-            <div><a href="./html/input_radio.html">input radio</a></div>
-            <div><a href="./html/input_checkbox.html">input checkbox</a></div>
-            <div><a href="./html/input_submit.html">input submit</a></div>
-            <div><a href="./html/select.html">select</a></div>
-            <div><a href="./html/textarea.html">textarea</a></div>
-            <div><a href="./html/input_methods.html">input methods</a></div>
-            <div><a href="./html/output.html">output</a></div>
-            <h2>Multimedia Presentation using HTML</h2>
-            <div><a href="./html/iframe.html">iframe</a></div>
-            <h2>Webpage Styling using CSS</h2>
-            <h2>Accessibility, Readability and Testing</h2>
-            <div><a href="./html/color_wheel.html">color wheel</a></div>
-            <h2>References and Mnemonics</h2>
-            <div><a href="/html/mnemonics.html">mnemonics</a></div>
-            <div><a href="./html/references.html">references</a></div>
+        <div class="banner-item-2">
+          <span id="banner_part_first">Fundamentals of </span>
+          <span class="primary-orange" id="banner_part_second"></span>
+        </div>
+      </div>
+      <div class="grid-item-2"></div>
+      <div class="grid-item-3">
+        <div class="site-container">
+          <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+          <div id="navbar">
+            <a href="https://tomgdow.com">prev</a>&nbsp;&nbsp;
+            <a href="./index.html">home</a>&nbsp;&nbsp;
+            <a href="./html/course_objectives.html">next</a>&nbsp;&nbsp;
+            <a href="./html/search.html">search</a>
           </div>
+          <h1>Course Structure</h1>
+          <div><a href="./html/course_objectives.html">Course Objectives</a></div>
+          <h2>HTML Fundamentals</h2>
+          <div><a href="./html/script.html">script tag</a></div>
+          <div><a href="./html/noscript.html">noscript tag</a></div>
+          <div><a href="./html/html_file_structure.html">html file structure</a></div>
+          <div><a href="./html/doctype.html">doctype</a></div>
+          <div><a href="./html/html.html">html</a></div>
+          <div><a href="./html/head.html">head</a></div>
+          <div><a href="./html/title.html">title</a></div>
+          <div><a href="./html/body.html">body</a></div>
+          <div><a href="./html/link.html">link</a></div>
+          <div><a href="./html/mime.html">mime type</a></div>
+          <div><a href="./html/html_element_types.html">element types</a></div>
+          <div><a href="./html/meta.html">meta tag</a></div>
+          <div><a href="./html/entities.html">entities</a></div>
+          <div><a href="./html/comments.html">comments</a></div>
+          <div><a href="./html/well_formed_element.html">well-formed element</a></div>
+          <div><a href="./html/validation.html">validation</a></div>
+          <h2>CSS Fundamentals</h2>
+          <div><a href="./html/stylesheet_types.html">stylesheet types</a></div>
+          <div><a href="./html/stylesheet_precedence.html">stylesheet precedence</a></div>
+          <div><a href="./html/css_selectors.html">CSS selectors</a></div>
+          <div><a href="./html/css_specificity.html">CSS specificity</a></div>
+          <div><a href="./html/css_inheritance.html">CSS inheritance</a></div>
+          <div><a href="./html/web_safe_fonts.html">web safe fonts</a></div>
+          <h2>Document Structure using HTML</h2>
+          <div><a href="./html/table.html">table</a></div>
+          <div><a href="./html/h1_to_h6.html">h1 to h6</a></div>
+          <div><a href="./html/p_tag.html">p tag</a></div>
+          <div><a href="./html/br_tag.html">br tag</a></div>
+          <div><a href="./html/hr_tag.html">hr tag</a></div>
+          <div><a href="./html/div.html">div</a></div>
+          <div><a href="./html/span.html">span</a></div>
+          <div><a href="./html/ol.html">ol</a></div>
+          <div><a href="./html/li.html">li</a></div>
+          <div><a href="./html/ul.html">ul</a></div>
+          <div><a href="./html/header.html">header</a></div>
+          <div><a href="./html/nav.html">nav</a></div>
+          <div><a href="./html/main.html">main</a></div>
+          <div><a href="./html/section.html">section</a></div>
+          <div><a href="./html/article.html">article</a></div>
+          <div><a href="./html/aside.html">aside</a></div>
+          <div><a href="./html/footer.html">footer</a></div>
+          <div><a href="./html/details_summary.html">details/summary</a></div>
+          <div><a href="./html/target.html">target</a></div>
+          <div><a href="./html/anchor.html">anchor</a></div>
+          <div><a href="./html/bookmarks.html">bookmarks</a></div>
+          <div><a href="./html/absolute_relative_links.html">absolute relative links</a></div>
+          <div><a href="./html/map_area.html">map area</a></div>
+          <div><a href="./html/forms_basic.html">forms (basic)</a></div>
+          <div><a href="./html/forms_basic_iframe.html">forms (basic iframe)</a></div>
+          <div><a href="./html/forms_post.html">forms post</a></div>
+          <div><a href="./html/forms_post_fetch.html">forms post fetch method</a></div>
+          <div><a href="./html/forms_get.html">forms get</a></div>
+          <div><a href="./html/forms_radio.html">forms radio</a></div>
+          <div><a href="./html/forms_checkbox.html">forms checkbox</a></div>
+          <div><a href="./html/forms_select.html">forms select</a></div>
+          <div><a href="./html/forms_textarea.html">forms textarea</a></div>
+          <div><a href="./html/forms_files.html">forms files</a></div>
+          <div><a href="./html/form.html">form</a></div>
+          <div><a href="./html/fieldset.html">fieldset</a></div>
+          <div><a href="./html/label.html">label</a></div>
+          <div><a href="./html/input.html">input</a></div>
+          <div><a href="./html/input_radio.html">input radio</a></div>
+          <div><a href="./html/input_checkbox.html">input checkbox</a></div>
+          <div><a href="./html/input_submit.html">input submit</a></div>
+          <div><a href="./html/select.html">select</a></div>
+          <div><a href="./html/textarea.html">textarea</a></div>
+          <div><a href="./html/input_methods.html">input methods</a></div>
+          <div><a href="./html/output.html">output</a></div>
+          <h2>Multimedia Presentation using HTML</h2>
+          <div><a href="./html/iframe.html">iframe</a></div>
+          <h2>Webpage Styling using CSS</h2>
+          <h2>Accessibility, Readability and Testing</h2>
+          <div><a href="./html/color_wheel.html">color wheel</a></div>
+          <h2>References and Mnemonics</h2>
+          <div><a href="/html/mnemonics.html">mnemonics</a></div>
+          <div><a href="./html/references.html">references</a></div>
         </div>
       </div>
     </div>
-    <script>
-      // var title = document.getElementsByTagName("title")[0].innerHTML
-      var title = document.title
-      document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
-    </script>
-  </body>
+  </div>
+  <script>
+    // var title = document.getElementsByTagName("title")[0].innerHTML
+    var title = document.title
+    document.getElementById("banner_part_second").innerHTML = "&nbsp;" + title
+  </script>
+</body>
 
 </html>

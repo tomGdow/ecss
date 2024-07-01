@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        #message {
+            text-align: center;
+            color: var(--primary-green);
+        }
+
+        label {
+
+            color: var(--primary-green);
+        }
+
+        .info label {
+            text-align: right;
+            display: inline-block;
+            width: 10%;
+        }
+
+        fieldset label:after {
+            content: ":";
+        }
+
+        .submit {
+            margin-left: 10%;
+            width: 40%;
+        }
+
+        summary {
+            color: var(--primary-green);
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
+                        <a href="./search.html">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        <form action="https://somesite.php" method="POST" id="form_one">
+                            <fieldset class="info">
+                                <legend>Personal Information</legend>
+                                <div>
+                                    <label for="name">name</label>
+                                    <input type="text" name="param1" id="name">
+                                </div>
+                                <div>
+                                    <label for="email">e-mail</label>
+                                    <input type="email" name="param2" id="email" required><br>
+                                </div>
+                                <div>
+                                    <input type="submit" class="submit">
+                                </div>
+                            </fieldset>
+                            <fieldset class="output">
+                                <legend>Response</legend>
+                                <div id="message"></div>
+
+                                <div>
+                                    <label for="out-name" class="hidden" id="label-out-name">Your name</label>
+                                    <output for="name" id="out-name"></output>
+                                </div>
+                                <div>
+                                    <label for="out-email" class="hidden" id="label-out-email">
+                                        Your email address</label>
+                                    <output for="email" id="out-email"></output>
+                                </div>
+                                <div>
+                                    <label for="submitted-params" class="hidden" id="label-submitted-params">Submitted
+                                        params (POST)</label><br>
+                                    <output for="name email" id="submitted-params"></output>
+                                </div>
+                            </fieldset>
+                        </form>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+
+                        <!-- <h3>HTML</h3> -->
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+&lt;form action="https://somesite.com" method="POST" id="form_one"&gt;
+
+    &lt;fieldset class="info"&gt;
+    &lt;legend&gt;Personal Information&lt;/legend&gt;
+    &lt;div&gt;
+        &lt;label for="name"&gt;name&lt;/label&gt;
+        &lt;input type="text" name="param1" id="name"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="email"&gt;e-mail&lt;/label&gt;
+        &lt;input type="email" name="param2" id="email" required&gt;&lt;br&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type="submit" class="submit"&gt;
+    &lt;/div&gt;
+    &lt;/fieldset&gt;
+
+    &lt;fieldset class="output"&gt;
+        &lt;legend&gt;Response&lt;/legend&gt;
+        &lt;div id="message"&gt;&lt;/div&gt;
+
+        &lt;div&gt;
+            &lt;label for="out-name" class="hidden" id="label-out-name"&gt;
+                Your name
+            &lt;/label&gt;
+            &lt;output for="name" id="out-name"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for="out-email" class="hidden" id="label-out-email"&gt;
+                Your email address
+            &lt;/label&gt;
+            &lt;output for="email" id="out-email"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for="submitted-params" class="hidden" id="label-submitted-params"&gt;
+                Submitted params (POST)
+            &lt;/label&gt;&lt;br&gt;
+            &lt;output for="name email" id="submitted-params"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</pre>
+                        </details>
+                        <!-- <h3>Javascript</h3> -->
+                        <details>
+                            <summary>javascript</summary>
+                            <pre>
+document.getElementById('form_one').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var param1 = document.getElementById('form_one')[1].value;
+    var param2 = document.getElementById('form_one')[2].value;
+    var params = generateParams('param1', param1, 'param2', param2);
+    console.log("%c %s", "color:green", params)
+    document.getElementById("submitted-params").value = params;
+    document.getElementById("label-submitted-params").style.visibility = 'visible';
+    makePostRequest("https://php.tomgdow.com", params, ajaxCallMe());
+});
+
+function makePostRequest(url, params, fn) {
+    let oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", fn);
+    oReq.open('POST', url);
+    oReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // oReq.setRequestHeader("Content-length", params.length);
+    // oReq.setRequestHeader("Connection", "close");
+    oReq.send(params);
+}
+
+function ajaxCallMe() {
+    return function ajax() {
+        let response = this.responseText;
+        let message = "Greetings from the PHP Server (POST Method)";
+        let responseArray = response.split('&');
+        document.getElementById('out-name').value = responseArray[0];
+        document.getElementById('out-email').value = responseArray[1];
+        document.getElementById('message').innerHTML = message;
+        console.log("%c %s", "color:red", response);
+        console.log("%c %s", "color:blue", responseArray[0]);
+        console.log("%c %s", "color:blue", responseArray[1]);
+        console.log("%c %s", "color:blue", responseArray[2]);
+        document.getElementById("label-out-name").style.visibility = "visible";
+        document.getElementById("label-out-email").style.visibility = "visible";
+    };
+}
+        
+function generateParams(...args) {
+    var tmp = "";
+    if (args.length &lt; 3) { tmp += `${args[0]}=${args[1]}`; } else {
+        tmp += `${args[0]}=${args[1]}`;
+        for (let i = 2; i &lt;
+            args.length; i += 2) { tmp += `&${args[i]}=${args[i + 1]}`; }
+    }
+    return tmp;
+} </pre>
+                        </details>
+                        <!-- <h3>PHP</h3> -->
+                        <details>
+                            <summary>php (server)</summary>
+                            <pre>
+// index.php (server)
+
+&lt;?php
+  echo  
+     htmlspecialchars($_POST["param1"])."&"
+     .htmlspecialchars($_POST["param2"])."&"
+     .htmlspecialchars($_SERVER['HTTP_HOST']);
+?&gt;</pre>
+                        </details>
+
+                    </div>
+                </div>
+
+                <h2>Notes</h2>
+                <div class="content">
+                    <ol>
+                        <li>Note <code>event.preventDefault();</code></li>
+                        <li>Form is submitted using JavaScript (<code>Ajax/XMLHttpRequest)</code>, <em>not</em> via
+                            form <code>action</code> attribute</li>
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+
+        <!--  Templates -->
+
+
+        <template id="prevPageTemplate">forms_textarea</template> <!--PREVIOUS PAGE-->
+
+        <template id="pageTitleTemplate">forms files</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">form</template><!--NEXT PAGE-->
+
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
+        // form
+
+        document.getElementById('form_one').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var param1 = document.getElementById('form_one')[1].value;
+            var param2 = document.getElementById('form_one')[2].value;
+            var params = generateParams('param1', param1, 'param2', param2);
+            console.log("%c %s", "color:green", params)
+            document.getElementById("submitted-params").value = params;
+            document.getElementById("label-submitted-params").style.visibility = 'visible';
+            makePostRequest("https://php.tomgdow.com", params, ajaxCallMe());
+        });
+
+        function generateParams(...args) {
+            var tmp = "";
+            if (args.length < 3) { tmp += `${args[0]}=${args[1]}`; } else {
+                tmp += `${args[0]}=${args[1]}`;
+                for (let i = 2; i <
+                    args.length; i += 2) { tmp += `&${args[i]}=${args[i + 1]}`; }
+            }
+            return tmp;
+        }
+
+        function makePostRequest(url, params, fn) {
+            let oReq = new XMLHttpRequest();
+            oReq.addEventListener("load", fn);
+            oReq.open('POST', url);
+            oReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            // oReq.setRequestHeader("Content-length", params.length);
+            // oReq.setRequestHeader("Connection", "close");
+            oReq.send(params);
+        }
+
+        function ajaxCallMe() {
+            return function ajax() {
+                let response = this.responseText;
+                let message = "Greetings from the PHP Server (POST Method)";
+                let responseArray = response.split('&');
+                document.getElementById('out-name').value = responseArray[0];
+                document.getElementById('out-email').value = responseArray[1];
+                document.getElementById('message').innerHTML = message;
+                console.log("%c %s", "color:red", response);
+                console.log("%c %s", "color:blue", responseArray[0]);
+                console.log("%c %s", "color:blue", responseArray[1]);
+                console.log("%c %s", "color:blue", responseArray[2]);
+                document.getElementById("label-out-name").style.visibility = "visible";
+                document.getElementById("label-out-email").style.visibility = "visible";
+            };
+        }
+
+    </script>
+</body>
+
+</html>
