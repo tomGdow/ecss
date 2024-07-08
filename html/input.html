@@ -48,11 +48,56 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        input {
+            all: revert;
+        }
+
+        .example,
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fira Sans';
+        }
+
+        p,
+        label {
+            font:
+                1rem 'Fira Sans', sans-serif;
+        }
+
+        input {
+            margin: 0.4rem;
+        }
+
+        summary {
+            color: var(--primary-green);
+            padding-left: 5%;
+        }
+
+        input[type="email"] {
+            background-color: white;
+        }
+
+        input[type="email"]:invalid {
+            color: red;
+        }
+
+        input[type="email"]:valid {
+            background-color: lightgreen;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 </head>
 
@@ -85,10 +130,499 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        The <code>input</code> element is used to create interactive controls for web-based forms in
+                        order to accept data from the user
+                        <ol>
+                            <li>
+                                The <code>input</code> element is one of the most powerful and complex in all of HTML
+                                due to the sheer number of combinations of input types and attributes
+                            </li>
+                            <li>
+                                A wide variety of types of input data and control widgets are available, depending on
+                                the device and user agent
+                            </li>
+                            <!-- </li> -->
+                        </ol>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    </div><!--content-->
+
+                    <h2 class="example">Example (type=text)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div>
+                            <pre>
+&lt;label for="name"&gt;Name (4 to 8 characters):&lt;/label&gt;
+
+&lt;input type="text" 
+       id="name" 
+       name="name" 
+       required 
+       minlength="4" 
+       maxlength="8" 
+       size="10" /&gt;
+                            </pre>
+                        </div>
+
+                        <h3>Browser</h3>
+                        <div>
+                            <label for="name">Name (4 to 8 characters):</label>
+                            <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10">
+                        </div>
+                    </div><!--content-->
+
+                    <hr>
+
+                    <h2 class="example">Example (type=button)</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;input 
+    type="button" 
+    value="Add to favorites" /&gt;</pre>
+                        </div>
+                        <div>
+                            <h3>Browser</h3>
+                            <input type="button" value="Add to favorites">
+                        </div>
+                        <div>
+                            <h3>Notes</h3>
+                            <ol>
+                                <li class="space_above">
+                                    <code>input</code> elements of <code>type=button</code> are rendered as simple push
+                                    buttons
+                                </li>
+
+                                <li class="space_above">
+                                    They have no default behavior
+                                </li>
+
+                                <li class="space_above">
+                                    Their cousins,
+                                    <code>input type=submit</code>, and <code>input type=reset</code>
+                                    are used to submit and reset forms, respectively
+                                </li>
+
+                                <li class="space_above">
+                                    May be progammed with JS by assigning an event handler
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h2 class="example">Example (Checkbox)</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;fieldset&gt;
+    &lt;legend&gt;Choose your monster's features:&lt;/legend&gt;
+
+    &lt;div&gt;
+        &lt;input type="checkbox" id="scales" name="scales" checked /&gt;
+        &lt;label for="scales"&gt;Scales&lt;/label&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;input type="checkbox" id="horns" name="horns" /&gt;
+        &lt;label for="horns"&gt;Horns&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;</pre>
+                        </div>
+
+                        <div>
+                            <h3>Browser</h3>
+                            <fieldset>
+                                <legend>Choose your monster's features:</legend>
+
+                                <div>
+                                    <input type="checkbox" id="scales" name="scales" checked>
+                                    <label for="scales">Scales</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="horns" name="horns">
+                                    <label for="horns">Horns</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div>
+                            <h3>Notes</h3>
+                            <ol>
+                                <li class="space_above">
+                                    Rendered by default as boxes that are checked (ticked) when activated
+                                </li>
+                                <li class="space_above"><code>value</code>
+                                    <ol>
+                                        <li class="space_above">A string representing the value of the checkbox</li>
+                                        <li class="space_above">
+                                            This is not displayed on the
+                                            client-side, but on the server this is the
+                                            value given to the data submitted with the checkbox's name
+                                        </li>
+                                        <li class="space_above">
+                                            The value attribute is one which all <code>input</code> elements share
+                                        </li>
+                                        <li class="space_above">
+                                            However, it serves a special purpose for inputs of type checkbox
+                                            <ol>
+                                                <li>
+                                                    When a form is submitted, only checkboxes which are currently
+                                                    checked are
+                                                    submitted to the server, and the reported
+                                                    value is the value of the value attribute.
+                                                </li>
+                                                <li class="space_above">
+                                                    If the value is not otherwise specified, it is
+                                                    the string on by default
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li><code>checked</code>
+                                    <ol>
+                                        <li class="space_above">
+                                            A boolean attribute indicating whether this checkbox is checked by default
+                                            (when the page loads)
+                                        </li>
+                                        <li class="space_above">It does <em>not</em> indicate
+                                            whether this checkbox is currently checked
+                                            <ol>
+                                                <li class="space_above">If the checkbox's state is changed,
+                                                    this content attribute does not reflect the change
+                                                </li>
+                                                <li class="space_above">
+                                                    Only the <code>HTMLInputElement</code>'s checked IDL attribute is
+                                                    updated
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+
+                                <li class="space_above">
+                                    Radio buttons are similar to checkboxes, but with an important distinction
+                                    <ol>
+                                        <li class="space_above">
+                                            Same-named radio buttons are grouped into a set in which <em>only one
+                                                radio
+                                                button can
+                                                be selected at a time</em>, whereas checkboxes allow you to turn
+                                            single values on
+                                            and off
+                                        </li>
+                                        <li class="space_above">
+                                            Where multiple same-named controls exist, radio buttons allow one to be
+                                            selected
+                                            out of them all, whereas
+                                            checkboxes allow multiple values to be selected.
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (type=color)</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;p>Choose your colors:&lt;/p>
+
+&lt;div&gt;
+    &lt;input type="color" id="bgColor" name="bgColor" value="#e66465" /&gt;
+    &lt;label for="bgColor"&gt;Background Color&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;input type="color" id="txtColor" name="txtColor" value="#ffffff" /&gt;
+    &lt;label for="txtColor"&gt;Color&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div id="change"&gt;Hello World! &lt;/div&gt;
+</pre>
+                        </div>
+                        <div>
+                            <h3>Javascript</h3>
+                            <details>
+                                <summary>Reveal Code</summary>
+                                <pre>
+
+    // color select
+    document.querySelector("#change").style.backgroundColor = document.querySelector("#bgColor").value
+    document.querySelector("#change").style.color = document.querySelector("#txtColor").value
+    document.querySelector("#change").style.textAlign = "center";
+
+    document.querySelector("#bgColor").addEventListener('input', function () {
+        document.querySelector("#change").style.backgroundColor = this.value;
+    })
+
+    document.querySelector("#txtColor").addEventListener('input', function () {
+        document.querySelector("#change").style.color = this.value;
+    })</pre>
+                            </details>
+                            <h3>Browser</h3>
+                            <p>Choose your colors:</p>
+
+                            <div>
+                                <input type="color" id="bgColor" name="bgColor" value="#e66465">
+                                <label for="bgColor">Background Color</label>
+                            </div>
+
+                            <div>
+                                <input type="color" id="txtColor" name="txtColor" value="#ffffff">
+                                <label for="txtColor">Color</label>
+                            </div>
+                            <div id="change">Hello World! </div>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (type=date)</h2>
+                    <div class="content">
+                        <div>
+                            <pre>
+&lt;label for="start"&gt;Start date:&lt;/label&gt;
+
+&lt;input 
+    type="date" 
+    id="start" 
+    name="trip-start" 
+    value="2018-07-22" 
+    min="2018-01-01"
+    max="2018-12-31" /&gt;</pre>
+                        </div><!--html-->
+
+                        <div>
+                            <h3>Browser</h3>
+                            <label for="start">Start date:</label>
+
+                            <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01"
+                                max="2018-12-31">
+
+                        </div><!--browser-->
+                    </div><!--content-->
+
+                    <hr>
+
+                    <h2>Example (type=email)</h2>
+                    <div class="content">
+
+                        <div>
+
+                            <label for="email">Enter your example.com email</label>
+
+                            <input type="email" id="email" pattern=".+@example\.com" size="30" required>
+
+
+                        </div><!--browser-->
+                        <div>
+                            <h3>Notes</h3>
+                            <ol>
+                                <li>
+                                    <code>input</code> elements of type <code>email</code> are used to let the user
+                                    enter and edit an email
+                                    address, or, if the multiple attribute
+                                    is specified, a list of email addresses
+                                </li>
+                                <li>
+                                    The <code>input</code> value is automatically validated to ensure that it's either
+                                    empty or a
+                                    properly-formatted email address (or
+                                    list of addresses) before the form can be submitted.
+                                </li>
+                                <li>
+                                    The :valid and :invalid CSS pseudo-classes are automatically applied as appropriate
+                                    to visually denote whether the
+                                    current value of the field is a valid email address or not.
+
+                                </li>
+                                <li><code>value</code><br>
+                                    The <code>input</code> element's value attribute contains a string which is
+                                    automatically validated as conforming to email syntax.
+                                    More specifically, there are three possible value formats that will pass validation:
+
+                                    <ol>
+                                        <li>
+                                            An empty string ("") indicating that the user did not enter a value or that
+                                            the
+                                            value was removed.
+                                        </li>
+                                        <li>
+                                            A single properly-formed email address. Checks only if email is
+                                            formatted correctly: <code>username@domain</code> or
+                                            <code>username@domain.tld</code>. Can also validate with regular expression
+                                        </li>
+                                        <li>
+                                            If the <code>multiple</code> attribute is specified, the value can be a list
+                                            of
+                                            properly-formed comma-separated email
+                                            addresses
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li><code>maxlength</code><br>
+                                    The maximum string lengththat the user can enter into the email input
+                                </li>
+                                <li>
+                                    <code>minlength</code><br>
+                                    The minimum string length that the user can enter into the email input. This must be
+                                    a
+                                    non-negative integer value smaller than or equal to the value specified by maxlength
+
+                                </li>
+
+                                <li>
+                                    <code>multiple</code><br>
+
+                                    A Boolean attribute which, if present, indicates that the user can enter a list of
+                                    multiple email addresses, separated
+                                    by commas and, optionally, whitespace characters
+                                </li>
+                                <li>
+                                    <code>size</code>
+                                    <ol>
+                                        <li>
+                                            The size attribute is a numeric value indicating how many characters wide
+                                            the input field should be</li>
+                                        <li>
+                                            The value must be a
+                                            number greater than zero, and the default value is 20
+                                        </li>
+                                        <li>This does not set a limit on how many characters the user can enter into the
+                                            field. It only specifies approximately how
+                                            many can be seen at a time.</li>
+                                    </ol>
+                                </li>
+                                <li><code>placeholder</code><br>
+
+                                    The placeholder attribute is a string that provides a brief hint to the user as to
+                                    what kind of information is expected
+                                    in the field
+                                </li>
+                            </ol>
+                        </div><!--notes-->
+                        <hr>
+                    </div><!--content-->
+                    <h2 class="example">Example (type=file)</h2>
+                    <div class="content">
+
+                        <div>
+                            <h3>
+                                HTML
+                            </h3>
+                            <pre>
+  &lt;form 
+      method="post" 
+      action="https://mysite.tom" 
+      enctype="multipart/form-data"&gt;
+
+      &lt;div&gt;
+        &lt;label for="myfile"&gt;Choose file to upload&lt;/label&gt;
+        &lt;input type="file" id="myfile" name="myfile"&gt;
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;input type="submit"&gt;
+      &lt;/div&gt;
+
+  &lt;/form&gt; </pre>
+
+                        </div>
+                        <div>
+                            <h3>Browser</h3>
+                            <div class="browser">
+                                <form method="post" action="https://mysite.com" enctype="multipart/form-data">
+                                    <div>
+                                        <label for="myfile">Choose file to upload</label>
+                                        <input type="file" id="myfile" name="myfile">
+                                    </div>
+                                    <div>
+                                        <input type="submit">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <h3>Notes</h3>
+                        <ol>
+                            <li>
+                                Three requirements for file upload
+                                <ol>
+                                    <li>
+                                        <code>input type=file</code><br>
+                                        Provides access to user's filesystem
+                                    </li>
+                                    <li>
+                                        <code>method=POST</code>
+                                    </li>
+                                    <li>
+                                        <code>enctype="multipart/form-data"</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>accept</code>
+                                <ol>
+                                    <li>
+                                        A string that defines the file types the file input should accept.
+                                    </li>
+                                    <li>
+                                        This string is a
+                                        comma-separated list of unique file type specifiers.
+                                    </li>
+                                </ol>
+
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <hr>
+                    <h2>Example (type=hidden)</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <pre>
+&lt;input 
+    type="hidden" 
+    id="name" 
+    name="param1" 
+    value="Hello"&gt;
+
+&lt;input 
+    id="mybtn" 
+    type="image" 
+    src="../images/myButton2.png" 
+    alt="Blue Button"&gt;</pre>
+                        <h3>Notes</h3>
+                        <ol>
+                            <li>
+                                <code>input</code>
+                                elements of type hidden let web developers include data that cannot be seen or modified
+                                by users when a form is submitted
+
+                            </li>
+                            <li>
+
+                                Hidden inputs are completely invisible in the rendered page, and there is no way to make
+                                it
+                                visible in the page's
+                                content.
+
+                            </li>
+                            <li>
+                                While the value isn't displayed to the user in the page's content, it is visible—and can
+                                be
+                                edited—using any browser's
+                                developer tools or "View Source" functionality
+                            </li>
+                        </ol>
+
+
+                    </div><!--content-->
+
+                    <hr>
 
                     <h2>Notes</h2>
                     <div class="content"></div><!--content-->
@@ -97,13 +631,23 @@
                     <div class="content"></div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">MDN: The Input (Form
+                            Input) element</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/the-input-element.html#the-input-element">W3C:
+                            input element</a>
+                    </div>
+                </div>
+                <div class="content ref">
+                    <a href="https://www.youtube.com/watch?v=s2TTck1sj4s">YouTube: Upload a file with html forms (Akamai
+                        DevRel)</a>
                 </div>
             </div>
         </div>
 
         <!--  Templates -->
-
 
         <template id="prevPageTemplate">label</template> <!--PREVIOUS PAGE-->
 
@@ -128,6 +672,19 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        // color select
+        document.querySelector("#change").style.backgroundColor = document.querySelector("#bgColor").value
+        document.querySelector("#change").style.color = document.querySelector("#txtColor").value
+        document.querySelector("#change").style.textAlign = "center";
+
+        document.querySelector("#bgColor").addEventListener('input', function () {
+            document.querySelector("#change").style.backgroundColor = this.value;
+        })
+
+        document.querySelector("#txtColor").addEventListener('input', function () {
+            document.querySelector("#change").style.color = this.value;
+        })
 
     </script>
 </body>
