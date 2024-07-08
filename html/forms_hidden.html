@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        input {
+            all: revert;
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        summary {
+            padding-left: 3%;
+            color: var(--primary-green);
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="PREV.html" id="prevPage">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html" id="nextPage">next</a>&nbsp;&nbsp;
+                        <a href="./search.html">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+
+                        <form method="post" action="https://php.tomgdow.com" id="form_one">
+                            <div>
+                                <!-- <label for="name">Name</label> -->
+                                <input type="hidden" id="name" name="param1" value="Hello">
+                                <input type="hidden" id="hidden" name="param2" value="You clicked the button!">
+                            </div>
+                            <div>
+                                <input id="mybtn" type="image" src="../images/myButton2.png" alt="Blue Button">
+                            </div>
+                            <fieldset class="output">
+                                <div>
+                                    <output for="hidden1" id="out-hidden1"></output>
+                                </div>
+                                <div>
+                                    <output for="hidden2" id="out-hidden2"></output>
+                                </div>
+                            </fieldset>
+                        </form>
+
+                    </div><!--content-->
+
+                    <h2>Example</h2>
+                    <div class="content">
+                        <details>
+                            <summary>HTML</summary>
+                            <pre>
+&lt;form method="post" action="https://php.tomgdow.com" id="form_one"&gt;
+    &lt;div&gt;
+        &lt;!-- &lt;label for="name"&gt;Name&lt;/label&gt; --&gt;
+        &lt;input type="hidden" id="name" name="param1" value="Hello"&gt;
+        &lt;input type="hidden" id="hidden" name="param2" value="You clicked the button!"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input id="mybtn" type="image" src="../images/myButton2.png" alt="Blue Button"&gt;
+    &lt;/div&gt;
+    &lt;fieldset class="output"&gt;
+        &lt;div&gt;
+            &lt;output for="hidden1" id="out-hidden1"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;output for="hidden2" id="out-hidden2"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</pre>
+                        </details>
+                        <details>
+                            <summary>JavaScript</summary>
+                            <pre>
+    async function sendData() {
+
+        const formData = new FormData(form_one);
+
+        try {
+            const response = await fetch("https://php.tomgdow.com", {
+                method: "POST",
+                body: formData
+            });
+
+            let result = await response.text();
+            console.log(result);
+            let responseArray = result.split('&');
+            document.getElementById('out-hidden1').value = responseArray[0];
+            document.getElementById('out-hidden2').value = responseArray[1];
+
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    document.getElementById('form_one').addEventListener('submit', function (event) {
+
+        event.preventDefault();
+
+        sendData();
+
+
+    });
+
+
+    document.getElementById("mybtn").addEventListener('mouseleave', function () {
+
+        document.getElementById('out-hidden1').style.backgroundColor = "black"
+        document.getElementById('out-hidden1').style.color = "white"
+        document.getElementById('out-hidden2').style.backgroundColor = "black"
+        document.getElementById('out-hidden2').style.color = "white"
+    })
+
+    document.getElementById("mybtn").addEventListener('mouseover', function () {
+
+        document.getElementById('out-hidden1').style.backgroundColor = "revert"
+        document.getElementById('out-hidden1').style.color = "revert"
+        document.getElementById('out-hidden1').value = "";
+        document.getElementById('out-hidden2').style.backgroundColor = "revert"
+        document.getElementById('out-hidden2').style.color = "revert"
+        document.getElementById('out-hidden2').value = "";
+    })
+
+                            </pre>
+                        </details>
+                        <details>
+                            <summary>PHP</summary>
+                            <pre>
+// index.php (server)
+
+&lt;?php
+  echo  
+     htmlspecialchars($_POST["param1"])."&"
+     .htmlspecialchars($_POST["param2"])."&"
+     .htmlspecialchars($_SERVER['HTTP_HOST']);
+?&gt;</pre>
+                        </details>
+                    </div><!--content-->
+                </div>
+            </div>
+        </div>
+
+        <!--  Templates -->
+
+
+        <template id="prevPageTemplate">forms_files</template> <!--PREVIOUS PAGE-->
+
+        <template id="pageTitleTemplate">forms hidden</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">form</template><!--NEXT PAGE-->
+
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
+        // form
+        async function sendData() {
+
+            const formData = new FormData(form_one);
+
+            try {
+                const response = await fetch("https://php.tomgdow.com", {
+                    method: "POST",
+                    body: formData
+                });
+
+                let result = await response.text();
+                console.log(result);
+                let responseArray = result.split('&');
+                document.getElementById('out-hidden1').value = responseArray[0];
+                document.getElementById('out-hidden2').value = responseArray[1];
+
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        document.getElementById('form_one').addEventListener('submit', function (event) {
+
+            event.preventDefault();
+
+            sendData();
+
+
+        });
+
+
+        document.getElementById("mybtn").addEventListener('mouseleave', function () {
+
+            document.getElementById('out-hidden1').style.backgroundColor = "black"
+            document.getElementById('out-hidden1').style.color = "white"
+            document.getElementById('out-hidden2').style.backgroundColor = "black"
+            document.getElementById('out-hidden2').style.color = "white"
+        })
+
+        document.getElementById("mybtn").addEventListener('mouseover', function () {
+
+            document.getElementById('out-hidden1').style.backgroundColor = "revert"
+            document.getElementById('out-hidden1').style.color = "revert"
+            document.getElementById('out-hidden1').value = "";
+            document.getElementById('out-hidden2').style.backgroundColor = "revert"
+            document.getElementById('out-hidden2').style.color = "revert"
+            document.getElementById('out-hidden2').value = "";
+        })
+
+    </script>
+</body>
+
+</html>
