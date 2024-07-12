@@ -73,7 +73,8 @@
             content: ":";
         }
 
-        .submit {
+        .submit,
+        input[type="reset"] {
             margin-left: 10%;
             width: 40%;
         }
@@ -131,7 +132,12 @@
                                     <input type="email" name="param2" id="email" required><br>
                                 </div>
                                 <div>
-                                    <input type="submit" class="submit">
+                                    <input type="submit" class="submit" accesskey="s">
+                                    <output id="access-key-submit"></output>
+                                </div>
+                                <div>
+                                    <input type="reset" value="Reset Form" accesskey="r">
+                                    <output id="access-key-reset"></output>
                                 </div>
                             </fieldset>
                             <fieldset class="output">
@@ -168,10 +174,20 @@
                     <h2>Notes</h2>
                     <div class="content">
                         <ol>
-                            <li>This page uses <code>fetch</code> to send and receive data from the server, rather than
+                            <li>
+                                This page uses <code>fetch</code> to send and receive data from the server, rather than
                                 <code>ajax/XMLHttp</code>
                             </li>
                             <li>Uses <code>POST</code> method to send</li>
+                            <li>
+                                <code>accesskey</code> for reset is <code>r</code> (<code>&#8963;&#8997; r</code> on
+                                Mac)
+                            </li>
+                            <li>
+                                <code>accesskey</code> for submit is <code>s</code> (<code>&#8963;&#8997; s</code> on
+                                Mac)
+
+                            </li>
                         </ol>
                     </div><!--content-->
 
@@ -194,7 +210,12 @@
             &lt;input type="email" name="param2" id="email" required&gt;&lt;br&gt;
         &lt;/div&gt;
         &lt;div&gt;
-            &lt;input type="submit" class="submit"&gt;
+            &lt;input type="submit" class="submit" accesskey="s"&gt;
+            &lt;output id="access-key-submit"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;input type="reset" value="Reset Form" accesskey="r"&gt;
+            &lt;output id="access-key-reset"&gt;&lt;/output&gt;
         &lt;/div&gt;
     &lt;/fieldset&gt;
     &lt;fieldset class="output"&gt;
@@ -226,7 +247,7 @@
             Response&lt;/label&gt;&lt;br&gt;
         &lt;output id="server-response"&gt;&lt;/output&gt;
     &lt;/fieldset&gt;
-&lt;/form&gt; </pre>
+&lt;/form&gt;</pre>
                         </details>
                         <!-- <h3>Javascript</h3> -->
                         <details>
@@ -361,6 +382,19 @@ document.getElementById('form_one').addEventListener('submit', function (event) 
             document.getElementById("label-server-response").style.visibility = "visible";
 
         });
+
+        document.querySelector("input[type=submit]").addEventListener('mouseover', function () {
+            document.getElementById('access-key-submit').value = "accesskey: s"
+        })
+        document.querySelector("input[type=submit]").addEventListener('mouseleave', function () {
+            document.getElementById('access-key-submit').value = ""
+        })
+        document.querySelector("input[type=reset]").addEventListener('mouseover', function () {
+            document.getElementById('access-key-reset').value = "accesskey: r"
+        })
+        document.querySelector("input[type=reset]").addEventListener('mouseleave', function () {
+            document.getElementById('access-key-reset').value = ""
+        })
 
     </script>
 </body>
