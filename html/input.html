@@ -146,7 +146,7 @@
                         </ol>
 
                     </div><!--content-->
-
+                    <hr>
                     <h2 class="example">Example (type=text)</h2>
                     <div class="content">
                         <h3>HTML</h3>
@@ -213,7 +213,7 @@
 
                     <hr>
 
-                    <h2 class="example">Example (Checkbox)</h2>
+                    <h2 class="example">Example (type=checkbox)</h2>
                     <div class="content">
                         <div>
                             <h3>HTML</h3>
@@ -396,142 +396,22 @@
     value="2018-07-22" 
     min="2018-01-01"
     max="2018-12-31" /&gt;</pre>
-                        </div><!--html-->
 
-                        <div>
-                            <h3>Browser</h3>
-                            <label for="start">Start date:</label>
+                            &lt;form
+                            method="post"
+                            action="https://mysite.tom"
+                            enctype="multipart/form-data"&gt;
 
-                            <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01"
-                                max="2018-12-31">
+                            &lt;div&gt;
+                            &lt;label for="myfile"&gt;Choose file to upload&lt;/label&gt;
+                            &lt;input type="file" id="myfile" name="myfile"&gt;
+                            &lt;/div&gt;
 
-                        </div><!--browser-->
-                    </div><!--content-->
+                            &lt;div&gt;
+                            &lt;input type="submit"&gt;
+                            &lt;/div&gt;
 
-                    <hr>
-
-                    <h2>Example (type=email)</h2>
-                    <div class="content">
-
-                        <div>
-
-                            <label for="email">Enter your example.com email</label>
-
-                            <input type="email" id="email" pattern=".+@example\.com" size="30" required>
-
-
-                        </div><!--browser-->
-                        <div>
-                            <h3>Notes</h3>
-                            <ol>
-                                <li>
-                                    <code>input</code> elements of type <code>email</code> are used to let the user
-                                    enter and edit an email
-                                    address, or, if the multiple attribute
-                                    is specified, a list of email addresses
-                                </li>
-                                <li>
-                                    The <code>input</code> value is automatically validated to ensure that it's either
-                                    empty or a
-                                    properly-formatted email address (or
-                                    list of addresses) before the form can be submitted.
-                                </li>
-                                <li>
-                                    The :valid and :invalid CSS pseudo-classes are automatically applied as appropriate
-                                    to visually denote whether the
-                                    current value of the field is a valid email address or not.
-
-                                </li>
-                                <li><code>value</code><br>
-                                    The <code>input</code> element's value attribute contains a string which is
-                                    automatically validated as conforming to email syntax.
-                                    More specifically, there are three possible value formats that will pass validation:
-
-                                    <ol>
-                                        <li>
-                                            An empty string ("") indicating that the user did not enter a value or that
-                                            the
-                                            value was removed.
-                                        </li>
-                                        <li>
-                                            A single properly-formed email address. Checks only if email is
-                                            formatted correctly: <code>username@domain</code> or
-                                            <code>username@domain.tld</code>. Can also validate with regular expression
-                                        </li>
-                                        <li>
-                                            If the <code>multiple</code> attribute is specified, the value can be a list
-                                            of
-                                            properly-formed comma-separated email
-                                            addresses
-                                        </li>
-                                    </ol>
-                                </li>
-                                <li><code>maxlength</code><br>
-                                    The maximum string lengththat the user can enter into the email input
-                                </li>
-                                <li>
-                                    <code>minlength</code><br>
-                                    The minimum string length that the user can enter into the email input. This must be
-                                    a
-                                    non-negative integer value smaller than or equal to the value specified by maxlength
-
-                                </li>
-
-                                <li>
-                                    <code>multiple</code><br>
-
-                                    A Boolean attribute which, if present, indicates that the user can enter a list of
-                                    multiple email addresses, separated
-                                    by commas and, optionally, whitespace characters
-                                </li>
-                                <li>
-                                    <code>size</code>
-                                    <ol>
-                                        <li>
-                                            The size attribute is a numeric value indicating how many characters wide
-                                            the input field should be</li>
-                                        <li>
-                                            The value must be a
-                                            number greater than zero, and the default value is 20
-                                        </li>
-                                        <li>This does not set a limit on how many characters the user can enter into the
-                                            field. It only specifies approximately how
-                                            many can be seen at a time.</li>
-                                    </ol>
-                                </li>
-                                <li><code>placeholder</code><br>
-
-                                    The placeholder attribute is a string that provides a brief hint to the user as to
-                                    what kind of information is expected
-                                    in the field
-                                </li>
-                            </ol>
-                        </div><!--notes-->
-                        <hr>
-                    </div><!--content-->
-                    <h2 class="example">Example (type=file)</h2>
-                    <div class="content">
-
-                        <div>
-                            <h3>
-                                HTML
-                            </h3>
-                            <pre>
-  &lt;form 
-      method="post" 
-      action="https://mysite.tom" 
-      enctype="multipart/form-data"&gt;
-
-      &lt;div&gt;
-        &lt;label for="myfile"&gt;Choose file to upload&lt;/label&gt;
-        &lt;input type="file" id="myfile" name="myfile"&gt;
-      &lt;/div&gt;
-
-      &lt;div&gt;
-        &lt;input type="submit"&gt;
-      &lt;/div&gt;
-
-  &lt;/form&gt; </pre>
+                            &lt;/form&gt; </pre>
 
                         </div>
                         <div>
@@ -767,7 +647,7 @@
                             </li>
                         </ol><!--content-->
                     </div><!--content-->
-
+                    <hr>
                     <h2 class="example">Example (type=number)</h2>
                     <div class="content">
                         <div>
@@ -816,6 +696,7 @@ document.getElementById("number").addEventListener('input', function () {
 
 
                     </div><!--content-->
+                    <hr>
                     <h2 class="example">Example (type=password)</h2>
                     <div class="content">
                         <div>
@@ -917,6 +798,49 @@ document.getElementById("number").addEventListener('input', function () {
                         </div>
 
                     </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (type=reset)</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;form&gt;
+    &lt;div class="controls"&gt;
+        &lt;label for="id"&gt;User ID:&lt;/label&gt;
+        &lt;input type="text" id="id" name="id" /&gt;
+
+        &lt;input type="reset" value="Reset" /&gt;
+        &lt;input type="submit" value="Submit" /&gt;
+    &lt;/div&gt;
+&lt;/form&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>Browser</h3>
+                            <form>
+                                <div class="controls">
+                                    <label for="id">User ID:</label>
+                                    <input type="text" id="id" name="id" />
+
+                                    <input type="reset" value="Reset" />
+                                    <input type="submit" value="Submit" />
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div>
+                            <h3>Notes</h3>
+                            <ol>
+                                <li><code> input</code> elements of type <code>reset</code>are rendered as buttons,
+                                    with
+                                    <em>a default click event handler</em> that resets all inputs in the
+                                    form to their initial values.
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
 
                     <h2>Notes</h2>
                     <div class="content"></div><!--content-->
@@ -926,7 +850,8 @@ document.getElementById("number").addEventListener('input', function () {
 
                     <h2>References</h2>
                     <div class="content ref">
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">MDN: The Input (Form
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">MDN: The Input
+                            (Form
                             Input) element</a>
                     </div><!--content-->
                     <div class="content ref">
