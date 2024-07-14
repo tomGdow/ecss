@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        input {
+            all: revert;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,25 +89,146 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>input</code> elements of type <code>submit</code> are rendered as buttons
+                            </li>
+                            <li>
+                                When the click event occurs (typically because the user clicked
+                                the button), the user agent attempts to submit the form to the server
+                            </li>
+                            <li>
+                                <code>value</code>
+                                <ol>
+                                    <li>
+                                        An <code> input type="submit"</code> element's value attribute contains a
+                                        string which is displayed as the button's label
+                                    </li>
+                                    <li>
+                                        Buttons do not have a true value otherwise
+                                    </li>
+                                    <li>
+                                        The value provides the accessible description for the button
+                                    </li>
+                                    <li>
+                                        If you don't specify a value, the button will have a default label, chosen
+                                        by the user agent
+                                    </li>
+                                </ol>
+                            </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                            <li><code>formaction</code>
+                                <ol>
+                                    <li>
+                                        A string indicating the URL to which to submit the data
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>formenctype</code>
+                                <ol>
+                                    <li>
+                                        A string that identifies the encoding method to use when submitting the form
+                                        data to the server
+                                    </li>
+                                    <li>There are three permitted values
+                                        <ol>
+                                            <li>
+                                                <code>application/x-www-form-urlencoded</code><br>
+                                            </li>
+                                            <li>
+                                                <code>multipart/form-data</code>
+                                            </li>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                                            <li>
+                                                <code>text/plain</code><br>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>formmethod</code>
+                                <ol>
+                                    <li>
+                                        A string indicating the HTTP method to use when submitting the form's data
+                                    </li>
+                                    <li>
+                                        Permitted values are:
+                                        <ol>
+                                            <li><code>get</code></li>
+                                            <li><code>post</code></li>
+                                            <li><code>dialog</code></li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            <li>
+                                <code>formtarget</code>
+                                <ol>
+                                    <li>
+                                        A string which specifies a name or keyword that indicates where to display
+                                        the
+                                        response received after submitting the
+                                        form
+                                    </li>
+                                    <li>
+                                        The string must be
+                                        <ol>
+                                            <li>A valid browser context</li>
+                                            <li><code>_self</code></li>
+                                            <li><code>_blank</code></li>
+                                            <li><code>_parent</code></li>
+                                            <li><code>_top</code></li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (type=submit)</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;form&gt;
+    &lt;div&gt;
+        &lt;label for="example"&gt;Let's submit some text&lt;/label&gt;
+        &lt;input id="example" type="text" name="text" /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type="submit" value="Send" /&gt;
+    &lt;/div&gt;
+&lt;/form&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>Browser</h3>
+                            <form>
+                                <div>
+                                    <label for="example">Let's submit some text</label>
+                                    <input id="example" type="text" name="text" />
+                                </div>
+                                <div>
+                                    <input type="submit" value="Send" />
+                                </div>
+                            </form>
+                        </div>
+                    </div><!--content-->
+                    <hr>
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit">MDN: input
+                            (type=submit)</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
 
         <!--  Templates -->
-
 
         <template id="prevPageTemplate">input_range</template> <!--PREVIOUS PAGE-->
 

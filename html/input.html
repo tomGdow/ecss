@@ -881,111 +881,6 @@ document.getElementById("number").addEventListener('input', function () {
 
                     </div><!--content-->
                     <hr>
-                    <h2 class="example">Example (type=submit)</h2>
-                    <div class="content">
-
-
-                        <div>
-                            <h3>Notes</h3>
-                            <ol>
-                                <li>
-                                    <code>input</code> elements of type <code>submit</code> are rendered as buttons
-                                </li>
-                                <li>
-                                    When the click event occurs (typically because the user clicked
-                                    the button), the user agent attempts to submit the form to the server
-                                </li>
-                                <li>
-                                    <code>value</code>
-                                    <ol>
-                                        <li>
-                                            An <code> input type="submit"</code> element's value attribute contains a
-                                            string which is displayed as the button's label
-                                        </li>
-                                        <li>
-                                            Buttons do not have a true value otherwise
-                                        </li>
-                                        <li>
-                                            The value provides the accessible description for the button
-                                        </li>
-                                        <li>
-                                            If you don't specify a value, the button will have a default label, chosen
-                                            by the user agent
-                                        </li>
-                                    </ol>
-                                </li>
-
-                                <li><code>formaction</code>
-                                    <ol>
-                                        <li>
-                                            A string indicating the URL to which to submit the data
-                                        </li>
-                                    </ol>
-                                </li>
-                                <li><code>formenctype</code>
-                                    <ol>
-                                        <li>
-                                            A string that identifies the encoding method to use when submitting the form
-                                            data to the server
-                                        </li>
-                                        <li>There are three permitted values
-                                            <ol>
-                                                <li>
-                                                    <code>application/x-www-form-urlencoded</code><br>
-                                                </li>
-                                                <li>
-                                                    <code>multipart/form-data</code>
-                                                </li>
-
-                                                <li>
-                                                    <code>text/plain</code><br>
-                                                </li>
-                                            </ol>
-                                        </li>
-                                    </ol>
-                                </li>
-                                <li>
-                                    <code>formmethod</code>
-                                    <ol>
-                                        <li>
-                                            A string indicating the HTTP method to use when submitting the form's data
-                                        </li>
-                                        <li>
-                                            Permitted values are:
-                                            <ol>
-                                                <li><code>get</code></li>
-                                                <li><code>post</code></li>
-                                                <li><code>dialog</code></li>
-                                            </ol>
-                                        </li>
-                                    </ol>
-                                </li>
-
-                                <li>
-                                    <code>formtarget</code>
-                                    <ol>
-                                        <li>
-                                            A string which specifies a name or keyword that indicates where to display
-                                            the
-                                            response received after submitting the
-                                            form
-                                        </li>
-                                        <li>
-                                            The string must be
-                                            <ol>
-                                                <li>A valid browser context</li>
-                                                <li><code>_self</code></li>
-                                                <li><code>_blank</code></li>
-                                                <li><code>_parent</code></li>
-                                                <li><code>_top</code></li>
-                                            </ol>
-                                        </li>
-                                    </ol>
-                                </li>
-                            </ol>
-                        </div>
-
-                    </div><!--content-->
                     <h2 class="example">Example (type=url)</h2>
                     <div class="content">
                         <div>
@@ -1000,7 +895,8 @@ document.getElementById("number").addEventListener('input', function () {
                             <h3>Browser</h3>
                             <form>
                                 <label for="url">Enter a URL:</label>
-                                <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required />
+                                <input type="url" name="url" id="url" placeholder="https://example.com"
+                                    pattern="https://.*" size="30" required />
                             </form>
                         </div>
 
