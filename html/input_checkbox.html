@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        input {
+            all: revert;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +89,163 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>input</code> elements of type <code>checkbox</code> are rendered by default as
+                                boxes that are checked (ticked) when activated
+                            </li>
+                            <li><code>value</code>
+                                <ol>
+                                    <li>
+                                        The <code>value</code> attribute is one which all <code>input</code> elements
+                                        share; however, it serves a
+                                        special purpose for
+                                        inputs of type checkbox
+                                    </li>
+                                    <li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                        When a form is submitted, <strong>only checkboxes which are currently
+                                            checked</strong> are
+                                        submitted to the
+                                        server, and the reported
+                                        value is the value of the value attribute.
+                                    </li>
+                                    <li>
+                                        If the value is not otherwise specified, it is the
+                                        string <code>on</code> by default.
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>checked</code>
+                                <ol>
+                                    <li>
+                                        A boolean attribute indicating whether this checkbox is checked by default (when
+                                        the
+                                        page loads)
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                                    </li>
+                                    <li>
+                                        It does <em>not</em> indicate
+                                        whether this checkbox is currently checked: if the checkbox's state is changed,
+                                        this
+                                        content attribute does not reflect
+                                        the change. (Only the HTMLInputElement's checked IDL attribute is updated.)
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                                    </li>
+                                    <li>
+                                        Unlike other input controls, a checkbox's value is only included in the
+                                        submitted data <strong>if the checkbox is
+                                            currently checked</strong>
+
+                                    </li>
+                                    <li>
+                                        If it is, then the value of the checkbox's value attribute is
+                                        reported as the input's value, or on if
+                                        no value is set
+                                    </li>
+
+
+                                </ol>
+                            </li>
+                        </ol>
+
+
+                    </div><!--content-->
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;form id="form_one"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Choose your interests&lt;/legend&gt;
+        &lt;div&gt;
+            &lt;input type="checkbox" id="coding" name="param1" value="coding" checked /&gt;
+            &lt;label for="coding"&gt;Coding&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;input type="checkbox" id="music" name="param2" value="music" /&gt;
+            &lt;label for="music"&gt;Music&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;input type="submit"&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+&lt;div&gt;
+    &lt;output id="out-choice1"&gt;&lt;/output&gt;
+    &lt;output id="out-choice2"&gt;&lt;/output&gt;
+&lt;/div&gt; </pre>
+                        </div>
+                        <details>
+                            <summary>javascript</summary>
+                            <pre>
+
+// form
+async function sendData() {
+
+    const formData = new FormData(form_one);
+
+    try {
+        const response = await fetch("https://php.tomgdow.com", {
+            method: "POST",
+            body: formData
+        });
+
+        let result = await response.text();
+        console.log(result);
+        let responseArray = result.split('&');
+        document.getElementById('out-choice1').value = responseArray[0];
+        document.getElementById('out-choice2').value = responseArray[1];
+
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+document.getElementById('form_one').addEventListener('submit', function (event) {
+
+    event.preventDefault();
+
+    sendData();
+
+}); </pre>
+                        </details>
+
+                        <div>
+                            <h3>Browser</h3>
+                            <form id="form_one">
+                                <fieldset>
+                                    <legend>Choose your interests</legend>
+                                    <div>
+                                        <input type="checkbox" id="coding" name="param1" value="coding" checked />
+                                        <label for="coding">Coding</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="music" name="param2" value="music" />
+                                        <label for="music">Music</label>
+                                    </div>
+                                    <div>
+                                        <input type="submit">
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <div>
+                                <output id="out-choice1"></output>
+                                <output id="out-choice2"></output>
+
+                            </div>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox">MDN: input
+                            (type=checkbox)</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
@@ -128,6 +276,37 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        // form
+        async function sendData() {
+
+            const formData = new FormData(form_one);
+
+            try {
+                const response = await fetch("https://php.tomgdow.com", {
+                    method: "POST",
+                    body: formData
+                });
+
+                let result = await response.text();
+                console.log(result);
+                let responseArray = result.split('&');
+                document.getElementById('out-choice1').value = responseArray[0];
+                document.getElementById('out-choice2').value = responseArray[1];
+
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        document.getElementById('form_one').addEventListener('submit', function (event) {
+
+            event.preventDefault();
+
+            sendData();
+
+
+        });
 
     </script>
 </body>
