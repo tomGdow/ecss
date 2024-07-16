@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        input {
+            all: revert;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,25 +89,162 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>select</code> element represents a control that provides a menu of options
+                            </li>
+                            <li>
+                                An <code>id</code> attribute allows association witha a <code>label</code>
+                            </li>
+                            <li>
+                                A <code>name</code> attribute allows submittion of data to server</li>
+                            <li>
+                                Each menu option is defined by an <code>option</code> element
+                                <strong>
+                                    nested inside the
+                                    <code>select</code>
+                                </strong>
+                            </li>
+                            <li>
+                                <code>value</code>
+                                <ol>
+                                    <li>
+                                        Each <code>option</code> element should have a <code>value</code>attribute
+                                        containing the data
+                                        value to submit to the server when that option
+                                        is selected
+                                    </li>
+                                    <li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                        If no <code>value</code> attribute is included, the value defaults to
+                                        the text contained inside the element
+                                    </li>
+                                </ol>
+                            <li><code>selected</code><br>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                                Including a <code>selected</code> attribute <strong> on an
+                                    <code>option</code></strong> element makes it selected by default
+                            </li>
+                            <li><code>optgroup</code>
+                                <ol>
+                                    <li>
+                                        <code>option</code> elements may be included inside <code>optgroup</code> to
+                                        create separate groups of options
+                                    </li>
+                                    <li>
+                                        <code>hr</code> elements may also be included as separators to add visual breaks
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>multiple</code><br>
+                                Allows multiple options to be selected
+                            </li>
+                            <li><code>size</code><br>
+                                Specifies how may options shown at once
+                            </li>
+                        </ol>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    </div><!--content-->
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;form id="form_one"&gt;
+    &lt;label for="pet-select"&gt;Choose a pet:&lt;/label&gt;
+
+    &lt;select name="param2" id="pet-select"&gt;
+        &lt;option value=""&gt;--Please choose an option--&lt;/option&gt;
+        &lt;option value="dog"&gt;Dog&lt;/option&gt;
+        &lt;option value="cat"&gt;Cat&lt;/option&gt;
+        &lt;option value="hamster"&gt;Hamster&lt;/option&gt;
+        &lt;option value="parrot"&gt;Parrot&lt;/option&gt;
+        &lt;option value="spider"&gt;Spider&lt;/option&gt;
+        &lt;option value="goldfish"&gt;Goldfish&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;input type="hidden" value="You chose " name="param1"&gt;
+    &lt;input type="submit"&gt;
+&lt;/form&gt;
+&lt;div&gt;
+    &lt;output id="selected"&gt;&lt;/output&gt;
+&lt;/div&gt; </pre>
+                        </div>
+                        <details>
+                            <summary>JavaScript</summary>
+                            <pre>
+// form
+async function sendData() {
+
+    const formData = new FormData(form_one);
+
+    try {
+    const response = await fetch("https://php.tomgdow.com", {
+        method: "POST",
+        body: formData
+    });
+
+    let result = await response.text();
+    console.log(result);
+    let responseArray = result.split('&');
+    document.getElementById('selected').value = responseArray[0];
+    document.getElementById('selected').value += responseArray[1];
+
+    } catch (e) {
+    console.error(e);
+    }
+}
+
+document.getElementById('form_one').addEventListener('submit', function (event) {
+
+    event.preventDefault();
+
+    sendData();
+
+}); </pre>
+
+                        </details>
+
+                        <div>
+                            <h3>Browser</h3>
+
+                            <form id="form_one">
+                                <label for="pet-select">Choose a pet:</label>
+
+                                <select name="param2" id="pet-select">
+                                    <option value="">--Please choose an option--</option>
+                                    <option value="dog">Dog</option>
+                                    <option value="cat">Cat</option>
+                                    <option value="hamster">Hamster</option>
+                                    <option value="parrot">Parrot</option>
+                                    <option value="spider">Spider</option>
+                                    <option value="goldfish">Goldfish</option>
+                                </select>
+                                <input type="hidden" value="You chose " name="param1">
+                                <input type="submit">
+                            </form>
+                            <div>
+                                <output id="selected"></output>
+                            </div>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">MDN: The HTML Select
+                            element</a>
+                        <div class="content ref">
+                            <a
+                                href="https://www.w3.org/TR/2011/WD-html5-20110405/the-button-element.html#the-select-element">W3C
+                                Select</a>
+                        </div>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
 
         <!--  Templates -->
-
 
         <template id="prevPageTemplate">input_submit</template> <!--PREVIOUS PAGE-->
 
@@ -128,6 +269,37 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        // form
+        async function sendData() {
+
+            const formData = new FormData(form_one);
+
+            try {
+                const response = await fetch("https://php.tomgdow.com", {
+                    method: "POST",
+                    body: formData
+                });
+
+                let result = await response.text();
+                console.log(result);
+                let responseArray = result.split('&');
+                document.getElementById('selected').value = responseArray[0];
+                document.getElementById('selected').value += responseArray[1];
+
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        document.getElementById('form_one').addEventListener('submit', function (event) {
+
+            event.preventDefault();
+
+            sendData();
+
+
+        });
 
     </script>
 </body>
