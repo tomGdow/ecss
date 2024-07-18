@@ -48,6 +48,22 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        table {
+            border: 1px solid var(--primary-green);
+            caption-side: bottom;
+            /* text-align: center; */
+        }
+
+        table {
+            border-spacing: 1em;
+            border-collapse: separate;
+        }
+
+        .hlight {
+            background-color: var(--primary-green);
+            color: white;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +101,79 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li class="space_above">
+                                The only allowed values for the
+                                <code>method</code> attribute of <code>form</code> (case insensitive):
+                                <ol>
+                                    <li><code>post</code><br>
+                                        form data sent as the request body
+                                    </li>
+
+                                    <li>
+                                        <code>get</code> (default) <br>
+                                        form data is <strong>appended to the action URL</strong> with a
+                                        <code>?</code>
+                                        separator
+                                    </li>
+                                    <li><code>dialog</code><br>
+
+                                        When the form is inside a <code>dialog</code>, closes the
+                                        <code>dialog</code> and causes a <code>submit</code> event to
+                                        be fired on submission,
+                                        without submitting data or clearing the form
+                                    </li>
+                                </ol>
+                            <li class="space_above">Note that <span class="highlight2"><code>PUT</code> is
+                                    <code>not</code>
+                                    allowed</span> in a html form (see <a
+                                    href="https://stackoverflow.com/a/8054241/499167" target="_blank"
+                                    rel="noopener">here</a>)
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
                     <h2>Example</h2>
                     <div class="content"></div><!--content-->
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+
+                        <table>
+                            <caption>HTTP Methods</caption>
+                            <tr>
+                                <th>HTTP Verb</th>
+                                <th>CRUD</th>
+                                <th>Meaning</th>
+                            </tr>
+                            <tr>
+                                <td>POST</td>
+                                <td>Create</td>
+                                <td>Create a resource</td>
+                            </tr>
+                            <tr>
+                                <td>GET</td>
+                                <td>Read</td>
+                                <td>Retrieve a representation of a resource</td>
+                            </tr>
+                            <tr>
+                                <td>PUT</td>
+                                <td>Update</td>
+                                <td>Update or create a resource</td>
+                            </tr>
+                            <tr>
+                                <td>DELETE</td>
+                                <td>Delete</td>
+                                <td>Delete a resource</td>
+                            </tr>
+                        </table>
+                    </div><!--content-->
 
                     <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        p<span class="hlight">U</span>t <span class="hlight">U</span>pdate
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref">
@@ -103,12 +182,14 @@
                     <div class="content ref">
                         <a href="https://www.codecademy.com/article/what-is-crud">Codecademy: What is CRUD</a>
                     </div>
+                    <div class="content ref">
+                        <a href="./form.html">See also: form.html</a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!--  Templates -->
-
 
         <template id="prevPageTemplate">textarea</template> <!--PREVIOUS PAGE-->
 
