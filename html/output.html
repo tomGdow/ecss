@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        input {
+            all: revert
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +89,148 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>output</code> element represents the result of a calculation
+                            </li>
+                            <li class="space_above">
+                                <code>for</code>
+                                <ol>
+                                    <li class="space_above">
+                                        The <code>for</code> content attribute allows an explicit relationship to be
+                                        made between
+                                        the result of a
+                                        calculation and the
+                                        elements that represent the values that went into the calculation or that
+                                        otherwise
+                                        influenced
+                                        the calculation
+                                    </li>
+                                    <li class="space_above">
+                                        The <code>for</code>
+                                        attribute, if specified, must contain a string consisting of an unordered set of
+                                        unique
+                                        space-separated tokens that are
+                                        case-sensitive,
+                                        <strong>
+                                            each of which must have the value of an ID of an element in the same
+                                            document
+                                        </strong>
+                                    </li>
+                                    <li class="space_above">A space-separated list of other elements' <code>id</code>,
+                                        indicating that those
+                                        elements contributed input values to (or otherwise
+                                        affected) the calculation.</li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>form</code>
+                                <ol>
+                                    <li class="space_above">
+                                        The <code>form</code> attribute is used to explicitly associate the
+                                        <code>output</code> element with its form owner
+                                    </li>
+                                    <li class="space_above">
+                                        The value of this attribute must be the <code>id</code> of a <code>form</code>
+                                        element in the same document
+                                    </li>
+                                    <li class="space_above">
+                                        This attribute lets you associate <code>output</code> elements to a
+                                        <code>form</code> element anywhere in the document, not just inside the
+                                        <code>form</code> element
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>name</code><br>
+                                The
+                                <code>name</code> attribute represents
+                                the element's name
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                            </li>
+                            <li class="space_above"><code>value</code>
+                                <ol>
+                                    <li>
+                                        The element has a value mode flag which is either <code>value</code> or
+                                        <code>default</code>
+                                    </li>
+                                    <li class="space_above">
+                                        Initially, the value mode flag must be set to
+                                        default
+                                    </li>
+                                    <li class="space_above">
+                                        <code> output.value [ = value ]</code><br>
+                                        Returns the element's current value.
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div>
+                            <div>
+                                <h3>HTML</h3>
+                                <pre>
+&lt;form oninput="result.value=parseInt(a.value)+parseInt(b.value)"&gt;
 
+    &lt;input type="range" id="b" name="b" value="50" /&gt; +
+    &lt;input type="number" id="a" name="a" value="10" /&gt; =
+    &lt;output name="result" for="a b"&gt;60&lt;/output&gt;
+
+&lt;/form&gt; </pre>
+                            </div>
+                            <h3>Browser</h3>
+                            <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+                                <input type="range" id="b" name="b" value="50" /> +
+                                <input type="number" id="a" name="a" value="10" /> =
+                                <output name="result" for="a b">60</output>
+                            </form>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div>
+                            <div>
+                                <h3>HTML</h3>
+                                <pre>
+&lt;form id="form_two"&gt;
+    &lt;input type="range" id="x" name="x" value="50" /&gt; +
+    &lt;input type="number" id="y" name="y" value="10" /&gt; =
+    &lt;output name="result3" id="r3" for="x y"&gt;60&lt;/output&gt;
+&lt;/form&gt; </pre>
+                                <div>
+                                    <h3>JavaScript</h3>
+                                    <pre>
+form_two.addEventListener('input', function () {
+    r3.value = parseInt(x.value) + parseInt(y.value);
+}) </pre>
+                                </div>
+                            </div>
+                            <h3>Browser</h3>
+
+                            <form id="form_two">
+                                <input type="range" id="x" name="x" value="50" /> +
+                                <input type="number" id="y" name="y" value="10" /> =
+                                <output name="result3" id="r3" for="x y">60</output>
+                            </form>
+                        </div>
+                    </div><!--content-->
+                    <hr>
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output">MDN: The Output
+                            element</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a
+                            href="https://www.w3.org/TR/2011/WD-html5-20110405/the-button-element.html#the-output-element">W3C:
+                            Output element</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,6 +261,10 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        form_two.addEventListener('input', function () {
+            r3.value = parseInt(x.value) + parseInt(y.value);
+        })
 
     </script>
 </body>
