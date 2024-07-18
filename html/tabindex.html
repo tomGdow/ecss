@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        input {
+            all: revert;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,10 +89,83 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li class="space_above">
+                                The <code>tabindex</code> content attribute specifies whether the element is focusable,
+                                whether it can be reached using sequential focus navigation, and the relative order of
+                                the
+                                element for the purposes of sequential focus navigation
+                            </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                            <li class="space_above">
+                                A negative value (the exact negative value doesn't actually matter, usually
+                                <code>tabindex="-1"</code>) means that the element is not reachable via sequential
+                                keyboard
+                                navigation
+                            </li>
+
+                            <li class="space_above">
+                                <code>tabindex="0"</code> means that the element should be focusable in sequential
+                                keyboard
+                                navigation, after any positive tabindex values
+                            </li>
+
+                            <li class="space_above">
+                                A positive value means the element should be focusable in sequential keyboard
+                                navigation,
+                                with its order defined by the value of the number
+                            </li>
+
+                            <li class="space_above">
+                                That is, <code>tabindex="4"</code> is focused before <code>tabindex="5"</code> and
+                                <code>tabindex="0"</code>, but after <code>tabindex="3"</code>
+                            </li>
+
+                            <li class="space_above">
+                                The maximum value for <code>tabindex</code> is <code>32767</code>
+                            </li>
+
+                            <li class="space_above">
+                                You are recommended to only use <code>0</code> and <code>-1</code> as
+                                <code>tabindex</code>
+                                values
+                            </li>
+                        </ol>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;p&gt;Click anywhere in this pane, then try tabbing through the elements&lt;/p&gt;
+
+&lt;label&gt;First in tab order:&lt;input type="text" /&gt;&lt;/label&gt;
+
+&lt;div tabindex="0"&gt;Tabbable due to tabindex.&lt;/div&gt;
+
+&lt;div&gt;Not tabbable: no tabindex.&lt;/div&gt;
+
+&lt;label&gt;Third in tab order:&lt;input type="text" /&gt;&lt;/label&gt;
+                            </pre>
+                        </div>
+
+                        <div>
+                            <h3>Browser</h3>
+
+                            <p>Click anywhere in this pane, then try tabbing through the elements</p>
+
+                            <label>First in tab order:<input type="text" /></label>
+
+                            <div tabindex="0">Tabbable due to tabindex.</div>
+
+                            <div>Not tabbable: no tabindex.</div>
+
+                            <label>Third in tab order:<input type="text" /></label>
+                        </div>
+                    </div><!--content-->
 
                     <h2>Notes</h2>
                     <div class="content"></div><!--content-->
@@ -97,7 +174,15 @@
                     <div class="content"></div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">MDN:
+                            tabindex</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a
+                            href="https://www.w3.org/TR/2011/WD-html5-20110405/editing.html#sequential-focus-navigation-and-the-tabindex-attribute">W3C:
+                            Sequential focus navigation and the tabindex attribute</a>
+                    </div>
                 </div>
             </div>
         </div>
