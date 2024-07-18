@@ -14,9 +14,11 @@
   <noscript>
     <link rel="stylesheet" href="../css/ecss_nojs.css">
   </noscript>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -82,49 +84,52 @@
 
           <div class="content">
             <code>
-
     <div>&lt;title&gt;&sect;&nbsp;S&eacute;ction&lt;/title&gt;</div>
     <div>&lt;title&gt;&amp;sect;&amp;nbsp;S&amp;eacute;ction&lt;/title&gt;</div>
-              <div class="space_above">Escapable raw text elements can have text and character references (HTML entities)</div>
-            </div>
+    </code>
+          </div>
+          <h2>Notes</h2>
+          <div class="content">
+            Escapable raw text elements can have text and character references (HTML entities)
+          </div>
 
-            <h2>References</h2>
-            <div class="content">
-              <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#the-title-element-0">W3C
-                title</a>
-            </div>
-            <div class="content">
-              <a href="https://stackoverflow.com/q/11037123">HTML entity code in title tags</a> (Stack Overflow)
-            </div>
+          <h2>References</h2>
+          <div class="content">
+            <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#the-title-element-0">W3C
+              title</a>
+          </div>
+          <div class="content">
+            <a href="https://stackoverflow.com/q/11037123">HTML entity code in title tags</a> (Stack Overflow)
           </div>
         </div>
       </div>
-
-      <!--  Templates -->
-      <template id="prevPageTemplate">head</template> <!--PREVIOUS PAGE-->
-
-      <template id="pageTitleTemplate">title</template> <!--PAGE TITLE-->
-
-      <template id="nextPageTemplate">body</template><!--NEXT PAGE-->
     </div>
 
-    <script>
+    <!--  Templates -->
+    <template id="prevPageTemplate">head</template> <!--PREVIOUS PAGE-->
 
-      //page title
-      var pageTitleText = pageTitleTemplate.innerHTML;
-      document.title = pageTitleText;
-      banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
-      pageTitle.innerHTML = pageTitleText;
+    <template id="pageTitleTemplate">title</template> <!--PAGE TITLE-->
 
-      // previous page
-      var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
-      prevPage.setAttribute("href", prevPageURL)
+    <template id="nextPageTemplate">body</template><!--NEXT PAGE-->
+  </div>
 
-      // next page
-      var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
-      nextPage.setAttribute("href", nextPageURL)
+  <script>
 
-    </script>
-  </body>
+    //page title
+    var pageTitleText = pageTitleTemplate.innerHTML;
+    document.title = pageTitleText;
+    banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+    pageTitle.innerHTML = pageTitleText;
+
+    // previous page
+    var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+    prevPage.setAttribute("href", prevPageURL)
+
+    // next page
+    var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+    nextPage.setAttribute("href", nextPageURL)
+
+  </script>
+</body>
 
 </html>
