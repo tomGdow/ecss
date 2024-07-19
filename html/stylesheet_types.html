@@ -15,9 +15,13 @@
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
     <style>
-        div.container { counter-reset: types 0;}
+        div.container {
+            counter-reset: types 0;
+        }
 
-        div.container .styletype { counter-increment: types; }
+        div.container .styletype {
+            counter-increment: types;
+        }
 
         div.container .styletype:before {
             content: counter(types) ". "
@@ -34,19 +38,20 @@
         }
 
         div.content>div:before {
-            content:  counter(types) "."counter(section) ".  "
+            content: counter(types) "." counter(section) ".  "
         }
-        
+
         div.content ol {
-            list-style-type:none;
+            list-style-type: none;
             counter-reset: notes 0;
         }
+
         div.content ol>li {
             counter-increment: notes;
         }
-    
+
         div.content ol>li:before {
-            content:  counter(types) "."counter(section) "." counter(notes) ".  ";
+            content: counter(types) "." counter(section) "." counter(notes) ".  ";
             color: var(--primary-green);
         }
 
@@ -57,7 +62,9 @@
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -100,7 +107,7 @@
 
 &lt;link href="fancy.css" rel="alternate stylesheet" title="Fancy"&gt;</pre>
                     </div><!--content-->
-
+                    <hr>
                     <h2 class="styletype">Internal Stylesheet</h2>
                     <div class="content">
                         <div>Head Section</div>
@@ -127,18 +134,19 @@
                         <canvas id="internalStyle" width="100" height="60"></canvas>
                         <div>Notes</div>
                         <ol>
-                            <li>The internal stylesheet, although appearing before the external stylesheet, 
+                            <li>The internal stylesheet, although appearing before the external stylesheet,
                                 takes precedence as it is the <code>default-style</code> ("preferred")
                             </li>
                             <li class="space_above">The external stylsheet is completly disabled</li>
-                            <li class="space_above">For this tecnique to work, <em>both</em> stylesheets must have a <code>title</code> attribute,
+                            <li class="space_above">For this tecnique to work, <em>both</em> stylesheets must have a
+                                <code>title</code> attribute,
                                 otherwise the stylesheet is <em>persistent</em> (see entry for
                                 <a href="./link.html">link</a>)
                             </li>
                         </ol>
                     </div><!--div.content-->
 
-
+                    <hr>
                     <h2 class="styletype">Inline style</h2>
                     <div class="content">
                         <div>Head</div>
@@ -159,6 +167,7 @@
                             <li class="nostyle">Note that inline <code>style=</code> overrides <code>id</code></li>
                         </ol>
                     </div>
+                    <hr>
                 </div>
             </div>
         </div>
