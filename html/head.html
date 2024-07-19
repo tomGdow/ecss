@@ -1,120 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <title>[PAGE TITLE]</title>
-    <meta name="viewport" content="width=device-width initial-scale=1.0">
-    <meta name="keywords" content="css, html">
-    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
-    <meta name="google" content="notranslate">
-    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
-    <link rel="stylesheet" href="../css/ecss.css" title="Default">
-    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
-    <noscript>
-      <link rel="stylesheet" href="../css/ecss_nojs.css">
-    </noscript>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>[PAGE TITLE]</title>
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta name="keywords" content="css, html">
+  <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+  <meta name="google" content="notranslate">
+  <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+  <link rel="stylesheet" href="../css/ecss.css" title="Default">
+  <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+  <noscript>
+    <link rel="stylesheet" href="../css/ecss_nojs.css">
+  </noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+</head>
 
-  <body>
-    <div class="container">
-      <div class="grid-container">
-        <div class="grid-item-1">
-          <div class="banner-container">
-            <div class="banner-item-1">
-              <a href="../index.html">
-                <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
-                     alt="gravatar image of tomgdow">
-              </a>
-            </div>
-          </div>
-          <div class="banner-item-2">
-            <span id="banner_part_first">html </span>
-            <span class="primary-orange" id="banner_part_second"></span>
+<body>
+  <div class="container">
+    <div class="grid-container">
+      <div class="grid-item-1">
+        <div class="banner-container">
+          <div class="banner-item-1">
+            <a href="../index.html">
+              <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                alt="gravatar image of tomgdow">
+            </a>
           </div>
         </div>
-        <div class="grid-item-2"></div>
-        <div class="grid-item-3">
-          <div class="site-container">
-            <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+        <div class="banner-item-2">
+          <span id="banner_part_first">html </span>
+          <span class="primary-orange" id="banner_part_second"></span>
+        </div>
+      </div>
+      <div class="grid-item-2"></div>
+      <div class="grid-item-3">
+        <div class="site-container">
+          <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
 
-            <div id="navbar">
-              <a href="PREV.html" id="prevPage" accesskey="p">prev</a>&nbsp;&nbsp;
-              <a href="../index.html" accesskey="h">home</a>&nbsp;&nbsp;
-              <a href="NEXT.html" id="nextPage" accesskey="n">next</a>&nbsp;&nbsp;
-              <a href="./search.html" accesskey="s">search</a>
-            </div>
-            <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-            <div class="content">
-              <pre>
+          <div id="navbar">
+            <a href="PREV.html" id="prevPage" accesskey="p">prev</a>&nbsp;&nbsp;
+            <a href="../index.html" accesskey="h">home</a>&nbsp;&nbsp;
+            <a href="NEXT.html" id="nextPage" accesskey="n">next</a>&nbsp;&nbsp;
+            <a href="./search.html" accesskey="s">search</a>
+          </div>
+          <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+          <div class="content">
+            <pre>
     &lt;head&gt;
         &lt;title&gt;Document&lt;/title&gt;
     &lt;/head&gt;
               </pre>
-              <ol>
-                <li>The <code>head</code> element represents a collection of metadata for the document </li>
-                <li>
-                  One or more elements of metadata content, of which exactly one is a <code>title</code>
-                  element is required in almost all cases.
-                </li>
-                <li>
-                  HTML5-compliant browsers automatically create a <code>head</code> element if its tags are omitted in the markup
-                </li>
-                <li>
-                  If the document is an <code>iframe</code> <code>srcdoc</code> document or if <code>title</code> information is available from a
-                  higher-level protocol (such as email), <code>head</code> may contain zero or more elements of metadata content (W3C)
-                </li>
-                <li>
-                  The <code>title</code> element is a required child in most situations, 
-                  but when a higher-level protocol provides title information, 
-                  e.g. in the Subject line of an e-mail when HTML is used as an e-mail authoring format, 
-                  the <code>title</code> element can be omitted.
+            <ol>
+              <li>The <code>head</code> element represents a collection of metadata for the document </li>
+              <li>
+                One or more elements of metadata content, of which exactly one is a <code>title</code>
+                element is required in almost all cases.
+              </li>
+              <li>
+                HTML5-compliant browsers automatically create a <code>head</code> element if its tags are omitted in the
+                markup
+              </li>
+              <li>
+                If the document is an <code>iframe</code> <code>srcdoc</code> document or if <code>title</code>
+                information is available from a
+                higher-level protocol (such as email), <code>head</code> may contain zero or more elements of metadata
+                content (W3C)
+              </li>
+              <li>
+                The <code>title</code> element is a required child in most situations,
+                but when a higher-level protocol provides title information,
+                e.g. in the Subject line of an e-mail when HTML is used as an e-mail authoring format,
+                the <code>title</code> element can be omitted.
 
-                </li>
-              </ol>
+              </li>
+            </ol>
 
-            </div>
+          </div>
 
-            <h2>References</h2>
-            <div class="content">
-              <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#the-head-element-0">W3C head</a>
-            </div>
+          <h2>References</h2>
+          <div class="content">
+            <a href="https://www.w3.org/TR/2011/WD-html5-20110405/semantics.html#the-head-element-0">W3C head</a>
           </div>
         </div>
       </div>
-
-      <!--  Templates -->
-
-
-      <template id="prevPageTemplate">html</template> <!--PREVIOUS PAGE-->
-
-      <template id="pageTitleTemplate">head</template> <!--PAGE TITLE-->
-
-      <template id="nextPageTemplate">title</template><!--NEXT PAGE-->
     </div>
 
-    <script>
-
-      //page title
-      var pageTitleText = pageTitleTemplate.innerHTML;
-      document.title = pageTitleText;
-      banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
-      pageTitle.innerHTML = pageTitleText;
+    <!--  Templates -->
 
 
-      // previous page
-      var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
-      prevPage.setAttribute("href", prevPageURL)
-      // console.log(prevPageTemplate.innerHTML)
+    <template id="prevPageTemplate">html</template> <!--PREVIOUS PAGE-->
 
-      // next page
-      var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
-      nextPage.setAttribute("href", nextPageURL)
+    <template id="pageTitleTemplate">head</template> <!--PAGE TITLE-->
 
-    </script>
-  </body>
+    <template id="nextPageTemplate">title</template><!--NEXT PAGE-->
+  </div>
+
+  <script>
+
+    //page title
+    var pageTitleText = pageTitleTemplate.innerHTML;
+    document.title = pageTitleText;
+    banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+    pageTitle.innerHTML = pageTitleText;
+
+
+    // previous page
+    var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+    prevPage.setAttribute("href", prevPageURL)
+    // console.log(prevPageTemplate.innerHTML)
+
+    // next page
+    var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+    nextPage.setAttribute("href", nextPageURL)
+
+  </script>
+</body>
 
 </html>
