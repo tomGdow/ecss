@@ -48,6 +48,15 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        input {
+            all: revert;
+        }
+
+        summary {
+            color: var(--primary-green);
+            padding-left: 5%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +94,201 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li class="space_above">
+                                The <code>datalist</code> element contains a set of <code>option</code> elements that
+                                represent the permissible or recommended options
+                                available to choose from within other controls
+                            </li>
+                            <li class="space_above">
+                                To bind the <code>datalist</code> element to the control
+                                <ol>
+                                    <li class="space_above">
+                                        Give it a unique identifier in the <code>id</code> attribute
+                                    </li>
+                                    <li class="space_above">
+                                        Add the <code>list</code>
+                                        attribute to the <code>input</code> element with the same identifier as value
+                                    </li>
+                                    <li class="space_above">
+                                        <pre>
+&lt;input <span class="highlight2">list="myid"</span> &gt;
+&lt;datalist <span class="highlight2">id="myid"</span> &gt;&lt;/datalist&gt; </pre>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                Only certain types of <code>input</code> support this behavior, and it can also vary
+                                from browser to browser
+                            </li>
+                            <li class="space_above">
+                                <code>datalist</code> is not a replacement for <code>select</code>
+                                <ol>
+                                    <li class="space_above">
+                                        A <code>datalist</code> does not represent an input itself;
+                                        it is a list of suggested
+                                        values for an associated control
+                                    </li>
+                                    <li class="space_above">
+                                        The control can still accept any value that passes
+                                        vaildation, even if it
+                                        is not in this suggestion list
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                In the rendering, the <code>datalist</code> element represents nothing and it, along
+                                with its
+                                children, should be hidden
+                            </li>
+                            <li class="space_above">
+                                Recommended values in types
+                                <ol>
+                                    <li><code>text</code></li>
+                                    <li><code>search</code></li>
+                                    <li><code>url</code></li>
+                                    <li><code>tel</code></li>
+                                    <li><code>email</code></li>
+                                    <li><code>number</code></li>
+                                </ol>
+                                are displayed in a drop-down menu when user clicks
+                                or double-clicks on the control
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;form id="form_one"&gt;
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+    &lt;input type="hidden" name="param1" value="Your choice is "&gt;
+    &lt;label for="ice-cream-choice"&gt;Choose a flavor:&lt;/label&gt;
+    &lt;input list="ice-cream-flavors" id="ice-cream-choice" name="param2" /&gt;
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+    &lt;datalist id="ice-cream-flavors"&gt;
+        &lt;option value="Chocolate"&gt;&lt;/option&gt;
+        &lt;option value="Coconut"&gt;&lt;/option&gt;
+        &lt;option value="Mint"&gt;&lt;/option&gt;
+        &lt;option value="Strawberry"&gt;&lt;/option&gt;
+        &lt;option value="Vanilla"&gt;&lt;/option&gt;
+    &lt;/datalist&gt;
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+    &lt;input type="submit"&gt;
+
+&lt;/form&gt;
+
+&lt;output id="user_choice"&gt;&lt;/output&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>Browser</h3>
+                            <form id="form_one">
+
+                                <input type="hidden" name="param1" value="Your choice is ">
+                                <label for="ice-cream-choice">Choose a flavor:</label>
+                                <input list="ice-cream-flavors" id="ice-cream-choice" name="param2" />
+
+                                <datalist id="ice-cream-flavors">
+                                    <option value="Chocolate"></option>
+                                    <option value="Coconut"></option>
+                                    <option value="Mint"></option>
+                                    <option value="Strawberry"></option>
+                                    <option value="Vanilla"></option>
+                                </datalist>
+
+                                <input type="submit">
+
+                            </form>
+                            <output id="user_choice"></output>
+                        </div>
+                        <details>
+                            <summary>JavaScript</summary>
+                            <pre>
+async function sendData() {
+
+    const formData = new FormData(form_one);
+
+    try {
+        const response = await fetch("https://php.tomgdow.com", {
+            method: "POST",
+            body: formData
+        });
+
+        let result = await response.text();
+        console.log(result);
+        let responseArray = result.split('&');
+        document.getElementById('user_choice').value = responseArray[0] + responseArray[1];
+
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+document.getElementById('form_one').addEventListener('submit', function (event) {
+
+    event.preventDefault();
+
+    sendData();
+
+});
+
+                            </pre>
+                        </details>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (Range)</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+
+&lt;label for="tick"&gt;Tip amount&lt;/label&gt;
+
+&lt;input type="range" list="tickmarks" min="0" max="100" id="tick" name="tick" /&gt;
+
+&lt;output id="tip"&gt;&lt;/output&gt;
+
+&lt;datalist id="tickmarks"&gt;
+    &lt;option value="0"&gt;&lt;/option&gt;
+    &lt;option value="20"&gt;&lt;/option&gt;
+    &lt;option value="40"&gt;&lt;/option&gt;
+    &lt;option value="60"&gt;&lt;/option&gt;
+    &lt;option value="80"&gt;&lt;/option&gt;
+&lt;/datalist&gt; </pre>
+                        </div>
+
+                        <div>
+                            <h3>Browser</h3>
+
+                            <label for="tick">Tip amount</label>
+                            <input type="range" list="tickmarks" min="0" max="100" id="tick" name="tick" /><output
+                                id="tip"></output>
+                            <datalist id="tickmarks">
+                                <option value="0"></option>
+                                <option value="20"></option>
+                                <option value="40"></option>
+                                <option value="60"></option>
+                                <option value="80"></option>
+                            </datalist>
+                        </div>
+                        <details>
+                            <summary>JavaScript</summary>
+                            <pre>
+
+document.getElementById('tip').value = document.getElementById('tick').value
+
+document.getElementById('tick').addEventListener('input', function () {
+    document.getElementById('tip').value = this.value
+})
+                            </pre>
+                        </details>
+
+                    </div><!--content-->
+                    <hr>
 
                     <h2>References</h2>
                     <div class="content ref">
@@ -135,6 +329,46 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        // form
+        async function sendData() {
+
+            const formData = new FormData(form_one);
+
+            try {
+                const response = await fetch("https://php.tomgdow.com", {
+                    method: "POST",
+                    body: formData
+                });
+
+                let result = await response.text();
+                console.log(result);
+                let responseArray = result.split('&');
+                document.getElementById('user_choice').value = responseArray[0] + responseArray[1];
+
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        document.getElementById('form_one').addEventListener('submit', function (event) {
+
+            event.preventDefault();
+
+            sendData();
+
+
+        });
+
+
+        //range
+
+
+        document.getElementById('tip').value = document.getElementById('tick').value
+        document.getElementById('tick').addEventListener('input', function () {
+            document.getElementById('tip').value = this.value
+        })
+
 
     </script>
 </body>
