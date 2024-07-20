@@ -19,6 +19,16 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
+  <style>
+    .frequent_visit {
+      margin-top: 5rem;
+    }
+
+    #akey {
+      margin-left: 3rem;
+      color: gray;
+    }
+  </style>
 </head>
 
 <body>
@@ -131,6 +141,10 @@
             <option value="web_safe_fonts"></option>
             <option value="well_formed_element"></option>
           </datalist>
+
+          <div class="frequent_visit">
+            <a href="./references.html" accesskey="r">references</a><output id="akey"></output>
+          </div>
 
         </div>
       </div>
@@ -249,6 +263,13 @@
 
     })
 
+    document.querySelector(".frequent_visit").addEventListener('mouseover', function () {
+      document.getElementById("akey").value = "accesskey='r'"
+    });
+
+    document.querySelector(".frequent_visit").addEventListener('mouseleave', function () {
+      document.getElementById("akey").value = ""
+    });
   </script>
 </body>
 
