@@ -48,6 +48,14 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        dt {
+            font-weight: bold;
+        }
+
+        dd {
+            margin-bottom: 1em;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +93,242 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>dl</code> element represents an association list consisting of zero or more
+                                name-value groups (<strong>a description list</strong>)
+                            </li>
+                            <li>
+                                Each group must consist of one or more names (<code>dt</code> elements) followed by one
+                                or more values (<code>dd</code> elements)
+                            </li>
+                            <li>
+                                Within a single <code>dl</code> element, there should not be more than one
+                                <code>dt</code> element for each name
+                            </li>
+                            <li>
+                                Name-value groups may be terms and definitions, metadata topics and values, questions
+                                and answers, or any other groups of name-value data
+                            </li>
+                            <li>
+                                The values within a group are alternatives; multiple paragraphs forming part of the same
+                                value must all be given within the same <code>dd</code>element
+                            </li>
+                            <li>Common uses for this element are to implement a glossary or to display metadata (a list
+                                of key-value pairs)</li>
+                        </ol>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (Basic)</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;dl&gt;
+    &lt;dt&gt;Definition Term&lt;/dt&gt;
+    &lt;dd&gt;definition of term&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+                        </div>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <div>
+                            <h3>Browser</h3>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                            <dl>
+                                <dt>Definition Term</dt>
+                                <dd>definition of term</dd>
+                            </dl>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (MDN)</h2>
+                    <div class="content">
+                        <div>
+                            <div>
+                                <h3>HTML</h3>
+                                <pre>
+&lt;dl&gt;
+    &lt;dt&gt;Beast of Bodmin&lt;/dt&gt;
+    &lt;dd&gt;A large feline inhabiting Bodmin Moor&lt;/dd&gt;
 
+    &lt;dt&gt;Morgawr&lt;/dt&gt;
+    &lt;dd&gt;A sea serpent&lt;/dd&gt;
+
+    &lt;dt&gt;Owlman&lt;/dt&gt;
+    &lt;dd&gt;A giant owl-like creature&lt;/dd&gt;
+&lt;/dl&gt; </pre>
+                            </div>
+                            <h3>Browser</h3>
+
+                            <dl>
+                                <dt>Beast of Bodmin</dt>
+                                <dd>A large feline inhabiting Bodmin Moor</dd>
+
+                                <dt>Morgawr</dt>
+                                <dd>A sea serpent</dd>
+
+                                <dt>Owlman</dt>
+                                <dd>A giant owl-like creature</dd>
+                            </dl>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (Single term and description)</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;dl&gt;
+    &lt;dt&gt;Firefox&lt;/dt&gt;
+    &lt;dd&gt;
+        A free, open source, cross-platform, graphical web browser developed by the
+        Mozilla Corporation and hundreds of volunteers
+    &lt;/dd&gt;
+&lt;/dl&gt; </pre>
+                        </div>
+
+                        <div>
+                            <h3>Browser</h3>
+                            <dl>
+                                <dt>Firefox</dt>
+                                <dd>
+                                    A free, open source, cross-platform, graphical web browser developed by the
+                                    Mozilla Corporation and hundreds of volunteers
+                                </dd>
+                            </dl>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (Multiple terms, single description)</h2>
+                    <div class="content">
+                        <div>
+                            <div>
+                                <h3>HTML</h3>
+                                <pre>
+&lt;dl&gt;
+    &lt;dt&gt;Firefox&lt;/dt&gt;
+    &lt;dt&gt;Mozilla Firefox&lt;/dt&gt;
+    &lt;dt&gt;Fx&lt;/dt&gt;
+    &lt;dd&gt;
+        A free, open source, cross-platform, graphical web browser developed by the
+        Mozilla Corporation and hundreds of volunteers
+    &lt;/dd&gt;
+&lt;/dl&gt; </pre>
+                            </div>
+                            <h3>Browser</h3>
+                            <dl>
+                                <dt>Firefox</dt>
+                                <dt>Mozilla Firefox</dt>
+                                <dt>Fx</dt>
+                                <dd>
+                                    A free, open source, cross-platform, graphical web browser developed by the
+                                    Mozilla Corporation and hundreds of volunteers
+                                </dd>
+                            </dl>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (Single term, multiple descriptions)</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;dl&gt;
+    &lt;dt&gt;Firefox&lt;/dt&gt;
+    &lt;dd&gt;
+        A free, open source, cross-platform, graphical web browser developed by the
+        Mozilla Corporation and hundreds of volunteers.
+    &lt;/dd&gt;
+    &lt;dd&gt;
+        The Red Panda also known as the Lesser Panda, Wah, Bear Cat or Firefox, is a
+        mostly herbivorous mammal, slightly larger than a domestic cat (60 cm long).
+    &lt;/dd&gt;
+&lt;/dl&gt; </pre>
+                        </div>
+
+                        <div>
+                            <h3>Browser</h3>
+                            <dl>
+                                <dt>Firefox</dt>
+                                <dd>
+                                    A free, open source, cross-platform, graphical web browser developed by the
+                                    Mozilla Corporation and hundreds of volunteers.
+                                </dd>
+                                <dd>
+                                    The Red Panda also known as the Lesser Panda, Wah, Bear Cat or Firefox, is a
+                                    mostly herbivorous mammal, slightly larger than a domestic cat (60 cm long).
+                                </dd>
+                            </dl>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (metadata)</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;dl&gt;
+    &lt;dt&gt;Name&lt;/dt&gt;
+    &lt;dd&gt;Godzilla&lt;/dd&gt;
+
+    &lt;dt&gt;Born&lt;/dt&gt;
+    &lt;dd&gt;1952&lt;/dd&gt;
+
+    &lt;dt&gt;Birthplace&lt;/dt&gt;
+    &lt;dd&gt;Japan&lt;/dd&gt;
+    
+    &lt;dt&gt;Color&lt;/dt&gt;
+    &lt;dd&gt;Green&lt;/dd&gt;
+&lt;/dl&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>Browser</h3>
+
+                            <dl>
+                                <dt>Name</dt>
+                                <dd>Godzilla</dd>
+                                <dt>Born</dt>
+                                <dd>1952</dd>
+                                <dt>Birthplace</dt>
+                                <dd>Japan</dd>
+                                <dt>Color</dt>
+                                <dd>Green</dd>
+                            </dl>
+                        </div>
+
+                        <div>
+                            <h3>Notes</h3>
+                            Description lists are useful for displaying metadata as a list of key-value pairs.
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
                     <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        Definition list: <span class="white_on_black">Ltd</span> (dl&rarr;dt&rarr;dd)
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl">MDN: description list
+                            element</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-dl-element">W3C:
+                            dl element</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-dt-element">W3C:
+                            dt element</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-dd-element">W3C:
+                            dd element</a>
+                    </div>
                 </div>
             </div>
         </div>
