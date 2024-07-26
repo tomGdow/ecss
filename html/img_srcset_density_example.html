@@ -48,11 +48,17 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
-        
+
         img#elva {
-          width: 320px;
+            width: 320px;
         }
 
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,40 +110,44 @@
                                 </ol>
 
                             </li>
-                            <li>Breakpoints are at <code>850px</code> and <code>550px</code>
-                                <ol>
-                                    <li>
-                                        At <code>850px</code> and above, the image with a <code>width</code> of
-                                        <code>640px</code> is shown
-                                    </li>
-                                    <li>
-                                        At <code>550px</code> and above, the image with a <code>width</code> of
-                                        <code>480px</code> is shown
-                                    </li>
-                                    <li>
-                                        Below <code>550px</code>, the image with a <code>width</code> of
-                                        <code>320px</code> is shown
-                                    </li>
-                                </ol>
+                            <li>
+                                Remember to refresh page after changing from <code>1x</code> to <code>2x</code> etc in
+                                responsive design mode!
                             </li>
+                            <li>Image <code>width</code> attribute has been set to <code>320px</code> with css</li>
                         </ol>
 
                     </div><!--content-->
 
                     <h2 class="example">Example</h2>
                     <div class="content">
-                        <div>
+                        <div class="center">
                             <img id="elva" srcset="../images/elva-fairy-marked-320w.jpg, 
                                  ../images/elva-fairy-marked-480w.jpg 1.5x,
-                                 ../images/elva-fairy-marked-640w.jpg 2x",
-                                src="../images/elva-fairy-640w.jpg" 
+                                 ../images/elva-fairy-marked-640w.jpg 2x" , src="../images/elva-fairy-640w.jpg"
                                 alt="Picture of Elva dressed as a fairy">
                         </div>
 
                         <h3>HTML</h3>
                         <div>
                             <pre>
-    </pre>
+&lt;img 
+    id="elva" 
+
+    srcset="../images/elva-fairy-marked-320w.jpg, 
+            ../images/elva-fairy-marked-480w.jpg 1.5x,
+            ../images/elva-fairy-marked-640w.jpg 2x" , 
+
+    src="../images/elva-fairy-640w.jpg"
+
+    alt="Picture of Elva dressed as a fairy"&gt;</pre>
+                        </div>
+                        <h3>CSS</h3>
+                        <div>
+                            <pre>
+img#elva {
+    width: 320px;
+} </pre>
                         </div>
 
                     </div><!--content-->
