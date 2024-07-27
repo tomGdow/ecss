@@ -48,6 +48,12 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        #thecat {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +91,30 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="coentent">
+                        <img id="thecat" srcset="../images/kitten-large-650.png 650w,
+    ../images/kitten-medium-465.png 465w,
+    ../images/kitten-small-330.png 330w" sizes="(min-width:850px) 650px, (min-width:600px) 465px, 330px"
+                            src="./images/kitten-large-650.png" alt="Large picture of kitten">
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">HTML</h2>
+                    <div class="content">
+                        <pre>
+&lt;img id="thecat" 
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+    srcset = "../images/kitten-large-650.png 650w,
+               ../images/kitten-medium-465.png 465w,
+               ../images/kitten-small-330.png 330w" 
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+    sizes =  "(min-width:850px) 650px, 
+              (min-width:600px) 465px, 
+              330px"
+
+    src = "./images/kitten-large-650.png" 
+    
+    alt = "Large picture of kitten"&gt; </pre>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
@@ -103,7 +123,6 @@
         </div>
 
         <!--  Templates -->
-
 
         <template id="prevPageTemplate">img_srcset_sizes_example</template> <!--PREVIOUS PAGE-->
 
