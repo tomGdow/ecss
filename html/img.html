@@ -85,7 +85,159 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <h3>img</h3>
+                        <ol>
+                            <li>
+                                The <code>img</code> element embeds an image into the document
+                            </li>
+                            <li><code>src</code><br>
+                                The <code>src</code> attribute is required, and contains the path to the image you want
+                                to embed
+                            </li>
+                            <li>
+                                <code>alt</code><br>
+                                The <code>alt</code> attribute holds a textual replacement for the image, <em>which
+                                    is mandatory</em> and incredibly useful for accessibility
+                            </li>
+                            <li><code>usemap</code>
+                                <ol>
+                                    <li>
+                                        The partial <code>url</code>, <span class="highlight2">starting with
+                                            <code>#</code></span>,
+                                        of an <code>image map</code>
+                                        associated with the element
+                                    </li>
+                                    <li>
+                                        Note that you cannot use this attribute if the <code>img</code> element is
+                                        inside an <code>a</code> element or a <code>button</code> element
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <h3>Responsive Images</h3>
+                        <h4>Density Method</h4>
+                        <h4>Resolution Switching (srcset/sizes)</h4>
+                        That is, display identical image content, but make the image size
+                        larger or smaller depending on the device <br>
+                        This can be done with two additional <code>img</code> attributes
+                        <ol>
+                            <li>
+                                <code>srcset</code><!--li one-->
+                                <ol>
+                                    <li>
+                                        <code>src</code> defines the set of images that the browser <em>may</em> choose
+                                        from
+                                    </li>
+                                    <li>
+                                        The intrinsic image size in <code>px</code> but using the <code>w</code> unit
+                                        (see below)
+                                    </li>
+                                    <li>
+                                        Each set of image information is separated from the previous one by a comma
+                                    </li>
+                                    <li>
+                                        Each contains:
+                                        <ol>
+                                            <li>
+                                                An image filename (
+                                                <code>elva-fairy-480w.jpg</code>)
+                                            </li>
+                                            <li>A space</li>
+                                            <li>
+                                                The image's intrinsic width in pixels using the <code>w</code> unit
+                                                (<code>480w</code>)
+                                            </li>
+                                            <li>
+                                                Note the use of the <code>w</code> unit, <em>not</em>
+                                                <code>px</code> as you might expect
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <code>elva-fairy-480w.jpg</code>
+                                        <ol>
+                                            <li>
+                                                Has dimensions of
+                                                <code>480 &times; 320</code>
+                                            </li>
+                                            <li>
+                                                (&#8984; <code>I</code> on Mac)
+                                            </li>
+                                            <li>
+                                                Thus the <code>srcset</code> entry
+                                                for this image is: <br>
+                                                <span class="highlight2">
+                                                    <code>srcset="elva-fairy-480w.jpg 480w"</code>
+                                                </span>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li><!--li One-->
+
+                            <li>
+                                <code>sizes</code>
+                                <ol>
+                                    <li>
+                                        <code>sizes</code>defines a set of media conditions (e.g. screen widths) and
+                                        indicates what image size would be best to choose, when
+                                        certain media conditions are true
+                                    </li>
+                                    <li>These are <code>hints</code> to the browser</li>
+                                    <li>
+                                        In this case, before each comma we
+                                        write
+                                        <ol>
+                                            <li>
+                                                A media condition, <code>(max-width:600px)</code> ("when the viewport
+                                                width is 600 pixels or less")
+                                            </li>
+                                            <li>A space</li>
+                                            <li>
+                                                The <strong>width of the slot the image will fill</strong> when the
+                                                media condition is
+                                                true (<code>480px</code>)
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        Note: In <code>sizes</code>, you can use any length value.
+
+                                        <ol>
+                                            <li>
+                                                Rather than
+                                                providing an absolute width (for example, <code>480px</code>),
+                                                you can alternatively provide a width relative to the viewport (for
+                                                example, <code>50vw</code>)
+                                            </li>
+                                            <li>
+                                                However, you cannot use a percentage
+                                                as the slot width
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+
+                                        The last slot width has no
+                                        media condition: this is the default that is
+                                        chosen when none of the media conditions are true.
+
+                                    </li>
+                                    <li>
+                                        The browser <em>ignores
+                                            everything after the first matching condition</em>: ordering is important.
+                                    </li>
+                                    <li>
+                                        <pre>
+sizes = "(min-width: 850px) 640px, 
+         (min-width: 550px) 480px, 
+          320px"</pre>
+                                    </li>
+                                </ol>
+                            </li><!--li Two-->
+                        </ol>
+                    </div><!--content-->
 
                     <h2>Example</h2>
                     <div class="content"></div><!--content-->
