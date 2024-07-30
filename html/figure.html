@@ -48,6 +48,15 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        figcaption {
+            background-color: revert;
+            color: revert;
+        }
+
+        .poem {
+            white-space: pre;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,10 +94,185 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li class="space_above">
+                                The <code>figure</code> element represents self-contained content, potentially with an
+                                optional caption, which is specified
+                                using the <code>figcaption</code> element
+                            </li>
+                            <li class="space_above">
+                                The figure, its caption, and its contents are referenced as a single unit
+                            </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                            <li class="space_above">
+                                A caption can be associated with the <code>figure</code> element by inserting a
+                                <code>figcaption</code> inside it (as the first or the last
+                                child) (MDN)
+                            </li>
+                            <li class="space_above">
+                                The first <code>figcaption</code> element child of the element, if any, represents the
+                                caption of the figure element's contents
+                            </li>
+
+                            <li class="space_above">
+                                If there is no child <code>figcaption</code> element, then there is no caption
+                            </li>
+
+                            <li class="space_above">
+                                The <code>figure</code> element can be used to annotate illustrations, diagrams, photos,
+                                code
+                                listings, etc, that are referred to from the main content of the document, but that
+                                could,
+                                without affecting the flow of the document, be moved away from that primary content,
+                                e.g. to
+                                the side of the page, to dedicated pages, or to an appendix
+                            </li>
+                        </ol>
+                    </div> <!--content-->
+                    <hr>
+
+                    <h2 class="example">Example (Apples)</h2>
+                    <div class="content">
+                        <figure>
+                            <figcaption>A Picture of Apples (webp format)</figcaption>
+                            <img src="../images/apples.webp" alt="Picture of Apples">
+                        </figure>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;figure&gt;
+
+    &lt;figcaption&gt;A Picture of Apples (webp format)&lt;/figcaption&gt;
+
+    &lt;img src="../images/apples.webp" alt="Picture of Apples"&gt;
+
+&lt;/figure&gt; </pre>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+
+                    <h2 class="example">Example (Quote)</h2>
+                    <div class="content">
+
+                        <figure>
+                            <figcaption><b>Edsger Dijkstra:</b></figcaption>
+                            <blockquote>
+                                If debugging is the process of removing software bugs,
+                                then programming must
+                                be the process of putting them in.
+                            </blockquote>
+                        </figure>
+
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;figure&gt;
+
+    &lt;figcaption&gt;
+        &lt;b&gt;Edsger Dijkstra:&lt;/b&gt;
+    &lt;/figcaption&gt;
+
+    &lt;blockquote&gt;
+        If debugging is the process of removing software bugs, 
+        then programming must be the process of putting 
+        them in
+    &lt;/blockquote&gt;
+
+&lt;/figure&gt; </pre>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (Poem)</h2>
+                    <div class="content">
+
+                        <figure>
+                            <p class="poem">
+                                Bid me discourse, I will enchant thine ear, Or like a fairy trip upon the
+                                green, Or, like a nymph, with long dishevelled hair, Dance on the sands, and
+                                yet no footing seen: Love is a spirit all compact of fire, Not gross to
+                                sink, but light, and will aspire.
+                            </p>
+                            <figcaption>
+                                <cite>Venus and Adonis</cite>, by William Shakespeare
+                            </figcaption>
+                        </figure>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;figure&gt;
+
+    &lt;p class="poem"&gt;
+        Bid me discourse, I will enchant thine ear, Or like a fairy trip upon the
+        green, Or, like a nymph, with long dishevelled hair, Dance on the sands, and
+        yet no footing seen: Love is a spirit all compact of fire, Not gross to
+        sink, but light, and will aspire.
+    &lt;/p&gt;
+
+    &lt;figcaption&gt;
+        &lt;cite&gt;Venus and Adonis&lt;/cite&gt;, by William Shakespeare
+    &lt;/figcaption&gt;
+                
+    &lt;/figure&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+    .poem {
+        white-space: pre;
+    } </pre>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (Code, W3C)</h2>
+                    <div class="content">
+
+                        <p>In <a href="#l4">listing 4</a> we see the primary core interface
+                            API declaration.</p>
+                        <figure id="l4">
+                            <figcaption>Listing 4. The primary core interface API declaration.</figcaption>
+                            <pre><code>interface PrimaryCore {
+   boolean verifyDataLine();
+   void sendData(in sequence&lt;byte> data);
+   void initSelfDestruct();
+  }</code></pre>
+                        </figure>
+                        <div>
+                            <h3>HTML (W3C)</h3>
+                            <pre><code>
+&lt;p&gt;
+    In 
+        &lt;a href="#l4"&gt;listing 4&lt;/a&gt; 
+
+    we see the primary core interface API declaration.
+&lt;/p&gt;
+
+&lt;figure id="l4"&gt;
+
+     &lt;figcaption&gt;
+          Listing 4. The primary core interface API declaration.
+    &lt;/figcaption&gt;
+
+    &lt;pre&gt;
+        &lt;code&gt;
+            interface PrimaryCore {
+            boolean verifyDataLine();
+            void sendData(in sequence&lt;byte&gt; data);
+            void initSelfDestruct();
+            }
+        &lt;/code&gt;
+    &lt;/pre&gt;
+
+&lt;/figure&gt;
+                            </code></pre>
+
+                        </div>
+
+                    </div><!--content-->
+
+                    <hr>
 
                     <h2>Notes</h2>
                     <div class="content"></div><!--content-->
@@ -97,7 +281,20 @@
                     <div class="content"></div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure">MDN: figure and
+                            figcaption</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-figure-element">W3C:
+                            figure
+                            element</a>
+                    </div>
+                    <div class="content ref">
+                        <a
+                            href="https://www.w3.org/TR/2011/WD-html5-20110405/grouping-content.html#the-figcaption-element">W3C:
+                            figcaption</a>
+                    </div>
                 </div>
             </div>
         </div>
