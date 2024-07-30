@@ -18,14 +18,23 @@
         div.container {
             counter-reset: refCounter 0;
             counter-reset: exampleCounter 0;
+            counter-reset: generalCounter 0;
         }
 
         div.container .example {
             counter-increment: exampleCounter;
         }
 
+        div.container .general_counter {
+            counter-increment: generalCounter;
+        }
+
         div.container .example::before {
             content: counter(exampleCounter) ".  "
+        }
+
+        div.container .general_counter::before {
+            content: counter(generalCounter) ".  "
         }
 
         .ref {
@@ -39,16 +48,71 @@
 
         div.content {
             counter-reset: itemCounter 0;
+            counter-reset: subItemCounter 0;
         }
 
         div.content h3 {
             counter-increment: itemCounter;
         }
 
+        div.content h4 {
+            counter-increment: subItemCounter;
+        }
+
         div.content h3::before {
-            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+            content: counter(generalCounter) "." counter(itemCounter) ".  ";
+        }
+
+        div.content h4::before {
+            content: counter(generalCounter) "." counter(itemCounter) "." counter(subItemCounter) ". ";
+        }
+
+
+        figcaption {
+            all: revert;
+        }
+
+        .show-cite>div>.highlight2 {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        blockquote:before {
+            content: open-quote;
+        }
+
+        blockquote::after {
+            content: close-quote;
+        }
+
+        blockquote {
+            quotes: "“" "”" "‘" "’";
+            padding: 2px 1em;
+            border-color: rgb(30, 171, 218);
+            border-style: none solid none none;
+            border-width: 0.1em;
+        }
+
+        .center_div {
+            text-align: center;
+            /* margin-left: auto; */
+            /* margin-right: auto; */
+        }
+
+
+        @media screen and (min-width: 600px) {
+
+            .show-cite>div>.highlight2 {
+                text-align: center;
+                margin: 1em 2em;
+                padding: 2px 0;
+
+            }
         }
     </style>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -84,7 +148,7 @@
                         <a href="./search.html" accesskey="s">search</a>
                     </div>
 
-                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <h2 class="general_counter" id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
                         <h3>img</h3>
                         <ol>
@@ -116,8 +180,46 @@
                             </li>
                         </ol>
                         <h3>Responsive Images</h3>
-                        <h4>Density Method</h4>
+                        <h4>Resolution Switching (Density Method)</h4>
+
+                        That is, resolution switching with the same size, image but with different resolution
+
+                        <ol>
+                            <li>
+                                To achieve this you can allow the browser to choose an appropriate resolution image by
+                                <ol>
+                                    <li>
+                                        using <code>srcset</code> with <code>x-descriptors</code>
+                                    </li>
+                                    <li>
+                                        <em>Without</em> the use of <code>sizes</code>
+                                    </li>
+                                </ol>
+
+                            </li>
+                            <li>
+                                <pre>
+// HTML   
+
+&lt;img srcset="elva-fairy-320w.jpg, 
+             elva-fairy-480w.jpg 1.5x, 
+             elva-fairy-640w.jpg 2x"
+
+     src="elva-fairy-640w.jpg" 
+     
+     alt="Elva dressed as a fairy" /&gt;
+
+// CSS
+ 
+img#elva {
+width: 320px;
+    } </pre>
+                            </li>
+
+                        </ol>
+
                         <h4>Resolution Switching (srcset/sizes)</h4>
+
                         That is, display identical image content, but make the image size
                         larger or smaller depending on the device <br>
                         This can be done with two additional <code>img</code> attributes
@@ -167,10 +269,9 @@
                                             <li>
                                                 Thus the <code>srcset</code> entry
                                                 for this image is: <br>
-                                                <span class="highlight2">
+                                                <div class="center_div space_above">
                                                     <code>srcset="elva-fairy-480w.jpg 480w"</code>
-                                                </span>
-                                            </li>
+                                                </div>
                                         </ol>
                                     </li>
                                 </ol>
@@ -179,56 +280,59 @@
                             <li>
                                 <code>sizes</code>
                                 <ol>
-                                    <li>
+                                    <li class="space_above">
                                         <code>sizes</code>defines a set of media conditions (e.g. screen widths) and
                                         indicates what image size would be best to choose, when
                                         certain media conditions are true
                                     </li>
-                                    <li>These are <code>hints</code> to the browser</li>
-                                    <li>
+                                    <li class="space_above">
+                                        These are <code>hints</code> to the browser
+                                    </li>
+                                    <li class="space_above">
                                         In this case, before each comma we
                                         write
                                         <ol>
-                                            <li>
+                                            <li class="space_above">
                                                 A media condition, <code>(max-width:600px)</code> ("when the viewport
                                                 width is 600 pixels or less")
                                             </li>
-                                            <li>A space</li>
-                                            <li>
+                                            <li class="space_above">
+                                                A space
+                                            </li>
+                                            <li class="space_above">
                                                 The <strong>width of the slot the image will fill</strong> when the
                                                 media condition is
                                                 true (<code>480px</code>)
                                             </li>
                                         </ol>
                                     </li>
-                                    <li>
+                                    <li class="space_above">
                                         Note: In <code>sizes</code>, you can use any length value.
 
                                         <ol>
-                                            <li>
+                                            <li class="space_above">
                                                 Rather than
                                                 providing an absolute width (for example, <code>480px</code>),
                                                 you can alternatively provide a width relative to the viewport (for
                                                 example, <code>50vw</code>)
                                             </li>
-                                            <li>
+                                            <li class="space_above">
                                                 However, you cannot use a percentage
                                                 as the slot width
                                             </li>
                                         </ol>
                                     </li>
-                                    <li>
-
+                                    <li class="space_above">
                                         The last slot width has no
                                         media condition: this is the default that is
                                         chosen when none of the media conditions are true.
 
                                     </li>
-                                    <li>
+                                    <li class="space_above">
                                         The browser <em>ignores
                                             everything after the first matching condition</em>: ordering is important.
                                     </li>
-                                    <li>
+                                    <li class="space_above">
                                         <pre>
 sizes = "(min-width: 850px) 640px, 
          (min-width: 550px) 480px, 
@@ -239,16 +343,41 @@ sizes = "(min-width: 850px) 640px,
                         </ol>
                     </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="general_counter">Notes</h2>
+                    <div class="content">
+                        <figure>
+                            <blockquote class="show-cite quote"
+                                cite="https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html#using-picture">
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                                Hopefully, we've beaten it into the ground that
+                                <div class="space_above center_div">
+                                    <code>&lt;img srcset = "" 
+                                                sizes = "" 
+                                                alt = "" &gt;</code>
+                                </div>
+                                is for <strong>serving
+                                    differently-sized
+                                    versions of the same image</strong>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                                <div class="space_above">
+                                    The <code>&lt;picture&gt;</code> syntax can do that too, but the difference here is
+                                    that <strong>the browser must
+                                        respect the rules that you set</strong>
+                                </div>
+                                <div>
+                                    That's useful when you want to change more than just the resolution of the loaded
+                                    image to fit the user's situation
+                                </div>
+                                This intentional changing of the image is usually called <em>art direction</em>
+                            </blockquote>
+                            <figcaption>&mdash;<a
+                                    href="https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html#using-picture"><cite>
+                                        CSS Tricks</cite></a></figcaption>
+                        </figure>
 
-                    <h2>References</h2>
+                    </div><!--content-->
+
+                    <h2 class="general_counter">References</h2>
                     <div class="content ref">
                         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">MDN: img</a>
                     </div><!--content-->

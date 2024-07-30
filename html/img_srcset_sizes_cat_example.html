@@ -18,10 +18,19 @@
         div.container {
             counter-reset: refCounter 0;
             counter-reset: exampleCounter 0;
+            counter-reset: generalCounter 0;
+        }
+
+        div.container .general_counter {
+            counter-increment: generalCounter;
         }
 
         div.container .example {
             counter-increment: exampleCounter;
+        }
+
+        div.container .general_counter::before {
+            content: counter(generalCounter) ".  "
         }
 
         div.container .example::before {
@@ -98,7 +107,7 @@
                             src="./images/kitten-large-650.png" alt="Large picture of kitten">
                     </div><!--content-->
 
-                    <h2 class="example">HTML</h2>
+                    <h2 class="general_counter">HTML</h2>
                     <div class="content">
                         <pre>
 &lt;img id="thecat" 
@@ -116,7 +125,7 @@
     alt = "Large picture of kitten"&gt; </pre>
                     </div><!--content-->
 
-                    <h2>References</h2>
+                    <h2 class="general_counter">References</h2>
                     <div class="content ref">
                         <a href="https://www.youtube.com/watch?v=dHIicIAxAdA">Jason Grigsby: img currentsrc video
                             (YouTube)</a>
