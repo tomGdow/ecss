@@ -24,6 +24,11 @@
             counter-increment: exampleCounter;
         }
 
+        #pageTitle {
+            counter-increment: exampleCounter;
+
+        }
+
         div.container .example::before {
             content: counter(exampleCounter) ".  "
         }
@@ -47,6 +52,12 @@
 
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        img {
+            width: 120%;
+            border: 2px solid var(--primary-green);
+            padding: 5px;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,19 +96,96 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        The following markup exists
+                        <pre><code>
+&lt;meta name="viewport" content="width=400, initial-scale=1.0"&gt;
+</code></pre>
+                        <h3>Choices</h3>
+                        <ol>
+                            <li>
+                                The virtual width of the browser is at least <code>400px</code>
+                            </li>
+                            <li>
+                                Media queries that use <code>(max-width: 300px)</code> are effective
+                            </li>
+                            <li>
+                                The browser automatically zooms the page to 1 &percnt; when the page first loads
+                            </li>
+                        </ol>
+                        <h3>Answers</h3>
+                        <ol>
+                            <li>TRUE
+                                <ol>
+                                    <li>
+                                        The virual width of the browser is at least
+                                        <code>400px</code>
+                                    </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                    <li>
+                                        The <code>viewport</code> allows you to set the virtual size of a screen
+                                    </li>
+                                    <li>
+                                        All media queries use the <code>viewprot</code>, not the actual size of the
+                                        device
+                                    </li>
+                                    <li>
+                                        The <code>width=400</code> setting sets the <em>minimum virtual width</em>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>FALSE
+                                <ol>
+                                    <li>
+                                        Media queries that use <code>(max-width:300px)</code> are not effective
+                                    </li>
+                                    <li>
+                                        This is because the
+                                        <code>width=400</code> viewport setting sets the minimum viewport width
+                                        of <code>400px</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>FALSE
+                                <ol>
+                                    <li>
+                                        The browser does not automatically zoom the page to 1&percnt; when the page
+                                        loads
+                                    </li>
+                                    <li>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                                        The <code>initial-scale=1.0</code> means 100&percnt;, not 1&percnt;
+                                    </li>
+                                    <li>
+                                        This value should
+                                        be a number between <code>0.1</code>and <code>1.0</code>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+
+
+
+
+                    </div><!--content-->
+
+                    <h2 class="example">Question Screenshot</h2>
+                    <div class="content">
+                        <picture>
+                            <img src="../images/1_viewport_measureup.png" alt="Measureup exam question on viewport">
+                        </picture>
+                    </div><!--content-->
+
+                    <h2 class="example">Answer Screenshot</h2>
+                    <div class="content">
+                        <img src="../images/2_viewport_measureup.png" alt="Measureup exam question answer">
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        MeasureUp mock exam
+                    </div><!--content-->
                 </div>
             </div>
         </div>
