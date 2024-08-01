@@ -48,6 +48,23 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        img {
+            border: 2px solid green;
+            width: 100%;
+        }
+
+        .line_right {
+            border-style: none solid none none;
+            border-color: blue;
+            border-width: 2px;
+        }
+
+        .error-highlight {
+            background-color: lightgoldenrodyellow;
+            padding: 1em;
+            margin-right: 10%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +102,126 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <ol>
+                            <li>
+                                Best viewed on laptop in Responsive Design Mode
+                                <ol>
+                                    <li>
+                                        <code>&#8963; &#8984; R</code> on Mac/Safari
+                                    </li>
+                                    <li>
+                                        <code> &#8997; &#8984; R</code> on Mac/Firefox
+                                    </li>
+                                </ol>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                            </li>
+                            <li>
+                                Note error when <code>srcset</code> has width descriptor (<em>eg</em> <code>650w</code>)
+                                and <code>source</code> element
+                                has <code>media</code> attribute but with no <code>sizes</code> attribute
+                            </li>
+                            <li>There seems to be no way of using <code>sizes</code> with <code>srcset</code> from
+                                within the <code>source</code> tag</li>
+                        </ol>
+                    </div><!--content-->
+                    <h2 class="example">Example (Picture element) </h2>
+                    <div class="content">
+                        <picture>
+                            <source srcset="../images/kitten-large-650.png" media="(min-width:850px)">
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            <source srcset="../images/kitten-medium-465.png" media="(min-width:600px)">
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                            <source srcset="../images/kitten-small-330.png" media="(min-width:330px)">
+
+                            <img src="../images/kitten-large-marked-650.png" alt="Picture of large kitten">
+                        </picture>
+                    </div><!--content-->
+
+                    <h2>Example (img tag)</h2>
+                    <div class="content">
+
+                        <img id="thecat" srcset="../images/kitten-large-650.png 650w,
+    ../images/kitten-medium-465.png 465w,
+    ../images/kitten-small-330.png 330w" sizes="(min-width:850px) 650px, (min-width:600px) 465px, 330px"
+                            src="../images/kitten-large-marked-650.png" alt="Large picture of kitten">
+
+                    </div><!--content-->
+
+                    <h2>HTML (Picture) </h2>
+                    <div class="content">
+                        <pre><code>
+&lt;picture&gt;
+    &lt;source 
+        srcset="../images/kitten-large-650.png" 
+        media="(min-width:850px)"&gt;
+
+    &lt;source 
+        srcset="../images/kitten-medium-465.png" 
+        media="(min-width:600px)"&gt;
+
+    &lt;source 
+        srcset="../images/kitten-small-330.png" 
+        media="(min-width:330px)"&gt;
+
+    &lt;img 
+        src="../images/kitten-large-marked-650.png" 
+        alt="Picture of large kitten"&gt;
+&lt;/picture&gt;</code></pre>
+                    </div><!--content-->
+
+                    <h2 class="example">HTML (img) </h2>
+                    <div class="content">
+                        <pre><code>
+&lt;img 
+
+    id="thecat" 
+
+    srcset="../images/kitten-large-650.png 650w,
+            ../images/kitten-medium-465.png 465w,
+            ../images/kitten-small-330.png 330w" 
+    
+    sizes="(min-width:850px) 650px, 
+           (min-width:600px) 465px, 
+           330px"
+
+    src="./images/kitten-large-650.png" 
+
+    alt="Large picture of kitten"&gt;</code></pre>
+                    </div><!--content-->
+                    <h2 class="example">CSS (both)</h2>
+                    <div class="content">
+                        <pre><code>
+img {
+    border: 2px solid green;
+    width: 100%;
+} </code></pre>
+
+                    </div><!--content-->
+                    <h2 class="example">Nu Html Checker</h2>
+                    <div class="content line_right">
+                        <div>Specifying a <code>srcset</code> width descriptor (<code>650w</code>) <em>without</em> a
+                            <code>sizes</code> attribute produces a validation error
+                        </div>
+                        <pre>
+<div class="error-highlight">Error: When the srcset attribute has any
+image candidate string with a width 
+descriptor, the sizes attribute must 
+also be specified</div>
+
+From line 98, column 29; to line 98, 
+column 107
+                            <code>
+&lt;source 
+
+    srcset="../images/kitten-large-650.png 650w"
+
+    media="(min-width:850px)"&gt; </code></pre>
+                    </div>
+
+                    <!-- <h2>references</h2>
+                    <div class="content ref"></div> -->
                 </div>
             </div>
         </div>
