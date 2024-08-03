@@ -48,6 +48,29 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        img.fallback {
+            width: 100%;
+        }
+
+        /* table,
+        th,
+        td {
+            border: 1px solid var(--primary-green);
+        } */
+
+        table {
+            text-align: center;
+            border-spacing: 1em 0.1em;
+        }
+
+        .info {
+            color: var(--primary-green);
+        }
+
+        .large_space_above {
+            padding-top: 1em;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +108,146 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <picture>
+                            <source
+                                srcset="../images/flamingo-marked-1x.jpg 1x, ../images/flamingo-marked-2x.jpg 2x, ../images/flamingo-marked-3x.jpg 3x"
+                                media="(min-width:800px)">
+                            <source
+                                srcset="../images/apples-marked-900.webp 1x, ../images/apples-marked-1800.webp 2x, ../images/apples-marked-2700.webp"
+                                media="(min-width:600px)">
+
+                            <img class="fallback" src="../images/negatedApples900.webp"
+                                alt="Picture of apples or flamingo">
+                        </picture>
+                    </div><!--content-->
+
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li class="space_above">
+                                Best viewed on laptop in Responsive Design Mode
+                                <ol>
+                                    <li>
+                                        <code>&#8963; &#8984; R</code> on Mac/Safari
+                                    </li>
+                                    <li>
+                                        <code> &#8997; &#8984; R</code> on Mac/Firefox
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <div class="info">Flamingo</div>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                                <table>
+                                    <tr>
+                                        <th>Intrinsic Width</th>
+                                        <th>Density</th>
+                                        <th>Image name</th>
+                                    </tr>
+                                    <tr>
+                                        <td><code>1006w</code></td>
+                                        <td><code>1x</code></td>
+                                        <td><code>flamingo-marked-1x.jpg</code></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><code>2013w</code></td>
+                                        <td><code>2x</code></td>
+                                        <td><code>flamingo-marked-2x.jpg</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>3019w</code></td>
+                                        <td><code>3x</code></td>
+                                        <td><code>flamingo-marked-3x.jpg</code></td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li class="space_above">
+                                <div class="info">Apples</div>
+
+                                Images made with <i>Mathematica</i>
+
+                                <table class="space_above">
+                                    <tr>
+                                        <th>Intrinsic Width</th>
+                                        <th>Density</th>
+                                        <th>Image Name</th>
+                                    </tr>
+                                    <tr>
+                                        <td><code>900w</code></td>
+                                        <td><code>1x</code></td>
+                                        <td><code>apples900.webp</code></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><code>1800w</code></td>
+                                        <td><code>2x</code></td>
+                                        <td><code>apples1800.webp</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>2700w</code></td>
+                                        <td><code>3x</code></td>
+                                        <td><code>apples2700.webp</code></td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li class="space_above">
+                                <div class="info">Apples, Negated Image</div>
+
+                                <table>
+                                    <tr>
+                                        <th>Intrinsic Width</th>
+                                        <th>Density</th>
+                                        <th>Image Name</th>
+                                    </tr>
+                                    <tr>
+                                        <td><code>900w</code></td>
+                                        <td><code>1x</code></td>
+                                        <td><code>negatedApples900.webp</code></td>
+
+                                    </tr>
+                                </table>
+                                <ol class="large_space_above">
+                                    <li>Images negated with <i>Mathematica</i></li>
+                                    <li><code>Wolfram language code</code>
+                                        <pre>
+apples = ExampleData[{"TestImage", "Apples"}]
+ColorNegate[apples]</pre>
+                                    </li>
+                                </ol>
+                            </li>
+
+                        </ol>
+
+                    </div><!--content-->
+
+                    <h2>Example</h2>
+                    <div class="content">
+                        <pre>
+&lt;picture&gt;
+
+    &lt;source
+        srcset = "../images/flamingo-marked-1x.jpg 1x, 
+                  ../images/flamingo-marked-2x.jpg 2x, 
+                  ../images/flamingo-marked-3x.jpg 3x"
+
+        media = "(min-width:800px)"&gt;
+
+    &lt;source
+        srcset = "../images/apples-marked-900.webp 1x, 
+                  ../images/apples-marked-1800.webp 2x, 
+                  ../images/apples-marked-2700.webp"
+
+        media = "(min-width:600px)"&gt;
+
+    &lt;img src = "../images/negatedApples900.webp" 
+         alt = "Picture of apples or flamingo"&gt;
+
+&lt;/picture&gt;</pre>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
@@ -103,7 +256,6 @@
         </div>
 
         <!--  Templates -->
-
 
         <template id="prevPageTemplate">picture_srcset_example</template> <!--PREVIOUS PAGE-->
 
