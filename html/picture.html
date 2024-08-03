@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        img.fallback {
+            width: 100%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,40 +99,163 @@
                                 different display/device
                                 scenarios
                             </li>
-
-                            <li>
-                                The browser will consider each child <code>source</code> element and choose the best
-                                match among them </li>
                             <li>
                                 The browser will consider each child <code>source</code> element and choose the best
                                 match among them
                             </li>
-
+                            <li>
+                                If no matches are found—or the browser doesn't support the <code>picture</code>
+                                element—the URL of the <code>img</code> element's <code>src</code> attribute is selected
+                            </li>
+                            <li>
+                                The selected image is then presented in the space occupied by the <code>img</code>
+                                element
+                            </li>
+                            <li>
+                                The <code>img</code> element must be present, and should appear last ( after the final
+                                <code>source</code> element)
+                            </li>
+                            <li>
+                                The image defined in a matching source element is substituted into the <code>src</code>
+                                attribute of the <code>img</code> element
+                            </li>
+                            <li>
+                                The <code>picture</code> element itself does not display anything; it merely provides a
+                                context for its contained <code>img</code> element that enables it to choose from
+                                multiple URLs
+                            </li>
+                            <li><code>width</code> and <code>height</code> are defined by the <code>img</code> element
+                                values</li>
                         </ol>
 
-
-
-                        If no matches are found—or the
-                        browser doesn't support the <code>picture</code> element—the URL of the <code>img</code>
-                        element's <code>src</code> attribute is selected
-
-                        The selected
-                        image is then presented in
-                        the space occupied by the <code>img</code> element
-
-                        The <code>picture</code> element itself does not display anything; it merely provides a context
-                        for its contained <code>img</code> element
-                        that enables it to choose from multiple URLs.
                     </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
-
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li><code>source</code>
+                                <ol>
+                                    <li>
+                                        The <code>source</code> element allows authors to specify multiple alternative
+                                        source sets
+                                        for <code>img</code> elements or multiple alternative
+                                        media resources for media elements
+                                    </li>
+                                    <li>
+                                        The <code>source</code> element's parent is a <code>picture</code> element
+                                    </li>
+                                    <li>
+                                        The <code>source</code> element supports dimension attributes</li>
+                                    <li>
+                                        The <code>img</code> element can use the <code>width</code> and
+                                        <code>height</code> attributes of a <code>source</code> instead of the
+                                        <code>img</code> element itself
+                                    </li>
+                                    <li><code>srcset</code>
+                                        <ol>
+                                            <li>
+                                                The <code>srcset</code> attribute must be present, and is a srcset
+                                                attribute.
+                                            </li>
+                                            <li>
+                                                It is used to offer a list of possible
+                                                images based on
+                                                size or the display's pixel density
+                                            </li>
+                                            <li>
+                                                It is composed of a comma-separated list of image descriptors
+                                            </li>
+                                            <li>
+                                                Each image descriptor is
+                                                composed of a URL of the image,
+                                                and either:
+                                                <ol>
+                                                    <li>
+                                                        A <code>width descriptor</code> followed by a <code>w</code>
+                                                        (such as <code>300w</code>)
+                                                    </li>
+                                                    <li>
+                                                        A <code>pixel density descriptor</code>, followed by an
+                                                        <code>x</code> (such as <code>2x</code>) to
+                                                        serve a high-res image for
+                                                        high-DPI screens
+                                                    </li>
+                                                </ol>
+                                            <li>
+                                                <code>width</code> and <code>pixel density descriptors</code> should not
+                                                be used together
+                                            </li>
+                                            <li>
+                                                A missing <code>pixel density descriptor </code>implies <code>1x</code>
+                                            </li>
+                                            <li>
+                                                Duplicate descriptor values are not allowed (<code>2x & 2x</code>,
+                                                <code>100w & 100w</code>)
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>type</code>
+                                <ol>
+                                    <li>
+                                        The <code>type</code> attribute <em>may</em> be present
+                                    </li>
+                                    <li>
+                                        It does not represent anything on its own
+                                    </li>
+                                    <li>
+                                        If present, the value must be a valid MIME type string
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>media</code>
+                                <ol>
+                                    <li>
+                                        The <code>media</code> attribute specifies a media condition (similar to a media
+                                        query) that the user agent will evaluate for each
+                                        <code>source</code> element
+                                    </li>
+                                    <li>
+                                        If the
+                                        <code>source</code> media condition evaluates to <code>false</code>, the browser
+                                        skips it and evaluates the next element inside <code>picture</code>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <picture>
+                            <source srcset="../images/apples-marked-900.webp
+                            " media="(min-width:800px)">
+                            <source srcset="../images/negatedApples900.webp" media="(min-width:600px)">
+                            <img class="fallback" src="../images/apples-marked-900.webp" alt="picture of apple">
+                        </picture>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;picture&gt;
+    &lt;source 
+        srcset="../images/apples-marked-900.webp" 
+        media="(min-width:800px)"&gt;
+
+    &lt;source 
+        srcset="../images/negatedApples900.webp" 
+        media="(min-width:600px)"&gt;
+    
+    &lt;img 
+        class="fallback" 
+        src="../images/apples-marked-900.webp" 
+        alt="picture of apple"&gt;
+
+&lt;/picture&gt;
+                            </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref">
