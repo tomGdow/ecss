@@ -48,6 +48,15 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        table {
+            text-align: center;
+            border-spacing: 1em 0.1em;
+        }
+
+        table td {
+            text-align: left;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,6 +130,60 @@
 &lt;/form&gt; </pre>
 
                     </div><!--content-->
+                    <h2>Notes</h2>
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <th>Browser</th>
+                                <th>OS</th>
+                                <th>Accesskey</th>
+                            </tr>
+                            <tr>
+                                <td>Internet Explorer</td>
+                                <td>Linux/Windows</td>
+                                <td><code>Alt + [accesskey]</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Mac</td>
+                                <td><code>Control + [Accesskey] </code></td>
+                            </tr>
+                            <tr>
+                                <td>Firefox</td>
+                                <td>Linux/Windows</td>
+                                <td><code>Alt + Shift + [accesskey]</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Mac</td>
+                                <td><code>Control + [Accesskey]</code></td>
+                            </tr>
+                            <tr>
+                                <td>Chrome</td>
+                                <td>Linux/Windows</td>
+                                <td><code>Alt + [accesskey]</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Mac</td>
+                                <td><code>Control + Option + [Accesskey]</code></td>
+                            </tr>
+                            <tr>
+                                <td>Safari</td>
+                                <td>Linux/Windows</td>
+                                <td><code>Alt + [accesskey]</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Mac</td>
+                                <td><code>Control + Option + [Accesskey]</code></td>
+                            </tr>
+                        </table>
+                        (see <a
+                            href="https://www2.tntech.edu/ilearn/Learner/pages/le/learner/learner-browser_access_keys.htm">
+                            here</a>)
+
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref">
@@ -130,6 +193,12 @@
                     <div class="content ref">
                         <a href="https://www.w3.org/TR/2011/WD-html5-20110405/editing.html#the-accesskey-attribute">W3C:
                             accesskey</a>
+                    </div>
+                    <div class="content ref">
+                        <a
+                            href="https://www2.tntech.edu/ilearn/Learner/pages/le/learner/learner-browser_access_keys.htm">
+                            Using Browser Access Keys (table)
+                        </a>
                     </div>
                 </div>
             </div>
