@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        ::cue {
+            font-size: 3em;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +89,42 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <video src="../videos/fish.mp4" controls></video>
+                    </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Code</h2>
+                    <h3>HTML</h3>
+                    <div>
+                        <pre>
+    &lt;video src = "../videos/fish.mp4" controls &gt;&lt;/video&gt; </pre>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <pre>
+    let video = document.querySelector("video");
+    let track = video.addTextTrack("captions", "Captions", "en")
 
-                    <h2>Mnemonic</h2>
+    track.mode = "showing";
+    track.addCue(new VTTCue(0.2, 1.9, "<b>Hello World</b>"));
+    track.addCue(new VTTCue(2.0, 2.9, "Goodbye"));
+    console.log(track.cues); </pre>
+                    <div>
+                        <h3>CSS</h3>
+                        <pre>
+    ::cue {
+        font-size: 3em;
+      } </pre>
+                    </div>
                     <div class="content"></div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+
+                    <div class="content ref">
+                        <a href="https://www.w3schools.com/tags/av_met_addtexttrack.asp">HTML Audio/Video DOM
+                            addTextTrack() Method</a>
+
+                    </div><!--content-->
                 </div>
             </div>
         </div>
@@ -128,6 +155,15 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        //video
+        let video = document.querySelector("video");
+        let track = video.addTextTrack("captions", "Captions", "en")
+
+        track.mode = "showing";
+        track.addCue(new VTTCue(0.2, 1.9, "<b>Hello World</b>"));
+        track.addCue(new VTTCue(2.0, 2.9, "Goodbye"));
+        console.log(track.cues);
 
     </script>
 </body>
