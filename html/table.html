@@ -99,7 +99,9 @@
         #tableNine,
         #tableTen,
         #tableEleven,
-        #tableTwelve {
+        #tableTwelve,
+        #tableThirteen,
+        #tableFourteen {
             margin: 0 auto;
         }
 
@@ -169,6 +171,26 @@
 
         #tableTwelve {
             border-spacing: 5px 2rem;
+        }
+
+        #tableThirteen,
+        #tableThirteen td,
+        #tableThirteen th {
+            border-style: solid;
+            border-width: 0.1em 1em;
+            border-color: blue;
+
+        }
+
+        #tableFourteen,
+        #tableFourteen th,
+        #tableFourteen td {
+            border: 1px solid green;
+            border-spacing: 1px 10px;
+        }
+
+        #tableFourteen {
+            margin-top: 1em;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -376,6 +398,11 @@
                                         (i.e., the space between cells in adjacent columns),
                                         and the second value defines the vertical spacing between cells
                                         (i.e., the space between cells in adjacent rows).
+                                    </li>
+                                    <li>Note that this <blockquote><strong>First of two:</strong> left and right <br>
+                                            <strong>Last of two:</strong> top and bottom
+                                        </blockquote> is the
+                                        <em>opposite</em> of what happens with <code>border</code> (see example below)
                                     </li>
                                     <li>Only works if the value of <code>border-collapse</code>
                                         is <code>separate</code></li>
@@ -1257,8 +1284,62 @@ table {
                                 </tr>
                             </tfoot>
                         </table>
-
                     </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (border-spacing and border)</h2>
+                    <div class="content">
+                        Note that when two CSS values are given, <code>border</code> and <code>border-spacing</code>
+                        behave in a diametrically opposed fashion! The first value refers to <code>top-and-bottom</code>
+                        with <code>border</code>, but refers to <code>left-and-right</code> with
+                        <code>border-spacing</code>
+                        <h3>border</h3>
+                        <table id="tableThirteen"><!--two-borders-->
+                            <tr>
+                                <th>h1</th>
+                                <th>h2</th>
+                            </tr>
+                            <tr>
+                                <td>d1</td>
+                                <td>d2</td>
+                            </tr>
+                        </table>
+                        <h3>CSS</h3>
+                        <div>
+                            <pre>
+#tableThirteen,
+#tableThirteen td,
+#tableThirteen th {
+    border-style: solid;
+    border-width: 0.1em 1em;
+    border-color: blue;
+
+} </pre>
+                        </div>
+                        <h3>border-spacing</h3>
+
+                        <table id="tableFourteen"><!--two-border-spacings-->
+                            <tr>
+                                <th>h1</th>
+                                <th>h2</th>
+                            </tr>
+                            <tr>
+                                <td>d1</td>
+                                <td>d2</td>
+                            </tr>
+                        </table>
+                        <h3>CSS</h3>
+                        <div>
+                            <pre>
+#tableFourteen,
+#tableFourteen th,
+#tableFourteen td {
+    border: 1px solid green;
+    border-spacing: 1px 10px;
+}
+                            </pre>
+                        </div>
+
+                    </div><!--conten-->
 
                     <hr>
                     <h2>References</h2>
