@@ -48,6 +48,50 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .trbl_4 {
+            width: 10%;
+            height: 3em;
+            text-align: center;
+            border-style: solid;
+            border-width: 2em;
+            border-color: red green blue black;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .t_lr_b_3 {
+            width: 20%;
+            height: 3em;
+            text-align: center;
+            border-style: solid;
+            border-width: 2em;
+            border-color: red green blue;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .tb_lr_2 {
+            width: 20%;
+            height: 3em;
+            text-align: center;
+            border-style: solid;
+            border-width: 2em;
+            border-color: red blue;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        .t_bs,
+        .t_bs th,
+        .t_bs td {
+            border: 1px solid green;
+            border-spacing: 1px 30px;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,14 +131,169 @@
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content"></div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example (4 CSS Properties)</h2>
+                    <div class="content">
+                        <h3>TRBL</h3>
+                        <ol>
+                            <li>
+                                <code>top</code>
+                                <code>right</code>
+                                <code>bottom</code>
+                                <code>left</code>
+                            </li>
+                            <li>Or, <em>clockwise</em></li>
+                        </ol>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="trbl_4">Hello World</div>
+                        <h3>CSS</h3>
+                        <div>
+                            <pre>
+.trbl_4 {
+    border-style: solid;
+    border-width: 2em;
+    border-color: red green blue black;
+} </pre>
+
+                            <details>
+                                <summary>full css selector</summary>
+                                <pre>
+.trbl_4 {
+    width: 10%;
+    height: 3em;
+    text-align: center;
+    border-style: solid;
+    border-width: 2em;
+    border-color: red green blue black;
+    display: table-cell;
+    vertical-align: middle;
+} </pre>
+                            </details>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (3 CSS Properties)</h2>
+
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>top</code>-(<code>left,right</code>)-<code>bottom</code>
+                            </li>
+                            <li>
+                                <b>mnemonic: </b><code>left</code>, <code>right</code> step together
+                            </li>
+                            <li>(Step together boldly tread)
+                            </li>
+                        </ol>
+                        <div class="t_lr_b_3">Hello World</div>
+                        <h3>CSS</h3>
+                        <div>
+                            <pre>
+.t_lr_b_3 {
+    border-style: solid;
+    border-width: 2em;
+    border-color: red green blue;
+} </pre>
+                        </div>
+                        <details>
+                            <summary>full CSS selector</summary>
+                            <pre>
+.t_lr_b_3 {
+    width: 20%;
+    height: 3em;
+    text-align: center;
+    border-style: solid;
+    border-width: 2em;
+    border-color: red green blue;
+    display: table-cell;
+    vertical-align: middle;
+} </pre>
+                        </details>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (Two CSS Properties)</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                (<code>top,bottom</code>)&ndash;(<code>left,right</code>)
+                            </li>
+                            <li><strong>But note that </strong> (<code>table</code>) <code>border-spacing</code> behaves
+                                as <br>
+
+                                (<code>left,right</code>)&ndash;(<code>top,bottom</code>)
+
+                            </li>
+                        </ol>
+                        <div class="tb_lr_2">Hello World</div>
+                        <h3>CSS</h3>
+                        <div>
+                            <pre>
+.tb_lr_2 {
+    border-style: solid;
+    border-width: 2em;
+    border-color: red blue;
+} </pre>
+                        </div>
+                        <details>
+                            <summary>full css selector</summary>
+                            <pre>
+.tb_lr_2 {
+    width: 20%;
+    height: 3em;
+    text-align: center;
+    border-style: solid;
+    border-width: 2em;
+    border-color: red blue;
+    display: table-cell;
+    vertical-align: middle;
+} </pre>
+                        </details>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (border-spacing, 2 CSS Properties)</h2>
+
+                    <div class="content">
+                        (table) <code>border-spacing</code> behaves
+                        as
+                        <blockquote>
+                            (<code>left,right</code>)&ndash;(<code>top,bottom</code>)</blockquote>
+
+                        when 2 CSS properties are given
+                        <table class="t_bs">
+                            <tr>
+                                <th>h1</th>
+                                <th>h2</th>
+                            </tr>
+                            <tr>
+                                <td>d1</td>
+                                <td>d2</td>
+                            </tr>
+                        </table>
+                        <h3>CSS</h3>
+                        <div>
+                            <pre>
+.t_bs,
+.t_bs th,
+.t_bs td {
+    border: 1px solid green;
+    border-spacing: 1px 30px;
+} </pre>
+                        </div>
+                    </div><!--content-->
+                    <hr>
 
                     <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                For 4 CSS properites, TRBL or <em>clockwise</em>
+                            </li>
+                            <li>
+                                For 3 CSS properties, <code>left</code>, <code>right</code> step together
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
