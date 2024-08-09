@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        ::cue {
+            font-size: 2em;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +89,12 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                        <video src="../videos/mnemonics.mp4" controls>
+                            <track default kind="captions" src="../tracks/track_mnemonics.vtt">
+                        </video>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
