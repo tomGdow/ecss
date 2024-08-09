@@ -14,6 +14,41 @@
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,32 +85,19 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content">
-                        <ol>
-                            <li class="space_above">
-                                <a href="https://www.w3.org/TR/2011/WD-html5-20110405/">W3C HTML-5</a>
-                            </li>
-                            <li class="space_above">
-                                <a href="https://html.spec.whatwg.org/">
-                                    HTML-5 Living Standard (May 2024)</a>
-                            </li>
-                            <li class="space_above"><a href="https://validator.w3.org">W3C Validator</a></li>
-                            <li class="space_above">
-                                <a href="https://validator.w3.org">W3C Cascading Style Sheets home page</a>
-                            </li>
-                            <li class="space_above">
-                                <a href="https://www.image-map.net/">Image Map Generator
-                                </a>
-                            </li>
-                            <li class="space_above">
-                                <a href="https://www.urlencoder.org">URL encoder</a>
-                            </li>
-                            <li class="space_above">
-                                <a href="https://apple.stackexchange.com/q/55727/509774">Ask Different: Where can I find
-                                    the unicode symbols for Mac functional keys? (Command, Shift, etc.)</a>
-                            </li>
-                        </ol>
-                    </div>
+                    <div class="content"></div><!--content-->
+
+                    <h2>Example</h2>
+                    <div class="content"></div><!--content-->
+
+                    <h2>Notes</h2>
+                    <div class="content"></div><!--content-->
+
+                    <h2>Mnemonic</h2>
+                    <div class="content"></div><!--content-->
+
+                    <h2>References</h2>
+                    <div class="content ref"></div><!--content-->
                 </div>
             </div>
         </div>
@@ -83,11 +105,11 @@
         <!--  Templates -->
 
 
-        <template id="prevPageTemplate">video_mnemonics</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">mnemonics</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">References</template> <!--PAGE TITLE-->
+        <template id="pageTitleTemplate">video_mnemonics</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">index</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">references</template><!--NEXT PAGE-->
 
 
     </div>
@@ -99,13 +121,12 @@
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
 
-
         // previous page
         var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL = "../" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
     </script>
