@@ -48,6 +48,20 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        ::cue {
+            font-size: 3em;
+        }
+
+        ::cue(b) {
+            color: red;
+        }
+
+        blockquote {
+            border-style: none solid none none;
+            border-color: blue;
+            border-width: 0.1em;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +99,67 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <video src="../videos/fish.mp4" controls muted>
+                            <track default kind="captions" src="../tracks/track_example_one.vtt">
+                        </video>
+                    </div><!--content-->
+
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <h3>HTML</h3>
+                        <div>
+                            <pre>
+&lt;video src="../videos/fish.mp4" controls muted&gt;
+
+    &lt;track 
+        default 
+        kind="captions" 
+        src="../tracks/track_example_one.vtt"&gt;
+
+&lt;/video&gt;
+                            </pre>
+                        </div>
+                        <h3>VTT</h3>
+                        <div>
+                            <pre>
+WEBVTT
+
+NOTE An example of a VTT file
+
+00:00.200 --&gt; 00:01.900 position:10% align:left size:100%
+&lt;v Tom&gt;&lt;i&gt;Hello World!&lt;/i&gt;
+
+00:02.000 --&gt; 00:02.900 position:30&percnt;
+&lt;v Tom&gt;&lt;b&gt;Goodbye&lt;/b&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <div>
+                                <pre>
+::cue {
+    font-size: 3em;
+}
+
+::cue(b) {
+    color: red;
+} </pre>
+                            </div>
+                        </div>
+                    </div><!--content-->
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        Although it does not apply in this case, note that
+                        <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track#srclang">
+                            &quot;If the <code>kind</code> attribute is set to
+                            <code>subtitles</code>, then
+                            <code>srclang</code> must be defined&quot; (<a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track#srclang">MDN</a>)
+                        </blockquote>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
                 </div>
             </div>
         </div>
@@ -109,7 +171,7 @@
 
         <template id="pageTitleTemplate">track_example_two</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">source</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">vtt</template><!--NEXT PAGE-->
 
 
     </div>

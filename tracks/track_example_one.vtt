@@ -1,0 +1,11 @@
+WEBVTT
+
+NOTE An example of a VTT file
+
+00:00.200 --> 00:01.900 position:10% align:left size:100%
+<v Tom><i>Hello World!</i>
+
+
+00:02.000 --> 00:02.900 position:30%
+<v Tom><b>Goodbye</b>
+
