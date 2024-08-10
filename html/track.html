@@ -48,6 +48,28 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        /* table,
+        th,
+        td {
+            border: 1px solid var(--primary-green);
+        } */
+
+        td:nth-of-type(2) {
+            border-style: solid;
+            border-width: 0 0.1em 0 0;
+            border-color: blue;
+            padding-right: 0.5em;
+        }
+
+        table {
+            border-spacing: 1em 0.5em;
+
+        }
+
+        table th {
+            text-align: center;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,26 +107,263 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li><code>track</code>
+                                <ol>
+
+                                    <li>
+                                        Each <code>track</code> element lets you specify a timed text track (or
+                                        time-based data) that can be displayed in parallel with the media element, for
+                                        example to overlay subtitles or closed captions on top of a video or alongside
+                                        audio tracks
+                                    </li>
+
+                                    <li>
+                                        The <code>track</code> element is used as a child of the media elements,
+                                        <code>audio</code> and <code>video</code>
+                                    </li>
+
+
+                                    <li>
+                                        Multiple tracks can be specified for a media element, containing different kinds
+                                        of timed text data, or timed text data that has been translated for different
+                                        locales
+                                    </li>
+
+                                    <li>
+                                        The data that is used will either be the track that has been set to be the
+                                        default, or a kind and translation based on user preferences
+                                    </li>
+
+                                    <li>
+                                        The <code>track </code> element does not
+                                        represent anything on its own
+                                    </li>
+
+                                </ol>
+
+                            </li>
+                            <li><code>kind</code>
+                                <ol>
+                                    <li>
+                                        The <code>kind</code> attribute is an enumerated attribute (takes one of a
+                                        finite set of keywords)
+                                    </li>
+                                    <li>
+                                        The following table lists the keywords defined for this attribute
+                                    </li>
+                                </ol>
+                                <table>
+                                    <tr>
+                                        <th><code>keyword</code>/state</th>
+                                        <th>description</th>
+                                    </tr>
+                                    <tr>
+                                        <td><code>subtitles</code>/subtitles</td>
+                                        <td>
+                                            <ol>
+                                                <li>
+                                                    Transcription or translation of the dialogue, suitable for
+                                                    <strong>when the sound is available but not understood</strong>
+                                                    (e.g. because the user does not understand the language of the media
+                                                    resource's soundtrack)
+                                                </li>
+                                                <li>
+                                                    Displayed over the video
+                                                </li>
+                                            </ol>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>captions</code>/Captions</td>
+                                        <td>
+                                            <ol>
+                                                <li>
+                                                    Transcription or translation of the dialogue, sound effects,
+                                                    relevant musical cues, and other relevant audio
+                                                    information, <strong>suitable for when the soundtrack is
+                                                        unavailable</strong> (e.g.
+                                                    because it is muted or because the user is deaf)
+
+                                                </li>
+                                                <li>
+                                                    Displayed over the video; labeled as appropriate for the
+                                                    hard-of-hearing
+                                                </li>
+                                            </ol>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code>descriptions</code>/Descriptions
+                                        </td>
+                                        <td>
+                                            <ol>
+                                                <li>
+
+                                                    Textual descriptions of the video component of the media resource,
+                                                    <strong> intended for audio synthesis when the visual
+                                                        component is unavailable</strong> (e.g. because the user is
+                                                    interacting with
+                                                    the application without a screen while driving, or
+                                                    because the user is blind
+                                                </li>
+                                                <li>
+                                                    Synthesized as separate audio track.
+
+                                                </li>
+                                            </ol>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chapters</code>/Chapters</td>
+                                        <td>
+                                            <ol>
+                                                <li>
+                                                    Chapter titles,
+                                                    <strong>
+                                                        intended to be used for navigating the media resource
+                                                    </strong>
+                                                </li>
+                                                <li>
+                                                    Displayed as an interactive list in the user agent's interface
+                                                </li>
+                                            </ol>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code>metadata</code>/Metadata
+                                        </td>
+                                        <td>
+                                            <ol>
+                                                <li>
+                                                    Tracks intended for use from script
+                                                </li>
+                                                <li>
+                                                    Not displayed by the user agent
+                                                </li>
+                                            </ol>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <ol start="3">
+                                    <li>
+                                        The <code>kind</code> attribute may be omitted
+                                    </li>
+                                    <li>
+                                        The missing value default is the <code>subtitles</code> state
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>src</code>
+                                <ol>
+                                    <li>
+                                        The <code>src</code> attribute gives the address of the text track data
+                                    </li>
+                                    <li>
+                                        The value must be a valid non-empty URL potentially
+                                        surrounded by spaces
+                                    </li>
+                                    <li>
+                                        <strong>This attribute must be present</strong>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>srclang</code>
+                                <ol>
+                                    <li>
+                                        The <code>srcang</code> attribute gives the language of the text track data
+                                    </li>
+
+                                    <li>
+                                        The value must be a valid BCP 47 language tag
+                                    </li>
+
+                                    <li>
+                                        This attribute <strong>must be present</strong> if the element's
+                                        <code>kind</code> attribute is
+                                        in the <code>subtitles</code> state
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>label</code>
+                                <ol>
+                                    <li>
+                                        The <code>label</code> attribute gives a user-readable <code>title</code> for
+                                        the
+                                        track
+                                    </li>
+                                    <li>
+                                        This <code>title</code> is used by user agents when listing
+                                        <code>subtitle</code>, <code>caption</code>, and <code>audio</code> description
+                                        tracks in their user interface
+                                    </li>
+
+                                    <li>
+                                        If the element has a <code>label</code> attribute whose value is not the empty
+                                        string, then the element's track label is the value of the attribute
+                                    </li>
+
+                                    <li>
+                                        Otherwise, the element's track <code>label</code> is a user-agent defined string
+                                        (e.g. the string "untitled")
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>default</code>
+                                <ol>
+                                    <li>
+                                        The <code>default</code> attribute, if specified, indicates that the track is to
+                                        be enabled if the user's preferences do not indicate that another track would be
+                                        more appropriate
+
+                                    </li>
+
+                                    <li>
+                                        There must not be more than one track element with the same parent node with the
+                                        <code>default</code> attribute specified
+                                    </li>
+
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
                     <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <pre>
+&lt;video controls&gt;
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+    &lt;source src="sample.mp4" type="video/mp4" /&gt;
+    &lt;track default kind="captions" src="sampleCaptions.vtt" /&gt;
+    &lt;track kind="subtitles" src="sampleSubtitles.vtt" srclang="en" /&gt;
+
+&lt;/video&gt; </pre>
+
+                    </div><!--content-->
 
                     <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <code class="highlight2">traki</code> -- the <code>track</code> element has a <code>kind</code>
+                        attribute
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref">
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API">MDN: WebVTT API</a>
-                    </div><!--content-->
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/video.html#the-track-element">W3C: track
+                            element</a>
+                    </div>
 
                     <div class="content ref">
-                        <a href="https://w3c.github.io/webvtt/#dfn-webvtt-cue-voice-span">WebVTT: The Web Video Text
-                            Tracks Format (W3C Draft)</a>
-                    </div><!--content-->
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track">MDN:track</a>
+                    </div>
+
                     <div class="content ref">
                         <a
                             href="https://developer.mozilla.org/en-US/docs/Web/Media/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video">MDN:
@@ -116,12 +375,6 @@
                         <a
                             href="https://www.veed.io/learn/closed-captioning-vs-subtitles?utm_id=20869189140&utm_term=&utm_campaign=g_US_T1-EN-Use_Cases-DSA&utm_source=google&utm_medium=cpc&utm_content=162672000174_704094105334&hsa_acc=2332311570&hsa_cam=20869189140&hsa_grp=162672000174&hsa_ad=704094105334&hsa_src=g&hsa_tgt=dsa-1514583690699&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=1&gbraid=0AAAAAoZFBkQ2yZfkddKDpEsdroBUvQhX1&gclid=Cj0KCQjwzby1BhCQARIsAJ_0t5M-ZWrfYs_cZEQQXCkp9vaKqnioLC0pOJ5fN4641ckyQXLzfGFYzhcaAh1oEALw_wcB">Closed
                             captioning vs subtitles: differences & when to use them</a>
-
-                    </div><!--content-->
-                    
-                    <div class="content ref">
-                        <a href="https://www.youtube.com/watch?v=NLfs-SUEerY">YouTube: How to Create a Web VTT File for
-                            Subtitles and Captions | Rev Explains</a>
 
                     </div><!--content-->
                 </div>
