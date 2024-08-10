@@ -52,6 +52,11 @@
         ::cue {
             font-size: 2em;
         }
+
+        .centered {
+            text-align: center;
+            margin-top: 2em;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,9 +96,45 @@
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
 
-                        <video src="../videos/mnemonics.mp4" controls>
-                            <track default kind="captions" src="../tracks/track_mnemonics.vtt">
+                        <video controls>
+
+                            <source src="../videos/mnemonics.webm" type="video/webm">
+
+                            <source src="../videos/mnemonics.mp4" type="video/mp4">
+
+                            <track default label="mnemonics.vtt" kind="captions" src="../tracks/track_mnemonics.vtt">
+
+                            Your browser does not support HTML-5 video
                         </video>
+                        <div class="centered"><output id="track_type"></output></div>
+                    </div><!--content-->
+                    <h3 class="example"> Code </h3>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;video controls&gt;
+
+    &lt;source 
+        src="../videos/mnemonics.webm" 
+        type="video/webm"&gt;
+
+    &lt;source 
+        src="../videos/mnemonics.mp4" 
+        type="video/mp4"&gt;
+
+    &lt;track 
+        default 
+        label="mnemonics.vtt" 
+        kind="captions" 
+        src="../tracks/track_mnemonics.vtt"&gt;
+
+    Your browser does not support HTML-5 video
+
+&lt;/video&gt;
+                            </pre>
+                        </div>
+
                     </div><!--content-->
 
                     <h2>References</h2>
@@ -128,6 +169,14 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        // track label
+        document.getElementById("track_type").innerText = "Viewing " + document.querySelector("track").label + " track";
+
+
+        // cues
+
+        console.log(document.querySelector("track").cues);
 
     </script>
 </body>
