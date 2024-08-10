@@ -85,19 +85,64 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>WebVTT</code> (Web Video Text Tracks) format is intended for marking up
+                                external text track resources in connection with with the
+                                <code>track</code> element
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                            </li>
+                            <li class="space_above">
+                                WebVTT files provide
+                                <ol>
+                                    <li class="space_above"><code>captions</code></li>
+                                    <li class="space_above"><code>subtitles</code></li>
+                                    <li class="space_above">
+                                        text video descriptions
+                                    </li>
+                                    <li class="space_above">
+                                        <code>chapters</code> for content navigation
+                                    </li>
+                                    <li class="space_above">
+                                        any form of <code>metadata</code> that is time-aligned with
+                                        <code>audio</code> or
+                                        <code>video</code> content
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    <!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        A sample WebVTT file that captions an interview:
+                        <pre>
+    WEBVTT
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+    00:11.000 --&gt; 00:13.000
+    &lt;v Roger Bingham&gt;We are in New York City
+
+    00:13.000 --&gt; 00:16.000
+    &lt;v Roger Bingham&gt;We’re actually at the Lucern Hotel, just down the street
+
+    00:16.000 --&gt; 00:18.000
+    &lt;v Roger Bingham&gt;from the American Museum of Natural History
+
+    00:18.000 --&gt; 00:20.000
+    &lt;v Roger Bingham&gt;And with me is Neil deGrasse Tyson
+
+    00:20.000 --&gt; 00:22.000
+    &lt;v Roger Bingham&gt;Astrophysicist, Director of the Hayden Planetarium
+
+    00:22.000 --&gt; 00:24.000
+    &lt;v Roger Bingham&gt;at the AMNH  </pre>
+
+                    </div><!--content-->
+
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
                     <div class="content ref">
                         <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API">MDN: WebVTT API</a>
                     </div><!--content-->
