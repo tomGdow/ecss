@@ -48,6 +48,15 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        video {
+            width: 320px;
+            height: 240px;
+        }
+
+        ::cue {
+            font-size: 3em;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,8 +96,48 @@
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content"></div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+
+                        <video controls muted type="video/mov" poster="../images/pop.png">
+                            <source src="../videos/popcorn.mov">
+                            <track label="popcorn" default kind="captions" src="../tracks/track_popcorn.vtt">
+
+                            This browser does not support HTML:5 video
+                        </video>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+    &lt;video 
+        controls 
+        muted 
+        type="video/mov"
+        poster="../images/pop.png"&gt;
+
+        &lt;source src="../videos/popcorn.mov"&gt;
+
+        &lt;track 
+            label="popcorn" 
+            default 
+            kind="captions" 
+            src="../tracks/track_popcorn.vtt"&gt;
+
+        This browser does not support HTML:5 video
+
+    &lt;/video&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>VTT</h3>
+                            <pre>
+    WEBVTT
+
+    00:01.000 --&gt; 00:10.000
+    &lt;b&gt;POP&lt;/b&gt;
+
+    00:10.100 --&gt; 00:20.000
+    &lt;b&gt;Pop Pop&lt;/b&gt; </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>Notes</h2>
                     <div class="content"></div><!--content-->
@@ -116,7 +165,7 @@
 
         <template id="pageTitleTemplate">video</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">audio</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">video_exam_question</template><!--NEXT PAGE-->
 
 
     </div>
