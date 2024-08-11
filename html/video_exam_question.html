@@ -48,6 +48,120 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        #exaom_question {
+            width: 100%;
+        }
+
+        .draggable {
+            position: absolute;
+        }
+
+        #optionOne,
+        #optionTwo,
+        #optionThree,
+        #optionFour,
+        #optionFive,
+        #optionSix {
+            position: absolute;
+            background-color: #f1f1f1;
+
+        }
+
+        #optionOne {
+            top: 24em;
+            z-index: 10
+        }
+
+        #optionTwo {
+            top: 24em;
+            z-index: 9
+        }
+
+        #optionThree {
+            top: 24em;
+            z-index: 8
+        }
+
+        #optionFour {
+            top: 24em;
+            z-index: 7;
+        }
+
+        #optionFive {
+            top: 24em;
+            z-index: 6;
+        }
+
+        #optionSix {
+            top: 24em;
+            z-index: 5;
+        }
+
+        #boxOne {
+            position: absolute;
+            /* top: 3em; */
+            right: 40%;
+            width: 90%;
+            height: 3em;
+            border: 2px solid white;
+            z-index: 1;
+        }
+
+        #boxTwo {
+            position: absolute;
+            top: 4em;
+            right: 40%;
+            width: 80%;
+            height: 3em;
+            border: 2px solid white;
+            z-index: 1;
+        }
+
+        #boxThree {
+            position: absolute;
+            top: 8em;
+            right: 40%;
+            width: 80%;
+            height: 3em;
+            border: 2px solid white;
+            z-index: 1;
+        }
+
+        #boxFour {
+            position: absolute;
+            top: 12em;
+            right: 40%;
+            width: 80%;
+            height: 3em;
+            border: 2px solid white;
+            z-index: 1;
+        }
+
+        #boxFive {
+            position: absolute;
+            top: 16em;
+            right: 40%;
+            width: 80%;
+            height: 3em;
+            border: 2px solid white;
+            z-index: 1;
+        }
+
+        #boxSix {
+            position: absolute;
+            top: 20em;
+            right: 50%;
+            width: 80%;
+            height: 3em;
+            border: 2px solid white;
+            z-index: 1;
+        }
+
+        .container2 {
+            position: relative;
+            height: 70vh;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +199,64 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                Arrange the code entries in the proper syntax to add a video to a web page
+                            </li>
+                            <li>
+                                The user must be able to play and pause the video
+                            </li>
+                            <li>
+                                The video has two sources, <code>MP4</code> and <code>MOV</code>, with a preference for
+                                <code>MP4</code> format
+                            </li>
+                            <li>
+                                The video must also include subtitles and a message that displays if the user's browser
+                                doesn't support the HTML5 video tag
+                            </li>
+                        </ol>
+                        <div class="container2">
+                            <div id="optionOne">
+                                <pre> &lt;/video&gt; </pre>
+                            </div>
+                            <div id="optionTwo">
+                                <pre> &lt;track src="Videos/subtitles.vtt" kind="subtitles" srclang="en" label="English" /&gt; </pre>
+                            </div>
+                            <div id="optionThree">
+                                <pre> &lt;source src="Videos/Happy.mov" type="video/quicktime" /&gt; </pre>
+                            </div>
+                            <div id="optionFour">
+                                <pre> Your browser does not support HTML5 Video </pre>
+                            </div>
+                            <div id="optionFive">
+                                <pre> &lt;source src="Videos/Happy.mp4" type="video/mp4" /&gt; </pre>
+                            </div>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                            <div id="optionSix">
+                                <pre> &lt;video height="480" controls="controls"&gt; </pre>
+                            </div>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                            <div id="boxOne"></div>
+                            <div id="boxTwo"></div>
+                            <div id="boxThree"></div>
+                            <div id="boxFour"></div>
+                            <div id="boxFive"></div>
+                            <div id="boxSix"></div>
+                        </div>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <a href="./exam_question_basic.html">Original Exam Question (Image)</a>
+                    </div><!--content-->
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <h2>Reference</h2>
+                    <div class="content ref">
+                        <a href="https://www.w3schools.com/howto/howto_js_draggable.asp">W3Schools: HowTo - Create a
+                            Draggable HTML Element </a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -128,6 +287,56 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+
+        // Make the DIV element draggable:
+        // W3Schools is source
+
+        const arr = ["optionOne", "optionTwo", "optionThree", "optionFour", "optionFive", "optionSix"]
+
+        for (el of arr) {
+            dragElement(document.getElementById(el));
+        }
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            if (document.getElementById(elmnt.id + "header")) {
+                // if present, the header is where you move the DIV from:
+                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+            } else {
+                // otherwise, move the DIV from anywhere inside the DIV:
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                // stop moving when mouse button is released:
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
 
     </script>
 </body>
