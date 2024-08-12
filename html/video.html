@@ -57,6 +57,11 @@
         ::cue {
             font-size: 3em;
         }
+
+
+        table {
+            border-spacing: 1em 1px;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,13 +99,211 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li class="space_above">
+                                The <code>video</code> element embeds a media player which supports video playback into
+                                the document
+                            </li>
+                            <li class="space_above">
+                                You can use <code>video</code> for
+                                audio content as well, but the <code>audio</code> element may provide a more appropriate
+                                user experience
+                            </li>
+                            <li class="space_above"><code>autoplay</code></li>
+                            <li class="space_above">
+                                <code>controls</code>
+                                <ol>
+                                    <li class="space_above">
+                                        If this attribute <strong>is present</strong>, the browser will offer controls
+                                        to allow
+                                        the user to
+                                        control video playback, including
+                                        <code>voluem</code>,
+                                        <code>seeking</code>,
+                                        and <code>pause/resume</code> playback
+                                    </li>
+                                    <li class="space_above">
+                                        <pre>
+&lt;video src="myvideo" controls&gt;&lt;/video&gt; </pre>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>controlslist</code>
+                                <ol>
+                                    <li class="space_above">
+                                        When specified, <code>controlslist</code>helps the browser select what controls
+                                        to show for the video element whenever the browser shows its own
+                                        set of controls (that is, when the controls attribute is specified)
+
+                                    </li>
+                                    <li class="space_above">
+                                        The allowed values are
+                                        <ol>
+                                            <li><code>nodownload</code></li>
+                                            <li><code>nofullscreen</code></li>
+                                            <li><code>noremoteplayback</code></li>
+                                        </ol>
+
+                                    </li>
+                                    <li class="space_above">
+                                        <pre>
+&lt;video 
+    controls
+    src="myvideo"
+    controlslist="nofullscreen 
+                  nodownload 
+                  noremoteplayback" &gt;
+&lt;/video&gt; </pre>
+                                    </li>
+                                </ol>
+
+                            </li>
+                            <li class="space_above">
+                                <code>disablepictureinpicture</code><br>
+
+                                Use the <code>disablepictureinpicture</code> attribute if you want to disable the
+                                Picture-In-Picture
+                                mode (and the control)
+                            </li>
+                            <li class="space_above">
+                                <code>disableremoteplayback</code>
+                            </li>
+                            <li class="space_above">
+                                <code>height</code>
+                                <ol>
+                                    <li class="space_above">
+                                        The height of the video's display area, in CSS pixels
+                                    </li>
+                                    <li class="space_above">
+                                        Absolute values only; no percentages
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>loop</code>
+                                <ol>
+                                    <li class="space_above">A Boolean attribute</li>
+                                    <li class="space_above">
+                                        <em>If specified</em>, the browser will automatically seek back to the start
+                                        upon
+                                        reaching the end of the
+                                        video
+                                    </li>
+                                    <li class="space_above">
+                                        <code>&lt;video controls loop&gt;&lt;/video&gt;</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>muted</code>
+                                <ol>
+                                    <li class="space_above">
+                                        A Boolean attribute that indicates the default audio mute setting contained in
+                                        the video
+                                    </li>
+                                    <li class="space_above">
+                                        If set, the audio will be
+                                        initially silenced
+                                    </li>
+                                    <li class="space_above">
+                                        Its default value is <code>false</code>, meaning the audio will be played when
+                                        the video is played
+                                    </li>
+                                    <li class="space_above">
+                                        <code>
+                                            &lt;video controls muted&gt;&lt;/video&gt;
+                                        </code>
+                                    </li>
+                                </ol>
+
+                            </li>
+                            <li class="space_above"><code>playsinline</code></li>
+                            <li class="space_above">
+                                <code>poster</code>
+                                <ol>
+                                    <li class="space_above">
+                                        A URL for an image to be shown while the video is downloading.
+                                    </li>
+                                    <li class="space_above">
+                                        If this attribute isn't specified, nothing is displayed until the first frame is
+                                        available, then the first frame is
+                                        shown as the poster frame
+                                    </li>
+                                    <li class="space_above">
+                                        <code>
+                                            &lt;video controls poster="/images/myimg.gif"&gt;&lt;/video&gt;
+                                        </code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>preload</code>
+                                <ol>
+                                    <li class="space_above">
+                                        This enumerated attribute is intended to provide a hint to the browser about
+                                        what the author thinks will lead to the best user experience
+                                    </li>
+                                    <li class="space_above">
+                                        an enumerated type is a data type consisting of a limited set of named values.
+                                    </li>
+                                    <li class="space_above">
+                                        It may have one of the following values:
+                                        <ol>
+                                            <li class="space_above">
+                                                <code>none</code>: Indicates that the video should not be preloaded
+                                            </li>
+                                            <li class="space_above">
+                                                <code>metadata</code>: Indicates that only video metadata (e.g. length)
+                                                is fetched
+                                            </li>
+                                            <li class="space_above">
+                                                <code>auto</code>: Indicates that the whole video file can be
+                                                downloaded, even if the user is not
+                                                expected to use it
+                                            </li>
+                                            <li class="space_above">
+                                                <code>empty string</code>: A synonym of the <code>author</code> value
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+
+                            <li class="space_above">
+                                <code>src</code>
+                                <ol>
+                                    <li class="space_above">
+
+                                        The URL of the video to embed.
+                                    </li>
+                                    <li class="space_above">
+                                        This is optional; you may instead use the
+                                        <code>source</code> element within the video block to specify the video to embed
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>width</code>
+                                <ol>
+                                    <li class="space_above">
+                                        The width of the video's display area, in CSS pixels
+                                    </li>
+                                    <li class="space_above">
+                                        Absolute values only; no percentages
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+
+
+                    </div><!--content-->
 
                     <h2 class="example">Example</h2>
                     <div class="content">
 
-                        <video controls muted type="video/mov" poster="../images/pop.png">
-                            <source src="../videos/popcorn.mov">
+                        <video controls muted poster="../images/pop.png">
+                            <source src="../videos/popcorn.mov" type="video/quicktime">
                             <track label="popcorn" default kind="captions" src="../tracks/track_popcorn.vtt">
 
                             This browser does not support HTML:5 video
@@ -110,11 +313,12 @@
                             <pre>
     &lt;video 
         controls 
-        muted 
-        type="video/mov"
+        muted
         poster="../images/pop.png"&gt;
 
-        &lt;source src="../videos/popcorn.mov"&gt;
+        &lt;source 
+           src="../videos/popcorn.mov"
+           type="video/quicktime"&gt;
 
         &lt;track 
             label="popcorn" 
@@ -140,10 +344,61 @@
                     </div><!--content-->
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <th>
+                                    VideoType
+                                </th>
+                                <th>
+                                    Extension
+                                </th>
+                                <th>
+                                    MIME Type
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    MPEG-4
+                                </td>
+                                <td>
+                                    <code>.mp4</code>
+                                </td>
+                                <td>
+                                    <code>video/mp4</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    QuickTime
+                                </td>
+                                <td>
+                                    <code>.mov</code>
+                                </td>
+                                <td>
+                                    <code>video/quicktime</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>WebM</td>
+                                <td><code>.webm</code></td>
+                                <td>
+                                    <code>video/webm</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>WEBVTT</td>
+                                <td>.vtt</td>
+                                <td><code>text/vtt</code></td>
+                            </tr>
+                            <tr>
+                                <td>Windows Media</td>
+                                <td><code>.wmv</code></td>
+                                <td><code>video/x-ms-wmv</code></td>
+                            </tr>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                        </table>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref">
@@ -153,6 +408,11 @@
                     <div class="content ref">
                         <a href="https://www.w3.org/TR/2011/WD-html5-20110405/video.html#video">W3C: The Video Embed
                             element</a>
+                    </div>
+                    <div class="content ref">
+                        <a
+                            href="https://help.encoding.com/knowledge-base/article/correct-mime-types-for-serving-video-files/">What
+                            is a Video MIME Type?</a>
                     </div>
                 </div>
             </div>
