@@ -85,19 +85,131 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The
+                                <code>source</code> element specifies one or more media resources for the elements:
+                                <ol>
+                                    <li><code>picture</code></li>
+                                    <li><code>audio</code></li>
+                                    <li><code>video</code></li>
+                                </ol>
+                            </li>
+                            <li>
+                                It is a <code>void</code> element, which means that it has no content and does not
+                                require a closing tag
+                            </li>
+                            <li>
+                                This element is commonly used to offer the same media content in multiple file formats
+                                in order to provide compatibility
+                                with a broad range of browsers
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
                     <h2>Example</h2>
                     <div class="content"></div><!--content-->
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>src</code>
+                                <ol>
+                                    <li>
+                                        The <code>src</code> attribute gives the URL of the media resource
+                                    </li>
+                                    <li>
+                                        <em>Required</em> if the <strong>parent</strong> of
+                                        <code>source</code> is
+                                        <ol>
+                                            <li><code>audio</code></li>
+                                            <li><code>video</code></li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <em>Not allowed</em> if the <strong>parent</strong> is <code>picture</code>
+                                    </li>
+                                </ol>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            </li><!--src-->
+                            <li>
+                                <code>srcset</code>
+                                <ol>
+                                    <li>
+                                        Specifies a comma-separated list of one or more image URLs and their descriptors
+                                    </li>
+                                    <li>Required if the parent of
+                                        <code>source</code> is <code>picture</code>
+                                    </li>
+                                    <li>
+                                        Not allowed if the parent is <code>audio</code> or <code>video</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>codecs</code>
+                                <ol>
+                                    <li>
+                                        The <code>codecs</code> parameter, which certain MIME types define, might be
+                                        necessary to
+                                        specify exactly how the resource is encoded
+                                    </li>
+                                    <li>
+                                        <code>
+                                            &lt;source src='video.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2" '&gt;
+                                        </code>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol><!--top-->
+
+                    </div><!--content-->
+
+                    <h2>Two Rules</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>source</code> child element of <code>audio/video</code>
+                                <em>must</em> have <code>src</code> but <em>must not</em> have <code>srcset</code>
+                            </li>
+                            <li>
+                                The <code>source</code> child element of <code>picture</code> <em> must</em> have
+                                <code>srcset</code> but <code>must not</code> have <code>src</code>
+                            </li>
+                        </ol>
+
+                    </div><!--content-->
+                    <h2 id="psst">mnemonic</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>picture</code> > <code>source</code> &mdash;&gt; <code>srcset</code> not
+                                <code>src</code>
+
+                            </li>
+                            <li>
+                                <code>audio/video</code> > <code>source</code> &mdash;&gt; <code>src</code> not
+                                <code>srcset</code>
+                            </li>
+                            <li>
+                                (Summary) <code>PSST</code>
+                                <code>picture</code>&ndash;<code>source</code>&ndash;<code>srcset</code>
+                            </li>
+                        </ol>
+
+
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source">MDN: source
+                            element</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/video.html#the-source-element">W3C: source
+                            element</a>
+                    </div>
                 </div>
             </div>
         </div>
