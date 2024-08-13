@@ -85,19 +85,60 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>An audio element represents a sound or audio stream</li>
+                            <li><code>controls</code></li>
+                            <li>
+                                <code>src</code>
+                                <ol>
+                                    <li>
+                                        The URL of the audio to embed
+                                    </li>
+                                    <li>
+                                        Optional; you may instead use the
+                                        <code>source</code> element within the audio block to specify the audio to embed
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>preload</code></li>
+                            <li><code>autoload</code></li>
+                            <li><code>loop</code></li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <audio controls>
+                            <source src="../audio/car.ogg">
+                            <source src="../audio/car.mp3">
+                        </audio>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+    &lt;audio controls&gt;
+        &lt;source src="../audio/car.ogg"&gt;
+        &lt;source src="../audio/car.mp3"&gt;
+    &lt;/audio&gt; </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li><code>.ogg</code> plays on Firefox but not on Safari</li>
+                            <li>Audio files created with <i>Mathematica</i></li>
+                        </ol>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio">MDN: The Embed Audio
+                            element</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/2011/WD-html5-20110405/video.html#audio">W3C: audio element</a>
+                    </div>
                 </div>
             </div>
         </div>
