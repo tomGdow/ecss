@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        video {
+            width: 50%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,9 +111,6 @@
                             </li>
                         </ol>
                     </div><!--content-->
-
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
 
                     <h2>Notes</h2>
                     <div class="content">
@@ -180,6 +181,55 @@
                         </ol>
 
                     </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example (Picture)</h2>
+                    <div class="content">
+                        <picture>
+                            <source srcset="../images/blueHelloWorld.png" media="(min-width:800px)">
+
+                            <source srcset="../images/redHelloWorld.png" media="(min-width: 600px)">
+
+                            <img src="../images/greenHelloWorld.png" alt="Picture of Green Rectangle">
+                        </picture>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;picture&gt;
+
+    &lt;source 
+        srcset="../images/blueHelloWorld.png" 
+        media="(min-width:800px)"&gt;
+
+    &lt;source 
+        srcset="../images/redHelloWorld.png" 
+        media="(min-width: 600px)"&gt;
+
+    &lt;img 
+        src="../images/greenHelloWorld.png" 
+        alt="Picture of Green Rectangle"&gt;
+
+&lt;/picture&gt;</pre>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+
+                    <h2 class="example">Example (Video)</h2>
+                    <div class="content">
+                        <video controls>
+                            <source src="../videos/citrus.webm">
+                            <source src="../videos/citrus.mp4">
+                        </video>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;video controls&gt;
+    &lt;source src="../videos/citrus.webm"&gt;
+    &lt;source src="../videos/citrus.mp4"&gt;
+&lt;/video&gt; </pre>
+                        </div>
+                    </div><!--content-->
+                    <hr>
+
                     <h2 id="psst">mnemonic</h2>
                     <div class="content">
                         <ol>
@@ -197,8 +247,6 @@
                                 <code>picture</code>&ndash;<code>source</code>&ndash;<code>srcset</code>
                             </li>
                         </ol>
-
-
                     </div><!--content-->
 
                     <h2>References</h2>
