@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        table {
+            border-spacing: 1em 1px;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,7 +133,45 @@
                             <li><code>.ogg</code> plays on Firefox but not on Safari</li>
                             <li>Audio files created with <i>Mathematica</i></li>
                         </ol>
+
+                        <table>
+                            <tr>
+                                <th>
+                                    AudioType
+                                </th>
+                                <th>
+                                    Extension
+                                </th>
+                                <th>
+                                    MIME Type
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    MPEG-3
+                                </td>
+                                <td>
+                                    <code>.mp3</code>
+                                </td>
+                                <td>
+                                    <code>audio/mpeg</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>WebM audio</td>
+                                <td><code>.weba</code></td>
+                                <td><code>audio/webm</code></td>
+                            </tr>
+                            <tr>
+                                <td>Waveform</td>
+                                <td>
+                                    <code>.wav</code>
+                                </td>
+                                <td><code>audio/wav</code></td>
+                            </tr>
+                        </table>
                     </div><!--content-->
+
 
                     <h2>References</h2>
                     <div class="content ref">
