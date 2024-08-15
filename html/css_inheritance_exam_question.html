@@ -48,6 +48,14 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .hide {
+            display: none;
+        }
+
+        .answer:hover>.hide {
+            display: inline;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +93,136 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <pre>
+&lt;head&gt;
+    &lt;style&gt;
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            text-align: left;
+            color: blue;
+        }
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+        p {
+            font-style: italic;
+            text-align: justify;
+            color: #00ff00;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 style="font-weight:bold"&gt;This is a heading&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph&lt;/p&gt;
+&lt;/body&gt;</pre>
+                    </div><!--content-->
+
+                    <h2 class="example">Choices</h2>
+                    <div class="content">
+
+                        <h3>Choose Three Correct Answers</h3>
+                        <ol>
+                            <li><!--choice one-->
+                                The text <q>This is a paragraph</q> will display blue and will be
+                                italicized <br>
+                                <label for="choice1_True">True</label>
+                                <input type="checkbox" id="choice1_True">
+                                <br>
+                                <label for="choice1_False">False</label>
+                                <input type="checkbox" id="choice1_False">
+                                <div style="float:right" class="answer">
+                                    <span class="hide">False</span> Hover for answer
+                                </div>
+                                <div>&nbsp</div>
+                            </li>
+                            <li><!--choice 2-->
+                                The text <q>This is a paragraph</q> will display using the font "Segoe
+                                UI"
+                                <br>
+                                <label for="choice2_True">True</label>
+                                <input type="checkbox" id="choice2_True">
+                                <br>
+                                <label for="choice2_False">False</label>
+                                <input type="checkbox" id="choice2_False">
+                                <div style="float:right" class="answer">
+                                    <span class="hide">True</span> Hover for answer
+                                </div>
+                                <div>&nbsp</div>
+                            </li>
+                            <li><!--choice 3-->
+                                The text <q>This is a paragraph</q> will display green and will be
+                                justified <br>
+                                <label for="choice3_True">True</label>
+                                <input type="checkbox" id="choice3_True">
+                                <br>
+                                <label for="choice3_False">False</label>
+                                <input type="checkbox" id="choice3_False">
+                                <div style="float:right" class="answer">
+                                    <span class="hide">True</span> Hover for answer
+                                </div>
+                                <div>&nbsp</div>
+                            </li>
+                            <li><!--choice 4-->
+                                The text <q> This is a heading</q> will display blue and will be left
+                                aligned <br>
+                                <label for="choice4_True">True</label>
+                                <input type="checkbox" id="choice4_True">
+                                <br>
+                                <label for="choice4_False">False</label>
+                                <input type="checkbox" id="choice4_False">
+                                <div style="float:right" class="answer">
+                                    <span class="hide">True</span> Hover for answer
+                                </div>
+                                <div>&nbsp</div>
+                            </li>
+                            <li><!--choice 5-->
+                                The text <q>This is a heading</q> will be justified <br>
+
+                                <label for="choice5_True">True</label>
+                                <input type="checkbox" id="choice5_True">
+                                <br>
+                                <label for="choice5_False">False</label>
+                                <input type="checkbox" id="choice5_False">
+                                <div style="float:right" class="answer">
+                                    <span class="hide">False</span> Hover for answer
+                                </div>
+                                <div>&nbsp</div>
+                            </li>
+                            <li><!--choice 6-->
+                                The text <q>This is a heading</q> will display black and will be
+                                bolded <br>
+                                <label for="choice6_True">True</label>
+                                <input type="checkbox" id="choice6_True">
+                                <br>
+                                <label for="choice6_False">False</label>
+                                <input type="checkbox" id="choice6_False">
+                                <div style="float:right" class="answer">
+                                    <span class="hide">False</span> Hover for answer
+                                </div>
+                                <div>&nbsp</div>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        Some properties like
+                        <ol>
+                            <li><code>font-size</code></li>
+                            <li><code>color</code></li>
+                            <li><code>font-family</code></li>
+                        </ol> <strong>are inherited from the parent</strong> when the element has no value specified
+                        in itself
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2>View Answer in Browser</h2>
+                    <div class="content">
+                        <a href="./raw_css_inheritance_exam_question.html">click here</a>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        Skillsoft module 5 CSS/HTML Question
+                    </div><!--content-->
                 </div>
             </div>
         </div>
