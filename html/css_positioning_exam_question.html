@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        /* #exaom_question {
+            width: 100%;
+        } */
+
+        .draggable {
+            position: absolute;
+        }
+
+        #optionOne,
+        #optionTwo,
+        #optionThree,
+        #optionFour,
+        #optionFive {
+            position: absolute;
+            background-color: #f1f1f1;
+
+        }
+
+        #optionOne {
+            top: 20em;
+            z-index: 10
+        }
+
+        #optionTwo {
+            top: 20em;
+            z-index: 9
+        }
+
+        #optionThree {
+            top: 20em;
+            z-index: 8
+        }
+
+        #optionFour {
+            top: 20em;
+            z-index: 7;
+        }
+
+        #optionFive {
+            top: 20em;
+            z-index: 6;
+            background-color: revert;
+            color: var(--primary-green);
+        }
+
+        #boxOne {
+            position: absolute;
+            /* top: 3em; */
+            right: 40%;
+            width: 90%;
+            height: 4em;
+            border: 2px solid white;
+            z-index: 1;
+        }
+
+        #boxTwo {
+            position: absolute;
+            top: 5em;
+            right: 40%;
+            width: 90%;
+            height: 4em;
+            border: 2px solid white;
+            z-index: 1;
+        }
+
+        #boxThree {
+            position: absolute;
+            top: 10em;
+            right: 40%;
+            width: 90%;
+            height: 4em;
+            border: 2px solid white;
+            z-index: 1;
+        }
+
+        #boxFour {
+            position: absolute;
+            top: 15em;
+            right: 40%;
+            width: 90%;
+            height: 4em;
+            border: 2px solid white;
+            z-index: 1;
+        }
+
+        .container2 {
+            position: relative;
+            height: 70vh;
+            /* border: 2px solid green; */
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .answer:hover>.hide {
+            display: inline;
+        }
+
+        .alpha {
+            list-style-type: upper-alpha;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="PREV.html" id="prevPage" accesskey="p">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html" accesskey="h">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html" id="nextPage" accesskey="n">next</a>&nbsp;&nbsp;
+                        <a href="./search.html" accesskey="s">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        <div class="container2">
+                            <div id="optionOne">
+                                <pre>
+ 1. A type of positioning in CSS which places items in an exact location on a 
+  webpage, in relation to its parent element </pre>
+                            </div>
+                            <div id="optionTwo">
+                                <pre>
+ 2. A type of positioning in CSS which places items naturally, 
+    one after the other, on a webpage </pre>
+                            </div>
+                            <div id="optionThree">
+                                <pre>
+ 3. A type of positioning in CSS which places items relative 
+    to where they normally are in relation to how things 
+    normally flow on a webpage </pre>
+                            </div>
+                            <div id="optionFour">
+                                <pre>
+ 4. A type of positioning in CSS which places items in an exact
+    location on a webpage, in relation to the browser window </pre>
+                            </div>
+                            <div id="optionFive">
+
+                                <div class="answer">
+                                    <b>Hover for Answers</b>
+                                    <span class="hide">
+                                        <ol class="alpha">
+                                            <li>Absolute &ndash; 1</li>
+                                            <li>Relative &ndash; 3</li>
+                                            <li>Static &ndash; 2</li>
+                                            <li>Fixed &ndash; 4</li>
+                                        </ol>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div id="boxOne">A. Absolute</div>
+                            <div id="boxTwo">B. Relative</div>
+                            <div id="boxThree">C. Static</div>
+                            <div id="boxFour">D. Fixed</div>
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example" id="noteHeader">Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li class="space_above">
+                                <code>static</code>
+                                <ol>
+                                    <li>
+                                        HTML elements are positioned static by default
+                                    </li>
+                                    <li>
+                                        Static positioned elements are not affected by the
+                                        <code>top</code>,
+                                        <code>bottom</code>,
+                                        <code>left</code>,
+                                        and <code>right</code>
+                                        properties
+                                    </li>
+
+                                    <li>
+                                        An element with <code>position: static;</code> is not positioned in any special
+                                        way
+                                    </li>
+                                    <li>
+                                        It is
+                                        always positioned according to the normal flow of the page
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>relative</code>
+                                <ol>
+                                    <li>
+                                        An element with <code>position: relative;</code> is positioned <em>relative</em>
+                                        to
+                                        its
+                                        normal position
+                                    </li>
+                                    <li>
+                                        Setting the
+                                        <code>top</code>,
+                                        <code>right</code>,
+                                        <code>bottom</code>,
+                                        and <code>left</code> properties of a relatively-positioned element will
+                                        cause it to be adjusted away
+                                        from its normal position
+
+                                    </li>
+                                    <li>
+                                        Other content <strong>will not be adjusted</strong> to fit into any gap left by
+                                        the element
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above"><code>fixed</code>
+                                <ol>
+                                    <li>
+                                        An element with <code>position: fixed;</code> is positioned <strong>relative to
+                                            the
+                                            viewport</strong>, which means it always stays in the same place
+                                        even if the page is scrolled
+
+                                    </li>
+                                    <li>
+                                        The <code>top</code>,
+                                        <code>right</code>,
+                                        <code>bottom</code>,
+                                        and <code>left</code> properties are used to position the element
+                                    </li>
+
+                                    <li>
+                                        A <code>fixed</code> element does not leave a gap in the page where it would
+                                        normally
+                                        have been located
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>absolute</code>
+                                <ol>
+                                    <li>
+                                        An element with <code>position: absolute;</code> is positioned <strong>relative
+                                            to the nearest positioned ancestor</strong> (instead of positioned
+                                        relative to the viewport, like fixed)
+                                    </li>
+                                    <li>
+                                        However; if an absolute positioned element has no positioned ancestors, it uses
+                                        the
+                                        document body, and moves along with
+                                        page scrolling
+                                    </li>
+                                    <li>
+                                        Note: Absolute positioned elements <strong>are removed from the normal
+                                            flow</strong>, and can
+                                        overlap
+                                        elements
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2>References</h2>
+                    <div class="content ref">
+                        <a href="https://www.w3schools.com/howto/howto_js_draggable.asp">W3Schools: HowTo - Create a
+                            Draggable HTML Element </a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://www.w3schools.com/css/css_positioning.asp">W3C: CSS Layout - The position
+                            Property</a>
+                    </div><!--content-->
+
+                </div>
+            </div>
+        </div>
+
+        <!--  Templates -->
+
+
+        <template id="prevPageTemplate">css_inheritance_exam_question</template> <!--PREVIOUS PAGE-->
+
+        <template id="pageTitleTemplate">css_positioning_exam_question</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">color_wheel</template><!--NEXT PAGE-->
+
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
+
+        // Make the DIV element draggable:
+        // W3Schools is source
+
+        const arr = ["optionOne", "optionTwo", "optionThree", "optionFour", "optionFive", "optionSix"]
+
+        for (el of arr) {
+            dragElement(document.getElementById(el));
+        }
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            if (document.getElementById(elmnt.id + "header")) {
+                // if present, the header is where you move the DIV from:
+                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+            } else {
+                // otherwise, move the DIV from anywhere inside the DIV:
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                // stop moving when mouse button is released:
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
