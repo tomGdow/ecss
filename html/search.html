@@ -63,6 +63,7 @@
           <label for="mainSearchBox">Search</label>
           <input type="text" id="mainSearchBox" title="search" list="pageList" name="mainSearchBox" autofocus>
           <datalist id="pageList">
+            <option value="absolute"></option>
             <option value="absolute_relative_links"></option>
             <option value="accesskey"></option>
             <option value="anchor"></option>
@@ -87,6 +88,8 @@
             <option value="doctype"></option>
             <option value="fieldset"></option>
             <option value="figure"></option>
+            <option value="fixed"></option>
+            <option value="float"></option>
             <option value="footer"></option>
             <option value="form"></option>
             <option value="forms_basic"></option>
@@ -137,11 +140,13 @@
             <option value="picture_densities_example"></option>
             <option value="p_tag"></option>
             <option value="references"></option>
+            /option value="relative"></option>
             <option value="section"></option>
             <option value="select"></option>
             <option value="script"></option>
             <option value="source"></option>
             <option value="span"></option>
+            <option value="static"></option>
             <option value="stylesheet_precedence"></option>
             <option value="stylesheet_types"></option>
             <option value="svg"></option>
@@ -179,6 +184,7 @@
     document.getElementById("pageTitle").innerHTML = title;
 
     var sitePageArr = [
+      "absolute",
       "absolute_relative_links",
       "accesskey",
       "anchor",
@@ -203,6 +209,8 @@
       "doctype",
       "fieldset",
       "figure",
+      "fixed",
+      "float",
       "footer",
       "form",
       "forms_basic",
@@ -253,11 +261,13 @@
       "picture_densities_example",
       "p_tag",
       "references",
+      "relative",
       "section",
       "select",
       "script",
       "source",
       "span",
+      "static",
       "stylesheet_precedence",
       "stylesheet_types",
       "svg",
