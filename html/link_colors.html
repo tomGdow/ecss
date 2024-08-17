@@ -48,6 +48,41 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+
+        table {
+            border-spacing: 2em 1em;
+            margin-left: auto;
+            margin-right: auto;
+            caption-side: bottom;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        td:first-of-type {
+            text-align: left;
+        }
+
+        #visited+td {
+            color: white;
+            background-color: purple;
+        }
+
+        #active+td {
+            background-color: red;
+            color: white;
+        }
+
+        #link+td {
+            background-color: blue;
+            color: white;
+        }
+
+        caption {
+            color: var(--primary-green);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +120,27 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <table>
+                            <caption>Default Colors</caption>
+                            <tr>
+                                <th>State</th>
+                                <th>Default Color</th>
+                            </tr>
+                            <tr>
+                                <td id="link">link</td>
+                                <td>blue</td>
+                            </tr>
+                            <tr>
+                                <td id="visited">visited</td>
+                                <td>purple</td>
+                            </tr>
+                            <tr>
+                                <td id="active">active</td>
+                                <td>red</td>
+                            </tr>
+                        </table>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
@@ -103,7 +149,6 @@
         </div>
 
         <!--  Templates -->
-
 
         <template id="prevPageTemplate">link</template> <!--PREVIOUS PAGE-->
 
