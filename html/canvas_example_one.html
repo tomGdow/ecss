@@ -48,6 +48,17 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        canvas {
+            border: 2px solid var(--primary-green);
+            background-color: lightgoldenrodyellow;
+        }
+
+        div.mycanvas {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +96,79 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <div class="mycanvas">
+                            <canvas id="canvas_one"></canvas>
+                        </div>
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>JavaScript</h3>
+                            <pre>
+    const canvas = document.getElementById("canvas_one")
+    let ctx = canvas.getContext("2d")
+    
+// Blue Rectangle
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(10, 10, 150, 100);
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+// Clear Area (Blue Rectangle)
+    ctx.clearRect(20, 20, 40, 40)
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+// Red Rectangle
+    ctx.strokeStyle = "red";
+    ctx.strokeRect(240, 90, 50, 50) </pre>
+                        </div>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+    &lt;canvas id="canvas_one"&gt;&lt;/canvas&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+    canvas {
+        border: 2px solid var(--primary-green);
+        background-color: lightgoldenrodyellow;
+    } </pre>
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                Default canvas dimensions are (<code>x</code>, <code>y</code>) = (<code>300, 150</code>)
+                            </li>
+                            <li>
+                                The <b>upper-left</b> corner of the canvas has the coordinates (<code>x</code>,
+                                <code>y</code>) = (<code>0</code>,
+                                <code>0</code>)
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">Commands</h2>
+                    <div class="content">
+
+                        <ol>
+                            <li>
+                                <code>fillStyle='color'</code>
+                            </li>
+                            <li>
+                                <code>fillRect(x, y, width, height)</code>
+                            </li>
+                            <li>
+                                <code>strokeRect(x, y, width,height)</code>
+                            </li>
+                            <li>
+                                <code>clearRect(x, y, width, height)</code>
+                            </li>
+
+                        </ol>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
@@ -128,6 +202,15 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        // canvas
+        const canvas = document.getElementById("canvas_one")
+        let ctx = canvas.getContext("2d")
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(10, 10, 150, 100);
+        ctx.clearRect(20, 20, 40, 40)
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(240, 90, 50, 50)
 
     </script>
 </body>
