@@ -48,6 +48,17 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        canvas {
+            /* border: 2px solid var(--primary-green); */
+            background-color: lightgoldenrodyellow;
+        }
+
+        div.mycanvas {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +96,59 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <div class="mycanvas">
+                            <canvas id="canvas_one"></canvas>
+                        </div>
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>JavaScript</h3>
+                            <pre>
+    const canvas = document.getElementById("canvas_one")
+    let ctx = canvas.getContext("2d")
+
+    ctx.arc(150, 75, 40, 0, 2 * Math.PI);
+    ctx.strokeStyle = "red";
+    ctx.fillStyle = "lightgreen";
+    ctx.lineWidth = 10;
+
+    ctx.stroke();
+    ctx.fill(); </pre>
+                        </div>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+    &lt;canvas id="canvas_one"&gt;&lt;/canvas&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+    canvas {
+        background-color: lightgoldenrodyellow;
+    } </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>Notes</h2>
                     <div class="content"></div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2>Commands</h2>
+                    <div class="content">
+                        <ol>
+                            <li><code>getContext('2d')</code></li>
+                            <li>
+                                <code>arc(x, y, radius, startAngle, endAngle)</code>
+                            </li>
+                            <li><code>strokeStyle="color"</code></li>
+                            <li><code>fillStyle="color"</code></li>
+                            <li><code>linewidth="value</code></li>
+                            <li><code>stroke()</code></li>
+                            <li><code>fill()</code></li>
+                        </ol>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
@@ -128,6 +182,19 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        //canvas
+
+        const canvas = document.getElementById("canvas_one")
+        let ctx = canvas.getContext("2d")
+        // ctx.beginPath()
+        ctx.arc(150, 75, 40, 0, 2 * Math.PI);
+        ctx.strokeStyle = "red";
+        ctx.fillStyle = "lightgreen";
+        ctx.lineWidth = 10;
+        ctx.stroke();
+        ctx.fill();
+        // ctx.closePath();
 
     </script>
 </body>
