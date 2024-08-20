@@ -48,6 +48,17 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        canvas {
+            /* border: 2px solid var(--primary-green); */
+            background-color: lightgoldenrodyellow;
+        }
+
+        div.mycanvas {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,31 +96,101 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <div class="mycanvas">
+                            <canvas id="canvas_one"></canvas>
+                        </div>
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div>
+                            <h3>JavaScript</h3>
+                            <pre>
+    const canvas = document.getElementById("canvas_one")
+    let ctx = canvas.getContext("2d")
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+//--filled triangle
+    ctx.beginPath();
+    ctx.moveTo(75, 25);
+    ctx.lineTo(125, 75);
+    ctx.lineTo(25, 75);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    ctx.closePath();
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+//--blue line of triangle
+    ctx.beginPath();
+    ctx.moveTo(175, 75)
+    ctx.lineTo(275, 75)
+    ctx.strokeStyle = "Blue"
+    ctx.lineWidth = "3"
+    ctx.stroke();
+    ctx.closePath;
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
-                </div>
+//--green line of triangle
+    ctx.beginPath();
+    ctx.moveTo(275, 75)
+    ctx.strokeStyle = "Green"
+    ctx.lineTo(225, 125);
+    ctx.stroke();
+    ctx.closePath();
+
+//--red line of triangle
+    ctx.beginPath();
+    ctx.moveTo(225, 125);
+    ctx.lineTo(175, 75);
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+    ctx.closePath() </pre>
+                            <h3>HTML</h3>
+                            <pre>
+    &lt;canvas id="canvas_one"&gt;&lt;/canvas&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+    canvas {
+        background-color: lightgoldenrodyellow;
+    } </pre>
+                        </div>
+                    </div>
+                </div><!--content-->
+
+                <h2>Notes</h2>
+                <div class="content">
+
+                    <ol>
+                        <li><code>getContext('2d')</code></li>
+                        <li><code>beginPath()</code></li>
+                        <li><code>closePath()</code></li>
+                        <li><code>fill()</code></li>
+                        <li><code>stroke()</code></li>
+                        <li><code>moveTo(x, y)</code></li>
+                        <li><code>lineTo(x, y)</code></li>
+                        <li><code>fillStyle = "red"</code></li>
+                        <li><code>strokeStyle = "Green"</code></li>
+                        <li><code>lineWidth = "3"</code></li>
+                    </ol>
+                    
+                </div><!--content-->
+
+                <h2>Mnemonic</h2>
+                <div class="content"></div><!--content-->
+
+                <h2>References</h2>
+                <div class="content ref"></div><!--content-->
             </div>
         </div>
+    </div>
 
-        <!--  Templates -->
+    <!--  Templates -->
 
+    <template id="prevPageTemplate">canvas_example_two</template> <!--PREVIOUS PAGE-->
 
-        <template id="prevPageTemplate">canvas_example_two</template> <!--PREVIOUS PAGE-->
+    <template id="pageTitleTemplate">canvas_example_three</template> <!--PAGE TITLE-->
 
-        <template id="pageTitleTemplate">canvas_example_three</template> <!--PAGE TITLE-->
-
-        <template id="nextPageTemplate">svg</template><!--NEXT PAGE-->
+    <template id="nextPageTemplate">canvas_example_four</template><!--NEXT PAGE-->
 
 
     </div>
@@ -128,6 +209,50 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        // canvas
+
+        const canvas = document.getElementById("canvas_one")
+        let ctx = canvas.getContext("2d")
+
+        //--filled triangle
+        ctx.beginPath();
+        ctx.moveTo(75, 25);
+        ctx.lineTo(125, 75);
+        ctx.lineTo(25, 75);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.closePath();
+
+        //--blue line of triangle
+        ctx.beginPath();
+        ctx.moveTo(175, 75)
+        ctx.lineTo(275, 75)
+        ctx.strokeStyle = "Blue"
+        ctx.lineWidth = "3"
+        ctx.stroke();
+        ctx.closePath;
+
+        //--green line of triangle
+        ctx.beginPath();
+        ctx.moveTo(275, 75)
+        ctx.strokeStyle = "Green"
+        ctx.lineTo(225, 125);
+        ctx.stroke();
+        ctx.closePath();
+
+        //--red line of triangle
+        ctx.beginPath();
+        ctx.moveTo(225, 125);
+        ctx.lineTo(175, 75);
+        ctx.strokeStyle = "red";
+        ctx.stroke();
+        ctx.closePath()
+        // ctx.fillStyle = 'green';
+        // ctx.fillRect(10, 10, 150, 100);
+        // ctx.clearRect(20, 20, 40, 40)
+        // ctx.strokeStyle = "red";
+        // ctx.strokeRect(240, 90, 50, 50) 
 
     </script>
 </body>
