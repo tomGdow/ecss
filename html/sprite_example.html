@@ -48,16 +48,6 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
-
-        #bg_image {
-            background-image: url(../images/apples-marked-2700.webp);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: cover;
-            background-size: cover;
-            width: 100%;
-            height: 40vh;
-        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,9 +85,7 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content" id="bg_image">
-
-                    </div><!--content-->
+                    <div class="content"></div><!--content-->
 
                     <h2>Example</h2>
                     <div class="content"></div><!--content-->
@@ -117,11 +105,11 @@
         <!--  Templates -->
 
 
-        <template id="prevPageTemplate">max_width_image_example</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">responsive_background_image_example</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">responsive_background_image_example</template> <!--PAGE TITLE-->
+        <template id="pageTitleTemplate">sprite_example</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">sprite_example</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">overflow</template><!--NEXT PAGE-->
 
 
     </div>
