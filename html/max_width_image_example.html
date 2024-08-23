@@ -48,6 +48,24 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .container_two {
+            display: flex;
+            height: 100px;
+            gap: 1em;
+            padding-bottom: 2em;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .inner {
+            width: 33.33%
+        }
+
+        img.apples {
+            max-width: 100%;
+            /* max-width: -moz-fit-content; */
+            /* height: auto; */
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,13 +103,27 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+
+                        <div class="container_two">
+                            <div class="inner"><img src="../images/apples-marked-2700.webp" alt="picture of apples"
+                                    class="apples">
+                            </div>
+                            <div class="inner"><img src="../images/apples-marked-2700.webp" alt="picture of apples"
+                                    class="apples"></div>
+                            <div class="inner"><img src="../images/apples-marked-2700.webp" alt="picture of apples"
+                                    class="apples"></div>
+                        </div>
+
+                    </div><!--content-->
 
                     <h2>Example</h2>
                     <div class="content"></div><!--content-->
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <code>max-width</code> great way of implementing flexible images in web design (Jamie Campbell)
+                    </div><!--content-->
 
                     <h2>Mnemonic</h2>
                     <div class="content"></div><!--content-->
@@ -109,7 +141,7 @@
 
         <template id="pageTitleTemplate">max_width_image_example</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">overflow</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">responsive_background_image_example</template><!--NEXT PAGE-->
 
 
     </div>

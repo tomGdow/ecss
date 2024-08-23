@@ -48,6 +48,17 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        canvas {
+            /* border: 2px solid var(--primary-green); */
+            background-color: lightgoldenrodyellow;
+        }
+
+        div.mycanvas {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,10 +96,39 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="mycanvas">
+                            <canvas id="canvas_one"></canvas>
+                        </div>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>JavaScript</h3>
+                            <pre>
+    ctx.font = "50px serif";
+    ctx.strokeStyle = "green";
+    ctx.lineWidth = "1"
+    ctx.strokeText("Hello", 20, 50)
+    ctx.fillStyle = "red";
+    ctx.fillText("World", 80, 120) </pre>
+                        </div>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+    &lt;canvas id="canvas_one"&gt;&lt;/canvas&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+    canvas {
+        background-color: lightgoldenrodyellow;
+    } </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>Notes</h2>
                     <div class="content"></div><!--content-->
@@ -128,6 +168,18 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        // canvas
+
+        const canvas = document.getElementById("canvas_one")
+        let ctx = canvas.getContext("2d")
+
+        ctx.font = "50px serif";
+        ctx.strokeStyle = "green";
+        ctx.lineWidth = "1"
+        ctx.strokeText("Hello", 20, 50)
+        ctx.fillStyle = "red";
+        ctx.fillText("World", 80, 120)
 
     </script>
 </body>
