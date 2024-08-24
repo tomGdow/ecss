@@ -63,8 +63,21 @@
 
         img.apples {
             max-width: 100%;
-            /* max-width: -moz-fit-content; */
-            /* height: auto; */
+        }
+
+        .wrapper,
+        .wrapper_two {
+            margin: auto;
+            border: 5px solid var(--primary-green);
+        }
+
+        .wrapper {
+            max-width: -moz-fit-content;
+            max-width: fit-content;
+        }
+
+        .wrapper_two {
+            width: 50%;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,6 +117,16 @@
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
+                        <ol>
+                            <li>
+                                <code>max-width</code> may be used to implement flexible images in web design
+                            </li>
+                        </ol>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Example 1 (max-width=100%)</h2>
+                    <div class="content">
 
                         <div class="container_two">
                             <div class="inner"><img src="../images/apples-marked-2700.webp" alt="picture of apples"
@@ -114,28 +137,162 @@
                             <div class="inner"><img src="../images/apples-marked-2700.webp" alt="picture of apples"
                                     class="apples"></div>
                         </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+    .container_two {
+        display: flex;
+        height: 100px;
+        gap: 1em;
+        padding-bottom: 2em;
+        background-color: lightgoldenrodyellow;
+    }
 
+    .inner {
+        width: 33.33%
+    }
+
+    img.apples {
+        max-width: 100%;
+    }</pre>
+                        </div>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+    &lt;div class="container_two"&gt;
+
+        &lt;div class="inner"&gt;
+            &lt;img src="../images/apples-marked-2700.webp" 
+                alt="picture of apples"
+                class="apples"&gt;
+        &lt;/div&gt;
+
+        &lt;div class="inner"&gt;
+            &lt;img src="../images/apples-marked-2700.webp" 
+                alt="picture of apples"
+                class="apples"&gt;&lt;/div&gt;
+
+        &lt;div class="inner"&gt;
+            &lt;img src="../images/apples-marked-2700.webp" 
+                alt="picture of apples"
+                class="apples"&gt;&lt;/div&gt;
+
+    &lt;/div&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>Notes</h3>
+                            <ol>
+                                <li>
+                                    The key declaration is
+                                    <pre>
+    img.apples {
+        max-width: 100%;
+    } </pre>
+                                </li>
+                                <li>
+                                    The <code>width</code> of
+                                    <code>apples-marked-2700.webp</code> is <code>2700px</code>, much larger than the
+                                    space available
+                                </li>
+                                <li>
+                                    Removal of the <code>max-width:100%</code> declaration causes the images to
+                                    'overflow' their containing tags.
+                                </li>
+                                <li>
+                                    Based on an example by Jamie Campbell (Skillsoft, Ireland)
+                                </li>
+                            </ol>
+                        </div>
                     </div><!--content-->
-
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>Notes</h2>
+                    <hr>
+                    <h2 class="example">Example 2 (max-width: fit-content)</h2>
                     <div class="content">
-                        <code>max-width</code> great way of implementing flexible images in web design (Jamie Campbell)
+                        <div class="wrapper">
+                            <img src="../images/myFourSquares2.png" alt="four coloured squares sprite image">
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+    .wrapper,
+    .wrapper_two {
+        margin: auto;
+        border: 5px solid var(--primary-green);
+    }
+
+    .wrapper {
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+    } </pre>
+                        </div>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+    &lt;div class="wrapper"&gt;
+        &lt;img src="../images/myFourSquares2.png" 
+            alt="four coloured squares sprite image"&gt;
+    &lt;/div&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>Notes</h3>
+                            <ol>
+                                <li>
+                                    The key declaration is <code>max-width: fit-content</code>
+                                </li>
+                                <li>
+                                    The result of removing this declaration is shown in the next example
+                                </li>
+                            </ol>
+                        </div>
+
                     </div><!--content-->
+                    <hr>
+                    <h2 class="example">Example 3 (width: 50%)</h2>
+                    <div class="content">
+                        <div class="wrapper_two">
+                            <img src="../images/myFourSquares2.png" alt="four coloured squares sprite image">
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+    .wrapper,
+    .wrapper_two {
+        margin: auto;
+        border: 5px solid var(--primary-green);
+    }
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+    .wrapper_two {
+        width: 50%;
+    } </pre>
+                        </div>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+    &lt;div class="wrapper"&gt;
+        &lt;img src="../images/myFourSquares2.png" 
+            alt="four coloured squares sprite image"&gt;
+    &lt;/div&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>Notes</h3>
+                            <ol>
+                                <li>This example is the same as the example above (Example 2), except that the
+                                    declaration <code>max-width:fit-content</code> has neem replaced by
+                                    <code>width: 50%;</code>
+                                </li>
+                            </ol>
+                        </div>
 
+                    </div><!--content-->
+                    <hr>
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        Jamie Campbell (Skillsoft, Ireland) [example one]
+                    </div><!--content-->
                 </div>
             </div>
         </div>
 
         <!--  Templates -->
-
 
         <template id="prevPageTemplate">max_width</template> <!--PREVIOUS PAGE-->
 
