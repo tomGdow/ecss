@@ -48,6 +48,50 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .sprite_container {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .sprite1,
+        .sprite2,
+        .sprite3,
+        .sprite4 {
+            width: 10%;
+            padding-bottom: 10%;
+            background-image: url(../images/myFourSquares2.png);
+            background-repeat: no-repeat;
+            display: block;
+            background-size: 220%;
+        }
+
+        .sprite1 {
+            background-position: 5% 5%;
+        }
+
+        .sprite2 {
+            background-position: 94% 5%;
+        }
+
+        .sprite3 {
+            background-position: 5% 94%;
+        }
+
+        .sprite4 {
+            background-position: 94% 94%;
+        }
+
+        #sprite_image_container {
+            display: flex;
+            margin: auto;
+        }
+
+        .centered {
+            width: 50%;
+            height: 50%;
+            margin: auto;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,32 +129,141 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="sprite_container">
+                            <div class="sprite1"></div>
+                            <div class="sprite3"></div>
+                            <div class="sprite2"></div>
+                            <div class="sprite4"></div>
+                            <div class="sprite3"></div>
+                            <div class="sprite1"></div>
+                            <div class="sprite2"></div>
+                            <div class="sprite3"></div>
+                            <div class="sprite4"></div>
+                            <div class="sprite1"></div>
+                        </div>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    </div><!--content-->
+                    <h2 class="example">Original Image</h2>
+                    <div class="content">
+                        <p>The sprite is based on <code>myFourSquares2.png</code> (shown below)</p>
+                        <div id="sprite_image_container">
+                            <div class="centered">
+                                <img src="../images/myFourSquares2.png" alt="Sprite image">
+                            </div>
+                        </div>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    </div><!--content-->
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;div class="sprite_container"&gt;
+    &lt;div class="sprite1"&gt;&lt;/div&gt;
+    &lt;div class="sprite3"&gt;&lt;/div&gt;
+    &lt;div class="sprite2"&gt;&lt;/div&gt;
+    &lt;div class="sprite4"&gt;&lt;/div&gt;
+    &lt;div class="sprite3"&gt;&lt;/div&gt;
+    &lt;div class="sprite1"&gt;&lt;/div&gt;
+    &lt;div class="sprite2"&gt;&lt;/div&gt;
+    &lt;div class="sprite3"&gt;&lt;/div&gt;
+    &lt;div class="sprite4"&gt;&lt;/div&gt;
+    &lt;div class="sprite1"&gt;&lt;/div&gt;
+&lt;/div&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+.sprite_container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.sprite1,
+.sprite2,
+.sprite3,
+.sprite4 {
+    width: 10%;
+    padding-bottom: 10%;
+    background-image: url(../images/myFourSquares2.png);
+    background-repeat: no-repeat;
+    display: block;
+    background-size: 220%;
+}
+
+.sprite1 {
+    background-position: 5% 5%;
+}
+
+.sprite2 {
+    background-position: 94% 5%;
+}
+
+.sprite3 {
+    background-position: 5% 94%;
+}
+
+.sprite4 {
+    background-position: 94% 94%;
+} </pre>
+                        </div>
+                    </div>
+
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li>CSS Sprites is a technique where you use
+                                <ol>
+                                    <li>a <code>background-image</code></li>
+                                    <li>a set <code>width</code> and <code>height</code></li>
+                                    <li>
+                                        <strong>Adjust the background-position</strong> to display only the portion you
+                                        need to show
+                                    </li>
+                                </ol>
+                            </li>
+
+                            <li>This way you can use a single image and display lots of different graphics with it,
+                                saving server requests and speeding up page load times.</li>
+
+                            <li>The <q>sprite</q> is the single, combined graphic</li>
+                        </ol>
+
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        Jamie Campbell (Skillsoft)
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a
+                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_images/Implementing_image_sprites_in_CSS">MDN:
+                            Implementing image sprites in CSS
+                        </a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a
+                            href="https://css-tricks.com/css-sprites-with-inline-images/#:~:text=CSS%20Sprites%20is%20a%20technique,speeding%20up%20page%20load%20times.">CSS
+                            Tricks: CSS Sprites with Inline Images</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://css-tricks.com/css-sprites/">CSS Tricks: CSS Sprites: What They Are, Why
+                            They’re Cool, and How To Use Them</a>
+
+                    </div><!--content-->
                 </div>
             </div>
         </div>
 
         <!--  Templates -->
 
-
         <template id="prevPageTemplate">responsive_background_image_example</template> <!--PREVIOUS PAGE-->
 
         <template id="pageTitleTemplate">sprite_example</template> <!--PAGE TITLE-->
 
         <template id="nextPageTemplate">overflow</template><!--NEXT PAGE-->
-
 
     </div>
     <script>
