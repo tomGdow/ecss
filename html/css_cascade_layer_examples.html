@@ -48,6 +48,87 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        @layer alayer, blayer, zlayer;
+
+        @layer alayer {
+
+            div.content_one,
+            div.content_two,
+            div.content_three,
+            div.content_four {
+                background-color: black;
+                color: white;
+                border: 1em solid red;
+            }
+        }
+
+        @layer blayer {
+
+            div.content_one,
+            div.content_two,
+            div.content_three {
+                background-color: blue;
+                color: magenta;
+                border: 1em solid green;
+            }
+
+            div.content_four {
+                background-color: revert-layer;
+                color: revert-layer;
+                border: revert-layer;
+            }
+
+        }
+
+        @layer zlayer {
+
+            div.content_one,
+            div.content_two,
+            div.content_three,
+            div.content_four {
+                height: 10vh;
+                display: flex;
+                padding: 0 3em;
+                margin: auto;
+            }
+        }
+
+        div.content_one {
+            background-color: yellow;
+            border: 1em solid orange;
+            color: cyan;
+        }
+
+        div.content_three,
+        div.content_four {
+            background-color: revert-layer;
+            border: revert-layer;
+            color: revert-layer;
+        }
+
+        div.mycontainer {
+            display: flex;
+        }
+
+        p {
+            margin: auto;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            text-align: justify;
+        }
+
+        .right_emphasis {
+            border: solid blue;
+            border-width: 0 0.5em 0 0;
+        }
+
+        .mycontainer {
+            padding-top: 2em;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,31 +166,360 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <code>@layer alayer, blayer, zlayer;</code>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <ol>
+                            <li>
+                                Rules defined <em>outside</em> a cascade layer take precedence ('outside wins')
+                            </li>
+                            <li class="space_above">
+                                Here illustrated for <code>border</code>, <code>color</code> and
+                                <code>background-color</code>
+                            </li>
+                            <li class="space_above">
+                                The <code>zlayer</code> (last declared layer) has the highest <em>CSS layer</em>
+                                priority but here merely fullfills a 'housekeeping' role
+                            </li>
+                            <li class="space_above">
+                                Rules declared in <code>alayer</code> (first declared layer) have <em>lowest</em>
+                                priority
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">
+                        Example (alayer &larr; blayer &larr; zlayer &larr; 'outside')
+                    </h2>
+                    <div class="content">
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="mycontainer">
+                            <div class="content_one">
+                                <p>Hello world</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Notes</h3>
+                            <ol>
+                                <li class="space_above">
+                                    <code>@layer alayer, blayer, zlayer;</code>
+                                </li>
+                                <li class="space_above">
+                                    Declarations for <code>border</code>, <code>color</code> and
+                                    <code>background-color</code> declared in <code>alayer</code> <i>and</i>
+                                    <code>blayer</code> are <strong>not applied</strong>
+                                    ('outside wins')
+                                </li>
+                            </ol>
+                        </div>
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
-                </div>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;div class="mycontainer"&gt;
+
+    &lt;div class="content_one"&gt;
+        &lt;p&gt;Hello world&lt;/p&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+    @layer alayer, blayer, zlayer;
+
+    @layer alayer {
+
+        div.content_one {
+            background-color: black;
+            color: white;
+            border: 2em solid red;
+        }
+    }
+
+    @layer blayer {
+
+        div.content_one {
+            background-color: blue;
+            color: magenta;
+            border: 1em solid green;
+        }
+    }
+
+    @layer zlayer {
+
+        div.content_one {
+            height: 10vh;
+            display: flex;
+            padding: 0 3em;
+            margin: auto;
+        }
+    }
+</pre>
+                            <pre class="right_emphasis">
+    div.content_one {
+        background-color: yellow;
+        border: 1em solid orange;
+        color: cyan;
+    } </pre>
+                        </div>
+
+                    </div><!--content-->
+                    <hr>
+                    <h2 class="example">
+                        Example (alayer &larr; blayer &larr; zlayer)
+                    </h2>
+
+                    <div class="content">
+                        <div class="mycontainer">
+                            <div class="content_two">
+                                <p>Hello world</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Notes</h3>
+                            <ol>
+                                <li class="space_above"> <code>@layer alayer, blayer, zlayer;</code> </li>
+                                <li class="space_above">
+                                    Rules defined in <b><code>blayer</code></b> have higher priority than those defined
+                                    in
+                                    <b><code>alayer</code></b>
+                                </li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+    &lt;div class="mycontainer"&gt;
+
+        &lt;div class="content_two"&gt;
+            &lt;p&gt;Hello world&lt;/p&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+        @layer alayer, blayer, zlayer;
+
+        @layer alayer {
+
+            div.content_two {
+                background-color: black;
+                color: white;
+                border: 2em solid red;
+            }
+        } </pre>
+                            <pre class="right_emphasis">
+    @layer blayer {
+
+        div.content_two {
+            background-color: blue;
+            color: magenta;
+            border: 1em solid green;
+        }
+    } </pre>
+                            <pre>
+    @layer zlayer {
+
+        div.content_two {
+            height: 10vh;
+            display: flex;
+            padding: 0 3em;
+            margin: auto;
+        }
+    } </pre>
+                        </div>
+                    </div><!--content-->
+
+                    <hr>
+                    <h2 class="example">
+                        Example (alayer &larr; blayer &larr; zlayer &larr; 'outside')
+                    </h2>
+                    <div class="content">
+
+                        <div class="mycontainer">
+                            <div class="content_three">
+                                <p>Hello world</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Notes</h3>
+                            <ol>
+                                <li class="space_above"> <code>@layer alayer, blayer, zlayer;</code> </li>
+                                <li class="space_above">
+                                    Properties declared from within the <code>'outside'</code> code block have
+                                    <strong><code>revert-layer</code> as value
+                                    </strong>
+                                </li>
+                                <li class="space_above">
+                                    Matching declarartions in the CSS layer with <em>the highest priority</em> are used
+                                </li>
+                                <li class="space_above">
+                                    <code>revert-layer</code> results in matching declarations in the <em>next
+                                        highest</em> priority CSS layer being used
+                                </li>
+                                <li class="space_above">
+                                    Thus rules from <b><code>blayer</code></b> are applied
+                                </li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;div class="mycontainer"&gt;
+    &lt;div class="content_three"&gt;
+        &lt;p&gt;Hello world&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+@layer alayer, blayer, zlayer;
+
+@layer alayer {
+
+    div.content_three {
+        background-color: black;
+        color: white;
+        border: 2em solid red;
+    }
+}
+</pre>
+                            <pre class="right_emphasis">
+@layer blayer {
+
+    div.content_three {
+        background-color: blue;
+        color: magenta;
+        border: 1em solid green;
+    }
+}
+</pre>
+                            <pre>
+@layer zlayer {
+
+    div.content_three {
+        height: 10vh;
+        display: flex;
+        padding: 0 3em;
+        margin: auto;
+    }
+}
+</pre>
+                            <pre class="right_emphasis">
+    div.content_three {
+        background-color: revert-layer;
+        border: revert-layer;
+        color: revert-layer;
+    } </pre>
+                        </div>
+
+                    </div><!--content-->
+
+                    <hr>
+                    <h2 class="example">
+                        Example (alayer &larr; blayer &larr; zlayer &larr; 'outside')
+                    </h2>
+                    <div class="content">
+                        <div class="mycontainer">
+                            <div class="content_four">
+                                <p>Hello world</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Notes</h3>
+                            <ol>
+                                <li class="space_above">
+                                    <code>@layer alayer, blayer, zlayer;</code>
+                                </li>
+                                <li class="space_above">
+                                    Declarations for <code>color</code>, <code>background-color</code> and
+                                    <code>border </code>in <em>both</em> <code>'outside'</code> and <code>blayer</code>
+                                    blocks have the <code>revert-layer</code> value
+                                </li>
+                                <li class="space_above">
+                                    Thus the declarations for these properties in <b><code>alayer</code></b> are used
+                                </li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+    &lt;div class="content_four"&gt;
+        &lt;p&gt;Hello world&lt;/p&gt;
+    &lt;/div&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+    @layer alayer, blayer, zlayer;
+</pre>
+                            <pre class="right_emphasis">
+    @layer alayer {
+
+        div.content_four {
+            background-color: black;
+            color: white;
+            border: 1em solid red;
+        }
+    }
+</pre>
+                            <pre class="right_emphasis">
+    @layer blayer {
+
+        div.content_four {
+            background-color: revert-layer;
+            color: revert-layer;
+            border: revert-layer;
+        }
+
+    }
+    </pre>
+                            <pre>
+    @layer zlayer {
+
+        div.content_four {
+            height: 10vh;
+            display: flex;
+            padding: 0 3em;
+            margin: auto;
+        }
+    }
+</pre>
+                            <pre class="right_emphasis">
+
+    div.content_four {
+        background-color: revert-layer;
+        border: revert-layer;
+        color: revert-layer;
+    } </pre>
+                        </div>
+                    </div>
+                </div><!-- content -->
+
+                <h2>Mnemonic</h2>
+                <div class="content">
+                    <p>Hi(gh)! Get last</p>
+                </div><!--content-->
+
+                <h2>References</h2>
+                <div class="content ref">
+                </div><!--content-->
             </div>
         </div>
+    </div>
 
-        <!--  Templates -->
+    <!--  Templates -->
 
+    <template id="prevPageTemplate">css_inheritance</template> <!--PREVIOUS PAGE-->
 
-        <template id="prevPageTemplate">css_inheritance</template> <!--PREVIOUS PAGE-->
+    <template id="pageTitleTemplate">css_cascade_layer_examples</template> <!--PAGE TITLE-->
 
-        <template id="pageTitleTemplate">css_cascade_layer_examples</template> <!--PAGE TITLE-->
-
-        <template id="nextPageTemplate">web_safe_fonts</template><!--NEXT PAGE-->
+    <template id="nextPageTemplate">web_safe_fonts</template><!--NEXT PAGE-->
 
 
     </div>
