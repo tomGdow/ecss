@@ -39,9 +39,9 @@
             content: counter(example) "." counter(revertTypes) ".  ";
         }
 
-        @layer flayer, mylayer;
+        @layer flayer, llayer;
 
-        @layer mylayer {
+        @layer llayer {
             .myrevertLayer {
                 color: revert-layer;
             }
@@ -53,8 +53,8 @@
             }
         }
 
-        .divcontent {
-            color: lime;
+        .myrevertlayer {
+            color: revert-layer;
         }
 
         #myinitial {
@@ -355,21 +355,25 @@
                         <pre>
 //CSS
     
-@layer flayer, mylayer;
-@layer mylayer {
+@layer flayer, llayer;
+@layer llayer {
     .myrevertLayer {color: revert-layer;}
 }
 @layer flayer {
     .myrevertLayer {color: magenta;}
 }
 
-.divcontent {color: lime;}
+.myrevertlayer {color: revert-layer;}
 
 // HTML 
 
 &lt;div class="divcontent"&gt;
-&lt;a href="https://tomgdoww.com" id="myrevertLayer" 
-    class="myrevertLayer"&gt;tomgdow&lt;/a&gt;
+
+    &lt;a href = "https://tomgdoww.com" 
+          id = "myrevertLayer" 
+          class = "myrevertLayer"&gt;
+    tomgdow&lt;/a&gt;
+
 &lt;/div&gt;</pre>
 
                         <div>
