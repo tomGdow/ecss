@@ -85,25 +85,330 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li class="space_above">Canvas is a 2D drawing API</li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                            <li class="space_above">
+                                Essentially the browser gives you a rectanglar area on the screen that you can draw into
+                            </li>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                            <li class="space_above">
+                                Canvas was originally created by Apple for its Dashboard widgets, but it has since been
+                                adopted by every major browser vendor and is now part of the HTML 5 spec
+                            </li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            <li class="space_above">
+                                Default canvas dimensions are (<code>x</code>, <code>y</code>) = (<code>300, 150</code>)
+                            </li>
 
-                    <h2>References</h2>
+                            <li class="space_above">
+                                The <b>upper-left</b> corner of the canvas has the coordinates (<code>x</code>,
+                                <code>y</code>) = (<code>0</code>,
+                                <code>0</code>)
+                            </li>
+                            <li class="space_above">SVG vs Canvas
+                                <ol>
+                                    <li class="space_above">
+                                        SVG is a vector API that draws shapes. Each shape has an object that you can
+                                        attach
+                                        event handlers to.
+                                    </li>
+                                    <li class="space_above">
+                                        If you zoom in
+                                        the shape stays smooth, whereas Canvas would become pixelated
+                                    </li>
+                                </ol>
+                            </li>
+
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">Useful Commands</h2>
+                    <div class="content">
+                        <ol>
+                            <li class="space_above">
+                                <code>strokeRect</code><br>
+                                The <code>strokeRect(x, y,
+                                width, height)</code> method draws the outline of a rectangle
+                            </li>
+                            <li class="space_above">
+                                <code>fillRect</code> <br>
+                                The
+                                <code>fillRect(x, y, width, height)</code> method draws a filled
+                                rectangle
+                            </li>
+                            <li class="space_above"><code>ctx.fillStyle = 'value';</code><br>
+                                <ol>
+                                    <li class="space_above">
+                                        Holds the style value for filled objects
+                                    </li>
+                                    <li class="space_above">
+                                        Possible values are CSS colors, a gradient or a pattern
+                                    </li>
+                                    <li class="space_above">
+                                        The default value is <code>black</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>ctx.strokeStyle = "red"</code>
+                                <ol>
+                                    <li class="space_above">
+                                        Holds the style value for stroke objects
+                                    </li>
+                                    <li class="space_above">
+                                        May be a CSS color, a gradient or a pattern
+                                    </li>
+                                    <li class="space_above">
+                                        The default style value is <code>black</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>clearRect</code><br>
+                                <code>ctx.clearRect(x, y, width, height)</code>
+                                clears the rectangle area defined by left upper corner <code>(x, y)</code>
+                            </li>
+                            <li class="space_above">
+                                <code>getContext('2d')</code><br>
+                                Returns the <code>context</code>, <i>i.e.</i> an object that exposes an API for drawing
+                                on the
+                                canvas
+                            </li>
+                            <li>
+                                <code>arc(x, y, radius, startAngle, endAngle, anticlockwise)</code>
+                                <ol>
+                                    <li class="space_above">Defines a piece of a circle</li>
+                                    <li class="space_above">
+                                        The center of this circle is <code>(x,y)</code>
+                                    </li>
+                                    <li class="space_above">The radius is <code>r</code> </li>
+                                    <li class="space_above">
+                                        The <code>start</code> and <code>end</code> point of the arc are given as angles
+                                        <strong> in radians</strong>
+                                    </li>
+                                    <li class="space_above">
+                                        The optional boolean <code>anticlockwise</code> parameter defines if the arcs
+                                        are
+                                        measured counterclockwise (<code>true</code>) or clockwise (value
+                                        <code>false</code>;
+                                        the default)
+                                    </li>
+                                    <li class="space_above">
+                                        A call of <code>arc()</code> is part of a <em>path
+                                            declaration</em>, the actual drawing is done with a call of
+                                        <code>stroke()</code>,
+                                        drawing a piece of the
+                                        circle line, or <code>fill()</code>, which
+                                        draws a section of the circle disk
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>linewidth="value"</code>
+                            </li>
+                            <li class="space_above">
+                                <code>stroke()</code>
+                                <ol>
+                                    <li class="space_above">
+                                        Draws the outline of the shape defined by the current path
+                                    </li>
+                                    <li class="space_above">
+                                        The style settings for the actual drawing are the ones that are stored in
+                                        <code>strokeStyle</code>, and the current properties for lines and shadows
+                                    </li>
+
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>fill()</code>
+                                <ol>
+                                    <li class="space_above">
+                                        Draws the full area of the shape defined by the current path
+                                    </li>
+                                    <li class="space_above">
+                                        The style settings for the actual drawing are the ones that are stored in
+                                        <code>fillStyle</code> and the current properties for shadows
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>beginPath()</code>
+                                <ol>
+
+                                    <li class="space_above">
+                                        Begins a new or resets the current path
+                                    </li>
+
+                                    <li class="space_above">A new path is then built with
+                                        <ol>
+                                            <li class="space_above">
+                                                <code>moveTo()</code>
+                                            </li>
+                                            <li class="space_above">
+                                                <code>lineTo()</code>
+                                            </li>
+                                            <li class="space_above">
+                                                <code>rect()</code>
+                                            </li>
+                                            <li class="space_above">
+                                                <code>quadraticCurveTo()</code>
+                                            </li>
+                                            <li class="space_above">
+                                                <code>bezierCurveTo()</code>
+                                            </li>
+                                            <li class="space_above">
+                                                <code>arc()</code>
+                                            </li>
+                                            <li class="space_above">
+                                                <code>arcTo()</code>
+                                            </li>
+                                        </ol>
+                                    </li>
+
+                                    <li class="space_above"> The actual drawing of the path is done with
+                                        <code>stroke()</code>
+                                        or
+                                        <code>fill()</code>
+                                    </li>
+
+                                    <li class="space_above"> A call of
+                                        <code>closePath()</code>
+                                        does close the new path, but in the sense that the current point is connected to
+                                        the intial
+                                        starting point
+                                    </li>
+
+                                    <li class="space_above">
+                                        It does not cause the path to be drawn
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>closePath()</code>
+                                <ol>
+                                    <li class="space_above">
+                                        In an open path, this method call "closes" the path in the sense that it
+                                        connects the current point to the starting point of the path
+                                    </li>
+
+                                    <li class="space_above">
+                                        Note that <code>closePath()</code> does not "finish" the path in the sense that
+                                        it draws it
+                                    </li>
+
+                                    <li class="space_above">
+                                        To do that, you still need to call the <code>stroke()</code> or
+                                        <code>fill()</code> method
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>moveTo(x, y)</code>
+                                <ol>
+                                    <li class="space_above">
+                                        Moves the path to the new point <code>(x,y)</code>
+                                    </li>
+
+                                    <li class="space_above">
+                                        Different to <code>lineTo(x,y)</code>, the <code>moveTo(x,y)</code> call does
+                                        not create
+                                        a line to the new point
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="space_above">
+                                <code>lineTo(x, y)</code><br>
+                                Adds a line to the path from the current point to the new point (x,y)
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">Safari Notes on Canvas</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                To draw a rectangle, specify the <code>x</code> and <code>y</code> coordinates and the
+                                <code>height</code> and <code>width</code> of the rectangle
+                            </li>
+
+                            <li class="space_above">
+                                The <code>strokeRect(x, y, width, height)</code> method draws the outline of a rectangle
+                            </li>
+
+                            <li class="space_above">
+                                The <code>fillRect(x, y, width, height)</code> method draws a filled rectangle
+                            </li>
+
+                            <li class="space_above">
+                                You draw shapes other than rectangles by creating a path, adding line segments, curves,
+                                or arcs, and closing the path
+                            </li>
+
+                            <li class="space_above">
+                                Begin a path using <code>beginPath()</code>. Set the starting point, or start a
+                                discontinuous subpath, by calling the <code>moveTo(x, y)</code> method
+                            </li>
+                            <li class="space_above">
+                                The <code>closePath()</code> method draws a line from the current endpoint to the
+                                starting point of the path, creating a closed shape
+                            </li>
+
+                            <li class="space_above">
+                                The path is not actually drawn until you call <code>stroke()</code> or
+                                <code>fill()</code>
+                            </li>
+                            <li class="space_above">
+                                The <code>stroke</code> or <code>fill</code> style specifies the color the element is
+                                drawn in
+                            </li>
+                            <li class="space_above">
+                                Colors are specified using the same naming conventions as CSS —
+                                <code>ctx.strokeStyle = "black"</code>, for example, or
+                                <code>ctx.fillStyle = "rgba(128, 128, 128, 0.5)"</code>
+                            </li>
+
+                            <li class="space_above">
+                                You can also set the line width for strokes. For example, <code>ctx.lineWidth = 2</code>
+                            </li>
+
+                            <li class="space_above">
+                                You can add a shadow to any shape, or make any shape into a mask by designating it as
+                                the clipping region for drawing operations
+                            </li>
+
+                            <li class="space_above">
+                                Canvas supports matrix transforms—anything you draw can be translated, rotated, scaled,
+                                and more
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">References</h2>
                     <div class="content ref">
                         <a
                             href="https://www.w3.org/TR/2011/WD-html5-20110405/the-canvas-element.html#the-canvas-element">W3C:
                             canvas element</a>
                     </div><!--content-->
+
                     <div class="content ref">
                         <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">MDN: Canvas API</a>
+                    </div><!--content-->
+
+                    <div class="content ref">
+                        <a href="https://joshondesign.com/p/books/canvasdeepdive/chapter01.html#what_is_canvas">HTML
+                            Canvas Deep Dive (book format)</a>
+                    </div><!--content-->
+
+                    <div class="content ref">
+                        <a href="https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html">Canvas Handbook</a>
+                    </div><!--content-->
+
+                    <div class="content ref">
+                        <a
+                            href="https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/HTML-canvas-guide/Introduction/Introduction.html">Safari
+                            HTML Canvas Guide</a>
                     </div>
                 </div>
             </div>
