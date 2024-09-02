@@ -1,0 +1,23 @@
+<svg version= "1.1" 
+
+     width = "300"
+     height = "150"
+     xmlns = "http://www.w3.org/2000/svg">
+
+    <!--outer rectangle-->
+    <rect  width="100%" height="100%" fill="lightgoldenrodyellow" />
+
+    <!--filled red triangle-->
+    <polygon points = "75,25, 125,75,25,75" fill="red"/>
+
+    <!--blue line of open triangle-->
+    <line x1="175" y1="75" x2="275" y2="75" style="stroke:blue; stroke-width:4"/>
+
+    <!--green line of open triangle-->
+    <line x1="275" y1="75" x2="225" y2="125" style="stroke:green; stroke-width:4" />
+
+    <!--red line of open triangle -->
+    <line x1="225" y1="125" x2="175" y2="75" style="stroke:red; stroke-width:4" />
+</svg>
+
+
