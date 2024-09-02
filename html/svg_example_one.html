@@ -48,6 +48,14 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        div.flex_container {
+            display: flex;
+        }
+
+        object {
+            margin: auto;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +93,63 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="flex_container">
+                            <object data="../svg/svg_example_one.svg" type="image/svg+xml"></object>
+                        </div>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;div class="flex_container"&gt;
+    &lt;object 
+        data="../svg/svg_example_one.svg" 
+        type="image/svg+xml"&gt;
+    &lt;/object&gt;
+&lt;/div&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>SVG</h3>
+                            <pre>
+// svg_example_one.svg
+
+&lt;svg version= "1.1" 
+
+     width = "300"
+     height = "150"
+     xmlns = "http://www.w3.org/2000/svg"&gt;
+
+    &lt;rect  width="100%" 
+           height="100%" 
+           fill="lightgoldenrodyellow" /&gt;
+
+    &lt;rect  x="10" 
+           y="10" 
+           width="50%" 
+           height="66.666%" 
+           fill="blue" /&gt;
+
+    &lt;rect  x="20" 
+           y="20" 
+           width="13.333%" 
+           height="26.666%" fill="lightgoldenrodyellow" /&gt;
+
+    &lt;rect  x="240" 
+           y="90" 
+           width="13.333%" 
+           height="26.666%" 
+           stroke="red" 
+           stroke-width="2" 
+           fill="none" /&gt;
+
+&lt;/svg&gt; </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
