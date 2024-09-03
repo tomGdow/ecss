@@ -94,9 +94,9 @@
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
-                        <div class="flex_container">
 
-                            <object data="../svg/svg_example_two.svg" type="image/svg+xml"></object>
+                        <div class="flex_container">
+                            <object data="../svg/svg_example_one_path.svg" type="image/svg+xml"></object>
                         </div>
 
                     </div><!--content-->
@@ -106,11 +106,9 @@
                         <div>
                             <h3>HTML</h3>
                             <pre>
-// svg_example_two.svg
-
 &lt;div class="flex_container"&gt;
     &lt;object 
-        data="../svg/svg_example_two.svg" 
+        data="../svg/svg_example_one_path.svg" 
         type="image/svg+xml"&gt;
     &lt;/object&gt;
 &lt;/div&gt; </pre>
@@ -118,39 +116,96 @@
                         <div>
                             <h3>SVG</h3>
                             <pre>
+// svg_example_one_path.svg
+
 &lt;svg version= "1.1" 
 
      width = "300"
      height = "150"
      xmlns = "http://www.w3.org/2000/svg"&gt;
-     
-    &lt;rect  width = "100%" 
-           height = "100%" 
-           fill = "lightgoldenrodyellow" /&gt;
 
-    &lt;circle cx = "150" 
-            cy = "75" 
-            r = "40"  
-            stroke = "red" 
-            stroke-width = "5"  
-            fill = "lightgreen" /&gt;
-&lt;/svg&gt; </pre>
+    &lt;path d="M 0 0 H 300 V 150 H 0 Z" 
+          fill="lightgoldenrodyellow" /&gt;
+
+    &lt;path d="M 10 10 H 160 V 110 H 10 Z" 
+          fill="blue" /&gt;
+    
+    &lt;path d="M 20 20 H 60 V 60 H 20 Z" 
+          fill="lightgoldenrodyellow"/&gt;
+
+    &lt;path d="M 240 90 H 280 V 130 H 240 Z" 
+          fill="transparent" 
+          stroke="red" 
+          stroke-width="2" /&gt;
+
+&lt;/svg&gt;</pre>
                         </div>
+                    </div><!--content-->
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li><code><b>M</b></code>
+                                <ol>
+                                    <li><b>Move To</b></li>
+                                    <li><code>M x y</code></li>
+                                    <li><code>M 20 20</code></li>
+                                </ol>
+                            </li>
+                            <li><code><b>L</b></code>
+                                <ol>
+                                    <li><b>Draw Line</b></li>
+                                    <li><code>L x y</code></li>
+                                    <li>Or: <code>l dx dy</code></li>
+                                    <li><code>L 20 20 </code></li>
+                                </ol>
+                            </li>
+                            <li><code><b>H</b></code>
+                                <ol>
+                                    <li><b>Horizontal Line</b></li>
+                                    <li><code>H x</code></li>
+                                    <li>Or: <code>h dx</code></li>
+                                    <li><code>H 230</code></li>
+                                </ol>
+
+                            </li>
+                            <li><code><b>V</b></code>
+                                <ol>
+                                    <li><b>Vertical Line</b></li>
+                                    <li><code>V x</code></li>
+                                    <li>Or: <code>v dx</code></li>
+                                    <li><code> V 30</code></li>
+                                </ol>
+
+                            </li>
+                            <li>
+                                <code><b>Z</b></code>
+                                <ol>
+                                    <li><b>Close path</b></li>
+                                    <li><code>Z</code></li>
+                                    <li>Or: <code>z</code></li>
+                                    <li>No difference between <code>Z</code> and <code>z</code></li>
+                                </ol>
+                            </li>
+                        </ol>
+
                     </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">MDN: Paths</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
 
         <!--  Templates -->
 
-        <template id="prevPageTemplate">svg_example_one_path</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">svg_example_two</template> <!--PAGE TITLE-->
+        <template id="prevPageTemplate">svg_example_one</template> <!--PREVIOUS PAGE-->
 
-        <template id="nextPageTemplate">svg_example_three</template><!--NEXT PAGE-->
+        <template id="pageTitleTemplate">svg_example_one_path</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">svg_example_two</template><!--NEXT PAGE-->
 
 
     </div>
