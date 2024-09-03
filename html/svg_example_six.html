@@ -53,7 +53,32 @@
             display: flex;
         }
 
+
         object {
+            margin: auto;
+            border: 3px solid green;
+        }
+
+        #bird {
+            border: none;
+        }
+
+        .bird-cage {
+            height: 50%;
+            width: 50%;
+            /* border: 1px solid green; */
+            margin: auto;
+        }
+
+        figure {
+            margin: auto;
+        }
+
+        figcaption {
+            background-color: revert;
+            color: var(--primary-green);
+            font-size: 1.1em;
+            /* border: 3px solid re=d; */
             margin: auto;
         }
     </style>
@@ -94,62 +119,145 @@
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
-                        <div class="flex_container">
-                            <object data="../svg/svg_example_five.svg" type="image/svg+xml"></object>
-                        </div>
+                        <ol>
+                            <li>lehho</li>
+                        </ol>
                     </div><!--content-->
 
-                    <h2 class="example">Code</h2>
+                    <h2 class="example">Example</h2>
+                    <!--example 1-->
                     <div class="content">
-                        <div>
-                            <h3>HTML</h3>
-                            <pre>
-&lt;div class="flex_container"&gt;
-    &lt;object data="../images/svg_example_five.svg" 
-            type="image/svg+xml"&gt;
-    &lt;/object&gt;
-&lt;/div&gt; </pre>
-                        </div>
-                        <div>
-                            <h3>SVG (External File)</h3>
-                            <pre>
-// svg_example_five.html
 
-&lt;svg version= "1.1"
-     width = "300"
-     height = "200"
-     xmlns = "http://www.w3.org/2000/svg"&gt;
-
-    &lt;rect width = "100%" height = "100%" fill = "red" /&gt;
-
-    &lt;circle cx = "150" cy = "100" r = "80" fill = "green" /&gt;
-
-    &lt;text x="150" 
-          y="125" 
-          font-size = "60" 
-          text-anchor = "middle" 
-          fill = "white"&gt;
-        SVG
-    &lt;/text&gt;
-
-&lt;/svg&gt; </pre>
-                        </div>
+                        <figure>
+                            <div class="flex_container">
+                                <object data="../svg/svg_example_six_1.svg" type="image/svg+xml"></object>
+                            </div>
+                            <figcaption>No viewBox</figcaption>
+                        </figure>
                     </div><!--content-->
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
-                </div>
+                    <h2 class="example">Example</h2>
+                    <!--example 2   -->
+                    <div class="content">
+                        <figure>
+                            <div class="flex_container">
+                                <object data="../svg/svg_example_six_2.svg" type="image/svg+xml"></object>
+                            </div>
+                            <figcaption>
+                                viewBox= "0 0 100 100"
+                            </figcaption>
+                        </figure>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Example</h2>
+                    <!--example 3-->
+                    <div class="content">
+
+                        <figure>
+                            <div class="flex_container">
+                                <object data="../svg/svg_example_six_3.svg" type="image/svg+xml"></object>
+                            </div>
+                            <figcaption>
+                                viewBox="150 0 300 200"
+                            </figcaption>
+                        </figure>
+                    </div><!--content-->
+
+                    <h2 class="example">Example</h2>
+                    <!--example 4-->
+                    <figure>
+                        <div class="content">
+                            <div class="flex_container">
+                                <object data="../svg/svg_example_six_4.svg" type="image/svg+xml"></object>
+                            </div>
+                            <figcaption>viewBox= "-150 -100 300 200"</figcaption>
+                    </figure>
+                </div><!--content-->
+                <hr>
+                <h2 class="example">Code (1-4)</h2>
+                <div class="content">
+                    <div>
+                        <pre>
+    &lt;div class="flex_container"&gt;
+        
+        &lt;object data="../svg/svg_example_six_1.svg"
+                type="image/svg+xml"&gt;
+        &lt;/object&gt;
+
+    &lt;/div&gt; </pre>
+                    </div>
+                    <div>
+                        <h3>SVG</h3>
+                        <pre>
+    // svg_example_six_1.svg                            
+
+    &lt;svg version= "1.1" 
+
+        width = "300"
+        height = "200"
+        xmlns = "http://www.w3.org/2000/svg"&gt;
+
+        &lt;rect  
+                width="100%" 
+                height="100%" 
+                fill="lightgoldenrodyellow" /&gt;
+        &lt;rect  
+                x="5%" 
+                y="5%" 
+                width="40%" 
+                height="40%" 
+                fill="red" /&gt;
+        
+        &lt;rect  
+                x="55%" 
+                y="55%" 
+                width="40%" 
+                height="40%" 
+                fill="blue" /&gt;
+        
+        &lt;rect  
+                x="55%" 
+                y="5%" 
+                width="40%" 
+                height="40%" 
+                fill="green" /&gt;
+    
+        &lt;rect  
+                x="5%" 
+                y="55%" 
+                width="40%" 
+                height="40%" 
+                fill="orange" /&gt;
+
+    &lt;/svg&gt;</pre>
+                    </div>
+                </div><!--content-->
+                <hr>
+
+                <h2 class="example">Example 5</h2>
+                <div class="content">
+                    <div class="flex_container">
+                        <div class="bird-cage">
+                            <object id="bird" data="../svg/svg_example_six_5.svg" type="image/svg+xml"></object>
+                        </div>
+                    </div>
+                </div><!--content-->
+
+                <h2>References</h2>
+                <div class="content ref"></div><!--content-->
             </div>
         </div>
+    </div>
 
-        <!--  Templates -->
+    <!--  Templates -->
 
 
-        <template id="prevPageTemplate">svg_example_five</template> <!--PREVIOUS PAGE-->
+    <template id="prevPageTemplate">svg_example_five</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">svg_example_six</template> <!--PAGE TITLE-->
+    <template id="pageTitleTemplate">svg_example_six</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">float</template><!--NEXT PAGE-->
+    <template id="nextPageTemplate">svg_example_seven</template><!--NEXT PAGE-->
 
 
     </div>
