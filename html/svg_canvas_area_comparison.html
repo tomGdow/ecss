@@ -48,6 +48,59 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        table {
+            table-layout: fixed;
+            width: 100%;
+            line-height: 1.5rem;
+        }
+
+        table {
+            text-align: center;
+            margin-top: 1rem;
+            font-family: "Roboto", sans-serif;
+            line-height: 2rem;
+            color: white;
+        }
+
+        table tr>td {
+            font-weight: bold;
+        }
+
+        table tr>td:nth-of-type(2) {
+            font-weight: bold;
+        }
+
+        .align-left {
+            text-align: left;
+            /* border: 5px solid blue; */
+            padding-left: 1em;
+        }
+
+        col:nth-of-type(odd) {
+            font-weight: bold;
+            background-color: var(--primary-green);
+        }
+
+        col:nth-of-type(even) {
+            font-weight: bold;
+            background-color: var(--primary-green-darker);
+        }
+
+        th {
+            color: white;
+            background-color: black;
+        }
+
+        th {
+            height: 2em;
+            font-size: 1.3rem;
+        }
+
+        table {
+            /* border-spacing: 1em 0; */
+            padding-left: 20px;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +138,150 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <table>
+                            <!-- <caption>mytable</caption> -->
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tr>
+                                <th>Shape</th>
+                                <th>SVG</th>
+                                <th>Canvas</th>
+                                <th>Area</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Rectangle</td>
+                                <td class="align-left">
+                                    <code>
+                                        <!--svg-->
+                                        rect(x y width 
+                                          height)
+                                    </code>
+                                </td>
+                                <td>
+                                    <!--canvas-->
+                                    <code class="align-left">
+                                        strokeRect(x, y, width, height)
+                                    </code>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                </td>
+                                <td rowspan="2" class="align-left">
+                                    <!--area-->
+                                    <code>&lt;area</code><br>
+                                    <code>shape="rect"</code><br>
+                                    <code>
+                                        coords="x1,y1, x2,y2" <br> /&gt;
+                                    </code><br>
+                                    <code>(top-right, bottom-left)</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!--shape-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                                <!--canvas-->
+                                <td class="align-left">
+                                    <code>&lt;path</code><br>
+                                    <code> d="M x1 y1 H x2 V y2 H x1 Z" /&gt;</code>
+                                </td>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                                <td>
+                                    <!--area-->
+                                    <code>
+                                        fillRect(x, y, width, height)
+                                    </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Circle</td>
+                                <td>
+                                    <!--svg-->
+                                    <code>
+                                        &lt;circle cx cy r /&gt;
+                                    </code>
+                                </td>
+                                <td class="align-left"><code>arc(x, y, radius, startAngle, endAngle)</code>
+                                </td>
+                                <td class="align-left">
+                                    <code>
+                                    &lt;area <br>shape="circle"<br>coords="x,y,r" <br> /&gt;
+                                </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Triangle</td>
+                                <td class="align-left">
+                                    <code>&lt;polygon <br> points="x1,y1, x2,y2,x3,y3" /&gt;</code>
+                                </td>
+                                <td>
+                                    <code>
+                                        moveTo(x1, y1);<br>
+                                        lineTo(x2, y2);<br>
+                                        lineTo(x3, y3);<br>
+                                    </code>
+                                </td>
+                                <td class="align-left">
+                                    <code>
+                                        &lt;area <br>shape="poly"<br>
+                                            coords="x1,y1,<br>x2,y2,x3,y3"<br>
+                                            /&gt;
+                                           
+                                    </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Line</td>
+                                <td class="align-left">
+                                    <code>
+                                    <!--svg-->
+                                    &lt;line x1 y1 x2 y2  /&gt;
+                                    </code>
+                                </td>
+                                <td>
+                                    <!--canvas-->
+                                    <code>lineTo(x, y)</code>
+                                </td>
+                                <td>
+                                    <!--area-->
+                                    &mdash;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Text</td>
+                                <td rowspan="2">
+                                    <!-- svg -->
+                                    <code>
+                                        &lt;text x y style&gt;
+                                        myText&lt;/text&gt;
+                                     </code>
+                                </td>
+                                <td class="align-left">
+                                    <!-- canvas -->
+                                    <code>
+                                    strokeText(
+                                        text,x,y)
+                                    </code>
+                                </td>
+                                <td rowspan="2">
+                                    <!-- area -->
+                                    &mdash;
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- <td>wan</td> -->
+                                <!-- <td>Document</td> -->
+                                <td>
+                                    <code>
+                                    fillText(text, x,y)
+                                    </code>
+                                </td>
+                                <!-- <td>fore</td> -->
+                            </tr>
+                        </table>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
