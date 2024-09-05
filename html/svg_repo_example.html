@@ -48,6 +48,17 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        div.flex_container {
+            display: flex;
+        }
+
+        object {
+            width: 35%;
+            max-width: 150px;
+            margin: auto;
+            /* max-width: 30%; */
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +96,77 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <div class="flex_container">
+                            <object data="../svg/svg_repo_google_maps.svg" type="image/svg+xml"></object>
+                        </div>
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;div class="flex_container"&gt;
+    &lt;object data="../svg/svg_repo_google_maps.svg" 
+            type="image/svg+xml"&gt;
+    &lt;/object&gt;
+&lt;/div&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>SVG</h3>
+                            <pre>
+// svg_repo_google_maps.svg
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+&lt;svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  aria-label="Google Maps" role="img"
+  viewBox="0 0 512 512"&gt;
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+&lt;rect id="a"
+width="512" height="512"
+x="0" y="0"
+rx="15%"
+fill="#ffffff"/&gt;
+
+&lt;clipPath id="b"&gt;
+
+&lt;use xlink:href="#a"/&gt;
+
+&lt;/clipPath&gt;
+
+&lt;g clip-path="url(#b)"&gt;
+
+&lt;path fill="#35a85b" d="M0 512V0h512z"/&gt;
+
+&lt;path fill="#5881ca" d="M256 288L32 512h448z"/&gt;
+
+&lt;path fill="#c1c0be" d="M288 256L512 32v448z"/&gt;
+
+&lt;path stroke="#fadb2a" stroke-width="71" d="M0 512L512 0"/&gt;
+
+&lt;path fill="none" 
+      stroke="#f2f2f2" 
+      stroke-width="22" 
+      d="M175 173h50a50 54 0 1 1-15-41"/&gt;
+
+&lt;path fill="#de3738" 
+    d="M353 85a70 70 0 0 1 140 0c0 70-70 70-70 157 
+    0-87-70-87-70-157"/&gt;
+
+&lt;circle cx="423" cy="89" r="25" fill="#7d2426"/&gt;
+
+&lt;/g&gt;
+
+&lt;/svg&gt; </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://www.svgrepo.com">svg repo</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
