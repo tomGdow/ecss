@@ -1,0 +1,18 @@
+<svg version= "1.1" 
+
+     width = "150"
+     height = "75"
+     viewBox = "0 0 300 150"
+     xmlns = "http://www.w3.org/2000/svg">
+
+    <!--outer rectangle-->
+    <rect  width="100%" height="100%" fill="lightgoldenrodyellow" />
+
+    <!--Hello-->
+    <text x="20" y="50" style="stroke:green;fill:none; font-size:50px; font-family:serif;">Hello</text>
+
+    <!--World-->
+    <text x="80" y="120" style="stroke:none;fill:red; font-size:50px; font-family:serif;">World</text>
+</svg>
+
+
