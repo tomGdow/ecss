@@ -48,6 +48,24 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        svg text {
+            fill: red;
+            font-size: calc(50em / 16);
+            font-family: serif;
+
+        }
+
+        svg text:first-of-type {
+            stroke: green;
+            fill: none;
+        }
+
+        .emphasis {
+            border: solid blue;
+            padding-right: 0.5em;
+            border-width: 0 0.5em 0 0;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,51 +103,334 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <pre>
+    &lt;svg 
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+         version="1.1" 
+         width="" 
+         height="" 
+         viewBox="min-x min-y width height"
+         xmlns="http://www.w3.org/2000/svg">
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+    &lt;/svg&gt; </pre>
+                        <ol>
+                            <li>
+                                <code>SVG</code> is an <code>XML</code> language,
+                                similar to <code>XHTML</code>, which
+                                can be used to draw vector graphics
+                            </li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            <li class="space_above">
+                                <code>SVG</code> provides elements for circles, rectangles, and simple and complex
+                                curves
+                            </li>
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                            <li class="space_above">
+                                A simple <code>SVG</code> document consists of nothing more than the <code>svg</code>
+                                root element and several basic shapes that build a graphic together
+                            </li>
+
+                            <li class="space_above">
+                                In addition, there is the <code>g</code> element, which is used to group several basic
+                                shapes together
+                            </li>
+
+                            <li class="space_above">
+                                <code>SVG</code> elements and attributes are case-sensitive
+                            </li>
+
+                            <li class="space_above">
+                                Attribute values in <code>SVG</code> must be placed inside quotes, even if they are
+                                numbers
+                            </li>
+
+                            <li class="space_above">
+                                The globally valid rule for <code>SVG</code> files is that <strong>later elements are
+                                    rendered
+                                    atop previous elements</strong>
+                            </li>
+
+                            <li class="space_above">
+                                The further down an element is the more it will be visible
+                            </li>
+
+                            <li class="space_above">
+                                <code>SVG</code> files on the web can be displayed directly in the browser or embedded
+                                in <code>HTML</code> files via several methods
+                                <ol>
+                                    <!-- <li>
+
+                                        If the <code>HTML</code> is <code>XHTML</code> and is delivered as type
+                                        <code>application/xhtml+xml</code>, the <code>SVG</code> can be directly
+                                        embedded in the <code>XML</code> source
+
+                                    </li> -->
+                                    <li class="space_above">
+                                        The <code>SVG</code> can be directly embedded in <code>HTML</code>
+                                    </li>
+                                    <li class="space_above">
+                                        An <code>img</code> element can be used
+                                    </li>
+                                    <li class="space_above">
+                                        The <code>SVG</code> file can be referenced with an <code>object</code> element:
+                                        <br>
+                                        <pre>
+&lt;object 
+  data="image.svg" 
+  typemustmatch="True"
+  type="image/svg+xml"&gt;
+&lt;/object&gt;
+</pre>
+                                    </li>
+                                    <li class="emphasis">Note that <code>object</code> takes the <code>data</code>
+                                        attribute</li>
+                                </ol>
+                            </li>
+
+                            <li>comments in svg</li>
+
+                        </ol>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Example (img element)</h2>
+                    <div class="content">
+                        <img src="../svg/svg_example_four.svg" alt="Hello World Image" height="75" width="150" />
+                        <h3>Notes</h3>
+                        <ol class="emphasis">
+                            <li>
+                                Note that decreasing the <code>width</code> value to half that specified in the
+                                <code>svg</code> file (<code>svg_example_four.svg</code>; see <code>object</code>
+                                example for full code) <em>does not</em> truncate the image
+                            </li>
+                            <li>
+                                <pre>
+&lt;img width = "150" &hellip; &gt;
+&lt;svg width = "300" &hellip; &gt; </pre>
+                            </li>
+                            <li>
+                                Contrast with the <code>object</code> examples below
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <div>
+                        <h3>HTML</h3>
+                        <pre>
+&lt;img 
+    src="../svg/svg_example_four.svg" 
+    alt="Hello World Image" 
+    height="75" 
+    width="150" /&gt; </pre>
+                    </div>
+                    <div>
+
+                        <h2 class="example">Example (Object, truncate problem)</h2>
+                        <div class="content">
+
+                            <object data="../svg/svg_example_four.svg" type="image/svg+xml" width="150"
+                                typemustmatch="True"></object>
+                            <div>
+                                <div>
+                                    <h3>Notes</h3>
+                                    <ol class="emphasis">
+                                        <li>
+                                            Note that setting <code>width</code> to half that specified in the
+                                            <code>svg</code> file <code>svg_example_four</code> <em>truncates</em> the
+                                            viewport
+                                        </li>
+                                        <li>
+                                            Contrast with what happens with <code>img</code> (above)
+                                        </li>
+                                    </ol>
+                                </div>
+                                <h3>HTML</h3>
+                                <pre>
+&lt;object 
+    data="../svg/svg_example_four.svg" 
+    type="image/svg+xml" 
+    width="150"
+    typemustmatch="True"&gt;
+&lt;/object&gt; </pre>
+                            </div>
+                            <div>
+                                <h3>SVG</h3>
+                                <pre>
+// svg_example_four.svg 
+&lt;svg version= "1.1" 
+
+     width = "300"
+     height = "150"
+     xmlns = "http://www.w3.org/2000/svg"&gt;
+
+    &lt;!--outer rectangle--&gt;
+    &lt;rect  width="100%" height="100%" fill="lightgoldenrodyellow" /&gt;
+
+    &lt;!--Hello--&gt;
+    &lt;text x="20" 
+          y="50" 
+          style="stroke:green;fill:none; 
+                 font-size:50px; 
+                 font-family:serif;"&gt;
+        Hello
+    &lt;/text&gt;
+
+    &lt;!--World--&gt;
+    &lt;text x="80" 
+             y="120" 
+             style="stroke:none;
+                    fill:red; 
+                    font-size:50px; 
+                    font-family:serif;"&gt;
+        World
+    &lt;/text&gt;
+&lt;/svg&gt; </pre>
+                            </div>
+
+                        </div><!--content-->
+                        <h2 class="example">Example (Object, fix problem)</h2>
+
+                        <div class="content">
+                            <div>
+                                <object data="../svg/svg_example_four_2.svg" type="image/svg+xml"
+                                    typemustmatch="True"></object>
+                            </div>
+                            <div>
+                                <h3>Notes</h3>
+                                <ol>
+                                    <li>
+                                        The <i>truncate</i> problem described in previous example may be solved using
+                                        the <code>viewBox</code> attribute of the <code>svg</code> file
+                                    </li>
+                                    <li>
+                                        The modified file is <code>svg_example_four_2.svg</code>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div>
+                                <h3>HTML</h3>
+                                <pre>
+&lt;div&gt;
+    &lt;object data="../svg/svg_example_four_2.svg" type="image/svg+xml"
+        typemustmatch="True"&gt;&lt;/object&gt;
+&lt;/div&gt;
+                                </pre>
+                            </div>
+                            <div>
+                                <h3>SVG</h3>
+                                <pre>
+&lt;svg version= "1.1" 
+
+     width = "150"
+     height = "75"
+     viewBox = "0 0 300 150"
+     xmlns = "http://www.w3.org/2000/svg"&gt;
+
+    &lt;!--outer rectangle--&gt;
+    &lt;rect  width="100%" height="100%" fill="lightgoldenrodyellow" /&gt;
+
+    &lt;!--Hello--&gt;
+    &lt;text x="20" y="50" style="stroke:green;fill:none; font-size:50px; font-family:serif;"&gt;Hello&lt;/text&gt;
+
+    &lt;!--World--&gt;
+    &lt;text x="80" y="120" style="stroke:none;fill:red; font-size:50px; font-family:serif;"&gt;World&lt;/text&gt;
+&lt;/svg&gt; </pre>
+                            </div>
+                        </div><!--content-->
+
+                        <h2 class="example">Example (Embed in HTML)</h2>
+                        <div class="content">
+
+                            <svg version="1.1" width="150" height="75" viewBox="0 0 300 150"
+                                xmlns="http://www.w3.org/2000/svg">
+
+                                <!--outer rectangle-->
+                                <rect width="100%" height="100%" fill="lightgoldenrodyellow" />
+
+                                <!--Hello-->
+                                <text x="20" y="50">Hello</text>
+
+                                <!--World-->
+                                <text x="80" y="120">World</text>
+                            </svg>
+                            <div>
+                                <h3>HTML</h3>
+                                <pre>
+&lt;svg version="1.1" width="150" height="75" viewBox="0 0 300 150"
+    xmlns="http://www.w3.org/2000/svg"&gt;
+
+    &lt;!--outer rectangle--&gt;
+    &lt;rect width="100%" height="100%" fill="lightgoldenrodyellow" /&gt;
+
+    &lt;!--Hello--&gt;
+    &lt;text x="20" y="50"&gt;Hello&lt;/text&gt;
+
+    &lt;!--World--&gt;
+    &lt;text x="80" y="120"&gt;World&lt;/text&gt;
+&lt;/svg&gt; </pre>
+                            </div>
+                            <div>
+                                <h3>CSS</h3>
+                                <pre>
+svg text {
+    fill: red;
+    font-size: calc(50em / 16);
+    font-family: serif;
+}
+
+svg text:first-of-type {
+    stroke: green;
+    fill: none;
+} </pre>
+                            </div>
+                        </div><!--content-->
+
+
+                        <h2>Notes</h2>
+                        <div class="content"></div><!--content-->
+
+                        <h2>Mnemonic</h2>
+                        <div class="content"></div><!--content-->
+
+                        <h2>References</h2>
+                        <div class="content ref">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">
+                                SVG Tutorial
+                            </a>
+                        </div><!--content-->
+                    </div>
                 </div>
             </div>
+
+            <!--  Templates -->
+
+
+            <template id="prevPageTemplate">canvas_example_four</template> <!--PREVIOUS PAGE-->
+
+            <template id="pageTitleTemplate">svg</template> <!--PAGE TITLE-->
+
+            <template id="nextPageTemplate">svg_example_one</template><!--NEXT PAGE-->
+
+
         </div>
+        <script>
 
-        <!--  Templates -->
+            //page title
+            var pageTitleText = pageTitleTemplate.innerHTML;
+            document.title = pageTitleText;
+            banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+            pageTitle.innerHTML = pageTitleText;
 
+            // previous page
+            var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+            prevPage.setAttribute("href", prevPageURL)
 
-        <template id="prevPageTemplate">canvas_example_four</template> <!--PREVIOUS PAGE-->
+            // next page
+            var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+            nextPage.setAttribute("href", nextPageURL)
 
-        <template id="pageTitleTemplate">svg</template> <!--PAGE TITLE-->
-
-        <template id="nextPageTemplate">svg_example_one</template><!--NEXT PAGE-->
-
-
-    </div>
-    <script>
-
-        //page title
-        var pageTitleText = pageTitleTemplate.innerHTML;
-        document.title = pageTitleText;
-        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
-        pageTitle.innerHTML = pageTitleText;
-
-        // previous page
-        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
-        prevPage.setAttribute("href", prevPageURL)
-
-        // next page
-        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
-        nextPage.setAttribute("href", nextPageURL)
-
-    </script>
+        </script>
 </body>
 
 </html>
