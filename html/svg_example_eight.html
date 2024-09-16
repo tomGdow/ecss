@@ -48,6 +48,15 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        object {
+            /* background-color: lightgoldenrodyellow; */
+            margin: 0 auto;
+        }
+
+        div.object-container {
+            display: flex;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +94,97 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>g</code>
+                                <ol>
+                                    <li>
+                                        Transformations applied to the <code>g</code> element are performed on its child
+                                        elements
+                                    </li>
+                                    <li>
+                                        Its attributes are inherited by its children
+                                    </li>
+                                    <li>
+                                        It can also group multiple elements to be referenced later with the
+                                        <code>use</code>
+                                        element
+                                    </li>
+                                </ol>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                            </li>
+                            <li><code>use</code>
+                                <ol>
+                                    <li>
+                                        The <code>use</code> element takes nodes from within the <code>SVG</code>
+                                        document, and duplicates them somewhere else
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div class="object-container">
+                            <object data="../svg/svg_example_eight_group_use.svg" type="image/svg+xml"></object>
+                        </div>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;object 
+    data="../svg/svg_example_eight_group_use.svg" 
+    type="image/svg+xml"&gt;
+&lt;/object&gt;</pre>
+                        </div>
+                        <div>
+                            <h3>SVG</h3>
+                            <pre>
+// svg_example_eight_group_use.svg
+
+&lt;svg 
+  version="1.1"
+  width="300"
+  height="150"
+  xmlns="http://www.w3.org/2000/svg"&gt;
+
+  &lt;rect width="300" height="150" 
+           rx="20" 
+           fill="lightgoldenrodyellow"/&gt;
+
+  &lt;g id="mydiag" stroke-width="5"&gt;
+    &lt;rect  x="10" y="10" 
+           rx="10" ry="10" 
+           height="50" width="100" 
+           fill="red"/&gt;
+    &lt;circle cx="40" cy="40" r="25" 
+            fill="white" 
+            stroke="green" /&gt;
+    &lt;circle cx="60" cy="60" r="25" 
+            fill="lightblue" 
+            stroke="blue" /&gt;
+  &lt;/g&gt;
+
+  &lt;use href="#mydiag" x="180" y="0" fill="blue"/&gt;
+  &lt;use href="#mydiag" x="90" y="60" fill="blue"/&gt;
+
+&lt;/svg&gt;</pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g">MDN: svg g</a>
+                    </div><!--content-->
+                    
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use">MDN: use</a>
+                    </div>
                 </div>
             </div>
         </div>
