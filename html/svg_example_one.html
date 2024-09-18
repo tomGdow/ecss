@@ -100,6 +100,153 @@
                         </div>
 
                     </div><!--content-->
+                    <h3 class="example">Notes</h3>
+                    <div class="content">
+                        <pre>
+&lt;rect x y width height rx ry /&gt;
+                        </pre>
+                        <ol>
+                            <li>
+                                The <code>rect</code> element is a basic <code>SVG</code> shape that draws
+                                <code>rectangles</code>, defined by their <code>position</code>, <code>width</code>, and
+                                <code>height</code>
+                            </li>
+
+                            <li>
+                                The <code>rectangles</code> may have their corners rounded
+                            </li>
+                            <li>
+                                <code>x</code>
+                                <ol>
+                                    <li>
+                                        The <code>x</code> coordinate of <code>rect</code>
+                                    </li>
+                                    <li>
+                                        value type
+                                        <ol>
+                                            <li><code>length</code></li>
+                                            <li><code>percentage</code></li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        default value: <code>0</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>y</code>
+                                <ol>
+                                    <li>
+                                        The <code>y</code> coordinate of <code>rect</code>
+                                    </li>
+                                    <li>
+                                        value type
+                                        <ol>
+                                            <li><code>length</code></li>
+                                            <li><code>percentage</code></li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        default value: <code>0</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>width</code>
+                                <ol>
+                                    <li>
+                                        The <code>width</code> of <code>rect</code>
+                                    </li>
+                                    <li>
+                                        <code>value type</code>
+                                        <ol>
+                                            <li><code>auto</code></li>
+                                            <li><code>length</code></li>
+                                            <li><code>percentage</code></li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        default value: <code>auto</code>
+                                    </li>
+                                </ol>
+                            </li>
+
+                            <li>
+                                <code>height</code>
+                                <ol>
+                                    <li>
+                                        The <code>height</code> of <code>rect</code>
+                                    </li>
+                                    <li>
+                                        value type
+                                        <ol>
+                                            <li><code>auto</code></li>
+                                            <li><code>length</code></li>
+                                            <li><code>percentage</code></li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        default value: <code>auto</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>rx</code>
+                                <ol>
+                                    <li>
+                                        The horizontal corner <code>radius</code> of <code>rect</code>
+                                    </li>
+                                    <li>
+                                        Defaults to <code>ry</code> if it is specified
+                                    <li>
+                                        <code>value type</code>:
+                                        <ol>
+                                            <li><code>auto</code></li>
+                                            <li><code>length</code></li>
+                                            <li><code>percentage</code></li>
+                                        </ol>
+                                    <li>
+                                        default value: <code>auto</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>ry</code>
+                                <ol>
+                                    <li>
+                                        The vertical corner <code>radius</code> of the rectangle
+                                    </li>
+                                    <li>
+                                        Defaults to <code>rx</code> if it is specified
+                                    </li>
+                                    <li>
+                                        <code>value type</code>: <code>auto</code>, <code>length</code> or
+                                        <code>percentage</code>
+                                    </li>
+                                </ol>
+                            </li>
+
+                            <li>
+                                <code>pathLength</code>
+                                <ol>
+                                    <li>
+                                        The total length of the rectangle's perimeter, in user units
+                                    </li>
+                                    <li>
+                                        value type: <code>number</code>
+                                    </li>
+                                    <li>default value: <code>none</code></li>
+                                </ol>
+                            <li>
+
+                                Starting with <code>SVG2</code>, <code>x</code>, <code>y</code>, <code>width</code>,
+                                <code>height</code>, <code>rx</code> and <code>ry</code> are <strong>Geometry
+                                    Properties</strong>, meaning those attributes can also be used as CSS properties for
+                                that element.
+
+                            </li><!--end-->
+                        </ol>
+                    </div>
 
                     <h2 class="example">Code</h2>
                     <div class="content">
