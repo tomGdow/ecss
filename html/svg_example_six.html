@@ -106,9 +106,43 @@
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
+                        <code>viewBox</code>
                         <ol>
-                            <li>lehho</li>
+                            <li>
+                                The <code>viewBox</code> attribute defines the position and dimension, in user space, of
+                                an <code>SVG</code> <em>viewport</em>
+                            </li>
+                            <li>
+                                The value of the <code>viewBox</code> attribute is a list of four numbers separated by
+                                whitespace <strong>and/or a comma</strong>
+                                <ol>
+                                    <li><code>min-x</code></li>
+                                    <li><code>min-y</code></li>
+                                    <li><code>width</code></li>
+                                    <li><code>height</code></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>min-x</code> and <code>min-y</code> represent the smallest <code>X</code> and
+                                <code>Y</code> coordinates that the <code>viewBox</code> may have
+                            </li>
+                            <li>
+                                That is, (<code>x-min</code>, <code>y-min</code>) are <strong>the origin
+                                    coordinates</strong> of the <code>viewBox</code>
+                            </li>
+                            <li>
+                                The <code>width</code> and <code>height</code> specify the <code>viewBox</code> size
+                            </li>
+                            <li>
+                                The resulting <code>viewBox</code> is a rectangle in user space mapped to the bounds of
+                                the
+                                <code>viewport</code> of an <code>SVG</code> element (not
+                                the browser <code>viewport</code>)
+                            </li>
                         </ol>
+
+
+
                     </div><!--content-->
 
                     <h2 class="example">Example</h2>
@@ -165,6 +199,20 @@
                 <h2 class="example">Code (Example 1)</h2>
                 <div class="content">
                     <div>
+                        <h3>Note</h3>
+
+                        <ol>
+                            <li>
+                                The code for all examples is the same, with the exception of the <code>viewBox</code>
+                                attribute value
+                            </li>
+                            <li>
+                                The <code>viewBox</code> attribute is missing completely from <code>example 1</code>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h3>HTML</h3>
                         <pre>
     &lt;div class="flex_container"&gt;
         
@@ -222,7 +270,9 @@
                 </div><!--content-->
 
                 <h2>References</h2>
-                <div class="content ref"></div><!--content-->
+                <div class="content ref">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox">MDN: viewbox</a>
+                </div><!--content-->
             </div>
         </div>
     </div>
