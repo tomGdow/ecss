@@ -48,6 +48,21 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+
+        figcaption {
+            all: revert;
+        }
+
+        .svg-img {
+            outline: 0.1em solid white;
+            width: 100%;
+        }
+
+        div.flex-container {
+            display: flex;
+            /* border: 3px solid green; */
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +100,156 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <div class="flex-container">
+                            <figure>
+                                <img class="svg-img" src="../svg/svg_example_one_rounded_1.svg"
+                                    alt="rounded corners SVG diagram">
+                            </figure>
+                            <figure>
+                                <img class="svg-img" src="../svg/svg_example_one_rounded_2.svg"
+                                    alt="rounded corners SVG diagram">
+                            </figure>
+                            <figure>
+                                <img class="svg-img" src="../svg/svg_example_one_rounded_3.svg"
+                                    alt="rounded corners SVG diagram">
+                            </figure>
+                        </div>
+                        <!-- </div> -->
+                    </div><!--content-->
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li><code>rx</code>
+                                <ol>
+                                    <li>
+                                        The <code>rx</code> property describes the horizontal corner radius of the
+                                        <code>rect</code> element
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                                    </li>
+                                    <li>
+                                        Defaults to <code>ry</code> if it is specified
+                                    </li>
+                                    <li>
+                                        Value type
+                                        <ol>
+                                            <li><code>auto</code></li>
+                                            <li><code>length</code></li>
+                                            <li><code>percentage</code></li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        The used value of <code>rx</code> is
+                                        never more than 50% of the used value of <b>width</b> for the same shape
+                                    </li>
+                                </ol>
+                            </li>
+
+                            <li><code>ry</code>
+                                <ol>
+                                    <li>
+                                        The <code>ry</code> property describes the vertical corner radius of the
+                                        <code>rect</code> element
+
+                                    </li>
+                                    <li>
+                                        Defaults to <code>rx</code> if it is specified
+                                    </li>
+                                    <li>
+                                        Value type
+                                        <ol>
+                                            <li><code>auto</code></li>
+                                            <li><code>length</code></li>
+                                            <li><code>percentage</code></li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        The used value of <code>ry</code> is
+                                        never more than 50% of the used value of <b>height</b> for the same shape
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;div class="flex-container"&gt;
+    &lt;figure&gt;
+        &lt;img class="svg-img" src="../svg/svg_example_one_rounded_1.svg"
+            alt="rounded corners SVG diagram"&gt;
+    &lt;/figure&gt;
+    &lt;figure&gt;
+        &lt;img class="svg-img" src="../svg/svg_example_one_rounded_2.svg"
+            alt="rounded corners SVG diagram"&gt;
+    &lt;/figure&gt;
+    &lt;figure&gt;
+        &lt;img class="svg-img" src="../svg/svg_example_one_rounded_3.svg"
+            alt="rounded corners SVG diagram"&gt;
+    &lt;/figure&gt;
+&lt;/div&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>SVG</h3>
+                            <pre>
+// svg_example_one_rounded_1.svg 
+
+  &lt;svg
+      width="150"
+      height="150"
+      xmlns="http://www.w3.org/2000/svg"&gt;
+
+    &lt;rect width="100%" height="100%" rx="75" ry="75" fill="blue"/&gt;
+ 
+    &lt;text x="40" 
+              y="50" 
+              style="stroke:none;
+                     fill:white;
+                     font-size:2em; 
+                     font-family:serif;"&gt;rx 75&lt;/text&gt;
+ 
+    &lt;text x="40" 
+              y="100" 
+              style="stroke:none;
+                     fill:white;
+                     font-size:2em; 
+                     font-family:serif;"&gt;ry 75&lt;/text&gt;
+  &lt;/svg&gt; </pre>
+                            <pre>
+   // svg_example_one_rounded_2.svg 
+  &lt;svg
+     . . . 
+
+    &lt;rect width="100%" height="100%" rx="75" ry="25" fill="red"/&gt;
+    
+     . . . 
+  &lt;/svg&gt; </pre>
+
+                            <pre>
+   // svg_example_one_rounded_3.svg 
+  &lt;svg
+     . . . 
+
+    &lt;rect width="100%" height="100%" rx="25"  fill="green"/&gt;
+
+     . . . 
+  &lt;/svg&gt; </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://svgwg.org/svg2-draft/geometry.html#RX">
+                            W3C Editor's Draft: Horizontal radius: The rx property
+                        </a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect">MDN: rect</a>
+                    </div>
                 </div>
             </div>
         </div>
