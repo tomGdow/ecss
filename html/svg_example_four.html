@@ -99,6 +99,97 @@
                             <object data="../svg/svg_example_four.svg" type="image/svg+xml"></object>
                         </div>
                     </div><!--content-->
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
+                        <code>
+                            &lt;text x y dx dy rotate&gt;"text"&lt;/text&gt;
+                        </code>
+                        <ol>
+                            <li>
+                                The <code>SVG</code> <code>text</code> element draws a graphics element consisting of
+                                text
+                            </li>
+
+                            <li>
+                                It's possible to apply a gradient, pattern, clipping path, mask, or filter to
+                                <code>text</code>, like any other <code>SVG</code> graphics element
+                            </li>
+
+                            <li>
+                                If text is included in SVG not inside of a <code>text</code> element, it is not rendered
+                            </li>
+
+                            <li>
+                                This is different than being hidden by default, as setting the display property won't
+                                show the text</li>
+
+                            <li>
+                                The <code>text</code> element does not wrap by default, to make this happen it needs to
+                                be styled with the <code>white-space</code> CSS property
+                            </li>
+                            <li><code>x</code>
+                                <ol>
+                                    <li>
+                                        The <code>x</code> coordinate of the starting point of the <b>text baseline </b>
+                                    </li>
+                                    <li>
+                                        <i>or</i> the <code>x</code> coordinate of each individual glyph if a list of
+                                        values is provided
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>y</code>
+                                <ol>
+                                    <li>
+                                        The <code>y</code> coordinate of the starting point of the <b>text baseline </b>
+                                    </li>
+                                    <li>
+                                        <i>or</i> the <code>y</code> coordinate of each individual glyph if a list of
+                                        values is provided
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>dx</code>
+                                <ol>
+                                    <li>
+                                        Shifts the text position horizontally from a previous text element
+                                    </li>
+                                    <li>
+                                        <i>or</i> shifts the position of each individual glyph if a
+                                        list of values is provided
+                                    </li>
+                                </ol>
+                            </li>
+
+                            <li>
+                                <code>dy</code>
+                                <ol>
+                                    <li>
+                                        Shifts the text position vertically from a previous text element
+                                    </li>
+                                    <li>
+                                        <i>or</i> shifts the position of each individual glyph if a
+                                        list of values is provided
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>rotate</code>
+                                <ol>
+                                    <li>
+                                        Rotates orientation of each individual glyph
+                                    </li>
+                                    <li>
+                                        Can rotate glyphs individually
+                                    </li>
+                                    <li>value type: list of numbers</li>
+                                </ol>
+                            </li>
+                        </ol>
+
+
+                    </div><!--content-->
 
                     <h2 class="example">Code</h2>
                     <div class="content">
@@ -152,7 +243,9 @@
                     </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text">MDN: svg text</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
