@@ -196,7 +196,7 @@
 
                     <h2 class="example">Example (img element)</h2>
                     <div class="content">
-                        <img src="../svg/svg_example_four.svg" alt="Hello World Image" height="75" width="150" />
+                        <img src="../svg/svg_example_four.svg" alt="Hello World Image" height="75" width="150">
                         <h3>Notes</h3>
                         <ol class="emphasis">
                             <li>
@@ -213,24 +213,23 @@
                                 Contrast with the <code>object</code> examples below
                             </li>
                         </ol>
-                    </div><!--content-->
 
-                    <div>
-                        <h3>HTML</h3>
-                        <pre>
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
 &lt;img 
     src="../svg/svg_example_four.svg" 
     alt="Hello World Image" 
     height="75" 
     width="150" /&gt; </pre>
-                    </div>
-                    <div>
+                        </div>
+                        <div>
+                        </div><!--content-->
 
                         <h2 class="example">Example (Object, truncate problem)</h2>
                         <div class="content">
 
-                            <object data="../svg/svg_example_four.svg" type="image/svg+xml" width="150"
-                                typemustmatch="True"></object>
+                            <object data="../svg/svg_example_four.svg" type="image/svg+xml" width="150"></object>
                             <div>
                                 <div>
                                     <h3>Notes</h3>
@@ -250,8 +249,7 @@
 &lt;object 
     data="../svg/svg_example_four.svg" 
     type="image/svg+xml" 
-    width="150"
-    typemustmatch="True"&gt;
+    width="150" &gt;
 &lt;/object&gt; </pre>
                             </div>
                             <div>
@@ -293,8 +291,7 @@
 
                         <div class="content">
                             <div>
-                                <object data="../svg/svg_example_four_2.svg" type="image/svg+xml"
-                                    typemustmatch="True"></object>
+                                <object data="../svg/svg_example_four_2.svg" type="image/svg+xml"></object>
                             </div>
                             <div>
                                 <h3>Notes</h3>
@@ -331,10 +328,17 @@
     &lt;rect  width="100%" height="100%" fill="lightgoldenrodyellow" /&gt;
 
     &lt;!--Hello--&gt;
-    &lt;text x="20" y="50" style="stroke:green;fill:none; font-size:50px; font-family:serif;"&gt;Hello&lt;/text&gt;
+    &lt;text x="20" y="50" 
+        style="stroke:green;fill:none; 
+        font-size:50px; 
+        font-family:serif;"&gt;Hello&lt;/text&gt;
 
     &lt;!--World--&gt;
-    &lt;text x="80" y="120" style="stroke:none;fill:red; font-size:50px; font-family:serif;"&gt;World&lt;/text&gt;
+    &lt;text x="80" y="120" 
+        style="stroke:none;fill:red; 
+        font-size:50px; 
+        font-family:serif;"&gt;World&lt;/text&gt;
+
 &lt;/svg&gt; </pre>
                             </div>
                         </div><!--content-->
@@ -386,16 +390,13 @@ svg text:first-of-type {
                             </div>
                         </div><!--content-->
 
-
-                        <h2>Notes</h2>
-                        <div class="content"></div><!--content-->
-
-                        <h2>Mnemonic</h2>
-                        <div class="content"></div><!--content-->
-
-                        <h2>References</h2>
+                        <h2 class="example">References</h2>
                         <div class="content ref">
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">
+                            <a href="https://svgwg.org/svg2-draft/Overview.html">W3C: Scalable Vector Graphics (SVG) 2
+                                W3C Editor's Draft 08 March 2023</a>
+                        </div>
+                        <div class="content ref">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">MDN:
                                 SVG Tutorial
                             </a>
                         </div><!--content-->
@@ -405,32 +406,31 @@ svg text:first-of-type {
 
             <!--  Templates -->
 
-
             <template id="prevPageTemplate">canvas_example_four</template> <!--PREVIOUS PAGE-->
 
             <template id="pageTitleTemplate">svg</template> <!--PAGE TITLE-->
 
             <template id="nextPageTemplate">svg_example_one</template><!--NEXT PAGE-->
 
-
         </div>
-        <script>
+    </div>
+    <script>
 
-            //page title
-            var pageTitleText = pageTitleTemplate.innerHTML;
-            document.title = pageTitleText;
-            banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
-            pageTitle.innerHTML = pageTitleText;
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
 
-            // previous page
-            var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
-            prevPage.setAttribute("href", prevPageURL)
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
 
-            // next page
-            var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
-            nextPage.setAttribute("href", nextPageURL)
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
 
-        </script>
+    </script>
 </body>
 
 </html>
