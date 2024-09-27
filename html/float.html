@@ -85,19 +85,127 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>float</code> CSS property places an element on the left or right side of its
+                                container, allowing text and inline elements to wrap around it
+                            </li>
+                            <li>
+                                The element is <strong>removed from the normal flow of the page, though still remaining
+                                    a
+                                    part of the flow</strong>
+                            </li>
+                            <li>
+                                It is shifted to the left, or right, until it touches the edge of its containing box,
+                                <strong>or another floated element</strong>
+                            </li>
+                            <li>
+                                <code>left</code><br>
+                                The element must float on the left side of its containing block
+                            </li>
+                            <li>
+                                <code>right</code><br>
+                                The element must float on the right side of its containing block
+                            </li>
+                            <li>
+                                <code>none</code><br>
+                                The element must not float
+                            </li>
+                            <li>
+                                <code>inline-start</code>
+                                <ol>
+                                    <li>
+                                        The element must float on the <b>start side</b> of its containing block
+                                    </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                    <li>
+                                        That is the <b>left side</b> with <code>ltr</code> scripts, and <b>the right
+                                            side</b> with <code>rtl</code> scripts
+                                    </li>
+                                    <li>
+                                        <q>The logical equivalent of <code>left</code> based on the writing-mode</q>
+                                        (CSS-Tricks)
+                                    </li>
+                                </ol>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                            </li>
+                            <li>
+                                <code>inline-end</code>
+                                <ol>
+                                    <li>
+                                        The element must float on the <b>inline-end side</b> of its containing block
+                                    </li>
+                                    <li>
+                                        That is the <b>right side</b> with <code>ltr</code> scripts, and <b>the left
+                                            side</b> with <code>rtl</code> scripts
+                                    </li>
+                                    <li>
+                                        <q>The logical equivalent of <code>right</code> based on the writing-mode</q>
+                                        (CSS-Tricks)
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2>clear</h2>
+                    <div class="content">
+
+                        <ol>
+                            <li>
+                                The <code>clear</code> property sets whether an element must be moved below (cleared)
+                                floating elements <b>that precede it</b>
+                            </li>
+                            <li>
+                                The
+                                <code>clear</code> property applies to floating and non-floating elements
+                            </li>
+                            <li>
+                                <code>left</code> <br>
+                                Is a keyword indicating that the element is moved down to clear past left floats
+                            </li>
+                            <li>
+                                <code>right</code><br>
+                                Is a keyword indicating that the element is moved down to clear past right floats
+                            </li>
+                            <li>
+                                <code>both</code><br>
+                                Is a keyword indicating that the element is moved down to clear past both left and right
+                                floats
+                            </li>
+                            <li>
+                                <code>none</code><br>
+                                Is a keyword indicating that the element is not moved down to clear past floating
+                                elements
+                            </li>
+                            <li>
+                                <code>inline-start</code><br>
+                                Is a keyword indicating that the element is moved down to clear floats on <i>start
+                                    side</i> of its containing block, that is
+                                the left floats on ltr scripts and the right floats on rtl scripts
+                            </li>
+                            <li>
+                                <code>inline-end</code><br>
+                                Is a keyword indicating that the element is moved down to clear floats on end side of
+                                its containing block, that is the
+                                right floats on ltr scripts and the left floats on rtl scripts
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">MDN: float</a>
+                    </div><!--content-->
+
+                    <div class="content ref">
+                        <a href="https://css-tricks.com/almanac/properties/f/float/">CSS-tricks: float</a>
+                    </div><!--content-->
+
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clear">MDN: clear</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>

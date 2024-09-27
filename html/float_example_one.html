@@ -48,6 +48,54 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        div.float-example {
+            width: 5em;
+            height: 10vh;
+            border: 2px solid red;
+            margin: 0 .4em;
+            text-align: center;
+        }
+
+        div.right {
+            float: right;
+            background-color: lightgoldenrodyellow;
+        }
+
+        div.left {
+            float: left;
+            background-color: lightseagreen;
+            /* padding-right: 1em; */
+            /* margin: 2em; */
+        }
+
+        p.first {
+            font-family: cursive;
+        }
+
+        p.second {
+            font-family: 'Times New Roman', Times, serif;
+            /* padding-right: 1em; */
+            /* margin: 3em; */
+        }
+
+        p {
+            /* padding: 0 1em; */
+            font-size: 1.2em;
+        }
+
+        p.third {
+            font-family: Arial, Helvetica, sans-serif;
+            color: purple;
+        }
+
+        .clear-right {
+            clear: right;
+        }
+
+        .clear-left {
+            clear: left;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +133,138 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>Yellow divs are <code>float:right</code></li>
+                            <li>Green divs are <code>float:left</code></li>
+                            <li>Divs labeled <q>clear-R</q> are <code>clear:right</code></li>
+                            <li>Divs labeled <q>clear-L</q> are <code>clear:left</code></li>
+                        </ol>
+                        <hr>
+                        <section>
+                            <p class="first">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam minus veritatis fuga
+                                enim accusamus maxime
+                                inventore at soluta rerum iure magni, possimus harum omnis, culpa perferendis
+                                necessitatibus minima laudantium.
+                                Tempora?
+                            </p>
+                            <div class="left float-example">1</div>
+                            <div class="left float-example">2</div>
+                            <div class="right float-example">3</div>
+                            <div class="right float-example">4</div>
+                            <p class="second">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas doloribus, ab nesciunt
+                                distinctio asperiores
+                                pariatur
+                                itaque aliquam illum placeat iure tenetur, mollitia error qui ut quisquam repudiandae.
+                                Praesentium, nemo nesciunt?
+                            </p>
+                            <div class="right float-example">5</div>
+                            <div class="right float-example">6</div>
+                            <div class="right clear-right float-example">7 <br>clear-R</div>
+                            <div class="right float-example">8</div>
+                            <div class="left float-example">9</div>
+                            <div class="left clear-left float-example">10 <br>clear-L</div>
+                            <div class="left clear-left float-example">11 <br>clear-L</div>
+                            <div class="left clear-left float-example">12 <br>clear-L</div>
+                            <p class="third">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est ullam excepturi iste
+                                tenetur ex labore, fugiat error
+                                modi? Sapiente, consequuntur deserunt a quasi mollitia libero quas expedita eius. Facere
+                                aut mollitia sapiente
+                                quidem quae voluptatum velit hic, harum beatae officia dolores commodi, consequuntur
+                                cupiditate, recusandae quam.
+                                Culpa illum ipsa similique dolorum. Earum, eaque? Perspiciatis numquam inventore vero
+                                quasi totam dolores corrupti
+                                quis veritatis est accusantium, consequuntur optio tempore suscipit doloribus corporis
+                                repudiandae omnis
+                                voluptatum temporibus reprehenderit iste adipisci illum voluptas! Iusto deleniti
+                                necessitatibus fuga minima
+                                possimus perspiciatis vero laudantium nisi ducimus tempore dignissimos consectetur nam
+                                voluptatem, accusamus sed
+                                esse?
+                            </p>
+                        </section>
+                    </div><!--content-->
+                    <hr class="clear-both">
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;section&gt;
+    &lt;p class="first"&gt;Lorem ipsum dolor &hellip; &lt;/p&gt;
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+    &lt;div class="left float-example"&gt;1&lt;/div&gt;
+    &lt;div class="left float-example"&gt;2&lt;/div&gt;
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+    &lt;div class="right float-example"&gt;3&lt;/div&gt;
+    &lt;div class="right float-example"&gt;4&lt;/div&gt;
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+    &lt;p class="second"&gt;Lorem, ipsum dolor &hellip; &lt;/p&gt;
+
+    &lt;div class="right float-example"&gt;5&lt;/div&gt;
+    &lt;div class="right float-example"&gt;6&lt;/div&gt;
+    &lt;div class="right clear-right float-example"&gt;7&lt;/div&gt;
+    &lt;div class="right float-example"&gt;8&lt;/div&gt;
+
+    &lt;div class="left float-example"&gt;9&lt;/div&gt;
+    &lt;div class="left clear-left float-example"&gt;10&lt;/div&gt;
+    &lt;div class="left clear-left float-example"&gt;11&lt;/div&gt;
+    &lt;div class="left clear-left float-example"&gt;12&lt;/div&gt;
+
+    &lt;p class="third"&gt;Lorem ipsum dolor sit, &hellip; &lt;/p&gt;
+&lt;/section&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+div.float-example {
+    width: 5em;
+    height: 10vh;
+    border: 2px solid red;
+    margin: 0 .4em;
+    text-align: center;
+}
+
+div.right {
+    float: right;
+    background-color: lightgoldenrodyellow;
+}
+
+div.left {
+    float: left;
+    background-color: lightseagreen;
+}
+
+p.first {
+    font-family: cursive;
+}
+
+p.second {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+p.third {
+    font-family: Arial, Helvetica, sans-serif;
+    color: purple;
+}
+
+.clear-right {
+    clear: right;
+}
+
+.clear-left {
+    clear: left;
+}
+                            </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
@@ -103,7 +273,6 @@
         </div>
 
         <!--  Templates -->
-
 
         <template id="prevPageTemplate">float</template> <!--PREVIOUS PAGE-->
 

@@ -48,6 +48,58 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        div.float-example {
+            width: 5em;
+            height: 10vh;
+            border: 2px solid red;
+            margin: 0 .4em;
+            text-align: center;
+        }
+
+        div.right {
+            float: right;
+            background-color: lightgoldenrodyellow;
+        }
+
+        div.left {
+            float: left;
+            background-color: lightseagreen;
+            /* padding-right: 1em; */
+            /* margin: 2em; */
+        }
+
+        p.first {
+            font-family: cursive;
+        }
+
+        p.second {
+            font-family: 'Times New Roman', Times, serif;
+            /* padding-right: 1em; */
+            /* margin: 3em; */
+        }
+
+        p {
+            /* padding: 0 1em; */
+            font-size: 1.2em;
+        }
+
+        p.third {
+            font-family: Arial, Helvetica, sans-serif;
+            color: purple;
+        }
+
+        .clear-right {
+            clear: right;
+        }
+
+        .clear-left {
+            clear: left;
+        }
+
+        .clear-both {
+            clear: both;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,10 +137,122 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>Yellow divs are <code>float:right</code></li>
+                            <li>Green divs are <code>float:left</code></li>
+                            <li>Divs labeled <q>clear-R</q> are <code>clear:right</code></li>
+                            <li>Divs labeled <q>clear-L</q> are <code>clear:left</code></li>
+                        </ol>
+                        <hr>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <section>
+                            <div class="right float-example">1</div>
+                            <div class="right clear-right float-example">2 <br>clear-R</div>
+                            <div class="right float-example">3</div>
+                            <div class="left float-example">4</div>
+                            <div class="left float-example">5</div>
+                            <div class="left  float-example">6</div>
+                            <div class="left clear-left float-example">7 <br>clear-L</div>
+                            <div class="left clear-left float-example">8 <br>clear-L</div>
+                            <div class="left clear-left float-example">9 <br>clear-L</div>
+                            <div class="left float-example">10</div>
+                            <div class="right float-example">11</div>
+                            <div class="right float-example">12</div>
+                            <div class="right clear-right float-example">13 <br>clear-R</div>
+                        </section>
+                    </div><!--content-->
+                    <hr class="clear-both">
+
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;section&gt;
+    &lt;div class="right float-example"&gt;1&lt;/div&gt;
+    &lt;div class="right clear-right float-example"&gt;
+            2&lt;br&gt;clear-R
+    &lt;/div&gt;
+    &lt;div class="right float-example"&gt;3&lt;/div&gt;
+
+    &lt;div class="left float-example"&gt;4&lt;/div&gt;
+    &lt;div class="left float-example"&gt;5&lt;/div&gt;
+    &lt;div class="left float-example"&gt;6&lt;/div&gt;
+    &lt;div class="left clear-left float-example"&gt;
+            7 &lt;br&gt;clear-L
+    &lt;/div&gt;
+    &lt;div class="left clear-left float-example"&gt;
+            8 &lt;br&gt;clear-L
+    &lt;/div&gt;
+    &lt;div class="left clear-left float-example"&gt;
+            9 &lt;br&gt;clear-L
+    &lt;/div&gt;
+    &lt;div class="left float-example"&gt;10&lt;/div&gt;
+
+    &lt;div class="right float-example"&gt;11&lt;/div&gt;
+    &lt;div class="right float-example"&gt;12&lt;/div&gt;
+    &lt;div class="right clear-right float-example"&gt;
+            13 &lt;br&gt;clear-R
+    &lt;/div&gt;
+&lt;/section&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+div.float-example {
+    width: 5em;
+    height: 10vh;
+    border: 2px solid red;
+    margin: 0 .4em;
+    text-align: center;
+}
+
+div.right {
+    float: right;
+    background-color: lightgoldenrodyellow;
+}
+
+div.left {
+    float: left;
+    background-color: lightseagreen;
+    /* padding-right: 1em; */
+    /* margin: 2em; */
+}
+
+p.first {
+    font-family: cursive;
+}
+
+p.second {
+    font-family: 'Times New Roman', Times, serif;
+    /* padding-right: 1em; */
+    /* margin: 3em; */
+}
+
+p {
+    /* padding: 0 1em; */
+    font-size: 1.2em;
+}
+
+p.third {
+    font-family: Arial, Helvetica, sans-serif;
+    color: purple;
+}
+
+.clear-right {
+    clear: right;
+}
+
+.clear-left {
+    clear: left;
+}
+
+.clear-both {
+    clear: both;
+} </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>Notes</h2>
                     <div class="content"></div><!--content-->
@@ -97,7 +261,9 @@
                     <div class="content"></div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">MDN: float</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
