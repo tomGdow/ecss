@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        dt {
+            font-weight: bold;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +89,59 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <dl>
+                            <dt>absolute</dt>
+                            <dd>
+                                <ol>
+                                    <li>
+                                        <strong>The element is removed</strong> from the normal document flow
+                                    </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                    <li>
+                                        <strong>No space is created</strong> for the element in the page layout
+                                    </li>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                                    <li>
+                                        The element is positioned relative to its closest positioned ancestor (if any)
+                                        or to
+                                        the initial containing block
+                                    </li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                                    <li>
+                                        Its final position is determined by the values of <code>top</code>,
+                                        <code>right</code>, <code>bottom</code>, and <code>left</code>
+                                    </li>
+
+                                    <li>
+                                        An absolutely positioned element is positioned relative to its nearest
+                                        positioned ancestor (i.e., the nearest ancestor that is not static)
+                                    </li>
+
+                                    <li>
+                                        If a positioned ancestor doesn't exist, it is positioned relative to the ICB
+                                        (initial containing block), which is the containing block of the document's root
+                                        element
+                                    </li>
+                                    <li>
+                                        <q> If the element has <code>position: absolute</code>, the containing block is
+                                            established by the nearest ancestor with a <code>position</code>
+                                            of <code>absolute</code>, <code>relative</code> or <code>fixed</code></q>
+                                        (W3C)
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">MDN: position</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://www.w3.org/TR/CSS2/visudet.html#containing-block-details">W3C: Definition of
+                            "containing block"</a>
+                    </div>
                 </div>
             </div>
         </div>
