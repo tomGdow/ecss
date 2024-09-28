@@ -102,6 +102,18 @@
                                         Thus, the space given for the element in the page layout is the same as if
                                         position were <code>static</code>
                                     </li>
+                                    <li>
+                                        Relative positioned elements remain in the flow of the page, and if top, left,
+                                        right or bottom values are not set, the element <strong>is considered positioned</strong> (ie not
+                                        <b>static</b>)
+                                    </li>
+                                    <li>
+                                        As an absolutely positioned element is positioned relative to its nearest
+                                        positioned ancestor (i.e., the nearest ancestor
+                                        that is not static), giving the containing element of an absolutely positioned
+                                        element the attribute <code>position:relative</code> is very useful
+                                    </li>
+
                                 </ol>
                             </dd>
                         </dl>
