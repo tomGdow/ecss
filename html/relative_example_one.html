@@ -54,6 +54,56 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <style>
+        .relative {
+            position: relative;
+            top: 3vw;
+            left: 5vw;
+        }
+
+        div.rel-container {
+            margin: 5px auto;
+            width: 60%;
+        }
+
+        div.rel-container {
+            border: 2px solid orange;
+        }
+
+        div.rel-container #div-one,
+        div.rel-container #div-two,
+        div.rel-container #div-three {
+            width: 8vw;
+            line-height: 8vw;
+            display: inline-block;
+            text-align: center;
+            margin: 1vw;
+            font-size: 1.8vw;
+        }
+
+        #div-one {
+            background: red;
+            text-decoration: underline dotted;
+        }
+
+        #div-two {
+            background: lime;
+            text-decoration: underline dotted;
+        }
+
+        #div-three {
+            background: blue;
+            color: white;
+            text-decoration: underline dotted;
+        }
+
+        .rel-container>p {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 1em;
+            color: var(--primary-green);
+        }
+    </style>
 </head>
 
 <body>
@@ -85,16 +135,105 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="rel-container">
+                            <div id="div-one">Static</div>
+                            <div id="div-two" class="relative">Relative</div>
+                            <div id="div-three">Static</div>
+                            <p>Click the divs</p>
+                        </div>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;div class="rel-container"&gt;
+    &lt;div id="div-one"&gt;Static&lt;/div&gt;
+    &lt;div id="div-two" class="relative"&gt;Relative&lt;/div&gt;
+    &lt;div id="div-three"&gt;Static&lt;/div&gt;
+    &lt;p&gt;Click the divs&lt;/p&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+.relative {
+    position: relative;
+    top: 3vw;
+    left: 5vw;
+}
+
+div.rel-container {
+    margin: 5px auto;
+    width: 60%;
+}
+
+div.rel-container {
+    border: 2px solid orange;
+}
+
+div.rel-container #div-one,
+div.rel-container #div-two,
+div.rel-container #div-three {
+    width: 8vw;
+    line-height: 8vw;
+    display: inline-block;
+    text-align: center;
+    margin: 1vw;
+    font-size: 1.8vw;
+}
+
+#div-one {
+    background: red;
+    text-decoration: underline dotted;
+}
+
+#div-two {
+    background: lime;
+    text-decoration: underline dotted;
+}
+
+#div-three {
+    background: blue;
+    color: white;
+    text-decoration: underline dotted;
+}
+
+.rel-container>p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 1em;
+    color: var(--primary-green);
+} </pre>
+                        </div>
+                        <div>
+                            <h3>JavaScript</h3>
+                            <pre>
+function toggleClass(id, toggleClass, toggleMsg) {
+    if (document.getElementById(id)) {
+        document.getElementById(id).addEventListener('click', 
+          function () {
+            if (this.classList.contains(toggleClass)) {
+                this.classList.remove(toggleClass);
+                this.innerHTML = "Static";
+
+            } else {
+                this.classList.add(toggleClass);
+                this.innerHTML = toggleMsg;
+            }
+        });
+    }
+}
+
+toggleClass('div-two', 'relative', 'Relative');
+toggleClass('div-one', 'relative', 'Relative');
+toggleClass('div-three', 'relative', 'Relative'); </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
@@ -128,6 +267,28 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        // Toggle Relative <-> Static 
+
+        function toggleClass(id, toggleClass, toggleMsg) {
+            if (document.getElementById(id)) {
+                document.getElementById(id).addEventListener('click', function () {
+                    if (this.classList.contains(toggleClass)) {
+                        this.classList.remove(toggleClass);
+                        this.innerHTML = "Static";
+
+                    } else {
+                        this.classList.add(toggleClass);
+                        this.innerHTML = toggleMsg;
+                    }
+                });
+            }
+        }
+
+        toggleClass('div-two', 'relative', 'Relative');
+        toggleClass('div-one', 'relative', 'Relative');
+        toggleClass('div-three', 'relative', 'Relative');
+
 
     </script>
 </body>
