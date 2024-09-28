@@ -48,6 +48,59 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .absolute {
+            position: absolute;
+            top: 2vw;
+            left: 5vw;
+        }
+
+        div.absolute-container {
+            margin: 5px auto;
+            width: 60%;
+
+            border: 2px solid orange;
+            position: relative;
+        }
+
+        div.absolute-container #div-four,
+        div.absolute-container #div-five,
+        div.absolute-container #div-six {
+            width: 8vw;
+            line-height: 8vw;
+            display: inline-block;
+            text-align: center;
+            margin: 1vw;
+            font-size: 1.8vw;
+        }
+
+        #div-four {
+            background: red;
+            text-decoration: underline dotted;
+        }
+
+        #div-five {
+            background: lime;
+            text-decoration: underline dotted;
+        }
+
+        #div-six {
+            background: blue;
+            color: white;
+            text-decoration: underline dotted;
+        }
+
+        /* #div-x {
+            visibility: hidden;
+            width: .1vh;
+        } */
+
+        .absolute-container>p {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 1em;
+            color: var(--primary-green);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +138,117 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="absolute-container">
+                            <div id="div-four">Static</div>
+                            <div id="div-five" class="absolute">Absolute</div>
+                            <div id="div-six">Static</div>
+                            <!-- <div id="div-x">No Click</div> -->
+                            <p>Click the divs</p>
+                        </div>
+                    </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                        Clicking on a <code>div</code> in the above diagram causes the following CSS class to be
+                        added/removed:
+                        <pre>
+    .absolute {
+        position: absolute;
+        top: 2vw;
+        left: 5vw;
+    }</pre>
+                    </div><!--content-->
+
+                    <h2>Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;div class="absolute-container"&gt;
+    &lt;div id="div-four"&gt;Static&lt;/div&gt;
+    &lt;div id="div-five" class="absolute"&gt;Absolute&lt;/div&gt;
+    &lt;div id="div-six"&gt;Static&lt;/div&gt;
+    &lt;p&gt;Click the divs&lt;/p&gt;
+&lt;/div&gt;
+                            </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+.absolute {
+    position: absolute;
+    top: 2vw;
+    left: 5vw;
+}
+
+div.absolute-container {
+    margin: 5px auto;
+    width: 60%;
+
+    border: 2px solid orange;
+    position: relative;
+}
+
+div.absolute-container #div-four,
+div.absolute-container #div-five,
+div.absolute-container #div-six {
+    width: 8vw;
+    line-height: 8vw;
+    display: inline-block;
+    text-align: center;
+    margin: 1vw;
+    font-size: 1.8vw;
+}
+
+#div-four {
+    background: red;
+    text-decoration: underline dotted;
+}
+
+#div-five {
+    background: lime;
+    text-decoration: underline dotted;
+}
+
+#div-six {
+    background: blue;
+    color: white;
+    text-decoration: underline dotted;
+}
+
+.absolute-container>p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 1em;
+    color: var(--primary-green);
+} </pre>
+                        </div>
+                        <div>
+                            <h3>JavaScript</h3>
+                            <pre>
+function toggleClass(id, toggleClass, toggleMsg) {
+    if (document.getElementById(id)) {
+        document.getElementById(id).addEventListener('click', function () {
+            if (this.classList.contains(toggleClass)) {
+                this.classList.remove(toggleClass);
+                this.innerHTML = "Static";
+
+            } else {
+                this.classList.add(toggleClass);
+                this.innerHTML = toggleMsg;
+            }
+        });
+    }
+}
+
+toggleClass('div-four', 'absolute', 'Absolute');
+toggleClass('div-five', 'absolute', 'Absolute');
+toggleClass('div-six', 'absolute', 'Absolute'); </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
@@ -128,6 +282,30 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+
+        // toggle static <--> absolute class
+
+        function toggleClass(id, toggleClass, toggleMsg) {
+            if (document.getElementById(id)) {
+                document.getElementById(id).addEventListener('click', function () {
+                    if (this.classList.contains(toggleClass)) {
+                        this.classList.remove(toggleClass);
+                        this.innerHTML = "Static";
+
+                    } else {
+                        this.classList.add(toggleClass);
+                        this.innerHTML = toggleMsg;
+                    }
+                });
+            }
+        }
+
+        toggleClass('div-four', 'absolute', 'Absolute');
+        toggleClass('div-five', 'absolute', 'Absolute');
+        toggleClass('div-six', 'absolute', 'Absolute');
+
+
 
     </script>
 </body>
