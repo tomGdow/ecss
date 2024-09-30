@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <title>[PAGE TITLE]</title>
     <meta name="viewport" content="width=device-width initial-scale=1.0">
@@ -12,146 +12,161 @@
     <link rel="stylesheet" href="../css/ecss.css" title="Default">
     <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
     <noscript>
-        <link rel="stylesheet" href="../css/ecss_nojs.css">
+      <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-</head>
+    <style>
+summary {
+  color: var(--primary-green);
+    </style>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="grid-container">
-            <div class="grid-item-1">
-                <div class="banner-container">
-                    <div class="banner-item-1">
-                        <a href="../index.html">
-                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
-                                alt="gravatar image of tomgdow">
-                        </a>
-                    </div>
-                </div>
-                <div class="banner-item-2">
-                    <span id="banner_part_first">html </span>
-                    <span class="primary-orange" id="banner_part_second"></span>
-                </div>
+      <div class="grid-container">
+        <div class="grid-item-1">
+          <div class="banner-container">
+            <div class="banner-item-1">
+              <a href="../index.html">
+                <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                     alt="gravatar image of tomgdow">
+              </a>
             </div>
-            <div class="grid-item-2"></div>
-            <div class="grid-item-3">
-                <div class="site-container">
-                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
-                    <div id="navbar">
-                        <a href="PREV.html" id="prevPage" accesskey="p">prev</a>&nbsp;&nbsp;
-                        <a href="../index.html" accesskey="h">home</a>&nbsp;&nbsp;
-                        <a href="NEXT.html" id="nextPage" accesskey="n">next</a>&nbsp;&nbsp;
-                        <a href="./search.html" accesskey="s">search</a>
-                    </div>
-
-                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-
-                    <div class="content">
-                        <ol>
-                            <li>
-                                Count the number of <code>id</code> selectors in the selector (<code>=a</code>)
-                            </li>
-                            <li>
-                                Count the number of
-                                <ol>
-                                    <li><code>class</code> selectors</li>
-                                    <li><code>attribute</code> selectors</li>
-                                    <li><code>pseudo-classes</code></li>
-                                </ol>
-                                in the selector (<code>=b</code>)
-                            </li>
-                            <li>
-                                Count the number of
-                                <code>type</code> selectors and <code>pseudo-elements</code>
-                                in the selector (<code>=c</code>)
-
-                            </li>
-                            <li>
-                                Concatenate the three numbers <code>a b c</code> to get the specificity.
-                            </li>
-                            <li>Ignore the universal selector</li>
-                            <li> Selectors inside the negation pseudo-class are counted like any other
-                            </li>
-                            <li>Negation itself does not count as a pseudo-class.</li>
-                        </ol>
-                    </div>
-                    <h2>Example</h2>
-                    <div class="content">
-                        <ol>
-                            <li><code>
-                                li.class:nth-of-type(3n)
-                            </code>
-                                <ol>
-                                    <li><code> 0 2 1</code></li>
-                                    <li>Selector specificity is <code>21</code></li>
-                                </ol>
-                            </li>
-                            <li class="space_above"><code>#myDiv li.class a[href]</code>
-                                <ol>
-                                    <li><code>1 2 2</code></li>
-                                    <li>Selector specificity is <code>122</code></li>
-                                </ol>
-                            </li>
-                        </ol>
-                    </div>
-                    <h2>Notes</h2>
-                    <div class="content">
-                        <ol>
-                            <li>Specificity is the algorithm that the browser uses to decide
-                                which property value is applied to an element (MDN)</li>
-                        </ol>
-
-                    </div>
-
-                    <h2>References</h2>
-                    <div class="content">
-                        <a href="https://www.w3.org/TR/selectors-3/#specificity">
-                            Calculating a selector's specificity (W3C)</a>
-                    </div>
-                    <div class="content">
-                        <a href="https://specifishity.com/">CSS speciFISHity (Estelle Weyl)</a>
-                    </div>
-                    <div class="content">
-                        <a href="https://www.youtube.com/watch?v=8ddxfbnaIv0&t=453s">CSS selectors with Estelle Weyl</a>
-                    </div>
-                    <div class="content">
-                        <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance">Cascade, specificity, and inheritance</a>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="banner-item-2">
+            <span id="banner_part_first">html </span>
+            <span class="primary-orange" id="banner_part_second"></span>
+          </div>
         </div>
+        <div class="grid-item-2"></div>
+        <div class="grid-item-3">
+          <div class="site-container">
+            <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+            <div id="navbar">
+              <a href="PREV.html" id="prevPage" accesskey="p">prev</a>&nbsp;&nbsp;
+              <a href="../index.html" accesskey="h">home</a>&nbsp;&nbsp;
+              <a href="NEXT.html" id="nextPage" accesskey="n">next</a>&nbsp;&nbsp;
+              <a href="./search.html" accesskey="s">search</a>
+            </div>
 
-        <!--  Templates -->
+            <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
 
-        <template id="prevPageTemplate">css_selector_syntax</template> <!--PREVIOUS PAGE-->
+            <div class="content">
+              <ol>
+                <li>
+                  Count the number of <code>id</code> selectors in the selector (<code>=a</code>)
+                </li>
+                <li>
+                  Count the number of
+                  <ol>
+                    <li><code>class</code> selectors</li>
+                    <li><code>attribute</code> selectors</li>
+                    <li><code>pseudo-classes</code></li>
+                  </ol>
+                  in the selector (<code>=b</code>)
+                </li>
+                <li>
+                  Count the number of
+                  <code>type</code> selectors and <code>pseudo-elements</code>
+                  in the selector (<code>=c</code>)
 
-        <template id="pageTitleTemplate">CSS Specificity</template> <!--PAGE TITLE-->
+                </li>
+                <li>
+                  Concatenate the three numbers <code>a b c</code> to get the specificity.
+                </li>
+                <li>Ignore the universal selector</li>
+                <li> Selectors inside the negation pseudo-class are counted like any other
+                </li>
+                <li>Negation itself does not count as a pseudo-class.</li>
+              </ol>
+            </div>
+            <h2>Example</h2>
+            <div class="content">
+              <ol>
+                <li>
+                  <code>li.class:nth-of-type(3n)</code>
+                  <details>
+                    <summary><code>answer</code></summary>
+                    <ol>
+                      <li>
+                        <code> 0 2 1</code>
+                      </li>
+                      <li>
+                        Selector specificity is <code>21</code>
+                      </li>
+                    </ol>
+                  </details>
 
-        <template id="nextPageTemplate">css_inheritance</template><!--NEXT PAGE-->
+                </li>
+                <li class="space_above">
+                  <code>#myDiv li.class a[href]</code>
+                  <details>
+                    <summary>answer</summary>
+                    <ol>
+                      <li><code>1 2 2</code></li>
+                      <li>Selector specificity is <code>122</code></li>
+                    </ol>
+                  </details>
+                </li>
+              </ol>
+            </div>
+            <h2>Notes</h2>
+            <div class="content">
+              <ol>
+                <li>Specificity is the algorithm that the browser uses to decide
+                  which property value is applied to an element (MDN)</li>
+              </ol>
+
+            </div>
+
+            <h2>References</h2>
+            <div class="content">
+              <a href="https://www.w3.org/TR/selectors-3/#specificity">
+                Calculating a selector's specificity (W3C)</a>
+            </div>
+            <div class="content">
+              <a href="https://specifishity.com/">CSS speciFISHity (Estelle Weyl)</a>
+            </div>
+            <div class="content">
+              <a href="https://www.youtube.com/watch?v=8ddxfbnaIv0&t=453s">CSS selectors with Estelle Weyl</a>
+            </div>
+            <div class="content">
+              <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance">Cascade, specificity, and inheritance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  Templates -->
+
+      <template id="prevPageTemplate">css_selector_syntax</template> <!--PREVIOUS PAGE-->
+
+      <template id="pageTitleTemplate">CSS Specificity</template> <!--PAGE TITLE-->
+
+      <template id="nextPageTemplate">css_inheritance</template><!--NEXT PAGE-->
 
 
     </div>
     <script>
 
-        //page title
-        var pageTitleText = pageTitleTemplate.innerHTML;
-        document.title = pageTitleText;
-        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
-        pageTitle.innerHTML = pageTitleText;
+      //page title
+      var pageTitleText = pageTitleTemplate.innerHTML;
+      document.title = pageTitleText;
+      banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+      pageTitle.innerHTML = pageTitleText;
 
 
-        // previous page
-        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
-        prevPage.setAttribute("href", prevPageURL)
+      // previous page
+      var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+      prevPage.setAttribute("href", prevPageURL)
 
-        // next page
-        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
-        nextPage.setAttribute("href", nextPageURL)
+      // next page
+      var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+      nextPage.setAttribute("href", nextPageURL)
 
     </script>
-</body>
+  </body>
 
 </html>
