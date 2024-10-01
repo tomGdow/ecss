@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        .fixed {
+            position: fixed;
+            top: 10vh;
+            left: 0
+        }
+
+        .fixed-two {
+            position: fixed;
+            top: 10vh;
+            right: 0
+        }
+
+        .fixed-three {
+            position: fixed;
+            bottom: 0;
+            right: 50vw;
+        }
+
+        div.fixed-container {
+            margin: 5px auto;
+            width: 60%;
+
+            border: 2px solid orange;
+            position: relative;
+        }
+
+        div.fixed-container #div-four,
+        div.fixed-container #div-five,
+        div.fixed-container #div-six {
+            width: 8vw;
+            line-height: 8vw;
+            display: inline-block;
+            text-align: center;
+            margin: 1vw;
+            font-size: 1.8vw;
+        }
+
+        #div-four {
+            background: red;
+            text-decoration: underline dotted;
+        }
+
+        #div-five {
+            background: lime;
+            text-decoration: underline dotted;
+        }
+
+        #div-six {
+            background: blue;
+            color: white;
+            text-decoration: underline dotted;
+        }
+
+        /* #div-x {
+            visibility: hidden;
+            width: .1vh;
+        } */
+
+        .fixed-container>p {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 1em;
+            color: var(--primary-green);
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="PREV.html" id="prevPage" accesskey="p">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html" accesskey="h">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html" id="nextPage" accesskey="n">next</a>&nbsp;&nbsp;
+                        <a href="./search.html" accesskey="s">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+
+                        <div class="fixed-container">
+                            <div id="div-four">Static</div>
+                            <div id="div-five" class="fixed">fixed</div>
+                            <div id="div-six">Static</div>
+                            <!-- <div id="div-x">No Click</div> -->
+                            <p>Click the divs</p>
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
+
+                        Clicking on a <code>div</code> in the above diagram causes the following CSS class to be
+                        added/removed:
+                        <pre>
+    .fixed {
+        position: fixed;
+        top: 2vw;
+        left: 5vw;
+    }</pre>
+                    </div><!--content-->
+
+                    <h2>Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;div class="fixed-container"&gt;
+    &lt;div id="div-four"&gt;Static&lt;/div&gt;
+    &lt;div id="div-five" class="fixed"&gt;fixed&lt;/div&gt;
+    &lt;div id="div-six"&gt;Static&lt;/div&gt;
+    &lt;p&gt;Click the divs&lt;/p&gt;
+&lt;/div&gt;
+                            </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+.fixed {
+    position: fixed;
+    top: 2vw;
+    left: 5vw;
+}
+
+div.fixed-container {
+    margin: 5px auto;
+    width: 60%;
+
+    border: 2px solid orange;
+    position: relative;
+}
+
+div.fixed-container #div-four,
+div.fixed-container #div-five,
+div.fixed-container #div-six {
+    width: 8vw;
+    line-height: 8vw;
+    display: inline-block;
+    text-align: center;
+    margin: 1vw;
+    font-size: 1.8vw;
+}
+
+#div-four {
+    background: red;
+    text-decoration: underline dotted;
+}
+
+#div-five {
+    background: lime;
+    text-decoration: underline dotted;
+}
+
+#div-six {
+    background: blue;
+    color: white;
+    text-decoration: underline dotted;
+}
+
+.fixed-container>p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 1em;
+    color: var(--primary-green);
+} </pre>
+                        </div>
+                        <div>
+                            <h3>JavaScript</h3>
+                            <pre>
+function toggleClass(id, toggleClass, toggleMsg) {
+    if (document.getElementById(id)) {
+        document.getElementById(id).addEventListener('click', function () {
+            if (this.classList.contains(toggleClass)) {
+                this.classList.remove(toggleClass);
+                this.innerHTML = "Static";
+
+            } else {
+                this.classList.add(toggleClass);
+                this.innerHTML = toggleMsg;
+            }
+        });
+    }
+}
+
+toggleClass('div-four', 'fixed', 'fixed');
+toggleClass('div-five', 'fixed', 'fixed');
+toggleClass('div-six', 'fixed', 'fixed'); </pre>
+                        </div>
+                    </div><!--content-->
+
+                    <h2>References</h2>
+                    <div class="content ref"></div><!--content-->
+                </div>
+            </div>
+        </div>
+
+        <!--  Templates -->
+
+
+        <template id="prevPageTemplate">fixed</template> <!--PREVIOUS PAGE-->
+
+        <template id="pageTitleTemplate">fixed_example_one</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">max_width</template><!--NEXT PAGE-->
+
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
+
+        // toggle static <--> fixed class
+
+        function toggleClass(id, toggleClass, toggleMsg) {
+            if (document.getElementById(id)) {
+                document.getElementById(id).addEventListener('click', function () {
+                    if (this.classList.contains(toggleClass)) {
+                        this.classList.remove(toggleClass);
+                        this.innerHTML = "Static";
+
+                    } else {
+                        this.classList.add(toggleClass);
+                        this.innerHTML = toggleMsg;
+                    }
+                });
+            }
+        }
+
+        toggleClass('div-four', 'fixed-three', 'fixed');
+        toggleClass('div-five', 'fixed', 'fixed');
+        toggleClass('div-six', 'fixed-two', 'fixed');
+
+
+
+    </script>
+</body>
+
+</html>
