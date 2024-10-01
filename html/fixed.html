@@ -48,6 +48,10 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        dt {
+            font-weight: bold;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +89,46 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <dl>
+                            <dt>fixed</dt>
+                            <dd>
+                                <ol>
+                                    <li>
+                                        The element is removed from the normal document flow
+                                    </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                    <li>
+                                        <b>No space</b> is created for the element in the page layout
+                                    </li>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                                    <li>
+                                        The element is positioned relative to its initial containing block, <b>which is
+                                            the viewport in the case of visual media</b>
+                                    </li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                                    <li>
+                                        In contrast to <code>absolute</code>, a <code>fixed</code> element does not move
+                                        on
+                                        page scroll
+                                    </li>
+
+                                    <li>
+                                        Its final position is determined by the values of <code>top</code>,
+                                        <code>right</code>, <code>bottom</code>, and <code>left</code>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+
+
+                    </div><!--content-->
+
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">MDN: position</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
