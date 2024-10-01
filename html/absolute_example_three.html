@@ -27,16 +27,16 @@
         div.container .example::before {
             content: counter(exampleCounter) ".  "
         }
-
+        
         .ref {
             counter-increment: refCounter;
         }
-
+        
+        
         .ref::before {
             content: counter(refCounter) ".  ";
             color: var(--primary-green);
         }
-
         div.content {
             counter-reset: itemCounter 0;
         }
@@ -47,6 +47,73 @@
 
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        div.outer-container {
+            display: flex;
+        }
+
+        div.inner-container {
+            border: 2px solid orange;
+            position: relative;
+            height: 20vh;
+            width: 50%;
+            margin: auto;
+        }
+
+        #div-one,
+        #div-two,
+        #div-three,
+        #div-four,
+        #div-five {
+            width: 8vw;
+            height: 8vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        #div-one {
+            background: red;
+            top: 0;
+            left: 100%;
+        }
+
+        #div-two {
+            background: lime;
+            top: 0;
+            right: 100%;
+        }
+
+        #div-three {
+            background: blue;
+            color: white;
+            bottom: 0;
+            left: 100%;
+        }
+
+        #div-four {
+            background: cyan;
+            bottom: 0;
+            right: 100%;
+        }
+
+        #div-five {
+            background: purple;
+            color: white;
+            bottom: 30%;
+            right: 35%;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        table {
+            border-spacing: 2em 0.1em;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,16 +152,139 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="outer-container">
+                            <div class="inner-container">
+                                <div id="div-one" class="absolute">1</div>
+                                <div id="div-two" class="absolute">2</div>
+                                <div id="div-three" class="absolute">3</div>
+                                <div id="div-four" class="absolute">4</div>
+                                <div id="div-five" class="absolute">5</div>
+                            </div>
+                        </div>
+                    </div><!--content-->
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>div</th>
+                                    <th>position</th>
+                                    <th>top</th>
+                                    <th>right</th>
+                                    <th>bottom</th>
+                                    <th>left</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><code>absolute</code></td>
+                                    <td><!--top--><code>0</code></td>
+                                    <td><!--right--><code>&mdash;</code></td>
+                                    <td><!--bottom--><code>&mdash;</code></td>
+                                    <td><!--left--><code>100%</code></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><code>absolute</code></td>
+                                    <td><!--top--><code>0</code></td>
+                                    <td><!--right--><code>100%</code></td>
+                                    <td><!--bottom--><code>&mdash;</code></td>
+                                    <td><!--left--><code>&mdash;</code></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><code>absolute</code></td>
+                                    <td><!--top--><code>&mdash;</code></td>
+                                    <td><!--right--><code>&mdash;</code></td>
+                                    <td><!--bottom--><code>0</code></td>
+                                    <td><!--left--><code>100%</code></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><code>absolute</code></td>
+                                    <td><!--top--><code>&mdash;</code></td>
+                                    <td><!--right--><code>100%</code></td>
+                                    <td><!--bottom--><code>0</code></td>
+                                    <td><!--left--><code>&mdash;</code></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><code>absolute</code></td>
+                                    <td><!--top--><code>&mdash;</code></td>
+                                    <td><!--right--><code>35%</code></td>
+                                    <td><!--bottom--><code>30%</code></td>
+                                    <td><!--left--><code>&mdash;</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Code</h2>
+                    <div class="content">
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;div class="outer-container">
+    &lt;div class="inner-container">
+        &lt;div id="div-one" class="absolute">1&lt;/div>
+        &lt;div id="div-two" class="absolute">2&lt;/div>
+        &lt;div id="div-three" class="absolute">3&lt;/div>
+        &lt;div id="div-four" class="absolute">4&lt;/div>
+        &lt;div id="div-five" class="absolute">5&lt;/div>
+    &lt;/div>
+&lt;/div></pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+#div-one,
+#div-two,
+#div-three,
+#div-four,
+#div-five {
+    width: 8vw;
+    height: 8vh;
+    margin: 0;
+    text-align: center;
+}
+
+#div-one {
+    background: red;
+    top: 0;
+    left: 100%;
+}
+
+#div-two {
+    background: lime;
+    top: 0;
+    right: 100%;
+}
+
+#div-three {
+    background: blue;
+    color: white;
+    bottom: 0;
+    left: 100%;
+}
+
+#div-four {
+    background: cyan;
+    bottom: 0;
+    right: 100%;
+}
+
+#div-five {
+    background: purple;
+    color: white;
+    bottom: 30%;
+    right: 35%;
+} </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
