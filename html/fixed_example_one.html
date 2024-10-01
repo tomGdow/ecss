@@ -164,14 +164,27 @@
                     <h2 class="example">Notes</h2>
                     <div class="content">
 
-                        Clicking on a <code>div</code> in the above diagram causes the following CSS class to be
+                        Clicking on a <code>div</code> in the above diagram causes one of the following CSS class to be
                         added/removed:
                         <pre>
-    .fixed {
-        position: fixed;
-        top: 2vw;
-        left: 5vw;
-    }</pre>
+
+        .fixed {
+            position: fixed;
+            top: 10vh;
+            left: 0
+        }
+
+        .fixed-two {
+            position: fixed;
+            top: 10vh;
+            right: 0
+        }
+
+        .fixed-three {
+            position: fixed;
+            bottom: 0;
+            right: 50vw;
+        } </pre>
                     </div><!--content-->
 
                     <h2>Code</h2>
@@ -184,81 +197,85 @@
     &lt;div id="div-five" class="fixed"&gt;fixed&lt;/div&gt;
     &lt;div id="div-six"&gt;Static&lt;/div&gt;
     &lt;p&gt;Click the divs&lt;/p&gt;
-&lt;/div&gt;
-                            </pre>
+&lt;/div&gt; </pre>
                         </div>
                         <div>
                             <h3>CSS</h3>
                             <pre>
-.fixed {
-    position: fixed;
-    top: 2vw;
-    left: 5vw;
-}
+    .fixed {
+        position: fixed;
+        top: 10vh;
+        left: 0
+    }
 
-div.fixed-container {
-    margin: 5px auto;
-    width: 60%;
+    .fixed-two {
+        position: fixed;
+        top: 10vh;
+        right: 0
+    }
 
-    border: 2px solid orange;
-    position: relative;
-}
+    .fixed-three {
+        position: fixed;
+        bottom: 0;
+        right: 50vw;
+    }
 
-div.fixed-container #div-four,
-div.fixed-container #div-five,
-div.fixed-container #div-six {
-    width: 8vw;
-    line-height: 8vw;
-    display: inline-block;
-    text-align: center;
-    margin: 1vw;
-    font-size: 1.8vw;
-}
+    div.fixed-container {
+        margin: 5px auto;
+        width: 60%;
 
-#div-four {
-    background: red;
-    text-decoration: underline dotted;
-}
+        border: 2px solid orange;
+        position: relative;
+    }
 
-#div-five {
-    background: lime;
-    text-decoration: underline dotted;
-}
+    div.fixed-container #div-four,
+    div.fixed-container #div-five,
+    div.fixed-container #div-six {
+        width: 8vw;
+        line-height: 8vw;
+        display: inline-block;
+        text-align: center;
+        margin: 1vw;
+        font-size: 1.8vw;
+    }
 
-#div-six {
-    background: blue;
-    color: white;
-    text-decoration: underline dotted;
-}
+    #div-four {
+        background: red;
+        text-decoration: underline dotted;
+    }
 
-.fixed-container>p {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-top: 1em;
-    color: var(--primary-green);
-} </pre>
+    #div-five {
+        background: lime;
+        text-decoration: underline dotted;
+    }
+
+    #div-six {
+        background: blue;
+        color: white;
+        text-decoration: underline dotted;
+    }</pre>
                         </div>
                         <div>
                             <h3>JavaScript</h3>
                             <pre>
-function toggleClass(id, toggleClass, toggleMsg) {
-    if (document.getElementById(id)) {
-        document.getElementById(id).addEventListener('click', function () {
-            if (this.classList.contains(toggleClass)) {
-                this.classList.remove(toggleClass);
-                this.innerHTML = "Static";
+    function toggleClass(id, toggleClass, toggleMsg) {
+        if (document.getElementById(id)) {
+            document.getElementById(id).addEventListener('click', function () {
+                if (this.classList.contains(toggleClass)) {
+                    this.classList.remove(toggleClass);
+                    this.innerHTML = "Static";
 
-            } else {
-                this.classList.add(toggleClass);
-                this.innerHTML = toggleMsg;
-            }
-        });
+                } else {
+                    this.classList.add(toggleClass);
+                    this.innerHTML = toggleMsg;
+                }
+            });
+        }
     }
-}
 
-toggleClass('div-four', 'fixed', 'fixed');
-toggleClass('div-five', 'fixed', 'fixed');
-toggleClass('div-six', 'fixed', 'fixed'); </pre>
+    toggleClass('div-four', 'fixed-three', 'fixed');
+    toggleClass('div-five', 'fixed', 'fixed');
+    toggleClass('div-six', 'fixed-two', 'fixed'); </pre>
                         </div>
                     </div><!--content-->
 
