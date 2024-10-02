@@ -49,37 +49,58 @@
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
 
+        .relative {
+            position: relative;
+            top: 6vw;
+            left: 8vw;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 2vw;
+            left: 5vw;
+        }
+
         .fixed {
             position: fixed;
             top: 10vh;
             left: 0
         }
 
-        .fixed-two {
+        .sticky {
+            position: sticky;
+            top: 100px;
+        }
+
+        .fixed {
             position: fixed;
             top: 10vh;
-            right: 0
+            left: 0
         }
 
-        .fixed-three {
-            position: fixed;
-            bottom: 0;
-            right: 50vw;
+        .float-sticky {
+            float: left;
+            position: sticky;
+            top: 100px;
         }
 
-        div.fixed-container {
+        div.static-container {
             margin: 5px auto;
-            width: 60%;
+            width: 100%;
 
             border: 2px solid orange;
             position: relative;
         }
 
-        div.fixed-container #div-four,
-        div.fixed-container #div-five,
-        div.fixed-container #div-six {
+        div.static-container #div-four,
+        div.static-container #div-five,
+        div.static-container #div-six,
+        div.static-container #div-seven,
+        div.static-container #div-eight,
+        div.static-container #div-nine {
             width: 8vw;
-            line-height: 8vw;
+            height: 8vw;
+            /* line-height: 8vw; */
             display: inline-block;
             text-align: center;
             margin: 1vw;
@@ -102,16 +123,54 @@
             text-decoration: underline dotted;
         }
 
-        /* #div-x {
-            visibility: hidden;
-            width: .1vh;
-        } */
+        #div-seven {
+            background: cyan;
+            color: white;
+            text-decoration: underline dotted;
+        }
 
-        .fixed-container>p {
+        #div-eight {
+            background: purple;
+            color: white;
+            text-decoration: underline dotted;
+            height: 25vh;
+        }
+
+        .static-container>p {
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
             padding-top: 1em;
             color: var(--primary-green);
+        }
+
+        #rel-code {
+            border-width: 1em;
+            border-color: red;
+            border-style: none none none solid;
+        }
+
+        #abs-code {
+            border-width: 1em;
+            border-color: lime;
+            border-style: none none none solid;
+        }
+
+        #fix-code {
+            border-width: 1em;
+            border-color: blue;
+            border-style: none none none solid;
+        }
+
+        #sti-code {
+            border-width: 1em;
+            border-color: cyan;
+            border-style: none none none solid;
+        }
+
+        #flo-sti-code {
+            border-width: 1em;
+            border-color: purple;
+            border-style: none none none solid;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -152,11 +211,12 @@
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
 
-                        <div class="fixed-container">
-                            <div id="div-four">Static</div>
-                            <div id="div-five" class="fixed">fixed</div>
-                            <div id="div-six">Static</div>
-                            <!-- <div id="div-x">No Click</div> -->
+                        <div class="static-container">
+                            <div id="div-four"><br>Static</div>
+                            <div id="div-five"><br>Static</div>
+                            <div id="div-six"><br>Static</div>
+                            <div id="div-seven"><br>Static</div>
+                            <div id="div-eight"><br>Static</div>
                             <p>Click the divs</p>
                         </div>
                     </div><!--content-->
@@ -164,27 +224,40 @@
                     <h2 class="example">Notes</h2>
                     <div class="content">
 
-                        Clicking on a <code>div</code> in the above diagram causes one of the following CSS class to be
+                        Clicking on a <code>div</code> in the above diagram causes the following CSS class to be
                         added/removed:
-                        <pre>
+                        <pre id="rel-code">
+    .relative {
+        position: relative;
+        top: 6vw;
+        left: 8vw;
+    }</pre>
+                        <pre id="abs-code">
 
-        .fixed {
-            position: fixed;
-            top: 10vh;
-            left: 0
-        }
+    .absolute {
+        position: absolute;
+        top: 2vw;
+        left: 5vw;
+    } </pre>
 
-        .fixed-two {
-            position: fixed;
-            top: 10vh;
-            right: 0
-        }
+                        <pre id="fix-code">
+    .fixed {
+        position: fixed;
+        top: 10vh;
+        left: 0
+    } </pre>
+                        <pre id="sti-code">
+    .sticky {
+        position: sticky;
+        top: 100px;
+    } </pre>
 
-        .fixed-three {
-            position: fixed;
-            bottom: 0;
-            right: 50vw;
-        } </pre>
+                        <pre id="flo-sti-code">
+    .float-sticky {
+        float: left;
+        position: sticky;
+        top: 100px;
+    } </pre>
                     </div><!--content-->
 
                     <h2>Code</h2>
@@ -192,47 +265,70 @@
                         <div>
                             <h3>HTML</h3>
                             <pre>
-&lt;div class="fixed-container"&gt;
-    &lt;div id="div-four"&gt;Static&lt;/div&gt;
-    &lt;div id="div-five" class="fixed"&gt;fixed&lt;/div&gt;
-    &lt;div id="div-six"&gt;Static&lt;/div&gt;
-    &lt;p&gt;Click the divs&lt;/p&gt;
-&lt;/div&gt; </pre>
+    &lt;div class="static-container"&gt;
+        &lt;div id="div-four"&gt;&lt;br&gt;Static&lt;/div&gt;
+        &lt;div id="div-five"&gt;&lt;br&gt;Static&lt;/div&gt;
+        &lt;div id="div-six"&gt;&lt;br&gt;Static&lt;/div&gt;
+        &lt;div id="div-seven"&gt;&lt;br&gt;Static&lt;/div&gt;
+        &lt;div id="div-eight"&gt;&lt;br&gt;Static&lt;/div&gt;
+        &lt;p&gt;Click the divs&lt;/p&gt;
+    &lt;/div&gt; </pre>
                         </div>
                         <div>
                             <h3>CSS</h3>
                             <pre>
+    .relative {
+        position: relative;
+        top: 6vw;
+        left: 8vw;
+    }
+
+    .absolute {
+        position: absolute;
+        top: 2vw;
+        left: 5vw;
+    }
+
     .fixed {
         position: fixed;
         top: 10vh;
         left: 0
     }
 
-    .fixed-two {
+    .sticky {
+        position: sticky;
+        top: 100px;
+    }
+
+    .fixed {
         position: fixed;
         top: 10vh;
-        right: 0
+        left: 0
     }
 
-    .fixed-three {
-        position: fixed;
-        bottom: 0;
-        right: 50vw;
+    .float-sticky {
+        float: left;
+        position: sticky;
+        top: 100px;
     }
 
-    div.fixed-container {
+    div.static-container {
         margin: 5px auto;
-        width: 60%;
+        width: 100%;
 
         border: 2px solid orange;
         position: relative;
     }
 
-    div.fixed-container #div-four,
-    div.fixed-container #div-five,
-    div.fixed-container #div-six {
+    div.static-container #div-four,
+    div.static-container #div-five,
+    div.static-container #div-six,
+    div.static-container #div-seven,
+    div.static-container #div-eight,
+    div.static-container #div-nine {
         width: 8vw;
-        line-height: 8vw;
+        height: 8vw;
+        /* line-height: 8vw; */
         display: inline-block;
         text-align: center;
         margin: 1vw;
@@ -253,29 +349,44 @@
         background: blue;
         color: white;
         text-decoration: underline dotted;
-    }</pre>
+    }
+
+    #div-seven {
+        background: cyan;
+        color: white;
+        text-decoration: underline dotted;
+    }
+
+    #div-eight {
+        background: purple;
+        color: white;
+        text-decoration: underline dotted;
+        height: 25vh;
+    } </pre>
                         </div>
                         <div>
                             <h3>JavaScript</h3>
                             <pre>
-    function toggleClass(id, toggleClass, toggleMsg) {
-        if (document.getElementById(id)) {
-            document.getElementById(id).addEventListener('click', function () {
-                if (this.classList.contains(toggleClass)) {
-                    this.classList.remove(toggleClass);
-                    this.innerHTML = "Static";
+function toggleClass(id, toggleClass, toggleMsg) {
+    if (document.getElementById(id)) {
+        document.getElementById(id).addEventListener('click', function () {
+            if (this.classList.contains(toggleClass)) {
+                this.classList.remove(toggleClass);
+                this.innerHTML = "Static";
 
-                } else {
-                    this.classList.add(toggleClass);
-                    this.innerHTML = toggleMsg;
-                }
-            });
-        }
+            } else {
+                this.classList.add(toggleClass);
+                this.innerHTML = toggleMsg;
+            }
+        });
     }
+}
 
-    toggleClass('div-four', 'fixed-three', 'fixed');
-    toggleClass('div-five', 'fixed', 'fixed');
-    toggleClass('div-six', 'fixed-two', 'fixed'); </pre>
+toggleClass('div-four', 'relative', "<br>" + 'Relative');
+toggleClass('div-five', 'absolute', "<br>" + 'Absolute');
+toggleClass('div-six', 'fixed', "<br>" + 'Fixed');
+toggleClass('div-seven', 'sticky', "<br>" + 'Sticky');
+toggleClass('div-eight', 'float-sticky', 'Float' + "<br>" + "Sticky");
                         </div>
                     </div><!--content-->
 
@@ -287,12 +398,11 @@
 
         <!--  Templates -->
 
+        <template id="prevPageTemplate">fixed_example_one</template> <!--PREVIOUS PAGE-->
 
-        <template id="prevPageTemplate">fixed</template> <!--PREVIOUS PAGE-->
+        <template id="pageTitleTemplate">positions_float_summary_example</template> <!--PAGE TITLE-->
 
-        <template id="pageTitleTemplate">fixed_example_one</template> <!--PAGE TITLE-->
-
-        <template id="nextPageTemplate">positions_float_summary_example</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">max_width</template><!--NEXT PAGE-->
 
 
     </div>
@@ -313,14 +423,14 @@
         nextPage.setAttribute("href", nextPageURL)
 
 
-        // toggle static <--> fixed class
+        // toggle static <--> absolute class
 
         function toggleClass(id, toggleClass, toggleMsg) {
             if (document.getElementById(id)) {
                 document.getElementById(id).addEventListener('click', function () {
                     if (this.classList.contains(toggleClass)) {
                         this.classList.remove(toggleClass);
-                        this.innerHTML = "Static";
+                        this.innerHTML = "<br>" + "Static";
 
                     } else {
                         this.classList.add(toggleClass);
@@ -330,11 +440,11 @@
             }
         }
 
-        toggleClass('div-four', 'fixed-three', 'fixed');
-        toggleClass('div-five', 'fixed', 'fixed');
-        toggleClass('div-six', 'fixed-two', 'fixed');
-
-
+        toggleClass('div-four', 'relative', "<br>" + 'Relative');
+        toggleClass('div-five', 'absolute', "<br>" + 'Absolute');
+        toggleClass('div-six', 'fixed', "<br>" + 'Fixed');
+        toggleClass('div-seven', 'sticky', "<br>" + 'Sticky');
+        toggleClass('div-eight', 'float-sticky', 'Float' + "<br>" + "Sticky");
 
     </script>
 </body>
