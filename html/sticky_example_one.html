@@ -49,58 +49,47 @@
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
 
-        .relative {
-            position: relative;
-            top: 6vw;
-            left: 8vw;
-        }
-
-        .absolute {
-            position: absolute;
-            top: 2vw;
-            left: 5vw;
-        }
-
-        .fixed {
-            position: fixed;
-            top: 10vh;
-            left: 0
-        }
-
         .sticky {
             position: sticky;
             top: 100px;
         }
 
-        .fixed {
-            position: fixed;
-            top: 10vh;
-            left: 0
-        }
-
-        .float-sticky {
-            float: left;
+        .sticky-two {
             position: sticky;
-            top: 100px;
+            top: 60px;
         }
 
-        div.static-container {
+        .sticky-three {
+            position: sticky;
+            top: 30px;
+        }
+
+        .sticky-four {
+            position: sticky;
+            top: 0;
+        }
+
+
+        div.sticky-container {
             margin: 5px auto;
             width: 100%;
+            height: 100%;
 
             border: 2px solid orange;
             position: relative;
         }
 
-        div.static-container #div-four,
-        div.static-container #div-five,
-        div.static-container #div-six,
-        div.static-container #div-seven,
-        div.static-container #div-eight,
-        div.static-container #div-nine {
+        .sticky-container>p {
+            margin-top: 4em;
+        }
+
+        div.sticky-container #div-four,
+        div.sticky-container #div-five,
+        div.sticky-container #div-six,
+        div.sticky-container #div-seven,
+        div.sticky-container #div-eight {
             width: 8vw;
             height: 8vw;
-            /* line-height: 8vw; */
             display: inline-block;
             text-align: center;
             margin: 1vw;
@@ -124,50 +113,37 @@
         }
 
         #div-seven {
-            background: cyan;
-            color: white;
-            text-decoration: underline dotted;
-        }
-
-        #div-eight {
             background: purple;
             color: white;
             text-decoration: underline dotted;
-            height: 25vh;
         }
 
-        .static-container>p {
+        .sticky-container>p {
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
             padding-top: 1em;
             color: var(--primary-green);
         }
 
-        #rel-code {
+        #st-code {
             border-width: 1em;
             border-color: red;
             border-style: none none none solid;
         }
 
-        #abs-code {
+        #st-two-code {
             border-width: 1em;
             border-color: lime;
             border-style: none none none solid;
         }
 
-        #fix-code {
+        #st-three-code {
             border-width: 1em;
             border-color: blue;
             border-style: none none none solid;
         }
 
-        #sti-code {
-            border-width: 1em;
-            border-color: cyan;
-            border-style: none none none solid;
-        }
-
-        #flo-sti-code {
+        #st-four-code {
             border-width: 1em;
             border-color: purple;
             border-style: none none none solid;
@@ -211,12 +187,12 @@
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content">
 
-                        <div class="static-container">
+                        <div class="sticky-container">
                             <div id="div-four"><br>Static</div>
                             <div id="div-five"><br>Static</div>
                             <div id="div-six"><br>Static</div>
                             <div id="div-seven"><br>Static</div>
-                            <div id="div-eight"><br>Static</div>
+                            <!-- <div id="div-eight"><br>Static</div> -->
                             <p>Click the divs</p>
                         </div>
                     </div><!--content-->
@@ -226,168 +202,28 @@
 
                         Clicking on a <code>div</code> in the above diagram causes the following CSS class to be
                         added/removed:
-                        <pre id="rel-code">
-    .relative {
-        position: relative;
-        top: 6vw;
-        left: 8vw;
+                        <pre id="st-code">
+    .sticky {
+        position: sticky;
+        top: 100px;
     }</pre>
-                        <pre id="abs-code">
-
-    .absolute {
-        position: absolute;
-        top: 2vw;
-        left: 5vw;
-    } </pre>
-
-                        <pre id="fix-code">
-    .fixed {
-        position: fixed;
-        top: 10vh;
-        left: 0
-    } </pre>
-                        <pre id="sti-code">
-    .sticky {
+                        <pre id="st-two-code">
+    .sticky-two {
         position: sticky;
-        top: 100px;
+        top: 60px;
     } </pre>
 
-                        <pre id="flo-sti-code">
-    .float-sticky {
-        float: left;
+                        <pre id="st-three-code">
+    .sticky-three {
         position: sticky;
-        top: 100px;
+        top: 30px;
     } </pre>
-                    </div><!--content-->
-
-                    <h2>Code</h2>
-                    <div class="content">
-                        <div>
-                            <h3>HTML</h3>
-                            <pre>
-    &lt;div class="static-container"&gt;
-        &lt;div id="div-four"&gt;&lt;br&gt;Static&lt;/div&gt;
-        &lt;div id="div-five"&gt;&lt;br&gt;Static&lt;/div&gt;
-        &lt;div id="div-six"&gt;&lt;br&gt;Static&lt;/div&gt;
-        &lt;div id="div-seven"&gt;&lt;br&gt;Static&lt;/div&gt;
-        &lt;div id="div-eight"&gt;&lt;br&gt;Static&lt;/div&gt;
-        &lt;p&gt;Click the divs&lt;/p&gt;
-    &lt;/div&gt; </pre>
-                        </div>
-                        <div>
-                            <h3>CSS</h3>
-                            <pre>
-    .relative {
-        position: relative;
-        top: 6vw;
-        left: 8vw;
-    }
-
-    .absolute {
-        position: absolute;
-        top: 2vw;
-        left: 5vw;
-    }
-
-    .fixed {
-        position: fixed;
-        top: 10vh;
-        left: 0
-    }
-
-    .sticky {
+                        <pre id="st-four-code">
+    .sticky-four {
         position: sticky;
-        top: 100px;
-    }
-
-    .fixed {
-        position: fixed;
-        top: 10vh;
-        left: 0
-    }
-
-    .float-sticky {
-        float: left;
-        position: sticky;
-        top: 100px;
-    }
-
-    div.static-container {
-        margin: 5px auto;
-        width: 100%;
-
-        border: 2px solid orange;
-        position: relative;
-    }
-
-    div.static-container #div-four,
-    div.static-container #div-five,
-    div.static-container #div-six,
-    div.static-container #div-seven,
-    div.static-container #div-eight,
-    div.static-container #div-nine {
-        width: 8vw;
-        height: 8vw;
-        /* line-height: 8vw; */
-        display: inline-block;
-        text-align: center;
-        margin: 1vw;
-        font-size: 1.8vw;
-    }
-
-    #div-four {
-        background: red;
-        text-decoration: underline dotted;
-    }
-
-    #div-five {
-        background: lime;
-        text-decoration: underline dotted;
-    }
-
-    #div-six {
-        background: blue;
-        color: white;
-        text-decoration: underline dotted;
-    }
-
-    #div-seven {
-        background: cyan;
-        color: white;
-        text-decoration: underline dotted;
-    }
-
-    #div-eight {
-        background: purple;
-        color: white;
-        text-decoration: underline dotted;
-        height: 25vh;
+        top: 0;
     } </pre>
-                        </div>
-                        <div>
-                            <h3>JavaScript</h3>
-                            <pre>
-function toggleClass(id, toggleClass, toggleMsg) {
-    if (document.getElementById(id)) {
-        document.getElementById(id).addEventListener('click', function () {
-            if (this.classList.contains(toggleClass)) {
-                this.classList.remove(toggleClass);
-                this.innerHTML = "Static";
 
-            } else {
-                this.classList.add(toggleClass);
-                this.innerHTML = toggleMsg;
-            }
-        });
-    }
-}
-
-toggleClass('div-four', 'relative', "<br>" + 'Relative');
-toggleClass('div-five', 'absolute', "<br>" + 'Absolute');
-toggleClass('div-six', 'fixed', "<br>" + 'Fixed');
-toggleClass('div-seven', 'sticky', "<br>" + 'Sticky');
-toggleClass('div-eight', 'float-sticky', 'Float' + "<br>" + "Sticky");
-                        </div>
                     </div><!--content-->
 
                     <h2>References</h2>
@@ -398,11 +234,11 @@ toggleClass('div-eight', 'float-sticky', 'Float' + "<br>" + "Sticky");
 
         <!--  Templates -->
 
-        <template id="prevPageTemplate">sticky_example_one</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">sticky</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">positions_float_summary_example</template> <!--PAGE TITLE-->
+        <template id="pageTitleTemplate">sticky_example_one</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">max_width</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">positions_float_summary_example</template><!--NEXT PAGE-->
 
 
     </div>
@@ -440,11 +276,11 @@ toggleClass('div-eight', 'float-sticky', 'Float' + "<br>" + "Sticky");
             }
         }
 
-        toggleClass('div-four', 'relative', "<br>" + 'Relative');
-        toggleClass('div-five', 'absolute', "<br>" + 'Absolute');
-        toggleClass('div-six', 'fixed', "<br>" + 'Fixed');
-        toggleClass('div-seven', 'sticky', "<br>" + 'Sticky');
-        toggleClass('div-eight', 'float-sticky', 'Float' + "<br>" + "Sticky");
+        toggleClass('div-four', 'sticky', "<br>" + 'Sticky');
+        toggleClass('div-five', 'sticky-two', "<br>" + 'Sticky');
+        toggleClass('div-six', 'sticky-three', "<br>" + 'Sticky');
+        toggleClass('div-seven', 'sticky-four', "<br>" + 'Sticky');
+        // toggleClass('div-eight', 'sticky-five', "<br>" + 'Sticky');
 
     </script>
 </body>
