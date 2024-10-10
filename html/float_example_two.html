@@ -65,8 +65,6 @@
         div.left {
             float: left;
             background-color: lightseagreen;
-            /* padding-right: 1em; */
-            /* margin: 2em; */
         }
 
         p.first {
@@ -75,12 +73,9 @@
 
         p.second {
             font-family: 'Times New Roman', Times, serif;
-            /* padding-right: 1em; */
-            /* margin: 3em; */
         }
 
         p {
-            /* padding: 0 1em; */
             font-size: 1.2em;
         }
 
@@ -99,6 +94,10 @@
 
         .clear-both {
             clear: both;
+        }
+
+        summary {
+            color: var(--primary-green);
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -143,122 +142,150 @@
                             <li>Green divs are <code>float:left</code></li>
                             <li>Divs labeled <q>clear-R</q> are <code>clear:right</code></li>
                             <li>Divs labeled <q>clear-L</q> are <code>clear:left</code></li>
+                            <li>
+                                Click on a <code>div</code> to toggle the addition/removal of either the
+                                <code>float:right</code> or <code>float:left</code> class
+                            </li>
+                            <li>Static <code>divs</code> do not have a background color</li>
+                            <li>
+                                Click on <code>1R</code> and then click on <code>6L</code> for an interesting result
+                            </li>
                         </ol>
                         <hr>
 
                         <section>
-                            <div class="right float-example">1</div>
-                            <div class="right clear-right float-example">2 <br>clear-R</div>
-                            <div class="right float-example">3</div>
-                            <div class="left float-example">4</div>
-                            <div class="left float-example">5</div>
-                            <div class="left  float-example">6</div>
-                            <div class="left clear-left float-example">7 <br>clear-L</div>
-                            <div class="left clear-left float-example">8 <br>clear-L</div>
-                            <div class="left clear-left float-example">9 <br>clear-L</div>
-                            <div class="left float-example">10</div>
-                            <div class="right float-example">11</div>
-                            <div class="right float-example">12</div>
-                            <div class="right clear-right float-example">13 <br>clear-R</div>
+                            <div id="div-one" class="right float-example">1R</div>
+                            <div id="div-two" class="right clear-right float-example">2R <br>clear-R</div>
+                            <div id="div-three" class="right float-example">3R</div>
+                            <div id="div-four" class="left float-example">4L</div>
+                            <div id="div-five" class="left float-example">5L</div>
+                            <div id="div-six" class="left  float-example">6L</div>
+                            <div id="div-seven" class="left clear-left float-example">7L<br>clear-L</div>
+                            <div id="div-eight" class="left clear-left float-example">8L <br>clear-L</div>
+                            <div id="div-nine" class="left clear-left float-example">9L<br>clear-L</div>
+                            <div id="div-ten" class="left float-example">10</div>
+                            <div id="div-eleven" class="right float-example">11R</div>
+                            <div id="div-twelve" class="right float-example">12R</div>
+                            <div id="div-thirteen" class="right clear-right float-example">13R <br>clear-R</div>
                         </section>
                     </div><!--content-->
                     <hr class="clear-both">
 
                     <h2 class="example">Code</h2>
                     <div class="content">
-                        <div>
-                            <h3>HTML</h3>
+
+                        <details>
+                            <summary>HTML</summary>
                             <pre>
-&lt;section&gt;
-    &lt;div class="right float-example"&gt;1&lt;/div&gt;
-    &lt;div class="right clear-right float-example"&gt;
-            2&lt;br&gt;clear-R
-    &lt;/div&gt;
-    &lt;div class="right float-example"&gt;3&lt;/div&gt;
-
-    &lt;div class="left float-example"&gt;4&lt;/div&gt;
-    &lt;div class="left float-example"&gt;5&lt;/div&gt;
-    &lt;div class="left float-example"&gt;6&lt;/div&gt;
-    &lt;div class="left clear-left float-example"&gt;
-            7 &lt;br&gt;clear-L
-    &lt;/div&gt;
-    &lt;div class="left clear-left float-example"&gt;
-            8 &lt;br&gt;clear-L
-    &lt;/div&gt;
-    &lt;div class="left clear-left float-example"&gt;
-            9 &lt;br&gt;clear-L
-    &lt;/div&gt;
-    &lt;div class="left float-example"&gt;10&lt;/div&gt;
-
-    &lt;div class="right float-example"&gt;11&lt;/div&gt;
-    &lt;div class="right float-example"&gt;12&lt;/div&gt;
-    &lt;div class="right clear-right float-example"&gt;
-            13 &lt;br&gt;clear-R
-    &lt;/div&gt;
-&lt;/section&gt; </pre>
-                        </div>
-                        <div>
-                            <h3>CSS</h3>
+    &lt;section&gt;
+        &lt;div id="div-one" class="right float-example"&gt;1R&lt;/div&gt;
+        &lt;div id="div-two" class="right clear-right float-example"&gt;
+            2R &lt;br&gt;clear-R
+        &lt;/div&gt;
+        &lt;div id="div-three" class="right float-example"&gt;3R&lt;/div&gt;
+        &lt;div id="div-four" class="left float-example"&gt;4L&lt;/div&gt;
+        &lt;div id="div-five" class="left float-example"&gt;5L&lt;/div&gt;
+        &lt;div id="div-six" class="left  float-example"&gt;6L&lt;/div&gt;
+        &lt;div id="div-seven" class="left clear-left float-example"&gt;
+            7L&lt;br&gt;clear-L
+        &lt;/div&gt;
+        &lt;div id="div-eight" class="left clear-left float-example"&gt;
+            8L &lt;br&gt;clear-L
+        &lt;/div&gt;
+        &lt;div id="div-nine" class="left clear-left float-example"&gt;
+            9L&lt;br&gt;clear-L
+        &lt;/div&gt;
+        &lt;div id="div-ten" class="left float-example"&gt;10&lt;/div&gt;
+        &lt;div id="div-eleven" class="right float-example"&gt;11R&lt;/div&gt;
+        &lt;div id="div-twelve" class="right float-example"&gt;12R&lt;/div&gt;
+        &lt;div id="div-thirteen" class="right clear-right float-example"&gt;
+            13R &lt;br&gt;clear-R
+        &lt;/div&gt;
+    &lt;/section&gt;</pre>
+                        </details>
+                        <details>
+                            <summary>CSS</summary>
                             <pre>
-div.float-example {
-    width: 5em;
-    height: 10vh;
-    border: 2px solid red;
-    margin: 0 .4em;
-    text-align: center;
-}
+    div.float-example {
+        width: 5em;
+        height: 10vh;
+        border: 2px solid red;
+        margin: 0 .4em;
+        text-align: center;
+    }
 
-div.right {
-    float: right;
-    background-color: lightgoldenrodyellow;
-}
+    div.right {
+        float: right;
+        background-color: lightgoldenrodyellow;
+    }
 
-div.left {
-    float: left;
-    background-color: lightseagreen;
-    /* padding-right: 1em; */
-    /* margin: 2em; */
-}
+    div.left {
+        float: left;
+        background-color: lightseagreen;
+    }
 
-p.first {
-    font-family: cursive;
-}
+    p.first {
+        font-family: cursive;
+    }
 
-p.second {
-    font-family: 'Times New Roman', Times, serif;
-    /* padding-right: 1em; */
-    /* margin: 3em; */
-}
+    p.second {
+        font-family: 'Times New Roman', Times, serif;
+    }
 
-p {
-    /* padding: 0 1em; */
-    font-size: 1.2em;
-}
+    p {
+        font-size: 1.2em;
+    }
 
-p.third {
-    font-family: Arial, Helvetica, sans-serif;
-    color: purple;
-}
+    p.third {
+        font-family: Arial, Helvetica, sans-serif;
+        color: purple;
+    }
 
-.clear-right {
-    clear: right;
-}
+    .clear-right {
+        clear: right;
+    }
 
-.clear-left {
-    clear: left;
-}
+    .clear-left {
+        clear: left;
+    }
 
-.clear-both {
-    clear: both;
-} </pre>
-                        </div>
+    .clear-both {
+        clear: both;
+    } </pre>
+                        </details>
+                        <details>
+                            <summary>JavaScript</summary>
+                            <pre>
+    function toggleClass(id, toggleClass, toggleMsg) {
+        if (document.getElementById(id)) {
+            document.getElementById(id).addEventListener('click', function () {
+                if (this.classList.contains(toggleClass)) {
+                    this.classList.remove(toggleClass);
+                    this.innerHTML += "&lt;br&gt;" + "Static";
+
+                } else {
+                    this.classList.add(toggleClass);
+                    this.innerHTML = toggleMsg;
+                }
+            });
+        }
+    }
+
+    toggleClass('div-one', 'right', "1R");
+    toggleClass('div-two', 'right', "2R" + "&lt;br&gt;" + "clear-R");
+    toggleClass('div-three', 'right', "3R");
+    toggleClass('div-four', 'left', "4L");
+    toggleClass('div-five', 'left', "5L");
+    toggleClass('div-six', 'left', "6L");
+    toggleClass('div-seven', 'left', '7L' + "&lt;br&gt;" + "clear-L");
+    toggleClass('div-eight', 'left', '8L' + "&lt;br&gt;" + "clear-L");
+    toggleClass('div-nine', 'left', '9L' + "&lt;br&gt;" + "clear-L");
+    toggleClass('div-ten', 'left', "10L");
+    toggleClass('div-eleven', 'right', "11R");
+    toggleClass('div-twelve', 'right', "12R");
+    toggleClass('div-thirteen', 'right', "13R" + "&lt;br&gt;" + "clear-R"); &lt;/pre>
+                        </details>
                     </div><!--content-->
-
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref">
@@ -270,13 +297,11 @@ p.third {
 
         <!--  Templates -->
 
-
         <template id="prevPageTemplate">float_example_one</template> <!--PREVIOUS PAGE-->
 
         <template id="pageTitleTemplate">float_example_two</template> <!--PAGE TITLE-->
 
         <template id="nextPageTemplate">three_divs_and_float</template><!--NEXT PAGE-->
-
     </div>
     <script>
 
@@ -293,6 +318,37 @@ p.third {
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        // toggle
+
+        function toggleClass(id, toggleClass, toggleMsg) {
+            if (document.getElementById(id)) {
+                document.getElementById(id).addEventListener('click', function () {
+                    if (this.classList.contains(toggleClass)) {
+                        this.classList.remove(toggleClass);
+                        this.innerHTML += "<br>" + "Static";
+
+                    } else {
+                        this.classList.add(toggleClass);
+                        this.innerHTML = toggleMsg;
+                    }
+                });
+            }
+        }
+
+        toggleClass('div-one', 'right', "1R");
+        toggleClass('div-two', 'right', "2R" + "<br>" + "clear-R");
+        toggleClass('div-three', 'right', "3R");
+        toggleClass('div-four', 'left', "4L");
+        toggleClass('div-five', 'left', "5L");
+        toggleClass('div-six', 'left', "6L");
+        toggleClass('div-seven', 'left', '7L' + "<br>" + "clear-L");
+        toggleClass('div-eight', 'left', '8L' + "<br>" + "clear-L");
+        toggleClass('div-nine', 'left', '9L' + "<br>" + "clear-L");
+        toggleClass('div-ten', 'left', "10L");
+        toggleClass('div-eleven', 'right', "11R");
+        toggleClass('div-twelve', 'right', "12R");
+        toggleClass('div-thirteen', 'right', "13R" + "<br>" + "clear-R");
 
     </script>
 </body>
