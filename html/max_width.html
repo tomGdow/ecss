@@ -88,55 +88,117 @@
                     <div class="content">
 
                         <div class="container">
-                            <div class="inner"><img src="./images/apples-marked-2700.webp" alt=""></div>
-                            <div class="inner"><img src="./images/apples-marked-2700.webp" alt=""></div>
-                            <div class="inner"><img src="./images/apples-marked-2700.webp" alt=""></div>
+                            <ol>
+                                <li>
+                                    The <code>max-width</code> CSS property sets the <strong>maximum width</strong> of
+                                    an element
+                                </li>
+
+                                <li>
+                                    It prevents the <b>used value</b> of the width property from becoming larger than
+                                    the
+                                    value specified by <code>max-width</code>
+                                </li>
+                                <li><b>values</b>
+                                    <ol>
+                                        <li>
+                                            <code>length</code>
+                                            <br>
+                                            Defines the <code>max-width</code> as an absolute value
+                                        </li>
+                                        <li>
+                                            <code>percentage</code>
+                                            <br>
+                                            Defines the <code>max-width</code> as a percentage of the containing block's
+                                            width
+                                        </li>
+                                        <li>
+                                            <code>none</code>
+                                            <br>
+                                            No limit on the size of the box
+                                        </li>
+                                        <li>
+                                            <code>max-content</code>
+                                            <br>
+                                            The intrinsic preferred <code>max-width</code>
+                                        </li>
+                                        <li>
+                                            <code>min-content</code>
+                                            <br>
+                                            The intrinsic minimum <code>max-width</code>
+                                        </li>
+                                        <li>
+                                            <code>fit-content</code>
+                                            <ol>
+                                                <li>
+                                                    Use the available space, but not more than <code>max-content</code>
+                                                </li>
+                                                <li>
+                                                    That is,
+                                                    <pre>
+min(max-content, max(min-content, stretch)) </pre>
+
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <code>
+                                                fit-content(length-percentage)
+                                            </code>
+                                            <ol>
+                                                <li class="space_above">
+                                                    Uses the fit-content formula with the available space replaced by
+                                                    the specified argument
+                                                </li>
+                                                <li>
+                                                    That is,
+                                                    <pre>
+min(max-content, max(min-content, argument))</pre>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
                         </div>
                     </div><!--content-->
-
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
-
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div>
+                        <h2>References</h2>
+                        <div class="content ref">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-width#none">MDN: max-width</a>
+                        </div><!--content-->
+                    </div>
                 </div>
             </div>
+
+            <!--  Templates -->
+
+
+            <template id="prevPageTemplate">positions_float_summary_example</template> <!--PREVIOUS PAGE-->
+
+            <template id="pageTitleTemplate">max_width</template> <!--PAGE TITLE-->
+
+            <template id="nextPageTemplate">max_width_image_example</template><!--NEXT PAGE-->
+
+
         </div>
+        <script>
 
-        <!--  Templates -->
+            //page title
+            var pageTitleText = pageTitleTemplate.innerHTML;
+            document.title = pageTitleText;
+            banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+            pageTitle.innerHTML = pageTitleText;
 
+            // previous page
+            var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+            prevPage.setAttribute("href", prevPageURL)
 
-        <template id="prevPageTemplate">positions_float_summary_example</template> <!--PREVIOUS PAGE-->
+            // next page
+            var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+            nextPage.setAttribute("href", nextPageURL)
 
-        <template id="pageTitleTemplate">max_width</template> <!--PAGE TITLE-->
-
-        <template id="nextPageTemplate">max_width_image_example</template><!--NEXT PAGE-->
-
-
-    </div>
-    <script>
-
-        //page title
-        var pageTitleText = pageTitleTemplate.innerHTML;
-        document.title = pageTitleText;
-        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
-        pageTitle.innerHTML = pageTitleText;
-
-        // previous page
-        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
-        prevPage.setAttribute("href", prevPageURL)
-
-        // next page
-        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
-        nextPage.setAttribute("href", nextPageURL)
-
-    </script>
+        </script>
 </body>
 
 </html>
