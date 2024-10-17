@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+
+        .class-one,
+        .class-two,
+        .class-three {
+            height: 8vw;
+            text-align: left;
+            padding-left: 40%;
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+
+        .class-one {
+            background-color: red;
+            width: 10%;
+            width: 100%;
+            color: white;
+        }
+
+        .class-two {
+            background-color: yellow;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .class-three {
+            background-color: blue;
+            width: 80%;
+            max-width: 600px;
+            color: white;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="PREV.html" id="prevPage" accesskey="p">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html" accesskey="h">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html" id="nextPage" accesskey="n">next</a>&nbsp;&nbsp;
+                        <a href="./search.html" accesskey="s">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        <div class="class-one">
+                            <code>width: 10%;</code><br>
+                            <code>max-width:100%</code>
+                        </div>
+                        <div class="class-two">
+
+                            <code>width: 100%;</code> <br>
+                            <code>max-width: 500px;</code>
+
+                        </div>
+                        <div class="class-three">
+                            <code>width: 80%;</code> <br>
+                            <code>max-width: 600px;</code>
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Code</h2>
+
+                    <div class="content">
+                        <div>
+                            <h3>HTML</h3>
+                            <pre>
+&lt;div class="class-one"&gt;
+    &lt;code&gt;width: 10%;&lt;/code&gt;&lt;br&gt;
+    &lt;code&gt;max-width:100%&lt;/code&gt;
+&lt;/div&gt;
+&lt;div class="class-two"&gt;
+
+    &lt;code&gt;width: 100%;&lt;/code&gt; &lt;br&gt;
+    &lt;code&gt;max-width: 500px;&lt;/code&gt;
+
+&lt;/div&gt;
+&lt;div class="class-three"&gt;
+    &lt;code&gt;width: 80%;&lt;/code&gt; &lt;br&gt;
+    &lt;code&gt;max-width: 600px;&lt;/code&gt;
+&lt;/div&gt; </pre>
+                        </div>
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+.class-one,
+.class-two,
+.class-three {
+    height: 8vw;
+    text-align: left;
+    padding-left: 40%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.class-one {
+    background-color: red;
+    width: 10%;
+    width: 100%;
+    color: white;
+}
+
+.class-two {
+    background-color: yellow;
+    width: 100%;
+    max-width: 500px;
+}
+
+.class-three {
+    background-color: blue;
+    max-width: 600px;
+    color: white;
+} </pre>
+                        </div>
+                    </div> <!--content-->
+
+                    <h2>References</h2>
+                    <div class="content ref"></div><!--content-->
+                </div>
+            </div>
+        </div>
+
+        <!--  Templates -->
+
+        <template id="prevPageTemplate">max_width</template> <!--PREVIOUS PAGE-->
+
+        <template id="pageTitleTemplate">max_width_example_one</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">max_width_image_example</template><!--NEXT PAGE-->
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
+    </script>
+</body>
+
+</html>
