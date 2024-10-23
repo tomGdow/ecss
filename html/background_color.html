@@ -48,6 +48,55 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .outer {
+            background-image: url("../images/myOrangeTriangle100_81.png");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .bkgcolor {
+            background-color: lightgoldenrodyellow;
+        }
+
+        div.status {
+            display: flex;
+        }
+
+        div.status>div {
+            margin: auto;
+            font-size: 1em;
+            color: white;
+            background-color: var(--primary-green);
+            padding: 0.5em 0.2em;
+        }
+
+        .btn-container {
+            display: flex;
+        }
+
+        #mybtn {
+            font-size: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0.5em 0.2em;
+            margin: auto;
+
+        }
+
+        #color-coding>li:first-child {
+            border: 0.5em lightgoldenrodyellow;
+            border-style: none solid none none;
+        }
+
+        #color-coding>li:nth-child(2) {
+            border: 0.5em orange;
+            border-style: none solid none none;
+        }
+
+        #color-coding>li:nth-child(3) {
+            border: 0.5em lime;
+            border-style: none solid none none;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,32 +134,96 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>background-color</code> CSS property sets the background color of an element
+                            </li>
+                            <li>
+                                The background-color property is specified as a single <code>color</code> value
+                            </li>
+                            <li>
+                                <code>color</code>
+                                <ol>
+                                    <li>
+                                        The uniform color of the background
+                                    </li>
+                                    <li>
+                                        It is rendered <b>behind</b> any <code>background-image</code> that is
+                                        specified, although the color
+                                        will still be visible through any transparency in the image
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div id="target" class="outer bkgcolor">
+                            <img src="../images/myGreenStrip25_100.png" alt="Orange Strip">
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                        </div>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="status">
+                            <div>
+                                <code id="clip-status">background-color:lightgoldenrodyellow</code>
+                            </div>
+                        </div>
+
+                        <div class="btn-container">
+                            <button type="button" id="mybtn">Toggle</button>
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
+                        <ol id="color-coding">
+                            <li>
+                                The <code>background-color</code> is yellow
+                            </li>
+                            <li>
+                                The orange triangle-with-transparent-square is a <code>background-image</code>
+                            </li>
+                            <li>
+                                The green strip is a foreground (<q>ordinary</q>) image
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+.outer {
+    background-image: url("../images/myOrangeTriangle100_81.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bkgcolor {
+    background-color: lightgoldenrodyellow;
+} </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color">MDN:
+                            background-color</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
 
         <!--  Templates -->
 
-
         <template id="prevPageTemplate">background_clip</template> <!--PREVIOUS PAGE-->
 
         <template id="pageTitleTemplate">background_color</template> <!--PAGE TITLE-->
 
         <template id="nextPageTemplate">background_image</template><!--NEXT PAGE-->
-
 
     </div>
     <script>
@@ -128,6 +241,27 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        //Toggle
+        function toggleClass(id, target_id, alt_id, toggleClass, toggleMsg,) {
+            if (document.getElementById(id)) {
+                var target = document.getElementById(target_id);
+                var alt = document.getElementById(alt_id);
+                document.getElementById(id).addEventListener('click', function () {
+                    if (target.classList.contains(toggleClass)) {
+                        target.classList.remove(toggleClass);
+                        alt.innerHTML = "No background color";
+
+                    } else {
+                        console.log('i am here')
+                        target.classList.add(toggleClass);
+                        alt.innerHTML = toggleMsg;
+                    }
+                });
+            }
+        }
+
+        toggleClass("mybtn", "target", "clip-status", "bkgcolor", "background-color:lightgoldenrodyellow")
 
     </script>
 </body>
