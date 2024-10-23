@@ -48,6 +48,80 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .flex {
+            display: flex;
+        }
+
+        .outer {
+            margin: 1em;
+            border: 1em dashed green;
+            background-image: url("../images/myRedSquare2.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .borderBox {
+            background-clip: border-box;
+        }
+
+        .contentBox {
+            background-clip: content-box;
+        }
+
+        .outer>image {
+            margin: auto;
+            /* display: block; */
+            padding: 0;
+        }
+
+        #mybtn {
+            font-size: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0.5em 0.2em;
+            margin: auto;
+
+        }
+
+        div.status {
+            display: flex;
+        }
+
+        div.status>div {
+            margin: auto;
+            font-size: 1em;
+            color: white;
+            background-color: var(--primary-green);
+            padding: 0.5em 0.2em;
+        }
+
+        .btn-container {
+            display: flex;
+        }
+
+        #color-coding>li:first-child {
+            border: 0.5em lightgoldenrodyellow;
+            border-style: none solid none none;
+        }
+
+        #color-coding>li:nth-child(2) {
+            border: 0.5em red;
+            border-style: none solid none none;
+        }
+
+        #color-coding>li:nth-child(3) {
+            border: 0.5em blue;
+            border-style: none solid none none;
+        }
+
+        #color-coding>li:nth-child(4) {
+            border: 0.5em green;
+            border-style: none solid none none;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +159,135 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <ol>
+                            <li>
+                                The <code>background-clip</code> CSS property sets whether an element's background
+                                extends underneath its
+                                <ol>
+                                    <li><code>border box</code></li>
+                                    <li><code>padding box</code></li>
+                                    <li><code>content box</code></li>
+                                </ol>
+                            </li>
+                            <li>
+                                The background is always drawn behind the border, so
+                                <code>background-clip: border-box</code> has a visual effect only when the
+                                border is partially opaque or has transparent or partially opaque regions
+                            </li>
+                            <li><code>values</code></li>
+                            <ol>
+                                <li><code>border-box</code>
+                                    <br>
+                                    The background extends to the outside edge of the border (but underneath the border
+                                    in <code>z-ordering</code>)
+                                </li>
+                                <li>
+                                    <code>padding-box</code>
+                                    <ol>
+                                        <li>
+                                            The background extends to the outside edge of the padding
+                                        </li>
+                                        <li>
+                                            No background is drawn beneath the border
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    <code>content-box</code>
+                                    <br>
+                                    The background is painted within (clipped to) the <code>content box</code>
+                                </li>
+                                <li>
+                                    <code>text</code>
+                                    <br>
+                                    The background is painted within (clipped to) the foreground text
+                                </li>
+                                <li>
+                                    <code>border-area</code>
+                                    <br>
+                                    The background is painted within (clipped to) the area painted by the
+                                    <code>border</code>, taking <code>border-width</code> and
+                                    <code>border-style</code> into
+                                    account but ignoring any transparency introduced by
+                                    <code>border-color</code>
+                                </li>
+                            </ol>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div class="flex">
+                            <div id="target" class="outer borderBox">
+                                <img src="../images/myBlueSquare100_100.png" alt="Blue Square">
+                            </div>
+                        </div>
+                        <div class="status">
+                            <div>
+                                <code id="clip-status">background-clip: border-box</code>
+                            </div>
+                        </div>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="btn-container">
+                            <button type="button" id="mybtn">Toggle</button>
+                        </div>
+                    </div><!--content-->
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
+                        <ol id="color-coding">
+                            <li>
+                                The <code>background-color</code> is <code>yelow</code>
+                            </li>
+                            <li>
+                                The<code> red box</code> is a <code>background-image</code>
+                            </li>
+                            <li>
+                                The <code>blue box</code> is a foreground (ordinary) image
+                            </li>
+                            <li>
+                                The <code> border</code> of the containg box is <code>green</code> and
+                                <code>dashed</code>
+                            </li>
+
+                        </ol>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+    .outer {
+        margin: 1em;
+        border: 1em dashed green;
+        background-image: url("../images/myRedSquare2.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        background-color: lightgoldenrodyellow;
+    }
+
+    .borderBox {
+        background-clip: border-box;
+    }
+
+    .contentBox {
+        background-clip: content-box;
+    } </pre>
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">References</h2>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip">MDN:
+                            background-clip</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
@@ -128,6 +318,31 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        //Toggle
+
+
+        //toggle
+
+        function toggleClass(id, target_id, alt_id, toggleClass, toggleMsg,) {
+            if (document.getElementById(id)) {
+                var target = document.getElementById(target_id);
+                var alt = document.getElementById(alt_id);
+                document.getElementById(id).addEventListener('click', function () {
+                    if (target.classList.contains(toggleClass)) {
+                        target.classList.remove(toggleClass);
+                        alt.innerHTML = "background-clip:border-box";
+
+                    } else {
+                        console.log('i am here')
+                        target.classList.add(toggleClass);
+                        alt.innerHTML = toggleMsg;
+                    }
+                });
+            }
+        }
+
+        toggleClass("mybtn", "target", "clip-status", "contentBox", "background-clip:content-box")
 
     </script>
 </body>
