@@ -48,6 +48,44 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .outer {
+            border: 1em dashed blue;
+            background-image: url("../images/myRedSquare2.png");
+            background-origin: border-box;
+            background-repeat: no-repeat;
+            background-color: lightgoldenrodyellow;
+            text-align: center;
+            padding: 2em;
+        }
+
+        .origin {
+            background-origin: content-box;
+        }
+
+        #mybtn {
+            font-size: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0.5em 0.2em;
+            margin: auto;
+
+        }
+
+        div.status {
+            display: flex;
+        }
+
+        div.status>div {
+            margin: auto;
+            font-size: 1em;
+            color: white;
+            background-color: var(--primary-green);
+            padding: 0.5em 0.2em;
+        }
+
+        .btn-container {
+            display: flex;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +123,96 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The background-origin CSS property sets the background's origin from:
+                                <ol>
+                                    <li>
+                                        the border start
+                                    </li>
+                                    <li>
+                                        inside the border
+                                    </li>
+                                    <li>
+                                        inside the padding
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>values</code>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                <ol>
+                                    <li>
+                                        <code>border-box</code>
+                                        <br>
+                                        The background is positioned relative to the border box
+                                    </li>
+                                    <li>
+                                        <code>padding-box</code>
+                                        <br>
+                                        The background is positioned relative to the padding box
+                                    </li>
+                                    <li>
+                                        <code>content-box</code>
+                                        <br>
+                                        The background is positioned relative to the content box
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    </div><!--content-->
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div id="target" class="outer">
+                            <img src="../images/myGreenStrip25_100.png" alt="Greem Strip">
+                            <br>
+                            <img src="../images/myGreenStrip25_100.png" alt="Greem Strip">
+
+                        </div>
+                        <div class="status">
+                            <div>
+                                <code id="clip-status">background-origin: border-box</code>
+                            </div>
+                        </div>
+
+                        <div class="btn-container">
+                            <button type="button" id="mybtn">Toggle</button>
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li>The red square is a <code>background-image</code></li>
+                        </ol>
+                    </div><!--content-->
+
+
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+.outer {
+    border: 1em dashed blue;
+    background-image: url("../images/myRedSquare2.png");
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+    padding: 2em;
+} </pre>
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin">MDN:
+                            background-origin</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
@@ -128,6 +243,29 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        //Toggle
+
+        function toggleClass(id, target_id, alt_id, toggleClass, toggleMsg,) {
+            if (document.getElementById(id)) {
+                var target = document.getElementById(target_id);
+                var alt = document.getElementById(alt_id);
+                document.getElementById(id).addEventListener('click', function () {
+                    if (target.classList.contains(toggleClass)) {
+                        target.classList.remove(toggleClass);
+                        alt.innerHTML = "background-origin:border-box";
+
+                    } else {
+                        console.log('i am here')
+                        target.classList.add(toggleClass);
+                        alt.innerHTML = toggleMsg;
+                    }
+                });
+            }
+        }
+
+        toggleClass("mybtn", "target", "clip-status", "origin", "background-origin:content-box")
+
 
     </script>
 </body>
