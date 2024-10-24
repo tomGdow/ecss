@@ -48,6 +48,36 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .outer {
+            background-image: url("../images/myGreenStrip25_100.png"), url("../images/myBlueRectange100_25.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: lightgoldenrodyellow;
+        }
+
+        #color-coding {
+            padding-left: 0.5em;
+        }
+
+        #color-coding>li:first-child {
+            border: 0.5em;
+            border-style: none solid none none;
+        }
+
+        #color-coding>li:nth-child(2) {
+            border: 0.5em;
+            border-style: none solid none solid;
+            border-left-color: blue;
+            border-right-color: lime;
+            padding-left: 0.2em;
+        }
+
+        #color-coding>li:nth-child(3) {
+            border: 0.5em orange;
+            border-style: none solid none none;
+            padding-right: 1em;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +115,121 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <ol>
+                            <li>
+                                The background-image CSS property sets <b>one or more</b> background images on an
+                                element
+                            </li>
+                            <li>
+                                The background images are drawn on stacking context layers <b>on top of each other</b>
+
+                            </li>
+                            <li>
+                                The <b>first layer</b> specified is drawn as
+                                if it is <b>closest to the user</b>
+                            </li>
+                            <li>
+                                The borders of the element are then <b>drawn on top</b> of them
+                            </li>
+                            <li>
+                                And the <code>background-color</code> is <b>drawn beneath</b> them
+                            </li>
+                            <li>
+                                If a specified image cannot be drawn (for example, when the file denoted by the
+                                specified URI cannot be loaded), browsers handle it as they would a <code>none</code>
+                                value
+                            </li>
+                            <li>
+                                Even if the images are opaque and the color won't be displayed in normal circumstances,
+                                web developers should always
+                                specify a <code>background-color</code>
+                            </li>
+                            <li>
+                                Each background image is specified either as the keyword <code>none</code> or as an
+                                <code>image</code> value
+                            </li>
+                            <li>
+                                <strong>To specify multiple background images, supply multiple values, separated by a
+                                    comma</strong>
+                            </li>
+                            <li>
+                                <code>values</code>
+                                <ol>
+                                    <li>
+                                        <code>none</code>
+                                        <br>
+                                        Is a keyword denoting the absence of images
+                                    </li>
+                                    <li>
+                                        <code>image</code>
+                                        <ol>
+                                            <li>
+                                                Is an <code>image</code> denoting the image to display
+                                            </li>
+                                            <li>
+                                                There can be several of them, separated by commas, as multiple
+                                                backgrounds are
+                                                supported </li>
+                                        </ol>
+                                    </li>
+                            </li>
+                        </ol>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+
+                        <div class="outer">
+                            <img src="../images/myOrangeStrip.png" alt="Greem Strip">
+
+                        </div>
+                    </div><!--content-->
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol id="color-coding">
+                            <li>The <code>background-color</code> is yellow</li>
+                            <li>
+                                The <code>green</code> and <code>blue</code> strips are background images
+                            </li>
+                            <li>
+                                The orange strip is a foreground image (specified with the <code>img</code> tag
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 code></h2>
+                    <div class="content">
+                        <div>
+                            <h3>CSS</h3>
+                            <pre>
+.outer {
+  background-image: url("../images/myGreenStrip25_100.png"), 
+    url("../images/myBlueRectange100_25.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: lightgoldenrodyellow;
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+} 
+
+#color-coding>li:nth-child(2) {
+    border: 0.5em;
+    border-style: none solid none solid;
+    border-left-color: blue;
+    border-right-color: lime;
+    padding-left: 0.2em;
+} </pre>
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">References</h2>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-image">MDN:
+                            background-image</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
