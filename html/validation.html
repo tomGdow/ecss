@@ -16,7 +16,24 @@
     </noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        .validation-error {
+            padding-left: 1em;
+            border-style: none none none solid;
+            border-color: red;
+            border-width: 0.5em;
+        }
+
+        .side-emphasis {
+            padding-left: 1em;
+            border-style: none none none solid;
+            border-color: blue;
+            border-width: 0.25em;
+        }
+    </style>
 </head>
 
 <body>
@@ -57,13 +74,70 @@
                     <div class="content">
                         <ol>
                             <li>Validation is OK if no <code>head</code> element</li>
-                            <li>Validation is Ok if no <code>html</code> element, but a warning is issued to add a <code>lang</code> attribute</li>
+                            <li>Validation is Ok if no <code>html</code> element, but a warning is issued to add a
+                                <code>lang</code> attribute
+                            </li>
                             <li>A <code>title</code> element must be present for successful validation</li>
                         </ol>
+                    </div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        The following validates but with a warning that there is no language attribute (Bob Tabor,
+                        "Understanding the HTML5 You Wrote" video)
+                        <div>
+                            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;title&gt;mysite&lt;/title>
+&lt;meta charset="utf-8"&gt; </pre>
+                        </div>
+                        <div class="validation-error">
+                            Warning: Consider adding a lang attribute to the html start tag to declare the language
+                            of this document.
+
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        The following validates <b>with no warnings</b>
+                        <div>
+                            <pre>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;title&gt;mysite&lt;/title>
+    &lt;meta charset="utf-8"&gt;
+    &lt;/html&gt; </pre>
+                        </div>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        If a html page (<code>expt.html</code>) contains <i>only</i> the following line of code
+                        <pre class="side-emphasis">
+    &lt;p&gt;hello there&lt;/p&gt; </pre>
+                        what is seen by the browser (<code>inspect element</code>) is
+                        <pre class="side-emphasis">
+    &lt;html&gt;
+        &lt;head&gt;&lt;/head>
+    &lt;body&gt;
+        &lt;p&gt;hello there&lt;/p>
+    &lt;/body&gt;
+    &lt;/html&gt;</pre>
+
+                    </div><!--content-->
+
+                    <h2 class="example">References</h2>
+                    <div class="content ref">
+                        <a href="https://validator.w3.org/#validate_by_upload">W3C Validator</a>
                     </div>
-                </div>
+                    <div class="content ref">
+                        <a href="https://www.bobtabor.com">Bob Tabor</a>
+                    </div>
+                </div><!--content-->
             </div>
         </div>
+    </div>
 
     <!--  Templates -->
 
@@ -71,26 +145,26 @@
     <template id="prevPageTemplate">well_formed_element</template> <!--PREVIOUS PAGE-->
 
     <template id="pageTitleTemplate">Validation</template> <!--PAGE TITLE-->
-    
+
     <template id="nextPageTemplate">stylesheet_types</template><!--NEXT PAGE-->
 
 
     </div>
     <script>
-        
+
         //page title
-        var pageTitleText= pageTitleTemplate.innerHTML;
-        document.title=pageTitleText;
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
         banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
         pageTitle.innerHTML = pageTitleText;
-    
+
 
         // previous page
-        var prevPageURL= "./" + prevPageTemplate.innerHTML + ".html"
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
         prevPage.setAttribute("href", prevPageURL)
 
         // next page
-        var nextPageURL= "./" + nextPageTemplate.innerHTML + ".html"
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
 
     </script>
