@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>[PAGE TITLE]</title>
-    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="css, html">
     <meta name="description" content="Notes on Fundamentals of HTML and CSS">
     <meta name="google" content="notranslate">
@@ -47,22 +48,6 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
-
-        #bg_image {
-            background-image: url(../images/apples-marked-2700.webp);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-            background-size: cover;
-            /* width: 100%; */
-            /* min-height: 40vw; */
-
-            --imgw: 2700;
-            --imgh: 1800;
-            width: 100%;
-            min-height: calc(100vw * var(--imgh) / var(--imgw));
-
-        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,14 +85,7 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    Scales the image (while preserving its ratio) to the smallest possible size to fill the container
-                    (that is: both its
-                    height and width completely cover the container), leaving no empty space. If the proportions of the
-                    background differ
-                    from the element, the image is cropped either vertically or horizontally.
-                    <div class="content" id="bg_image">
-
-                    </div><!--content-->
+                    <div class="content"></div><!--content-->
 
                     <h2>Example</h2>
                     <div class="content"></div><!--content-->
@@ -127,11 +105,11 @@
         <!--  Templates -->
 
 
-        <template id="prevPageTemplate">background_size</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">whitespace</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">responsive_background_image_example</template> <!--PAGE TITLE-->
+        <template id="pageTitleTemplate">wordwrap</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">whitespace</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">sprite_example</template><!--NEXT PAGE-->
 
 
     </div>
