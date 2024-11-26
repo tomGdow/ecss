@@ -48,6 +48,25 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        p.bsa-breakall {
+            word-break: break-all;
+        }
+
+        p.bsa-keepall {
+            word-break: keep-all;
+        }
+
+        div.bsa-container {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        summary {
+            color: var(--primary-green);
+            margin-left: 3%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,73 +108,99 @@
 
                         <ol>
                             <li>
-                                The <code>white-space</code> CSS property sets how white space inside an element is
-                                handled
+                                The <code>word-break</code> CSS property sets whether <b>line breaks</b> appear wherever
+                                the text would otherwise overflow its content box
                             </li>
                             <li>
-                                <code>normal</code>
-                                <ol>
-                                    <li>
-                                        Sequences of white space are collapsed
-                                    </li>
-                                    <li>
-                                        Newline characters in the source are handled the same as other white spaces
-                                    </li>
-                                    <li>
-                                        Lines are broken as necessary to fill line boxes
-                                    </li>
-                                </ol>
+                                <code>normal</code><br>
+                                Use the default line break rule
                             </li>
-                            <li><code>break-all</code><br>
-                                To prevent overflow, word breaks should be inserted between <i>any two characters</i>
-                                (excluding Chinese/Japanese/Korean text)
+                            <li>
+                                <code>break-all</code><br>
+                                To prevent overflow, word breaks should be inserted between any two characters
+                            </li>
+                            <li>
+                                <code>keep-all</code><br>
+                                Word breaks should not be used for Chinese/Japanese/Korean (CJK) text. Non-CJK text
+                                behavior is the same as for normal.
+                            </li>
+                            <li>
+                                <code>break-word</code><br>
+                                Has the same effect as <code>overflow-wrap: anywhere</code> combined with
+                                <code>word-break: normal</code>, regardless of the actual value of the
+                                <code>overflow-wrap</code> property
                             </li>
                         </ol>
                     </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="bsa-container">
+                            <h3>break-all</h3>
+                            <p class="bsa-breakall">
+                                MKWVTFISLLLLFSSAYSRGVFRRDTHKSEIAHRFKDLGEEHFKGLVLIAFSQYLQQCPFDEHVKLVNELTEFAKTCVADESHAGCEKSLT
+                                LFGDELCKVASLRETYGDMADCCEKQEPERNECFLSHKDDSPDLPKLKPDPNTLCDEFKADEKKFWGKYLYEIARRHPYFYAPELLYYANKYNGVFQECCQAEDKGACLLPKIETMREKVLTSSARQRLRCASIQKFGERALKAWSVARLSQKFPKAEFVEVTKLVTDLTKVHKECCHGDLLECADDRADLAKYICDNQDTISSKLKECCDKPLLEKSHCIAEVEKDAIPENLPPLTADFAEDKDVCKNYQEAKDAFLGSFLYEYSRRHPEYAVSVLLRLAKEYEATLEECCAKDDPHACYSTVFDKLKHLVDEPQNLIKQNCDQFEKLGEYGFQNALIVRYTRKVPQVSTPTLVEVS
+                                RSLGKVGTRCCTKPESERMPCTEDYLSLILNRLCVLHEKTPVSEKVTKCCTESLVNRRPCFSALTPDETYVPKAFDEKLFTFHADICTLPDTEKQIKKQTALVELLKHKPKATEEQLKTVMENFVAFVDKCCAADDKEACFAVEGPKLVVSTQTALA
+                            </p>
+                            <h3>keep-all</h3>
+                            <p class="bsa-keepall">
+                                MKWVTFISLLLLFSSAYSRGVFRRDTHKSEIAHRFKDLGEEHFKGLVLIAFSQYLQQCPFDEHVKLVNELTEFAKTCVADESHAGCEKSLT
+                                LFGDELCKVASLRETYGDMADCCEKQEPERNECFLSHKDDSPDLPKLKPDPNTLCDEFKADEKKFWGKYLYEIARRHPYFYAPELLYYANKYNGVFQECCQAEDKGACLLPKIETMREKVLTSSARQRLRCASIQKFGERALKAWSVARLSQKFPKAEFVEVTKLVTDLTKVHKECCHGDLLECADDRADLAKYICDNQDTISSKLKECCDKPLLEKSHCIAEVEKDAIPENLPPLTADFAEDKDVCKNYQEAKDAFLGSFLYEYSRRHPEYAVSVLLRLAKEYEATLEECCAKDDPHACYSTVFDKLKHLVDEPQNLIKQNCDQFEKLGEYGFQNALIVRYTRKVPQVSTPTLVEVS
+                                RSLGKVGTRCCTKPESERMPCTEDYLSLILNRLCVLHEKTPVSEKVTKCCTESLVNRRPCFSALTPDETYVPKAFDEKLFTFHADICTLPDTEKQIKKQTALVELLKHKPKATEEQLKTVMENFVAFVDKCCAADDKEACFAVEGPKLVVSTQTALA
+                            </p>
+                            <details>
+                                <summary>css</summary>
+                                <pre>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+    p.bsa-breakall {
+        word-break: break-all;
+    }
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+    p.bsa-keepall {
+        word-break: keep-all;
+    }
+                                </pre>
+                            </details>
+
+                        </div><!--content-->
+
+                        <h2>References</h2>
+                        <div class="content ref">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-break">MDN: work-break</a>
+                        </div><!--content-->
+                    </div>
                 </div>
             </div>
+
+            <!--  Templates -->
+
+
+            <template id="prevPageTemplate">whitespace</template> <!--PREVIOUS PAGE-->
+
+            <template id="pageTitleTemplate">word-break</template> <!--PAGE TITLE-->
+
+            <template id="nextPageTemplate">sprite_example</template><!--NEXT PAGE-->
+
+
         </div>
+        <script>
 
-        <!--  Templates -->
+            //page title
+            var pageTitleText = pageTitleTemplate.innerHTML;
+            document.title = pageTitleText;
+            banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+            pageTitle.innerHTML = pageTitleText;
 
+            // previous page
+            var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+            prevPage.setAttribute("href", prevPageURL)
 
-        <template id="prevPageTemplate">whitespace</template> <!--PREVIOUS PAGE-->
+            // next page
+            var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+            nextPage.setAttribute("href", nextPageURL)
 
-        <template id="pageTitleTemplate">wordbreak</template> <!--PAGE TITLE-->
-
-        <template id="nextPageTemplate">sprite_example</template><!--NEXT PAGE-->
-
-
-    </div>
-    <script>
-
-        //page title
-        var pageTitleText = pageTitleTemplate.innerHTML;
-        document.title = pageTitleText;
-        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
-        pageTitle.innerHTML = pageTitleText;
-
-        // previous page
-        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
-        prevPage.setAttribute("href", prevPageURL)
-
-        // next page
-        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
-        nextPage.setAttribute("href", nextPageURL)
-
-    </script>
+        </script>
 </body>
 
 </html>
