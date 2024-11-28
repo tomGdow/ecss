@@ -48,6 +48,57 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .mark-anthony,
+        .mnemonic {
+            border-style: none none none solid;
+            border-color: blue;
+            border-width: 0.2em;
+        }
+
+        .mnemonic {
+            padding-left: 1em;
+        }
+
+        .white-normal {
+            white-space: normal;
+            border: 1px solid gray;
+            padding: 1em;
+        }
+
+        .white-pre {
+            white-space: pre;
+            border: 1px solid gray;
+            padding: 1em;
+        }
+
+        .white-nowrap {
+            white-space: nowrap;
+            border: 1px solid gray;
+            padding: 1em;
+        }
+
+        .white-prewrap {
+            white-space: pre-wrap;
+            border: 1px solid gray;
+            padding: 1em;
+        }
+
+        .white-preline {
+            white-space: pre-line;
+            border: 1px solid gray;
+            padding: 1em;
+        }
+
+        .white-breakspaces {
+            white-space: break-spaces;
+            border: 1px solid gray;
+            padding: 1em;
+        }
+
+        .highlight {
+            color: var(--primary-green);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +136,188 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <ol>
+                            <li>
+                                The <code>white-space</code> CSS property sets how white space inside an element is
+                                handled
+                            </li>
+                            <li>
+                                Whitespace refers to characters which are used to provide horizontal or vertical space
+                                between other characters
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                            </li>
+                            <li>
+                                The Infra Living Standard defines five characters as "ASCII whitespace" <br>
+                                <ol>
+                                    <li><code>TAB</code> (U+0009)</li>
+                                    <li><code>SPACE</code> (U+0020)</li>
+                                    <li><code>LF</code> (U+000A)</li>
+                                    <li><code>FF</code> (U+000C)</li>
+                                    <li><code>CR</code> (U+000D)</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <h2 class="example">Values</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>normal</code>
+                                <ol>
+                                    <li>
+                                        Sequences of white space are collapsed
+                                    </li>
+                                    <li>
+                                        Newline characters in the source are handled the same as other white spaces
+                                    </li>
+                                    <li>
+                                        Lines are broken as necessary to fill line boxes
+                                    </li>
+                                </ol>
+                                <pre class="white-normal">
+    Friends, Romans, countrymen, lend me your ears <br>
+    I come     to bury Caesar, not to praise him
+    The     evil    that    men   do   lives   after   them
+    The     good    is      oft   interred   with   their   bones
+  </pre>
+                            </li>
+
+                            <li>
+                                <code>nowrap</code><br>
+                                Collapses <code>white space</code> as the normal value does, but suppresses
+                                <code>line breaks</code> (text wrapping) within the source
+                                <pre class="white-nowrap">
+    Friends, Romans, countrymen, lend me your ears <br>
+    I come     to bury Caesar, not to praise him
+    The     evil    that    men   do   lives   after   them
+    The     good    is      oft   interred   with   their   bones</pre>
+                            </li>
+                            <li>
+                                <code>pre</code>
+                                <ol>
+                                    <li>
+                                        Sequences of <code>white space</code> are preserved
+                                    </li>
+
+                                    <li>
+                                        Lines are only broken at
+                                        <ol>
+                                            <li>
+                                                At <code>newline</code> characters in the source
+                                            </li>
+                                            <li>
+                                                At <code>br</code> elements
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                                <pre class="white-pre">
+    Friends, Romans, countrymen, lend me your ears <br>
+    I come     to bury Caesar, not to praise him
+    The     evil    that    men   do   lives   after   them
+    The     good    is      oft   interred   with   their   bones</pre>
+                            </li>
+                            <li>
+                                <code>pre-wrap</code>
+                                <ol>
+                                    <li>
+                                        Sequences of white space are preserved
+                                    </li>
+                                    <li>
+                                        Lines are broken at newline characters, at <code>br</code>, and as necessary
+                                        to fill line boxes
+                                    </li>
+                                </ol>
+
+                                <pre class="white-prewrap">
+    Friends, Romans, countrymen, lend me your ears <br>
+    I come     to bury Caesar, not to praise him
+    The     evil    that    men   do   lives   after   them
+    The     good    is      oft   interred   with   their   bones</pre>
+                            </li>
+                            <li>
+                                <code>pre-line</code>
+                                <ol>
+                                    <li>
+                                        Sequences of white space are collapsed
+                                    </li>
+                                    <li>
+                                        Lines are broken at
+                                        <ol>
+                                            <li>
+                                                newline characters
+                                            </li>
+                                            <li><code>br</code></li>
+                                            <li>As necessary to fill line boxes</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                                <pre class="white-preline">
+    Friends, Romans, countrymen, lend me your ears <br>
+    I come     to bury Caesar, not to praise him
+    The     evil    that    men   do   lives   after   them
+    The     good    is      oft   interred   with   their   bone </pre>
+                            </li>
+                            <li>
+                                <code>break-spaces</code>
+                                <ol>
+                                    <li>
+                                        The behavior is identical to that of pre-wrap, except that
+                                        <ol>
+                                            <li>
+                                                Any sequence of preserved white space always takes up space, including
+                                                at the end of the line
+
+                                            </li>
+                                            <li>
+                                                A line-breaking opportunity exists after every preserved white space
+                                                character, including between white space
+                                                characters
+
+                                            </li>
+                                            <li>
+                                                Such preserved spaces take up space and do not hang, thus affecting the
+                                                box's intrinsic sizes (min-content size and
+                                                max-content size)
+                                            </li>
+                                        </ol>
+                                        <pre class="white-breakspaces">
+    Friends, Romans, countrymen, lend me your ears <br>
+    I come     to bury Caesar, not to praise him
+    The     evil    that    men   do   lives   after   them
+    The     good    is      oft   interred   with   their   bones</pre>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <pre class="mark-anthony">
+  &lt;pre class="myclass"&gt;
+    Friends, Romans, countrymen, lend me your ears &lt;br&gt;
+    I come     to bury Caesar, not to praise him
+    The     evil    that    men   do   lives   after   them
+    The     good    is      oft   interred   with   their   bones
+  &lt;/pre&gt;
+</pre>
+                    </div><!--content-->
 
                     <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <div class="mnemonic">
+                            Remember, <code><strong>nowrap</strong></code>, <em>not</em> <code>no-wrap</code>!!
+                        </div>
+                    </div><!--content-->
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <h2 class="example">References</h2>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space">MDN: white-space</a>
+
+                    </div><!--content-->
                 </div>
             </div>
         </div>
