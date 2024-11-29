@@ -48,6 +48,28 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .normal {
+            border: 1px solid gray;
+            padding: 1em;
+        }
+
+        .letterspacing {
+            letter-spacing: 1em;
+            border: 1px solid gray;
+            padding: 1em;
+        }
+
+        .wordspacing {
+            word-spacing: 1em;
+            border: 1px solid gray;
+            padding: 1em;
+        }
+
+        summary {
+            color: var(--primary-green);
+            padding-left: 3%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +107,76 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <div class="normal">
+                            Friends, Romans, countrymen, lend me your ears <br>
+                            I come to bury Caesar, not to praise him <br>
+                            The evil that men do lives after them <br>
+                            The good is oft interred with their bones </div>
+                        <h3 class="example">letter-spacing</h3>
+                        <ol>
+                            <li>
+                                The <code>letter-spacing</code> CSS property sets the horizontal spacing behavior
+                                between text characters
+                            </li>
+                            <li>
+                                This value is added to the
+                                natural spacing between characters while rendering the text
+                            </li>
+                            <li>
+                                Positive values of <code>letter-spacing</code> causes characters to spread farther
+                                apart, while negative values of letter-spacing bring characters closer together
+                            </li>
+                        </ol>
+                        <div class="letterspacing">
+                            Friends, Romans, countrymen, lend me your ears <br>
+                            I come to bury Caesar, not to praise him <br>
+                            The evil that men do lives after them <br>
+                            The good is oft interred with their bones
+                        </div>
+                        <details>
+                            <summary>CSS</summary>
+                            <pre>
+    .letterspacing {
+        letter-spacing: 1em;
+        border: 1px solid gray;
+        padding: 1em;
+    } </pre>
+                        </details>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <h3 class="example">word-spacing</h3>
+                        <ol>
+                            <li>
+                                The word-spacing CSS property sets the length of space between words and between tags
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                            </li>
+                        </ol>
+                        <div class="wordspacing">
+                            Friends, Romans, countrymen, lend me your ears <br>
+                            I come to bury Caesar, not to praise him <br>
+                            The evil that men do lives after them <br>
+                            The good is oft interred with their bones
+                        </div>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                        <details>
+                            <summary>CSS</summary>
+                            <pre>
+    .wordspacing {
+        word-spacing: 1em;
+        border: 1px solid gray;
+        padding: 1em;
+    } </pre>
+                        </details>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing">MDN:
+                            letter-spacing</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing">MDN: word-spacing</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
