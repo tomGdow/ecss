@@ -48,6 +48,24 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .normal {
+            border: 1px solid gray;
+            padding: 1em;
+        }
+
+        .lineheight {
+            line-height: 2.5;
+            border: 1px solid gray;
+            padding: 1em;
+        }
+
+        summary {
+            color: var(--primary-green);
+            text-transform: uppercase;
+            font-size: medium;
+            padding-left: 3%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +103,126 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>line-height</code> CSS property sets the <b>height of a line box</b> in
+                                horizontal writing modes
+                            </li>
+                            <li>
+                                In vertical writing modes, it sets the width of a line box
+                            </li>
+                            <li>
+                                It's commonly used <b>to set the distance between lines of text</b>
+                            </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                            <li>
+                                On block-level elements in horizontal writing modes, it specifies <b>the preferred
+                                    height</b>
+                                of line boxes within the element, and on non-replaced inline elements, it specifies the
+                                height that is used to calculate line box height
+                            </li>
+                        </ol>
+                        <h3 class="example">Values</h3>
+                        <div>
+                            <ol>
+                                <li>
+                                    <code>normal</code>
+                                    <ol>
+                                        <li>
+                                            Depends on the user agent
+                                        </li>
+                                        <li>
+                                            Desktop browsers (including Firefox) use a default value of roughly
+                                            <code>1.2</code>, depending on the element's font-family
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    <code>&lt;number&gt; (unitless)</code>
+                                    <ol>
+                                        <li>
+                                            The used value is this unitless <code>&lt;number&gt;</code> multiplied by
+                                            the element's own font size
+                                        </li>
+                                        <li>
+                                            The computed value is the same
+                                            as the specified &lt;number&gt;
+                                        </li>
+                                        <li>
+                                            In most cases, this is the preferred way to set <code>line-height</code>and
+                                            avoid unexpected
+                                            results due to inheritance
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    <code>&lt;length&gt;</code>
+                                    <ol>
+                                        <li>
+                                            The specified <code>&lt;length&gt;</code> is used in the calculation of the
+                                            line box height
+                                        </li>
+                                        <li>
+                                            Values given in <code>em</code> units may produce
+                                            unexpected results
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    <code>&lt;percentage&gt</code>
+                                    <ol>
+                                        <li>
+                                            Relative to the font size of the element itself
+                                        </li>
+                                        <li>
+                                            The computed value is this <code>&lt;percentage&gt;</code> multiplied by the
+                                            element's
+                                            computed font size
+                                        </li>
+                                        <li>
+                                            <code>Percentage</code> values may produce unexpected results
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                        </div><!--values-->
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <h3>Normal</h3>
+
+                        <div class="normal">
+                            Friends, Romans, countrymen, lend me your ears <br>
+                            I come to bury Caesar, not to praise him <br>
+                            The evil that men do lives after them <br>
+                            The good is oft interred with their bones
+                        </div>
+                        <h3>line-height</h3>
+                        <div class="lineheight">
+                            Friends, Romans, countrymen, lend me your ears <br>
+                            I come to bury Caesar, not to praise him <br>
+                            The evil that men do lives after them <br>
+                            The good is oft interred with their bones
+
+                        </div>
+                        <details>
+                            <summary>CSS</summary>
+                            <pre>
+.lineheight {
+    line-height: 2.5;
+    border: 1px solid gray;
+    padding: 1em;
+} </pre>
+                        </details>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height">MDN: line-height</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
