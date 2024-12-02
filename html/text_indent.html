@@ -48,6 +48,36 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        div.normal {
+            border: 2px solid gray;
+            padding: 1em;
+        }
+
+        div.indent {
+            border: 2px solid gray;
+            padding: 2em;
+            text-indent: 2em;
+        }
+
+        div.eachline {
+            border: 2px solid gray;
+            padding: 2em;
+            text-indent: 2em each-line;
+
+        }
+
+        div.hanging {
+            border: 2px solid gray;
+            padding: 1em;
+            text-indent: 2em hanging;
+        }
+
+        summary {
+            color: var(--primary-green);
+            font-variant: small-caps;
+            padding-left: 3%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +115,175 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <code>text-indent</code>
+                        <ol>
+                            <li>
+                                The <code>text-indent</code> CSS property sets the length of empty space (indentation)
+                                that is put before lines of text in a block
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2>Values</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>length</code>
+                                <ol>
+                                    <li>
+                                        Indentation is specified as an absolute <code>length</code>
+                                    </li>
+                                    <li>Negative values are allowed</li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>percentage</code> <br>
+                                Indentation is a <code>percentage</code> of the containing block's width
+                            </li>
+                            <li>
+                                <code>each-line</code><br>
+                                Indentation affects the first line of the block container as well as each line after a
+                                forced line break, but does not
+                                affect lines after a soft wrap break
+                            </li>
+                            <li>
+                                <code>hanging</code>
+                                <ol>
+                                    <li>
+                                        Inverts which lines are indented
+                                    </li>
+                                    <li>
+                                        All lines except the first line will be indented
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                        <dl>
+                            <dt><code>normal</code></dt>
+                            <dd>
+                                <div class="normal">
+                                    Friends, Romans, countrymen, lend me your ears <br>
+                                    I come to bury Caesar, not to praise him <br>
+                                    The evil that men do lives after them <br>
+                                    The good is oft interred with their bones
+                                </div>
+                            </dd>
+                            <dd>
+                                <details>
+                                    <summary>html</summary>
+                                    <pre>
+&lt;div class="normal"&gt;
+    Friends, Romans, countrymen, lend me your ears &lt;br&gt;
+    I come to bury Caesar, not to praise him &lt;br&gt;
+    The evil that men do lives after them &lt;br&gt;
+    The good is oft interred with their bones
+&lt;/div&gt;
+                                    </pre>
+                                </details>
+                            </dd>
+                            <dd>
+                                <details>
+                                    <summary>css</summary>
+                                    <pre>
+    div.normal {
+        border: 2px solid gray;
+        padding: 1em;
+    } </pre>
+                                </details>
+
+                            </dd>
+                        </dl><!--normal-->
+                        <dl>
+                            <dt><code>indent</code></dt>
+                            <dd>
+                                <div class="indent">
+                                    Friends, Romans, countrymen, lend me your ears <br>
+                                    I come to bury Caesar, not to praise him <br>
+                                    The evil that men do lives after them <br>
+                                    The good is oft interred with their bones
+                                </div>
+                            </dd>
+                            <dd>
+                                <details>
+                                    <summary>html</summary>
+                                    <pre>
+&lt;div class="normal"&gt;
+    Friends, Romans, countrymen, lend me your ears &lt;br&gt;
+    I come to bury Caesar, not to praise him &lt;br&gt;
+    The evil that men do lives after them &lt;br&gt;
+    The good is oft interred with their bones
+&lt;/div&gt; </pre>
+                                </details>
+                            </dd>
+                            <dd>
+                                <details>
+                                    <summary>css</summary>
+                                    <pre>
+div.indent {
+    border: 2px solid gray;
+    padding: 2em;
+    text-indent: 2em;
+} </pre>
+                                </details>
+                            </dd>
+                        </dl><!--indent-->
+                        <dl>
+                            <dt><code>each-line</code></dt>
+                            <dd>
+                                <div class="eachline">
+                                    Friends, Romans, countrymen, lend me your ears <br>
+                                    I come to bury Caesar, not to praise him <br>
+                                    The evil that men do lives after them <br>
+                                    The good is oft interred with their bones
+                                </div>
+                            </dd>
+                            <dd>
+                                <details>
+                                    <summary>css</summary>
+                                    <pre>
+div.eachline {
+    border: 2px solid gray;
+    padding: 2em;
+    text-indent: 2em each-line;
+}</pre>
+                                </details>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt><code>hanging</code></dt>
+                            <dd>
+                                <div class="hanging">
+                                    Friends, Romans, countrymen, lend me your ears <br>
+                                    I come to bury Caesar, not to praise him <br>
+                                    The evil that men do lives after them <br>
+                                    The good is oft interred with their bones
+                                </div>
+                            </dd>
+                            <dd>
+                                <details>
+                                    <summary>css</summary>
+                                    <pre>
+div.hanging {
+    border: 2px solid gray;
+    padding: 1em;
+    text-indent: 2em hanging;
+} </pre>
+                                </details>
+                            </dd>
+                        </dl>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-indent">MDN: text-indent</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
