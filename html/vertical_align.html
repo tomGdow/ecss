@@ -48,6 +48,40 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .alignbaseline {
+            vertical-align: baseline;
+        }
+
+        .aligntop {
+            vertical-align: top;
+        }
+
+        .alignbottom {
+            vertical-align: bottom;
+        }
+
+        .aligntexttop {
+            vertical-align: text-top;
+        }
+
+        .aligntextbottom {
+            vertical-align: text-bottom;
+        }
+
+        .valign {
+            font-size: 5em;
+        }
+
+        .boxed {
+            border: 1px solid gray;
+        }
+
+        summary {
+            font-variant: small-caps;
+            color: var(--primary-green);
+            padding-left: 3%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +119,226 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>The <code>vertical-align</code> CSS property sets vertical alignment of an
+                                <ol>
+                                    <li><code>inline</code></li>
+                                    <li><code>inline-block</code></li>
+                                    <li><code>table-cell</code> box</li>
+                                </ol>
+                            </li>
+                            <li>The <code>vertical-align</code> property can be used in two contexts
+                                <ol>
+                                    <li>To <b>vertically align</b> an inline-level element's box inside its containing
+                                        line box <br>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                        For example, it could be used to vertically position an image in a line of text
+                                    </li>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                                    <li>To vertically align the content of a cell in a table</li>
+                                </ol>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            </li>
+                            <li>
+                                Note that <code>vertical-align</code> only applies to the following elements:
+
+                                <ol>
+                                    <li><code>inline</code></li>
+                                    <li><code>inline-block</code></li>
+                                    <li><code>table-cell</code></li>
+                                </ol>
+                                <b>You can't use it to vertically align block-level elements</b>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">Parent-relative values</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>baseline</code><br>
+                                Aligns the <code>baseline</code> of the element with the <code>baseline</code> of its
+                                parent
+                            </li>
+                            <li>
+                                <code>sub</code><br>
+                                Aligns the code{baseline} of the element with the <code>subscript-baseline</code> of its
+                                parent
+
+                            </li>
+                            <li>
+                                <code>super</code><br>
+                                Aligns the <code>baseline</code>of the element with the superscript-baseline of its
+                                parent
+                            </li>
+                            <li>
+                                <code>text-top</code><br>
+                                Aligns the <code>top</code> of the element with the top of the parent element's font
+                            </li>
+                            <li>
+                                <code>text-bottom</code><br>
+                                Aligns the <code>bottom</code> of the element with the bottom of the parent element's
+                                font
+
+                            </li>
+                            <li>
+                                <code>middle</code>
+                                Aligns the <code>middle</code> of the element with the baseline plus half the
+                                <code>x-height</code> of the parent
+                            </li>
+                            <li>
+                                <code>length</code>
+                                <ol>
+                                    <li>
+                                        Aligns the <code>baseline</code> of the element to the given length above the
+                                        baseline of its parent
+                                    </li>
+                                    <li>
+                                        A negative value is allowed
+                                    </li>
+                                </ol>
+
+                            </li>
+                            <li>
+                                <code>percentage</code>
+                                <ol>
+                                    <li>
+                                        Aligns the <code>baseline</code> of the element to the <b>given percentage</b>
+                                        above the baseline of its parent, with the value being a percentage of the
+                                        <code>line-height</code> property
+                                    </li>
+
+                                    <li>A negative value is allowed</li>
+                                </ol>
+                            </li>
+
+                        </ol>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Line-relative values</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>top</code> <br>
+                                Aligns the <code>top</code> of the element and its descendants with the top of the
+                                entire line
+                            </li>
+                            <li>
+                                <code>bottom</code> <br>
+                                Aligns the <code>bottom</code> of the element and its descendants with the bottom of the
+                                entire line
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">Values for table cells</h2>
+                    <div class="content">
+                        <ol>
+                            <li><code>baseline</code> (and <code>sub</code>, <code>super</code>, <code>text-top</code>,
+                                <code>text-bottom</code>, <code>length</code>, and <code>percentage</code>) <br>
+                                Aligns the <code>baseline</code> of the cell with the baseline of all other cells in the
+                                row that are baseline-aligned
+                            </li>
+                            <li>
+                                <code>top</code><br>
+                                Aligns the <code>top</code> padding edge of the cell with the top of the row.
+                            </li>
+                            <li>
+                                <code>middle</code> <br>
+                                Centers the padding box of the cell within the row
+                            </li>
+                            <li>
+                                <code>bottom</code> <br>
+                                Aligns the bottom padding edge of the cell with the bottom of the row
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div class="valign">
+                            <div class="boxed">
+                                baseline<img class="alignbaseline" src="../images/myBlueRectange100_25.png"
+                                    alt="blue square">
+                            </div>
+                            <div class="boxed">
+                                top<img class="aligntop" src="../images/myBlueRectange100_25.png" alt="">
+                            </div>
+                            <div class="boxed">
+                                bottom<img class="alignbottom" src="../images/myBlueRectange100_25.png"
+                                    alt="blue square">
+                            </div>
+                            <div class="boxed">
+                                text-top <img class="aligntexttop" src="../images/myBlueRectange100_25.png"
+                                    alt="blue square">
+                            </div>
+                            <div class="boxed">
+                                text-bottom <img class="aligntextbottom" src="../images/myBlueRectange100_25.png"
+                                    alt="blue square">
+                            </div>
+                        </div>
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="valign"&gt;
+        &lt;div class="boxed"&gt;
+            baseline&lt;img class="alignbaseline" src="../images/myBlueRectange100_25.png" alt=""&gt;
+        &lt;/div&gt;
+        &lt;div class="boxed"&gt;
+            top&lt;img class="aligntop" src="../images/myBlueRectange100_25.png" alt=""&gt;
+        &lt;/div&gt;
+        &lt;div class="boxed"&gt;
+            bottom&lt;img class="alignbottom" src="../images/myBlueRectange100_25.png" alt=""&gt;
+        &lt;/div&gt;
+        &lt;div class="boxed"&gt;
+            text-top &lt;img class="aligntexttop" src="../images/myBlueRectange100_25.png" alt=""&gt;
+        &lt;/div&gt;
+        &lt;div class="boxed"&gt;
+            text-bottom &lt;img class="aligntextbottom" src="../images/myBlueRectange100_25.png"
+                alt=""&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; </pre>
+                        </details>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .alignbaseline {
+        vertical-align: baseline;
+    }
+
+    .aligntop {
+        vertical-align: top;
+    }
+
+    .alignbottom {
+        vertical-align: bottom;
+    }
+
+    .aligntexttop {
+        vertical-align: text-top;
+    }
+
+    .aligntextbottom {
+        vertical-align: text-bottom;
+    }
+
+    .valign {
+        font-size: 5em;
+    }
+
+    .boxed {
+        border: 1px solid gray;
+    }</pre>
+                        </details>
+
+                    </div>
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align">MDN:
+                            vertical-align</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
