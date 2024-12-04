@@ -201,7 +201,16 @@
                     </div>
 
                     <h2>Mnemonic</h2>
-                    <div class="content"></div>
+                    <div class="content">
+                        (UA)UA !AU(UA)
+                        <pre>
+With[{one = "(UA)", two = "U", three = "A"},
+
+    StringTemplate["`1``2``3`!`3``2``1`"][one, two, three]]
+
+//"(UA)UA!AU(UA)"
+                        </pre>
+                    </div>
 
                     <h2>References</h2>
                     <div class="content">
