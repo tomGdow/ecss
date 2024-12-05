@@ -131,6 +131,12 @@
             color: var(--primary-green);
             font-weight: bold;
         }
+
+        summary {
+            color: var(--primary-green);
+            padding-left: 3%;
+            font-variant: small-caps;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -295,16 +301,19 @@
                         </div>
 
                         <h3>Browser</h3>
-                        <div class="browser">
+                        <details>
+                            <summary>show 1</summary>
+                            <div class="browser">
 
-                            <ol start="2">
-                                <li>d</li>
-                                <li>d</li>
-                                <li value="100">d</li>
-                                <li>d</li>
-                                <li>d</li>
-                            </ol>
-                        </div>
+                                <ol start="2">
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li value="100">d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                </ol>
+                            </div>
+                        </details>
                         <h3>Note</h3>
                         <div class="indent">
                             Note that <code>value</code> overrides <code>start</code>
@@ -326,14 +335,17 @@
                         </div>
 
                         <h3>Browser</h3>
-                        <div class="browser">
-                            <ol start="10" reversed>
-                                <li>d</li>
-                                <li>d</li>
-                                <li value="100">d</li>
-                                <li>d</li>
-                            </ol>
-                        </div>
+                        <details>
+                            <summary>show 2</summary>
+                            <div class="browser">
+                                <ol start="10" reversed>
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li value="100">d</li>
+                                    <li>d</li>
+                                </ol>
+                            </div>
+                        </details>
                     </div><!--content-->
                     <hr>
                     <h2 class="example">Example (start type="I")</h2>
@@ -350,15 +362,18 @@
                         </div>
 
                         <h3>Browser</h3>
-                        <div class="browser">
+                        <details>
+                            <summary>show 3</summary>
+                            <div class="browser">
 
-                            <ol start="2" type="I">
-                                <li>d</li>
-                                <li>d</li>
-                                <li value="10">d</li>
-                                <li>d</li>
-                            </ol>
-                        </div>
+                                <ol start="2" type="I">
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li value="10">d</li>
+                                    <li>d</li>
+                                </ol>
+                            </div>
+                        </details>
                     </div><!--content-->
                     <hr>
                     <h2 class="example">Example (start type="i")</h2>
@@ -375,14 +390,17 @@
                         </div>
 
                         <h3>Browser</h3>
-                        <div class="browser">
-                            <ol start="2" type="i" )>
-                                <li>d</li>
-                                <li>d</li>
-                                <li>d</li>
-                                <li>d</li>
-                            </ol>
-                        </div>
+                        <details>
+                            <summary>show </summary>
+                            <div class="browser">
+                                <ol start="2" type="i" )>
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                </ol>
+                            </div>
+                        </details>
                     </div><!--content-->
                     <hr>
                     <h2 class="example">Example (type="a")</h2>
@@ -398,15 +416,18 @@
 &lt;/ol&gt;</pre>
                         </div>
                         <h3>Browser</h3>
-                        <div class="browser">
+                        <details>
+                            <summary>show</summary>
+                            <div class="browser">
 
-                            <ol type="a">
-                                <li>d</li>
-                                <li>d</li>
-                                <li>d</li>
-                                <li>d</li>
-                            </ol>
-                        </div>
+                                <ol type="a">
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                </ol>
+                            </div>
+                        </details>
 
                     </div><!--content-->
                     <hr>
@@ -424,14 +445,18 @@
                         </div>
 
                         <h3>Browser</h3>
-                        <div class="browser">
-                            <ol type="A">
-                                <li>d</li>
-                                <li>d</li>
-                                <li>d</li>
-                                <li>d</li>
-                            </ol>
-                        </div>
+                        <details>
+                            <summary>show</summary>
+
+                            <div class="browser">
+                                <ol type="A">
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                </ol>
+                            </div>
+                        </details>
                     </div><!--content-->
                     <hr>
                     <h2 class="example">Example (<code>list-style-type</code>)</h2>
@@ -463,15 +488,18 @@ ol>li:nth-of-type(2) {
   }</pre>
                         </div>
                         <h3>Browser</h3>
-                        <div class="browser">
-                            <ol id="ol1">
-                                <li>d</li>
-                                <li>d</li>
-                                <li>d</li>
-                                <li>d</li>
-                                <li>d</li>
-                            </ol>
-                        </div>
+                        <details>
+                            <summary>show</summary>
+                            <div class="browser">
+                                <ol id="ol1">
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                </ol>
+                            </div>
+                        </details>
                     </div><!--content-->
                     <hr>
                     <h2 class="example">Example (<code>list-style-type</code>)</h2>
@@ -508,14 +536,17 @@ ol>li:nth-of-type(3) {
                         </div>
 
                         <h3>Browser</h3>
-                        <div class="browser">
-                            <ol id="ol2">
-                                <li>d</li>
-                                <li>d</li>
-                                <li>d</li>
-                                <li>d</li>
-                            </ol>
-                        </div>
+                        <details>
+                            <summary>show</summary>
+                            <div class="browser">
+                                <ol id="ol2">
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                </ol>
+                            </div>
+                        </details>
 
                     </div><!--content-->
                     <hr>
