@@ -113,6 +113,12 @@
             list-style: square;
 
         }
+
+        summary {
+            color: var(--primary-green);
+            font-variant: small-caps;
+            padding: 0 3%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -305,14 +311,17 @@ ul>li:nth-of-type(odd) {
                         </div>
 
                         <h3>Browser</h3>
-                        <div class="browser">
-                            <ul id="lst1">
-                                <li>a
-                                <li>b
-                                <li>c
-                                <li>d
-                            </ul>
-                        </div>
+                        <details>
+                            <summary>show</summary>
+                            <div class="browser">
+                                <ul id="lst1">
+                                    <li>a
+                                    <li>b
+                                    <li>c
+                                    <li>d
+                                </ul>
+                            </div>
+                        </details>
 
                     </div><!--content-->
                     <hr>
@@ -341,15 +350,18 @@ ul>li:nth-of-type(odd) {
                         </div>
 
                         <h3>Browser</h3>
-                        <div class="browser">
+                        <details>
+                            <summary>show</summary>
+                            <div class="browser">
 
-                            <ul id="lst2">
-                                <li>a
-                                <li>b
-                                <li>c
-                                <li>d
-                            </ul>
-                        </div>
+                                <ul id="lst2">
+                                    <li>a
+                                    <li>b
+                                    <li>c
+                                    <li>d
+                                </ul>
+                            </div>
+                        </details>
 
                     </div><!--content-->
                     <hr>
@@ -378,15 +390,18 @@ ul>li:nth-of-type(odd) {
                         </div>
 
                         <h3>Browser</h3>
-                        <div class="browser">
+                        <details>
+                            <summary>show</summary>
+                            <div class="browser">
 
-                            <ul id="lst3">
-                                <li>a
-                                <li>b
-                                <li>c
-                                <li>d
-                            </ul>
-                        </div>
+                                <ul id="lst3">
+                                    <li>a
+                                    <li>b
+                                    <li>c
+                                    <li>d
+                                </ul>
+                            </div>
+                        </details>
                     </div><!--content-->
                     <hr>
                     <h2 class="example">Example (Nesting)</h2>
