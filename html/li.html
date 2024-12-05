@@ -56,6 +56,13 @@
             padding-right: 10px;
             margin-right: 20px;
         }
+
+        summary {
+            color: var(--primary-green);
+            font-variant: small-caps;
+            padding: 0 3%;
+
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,13 +186,16 @@
 &lt;/ol&gt;</pre>
                         </div>
                         <h3>Browser</h3>
-                        <div class="browser">
-                            <ol start="2">
-                                <li>a
-                                <li>b
-                                <li>c
-                            </ol>
-                        </div>
+                        <details>
+                            <summary>show</summary>
+                            <div class="browser">
+                                <ol start="2">
+                                    <li>a
+                                    <li>b
+                                    <li>c
+                                </ol>
+                            </div>
+                        </details>
                     </div>
                     <h2 class="example">Example (type)</h2>
                     <div class="content">
@@ -201,14 +211,17 @@
                             </pre>
                         </div>
                         <h3>Browser</h3>
-                        <div class="browser">
-                            <ol start="2">
-                                <li>a
-                                <li>b
-                                <li type="I">c
-                                <li>d
-                            </ol>
-                        </div>
+                        <details>
+                            <summary>show</summary>
+                            <div class="browser">
+                                <ol start="2">
+                                    <li>a
+                                    <li>b
+                                    <li type="I">c
+                                    <li>d
+                                </ol>
+                            </div>
+                        </details>
                         <h3>Note</h3>
                         <div class="indent">
                             Note that <code>type</code> as attribute of <code>li</code>
