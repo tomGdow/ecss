@@ -48,6 +48,22 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .mypara {
+            font-size: 1.4rem;
+            padding: 0 3%;
+        }
+
+        .mypara::first-letter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #a52a2a;
+        }
+
+        .mypara:hover::first-line {
+            background-color: lightgoldenrodyellow;
+            text-transform: capitalize;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +101,93 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>A CSS <code>pseudo-element</code> is a keyword added to a selector that lets you style a
+                                specific part of the selected element(s)</li>
+                            <li>
+                                For example, <code>::first-line</code> can be used to change the font of the first line
+                                of a paragraph
+                            </li>
+                            <li><code>syntax</code>
+                                <pre>
+    selector::pseudo-element {
+        property: value;
+    } </pre>
+                            </li>
+                            <li>
+                                Double colons (<code>::</code>) are used for <code>pseudo-elements</code>
+                            </li>
+                            <li>
+                                This distinguishes <code>pseudo-elements</code> from <code>pseudo-classes</code> that
+                                use a
+                                single colon (<code>:</code>) in their notation
+                            </li>
+                            <li>
+                                <code>Pseudo-elements</code> do not exist independently
+                            </li>
+                            <li>
+                                The element of which a <code>pseudo-element</code> is a part is called its originating
+                                element
+                            </li>
+                            <li>
+                                A <code>pseudo-element</code> <b>must appear after all the other components</b> in the
+                                complex or compound selector
+                            </li>
+                            <li>
+                                The last
+                                element in the selector is the originating element of the pseudo-element
+                            </li>
+                            <li>
+                                For example, you can select a paragraph's
+                                first line using <code>p::first-line</code> but not the first-line's children
+                            </li>
+                            <li>
+                                So <code>p::first-line > *</code> is invalid
+                            </li>
+                            <li>
+                                A <code>pseudo-element</code> can be selected based on the current state of the
+                                originating element
+                            </li>
+                            <li>
+                                For example, <code>p:hover::first-line</code>
+                                selects the first line (pseudo-element) of a paragraph when the paragraph itself is
+                                being hovered (pseudo-class)
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <p class="mypara">Friends, romans, countrymen, hover over me!</p>
+                    </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">HTML</h2>
+                    <div class="content">
+                        <pre>
+    &lt;p class="mypara"&gt;Friends, romans, countrymen, hover over me!&lt;/p&gt;
+                    </pre>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">CSS</h2>
+                    <div class="content">
+                        <pre>
+    .mypara::first-letter {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #a52a2a;
+    }
+
+    .mypara:hover::first-line {
+        background-color: lightgoldenrodyellow;
+    } </pre>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">MDN:
+                            pseudo-elements</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
