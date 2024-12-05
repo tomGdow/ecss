@@ -48,6 +48,24 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .combinators {
+            font-size: 1.4em;
+        }
+
+        .para1~p {
+            background-color: lightgoldenrodyellow;
+            text-align: center;
+        }
+
+        .para1+p {
+            color: red;
+            text-align: right;
+        }
+
+        p {
+            padding: 0 3%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +103,69 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>subsequent-sibling combinator</code> (<code>~, a tilde</code>) separates two
+                                selectors and matches <strong>all instances of the second element
+                                    that follow the first element (not necessarily immediately) and share the same
+                                    parent element</strong>
+                            </li>
+                        </ol>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    </div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div class="combinators">
+                            <p class="para1">Paragraph-1</p>
+                            <p class="para2">Paragraph-2</p>
+                            <p class="para3">Paragraph-3</p>
+                        </div>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">HTML</h2>
+                    <div class="content">
+                        <pre>
+&lt;div class="combinators"&gt;
+    &lt;p class="para1"&gt;Paragraph-1&lt;/p&gt;
+    &lt;p class="para2"&gt;Paragraph-2&lt;/p&gt;
+    &lt;p class="para3"&gt;Paragraph-3&lt;/p&gt;
+&lt;/div&gt; </pre>
+                    </div><!--content-->
 
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <pre>
+.combinators {
+    font-size: 1.4em;
+}
+
+.para1~p {
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+}
+
+.para1+p {
+    color: red;
+    text-align: right;
+} </pre>
+                    </div><!--content-->
+
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li>Note that in this case <code>text-align:right</code> takes precedence in
+                                <code>para2</code>
+                                (but not <code>para3</code>) because the
+                            </li>
+                        </ol>
+                    </div><!--content-->
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator">MDN:
+                            subsequent-sibling</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
@@ -107,7 +175,8 @@
 
         <template id="prevPageTemplate">next_sibling_combinator_examples</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">subsequent_sibling_combinator_examples</template> <!--PAGE TITLE-->
+        <template id="pageTitleTemplate">subsequent_sibling_combinator_examples (aka general sibling)</template>
+        <!--PAGE TITLE-->
 
         <template id="nextPageTemplate">pseudo_class_selector_examples</template><!--NEXT PAGE-->
 

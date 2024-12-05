@@ -48,6 +48,16 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        button {
+            font-size: 2em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button:hover {
+            color: white;
+            background-color: red;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +95,84 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                A CSS <code>pseudo-class</code> is a keyword added to a selector that specifies a
+                                <b>special state</b> of the selected element(s)
+                            </li>
+                            <li>
+                                For example, the pseudo-class <code>:hover</code> can be used to select a button when a
+                                user's pointer hovers over the button and this
+                                selected button can then be styled
+                            </li>
+                            <li>
+                                A
+                                <code>pseudo-class</code> consists of a colon (<code>:</code>) followed by the
+                                <code>pseudo-class</code> name (e.g.,
+                                <code>:hover</code>)
+                            </li>
+                            <li>
+                                A functional <code>pseudo-class</code> also
+                                contains a pair of parentheses to define the arguments (e.g., <code>:dir()</code>)
+                            </li>
+                            <li>
+                                The element that a <code>pseudo-class</code> is attached to is
+                                defined as an <b>anchor element</b> (e.g., <code>button</code> in case
+                                <code>button:hover</code>)
+                            </li>
+                            <li>
+                                <code>Pseudo-classes</code> let you apply a style to an element not only in relation to
+                                the content of the document tree, but also in
+                                relation to external factors like
+                                <ol>
+                                    <li>
+                                        the <b>history</b> of the navigator (<code>:visited</code>,
+                                        for example),
+                                    </li>
+                                    <li>
+                                        the <b>status</b> of its content (like
+                                        <code>:checked</code> on certain form elements)
+                                    </li>
+                                    <li>
+                                        or the <b>position</b> of the mouse (like
+                                        <code>:hover</code>, which lets you know if the mouse is over
+                                        an element or not)
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <button class="mybtn">Hover </button>
+                    </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">HTML</h2>
+                    <div class="content">
+                        <pre>
+&lt;button class="mybtn"&gt;Hover &lt;/button&gt; </pre>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">CSS</h2>
+                    <div class="content">
+                        <pre>
+button {
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button:hover {
+    color: white;
+    background-color: red;
+} </pre>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">MDN: pseudo-classes</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>

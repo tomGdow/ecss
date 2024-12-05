@@ -48,6 +48,22 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .combinators {
+            font-size: 1.4em;
+        }
+
+        .combinators>p {
+            color: red;
+        }
+
+        .combinators p {
+            background-color: lightgoldenrodyellow;
+        }
+
+        p {
+            padding-left: 3%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +101,76 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>descendant combinator</code> — typically represented by a single space (" ")
+                                character — combines two selectors such that an element matched by the second selector
+                                is
+                                selected if it has an ancestor (parent, parent's parent, parent's parent's parent, etc.)
+                                element matching the first selector
+                            </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                            <li>
+                                Selectors that utilize a <code>descendant combinator</code> are called
+                                <code>descendant selectors</code>
+                            </li>
+                            <li>
+                                The <code>descendant combinator</code> is technically one or more CSS white space
+                                characters
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <div class="combinators">
+                            <p class="para1">Paragraph-1</p>
+                            <p class="para2">Paragraph-2</p>
+                            <p class="para3">Paragraph-3</p>
+                        </div>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    </div><!--content-->
+
+                    <h2 class="example">HTML</h2>
+                    <div class="content">
+                        <pre>
+&lt;div class="combinators"&gt;
+    &lt;div&gt;
+        &lt;p class="para1"&gt;Paragraph-1&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;p class="para2"&gt;Paragraph-2&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;p class="para3"&gt;Paragraph-3&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt; </pre>
+                    </div><!--content-->
+
+                    <h2 class="example">CSS</h2>
+                    <div class="content">
+                        <pre>
+.combinators {
+    font-size: 1.4em;
+}
+
+.combinators>p {
+    color: red;
+}
+
+.combinators p {
+    background-color: lightgoldenrodyellow;
+} </pre>
+                    </div><!--content-->
 
                     <h2>Mnemonic</h2>
                     <div class="content"></div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator">MDN:
+                            descendant combinator</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>

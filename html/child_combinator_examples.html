@@ -48,6 +48,22 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .combinators {
+            font-size: 1.4em;
+        }
+
+        .combinators>p {
+            background-color: lightgoldenrodyellow;
+        }
+
+        .combinators p {
+            color: red;
+        }
+
+        p {
+            padding-left: 3%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +101,77 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                            <li>The <code>child combinator</code> (<code>></code>) is placed between two CSS selectors
+                            </li>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                            <li>
+                                It only matches elements matched by the second selector that are <b>the direct
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                                    children</b> of elements matched by the first selector
+                            </li>
+
+                            <li>
+                                Elements matched by the second selector must be the <b>immediate children</b> of the
+                                element matched by the first selector
+                            </li>
+
+                            <li>
+                                This is stricter than the <code>descendant combinator</code> (a space), which matches
+                                all elements matched by
+                                the second selector for which there exists an ancestor element matched by the first
+                                selector, regardless of the number of "hops" up the DOM
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+
+                        <div class="combinators">
+                            <p class="para1">Paragraph-1</p>
+                            <p class="para2">Paragraph-2</p>
+                            <div>
+                                <p class="para3">Paragraph-3</p>
+                            </div>
+                        </div>
+
+                    </div><!--content-->
+
+                    <h2 class="example">HTML</h2>
+                    <div class="content">
+                        <pre>
+&lt;div class="combinators"&gt;
+    &lt;p class="para1"&gt;Paragraph-1&lt;/p&gt;
+    &lt;p class="para2"&gt;Paragraph-2&lt;/p&gt;
+    &lt;div&gt;
+        &lt;p class="para3"&gt;Paragraph-3&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt; </pre>
+                    </div><!--content-->
+
+                    <h2 class="example">CSS</h2>
+                    <div class="content">
+                        <pre>
+.combinators {
+    font-size: 1.4em;
+}
+
+.combinators>p {
+    background-color: lightgoldenrodyellow;
+}
+
+.combinators p {
+    color: red;
+} </pre>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator">MDN: Child
+                            Combinator</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
