@@ -192,6 +192,12 @@
         #tableFourteen {
             margin-top: 1em;
         }
+
+        summary {
+            color: var(--primary-green);
+            font-variant: small-caps;
+            margin-left: 3%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -489,17 +495,20 @@ table, th, td {
   }</pre>
                         </div>
                         <h3>Browser</h3>
-                        <table id="tableOne">
-                            <caption>caption</caption>
-                            <tr>
-                                <th>head</th>
-                            </tr>
-                            <tr>
-                                <td>data</td>
-                            </tr>
-                        </table>
-
+                        <details>
+                            <summary>show 1</summary>
+                            <table id="tableOne">
+                                <caption>caption</caption>
+                                <tr>
+                                    <th>head</th>
+                                </tr>
+                                <tr>
+                                    <td>data</td>
+                                </tr>
+                            </table>
+                        </details>
                     </div><!--content-->
+
                     <hr>
                     <h2 class="example">Example</h2>
                     <div class="content">
@@ -539,30 +548,33 @@ table, th, td {
   }</pre>
                         </div>
                         <h3>Browser</h3>
-                        <table id="tableTwo">
-                            <caption>caption</caption>
-                            <thead>
-                                <tr>
-                                    <th>h</th>
-                                    <th>h</th>
-                                    <th>h</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>d</td>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>f</td>
-                                    <td>f</td>
-                                    <td>f</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                        <details>
+                            <summary>show 2</summary>
+                            <table id="tableTwo">
+                                <caption>caption</caption>
+                                <thead>
+                                    <tr>
+                                        <th>h</th>
+                                        <th>h</th>
+                                        <th>h</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>f</td>
+                                        <td>f</td>
+                                        <td>f</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </details>
                     </div>
                     <hr>
 
@@ -599,25 +611,28 @@ table, th, td {
   }</pre>
                         </div>
                         <h3>Browser</h3>
-                        <table id="tableThree">
-                            <caption>caption</caption>
-                            <thead>
-                                <tr>
-                                    <th colspan="3">h</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="2">d</td>
-                                    <td>d</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="3">f</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                        <details>
+                            <summary>show 3</summary>
+                            <table id="tableThree">
+                                <caption>caption</caption>
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">h</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">d</td>
+                                        <td>d</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3">f</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </details>
                     </div>
                     <hr>
 
@@ -663,34 +678,37 @@ table, th, td {
   }</pre>
                         </div>
                         <h3>Browser</h3>
-                        <table id="tableFour">
-                            <caption>caption</caption>
-                            <thead>
-                                <tr>
-                                    <th>h</th>
-                                    <th>h</th>
-                                    <th>h</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td rowspan="2">d</td>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                                <tr>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>f</td>
-                                    <td>f</td>
-                                    <td>f</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                        <details>
+                            <summary>show 4</summary>
+                            <table id="tableFour">
+                                <caption>caption</caption>
+                                <thead>
+                                    <tr>
+                                        <th>h</th>
+                                        <th>h</th>
+                                        <th>h</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="2">d</td>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>f</td>
+                                        <td>f</td>
+                                        <td>f</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </details>
 
                     </div><!--content-->
                     <hr>
@@ -734,27 +752,30 @@ table, th, td {
     }</pre>
                         </div>
                         <h3>Browser</h3>
-                        <table id="tableFive">
-                            <caption>caption</caption>
-                            <thead>
-                                <tr>
-                                    <th>h</th>
-                                    <th>h</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>f</td>
-                                    <td>f</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                        <details>
+                            <summary>show 5</summary>
+                            <table id="tableFive">
+                                <caption>caption</caption>
+                                <thead>
+                                    <tr>
+                                        <th>h</th>
+                                        <th>h</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>f</td>
+                                        <td>f</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </details>
 
 
                     </div><!--content-->
@@ -799,27 +820,30 @@ table, th, td {
     }</pre>
                         </div>
                         <h3>Browser</h3>
-                        <table id="tableSix">
-                            <caption>caption</caption>
-                            <thead>
-                                <tr>
-                                    <th>h</th>
-                                    <th>h</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>f</td>
-                                    <td>f</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                        <details>
+                            <summary>show 6</summary>
+                            <table id="tableSix">
+                                <caption>caption</caption>
+                                <thead>
+                                    <tr>
+                                        <th>h</th>
+                                        <th>h</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>f</td>
+                                        <td>f</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </details>
                     </div><!--content-->
                     <hr>
                     <h2 class="example">Example (colgroup)</h2>
@@ -869,37 +893,40 @@ colgroup {
   }</pre>
                         </div>
                         <h3>Browser</h3>
+                        <details>
+                            <summary>show 7</summary>
+                            <table id="tableSeven">
+                                <caption>caption</caption>
+                                <colgroup span="2"></colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>h</th>
+                                        <th>h</th>
+                                        <th>h</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>f</td>
+                                        <td>f</td>
+                                        <td>f</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </details>
 
-                        <table id="tableSeven">
-                            <caption>caption</caption>
-                            <colgroup span="2"></colgroup>
-                            <thead>
-                                <tr>
-                                    <th>h</th>
-                                    <th>h</th>
-                                    <th>h</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>d</td>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                                <tr>
-                                    <td>d</td>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>f</td>
-                                    <td>f</td>
-                                    <td>f</td>
-                                </tr>
-                            </tfoot>
-                        </table>
                     </div><!--content-->
                     <hr>
                     <h2 class="example">Example (colgroup col)</h2>
@@ -955,39 +982,42 @@ col:nth-of-type(2){
   }</pre>
                         </div>
                         <h3>Browser</h3>
-                        <table id="tableEight">
-                            <caption>caption</caption>
-                            <colgroup>
-                                <col>
-                                <col span="2">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th>h</th>
-                                    <th>h</th>
-                                    <th>h</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>d</td>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                                <tr>
-                                    <td>d</td>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>f</td>
-                                    <td>f</td>
-                                    <td>f</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                        <details>
+                            <summary>show 8</summary>
+                            <table id="tableEight">
+                                <caption>caption</caption>
+                                <colgroup>
+                                    <col>
+                                    <col span="2">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>h</th>
+                                        <th>h</th>
+                                        <th>h</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>f</td>
+                                        <td>f</td>
+                                        <td>f</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </details>
                     </div>
                     <hr>
                     <h2 class="example">Example (Empty Cells)</h2>
@@ -1033,36 +1063,39 @@ table, th, td {
   }</pre>
                         </div>
                         <h3>Browser</h3>
+                        <details>
+                            <summary>show 9</summary>
+                            <table id="tableNine">
+                                <caption>caption</caption>
+                                <thead>
+                                    <tr>
+                                        <th>h</th>
+                                        <th>h</th>
+                                        <th>h</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                    <tr>
+                                        <td>d</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>f</td>
+                                        <td>f</td>
+                                        <td>f</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </details>
 
-                        <table id="tableNine">
-                            <caption>caption</caption>
-                            <thead>
-                                <tr>
-                                    <th>h</th>
-                                    <th>h</th>
-                                    <th>h</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>d</td>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                                <tr>
-                                    <td>d</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>f</td>
-                                    <td>f</td>
-                                    <td>f</td>
-                                </tr>
-                            </tfoot>
-                        </table>
                     </div><!--content-->
                     <hr>
                     <h2 class="example">Example (vertical-align)</h2>
@@ -1115,31 +1148,34 @@ tbody td:nth-of-type(3) {
   }</pre>
                         </div>
                         <h3>Browser</h3>
+                        <details>
+                            <summary>show 10</summary>
+                            <table id="tableTen">
+                                <caption>caption</caption>
+                                <thead>
+                                    <tr>
+                                        <th>h</th>
+                                        <th>h</th>
+                                        <th>h</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>f</td>
+                                        <td>f</td>
+                                        <td>f</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </details>
 
-                        <table id="tableTen">
-                            <caption>caption</caption>
-                            <thead>
-                                <tr>
-                                    <th>h</th>
-                                    <th>h</th>
-                                    <th>h</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>d</td>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>f</td>
-                                    <td>f</td>
-                                    <td>f</td>
-                                </tr>
-                            </tfoot>
-                        </table>
                     </div>
                     <hr>
                     <h2 class="example">Example (text-align)</h2>
@@ -1193,30 +1229,33 @@ tbody td:nth-of-type(3) {
                         </div>
 
                         <h3>Browser</h3>
-                        <table id="tableEleven">
-                            <caption>caption</caption>
-                            <thead>
-                                <tr>
-                                    <th>h</th>
-                                    <th>h</th>
-                                    <th>h</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>d</td>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>f</td>
-                                    <td>f</td>
-                                    <td>f</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                        <details>
+                            <summary>show 11</summary>
+                            <table id="tableEleven">
+                                <caption>caption</caption>
+                                <thead>
+                                    <tr>
+                                        <th>h</th>
+                                        <th>h</th>
+                                        <th>h</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>f</td>
+                                        <td>f</td>
+                                        <td>f</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </details>
 
                     </div><!--content-->
                     <hr>
@@ -1262,30 +1301,33 @@ table {
   }</pre>
                         </div>
                         <h3>Browser</h3>
-                        <table id="tableTwelve">
-                            <caption>caption</caption>
-                            <thead>
-                                <tr>
-                                    <th>h</th>
-                                    <th>h</th>
-                                    <th>h</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>d</td>
-                                    <td>d</td>
-                                    <td>d</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>f</td>
-                                    <td>f</td>
-                                    <td>f</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                        <details>
+                            <summary>show 12</summary>
+                            <table id="tableTwelve">
+                                <caption>caption</caption>
+                                <thead>
+                                    <tr>
+                                        <th>h</th>
+                                        <th>h</th>
+                                        <th>h</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>d</td>
+                                        <td>d</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>f</td>
+                                        <td>f</td>
+                                        <td>f</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </details>
                     </div><!--content-->
                     <hr>
                     <h2 class="example">Example (border-spacing and border)</h2>
