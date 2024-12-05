@@ -11,8 +11,6 @@
     <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
     <link rel="stylesheet" href="../css/ecss.css" title="Default">
     <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
-
-    <link rel="stylesheet" href="../css/my_external_stylesheet.css">
     <noscript>
         <link rel="stylesheet" href="../css/ecss_nojs.css">
     </noscript>
@@ -49,11 +47,6 @@
 
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
-        }
-
-        summary {
-            color: var(--primary-green);
-            padding-left: 3%;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,87 +85,19 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content">
-                        <ol>
-                            <li>
-                                The <code>@import</code> CSS at-rule is used to import style rules from other valid
-                                stylesheets
-                            </li>
-                            <li>
-                                An <code>@import</code> rule must be defined at
-                                the top of the stylesheet, before any other at-rule (except <code>@charset</code> and
-                                <code>@layer</code>) and style declarations, or it will be
-                                ignored
-                            </li>
-                            <li>
-                                <code>@layer</code><br>
-                                Is the name of a cascade layer into which the contents of the linked resource are
-                                imported
-                            </li>
-                            <li>
-                                <code>supports-condition</code>
-                                Indicates the feature(s) that the browser must support in order for the stylesheet to be
-                                imported
-                            </li>
-                        </ol>
-                    </div><!--content-->
-
-                    <h2 class="example">Example</h2>
                     <div class="content"></div><!--content-->
-                    <pre>
-    @import url;
 
-    @import url layer;
+                    <h2>Example</h2>
+                    <div class="content"></div><!--content-->
 
-    @import url layer(layer-name);
+                    <h2>Notes</h2>
+                    <div class="content"></div><!--content-->
 
-    @import url layer(layer-name) supports(supports-condition);
-                    </pre>
-
-
-
-                    <h2 class="example">Example</h2>
-                    <div class="content">
-
-                        <div>
-                            <div class="mydiv">This is my div</div>
-                        </div>
-                        <details>
-                            <summary>html</summary>
-                            <pre>
-    &lt;div class="mydiv"&gt;This is my div&lt;/div&gt;
-                        </pre>
-                        </details>
-                        <details>
-                            <summary>head section (this file)</summary>
-
-                            <pre>
-    &lt;link rel="stylesheet" href="../css/my_external_stylesheet.css"&gt; </pre>
-                        </details>
-                        <details>
-                            <summary>css/my_external_stylesheet</summary>
-                            <pre>
-    @import url(./myimport.css);
-
-    .mydiv {
-        border: 3px solid green;
-        font-size: 2em;
-    } </pre>
-                        </details>
-                        <details>
-                            <summary>css/myimport.css</summary>
-                            <pre>
-    .mydiv {
-        background-color: lightgoldenrodyellow;
-        text-align: center;
-    } </pre>
-                        </details>
-                    </div><!--content-->
+                    <h2>Mnemonic</h2>
+                    <div class="content"></div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref">
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@import">MDN: &commat;import</a>
-                    </div><!--content-->
+                    <div class="content ref"></div><!--content-->
                 </div>
             </div>
         </div>
@@ -180,11 +105,11 @@
         <!--  Templates -->
 
 
-        <template id="prevPageTemplate">pseudo_element</template> <!--PREVIOUS PAGE-->
+        <template id="prevPageTemplate">pseudo_class_selector_examples</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">commat_import (@import)</template> <!--PAGE TITLE-->
+        <template id="pageTitleTemplate">pseudo_element</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">table</template><!--NEXT PAGE-->
+        <template id="nextPageTemplate">commat_import</template><!--NEXT PAGE-->
 
 
     </div>
