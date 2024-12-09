@@ -48,6 +48,12 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .outer {
+            background-image: url("../images/market100_75.png");
+            background-repeat: repeat repeat;
+            text-align: center;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +91,188 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>background-repeat</code> CSS property sets how background images are repeated
+                            </li>
+                            <li>
+                                A background image can be repeated along the
+                                horizontal and vertical axes, or not repeated at all
+                            </li>
+                            <li>
+                                The property accepts two <code>repeat-style</code>keyterms, or one keyterm as a
+                                shorthand for the two values
+                            </li>
+                            <li>
+                                When two values are provided, the first value defines the horizontal repetition behavior
+                                and the second value defines the vertical behavior
+                            </li>
+                            <li>
+                                Property values can be used to repeat
+                                <ol>
+                                    <li>only horizonatally</li>
+                                    <li>only vertically</li>
+                                    <li>not at all</li>
+                                </ol>
+                            </li>
+                            <li>
+                                The default value is <code>repeat repeat</code>
+                            </li>
+                            <li>
+                                With this value, the background image maintains its
+                                intrinsic aspect ratio, repeating both horizontally and vertically to cover the entire
+                                background paint area,
+                                with edge images being clipped to the size of the element
+                            </li>
+                            <li>
+                                Which edges clipped depends on the value of the
+                                <code>background-position</code>
+                            </li>
+                        </ol>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    </div><!--content-->
+                    <h2 class="example">Values</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>repeat</code>
+                            <li>The default value</li>
+                            <li>The image is repeated as many times as needed to cover the entire background image
+                                painting area, with the edge image being clipped if the dimension of the painting area
+                                is not a multiple of the dimension of your background image</li>
+                            </li>
+                            <li>
+                                <code>no-repeat</code>
+                                <ol>
+                                    <li>The image is not repeated (and hence the background image painting area will not
+                                        necessarily be entirely covered)</li>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                                    <li>The position of the non-repeated background image is defined by the
+                                        background-position CSS property</li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>space</code>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            <li>
+                                The image is repeated as much as possible without clipping
+                            </li>
+
+                            <li>
+                                The first and last images are pinned to either side of the element, and whitespace is
+                                distributed evenly between the images
+                            </li>
+
+                            <li>
+                                The <code>background-position</code> property is ignored unless only one image can be
+                                displayed without clipping
+                            </li>
+
+                            <li>
+                                The only case where clipping happens using space is when there isn't enough room to
+                                display one image
+                            </li>
+
+                            </li>
+                            <li>
+                                <code>round</code>
+
+                            <li>
+                                As the allowed space increases in size, the repeated images <strong>will stretch
+                                    (leaving no gaps)</strong> until there is room for another one to be added
+                            </li>
+
+
+                            <li>This is the only <code>repeat-style</code> value that can lead to the distortion of the
+                                background image's aspect ratio, which will occur if the aspect ratio of the background
+                                image differs from the aspect ratio of the background paint area</li>
+                            </li>
+                            <li>
+                                <code>repeat-x</code>
+                                <ol>
+                                    <li>
+                                        <strong>Shorthand for <code>repeat no-repeat</code></strong>
+                                    </li>
+                                    <li>
+                                        The <code>background image</code> repeats <b>horizontally only</b>, with the
+                                        edge image being
+                                        clipped if the width of the paint area is not a multiple of the background
+                                        image's width
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>repeat-y</code>
+                                <ol>
+                                    <li>
+                                        <strong>Shorthand for <code>no-repeat repeat</code></strong>
+                                    </li>
+                                    <li>
+                                        The <code>background image</code> repeats vertically only, with the edge image
+                                        being
+                                        clipped if the
+                                        height of the paint area is not a multiple of the background image's height
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+
+                        <div class="outer">
+                            <img src="../images/myOrangeStrip.png" alt="Greem Strip">
+                            <br>
+
+                            <img src="../images/myOrangeStrip.png" alt="Greem Strip">
+
+                        </div>
+
+                        <div class="buttons">
+                            <button id="repeatx">repeat-x</button>
+                            <button id="repeaty">repeat-y</button>
+                            <button id="norepeat">no-repeat</button>
+                            <button id="space">space</button>
+                            <button id="round">round</button>
+                            <button id="repeatrepeat">repeat repeat</button>
+                            <button id="repeatspace">repeat space</button>
+                            <button id="spacerepeat">space repeat</button>
+                            <button id="spaceround">space round</button>
+                            <button id="roundspace">round space</button>
+
+                        </div>
+
+                    </div><!--content-->
+                    <h2 class="example">CSS (inferred)</h2>
+                    <div class="content">
+                        <pre>
+background-repeat: repeat-x;
+
+background-repeat: repeat-y;
+
+background-repeat: no-repeat;
+
+background-repeat: space;
+
+background-repeat: round;
+
+background-repeat: repeat repeat;
+
+background-repeat: space repeat;
+
+backgronund-repeat: space round;
+
+background-repeat: round space; </pre>
+                    </div>
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat">MDN:
+                            background-repeat</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
@@ -128,6 +303,17 @@
         // next page
         var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
         nextPage.setAttribute("href", nextPageURL)
+
+        //buttons
+
+        arr = [["repeatx", "repeat-x"], ["repeaty", "repeat-y"], ["norepeat", "no-repeat"], ["space", "space"], ["round", "round"], ["repeatrepeat", "repeat repeat"], ["repeatspace", "repeat space"], ["spacerepeat", "space repeat"], ["spaceround", "space round"], ["roundspace", "round space"]];
+
+        for (const x of arr) {
+
+            document.getElementById(x[0]).addEventListener('click', function () {
+                document.querySelector('.outer').style.backgroundRepeat = x[1]
+            })
+        }
 
     </script>
 </body>
