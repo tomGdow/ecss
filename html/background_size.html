@@ -48,6 +48,46 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .outer {
+            background-image: url("../images/kitten-small-330.png");
+            background-repeat: repeat no-repeat;
+            height: 30vh;
+            border: 2px solid green;
+            background-position: center;
+            /* background-size: contain; */
+            background-color: blue;
+        }
+
+        .outer2 {
+            background-image: url("../images/kitten-small-330.png");
+            background-repeat: repeat no-repeat;
+            height: 30vh;
+            border: 2px solid green;
+            background-position: center;
+            background-size: contain;
+            background-color: blue;
+        }
+
+        .outer3 {
+            background-image: url("../images/kitten-small-330.png");
+            background-repeat: repeat no-repeat;
+            height: 30vh;
+            border: 2px solid green;
+            background-position: center;
+            background-size: cover;
+            background-color: blue;
+        }
+
+        .outer4 {
+            background-image: url("../images/kitten-small-330.png");
+            background-repeat: repeat no-repeat;
+            height: 30vh;
+            border: 2px solid green;
+            background-position: center;
+            background-size: 33%;
+            background-color: blue;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +125,204 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>background-size</code> CSS property sets the size of the element's background
+                                image
+                            </li>
+                            <li>
+                                The image can be
+                                <ol>
+                                    <li>left to its natural size</li>
+                                    <li>stretched</li>
+                                    <li>constrained to fit the available space</li>
+                                </ol>
+                            </li>
+                            <li>
+                                Spaces not covered by a background image are filled with the
+                                <code>background-color</code> property, and the <code>background color</code> will be
+                                visible behind background images that have transparency/translucency
+                            </li>
+                            <li>
+                                The <code>background-size</code> property is specified in one of the following ways
+                                <ol>
+                                    <li>
+                                        Using the keyword values <code>contain</code> or <code>cover</code>
+                                    </li>
+                                    <li>
+                                        Using a <code>width</code> value only, in which case the <code>height</code>
+                                        defaults to
+                                        <code>auto</code>
+                                    </li>
+                                    <li>
+                                        Using both a <code>width</code> and a <code>height</code> value, in which case
+                                        the first sets the <code>width</code>
+                                        and the
+                                        second
+                                        sets the <code>height</code>
+                                    </li>
+                                    <li>
+                                        Each value
+                                        can be a <code>length</code>, a <code>percentage</code>, or <code>auto</code>
+                                    </li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                </ol>
+                            <li>
+                                To specify the size of multiple background images, <b>separate the value for each one
+                                    with a comma</b>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <h2 class="example">Values</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>contain</code>
+                                <ol>
+                                    <li>
+                                        Scales the image as large as possible within its container without cropping or
+                                        stretching the image
+                                    </li>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                                    <li>If the container is larger than the image, <b>this will result in image
+                                            tiling</b>, unless the background-repeat property is set to no-repeat</li>
+                                </ol>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            </li>
+                            <li>
+                                <code>cover</code>
+                                <ol>
+                                    <li>Scales the image (while preserving its ratio) to the smallest possible size to
+                                        fill the
+                                        container</li>
+
+                                    <li>
+                                        That is: both its <code>height</code> and <code>width</code> completely cover
+                                        the container, leaving no empty
+                                        space</li>
+
+                                    <li>
+                                        If the proportions of the background differ from the element, the image is
+                                        cropped
+                                        either vertically or horizontally
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>auto</code>
+                                <ol>
+                                    <li>
+                                        Scales the background image in the corresponding direction such that its
+                                        intrinsic proportions are maintained
+                                    </li>
+
+                                </ol>
+                            </li>
+                            <li>
+                                <code>length</code>
+                                <ol>
+                                    <li>
+                                        Stretches the image in the corresponding dimension to the specified length
+                                    </li>
+                                    <li>
+                                        Negative values are not allowed
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>percentage</code>
+                                <ol>
+                                    <li>
+                                        Stretches the image in the corresponding dimension to the specified percentage
+                                        of the background positioning area
+                                    </li>
+
+                                    <li>
+                                        The background positioning area is determined by the value of
+                                        <code>background-origin</code> (by default, the padding box)
+                                    </li>
+
+                                    <li>
+                                        However, if the background's <code>background-attachment</code> value is fixed,
+                                        the positioning area is instead the entire viewport
+                                    </li>
+
+                                    <li>
+                                        Negative values are not allowed
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <h2 class="example">Intrinsic Dimensions and Proportions</h2>
+                    <div class="content">
+                        The computation of values depends on the image's
+                        <ol>
+                            <li><b></b>intrinsic dimensions (<code>width</code> and <code>height)</code></li>
+                            <li><b>intrinsic proportions</b> (<code>width-to-height</code> ratio)</li>
+                        </ol>
+                        These attributes are as follows:
+
+                        <ol>
+
+                            <li>
+                                A <code>bitmap image</code> (such as JPG) always has <code>intrinsic dimensions</code>
+                                and <code>proportions</code>
+                            </li>
+
+                            <li>A <code>vector image</code> (such as SVG) does not necessarily have
+                                <code>intrinsic dimensions</code>
+                                <ol>
+                                    <li>
+                                        If it has both <code>horizontal</code> and <code>vertical</code>
+                                        <code>intrinsic dimensions</code>, it also has
+                                        <code>intrinsic proportions</code>
+                                    </li>
+                                    <li>
+                                        If it has no dimensions or only one dimension, it may or may
+                                        not have proportions
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                CSS gradients have <b>no intrinsic dimensions or intrinsic proportions</b>
+                            </li>
+
+                        </ol>
+                    </div>
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+
+                        <div class="outer"></div>
+                    </div><!--content-->
+
+                    <h2 class="example">Example 2 (Contain)</h2>
+                    <div class="content">
+
+                        <div class="outer2"></div>
+                    </div><!--content-->
+
+                    <h2 class="example">Example 3 (Cover)</h2>
+                    <div class="content">
+
+                        <div class="outer3"></div>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Example 4 (33%)</h2>
+                    <div class="content">
+
+                        <div class="outer4"></div>
+
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-size#contain">MDN:
+                            background-size</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
