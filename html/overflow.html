@@ -48,6 +48,65 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .no_overflow {
+            width: 100%;
+            height: 20vh;
+            background-color: lightgoldenrodyellow;
+            border: 2px solid var(--primary-green);
+            padding: 1em;
+        }
+
+        .overflow_visible {
+            width: 100%;
+            height: 20vh;
+            overflow: visible;
+            background-color: lightgoldenrodyellow;
+            border: 2px solid var(--primary-green);
+            padding: 1em;
+        }
+
+        .overflow_scroll {
+            width: 100%;
+            overflow: scroll;
+            height: 20vh;
+            background-color: lightgoldenrodyellow;
+            border: 2px solid var(--primary-green);
+            padding: 1em;
+        }
+
+        .overflow_hidden {
+            width: 100%;
+            overflow: hidden;
+            height: 20vh;
+            background-color: lightgoldenrodyellow;
+            border: 2px solid var(--primary-green);
+            padding: 1em;
+        }
+
+        .overflow_clip {
+            width: 100%;
+            overflow: clip;
+            overflow-clip-margin: 2em;
+            height: 20vh;
+            background-color: lightgoldenrodyellow;
+            border: 2px solid var(--primary-green);
+            padding: 1em;
+        }
+
+        .overflow_auto {
+            width: 100%;
+            overflow: auto;
+            height: 20vh;
+            background-color: lightgoldenrodyellow;
+            border: 2px solid var(--primary-green);
+            padding: 1em;
+        }
+
+        summary {
+            color: var(--primary-green);
+            margin-left: 3%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +144,298 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        The overflow CSS shorthand property sets the desired behavior when content does not fit in the
+                        element's padding box
+                        (overflows) in the horizontal and/or vertical direction
+                    </div><!--content-->
 
                     <h2>Example</h2>
                     <div class="content"></div><!--content-->
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li><code>overflow</code> is a shorthand for the following CSS properties:
+                                <ol>
+                                    <li><code>overflow-x</code></li>
+                                    <li><code>overflow-y</code></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+
+                    <h2 class="example">Values</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>visible</code>
+                                <ol>
+                                    <li>Overflow content is not clipped and may be visible outside the element's padding
+                                        box
+                                    </li>
+                                    <li>The element box is not a scroll container</li>
+                                    <li>This is the default value of the overflow property</li>
+
+                                </ol>
+                            </li>
+                            <li>
+                                <code>hidden</code>
+                                <ol>
+                                    <li>
+                                        Overflow content is clipped at the element's padding box
+                                    </li>
+                                    <li>
+                                        <strong>There are no scroll bars</strong>, and the clipped content is not
+                                        visible
+                                        (i.e., clipped content is hidden), but the content still exists
+                                    </li>
+                                    <li>
+                                        User agents do not add scroll bars and also do not allow users to view the
+                                        content
+                                        outside the clipped region by actions such as dragging on a touch screen or
+                                        using
+                                        the scroll wheel on a mouse
+                                    </li>
+                                    <li>
+                                        The content can be scrolled programmatically (for example, by linking to anchor
+                                        text, by tabbing to a hidden yet focusable element, or by setting the value of
+                                        the
+                                        scrollLeft property or the scrollTo() method), in which case the element box is
+                                        a
+                                        scroll container
+                                    </li>
+
+                                </ol>
+                            <li>
+                                <code>clip</code>
+                                <ol>
+                                    <li>Overflow content is clipped at the element's <b>overflow clip edge</b> that is
+                                        defined using the <code>overflow-clip-margin property</code></li>
+
+                                    <li>As a result, content overflows the element's padding box by the
+                                        <code>length</code>
+                                        value of <code>overflow-clip-margin</code> or by <code></code>{0px} if not set
+                                    </li>
+
+                                    <li>Overflow content outside the clipped region is not visible, user agents do not
+                                        add a
+                                        scroll bar, and programmatic scrolling is also not supported</li>
+
+                                    <li>No new formatting context is created</li>
+                                    <li>To establish a formatting context, use overflow: clip along with display:
+                                        flow-root
+                                    </li>
+
+                                    <li>The element box is not a scroll container</li>
+
+                                </ol>
+                            </li>
+                            <li>
+                                <code>scroll</code>
+                                <ol>
+                                    <li>
+                                        Overflow content is clipped at the element's padding box, and overflow content
+                                        can be scrolled into view using scroll bars</li>
+
+                                    <li>
+                                        User agents display scroll bars whether or not any content is overflowing, so in
+                                        the horizontal and vertical directions if the value applies to both directions
+                                    </li>
+
+                                    <li>
+                                        The use of this keyword, therefore, can prevent scroll bars from appearing and
+                                        disappearing as content changes Printers may still print overflow content
+                                    </li>
+
+                                    <li>The element box is a scroll container</li>
+
+                                </ol>
+                            </li>
+                            <li>
+                                <code>auto</code>
+                                <ol>
+                                    <li>
+                                        Overflow content is clipped at the element's padding box, and overflow content
+                                        can be
+                                        scrolled into view using scroll bars
+                                    </li>
+                                    <li>
+                                        Unlike scroll, user agents display scroll bars only if the content is
+                                        overflowing
+                                    </li>
+                                    <li>
+                                        If content fits inside the element's padding box, it looks the same as with
+                                        visible but
+                                        still establishes a new formatting context
+                                    </li>
+                                    <li>The element box is a scroll container</li>
+
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <h2 class="example">Example 1 (Default)</h2>
+                    <div class="content">
+                        <div class="no_overflow">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores incidunt enim fugit
+                            velit reiciendis ex iste
+                            explicabo voluptates eaque possimus, quas nobis odio dolorum natus iusto quia vero tempora
+                            sit quidem. Cupiditate
+                            est consequuntur fuga, qui incidunt quia soluta, eveniet natus nobis, reprehenderit
+                            veritatis a nulla officiis
+                            libero laudantium corrupti. Consequuntur dolor nostrum est a error recusandae tempore
+                            voluptate debitis dignissimos
+                            possimus iusto atque aliquam molestiae quisquam eveniet odit sapiente aut quidem repellat,
+                            doloribus explicabo in
+                            culpa tempora. Numquam voluptatum velit et ab consequatur magni fugit voluptate inventore
+                            amet, dolor aliquid, iure
+                            recusandae fugiat minima ex quae error doloribus quidem? The end
+                        </div>
+                        <div class="no_overflow">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, numquam. The end
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Example 2 (Visible)</h2>
+                    <div class="content">
+                        <div class="overflow_visible">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores incidunt enim fugit
+                            velit reiciendis ex iste
+                            explicabo voluptates eaque possimus, quas nobis odio dolorum natus iusto quia vero tempora
+                            sit quidem. Cupiditate
+                            est consequuntur fuga, qui incidunt quia soluta, eveniet natus nobis, reprehenderit
+                            veritatis a nulla officiis
+                            libero laudantium corrupti. Consequuntur dolor nostrum est a error recusandae tempore
+                            voluptate debitis dignissimos
+                            possimus iusto atque aliquam molestiae quisquam eveniet odit sapiente aut quidem repellat,
+                            doloribus explicabo in
+                            culpa tempora. Numquam voluptatum velit et ab consequatur magni fugit voluptate inventore
+                            amet, dolor aliquid, iure
+                            recusandae fugiat minima ex quae error doloribus quidem? The end
+                        </div>
+                        <div class="overflow_visible">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, numquam. The end
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Example 3 (Scroll)</h2>
+                    <div class="content">
+                        <div class="overflow_scroll">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores incidunt enim fugit
+                            velit reiciendis ex iste
+                            explicabo voluptates eaque possimus, quas nobis odio dolorum natus iusto quia vero
+                            tempora
+                            sit quidem. Cupiditate
+                            est consequuntur fuga, qui incidunt quia soluta, eveniet natus nobis, reprehenderit
+                            veritatis a nulla officiis
+                            libero laudantium corrupti. Consequuntur dolor nostrum est a error recusandae tempore
+                            voluptate debitis dignissimos
+                            possimus iusto atque aliquam molestiae quisquam eveniet odit sapiente aut quidem
+                            repellat,
+                            doloribus explicabo in
+                            culpa tempora. Numquam voluptatum velit et ab consequatur magni fugit voluptate
+                            inventore
+                            amet, dolor aliquid, iure
+                            recusandae fugiat minima ex quae error doloribus quidem? The end
+                        </div>
+                        <div class="overflow_scroll">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, numquam. The end
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Example 4 (Hidden)</h2>
+                    <div class="content">
+                        <div class="overflow_hidden">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores incidunt enim fugit
+                            velit reiciendis ex iste
+                            explicabo voluptates eaque possimus, quas nobis odio dolorum natus iusto quia vero
+                            tempora
+                            sit quidem. Cupiditate
+                            est consequuntur fuga, qui incidunt quia soluta, eveniet natus nobis, reprehenderit
+                            veritatis a nulla officiis
+                            libero laudantium corrupti. Consequuntur dolor nostrum est a error recusandae tempore
+                            voluptate debitis dignissimos
+                            possimus iusto atque aliquam molestiae quisquam eveniet odit sapiente aut quidem
+                            repellat,
+                            doloribus explicabo in
+                            culpa tempora. Numquam voluptatum velit et ab consequatur magni fugit voluptate
+                            inventore
+                            amet, dolor aliquid, iure
+                            recusandae fugiat minima ex quae error doloribus quidem? The end
+                        </div>
+                        <div class="overflow_hidden">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, numquam. The end
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Example 5 (overflow-clip)</h2>
+                    <div class="content">
+                        <div class="overflow_clip">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores incidunt enim fugit
+                            velit reiciendis ex iste
+                            explicabo voluptates eaque possimus, quas nobis odio dolorum natus iusto quia vero
+                            tempora
+                            sit quidem. Cupiditate
+                            est consequuntur fuga, qui incidunt quia soluta, eveniet natus nobis, reprehenderit
+                            veritatis a nulla officiis
+                            libero laudantium corrupti. Consequuntur dolor nostrum est a error recusandae tempore
+                            voluptate debitis dignissimos
+                            possimus iusto atque aliquam molestiae quisquam eveniet odit sapiente aut quidem
+                            repellat,
+                            doloribus explicabo in
+                            culpa tempora. Numquam voluptatum velit et ab consequatur magni fugit voluptate
+                            inventore
+                            amet, dolor aliquid, iure
+                            recusandae fugiat minima ex quae error doloribus quidem? The end
+                        </div>
+                        <div class="overflow_clip">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, numquam. The end
+                        </div>
+                        <details>
+                            <summary>CSS</summary>
+                            <pre>
+.overflow_clip {
+    width: 100%;
+    overflow: clip;
+    overflow-clip-margin: 2em;
+    height: 20vh;
+}
+                            </pre>
+                        </details>
+                    </div><!--content-->
+
+
+                    <h2 class="example">Example 6 (overflow-auto)</h2>
+                    <div class="content">
+                        <div class="overflow_auto">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores incidunt enim fugit
+                            velit reiciendis ex iste
+                            explicabo voluptates eaque possimus, quas nobis odio dolorum natus iusto quia vero
+                            tempora
+                            sit quidem. Cupiditate
+                            est consequuntur fuga, qui incidunt quia soluta, eveniet natus nobis, reprehenderit
+                            veritatis a nulla officiis
+                            libero laudantium corrupti. Consequuntur dolor nostrum est a error recusandae tempore
+                            voluptate debitis dignissimos
+                            possimus iusto atque aliquam molestiae quisquam eveniet odit sapiente aut quidem
+                            repellat,
+                            doloribus explicabo in
+                            culpa tempora. Numquam voluptatum velit et ab consequatur magni fugit voluptate
+                            inventore
+                            amet, dolor aliquid, iure
+                            recusandae fugiat minima ex quae error doloribus quidem? The end
+                        </div>
+                        <div class="overflow_auto">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, numquam. The end
+                        </div>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow">MDN: overflow</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
