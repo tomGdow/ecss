@@ -48,6 +48,16 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        div.mdn-box {
+            display: block;
+            margin: auto;
+            width: 50%;
+        }
+
+        dt {
+            font-weight: bold;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +95,243 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <dl>
+                            <dt>Box model</dt>
+                            <dd>
+                                <blockquote cite="https://css-tricks.com/the-css-box-model/">
+                                    Every element in web design is a retangular box
+                                    (<cite>CSS Tricks</cite>)
+                                </blockquote>
+                            </dd>
+                        </dl>
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2>Standard Box Model (MDN Diagram)</h2>
+                    <div class="content">
+                        <img src="../images/box_model_mdn.png" alt="box model picture" width="75%">
+                    </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2>Size of Box</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>size</code>
+                                <ol>
+                                    <li>
+                                        <code>width</code> <br>
+                                        <pre>
+width + padding-left + padding-right + border-left + border-right
+                                        </pre>
+                                    </li>
+                                    <li>
+                                        <code>height</code> <br>
+                                        <pre>
+height + padding-top + padding-bottom + border-top + border-bottom
+                                        </pre>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2>Parts of Box</h2>
+                    <div class="content">
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                        <ol>
+                            <li><code>Content box</code>
+                                <ol>
+                                    <li>
+                                        The area where your content is displayed
+
+                                    </li>
+                                    <li>
+                                        Size it using properties like <code>inline-size</code> and
+                                        <code>block-size</code> or <code>width</code>
+                                        and <code>height</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>Padding box</code>
+                                <ol>
+                                    <li>
+                                        The <code>padding</code> sits around the content as <code>white space</code>
+                                    </li>
+                                    <li>
+                                        Size it using <code>padding</code> and related properties
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>Border box</code>
+                                <ol>
+                                    <li>
+                                        The <code>border box</code> wraps the content and any padding; size it using
+                                        border and related properties
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>Margin box</code>
+                                <ol>
+                                    <li>The <code>margin</code> is the outermost layer, wrapping the
+                                        <code>content</code>, <code>padding</code>, and border as whitespace between
+                                        this box and other elements
+                                    </li>
+                                    <li>Size it using <code>margin</code> and related properties</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <h2 class="example">Block and inline boxes</h2>
+                    <div class="content">
+
+                        Boxes have an <code>inner display</code> type and an <code>outer display</code> type
+                        <h3>Outer Display of Block</h3>
+
+                        If a box has an outer display type of <code>block</code> then:
+                        <ol>
+                            <li>
+                                The box will break onto a new line
+                            </li>
+                            <li>
+                                The <code>width</code> and <code>height</code> properties are respected
+                            </li>
+                            <li>
+                                <code>Padding</code>, <code>margin</code> and <code>border</code> will cause other
+                                elements to be pushed away from the box
+                            </li>
+                            <li>
+                                If <code>width</code> is not specified, the box will extend in the inline direction to
+                                fill the space
+                                available in its container
+                            </li>
+
+                            <li>
+                                In most cases, the box will become as wide as its container, filling up 100% of the
+                                space available
+                            </li>
+                            <li>
+                                Some HTML elements, such as <code>h1</code> and <code>p</code>, use block as their outer
+                                display type by default
+                            </li>
+                        </ol>
+                        <h3>Outer Display of Inline</h3>
+                        If a box has an outer display type of <code>inline</code>, then:
+
+                        <ol>
+                            <li>The box will not break onto a new line</li>
+
+                            <li>
+                                The <code>width</code> and <code>height</code> properties will not apply
+                            </li>
+                            <li>
+                                <code>Top</code> and <code>bottom</code> <code>padding</code>, <code>margins</code>, and
+                                <code>borders</code> will apply but will not cause other inline boxes to move away from
+                                the box
+                            </li>
+
+                            <li>
+                                <code>Left</code> and <code>right</code> <code>padding</code>, <code>margins</code>, and
+                                <code>borders</code> will apply and will cause other inline boxes to move away from the
+                                box
+                            </li>
+
+                            <li>
+                                Some HTML elements, such as <code>a</code>, <code>span</code>, <code>em</code> and
+                                <code>strong</code> use inline as their outer display type by default
+                            </li>
+
+                        </ol>
+                    </div><!--content-->
+                    <h2 class="example">Inner Display type</h2>
+                    <div class="content">
+                        <ol>
+
+                            <li>Boxes also have an inner display type, which dictates how elements inside that box are
+                                laid
+                                out</li>
+
+                            <li>
+                                Block and inline layout is the default way things behave on the web
+                            </li>
+
+                            <li>
+                                By default and without any other instruction, the elements inside a box are also laid
+                                out in
+                                normal flow and behave as block or inline boxes
+                            </li>
+
+                            <li>
+                                You can change the inner display type for example by setting
+                                <br><code>display: flex;</code>
+                            </li>
+
+                            <li>
+                                The element will still use the outer display type <code>block</code> but this changes
+                                the inner
+                                display
+                                type to <code>flex</code>
+                            </li>
+
+                            <li>
+                                Any direct children of this box will become <code>flex items</code> and behave according
+                                to the Flexbox specification
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <h2 class="example">Inline-size and Block-size</h2>
+                    <div class="content">
+                        <h3>Inline size</h3>
+                        <ol>
+                            <li>
+                                The <code>inline-size</code> CSS property defines <b>the horizontal or vertical size</b>
+                                of an element's block, depending on its writing
+                                mode
+                            </li>
+                            <li>
+                                It corresponds to <b>either the width or the height property</b>, depending on the value
+                                of writing-mode
+                            </li>
+                            <li>
+                                <ol>
+                                    <li>
+
+                                        If the writing mode is <b>vertically oriented</b>, the value of
+                                        <code>inline-size</code> relates to
+                                        the <b>height</b> of
+                                        the element;
+                                    </li>
+                                    <li>
+
+                                        If the writing mode is <b>horizontally oriented</b>, the value of
+                                        <code>inline-size</code> relates to
+                                        the <b>width</b> of
+                                        the element;
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+
+
+                        otherwise, it
+                        relates to the width of the element.
+
+                        A related property is block-size, which defines the other dimension of the element.
+
+                    </div>
+                    <h2 class="example">References</h2>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model">MDN Box Model</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://css-tricks.com/the-css-box-model/">CSS Tricks: The CSS Box Model</a>
+                    </div>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">MDN:
+                            Box Model Tutorial</a>
+                    </div>
                 </div>
             </div>
         </div>
