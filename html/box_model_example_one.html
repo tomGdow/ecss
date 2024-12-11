@@ -48,6 +48,31 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .box-container {
+            border: 2px solid lightgoldenrodyellow;
+            height: 20vh;
+            margin-top: 1vh;
+        }
+
+        .box {
+            width: 50%;
+            border: solid var(--primary-green);
+            border-width: 10px 100px;
+            height: 10vh;
+            margin: auto;
+            text-align: center;
+        }
+
+        .box2 {
+            width: 50%;
+            border: solid var(--primary-green);
+            border-width: 10px 100px;
+            margin: auto;
+            text-align: center;
+            box-sizing: border-box;
+
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +110,79 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>The alternative box model (example 2) has <br>
+                                <code>box-sizing: border-box;</code>
+                            </li>
+                            <li><code>margin</code> does not contribute to <code>box size</code></li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Standard Box Model</h2>
+                    <div class="content">
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="box-container">
+                            <div class="box">
+                                hello
+                            </div>
+                        </div>
+                    </div><!--content-->
+                    <h2 class="example">Alternate Box Model</h2>
+                    <div class="content">
+                        <div class="box-container">
+                            <div class="box2">
+                                hello
+                            </div>
+                        </div>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">CSS</h2>
+                    <div class="content">
+                        <pre>
+    .box-container {
+        border: 2px solid lightgoldenrodyellow;
+        height: 20vh;
+        margin-top: 1vh;
+    }
+
+    .box {
+        width: 50%;
+        border: solid var(--primary-green);
+        border-width: 10px 100px;
+        height: 10vh;
+        margin: auto;
+        text-align: center;
+    }
+
+    .box2 {
+        width: 50%;
+        border: solid var(--primary-green);
+        border-width: 10px 100px;
+        margin: auto;
+        text-align: center;
+        box-sizing: border-box;
+
+    }
+                        </pre>
+                    </div><!--content-->
+
+                    <h2 class="example">HTML</h2>
+                    <div class="content">
+                        <pre>
+    &lt;div class="box-container"&gt;
+        &lt;div class="box"&gt;
+            hello
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="box-container"&gt;
+        &lt;div class="box2"&gt;
+            hello
+        &lt;/div&gt;
+    &lt;/div&gt;
+                        </pre>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
