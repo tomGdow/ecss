@@ -48,6 +48,27 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .myclass {
+            border: 2px solid var(--primary-green);
+            padding-top: 30px;
+            padding-left: 100px;
+            margin-left: 100px;
+        }
+
+        .highlight1 {
+            border: solid blue;
+            background-color: gray;
+            color: white;
+            border-width: 0 0.2em 0 0;
+            padding-left: 0.5em;
+
+        }
+
+        .highlight2 {
+            background-color: lightgoldenrodyellow;
+            color: gray;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,31 +106,76 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        Outer display type of <code>inline</code>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                        <ol>
+                            <li>The box will not break onto a new line</li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            <li>
+                                The <code>width</code> and <code>height</code> properties will not apply
+                            </li>
+                            <li class="highlight1">
+                                <code>Top</code> and <code>bottom</code> <code>padding</code>, <code>margins</code>, and
+                                <code>borders</code> will apply but will not cause other inline boxes to move away from
+                                the box
+                            </li>
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
-                </div>
+                            <li class="highlight1 highlight2">
+                                <code>Left</code> and <code>right</code> <code>padding</code>, <code>margins</code>, and
+                                <code>borders</code> will apply and will cause other inline boxes to move away from the
+                                box
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae harum quasi natus.
+                        Illo, molestias
+                        voluptatibus. Eligendi illo minus error.
+                        hello this is me <span class="myclass">I am here</span>
+                    </div>
+
+                </div><!--content-->
+
+                <h2 class="example">CSS</h2>
+                <div class="content">
+                    <pre>
+.myclass {
+    border: 2px solid var(--primary-green);
+    padding-top: 30px;
+    padding-left: 100px;
+    margin-left: 100px;
+}
+                    </pre>
+                </div><!--content-->
+
+                <h2 class="example">HTML</h2>
+                <div class="content">
+                    <pre>
+&lt;div class="content"&gt;
+    Lorem ipsum &hellip;
+    hello this is me &lt;span class="myclass"&gt;I am here&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+                </div><!--content-->
+
+                <h2>References</h2>
+                <div class="content ref"></div><!--content-->
             </div>
         </div>
+    </div>
 
-        <!--  Templates -->
+    <!--  Templates -->
 
 
-        <template id="prevPageTemplate">box_model_example_one</template> <!--PREVIOUS PAGE-->
+    <template id="prevPageTemplate">box_model_example_one</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">box_model_example_two</template> <!--PAGE TITLE-->
+    <template id="pageTitleTemplate">box_model_example_two</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">box_model_example_three</template><!--NEXT PAGE-->
+    <template id="nextPageTemplate">box_model_example_three</template><!--NEXT PAGE-->
 
 
     </div>
