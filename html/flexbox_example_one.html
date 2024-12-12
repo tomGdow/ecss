@@ -48,6 +48,24 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        section {
+            display: flex;
+            flex-direction: row;
+        }
+
+        article {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        article:nth-of-type(odd) {
+            background-color: lightgoldenrodyellow;
+        }
+
+        article:nth-of-type(even) {
+            background-color: lightgray;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,13 +106,77 @@
                     <div class="content"></div><!--content-->
 
                     <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                        <section>
+                            <article>
+                                <h2>First Article</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae repudiandae aperiam
+                                necessitatibus commodi natus quae mollitia assumenda optio, quia quidem.
+                            </article>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            <article>
+                                <h2>Second Article</h2>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora magni, neque iste
+                                itaque aliquam reprehenderit rerum. Excepturi eligendi ex laboriosam.
+                            </article>
+
+                            <article>
+                                <h2>Third Article</h2>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse deleniti vel explicabo!
+                                Ea nulla laboriosam veritatis, blanditiis fuga deserunt quam?
+                            </article>
+
+                        </section>
+
+                    </div><!--content-->
+
+                    <h2 class="example">HTML</h2>
+                    <div class="content">
+                        <pre>
+&lt;section&gt;
+    &lt;article&gt;
+        &lt;h2&gt;First Article&lt;/h2&gt;
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae repudiandae aperiam
+        necessitatibus commodi natus quae mollitia assumenda optio, quia quidem.
+    &lt;/article&gt;
+
+    &lt;article&gt;
+        &lt;h2&gt;Second Article&lt;/h2&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora magni, neque iste
+        itaque aliquam reprehenderit rerum. Excepturi eligendi ex laboriosam.
+    &lt;/article&gt;
+
+    &lt;article&gt;
+        &lt;h2&gt;Third Article&lt;/h2&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse deleniti vel explicabo!
+        Ea nulla laboriosam veritatis, blanditiis fuga deserunt quam?
+    &lt;/article&gt;
+
+                        </pre>
+                    </div><!--content-->
+
+                    <h2 class="example">CSS</h2>
+                    <div class="content">
+                        <pre>
+section {
+    display: flex;
+    flex-direction: row;
+}
+
+article {
+    padding: 10px;
+    margin: 10px;
+}
+
+article:nth-of-type(odd) {
+    background-color: lightgoldenrodyellow;
+}
+
+article:nth-of-type(even) {
+    background-color: lightgray;
+} </pre>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
