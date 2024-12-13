@@ -48,6 +48,51 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .indent {
+            text-indent: 1em;
+        }
+
+        .padtb {
+            display: block;
+            padding: 1em 0;
+        }
+
+        p.td_example {
+            text-decoration: underline;
+        }
+
+        p.td_example>em {
+            text-decoration: none;
+            text-decoration: overline;
+        }
+
+        p.strikethru {
+            text-decoration-line: line-through;
+            text-decoration-thickness: 0.4em;
+            text-decoration-color: green;
+            text-decoration-style: solid;
+            font-size: 2em;
+            background-color: lightgoldenrodyellow;
+            text-align: center;
+        }
+
+        summary {
+            color: var(--primary-green);
+            padding-left: 3%;
+        }
+
+        h1.ecollege {
+            all: revert;
+            text-decoration: overline red wavy;
+        }
+
+        h2.ecollege {
+            all: revert;
+            text-decoration-color: navy;
+            text-decoration-style: double;
+            text-decoration-line: underline;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +130,190 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The text-decoration shorthand CSS property sets the appearance of decorative lines on
+                                text
+                            </li>
+                            <li>
+                                It is a shorthand for
+                                <ol>
+                                    <li><code>text-decoration-line</code></li>
+                                    <li><code>text-decoration-color</code></li>
+                                    <li><code>text-decoration-style</code></li>
+                                    <li>(newer) <code>text-decoration-thickness</code></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+
+                    <h2 class="example">text-decoration-line</h2>
+                    <div class="content">
+                        <ol>
+                            <li>The <code>text-decoration-line</code> CSS property sets the kind of decoration that is
+                                used on text in an element, such as an
+                                <code>underline</code> or <code>overline</code>
+                            </li>
+
+                            <li>
+                                <code>values</code>
+                                <ol>
+                                    <li>
+                                        <code>underline</code>
+                                    </li>
+                                    <li><code>overline</code></li>
+                                    <li><code>line-through</code></li>
+                                </ol>
+                            </li>
+                            <li>mnemonic: all have <code>line</code> keyword!</li>
+                        </ol>
+
+
+                    </div><!--content-->
+                    <h2 class="example">text-decoration-color</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>text-decoration-color</code> CSS property sets the color of decorations added
+                                to text by <code>text-decoration-line</code>
+                            </li>
+                        </ol>
+
+                    </div><!--content-->
+                    <h2 class="example">text-decoration-style</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>text-decoration-style</code> CSS property sets the style of the lines
+                                specified by <code>text-decoration-line</code>
+                            </li>
+                            <li>
+                                The style applies
+                                to all lines that are set with <code>text-decoration-line</code>
+                            </li>
+                            <li>
+                                <code>values</code>
+                                <ol>
+                                    <li><code>solid</code></li>
+                                    <li><code>double</code></li>
+                                    <li><code>dotted</code></li>
+                                    <li><code>dashed</code></li>
+                                    <li><code>wavy</code></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+                    <h2 class="example">text-decoration-thickness</h2>
+                    <div class="content">
+                        <ol>
+                            <li>The <code>text-decoration-thickness</code> CSS property sets the stroke thickness of the
+                                decoration line that is used on text in an
+                                element, such as a <code>line-through</code>, <code>underline</code>, or
+                                <code>overline</code>
+                            </li>
+                        </ol>
+                    </div>
 
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                Text decorations are drawn across descendant text elements
+                            </li>
+                            <li>This means that if an element specifies a text decoration, then a child element can't
+                                remove the decoration
+                            </li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            <li>For example, in the markup
+                                <code class="indent padtb">
+                                    &lt;p&gt;This text has &lt;em&gt;some emphasized words&lt;/em&gt; in it&lt;/p&gt;</code>
+
+
+                                the style rule
+                                <code class="indent padtb">p { text-decoration: underline; }</code>
+
+                                would cause the entire
+                                paragraph to be underlined
+                            </li>
+
+                            <li>
+                                The style rule <br>
+                                <code class="indent padtb">em { text-decoration: none; } </code>
+
+                                would not cause any change;
+                                the entire paragraph would still be underlined
+                            </li>
+
+                            <li>
+                                However, the rule
+                                <code class="indent padtb">em { text-decoration: overline; }</code>
+                                would cause a second decoration to appear on "some emphasized words"
+                            </li>
+                            <li>
+                                <p class="td_example">
+                                    This text has some <em>emphasized words</em>
+                                </p>
+                            </li>
+
+                            <!-- </li> -->
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">Example One</h2>
+                    <div class="content">
+
+                        <p class="strikethru">
+                            Hello World
+                        </p>
+                        <details>
+                            <summary>CSS</summary>
+                            <pre>
+p.strikethru {
+    text-decoration-line: line-through;
+    text-decoration-thickness: 0.4em;
+    text-decoration-color: green;
+    text-decoration-style: solid;
+    font-size: 2em;
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+} </pre>
+                        </details>
+                    </div><!--content-->
+                    <h2 class="example">Example Two</h2>
+                    <div class="content">
+
+                        <h1 class="ecollege">Working at the Computer</h1>
+                        <h2 class="ecollege">Taking regular breaks</h2>
+                        <details>
+                            <summary>CSS</summary>
+                            <pre>
+
+h1.ecollege {
+    all: revert;
+    text-decoration: overline red wavy;
+}
+
+h2.ecollege {
+    all: revert;
+    text-decoration-color: navy;
+    text-decoration-style: double;
+    text-decoration-line: underline;
+} </pre>
+                        </details>
+                        <h3>Notes</h3>
+                        <ol>
+                            <li>Best viewed on Firefox (but not Safari)</li>
+                            <li>ecollege exam question</li>
+                        </ol>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration">MDN:
+                            text-decoration</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
