@@ -48,6 +48,114 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        .grid-item {
+            background-color: lightgoldenrodyellow;
+            border: 2px solid orange;
+        }
+
+        .one {
+            grid-column: 1 /2;
+            grid-row: 1 / 2;
+        }
+
+        .two {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        .three {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .four {
+            grid-column: 1 /2;
+            grid-row: 1 / 2;
+        }
+
+        .five {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        .six {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .seven {
+            grid-column: 1 /2;
+            grid-row: 1 / 2;
+        }
+
+        .eight {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        .nine {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .ten {
+            grid-column: 1 /2;
+            grid-row: 1 / 2;
+        }
+
+        .eleven {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        .twelve {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .center-one {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center-two {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center-three {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .center-four {
+            display: flex;
+            justify-items: center;
+            align-items: center;
+        }
+
+        summary {
+            color: var(--primary-green);
+            padding-left: 3%;
+        }
+
+        .note {
+            /* background-color: red; */
+            border-right-style: solid;
+            border-color: blue;
+            border-width: 0.4em;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +193,208 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <h3 class="example">Normal</h3>
+                        <div class="wrapper">
+                            <div class="grid-item one">One</div>
+                            <div class="grid-item two">Two</div>
+                            <div class="grid-item three">Three</div>
+                        </div><!--wrapper-->
+                        <hr>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <h2 class="example">flex justify-content align-items</h2>
+                        <div class="wrapper">
+                            <div class="grid-item four center-one">Four</div>
+                            <div class="grid-item five center-one">Five</div>
+                            <div class="grid-item six center-one">Six</div>
+                        </div><!--wrapper-->
+                        <details>
+                            <summary>CSS</summary>
+                            <pre>
+    .center-one {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } </pre>
+                        </details>
+                        <hr>
+                        <h2 class="example">grid justify-content align items</h2>
+                        <div class="wrapper">
+                            <div class="grid-item seven center-two">Seven</div>
+                            <div class="grid-item eight center-two">Eight</div>
+                            <div class="grid-item nine center-two">Nine</div>
+                        </div><!--wrapper-->
+                        <details>
+                            <summary>CSS</summary>
+                            <pre>
+    .center-two {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    } </pre>
+                        </details>
+                        <hr>
+                        <h2 class="example">grid justify-items align-items</h2>
+                        <div class="wrapper">
+                            <div class="grid-item ten center-three">Ten</div>
+                            <div class="grid-item eleven center-three">Eleven</div>
+                            <div class="grid-item twelve center-three">Twelve</div>
+                        </div><!--wrapper-->
+                        <details>
+                            <summary>
+                                CSS
+                            </summary>
+                            <pre>
+    .center-three {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    } </pre>
+                        </details>
+                        <hr>
+                        <h2 class="example">flex justify-items align-items</h2>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                        <div class="wrapper">
+                            <div class="grid-item thirteen center-four">Thirteen</div>
+                            <div class="grid-item fourteen center-four">Fourteen</div>
+                            <div class="grid-item fifteen center-four">Fifteen</div>
+                        </div><!--wrapper-->
+                        <details>
+                            <summary>CSS</summary>
+                            <pre>
+    .center-four {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+    } </pre>
+                        </details>
+                        <h3>Note</h3>
+                        <div class="note">
+                            Note that <code>justify-items</code> has no effect in <code>flexbox</code>
+                        </div>
+                    </div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">HTML</h2>
+                    <div class="content">
+                        <details>
+                            <summary>code
+                            </summary>
+                            <pre>
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+    &lt;div class="wrapper"&gt;
+        &lt;div class="grid-item one"&gt;One&lt;/div&gt;
+        &lt;div class="grid-item two"&gt;Two&lt;/div&gt;
+        &lt;div class="grid-item three"&gt;Three&lt;/div&gt;
+    &lt;/div&gt;&lt;!--wrapper--&gt;
+
+    &lt;div class="wrapper"&gt;
+        &lt;div class="grid-item four center-one"&gt;Four&lt;/div&gt;
+        &lt;div class="grid-item five center-one"&gt;Five&lt;/div&gt;
+        &lt;div class="grid-item six center-one"&gt;Six&lt;/div&gt;
+    &lt;/div&gt;&lt;!--wrapper--&gt;
+    
+    &lt;div class="wrapper"&gt;
+        &lt;div class="grid-item seven center-two"&gt;Seven&lt;/div&gt;
+        &lt;div class="grid-item eight center-two"&gt;Eight&lt;/div&gt;
+        &lt;div class="grid-item nine center-two"&gt;Nine&lt;/div&gt;
+    &lt;/div&gt;&lt;!--wrapper--&gt;
+    &lt;div class="wrapper"&gt;
+        &lt;div class="grid-item ten center-three"&gt;Ten&lt;/div&gt;
+        &lt;div class="grid-item eleven center-three"&gt;Eleven&lt;/div&gt;
+        &lt;div class="grid-item twelve center-three"&gt;Twelve&lt;/div&gt;
+    &lt;/div&gt;&lt;!--wrapper--&gt;
+    </pre>
+                        </details>
+                    </div><!--content-->
+
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>justify-content</code><br>
+
+                                The CSS <code>justify-content</code> property defines how the browser distributes space
+                                between and around content items along the
+                                <ol>
+                                    <li><b>main axis</b> of a <code>flex</code> container</li>
+                                    <li><b>inline axis</b> of a <code>grid</code> container</li>
+                                </ol>
+
+                                <code>Values</code> include
+                                <ol>
+                                    <li><code>start</code></li>
+                                    <li><code>center</code></li>
+                                    <li><code>space-between</code></li>
+                                    <li>
+                                        <code>space-around</code>
+                                    </li>
+                                    <li><code>space-evenly</code></li>
+
+                                </ol>
+
+                            </li>
+                            <li>
+                                <code>align-items</code>
+                                <ol>
+                                    <li>
+                                        The CSS <code>align-items</code> property sets the <code>align-self</code> value
+                                        on all
+                                        direct children as a group
+                                    </li>
+
+                                    <li>
+                                        In <code>flexbox</code>, it controls the alignment of items on the cross axis
+                                    </li>
+
+                                    <li>
+                                        In <code>grid</code> layout, it controls the alignment of items on the
+                                        <code>block axis</code> within their grid areas
+                                    </li>
+
+                                </ol>
+                            </li>
+                            <li>
+                                <code>justify-items</code>
+                                <ol>
+                                    <li>
+                                        The CSS <code>justify-items</code> property defines the default
+                                        <code>justify-self</code> for all items of the box, giving them all a default
+                                        way
+                                        of justifying each box along the appropriate axis
+                                    </li>
+                                    <li>
+                                        In <code>grid</code> layouts, it aligns the items inside their grid areas on the
+                                        <code>inline axis</code>
+                                    </li>
+                                    <li>
+                                        <b>In <code>flexbox</code> layouts, this property is ignored</b>
+                                    </li>
+                                    <li>
+                                        In <code>block-level</code> layouts, it aligns the items inside their containing
+                                        block on the inline axis
+                                    </li>
+                                    <li>
+                                        For <code>absolutely-positioned</code> elements, it aligns the items inside
+                                        their containing block on the inline axis, accounting for
+                                        the offset values of <code>top</code>, <code>left</code>, <code>bottom</code>,
+                                        and <code>right</code>
+                                    </li>
+                                </ol>
+                            </li>
+
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">References</h2>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content">MDN:
+                            justify-content</a>
+                    </div><!--content-->
+
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items">MDN: align-items</a>
+
+                    </div><!--content-->
                 </div>
             </div>
         </div>
