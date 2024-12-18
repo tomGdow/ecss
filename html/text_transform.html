@@ -48,6 +48,24 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .capitalize {
+            text-transform: capitalize;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .lowercase {
+            text-transform: lowercase;
+        }
+
+        summary {
+            color: var(--primary-green);
+            margin-left: 3%;
+            text-transform: capitalize;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +103,115 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The <code>text-transform</code> CSS property specifies how to capitalize an element's
+                                text
+                            </li>
+                            <li>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                                It can be used to make text appear in
+                                <code>all-uppercase</code> or <code>all-lowercase</code>, or with each word capitalized
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Values</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>capitalize</code>
+                                <ol>
+                                    <li>
+                                        Is a keyword that converts the first letter of each word to uppercase
+                                    </li>
+                                    <li>
+                                        Other characters remain unchanged (they retain
+                                        their original case as written in the element's text)
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>uppercase</code> <br>
+                                Is a keyword that converts all characters to <code>uppercase</code>
+                            </li>
+                            <li>
+                                <code>lowercase</code> <br>
+                                Is a keyword that converts all characters to lowercase
+                            </li>
+                            <li>
+                                <code>none</code> <br>
+                                Is a keyword that prevents the case of all characters from being changed
+                            </li>
+                        </ol>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+
+                    </div><!--content-->
+
+                    <h2 class="example">Examples</h2>
+                    <div class="content">
+
+                        <div>
+                            <ol>
+                                <li>
+                                    <p>this is a sentence</p>
+                                </li>
+                                <li>
+                                    <p class="capitalize">this sentence is capitialized</p>
+                                </li>
+                                <li>
+                                    <p class="uppercase">this sentence is uppercase</p>
+                                </li>
+                                <li>
+                                    <p class="lowercase">THIS SENTENCE IS LOWERCASE</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .capitalize {
+        text-transform: capitalize;
+    }
+
+    .uppercase {
+        text-transform: uppercase;
+    }
+
+    .lowercase {
+        text-transform: lowercase;
+    } </pre>
+                        </details>
+                        <details>
+                            <summary>html </summary>
+                            <pre>
+    &lt;ol&gt;
+        &lt;li&gt;
+            &lt;p&gt;this is a sentence&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p class="capitalize"&gt;this sentence is capitialized&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p class="uppercase"&gt;this sentence is uppercase&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p class="lowercase"&gt;THIS SENTENCE IS LOWERCASE&lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ol&gt;</pre>
+                        </details>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform">MDN:
+                            text-transform</a>
+                    </div><!--content-->
                 </div>
             </div>
         </div>
