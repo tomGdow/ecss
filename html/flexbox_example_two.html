@@ -48,6 +48,38 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        article {
+            padding: 10px;
+            margin: 10px;
+            background-color: lightgray;
+            height: auto;
+            min-height: 10vw;
+            width: auto;
+            min-width: 10vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media screen and (min-width: 750px) {
+            section {
+                flex-direction: row;
+                background-color: lightgoldenrodyellow;
+                justify-content: space-around;
+            }
+        }
+
+        summary {
+            color: var(--primary-green);
+            padding-left: 3%;
+            font-variant: small-caps;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +117,86 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <section>
+                            <article>
+                                <h2>First</h2>
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                            </article>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                            <article>
+                                <h2>Second</h2>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            </article>
+
+                            <article>
+                                <h2>Third</h2>
+
+                            </article>
+                        </section>
+                    </div><!--content-->
+
+                    <h2 class="example">Notes</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <b>
+                                    There is a media breakpoint at 750px
+                                </b>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2>Code</h2>
+                    <div class="content">
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    article {
+        padding: 10px;
+        margin: 10px;
+        background-color: lightgray;
+        height: auto;
+        min-height: 10vw;
+        width: auto;
+        min-width: 10vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media screen and (min-width: 750px) {
+        section {
+            flex-direction: row;
+            background-color: lightgoldenrodyellow;
+            justify-content: space-around;
+        }
+    } </pre>
+                        </details>
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;section&gt;
+        &lt;article&gt;
+            &lt;h2&gt;First&lt;/h2&gt;
+        &lt;/article&gt;
+
+        &lt;article&gt;
+            &lt;h2&gt;Second&lt;/h2&gt;
+        &lt;/article&gt;
+
+        &lt;article&gt;
+            &lt;h2&gt;Third&lt;/h2&gt;
+        &lt;/article&gt;
+
+    &lt;/section&gt; </pre>
+                        </details>
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
