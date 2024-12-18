@@ -48,6 +48,55 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .indent {
+            text-indent: 1em;
+        }
+
+        .centered {
+            margin: auto;
+            width: 50%;
+            font-size: 1.2em;
+        }
+
+        .mydiv {
+            visibility: hidden;
+        }
+
+        .mydiv2 {
+            display: none;
+        }
+
+        h3 {
+            text-indent: 3%;
+        }
+
+        summary {
+            color: var(--primary-green);
+            padding-left: 3%;
+            font-variant: small-caps;
+            font-size: 1.2em;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        table {
+            margin: 1em 0;
+        }
+
+        .tvisible col {
+            background-color: lightgoldenrodyellow;
+            visibility: visible;
+        }
+
+        .tcollapse col {
+            background-color: lightgoldenrodyellow;
+            visibility: collapse;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,31 +134,280 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                        <ol>
+                            <li>The <code>visibility</code> CSS property shows or hides an element <b>without changing
+                                    the
+                                    layout of a document</b></li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                            <li>
+                                The property can also hide rows or columns in a <code>table</code>
+                            </li>
+                        </ol>
+                    </div><!--content-->
 
-                    <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
-                </div>
+                    <h2 class="example">Values</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>visible</code><br>
+                                The element box is visible
+                            </li>
+                            <li>
+                                <code>hidden</code>
+                                <ol>
+                                    <li>
+                                        The element box is invisible (not drawn), but still affects layout as normal
+                                    </li>
+
+                                    <li>
+                                        Descendants of the element will be visible if they have
+                                        <code>visibility set to <code>visible</code></code>
+                                    </li>
+
+                                    <li>
+                                        The element cannot receive focus (such as when navigating through tab indexes)
+                                    </li>
+                                </ol>
+
+                            </li>
+                            <li>
+                                <code>collapse</code><br>
+                                The <code>collapse</code> keyword has different effects for different elements:
+
+                                <ol>
+                                    <li>
+                                        For
+                                        <ol>
+                                            <li><code>table</code></li>
+                                            <li><code>rows</code></li>
+                                            <li><code>colums</code></li>
+                                            <li><code>column groups</code></li>
+                                            <li><code>row groups</code></li>
+                                        </ol>
+                                        the row(s) or column(s)
+                                        are
+                                        hidden and the space they would
+                                        have occupied is removed
+                                        <br>
+                                        (<strong>as if <br>
+                                            <code class="indent">display: none</code>
+                                            <br>
+                                            were applied
+                                            to the
+                                            column/row of the table</strong>)
+                                    </li>
+                                    <li>
+                                        However, the size of other rows and columns is still calculated as though the
+                                        cells in the collapsed row(s) or column(s) are present
+                                    </li>
+                                    <li>
+                                        This value allows for the <b>fast removal</b> of a <code>row</code> or
+                                        <code>column</code> from a table without forcing
+                                        the recalculation of widths and heights for the entire table
+                                    </li>
+                                    <li>
+                                        Collapsed <code>flex</code> items and ruby annotations are hidden, and the space
+                                        they would have
+                                        occupied is removed
+                                    </li>
+                                    <li>
+                                        !! For other elements, <code>collapse</code> is treated the same as
+                                        <code>hidden</code>
+                                        (i.e., the same
+                                        as <code>visibility:hidden</code>, which works with (for example) a
+                                        <code>div</code> tag)
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">Example</h2>
+                    <div class="content">
+                        <h3 class="example">visibility:hidden</h3>
+                        <div class="centered">
+                            <div>above</div>
+                            <div class="mydiv">Hello World</div>
+                            <div>below</div>
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+.mydiv {
+    visibility: hidden;
+} </pre>
+                        </details>
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div&gt;above&lt;/div&gt;
+    &lt;div class="mydiv"&gt;Hello World&lt;/div&gt;
+    &lt;div&gt;below&lt;/div&gt;</pre>
+                        </details>
+
+                    </div>
+
+                </div><!--content-->
+
+                <h2 class="example">Example</h2>
+                <div class="content">
+                    <h3>display:none</h3>
+                    <div class="centered">
+                        <div>above</div>
+                        <div class="mydiv2">Hello World</div>
+                        <div>below</div>
+                    </div>
+                    <details>
+                        <summary>css</summary>
+                        <pre>
+        .mydiv2 {
+            display: none;
+        } </pre>
+                    </details>
+                    <details>
+                        <summary>html</summary>
+                        <pre>
+    &lt;div&gt;above&lt;/div&gt;
+    &lt;div class="mydiv2"&gt;Hello World&lt;/div&gt;
+    &lt;div&gt;below&lt;/div&gt;</pre>
+                    </details>
+
+                </div><!--content-->
+
+                <h2 class="example">Example (Collapse)</h2>
+                <div class="content">
+                    <ol>
+                        <li>
+                            <code>col {visibility: collapse}</code>
+                        </li>
+                        <li>
+                            <b>These behave different in Safari, Edge and Mozilla</b>
+                        </li>
+                    </ol>
+                    <table class="tvisible">
+                        <caption>visibility:visible</caption>
+                        <colgroup>
+                            <col>
+                        </colgroup>
+                        <tr>
+                            <th>h1 </th>
+                            <th>h2</th>
+                            <th>h3</th>
+                        </tr>
+                        <tr>
+                            <td>d1</td>
+                            <td>d2</td>
+                            <td>d3</td>
+                        </tr>
+                        <tr>
+                            <td>d1</td>
+                            <td>d2</td>
+                            <td>d3</td>
+                        </tr>
+                    </table>
+
+                    <table class="tcollapse">
+                        <caption>visibility:collapse</caption>
+                        <colgroup>
+                            <col>
+                        </colgroup>
+                        <tr>
+                            <th>h1 </th>
+                            <th>h2</th>
+                            <th>h3</th>
+                        </tr>
+                        <tr>
+                            <td>d1</td>
+                            <td>d2</td>
+                            <td>d3</td>
+                        </tr>
+                        <tr>
+                            <td>d1</td>
+                            <td>d2</td>
+                            <td>d3</td>
+                        </tr>
+                    </table>
+                    <details>
+                        <summary>css</summary>
+                        <pre>
+    .tvisible col {
+        background-color: lightgoldenrodyellow;
+        visibility: visible;
+    }
+
+    .tcollapse col {
+        background-color: lightgoldenrodyellow;
+        visibility: collapse;
+    } </pre>
+                    </details>
+                    <details>
+                        <summary>html</summary>
+                        <pre>
+    &lt;table class="tvisible"&gt;
+        &lt;caption&gt;visibility:visible&lt;/caption&gt;
+        &lt;colgroup&gt;
+            &lt;col&gt;
+        &lt;/colgroup&gt;
+        &lt;tr&gt;
+            &lt;th&gt;h1 &lt;/th&gt;
+            &lt;th&gt;h2&lt;/th&gt;
+            &lt;th&gt;h3&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;d1&lt;/td&gt;
+            &lt;td&gt;d2&lt;/td&gt;
+            &lt;td&gt;d3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;d1&lt;/td&gt;
+            &lt;td&gt;d2&lt;/td&gt;
+            &lt;td&gt;d3&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+
+    &lt;table class="tcollapse"&gt;
+        &lt;caption&gt;visibility:collapse&lt;/caption&gt;
+        &lt;colgroup&gt;
+            &lt;col&gt;
+        &lt;/colgroup&gt;
+        &lt;tr&gt;
+            &lt;th&gt;h1 &lt;/th&gt;
+            &lt;th&gt;h2&lt;/th&gt;
+            &lt;th&gt;h3&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;d1&lt;/td&gt;
+            &lt;td&gt;d2&lt;/td&gt;
+            &lt;td&gt;d3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;d1&lt;/td&gt;
+            &lt;td&gt;d2&lt;/td&gt;
+            &lt;td&gt;d3&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</pre>
+                    </details>
+                </div><!--content-->
+
+                <h2>References</h2>
+                <div class="content ref">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/visibility">MDN: visibility</a>
+                </div><!--content-->
             </div>
         </div>
+    </div>
 
-        <!--  Templates -->
+    <!--  Templates -->
 
 
-        <template id="prevPageTemplate">inline_vs_block</template> <!--PREVIOUS PAGE-->
+    <template id="prevPageTemplate">inline_vs_block</template> <!--PREVIOUS PAGE-->
 
-        <template id="pageTitleTemplate">visibility</template> <!--PAGE TITLE-->
+    <template id="pageTitleTemplate">visibility</template> <!--PAGE TITLE-->
 
-        <template id="nextPageTemplate">box_model</template><!--NEXT PAGE-->
+    <template id="nextPageTemplate">box_model</template><!--NEXT PAGE-->
 
 
     </div>

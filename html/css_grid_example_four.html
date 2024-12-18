@@ -63,6 +63,25 @@
             align-items: center;
             background-color: lightgoldenrodyellow;
         }
+
+        .emph {
+            border-color: blue;
+            border-left-style: solid;
+            border-width: 0.5em;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+        }
+
+        summary {
+            color: var(--primary-green);
+            padding-left: 3%;
+            font-variant: small-caps;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,14 +135,202 @@
                         </div>
                     </div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
-
                     <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
+                        <ol>
+                            <li>
+                                The code is almost identical to the previous example
+                                (<code>css_grid_example_three</code>) except that
+                                <ol>
+                                    <li>
+                                        the css code relating to media queries
+                                        are in separate files (<code>css_grid_one.css</code>) and
+                                        <code>css_grid_two.css</code>
+                                    </li>
+                                    <li>
+                                        the files are accessed via <code>link</code> tags
+                                    </li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                                </ol>
+                            </li>
+                            <li>
+                                Best viewed in "Responsive design" mode
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2>Header Stylesheet links</h2>
+                    <div class="content">
+
+                        <pre>
+    &lt;link rel="stylesheet" 
+             href="../css/ecss.css" 
+             title="Default"&gt;
+
+    &lt;link rel="alternate stylesheet" 
+             href="../css/ecssAlt.css" 
+             title="Dark Mode"&gt;
+
+    &lt;noscript&gt;&lt;link rel="stylesheet" 
+                    href="../css/ecss_nojs.css"&gt;&lt;/noscript&gt;
+
+    &lt;style&gt;
+    
+    &lt;/style&gt;</pre>
+                        <pre class="emph">
+    &lt;link rel="stylesheet" 
+             href="../css/css_grid_one.css" 
+             media="screen and (min-width:600px)"&gt;
+
+    &lt;link rel="stylesheet" 
+    href="../css/css_grid_two.css" 
+             media="screen and (min-width:800px)"&gt; </pre>
+                        </pre>
+                    </div><!--content-->
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="wrapper"&gt;
+        &lt;div class="grid-item one"&gt;One&lt;/div&gt;
+        &lt;div class="grid-item two"&gt;Two&lt;/div&gt;
+        &lt;div class="grid-item three"&gt;Three&lt;/div&gt;
+        &lt;div class="grid-item four"&gt;Four&lt;/div&gt;
+        &lt;div class="grid-item five"&gt;Fived&lt;/div&gt;
+        &lt;div class="grid-item six"&gt;Six&lt;/div&gt;
+        &lt;div class="grid-item seven"&gt;Seven&lt;/div&gt;
+        &lt;div class="grid-item eight"&gt;Eight&lt;/div&gt;
+        &lt;div class="grid-item nine"&gt;Nine&lt;/div&gt;
+    &lt;/div&gt;</pre>
+                            </pre>
+                        </details>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto, 3);
+        grid-auto-rows: minmax(100px, auto);
+        column-gap: 1em;
+        row-gap: 2em;
+    }
+
+    .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: lightgoldenrodyellow;
+    } </pre>
+                        </details>
+                        <details>
+                            <summary>css_grid_one.css</summary>
+                            <pre>
+    .one {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .two {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .three {
+        grid-column: 1 / 2;
+        grid-row: 2/ 3;
+    }
+
+    .four {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .five {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .six {
+        grid-column: 2/ 3;
+        grid-row: 3 / 4;
+    }
+
+    .seven {
+        grid-column: 1/ 2;
+        grid-row: 4 / 5;
+    }
+
+    .eight {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+    }
+
+    .nine {
+        grid-column: 1 / 3;
+        grid-row: 5 / 6;
+    }
+
+    .grid-item {
+        background-color: var(--primary-green);
+        color: white;
+    } </pre>
+                        </details>
+                        <details>
+                            <summary>css_grid_two.css</summary>
+                            <pre>
+    .one {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .two {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .three {
+        grid-column: 3 / 4;
+        grid-row: 1/ 2;
+    }
+
+    .four {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .five {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .six {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+    }
+
+    .seven {
+        grid-column: 1/ 2;
+        grid-row: 3 / 4;
+    }
+
+    .eight {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+    .nine {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+    }
+
+    .grid-item {
+        background-color: lightgray;
+        color: black;
+    } </pre>
+                        </details>
+
+                    </div><!--content-->
 
                     <h2>References</h2>
                     <div class="content ref"></div><!--content-->
