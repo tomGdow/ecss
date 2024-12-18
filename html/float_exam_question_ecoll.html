@@ -48,6 +48,35 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        figcaption {
+            all: revert;
+        }
+
+        figure {
+            display: inline-block;
+            padding: 0 0.5em;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        #img1b {
+            float: left;
+        }
+
+        .myfig {
+            float: left;
+        }
+
+        #img2c,
+        #img3c {
+            float: none;
+        }
+
+        summary {
+            color: var(--primary-green);
+            padding-left: 3%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +114,116 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                        <figure id="img2">
+                            <figcaption>Grab Coffee</figcaption>
+                            <img src="../images/myBlueSquare100_100.png" alt="Blue Square">
+                        </figure>
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                        <figure id="img1">
+                            <figcaption>Stop the Car</figcaption>
+                            <img src="../images/myRedSquare2.png" width="100" alt="Blue Square">
+                        </figure>
+                        <figure id="img3">
+                            <figcaption>Take Nap</figcaption>
+                            <img src="../images/myOrangeSquare2.png" width="100" alt="Blue Square">
+                        </figure>
+                        <pre>
+    &lt;figure id="img2"&gt;
+        &lt;figcaption&gt;Grab Coffee&lt;/figcaption&gt;
+        &lt;img src="../images/myBlueSquare100_100.png" 
+             alt="Blue Square"&gt;
+    &lt;/figure&gt;
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+    &lt;figure id="img1"&gt;
+        &lt;figcaption&gt;Stop the Car&lt;/figcaption&gt;
+        &lt;img src="../images/myRedSquare2.png" 
+             width="100" 
+             alt="Blue Square"&gt;
+    &lt;/figure&gt;
+
+    &lt;figure id="img3"&gt;
+        &lt;figcaption&gt;Take Nap&lt;/figcaption&gt;
+        &lt;img src="../images/myOrangeSquare2.png" 
+             width="100" 
+             alt="Blue Square"&gt;
+    &lt;/figure&gt; </pre>
+
+                    </div><!--content-->
+
+                    <h2>Probelm</h2>
+                    <div class="content">
+                        Rearrange the above figures in the order
+                        <ol>
+                            <li>Stop the car (Red)</li>
+                            <li>Grab a coffee (Blue)</li>
+                            <li>Take a nap (Orange)</li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2>Solution One</h2>
+                    <div class="content">
+
+                        <figure id="img2b">
+                            <figcaption>Grab Coffee</figcaption>
+                            <img src="../images/myBlueSquare100_100.png" alt="Blue Square">
+                        </figure>
+
+                        <figure id="img1b">
+                            <figcaption>Stop the Car</figcaption>
+                            <img src="../images/myRedSquare2.png" width="100" alt="Blue Square">
+                        </figure>
+                        <figure id="img3b">
+                            <figcaption>Take Nap</figcaption>
+                            <img src="../images/myOrangeSquare2.png" width="100" alt="Blue Square">
+                        </figure>
+                        <details>
+                            <summary>
+                                css
+                            </summary>
+                            <pre>
+    #img1 {
+      float: left;
+    } </pre>
+                        </details>
+                    </div><!--content-->
+
+                    <h2>Solution Two</h2>
+                    <div class="content">
+
+                        <figure id="img2c" class="myfig">
+                            <figcaption>Grab Coffee</figcaption>
+                            <img src="../images/myBlueSquare100_100.png" alt="Blue Square">
+                        </figure>
+
+                        <figure id="img1c" class="myfig">
+                            <figcaption>Stop the Car</figcaption>
+                            <img src="../images/myRedSquare2.png" width="100" alt="Blue Square">
+                        </figure>
+                        <figure id="img3c" class="myfig">
+                            <figcaption>Take Nap</figcaption>
+                            <img src="../images/myOrangeSquare2.png" width="100" alt="Blue Square">
+                        </figure>
+
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .figure {
+      float: left;
+    }
+
+    #img2,
+    #img3 {
+      float: none;
+    } </pre>
+                        </details>
+                    </div><!--content-->
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        ecollege exam question
+                    </div><!--content-->
                 </div>
             </div>
         </div>
