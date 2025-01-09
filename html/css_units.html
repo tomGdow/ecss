@@ -48,6 +48,129 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .wrapper {
+            width: 100%;
+            height: auto;
+            min-height: 100px;
+            border: 2px solid lightgoldenrodyellow;
+            ;
+        }
+
+        .child {
+            width: 50%;
+            border: 2px solid green;
+            height: 50%;
+            min-height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: lightgoldenrodyellow;
+        }
+
+        summary {
+            color: var(--primary-green);
+            padding-left: 3%;
+            font-variant: small-caps;
+
+        }
+
+        .wrapper2 {
+            width: 60vw;
+            height: auto;
+            min-height: 15vh;
+            border: 2px solid lightgoldenrodyellow;
+            ;
+        }
+
+        .child2 {
+            width: 30vw;
+            border: 2px solid green;
+            height: auto;
+            min-height: 7.5vh;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .common {
+
+            border: .2pc solid blue;
+            height: auto;
+            min-height: 10pc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .pica {
+            width: calc(6pc * 4);
+        }
+
+        .point {
+            width: calc(72pt * 4);
+        }
+
+        .inch {
+            width: calc(1in * 4);
+        }
+
+        .pixel {
+            width: calc(96px * 4);
+        }
+
+        .cm {
+            width: calc(2.54cm * 4)
+        }
+
+        .mm {
+            width: calc(25.4mm * 4)
+        }
+
+        .que {
+            width: calc(40Q * 2.54 * 4)
+        }
+
+        .ems li {
+            font-size: 1.5em;
+            color: #000080;
+        }
+
+        .rems li {
+            font-size: 1.5rem;
+            color: #000080;
+        }
+
+        .ems_one {
+            font-size: 1.5em;
+            color: #000080;
+        }
+
+        .div_ems div {
+            padding-left: 5%;
+            font-size: 2.5em;
+            color: rgb(0 0 128);
+        }
+
+        .div_rems div {
+            padding-left: 5%;
+            font-size: 2.5rem;
+            color: rgb(0 0 128);
+        }
+
+        .div_ems_one {
+            padding-left: 5%;
+            font-size: 2.5em;
+            color: rgb(0 0 128);
+        }
+
+        .mycaption {
+            /* padding-left: 5%; */
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--primary-green);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,19 +208,617 @@
                     </div>
 
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
-                    <div class="content"></div><!--content-->
+                    <div class="content">
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    </div><!--content-->
 
-                    <h2>Notes</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Viewport Units</h2>
+                    <div class="content">
+                        <ol>
+                            <li><code>vh</code>
+                                <ol>
+                                    <li>
+                                        <code>vh</code> stands for <code>viewport height</code>
+                                    </li>
+                                    <li>
+                                        This unit is based on the height of the viewport
+                                    </li>
+                                    <li>
+                                        A value of <code>1vh</code> is equal to 1% of the <code>viewport height</code>
+                                    </li>
+                                    <li>
+                                        A value of <code>100vh</code> is equal to 100% of the
+                                        <code>viewport height</code>
+                                    </li>
+                                </ol>
+                            </li><!--vh-->
+                            <li>
+                                <code>vw</code>
+                                <ol>
+                                    <li>
+                                        <code>1vw</code> stands for <code>viewport width</code>
+                                    </li>
+                                    <li>
+                                        This unit is based on the width of the viewport
+                                    </li>
+                                    <li>
+                                        A value of <code>1vw</code> is equal to <code>1%</code>
+                                        of the <code>viewport width</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>vmin</code>
+                                <ol>
+                                    <li>
+                                        <code>vmin</code> stands for <code>viewport minimum</code>
+                                    </li>
+                                    <li>
+                                        This unit is based on the <b>smaller dimension</b> of the viewport
+                                    </li>
+                                    <li>
+                                        If the <code>viewport height</code> is
+                                        smaller than the <code>width</code>, the value of <code>1vmin</code> will be
+                                        equal to 1% of the <code>viewport height</code>
+                                    </li>
+                                    <li>
+                                        Similarly, if the <code>viewport width</code>
+                                        is smaller than the <code>height</code>, the value of <code>1vmin</code> will be
+                                        equal to <code>1%</code> of the <code>viewport width</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <code>vmax</code>
+                                <ol>
+                                    <li>
+                                        <code>vmax</code> stands for <code>viewport maximum</code>
+                                    </li>
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
+                                    <li>
+                                        This unit is based on the larger dimension of the viewport
+                                    </li>
+                                    <li>
+                                        If the <code>viewport height</code> is
+                                        larger than the <code>width</code>, the value of <code>1vmax</code> will be
+                                        equal to
+                                        <code>1%</code> of <code>viewport height</code>
+                                    </li>
+                                    <li>
+                                        Similarly, if the <code>viewport width</code> is
+                                        larger than the height, the value of <code>1vmax</code> will be equal to
+                                        <code>1%</code> of the <code>viewport width</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><code>Comparison with percentages</code>
+                                <br>
+                                Viewport units differ from percentages in that percentage width or height of a
+                                child element is determined with <b>respect to its parent</b>
+                            </li>
+                        </ol><!--opening-->
+
+                        <h3>Example (viewport units)</h3>
+                        <div class="wrapper2">
+                            <div class="child2">
+                            </div>
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .wrapper2 {
+        width: 60vw;
+        height: auto;
+        min-height: 15vh;
+        border: 2px solid lightgoldenrodyellow;;
+    }
+
+    .child2 {
+        width: 30vw;
+        border: 2px solid green;
+        height: auto;
+        min-height: 7.5vh;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: lightgoldenrodyellow;
+    } </pre>
+
+                        </details>
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="wrapper2"&gt;
+        &lt;div class="child2"&gt;&lt;/div&gt;
+    &lt;/div&gt; </pre>
+                        </details>
+                    </div><!--content-->
+
+                    <h2 class="example">Percentages</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                percentages are always set <strong>relative to some other value</strong>
+                            </li>
+
+                            <li>
+                                For example, if you set an element's <code>font-size</code> as a percentage, it will
+                                be a percentage of the <code>font-size</code> of the element's parent
+                            </li>
+
+                            <li>
+                                If you use a percentage for a <code>width</code> value, it will be a percentage of
+                                <strong>the <code>width</code> of the parent</strong>
+                            </li>
+                        </ol>
+                        <h3>Example (Percentages)</h3>
+                        <div class="wrapper">
+                            <div class="child">
+                            </div>
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .wrapper {
+        width: 90%;
+        height: auto;
+        min-height: 100px;
+        border: 2px solid lightgoldenrodyellow;;
+    }
+
+    .child {
+        width: 50%;
+        border: 2px solid green;
+        height: 50%;
+        min-height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: lightgoldenrodyellow;
+    }</pre>
+                        </details>
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="wrapper"&gt;
+        &lt;div class="child"&gt;
+    &lt;/div&gt;</pre>
+                        </details>
+                        <h3>Note</h3>
+                        <div>Note that the above is responsive</div>
+                    </div><!--content-->
+
+                    <h2 class="example">em</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                Represents the calculated <code>font-size</code> of the element
+                            </li>
+                            <li>
+                                If used on the <code>font-size</code> property itself, it represents the
+                                inherited <code>font-size</code> of the element
+                            </li>
+                        </ol>
+                        <h3>Example 1 (em)</h3>
+
+                        <h4>Note</h4>
+                        <ol>
+                            <li>
+                                Note that the descender <code>li</code> tag <em>must</em> be present for nesting to
+                                cause the sequential increase in size
+                            </li>
+                            <li>
+                                If it is not, as with <code>ems_one</code> (<code>ems</code> and
+                                <code>ems_one are identical</code>), then <code>font-size</code> <em>is</em>
+                                inherited, but there is no sequential increase in size
+                            </li>
+                        </ol>
+
+                        <div class="mycaption">Incremental Increase</div>
+                        <div class="wrapper">
+                            <figure>
+                                <ol class="ems">
+                                    <li>One-One</li>
+                                    <li>One-Two
+                                        <ol type="i">
+                                            <li>Two-one</li>
+                                            <li>Two-two
+                                                <ol type="a">
+                                                    <li>Three-one</li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                                <figcaption><code>ems li {...}</li></code></figcaption>
+                            </figure>
+
+                        </div><!--wrapper-->
+                        <div class="mycaption">No Incremental Increase</div>
+                        <div class="wrapper">
+
+                            <figure>
+                                <ol class="ems_one">
+                                    <li>One-One</li>
+                                    <li>One-Two
+                                        <ol type="i">
+                                            <li>Two-one</li>
+                                            <li>Two-two
+                                                <ol type="a">
+                                                    <li>Three-one</li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                                <figcaption><code>ems_one {...}</code></figcaption>
+                            </figure>
+
+                            <details>
+                                <summary>css</summary>
+                                <pre>
+    .ems li {
+        font-size: 1.5em;
+        color: #000080;
+    } </pre>
+                                <pre>
+    .ems_one {
+        font-size: 1.5em;
+        color: #000080;
+    } </pre>
+                            </details>
+                            <details>
+                                <summary>html</summary>
+                                <pre>
+        &lt;figure&gt;
+            &lt;ol class="ems"&gt;
+                &lt;li&gt;One-One&lt;/li&gt;
+                &lt;li&gt;One-Two
+                    &lt;ol type="i"&gt;
+                        &lt;li&gt;Two-one&lt;/li&gt;
+                        &lt;li&gt;Two-two
+                            &lt;ol type="a"&gt;
+                                &lt;li&gt;Three-one&lt;/li&gt;
+                            &lt;/ol&gt;
+                        &lt;/li&gt;
+                    &lt;/ol&gt;
+                &lt;/li&gt;
+            &lt;/ol&gt;
+            &lt;figcaption&gt;
+                &lt;code&gt;ems li {...}&lt;/li&gt;&lt;/code&gt;
+            &lt;/figcaption&gt;
+        &lt;/figure&gt;
+
+        &lt;figure&gt;
+            &lt;ol class="ems_one"&gt;
+                &lt;li&gt;One-One&lt;/li&gt;
+                &lt;li&gt;One-Two
+                    &lt;ol type="i"&gt;
+                        &lt;li&gt;Two-one&lt;/li&gt;
+                        &lt;li&gt;Two-two
+                            &lt;ol type="a"&gt;
+                                &lt;li&gt;Three-one&lt;/li&gt;
+                            &lt;/ol&gt;
+                        &lt;/li&gt;
+                    &lt;/ol&gt;
+                &lt;/li&gt;
+            &lt;/ol&gt;
+            &lt;figcaption&gt;
+                &lt;code&gt;ems {...}&lt;/code&gt;
+            &lt;/figcaption&gt;
+        &lt;/figure&gt;</pre>
+                            </details>
+                        </div><!--wrapper-->
+
+                        <h3>Example 2 (em)</h3>
+                        <h4>Note</h4>
+                        <ol>
+                            <li>
+                                The descender <code>div</code> tag <em>must</em> be present for nesting to
+                                cause the sequential increase in size
+                            </li>
+                        </ol>
+
+                        <div class="mycaption">Incremental Increase</div>
+                        <div class="wrapper">
+
+                            <div class="div_ems">
+                                Hello World
+                                <div>
+                                    Hello World
+                                    <div>Hello W</div>
+                                </div>
+                            </div>
+                        </div><!--wrapper-->
+
+                        <div class="mycaption">No Incremental Increase</div>
+                        <div class="wrapper">
+                            <div class="div_ems_one">
+                                Hello World
+                                <div>
+                                    Hello World
+                                    <div>Hello W</div>
+                                </div>
+                            </div>
+
+                        </div><!--wrapper-->
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .div_ems div {
+        padding-left: 5%;
+        font-size: 2.5em;
+        color: rgb(0 0 128);
+    } 
+
+    .div_ems_one {
+        padding-left: 5%;
+        font-size: 2.5em;
+        color: rgb(0 0 128);
+    } </pre>
+                        </details>
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="div_ems"&gt;
+        Hello World
+        &lt;div&gt;
+            Hello World
+            &lt;div&gt;Hello W&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="div_ems_one"&gt;
+        Hello World
+        &lt;div&gt;
+            Hello World
+            &lt;div&gt;Hello W&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; </pre>
+                        </details>
+                    </div><!--content-->
+
+                    <h2 class="example">rem</h2>
+                    <div class="content">
+
+                        <div class="wrapper">
+                            <figure>
+                                <ol class="rems">
+                                    <li>One-One</li>
+                                    <li>One-Two
+                                        <ol type="i">
+                                            <li>Two-one</li>
+                                            <li>Two-two
+                                                <ol type="a">
+                                                    <li>Three-one</li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                                <figcaption><code>rems li {...}</li></code></figcaption>
+                            </figure>
+                            <details>
+                                <summary>css</summary>
+                                <pre>
+    .rems li {
+        font-size: 1.5rem;
+        color: #000080;
+    }</pre>
+                            </details>
+                            <details>
+                                <summary>html</summary>
+                                <pre>
+    &lt;figure&gt;
+        &lt;ol class="rems"&gt;
+            &lt;li&gt;One-One&lt;/li&gt;
+            &lt;li&gt;One-Two
+                &lt;ol type="i"&gt;
+                    &lt;li&gt;Two-one&lt;/li&gt;
+                    &lt;li&gt;Two-two
+                        &lt;ol type="a"&gt;
+                            &lt;li&gt;Three-one&lt;/li&gt;
+                        &lt;/ol&gt;
+                    &lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;figcaption&gt;&lt;code&gt;rems li {...}&lt;/li&gt;&lt;/code&gt;&lt;/figcaption&gt;
+    &lt;/figure&gt; </pre>
+                            </details>
+                        </div><!--wrapper-->
+
+
+                    </div><!--content-->
+
+                    <h2 class="example">rem (two)</h2>
+                    <div class="content">
+                        <div class="wrapper">
+                            <div class="div_rems">
+                                Hello World
+                                <div>
+                                    Hello World
+                                    <div>Hello W</div>
+                                </div>
+                            </div>
+                            <details>
+                                <summary>css</summary>
+                                <pre>
+    .div_rems div {
+        padding-left: 5%;
+        font-size: 2.5rem;
+        color: rgb(0 0 128);
+    } </pre>
+                            </details>
+                            <details>
+                                <summary>html</summary>
+                                <pre>
+    &lt;div class="div_rems"&gt;
+        Hello World
+        &lt;div&gt;
+            Hello World
+            &lt;div&gt;Hello W&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; </pre>
+                            </details>
+
+                        </div><!--wrapper-->
+
+                    </div><!--content-->
+
+                    <h2 class="example">lh and rlh</h2>
+                    <div class="content">
+                        <ol>
+                            <li>
+                                <code>lh</code> and <code>rlh</code> are relative length units similar to
+                                <code>em</code>
+                                and <code>rem</code>
+                            </li>
+                            <li>
+
+                                The difference between <code>lh</code> and <code>rlh</code> is that the first one is
+                                relative to the <code>line height</code> of <em>the element itself</em>, while the
+                                second
+                                one is relative to the <code>line height</code> of <em>the root element</em> usually
+                                <code>html</code>
+                            </li>
+                        </ol>
+                    </div><!--content-->
+
+                    <h2 class="example">Point</h2>
+                    <div class="content">
+                        <div class="point common">
+                            I am (72pt * 4) wide and 10pc high <br> <br>
+                            A point is 1/72 of an inch <br><br>
+                            That is, I am 4 inches long
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .point {
+        width: calc(72pt * 4);
+    } </pre>
+                        </details>
+                    </div><!--content-->
+
+                    <h2 class="example">Pixel</h2>
+                    <div class="content">
+
+                        <div class="pixel common">
+                            I am (96px * 4) wide and 10pc high <br> <br>
+                            A pixel is 1/96 of an inch <br><br>
+                            That is, I am 4 inches long
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .pixel {
+        width: calc(96px * 4);
+    } </pre>
+                        </details>
+                    </div><!--content-->
+
+                    <h2 class="example">Pica</h2>
+                    <div class="content">
+
+                        <div class="pica common">
+                            I a 24pc wide and 10pc high <br> <br>
+                            A pica is 1/6 of an inch <br><br>
+                            That is, I am 4 inches long
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .pica {
+        width: calc(6pc * 4);
+    } </pre>
+                        </details>
+                    </div><!--content-->
+
+                    <h2 class="example">cm</h2>
+                    <div class="content">
+
+                        <div class="cm common">
+                            I am (2.54cm * 4) wide and 10pc high <br> <br>
+                            A cm is 1/2.54 of an inch <br><br>
+                            That is, I am 4 inches long
+
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .cm {
+        width: calc(2.54cm * 4)
+    } </pre>
+                        </details>
+                    </div><!--content-->
+
+                    <h2 class="example">mm</h2>
+                    <div class="content">
+
+                        <div class="mm common">
+                            I am (25.4mm * 4) wide and 10pc high <br> <br>
+                            A mm is 1/25.4 of an inch <br><br>
+                            That is, I am 4 inches long
+
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .mm {
+        width: calc(25.4mm * 4)
+    } </pre>
+                        </details>
+                    </div><!--content-->
+
+                    <h2 class="example">inch</h2>
+                    <div class="content">
+
+                        <div class="inch common">
+                            I am (1in * 4) wide and 10pc high <br> <br>
+                            That is, I am 4 inches long
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .inch {
+        width: calc(1in * 4);
+    } </pre>
+                        </details>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Q</h2>
+                    <div class="content">
+
+                        <div class="que common">
+                            I am (400Q * 2.54 * 4) wide and 10pc high <br> <br>
+                            A Q is 1/4 of a mm <br><br>
+                            That is, I am 4 inches long
+
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .que {
+        width: calc(40Q * 2.54 * 4)
+    } </pre>
+                        </details>
+                    </div><!--content-->
+
 
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://www.sitepoint.com/css-viewport-units-quick-start/">Sitepoint: CSS Viewport
+                            Units: vh, vw, vmin, and vmax</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a
+                            href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units">MDN:
+                            CSS values and units</a>
+
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">MDN: length</a>
+                    </div>
                 </div>
             </div>
         </div>
