@@ -48,6 +48,88 @@
         div.content h3::before {
             content: counter(exampleCounter) "." counter(itemCounter) ".  ";
         }
+
+        .wrapper,
+        .wrapper-2,
+        .wrapper-3,
+        .wrapper-4,
+        .wrapper-5,
+        .wrapper-6,
+        .wrapper-7 {
+            border: 2px solid gray;
+            background-color: var(--primary-green);
+            margin-top: 2vh;
+        }
+
+        .item,
+        .item-2,
+        .item-3,
+        .item-4,
+        .item-5,
+        .item-6,
+        .item-7 {
+            background-color: lightgoldenrodyellow;
+            width: 10vw;
+            height: 100px;
+            border: 2px solid green;
+        }
+
+        .item {
+            display: block
+        }
+
+        summary {
+            color: var(--primary-green);
+            padding-left: 5%;
+        }
+
+        .item-2 {
+            display: inline;
+        }
+
+        .item-3 {
+            display: inline-block;
+        }
+
+        .wrapper-4 {
+            display: flex;
+        }
+
+        .wrapper-5 {
+            display: grid;
+        }
+
+        .wrapper-6 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .wrapper-7 {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .myindent {
+            padding-left: 10%;
+            color: black;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            display: block;
+            text-align: center;
+            padding-top: 2%;
+            padding-bottom: 1%;
+        }
+
+        .myindent-2 {
+            padding-left: 10%;
+            color: black;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            display: block;
+            /* text-align: center; */
+            padding-top: 2%;
+            padding-bottom: 1%;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,17 +169,321 @@
                     <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
                     <div class="content"></div><!--content-->
 
-                    <h2>Example</h2>
-                    <div class="content"></div><!--content-->
+                    <h2 class="example">Example
+                        <span class="myindent">display:block</span>
+                    </h2>
+                    <div class="content">
+                        <div class="wrapper">
+                            <div class="item">One</div>
+                            <div class="item">Two</div>
+                            <div class="item">Three</div>
+                        </div><!-- mywrapper -->
+                        <details>
+                            <summary>css</summary>
+
+                            <pre>
+    .wrapper {
+        border: 2px solid gray;
+        background-color: var(--primary-green);
+        margin-top: 2vh;
+    }
+
+    .item {
+        background-color: lightgoldenrodyellow;
+        width: 10vw;
+        height: 100px;
+        border: 2px solid green;
+    }
+
+    .item {
+        display: block
+    }</pre>
+                        </details>
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="wrapper"&gt;
+        &lt;div class="item"&gt;One&lt;/div&gt;
+        &lt;div class="item"&gt;Two&lt;/div&gt;
+        &lt;div class="item"&gt;Three&lt;/div&gt;
+    &lt;/div&gt;</pre>
+                        </details>
+                    </div><!--content-->
+                    <h2 class="example">Example
+                        <span class="myindent">display:inline</span>
+                    </h2>
+                    <div class="content">
+                        <div class="wrapper-2">
+                            <div class="item-2">One</div>
+                            <div class="item-2">Two</div>
+                            <div class="item-2">Three</div>
+                        </div>
+                        <h3>Note</h3>
+                        <div>Note that both <code>width</code> and <code>height</code> are ignored</div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+
+    .wrapper-2 {
+        border: 2px solid gray;
+        background-color: var(--primary-green);
+        margin-top: 2vh;
+    }
+
+    .item-2 {
+        background-color: lightgoldenrodyellow;
+        width: 10vw;
+        height: 100px;
+        border: 2px solid green;
+    }
+
+    .item-2 {
+        display: inline;
+    }
+                            </pre>
+                        </details>
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="wrapper-2"&gt;
+        &lt;div class="item-2"&gt;One&lt;/div&gt;
+        &lt;div class="item-2"&gt;Two&lt;/div&gt;
+        &lt;div class="item-2"&gt;Three&lt;/div&gt;
+    &lt;/div&gt;</pre>
+                        </details>
+                    </div><!--content-->
+
+                    <h2 class="example">Example
+                        <span class="myindent">display:inline-block</span>
+                    </h2>
+                    <div class="content">
+
+                        <div class="wrapper-3">
+                            <div class="item-3">One</div>
+                            <div class="item-3">Two</div>
+                            <div class="item-3">Three</div>
+                        </div>
+
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .wrapper-3 {
+    border: 2px solid gray;
+    background-color: var(--primary-green);
+    margin-top: 2vh;
+    }
+
+    .item-3 {
+    background-color: lightgoldenrodyellow;
+    width: 10vw;
+    height: 100px;
+    border: 2px solid green;
+    }
+
+    .item-3 {
+    display: inline-block;
+    } </pre>
+                        </details>
+
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="wrapper-3"&gt;
+        &lt;div class="item-3"&gt;One&lt;/div&gt;
+        &lt;div class="item-3"&gt;Two&lt;/div&gt;
+        &lt;div class="item-3"&gt;Three&lt;/div&gt;
+    &lt;/div&gt;</pre>
+                        </details>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Example
+                        <span class="myindent">display:flex</span>
+                    </h2>
+                    <div class="content">
+
+                        <div class="wrapper-4">
+                            <div class="item-4">One</div>
+                            <div class="item-4">Two</div>
+                            <div class="item-4">Three</div>
+                        </div>
+                        <h3>Note</h3>
+                        <div>Note that it is the <code>wrapper</code> that is <code>display:flex</code></div>
+
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .wrapper-4 {
+        border: 2px solid gray;
+        background-color: var(--primary-green);
+        margin-top: 2vh;
+    }
+
+    .item-4 {
+        background-color: lightgoldenrodyellow;
+        width: 10vw;
+        height: 100px;
+        border: 2px solid green;
+    }
+
+    .wrapper-4 {
+        display: flex;
+    } </pre>
+                        </details>
+
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="wrapper-4"&gt;
+        &lt;div class="item-4"&gt;One&lt;/div&gt;
+        &lt;div class="item-4"&gt;Two&lt;/div&gt;
+        &lt;div class="item-4"&gt;Three&lt;/div&gt;
+    &lt;/div&gt;</pre>
+                        </details>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Example
+                        <span class="myindent-2">display:flex</span>
+                        <span class="myindent-2">justify-content:space-around</span>
+                    </h2>
+                    <div class="content">
+
+                        <div class="wrapper-7">
+                            <div class="item-7">One</div>
+                            <div class="item-7">Two</div>
+                            <div class="item-7">Three</div>
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .wrapper-7 {
+        border: 2px solid gray;
+        background-color: var(--primary-green);
+        margin-top: 2vh;
+    }
+
+    .item-7 {
+        background-color: lightgoldenrodyellow;
+        width: 10vw;
+        height: 100px;
+        border: 2px solid green;
+    }
+
+    .wrapper-7 {
+        display: flex;
+        justify-content: space-around;
+    } </pre>
+                        </details>
+
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="wrapper-7"&gt;
+        &lt;div class="item-7"&gt;One&lt;/div&gt;
+        &lt;div class="item-7"&gt;Two&lt;/div&gt;
+        &lt;div class="item-7"&gt;Three&lt;/div&gt;
+    &lt;/div&gt;</pre>
+                        </details>
+                    </div><!--content-->
+
+                    <h2 class="example">Example
+                        <span class="myindent">display:grid</span>
+                    </h2>
+                    <div class="content">
+                        <div class="wrapper-5">
+                            <div class="item-5">One</div>
+                            <div class="item-5">Two</div>
+                            <div class="item-5">Three</div>
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .wrapper-5 {
+        border: 2px solid gray;
+        background-color: var(--primary-green);
+        margin-top: 2vh;
+    }
+
+    .item-5 {
+        background-color: lightgoldenrodyellow;
+        width: 10vw;
+        height: 100px;
+        border: 2px solid green;
+    }
+
+    .wrapper-5 {
+        display: grid;
+    }</pre>
+                        </details>
+
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="wrapper-5"&gt;
+        &lt;div class="item-5"&gt;One&lt;/div&gt;
+        &lt;div class="item-5"&gt;Two&lt;/div&gt;
+        &lt;div class="item-5"&gt;Three&lt;/div&gt;
+    &lt;/div&gt;</pre>
+                        </details>
+
+                    </div><!--content-->
+
+                    <h2 class="example">Example
+                        <span class="myindent-2">display:grid;</span>
+                        <span class="myindent-2">grid-template-columns: repeat(3, 1fr)</span>
+                    </h2>
+                    <div class="content">
+                        <div class="wrapper-6">
+                            <div class="item-6">One</div>
+                            <div class="item-6">Two</div>
+                            <div class="item-6">Three</div>
+                        </div>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .wrapper-6 {
+        border: 2px solid gray;
+        background-color: var(--primary-green);
+        margin-top: 2vh;
+    }
+
+    .item-6 {
+        background-color: lightgoldenrodyellow;
+        width: 10vw;
+        height: 100px;
+        border: 2px solid green;
+    }
+
+    .wrapper-6 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    } </pre>
+                        </details>
+
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="wrapper-6"&gt;
+        &lt;div class="item-6"&gt;One&lt;/div&gt;
+        &lt;div class="item-6"&gt;Two&lt;/div&gt;
+        &lt;div class="item-6"&gt;Three&lt;/div&gt;
+    &lt;/div&gt;</pre>
+                        </details>
+                    </div><!--content-->
 
                     <h2>Notes</h2>
                     <div class="content"></div><!--content-->
 
-                    <h2>Mnemonic</h2>
-                    <div class="content"></div><!--content-->
-
                     <h2>References</h2>
-                    <div class="content ref"></div><!--content-->
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">MDN: display</a>
+                    </div><!--content-->
+                    <div class="content ref">
+                        <a href="https://www.w3schools.com/cssref/pr_class_display.php">W3Schools: CSS display
+                            Property</a>
+
+                    </div><!--content-->
                 </div>
             </div>
         </div>
