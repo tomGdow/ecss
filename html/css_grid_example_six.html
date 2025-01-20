@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        :root {
+            --background-color: rgb(207, 232, 220);
+            --border-color: rgb(79, 185, 227);
+        }
+
+        .mygrid-container>header,
+        .mygrid-container>article,
+        .mygrid-container>aside,
+        .mygrid-container>footer {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: var(--background-color);
+            border: 2px solid var(--border-color);
+        }
+
+        .mygrid-container {
+            font: 0.9em/1.2 Arial, Helvetica, sans-serif;
+            display: grid;
+            grid-template-areas: "header header" "sidebar content" "footer footer";
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
+        }
+
+        header {
+            grid-area: header
+        }
+
+        article {
+            grid-area: content;
+        }
+
+        aside {
+            grid-area: sidebar;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        header,
+        article,
+        aside,
+        footer {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .myheading {
+            font-size: 1.4rem;
+        }
+
+        .myheading>code {
+            font-size: 1.4rem;
+        }
+
+        summary {
+            padding-left: 1%;
+            color: var(--primary-green);
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="PREV.html" id="prevPage" accesskey="p">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html" accesskey="h">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html" id="nextPage" accesskey="n">next</a>&nbsp;&nbsp;
+                        <a href="./search.html" accesskey="s">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+
+                        <h1 class="myheading">Positioning with <code>grid-template-areas</code></h1>
+                        <div class="mygrid-container">
+                            <header>My Header</header>
+                            <article>My Article</article>
+                            <aside>My Aside</aside>
+                            <footer>My footer</footer>
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Code</h2>
+                    <div class="content">
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+    .mygrid-container>header,
+    .mygrid-container>article,
+    .mygrid-container>aside,
+    .mygrid-container>footer {
+        border-radius: 5px;
+        padding: 10px;
+        background-color: var(--background-color);
+        border: 2px solid var(--border-color);
+    }
+
+    .mygrid-container {
+        font: 0.9em/1.2 Arial, Helvetica, sans-serif;
+        display: grid;
+        grid-template-areas: "header header" 
+                             "sidebar content" 
+                             "footer footer";
+        grid-template-columns: 1fr 3fr;
+        gap: 20px;
+    }
+
+    header {
+        grid-area: header
+    }
+
+    article {
+        grid-area: content;
+    }
+
+    aside {
+        grid-area: sidebar;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+    header,
+    article,
+    aside,
+    footer {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }</pre>
+                        </details>
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+    &lt;div class="mygrid-container"&gt;
+        &lt;header&gt;My Header&lt;/header&gt;
+        &lt;article&gt;My Article&lt;/article&gt;
+        &lt;aside&gt;My Aside&lt;/aside&gt;
+        &lt;footer&gt;My footer&lt;/footer&gt;
+    &lt;/div&gt;</pre>
+                        </details>
+                    </div><!--content-->
+
+                    <h2>Notes</h2>
+                    <div class="content">
+                        <h3>Essence</h3>
+                        <pre>
+//CSS
+    .grid-container {
+      display: grid;
+      grid-template-areas: "header header header" "aside article article";
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    header {
+      grid-area: header;
+    }
+
+    aside {
+      grid-area: aside;
+    }
+
+    article {
+      grid-area: article;
+    }
+    
+// HTML
+    &lt;div class="grid-container"&gt;
+
+        &lt;header&gt;My Header&lt;/header&gt;
+        &lt;aside&gt;My Aside&lt;/aside&gt;
+        &lt;article&gt;My Article&lt;/article&gt;
+
+    &lt;/div&gt; </pre>
+                    </div><!--content-->
+
+
+                    <h2>References</h2>
+                    <div class="content ref">
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Grids">MDN:
+                            CSS Grid
+                            layout</a>
+                    </div><!--content-->
+                </div>
+            </div>
+        </div>
+
+        <!--  Templates -->
+
+
+        <template id="prevPageTemplate">css_grid_example_five</template> <!--PREVIOUS PAGE-->
+
+        <template id="pageTitleTemplate">css_grid_example_six</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">css_grid_example_seven</template><!--NEXT PAGE-->
+
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
+    </script>
+</body>
+
+</html>
