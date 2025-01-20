@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[PAGE TITLE]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="css, html">
+    <meta name="description" content="Notes on Fundamentals of HTML and CSS">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/x-icon" href="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40">
+    <link rel="stylesheet" href="../css/ecss.css" title="Default">
+    <link rel="alternate stylesheet" href="../css/ecssAlt.css" title="Dark Mode">
+    <noscript>
+        <link rel="stylesheet" href="../css/ecss_nojs.css">
+    </noscript>
+    <style>
+        div.container {
+            counter-reset: refCounter 0;
+            counter-reset: exampleCounter 0;
+        }
+
+        div.container .example {
+            counter-increment: exampleCounter;
+        }
+
+        div.container .example::before {
+            content: counter(exampleCounter) ".  "
+        }
+
+        .ref {
+            counter-increment: refCounter;
+        }
+
+        .ref::before {
+            content: counter(refCounter) ".  ";
+            color: var(--primary-green);
+        }
+
+        div.content {
+            counter-reset: itemCounter 0;
+        }
+
+        div.content h3 {
+            counter-increment: itemCounter;
+        }
+
+        div.content h3::before {
+            content: counter(exampleCounter) "." counter(itemCounter) ".  ";
+        }
+
+        .mygrid-container {
+            display: grid;
+            gap: 0.2em;
+            grid-template-rows: auto auto 1fr auto;
+            background: var(--dark-purple);
+        }
+
+        .mygrid-container>header,
+        .mygrid-container>nav,
+        .mygrid-container>main,
+        .mygrid-container>footer {
+            background: lightgoldenrodyellow;
+        }
+
+        .mygrid-container>main>p {
+            padding: 0 10px;
+        }
+
+        ul {
+            list-style-type: circle;
+        }
+
+        @media (min-width: 40em) {
+            .mygrid-container {
+                grid-template-columns: 10em 1fr;
+                grid-template-rows: auto 1fr auto;
+                background-color: lightgray;
+            }
+
+            .mygrid-container>header {
+                grid-column: span 2;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .mygrid-container>nav {
+                grid-row: span 2;
+            }
+
+            .mygrid-container>header,
+            .mygrid-container>main>header,
+            .mygrid-container>nav>header,
+            .mygrid-container>footer>header {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+            }
+
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item-1">
+                <div class="banner-container">
+                    <div class="banner-item-1">
+                        <a href="../index.html">
+                            <img src="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40"
+                                alt="gravatar image of tomgdow">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-item-2">
+                    <span id="banner_part_first">html </span>
+                    <span class="primary-orange" id="banner_part_second"></span>
+                </div>
+            </div>
+            <div class="grid-item-2"></div>
+            <div class="grid-item-3">
+                <div class="site-container">
+                    <div class="content"><noscript>Warning! This browser does not use JavaScript</noscript></div>
+                    <div id="navbar">
+                        <a href="PREV.html" id="prevPage" accesskey="p">prev</a>&nbsp;&nbsp;
+                        <a href="../index.html" accesskey="h">home</a>&nbsp;&nbsp;
+                        <a href="NEXT.html" id="nextPage" accesskey="n">next</a>&nbsp;&nbsp;
+                        <a href="./search.html" accesskey="s">search</a>
+                    </div>
+
+                    <h2 id="pageTitle">DONT ADD ANYTHING HERE!</h2>
+                    <div class="content">
+                        <div class="mygrid-container">
+
+                            <header>
+                                <h1>header</h1>
+                            </header>
+                            <nav>
+                                <header>
+                                    <h2>nav</h2>
+                                </header>
+                                <ul>
+                                    <li>item</li>
+                                    <li>item</li>
+                                    <li>item</li>
+                                </ul>
+                            </nav>
+                            <main>
+                                <header>
+                                    <h2>main</h2>
+                                </header>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore tempora totam
+                                    temporibus sint. Consequatur,
+                                    laborum
+                                    nisi necessitatibus deserunt ad recusandae voluptas maiores molestiae eveniet
+                                    tenetur, facere quisquam quidem quia
+                                    rerum!
+                                </p>
+                            </main>
+                            <footer>
+                                <header>
+                                    <h2>footer</h2>
+                                </header>
+                            </footer>
+
+                        </div>
+                    </div><!--content-->
+
+                    <h2 class="example">Code</h>
+                        <div class="content">
+                            <details>
+                                <summary>css</summary>
+                                <pre>
+    .mygrid-container {
+        display: grid;
+        gap: 0.2em;
+        grid-template-rows: auto auto 1fr auto;
+        background: var(--dark-purple);
+    }
+
+    .mygrid-container>header,
+    .mygrid-container>nav,
+    .mygrid-container>main,
+    .mygrid-container>footer {
+        background: lightgoldenrodyellow;
+    }
+
+    .mygrid-container>main>p {
+        padding: 0 10px;
+    }
+
+    ul {
+        list-style-type: circle;
+    }
+
+    @media (min-width: 40em) {
+        .mygrid-container {
+            grid-template-columns: 10em 1fr;
+            grid-template-rows: auto 1fr auto;
+            background-color: lightgray;
+        }
+
+        .mygrid-container>header {
+            grid-column: span 2;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mygrid-container>nav {
+            grid-row: span 2;
+        }
+
+        .mygrid-container>header,
+        .mygrid-container>main>header,
+        .mygrid-container>nav>header,
+        .mygrid-container>footer>header {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+    } </pre>
+                            </details>
+                            <details>
+                                <summary>html</summary>
+                                <pre>
+    &lt;div class="mygrid-container"&gt;
+
+        &lt;header&gt;
+            &lt;h1&gt;header&lt;/h1&gt;
+        &lt;/header&gt;
+        &lt;nav&gt;
+            &lt;header&gt;
+                &lt;h2&gt;nav&lt;/h2&gt;
+            &lt;/header&gt;
+            &lt;ul&gt;
+                &lt;li&gt;item&lt;/li&gt;
+                &lt;li&gt;item&lt;/li&gt;
+                &lt;li&gt;item&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+        &lt;main&gt;
+            &lt;header&gt;
+                &lt;h2&gt;main&lt;/h2&gt;
+            &lt;/header&gt;
+            &lt;p&gt;
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore tempora totam
+                temporibus sint. Consequatur,
+                laborum
+                nisi necessitatibus deserunt ad recusandae voluptas maiores molestiae eveniet
+                tenetur, facere quisquam quidem quia
+                rerum!
+            &lt;/p&gt;
+        &lt;/main&gt;
+        &lt;footer&gt;
+            &lt;header&gt;
+                &lt;h2&gt;footer&lt;/h2&gt;
+            &lt;/header&gt;
+        &lt;/footer&gt;
+
+    &lt;/div&gt; </pre>
+                            </details>
+                        </div><!--content-->
+
+                        <h2>References</h2>
+                        <div class="content ref">
+                            <a href="https://www.youtube.com/watch?v=KOvGeFUHAC0&t=3s">You Tube: Build a Classic Layout
+                                FAST
+                                in CSS Grid (Mozilla Developer Miriam Suzanne)</a>
+                        </div><!--content-->
+
+                        <div class="content ref">
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Grids">MDN:
+                                CSS Grid
+                                layout</a>
+                        </div><!--content-->
+                </div>
+            </div>
+        </div>
+
+        <!--  Templates -->
+
+
+        <template id="prevPageTemplate">css_grid_example_six</template> <!--PREVIOUS PAGE-->
+
+        <template id="pageTitleTemplate">css_grid_example_seven</template> <!--PAGE TITLE-->
+
+        <template id="nextPageTemplate">css_inheritance_exam_question</template><!--NEXT PAGE-->
+
+
+    </div>
+    <script>
+
+        //page title
+        var pageTitleText = pageTitleTemplate.innerHTML;
+        document.title = pageTitleText;
+        banner_part_second.innerHTML = "&nbsp;" + pageTitleText;
+        pageTitle.innerHTML = pageTitleText;
+
+        // previous page
+        var prevPageURL = "./" + prevPageTemplate.innerHTML + ".html"
+        prevPage.setAttribute("href", prevPageURL)
+
+        // next page
+        var nextPageURL = "./" + nextPageTemplate.innerHTML + ".html"
+        nextPage.setAttribute("href", nextPageURL)
+
+    </script>
+</body>
+
+</html>
